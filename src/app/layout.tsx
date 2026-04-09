@@ -82,11 +82,10 @@ export default function RootLayout({
       className={`${inter.variable} ${notoSansDevanagari.variable}`}
     >
       <head>
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896208582090133"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
         <script
           type="application/ld+json"

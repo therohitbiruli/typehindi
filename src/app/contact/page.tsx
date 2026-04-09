@@ -21,7 +21,7 @@ export default function ContactPage() {
         <div className="card">
           <h2 className="heading-3 mb-4">हमें संदेश भेजें (Send Us a Message)</h2>
           <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="https://formspree.io/f/xeepwagl"
             method="POST"
             className="space-y-4"
             id="contact-form"

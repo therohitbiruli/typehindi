@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_Devanagari } from "next/font/google";
 import { ThemeProvider } from "./theme-provider";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -64,6 +65,14 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${notoSansDevanagari.variable}`}
     >
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896208582090133"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
+      </head>
       <body className="flex min-h-screen flex-col antialiased">
         <ThemeProvider>
           <Header />

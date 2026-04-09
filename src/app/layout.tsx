@@ -52,6 +52,22 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  alternates: {
+    canonical: "https://typehindi.in",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TypeHindi",
+  "url": "https://typehindi.in",
+  "description": "The ultimate Hindi typing platform with InScript keyboard layout, games, and WPM tracking.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://typehindi.in/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 };
 
 export default function RootLayout({
@@ -71,6 +87,10 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896208582090133"
           crossOrigin="anonymous"
           strategy="afterInteractive"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="flex min-h-screen flex-col antialiased">

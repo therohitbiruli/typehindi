@@ -40,9 +40,15 @@ export default function PrivacyPolicyPage() {
           जब आप हमारा संपर्क फॉर्म भरते हैं, तो आपका नाम, ईमेल पता और संदेश Formspree.io सेवा के माध्यम से हमें प्रेषित होता है। यह जानकारी केवल आपके संदेश का उत्तर देने के उद्देश्य से उपयोग की जाती है।
         </p>
 
-        <h3 className="heading-3">कुकीज़ और ट्रैकिंग (Cookies & Tracking)</h3>
+        <h3 className="heading-3">कुकीज़ और विज्ञापन (Cookies & Advertising)</h3>
         <p>
-          हम कार्यात्मक कुकीज़ का उपयोग थीम प्राथमिकताओं को सहेजने के लिए कर सकते हैं। हमारे विज्ञापन साझेदार (Google AdSense) अपनी कुकीज़ का उपयोग प्रासंगिक विज्ञापन दिखाने के लिए कर सकते हैं। Google AdSense की गोपनीयता नीति के बारे में अधिक जानकारी के लिए Google की वेबसाइट देखें।
+          TypeHindi.in पर विज्ञापन दिखाने के लिए हम Google AdSense जैसे तृतीय पक्ष विज्ञापनों का उपयोग करते हैं। Google, एक तृतीय पक्ष विक्रेता के रूप में, हमारी वेबसाइट पर विज्ञापन दिखाने के लिए कुकीज़ का उपयोग करता है।
+        </p>
+        <p>
+          Google द्वारा <strong>DoubleClick DART cookie</strong> का उपयोग इसे और इसके भागीदारों को हमारी वेबसाइट और इंटरनेट पर अन्य वेबसाइटों पर आपकी विज़िट के आधार पर विज्ञापन दिखाने में सक्षम बनाता है।
+        </p>
+        <p>
+          उपयोगकर्ता <a href="https://adssettings.google.com/authenticated" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:outline-none underline">Google विज्ञापन सेटिंग्स</a> पर जाकर वैयक्तिकृत विज्ञापन से बाहर निकल सकते हैं। वैकल्पिक रूप से, आप <a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:outline-none underline">www.aboutads.info</a> पर जाकर तृतीय-पक्ष विक्रेता द्वारा वैयक्तिकृत विज्ञापन के लिए कुकीज़ के उपयोग से बाहर निकल सकते हैं।
         </p>
 
         <h2 className="heading-2">डेटा सुरक्षा (Data Security)</h2>

@@ -5,7 +5,9 @@ import { Keyboard } from "../../components/Keyboard";
 import { LessonCard } from "../../components/LessonCard";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { useKeyPress } from "../../hooks/useKeyPress";
+import Link from "next/link";
 import { lessons } from "../../data/lessons";
+import { blogs } from "../../data/blogs";
 
 export default function LearnPage() {
   const { activeKey, isShift } = useKeyPress();
@@ -17,41 +19,64 @@ export default function LearnPage() {
       <AdPlaceholder position="top" />
 
       <h1 className="heading-1 mb-2">हिंदी टाइपिंग सीखें (Learn Hindi Typing)</h1>
-      <p className="text-muted mb-6">
-        InScript कीबोर्ड लेआउट को चरणबद्ध तरीके से सीखें। किसी भी कुंजी को दबाकर उसका हिंदी अक्षर देखें।
+      <p className="text-muted mb-8">
+        InScript कीबोर्ड लेआउट को चरणबद्ध तरीके से सीखें और अपनी टाइपिंग गति बढ़ाने के लिए हमारे विशेषज्ञों द्वारा लिखे गए लेख पढ़ें।
       </p>
 
       {/* Interactive Keyboard */}
-      <div className="mb-8">
+      <div className="mb-12">
         <h2 className="heading-2 mb-3">इंटरैक्टिव कीबोर्ड (Interactive Keyboard)</h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
           कोई भी कुंजी दबाएँ — कीबोर्ड पर संबंधित हिंदी अक्षर हाइलाइट होगा। Shift कुंजी दबाकर अतिरिक्त अक्षर देखें।
         </p>
-        <Keyboard activeKey={activeKey} isShift={isShift} visible={true} />
+        <div className="bg-white dark:bg-gray-900 rounded-3xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+          <Keyboard activeKey={activeKey} isShift={isShift} visible={true} />
+        </div>
       </div>
 
-      {/* Lessons */}
-      <h2 className="heading-2 mb-4">पाठ (Lessons)</h2>
-      <div className="space-y-6">
-        {lessons.map((lesson) => (
-          <LessonCard key={lesson.id} lesson={lesson} />
-        ))}
+      <div className="grid gap-12 lg:grid-cols-3">
+        {/* Left Column: Lessons */}
+        <div className="lg:col-span-2">
+          <h2 className="heading-2 mb-6 flex items-center gap-2">
+            <span>📚</span> पाठ और अभ्यास (Lessons)
+          </h2>
+          <div className="space-y-6">
+            {lessons.map((lesson) => (
+              <LessonCard key={lesson.id} lesson={lesson} />
+            ))}
+          </div>
+        </div>
+
+        {/* Right Column: Blogs/Articles */}
+        <div>
+          <h2 className="heading-2 mb-6 flex items-center gap-2">
+            <span>📰</span> लेख और मार्गदर्शिकाएँ (Guides)
+          </h2>
+          <div className="space-y-4">
+            {blogs.map((blog) => (
+              <Link 
+                key={blog.slug} 
+                href={`/learn/${blog.slug}`}
+                className="block group"
+              >
+                <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 transition-all hover:shadow-md hover:border-primary-200 dark:hover:border-primary-800">
+                  <span className="text-xs font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-2 block">
+                    {blog.category}
+                  </span>
+                  <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors">
+                    {blog.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 line-clamp-2">
+                    {blog.excerpt}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
 
       <AdPlaceholder position="bottom" />
-
-      {/* SEO Content for Learn Page */}
-      <section className="mt-10">
-        <h2 className="heading-2 mb-4">InScript कीबोर्ड कैसे सीखें?</h2>
-        <div className="prose max-w-none text-gray-600 dark:text-gray-300 space-y-3">
-          <p>
-            InScript कीबोर्ड सीखने के लिए सबसे पहले कीबोर्ड की संरचना को समझना आवश्यक है। बाईं ओर स्वर (अ, आ, इ, ई आदि) और दाईं ओर व्यंजन (क, ख, ग, घ आदि) व्यवस्थित हैं। सबसे पहले होम रो की कुंजियों से शुरुआत करें। प्रतिदिन 30 मिनट का अभ्यास करें और धीरे-धीरे अन्य पंक्तियों की कुंजियाँ सीखें। मात्राओं का अभ्यास अलग से करें क्योंकि हिंदी में मात्राओं का सही प्रयोग अत्यंत महत्वपूर्ण है।
-          </p>
-          <p>
-            TypeHindi.in पर उपलब्ध पाठ क्रमबद्ध तरीके से आपको स्वर, व्यंजन, मात्राएँ और संयुक्त अक्षर सिखाते हैं। प्रत्येक पाठ में अभ्यास शब्द दिए गए हैं जिन्हें बार-बार टाइप करके आप कीबोर्ड की कुंजियों को याद कर सकते हैं।
-          </p>
-        </div>
-      </section>
     </div>
   );
 }

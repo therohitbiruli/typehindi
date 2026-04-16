@@ -2,6 +2,8 @@
 
 import { useRef, useCallback, useEffect, memo } from "react";
 
+import { keyMap } from "../data/keyboard-layout";
+
 interface TypingBoxProps {
   targetText: string;
   typedText: string;
@@ -24,11 +26,30 @@ export const TypingBox = memo(function TypingBox({
     textareaRef.current?.focus();
   }, []);
 
-  const handleInput = useCallback(
-    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      onInput(e.target.value);
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+      if (isFinished) return;
+
+      // Handle Backspace
+      if (e.key === "Backspace") {
+        e.preventDefault();
+        onInput(typedText.slice(0, -1));
+        return;
+      }
+
+      // Check for mapped keys (InScript mapping)
+      const mapping = keyMap[e.code];
+      if (mapping) {
+        e.preventDefault();
+        const char = e.shiftKey ? mapping.shift : mapping.normal;
+        
+        // Only append if it's not a modifier key by itself (though mapping only has actual keys)
+        if (char) {
+          onInput(typedText + char);
+        }
+      }
     },
-    [onInput]
+    [onInput, typedText, isFinished]
   );
 
   // Prevent copy/paste
@@ -68,7 +89,8 @@ export const TypingBox = memo(function TypingBox({
         <textarea
           ref={textareaRef}
           value={typedText}
-          onChange={handleInput}
+          onKeyDown={handleKeyDown}
+          onChange={() => {}}
           onCopy={preventCopyPaste}
           onPaste={preventCopyPaste}
           onCut={preventCopyPaste}

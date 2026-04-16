@@ -172,9 +172,9 @@ export function GameCanvas() {
 
       // Draw score and lives
       ctx.fillStyle = isDark ? "#9ca3af" : "#6b7280";
-      ctx.font = "14px Inter, sans-serif";
+      ctx.font = "14px 'Noto Sans Devanagari', Inter, sans-serif";
       ctx.textAlign = "left";
-      ctx.fillText(`Score: ${scoreRef.current}`, 10, 25);
+      ctx.fillText(`स्कोर: ${scoreRef.current}`, 10, 25);
       ctx.textAlign = "right";
       ctx.fillText(`❤️ ${livesRef.current}`, canvas.width - 10, 25);
 
@@ -224,6 +224,12 @@ export function GameCanvas() {
     return () => window.removeEventListener("resize", resize);
   }, []);
 
+  const modeLabels: Record<GameMode, string> = {
+    words: "शब्द (Words)",
+    symbols: "प्रतीक (Symbols)",
+    sentences: "वाक्य (Sentences)"
+  };
+
   return (
     <div className="space-y-4">
       <div className="card overflow-hidden p-0">
@@ -242,9 +248,9 @@ export function GameCanvas() {
               <button
                 key={mode}
                 onClick={() => setGameMode(mode)}
-                className={`px-6 py-2 rounded-md font-medium capitalize transition-colors ${gameMode === mode ? 'bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400' : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+                className={`px-6 py-2 rounded-md font-medium transition-colors ${gameMode === mode ? 'bg-white dark:bg-gray-700 shadow-sm text-primary-600 dark:text-primary-400' : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
               >
-                {mode}
+                {modeLabels[mode]}
               </button>
             ))}
           </div>

@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { blogs } from '../data/blogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://typehindi.in';
@@ -15,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy-policy',
     '/terms',
     '/disclaimer',
+    ...blogs.map(blog => `/learn/${blog.slug}`),
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

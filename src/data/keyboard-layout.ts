@@ -64,7 +64,7 @@ export const keyboardRows: KeyMapping[][] = [
     { code: "KeyV", normal: "न", shift: "ऩ" },
     { code: "KeyB", normal: "व", shift: "ऴ" },
     { code: "KeyN", normal: "ल", shift: "ळ" },
-    { code: "KeyO", normal: "स", shift: "श" },
+    { code: "KeyM", normal: "स", shift: "श" },
     { code: "Comma", normal: ",", shift: "ष" },
     { code: "Period", normal: "।", shift: "श्र" },
     { code: "Slash", normal: "य", shift: "य़" },

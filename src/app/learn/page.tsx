@@ -53,7 +53,7 @@ export default function LearnPage() {
             <span>📰</span> लेख और मार्गदर्शिकाएँ (Guides)
           </h2>
           <div className="space-y-4">
-            {blogs.map((blog) => (
+            {blogs.slice(0, 6).map((blog) => (
               <Link 
                 key={blog.slug} 
                 href={`/learn/${blog.slug}`}
@@ -72,6 +72,14 @@ export default function LearnPage() {
                 </div>
               </Link>
             ))}
+            
+            <Link 
+              href="/blog" 
+              className="flex items-center justify-center w-full py-4 px-6 rounded-2xl border-2 border-dashed border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 font-bold hover:border-primary-300 hover:text-primary-600 dark:hover:border-primary-700 dark:hover:text-primary-400 transition-all group"
+            >
+              और भी लेख देखें (Show More)
+              <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+            </Link>
           </div>
         </div>
       </div>

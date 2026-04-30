@@ -1,45 +1,30 @@
 import Link from "next/link";
-import Image from "next/image";
+import { PracticeTool } from "../components/PracticeTool";
 
 export default function Homepage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#0A0A10] text-white">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/hero.png"
-            alt="TypeHindi Hero Background"
-            fill
-            className="object-cover opacity-60"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A10] z-10" />
+      {/* Hero Section - Practice Tool */}
+      <section className="relative overflow-hidden bg-gray-50 dark:bg-[#0A0A10] pt-12 pb-24">
+        <div className="container-main relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-indigo-600 dark:from-primary-400 dark:to-indigo-400">
+              हिंदी टाइपिंग अभ्यास और टेस्ट
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">
+              SSC, Stenographer, और LDC परीक्षाओं के लिए भारत का सर्वश्रेष्ठ इनस्क्रिप्ट (InScript) टाइपिंग प्लेटफॉर्म।
+            </p>
+          </div>
+          
+          <div className="bg-white dark:bg-gray-900 rounded-[2.5rem] p-6 sm:p-10 shadow-2xl shadow-primary-500/10 border border-gray-100 dark:border-gray-800">
+            <PracticeTool />
+          </div>
         </div>
-
-        <div className="container-main relative z-20 py-24 md:py-36 flex flex-col items-center justify-center text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-900/40 border border-primary-500/30 backdrop-blur-md mb-6">
-            <span className="flex h-2 w-2 rounded-full bg-primary-400 animate-pulse"></span>
-            <span className="text-sm font-medium text-primary-200">सर्वश्रेष्ठ हिंदी टाइपिंग प्लेटफॉर्म (The Ultimate Hindi Typing Platform)</span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-purple-400 to-indigo-400 leading-[1.4] md:leading-[1.4]">
-            हिंदी टाइपिंग अभ्यास <br className="hidden md:block" />
-            और टेस्ट (InScript)
-          </h1>
-          
-          <p className="text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed font-light">
-            SSC, Stenographer, और LDC परीक्षाओं की तैयारी करें। हमारे प्रीमियम और वैज्ञानिक रूप से डिज़ाइन किए गए अभ्यास प्लेटफॉर्म के साथ इनस्क्रिप्ट (InScript) कीबोर्ड में निपुणता प्राप्त करें।
-          </p>
-          
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link href="/practice" className="btn-primary text-lg px-8 py-4 shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all hover:scale-105">
-              अभी अभ्यास शुरू करें
-            </Link>
-            <Link href="/game" className="btn-secondary text-lg px-8 py-4 bg-white/5 border-white/10 hover:bg-white/10 transition-all backdrop-blur-md">
-              टाइपिंग गेम खेलें
-            </Link>
-          </div>
+        
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-0 opacity-20 dark:opacity-40 pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary-400 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-400 rounded-full blur-[120px]"></div>
         </div>
       </section>
 

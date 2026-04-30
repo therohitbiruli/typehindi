@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/test',
     '/keyboard-layout',
     '/resources',
+    '/blog',
     '/about',
     '/contact',
     '/privacy-policy',

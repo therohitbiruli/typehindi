@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
       <h1 className="heading-1 mb-6">गोपनीयता नीति (Privacy Policy)</h1>
 
       <div className="prose max-w-none text-gray-600 dark:text-gray-300 space-y-4">
-        <p><strong>अंतिम अद्यतन:</strong> अप्रैल 2025</p>
+        <p><strong>अंतिम अद्यतन:</strong> अप्रैल 2026</p>
 
         <h2 className="heading-2">परिचय (Introduction)</h2>
         <p>

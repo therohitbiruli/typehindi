@@ -171,6 +171,41 @@ export default function TestPage() {
       <Keyboard activeKey={activeKey} isShift={isShift} visible={showKeyboard} />
 
       <AdPlaceholder position="bottom" />
+
+      {/* Test Guide & Criteria */}
+      <section className="mt-12 border-t border-gray-100 dark:border-gray-900 pt-12 pb-8">
+        <h2 className="text-2xl font-bold mb-6">SSC स्टेनोग्राफर और LDC के लिए पासिंग क्राइटेरिया</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="card bg-gray-50 dark:bg-gray-900/50">
+            <h3 className="font-bold mb-3 text-lg">स्टेनोग्राफर (Grade C & D)</h3>
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <li>• ग्रेड C के लिए 100 WPM की डिक्टेशन गति।</li>
+              <li>• ग्रेड D के लिए 80 WPM की डिक्टेशन गति।</li>
+              <li>• ट्रांसक्रिप्शन के दौरान 95-97% सटीकता (Accuracy) अनिवार्य है।</li>
+              <li>• हिंदी स्टेनोग्राफर के लिए ट्रांसक्रिप्शन समय: 65 मिनट (Grade D)।</li>
+            </ul>
+          </div>
+          <div className="card bg-gray-50 dark:bg-gray-900/50">
+            <h3 className="font-bold mb-3 text-lg">LDC / JSA / क्लर्क</h3>
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <li>• SSC CHSL के लिए 30-35 WPM की हिंदी टाइपिंग गति।</li>
+              <li>• टाइपिंग टेस्ट आमतौर पर 10 मिनट का होता है।</li>
+              <li>• 1750 की-डिप्रेशन (Key Depressions) 10 मिनट में।</li>
+              <li>• UR कैटेगरी के लिए 7% और अन्य के लिए 10% त्रुटि मान्य।</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-8 prose prose-sm max-w-none text-gray-600 dark:text-gray-400">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white">टेस्ट के दौरान इन बातों का ध्यान रखें:</h3>
+          <p>
+            जब आप TypeHindi पर टेस्ट दे रहे हों, तो अपनी गति के साथ-साथ त्रुटियों (Errors) पर भी नज़र रखें। वास्तविक परीक्षा में, बैकस्पेस का अधिक उपयोग आपकी गति को प्रभावित कर सकता है। हमारा टेस्ट मोड आपको वह सटीकता और दबाव प्रदान करता है जो वास्तविक सरकारी परीक्षा केंद्रों में महसूस होता है। 
+          </p>
+          <p>
+            नियमित रूप से 10 मिनट का टेस्ट देने से आपकी एकाग्रता बढ़ती है और आप लंबी अवधि तक बिना थके टाइप करने में सक्षम होते हैं।
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

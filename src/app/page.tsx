@@ -24,12 +24,12 @@ export default function Homepage() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-purple-400 to-indigo-400 leading-[1.4] md:leading-[1.4]">
-            बिजली की गति से <br className="hidden md:block" />
-            हिंदी टाइपिंग सीखें
+            हिंदी टाइपिंग अभ्यास <br className="hidden md:block" />
+            और टेस्ट (InScript)
           </h1>
           
           <p className="text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed font-light">
-            अपनी उत्पादकता बढ़ाएं, सरकारी परीक्षाओं की तैयारी करें, और हमारे प्रीमियम, अत्यधिक अनुकूलित अभ्यास प्लेटफॉर्म के साथ इनस्क्रिप्ट (InScript) कीबोर्ड लेआउट में निपुणता प्राप्त करें।
+            SSC, Stenographer, और LDC परीक्षाओं की तैयारी करें। हमारे प्रीमियम और वैज्ञानिक रूप से डिज़ाइन किए गए अभ्यास प्लेटफॉर्म के साथ इनस्क्रिप्ट (InScript) कीबोर्ड में निपुणता प्राप्त करें।
           </p>
           
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -130,6 +130,46 @@ export default function Homepage() {
         </div>
       </section>
       
+      {/* Why TypeHindi is the Best Section */}
+      <section className="py-24 bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-900">
+        <div className="container-main">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-center">TypeHindi हिंदी टाइपिंग सीखने के लिए सर्वश्रेष्ठ क्यों है?</h2>
+            
+            <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-300 space-y-6">
+              <p>
+                आज के प्रतिस्पर्धी युग में, विशेष रूप से भारत में सरकारी नौकरियों के लिए, हिंदी टाइपिंग एक अनिवार्य कौशल बन गया है। SSC CGL, CHSL, MTS, Stenographer, और विभिन्न राज्य स्तरीय LDC (Lower Division Clerk) परीक्षाओं में सफलता प्राप्त करने के लिए न केवल गति बल्कि सटीकता भी अत्यंत महत्वपूर्ण है। TypeHindi.in को इन्ही आवश्यकताओं को ध्यान में रखकर विकसित किया गया है।
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">1. वैज्ञानिक और उपयोगकर्ता के अनुकूल इंटरफ़ेस</h3>
+              <p>
+                हमारा प्लेटफ़ॉर्म आधुनिक वेब तकनीकों पर आधारित है जो आपको बिना किसी अंतराल (lag) के एक सुचारू अनुभव प्रदान करता है। इंटरैक्टिव कीबोर्ड मार्गदर्शन आपको प्रत्येक कीस्ट्रोक के लिए सही उंगली की स्थिति बताता है, जो स्पर्श-टाइपिंग (Touch Typing) सीखने का सबसे प्रभावी तरीका है।
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">2. परीक्षा-उन्मुख अभ्यास सामग्री</h3>
+              <p>
+                TypeHindi पर उपलब्ध सभी अनुच्छेद (paragraphs) वास्तविक सरकारी परीक्षा पत्रों और आधिकारिक सूचनाओं से प्रेरित हैं। हमने स्टेनोग्राफर और एलडीसी परीक्षाओं के लिए विशेष रूप से कानूनी, प्रशासनिक और सामान्य ज्ञान आधारित सामग्री शामिल की है, ताकि आप परीक्षा के माहौल से पहले ही परिचित हो सकें।
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">3. विस्तृत प्रदर्शन विश्लेषण (Analytics)</h3>
+              <p>
+                हम केवल आपकी गति (WPM) नहीं दिखाते, बल्कि हम आपकी शुद्ध गति (Net Speed), कुल त्रुटियाँ, और सटीकता प्रतिशत का भी गहन विश्लेषण प्रदान करते हैं। यह आपको अपनी कमजोरियों को पहचानने और उन पर काम करने में मदद करता है। हमारा 'Daily Challenge' आपको हर दिन बेहतर बनने के लिए प्रेरित करता है।
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">4. इनस्क्रिप्ट (InScript) कीबोर्ड पर विशेष ध्यान</h3>
+              <p>
+                भारत सरकार ने इनस्क्रिप्ट को मानक कीबोर्ड लेआउट घोषित किया है। TypeHindi पूरी तरह से इनस्क्रिप्ट लेआउट को समर्पित है, जिससे यह सुनिश्चित होता है कि आप वही सीख रहे हैं जो परीक्षाओं में माँगा जाता है। यूनिकोड आधारित होने के कारण, यहाँ सीखा गया कौशल हर डिजिटल प्लेटफ़ॉर्म पर काम आता है।
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">5. पूर्णतः सुरक्षित और निःशुल्क</h3>
+              <p>
+                TypeHindi का उपयोग करने के लिए आपको किसी पंजीकरण या लॉगिन की आवश्यकता नहीं है। आपका डेटा आपके ब्राउज़र में ही रहता है। हम एक विज्ञापन-समर्थित मॉडल पर काम करते हैं ताकि हम इस उच्च गुणवत्ता वाली सेवा को हमेशा के लिए आपके लिए निःशुल्क रख सकें।
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQs */}
       <section className="py-24 bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-900">
         <div className="container-main max-w-4xl">

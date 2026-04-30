@@ -5,7 +5,7 @@ export default function Homepage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Practice Tool */}
-      <section className="relative overflow-hidden bg-gray-50 dark:bg-[#0A0A10] pt-12 pb-24">
+      <section className="relative overflow-hidden bg-gray-50 dark:bg-[#0A0A10] pt-20 md:pt-32 pb-24">
         <div className="container-main relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-indigo-600 dark:from-primary-400 dark:to-indigo-400">

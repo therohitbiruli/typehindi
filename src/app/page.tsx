@@ -5,19 +5,13 @@ export default function Homepage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Practice Tool */}
-      <section className="relative overflow-hidden bg-gray-50 dark:bg-[#0A0A10] pt-20 md:pt-32 pb-24">
+      <section className="relative overflow-hidden bg-white dark:bg-gray-950 pt-6 md:pt-8 pb-12">
         <div className="container-main relative z-10">
 
           
           <div className="bg-white dark:bg-gray-900 rounded-[2.5rem] p-6 sm:p-10 shadow-2xl shadow-primary-500/10 border border-gray-100 dark:border-gray-800">
             <PracticeTool />
           </div>
-        </div>
-        
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-0 opacity-20 dark:opacity-40 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary-400 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-400 rounded-full blur-[120px]"></div>
         </div>
       </section>
 

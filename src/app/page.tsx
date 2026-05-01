@@ -7,14 +7,7 @@ export default function Homepage() {
       {/* Hero Section - Practice Tool */}
       <section className="relative overflow-hidden bg-gray-50 dark:bg-[#0A0A10] pt-20 md:pt-32 pb-24">
         <div className="container-main relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-indigo-600 dark:from-primary-400 dark:to-indigo-400">
-              हिंदी टाइपिंग अभ्यास और टेस्ट
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">
-              SSC, Stenographer, और LDC परीक्षाओं के लिए भारत का सर्वश्रेष्ठ इनस्क्रिप्ट (InScript) टाइपिंग प्लेटफॉर्म।
-            </p>
-          </div>
+
           
           <div className="bg-white dark:bg-gray-900 rounded-[2.5rem] p-6 sm:p-10 shadow-2xl shadow-primary-500/10 border border-gray-100 dark:border-gray-800">
             <PracticeTool />

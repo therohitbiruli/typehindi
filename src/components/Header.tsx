@@ -30,7 +30,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-950/95">
+    <header className="sticky top-0 z-50 border-b border-white/20 bg-white/80 backdrop-blur-md shadow-sm dark:border-gray-800/50 dark:bg-gray-950/80">
       <div className="container-main">
         <div className="flex h-14 items-center justify-between">
           {/* Logo */}

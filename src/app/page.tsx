@@ -6,11 +6,14 @@ export default function Homepage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Practice Tool */}
-      <section className="relative overflow-hidden bg-gray-50 dark:bg-gray-950 pt-6 md:pt-8 pb-12">
-        <div className="container-main relative z-10">
+      <section className="relative overflow-hidden bg-gray-50 dark:bg-gray-950 pt-6 md:pt-8 pb-12 bg-grid-pattern">
+        {/* Animated Background Blobs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob dark:bg-primary-900/20"></div>
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000 dark:bg-purple-900/20"></div>
+        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-pink-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000 dark:bg-pink-900/20"></div>
 
-          
-          <div className="bg-white dark:bg-gray-900 rounded-[2.5rem] p-6 sm:p-10 shadow-2xl shadow-primary-500/10 border border-gray-200 dark:border-gray-800">
+        <div className="container-main relative z-10">
+          <div className="glass-card rounded-[2.5rem] p-6 sm:p-10 shadow-2xl shadow-primary-500/10">
             <PracticeTool />
           </div>
         </div>
@@ -20,7 +23,7 @@ export default function Homepage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container-main">
           <header className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">सफलता के लिए आवश्यक सब कुछ</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400">सफलता के लिए आवश्यक सब कुछ</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               TypeHindi आपको एक पेशेवर हिंदी टाइपिस्ट बनने में मदद करने के लिए उपकरणों का एक संपूर्ण सूट (suite) प्रदान करता है।
             </p>
@@ -107,7 +110,7 @@ export default function Homepage() {
       <section className="py-24 bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-900">
         <div className="container-main">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-center">TypeHindi हिंदी टाइपिंग सीखने के लिए सर्वश्रेष्ठ क्यों है?</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400">TypeHindi हिंदी टाइपिंग सीखने के लिए सर्वश्रेष्ठ क्यों है?</h2>
             
             <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-300 space-y-6">
               <p>
@@ -175,7 +178,7 @@ export default function Homepage() {
       <section className="py-24 bg-gray-50 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
         <div className="container-main">
           <header className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">नवीनतम लेख और मार्गदर्शिकाएँ</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400">नवीनतम लेख और मार्गदर्शिकाएँ</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               टाइपिंग स्पीड बढ़ाने और सरकारी परीक्षाओं की तैयारी के लिए हमारे विशेषज्ञों द्वारा लिखे गए ज्ञानवर्धक लेख पढ़ें।
             </p>
@@ -186,7 +189,7 @@ export default function Homepage() {
               <Link 
                 key={blog.slug} 
                 href={`/learn/${blog.slug}`}
-                className="group flex flex-col h-full bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-200 dark:hover:border-primary-800"
+                className="group flex flex-col h-full glass-card rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-primary-300 dark:hover:border-primary-700"
               >
                 <div className="p-6 flex flex-col h-full">
                   <div className="flex items-center gap-2 mb-4">

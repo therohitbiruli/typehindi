@@ -13,6 +13,7 @@ const navItems = [
   { href: "/game", label: "Game" },
   { href: "/test", label: "Test" },
   { href: "/keyboard-layout", label: "Keyboard Layout" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ];
 

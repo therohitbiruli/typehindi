@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PracticeTool } from "../components/PracticeTool";
+import { blogs } from "../data/blogs";
 
 export default function Homepage() {
   return (
@@ -166,6 +167,59 @@ export default function Homepage() {
                 टाइपिंग स्पीड बढ़ाने का सबसे बेहतर तरीका लगातार और अनुशासित अभ्यास है। बैकस्पेस (Backspace) का कम से कम उपयोग करें, कीबोर्ड को देखे बिना टाइप करने (Touch Typing) की आदत डालें, और शुरुआत में अपनी गति के बजाय सटीकता (Accuracy) पर ध्यान केंद्रित करें।
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Articles Section */}
+      <section className="py-24 bg-gray-50 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+        <div className="container-main">
+          <header className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">नवीनतम लेख और मार्गदर्शिकाएँ</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              टाइपिंग स्पीड बढ़ाने और सरकारी परीक्षाओं की तैयारी के लिए हमारे विशेषज्ञों द्वारा लिखे गए ज्ञानवर्धक लेख पढ़ें।
+            </p>
+          </header>
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-12">
+            {blogs.slice(0, 6).map((blog) => (
+              <Link 
+                key={blog.slug} 
+                href={`/learn/${blog.slug}`}
+                className="group flex flex-col h-full bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-200 dark:hover:border-primary-800"
+              >
+                <div className="p-6 flex flex-col h-full">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-900/30 text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider">
+                      {blog.category}
+                    </span>
+                    <span className="text-xs text-gray-500">{blog.date}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors leading-tight">
+                    {blog.title}
+                  </h3>
+                  
+                  <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-3 mb-6 flex-grow">
+                    {blog.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm">
+                    पूरा लेख पढ़ें <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Link 
+              href="/blog" 
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white dark:bg-gray-950 border-2 border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300 font-bold hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all shadow-sm"
+            >
+              सभी लेख देखें (View All Articles)
+              <span className="ml-2">→</span>
+            </Link>
           </div>
         </div>
       </section>

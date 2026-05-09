@@ -6,11 +6,11 @@ export default function Homepage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Practice Tool */}
-      <section className="relative overflow-hidden bg-gray-50 dark:bg-gray-950 pt-6 md:pt-8 pb-12 bg-grid-pattern">
+      <section className="relative overflow-hidden bg-slate-50 dark:bg-slate-950 pt-6 md:pt-8 pb-12 bg-grid-pattern">
         {/* Animated Background Blobs */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob dark:bg-primary-900/20"></div>
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000 dark:bg-purple-900/20"></div>
-        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-pink-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000 dark:bg-pink-900/20"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-300/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob dark:bg-primary-900/40"></div>
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-300/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000 dark:bg-purple-900/40"></div>
+        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-pink-300/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000 dark:bg-pink-900/40"></div>
 
         <div className="container-main relative z-10">
           <div className="glass-card rounded-[2.5rem] p-6 sm:p-10 shadow-2xl shadow-primary-500/10">

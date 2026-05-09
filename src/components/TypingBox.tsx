@@ -62,56 +62,52 @@ export const TypingBox = memo(function TypingBox({
   }, []);
 
   return (
-    <div className="space-y-4">
-      {/* Target text display */}
+    <div className="relative w-full rounded-2xl md:px-4 py-8 min-h-[200px]" onClick={handleFocus}>
+      {/* Target text display (Monkeytype style) */}
       <div
-        className="card cursor-text select-none font-hindi text-lg leading-relaxed tracking-wide"
-        onClick={handleFocus}
+        className="font-hindi text-2xl md:text-4xl leading-relaxed tracking-wide pointer-events-none select-none z-10 relative text-center"
         id="typing-target"
       >
         {targetText.split("").map((char, index) => {
-          let className = "char-upcoming";
+          let className = "text-slate-400 dark:text-slate-600";
           if (index < typedText.length) {
-            className = typedText[index] === char ? "char-correct" : "char-incorrect";
+            className = typedText[index] === char ? "text-slate-800 dark:text-slate-200 font-bold" : "text-red-500 bg-red-100/50 dark:bg-red-900/30 rounded-sm";
           } else if (index === typedText.length) {
-            className = "char-current";
+            className = "border-b-4 border-primary-500 animate-pulse text-slate-800 dark:text-slate-200 font-bold";
           }
           return (
-            <span key={index} className={className}>
+            <span key={index} className={`transition-colors duration-75 ${className}`}>
               {char}
             </span>
           );
         })}
       </div>
 
-      {/* Hidden textarea for input */}
-      <div className="relative">
-        <textarea
-          ref={textareaRef}
-          value={typedText}
-          onKeyDown={handleKeyDown}
-          onChange={() => {}}
-          onCopy={preventCopyPaste}
-          onPaste={preventCopyPaste}
-          onCut={preventCopyPaste}
-          disabled={isFinished}
-          className="w-full resize-none rounded-lg border border-gray-300 bg-white p-4 font-hindi text-lg leading-relaxed focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-900 dark:focus:border-primary-400"
-          rows={3}
-          placeholder={isStarted ? "" : "यहाँ टाइप करना शुरू करें..."}
-          spellCheck={false}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          id="typing-input"
-        />
-        {isFinished && (
-          <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-white/80 dark:bg-gray-900/80">
-            <p className="text-lg font-semibold text-primary-600 dark:text-primary-400">
-              ✓ पूर्ण! (Completed!)
-            </p>
-          </div>
-        )}
-      </div>
+      {/* Hidden textarea for input capture */}
+      <textarea
+        ref={textareaRef}
+        value={typedText}
+        onKeyDown={handleKeyDown}
+        onChange={() => {}}
+        onCopy={preventCopyPaste}
+        onPaste={preventCopyPaste}
+        onCut={preventCopyPaste}
+        disabled={isFinished}
+        className="absolute inset-0 w-full h-full opacity-0 resize-none cursor-text z-0"
+        spellCheck={false}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        id="typing-input"
+      />
+      
+      {isFinished && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center rounded-2xl bg-white/60 backdrop-blur-md dark:bg-gray-900/60">
+          <p className="text-3xl font-extrabold text-primary-600 dark:text-primary-400">
+            ✓ पूर्ण! (Completed)
+          </p>
+        </div>
+      )}
     </div>
   );
 });

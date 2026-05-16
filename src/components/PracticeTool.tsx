@@ -98,16 +98,16 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
   return (
     <div className="w-full">
       {/* Controls */}
-      <div className="mb-8 flex flex-wrap items-center justify-center gap-6">
-        <div className="flex gap-2">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-100 dark:bg-gray-800 p-3 rounded border border-gray-300 dark:border-gray-700">
+        <div className="flex gap-1">
           {DIFFICULTY_OPTIONS.map((opt) => (
             <button
               key={opt.value}
               onClick={() => handleDifficultyChange(opt.value)}
-              className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
+              className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
                 difficulty === opt.value
-                  ? "bg-slate-800 text-white shadow-md dark:bg-slate-200 dark:text-slate-900"
-                  : "text-slate-500 hover:text-slate-800 hover:bg-slate-200/50 dark:hover:text-slate-200 dark:hover:bg-slate-800/50"
+                  ? "bg-blue-600 text-white"
+                  : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-600"
               }`}
             >
               {opt.label}
@@ -115,17 +115,15 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
           ))}
         </div>
 
-        <div className="w-px h-6 bg-slate-200 dark:bg-slate-700 hidden sm:block"></div>
-
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           {TIMER_OPTIONS.map((opt) => (
             <button
               key={opt.seconds}
               onClick={() => handleTimerChange(opt.seconds)}
-              className={`px-4 py-2 rounded-full text-sm font-bold transition-all ${
+              className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
                 timerSeconds === opt.seconds
-                  ? "bg-slate-800 text-white shadow-md dark:bg-slate-200 dark:text-slate-900"
-                  : "text-slate-500 hover:text-slate-800 hover:bg-slate-200/50 dark:hover:text-slate-200 dark:hover:bg-slate-800/50"
+                  ? "bg-blue-600 text-white"
+                  : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-600"
               }`}
             >
               {opt.label}
@@ -133,16 +131,14 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
           ))}
         </div>
 
-        <div className="w-px h-6 bg-slate-200 dark:bg-slate-700 hidden sm:block"></div>
-
-        <div className="px-4 py-2 rounded-full flex items-center gap-2 text-primary-600 font-bold dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30">
-          <span className="animate-pulse">⏱</span>
+        <div className="px-4 py-1.5 rounded bg-white border border-gray-300 dark:bg-gray-700 dark:border-gray-600 flex items-center gap-2 text-gray-800 font-bold dark:text-white">
+          <span>⏱</span>
           <TimerDisplay formattedTime={formattedTime} isRunning={isRunning} />
         </div>
       </div>
 
       {/* Stats */}
-      <div className="mb-12">
+      <div className="mb-6">
         <Stats stats={stats} bestWpm={bestWpm} />
       </div>
 

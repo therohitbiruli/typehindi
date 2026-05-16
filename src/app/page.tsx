@@ -6,14 +6,13 @@ export default function Homepage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Practice Tool */}
-      <section className="relative overflow-hidden bg-slate-50 dark:bg-slate-950 pt-6 md:pt-8 pb-12 bg-grid-pattern">
-        {/* Animated Background Blobs */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-300/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob dark:bg-primary-900/40"></div>
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-300/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000 dark:bg-purple-900/40"></div>
-        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-pink-300/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000 dark:bg-pink-900/40"></div>
-
-        <div className="container-main relative z-10">
-          <div className="glass-card rounded-[2.5rem] p-6 sm:p-10 shadow-2xl shadow-primary-500/10">
+      <section className="bg-white dark:bg-gray-900 pt-6 md:pt-8 pb-12 border-b border-gray-200 dark:border-gray-800">
+        <div className="container-main">
+          <div className="text-center mb-6">
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Online Hindi Typing Test & Practice</h1>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">Practice Hindi typing in InScript layout for SSC, CPCT, and other exams.</p>
+          </div>
+          <div className="bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded p-4 shadow-sm">
             <PracticeTool />
           </div>
         </div>
@@ -23,7 +22,7 @@ export default function Homepage() {
       <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container-main">
           <header className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 py-2 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400">सफलता के लिए आवश्यक सब कुछ</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">सफलता के लिए आवश्यक सब कुछ</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               टाइपहिंदी आपको एक पेशेवर हिंदी टाइपिस्ट बनने में मदद करने के लिए उपकरणों का एक संपूर्ण सूट प्रदान करता है।
             </p>
@@ -110,7 +109,7 @@ export default function Homepage() {
       <section className="py-24 bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-900">
         <div className="container-main">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-8 py-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400">टाइपहिंदी टाइपिंग सीखने के लिए सर्वश्रेष्ठ क्यों है?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white border-b pb-2">टाइपहिंदी टाइपिंग सीखने के लिए सर्वश्रेष्ठ क्यों है?</h2>
             
             <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-300 space-y-6">
               <p>
@@ -141,6 +140,75 @@ export default function Homepage() {
               <p>
                 टाइपहिंदी का उपयोग करने के लिए आपको किसी पंजीकरण या लॉगिन की आवश्यकता नहीं है। आपका डेटा आपके ब्राउज़र में ही रहता है। हम एक विज्ञापन-समर्थित मॉडल पर काम करते हैं ताकि हम इस उच्च गुणवत्ता वाली सेवा को हमेशा के लिए आपके लिए निःशुल्क रख सकें।
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Massive SEO Content Section */}
+      <section className="py-12 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
+        <div className="container-main">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b pb-2">Overview of the Hindi Typing Tool</h2>
+              <div className="text-gray-700 dark:text-gray-300 space-y-4">
+                <p>Welcome to the most comprehensive Online Hindi Typing Test platform. This software uses the authentic InScript layout, mandated by the Government of India for all official purposes and examinations including SSC, CHSL, CGL, and State Police tests.</p>
+                <p>Here is how you can use this tool to improve your typing:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Select your time and difficulty:</strong> Choose from 1, 5, or 10-minute tests. The paragraphs are sourced from actual examination papers to give you realistic practice.</li>
+                  <li><strong>Type exactly what you see:</strong> Our real-time engine validates every keystroke. Green indicates correct characters, while red indicates errors.</li>
+                  <li><strong>Track your performance:</strong> At the end of the test, your WPM (Words Per Minute) and accuracy percentage are calculated based on standard examination rules.</li>
+                </ul>
+                <p>Our tool requires no software installation or font downloads. It works instantly in your browser, saving your best scores locally.</p>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b pb-2">How to Type Hindi Characters (InScript)?</h2>
+              <div className="text-gray-700 dark:text-gray-300 space-y-4">
+                <p>The InScript (Indian Script) keyboard layout is standardized by the Bureau of Indian Standards (BIS). It is a logical layout based on the phonetic nature of Indian scripts. Unlike transliteration tools where you type in English to get Hindi, InScript maps Hindi letters directly to the keys.</p>
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-4">Vowels (स्वर) and Matras</h3>
+                <p>Vowels are mapped to the left side of the keyboard. Pressing the key directly gives the 'Matra' (मात्रा), and holding SHIFT + Key gives the independent Vowel.</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li><strong>a</strong> = ो / <strong>A</strong> = ओ</li>
+                  <li><strong>s</strong> = े / <strong>S</strong> = ए</li>
+                  <li><strong>d</strong> = ् (Halant) / <strong>D</strong> = अ</li>
+                  <li><strong>f</strong> = ि / <strong>F</strong> = इ</li>
+                  <li><strong>g</strong> = ु / <strong>G</strong> = उ</li>
+                </ul>
+                
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-4">Consonants (व्यंजन)</h3>
+                <p>Consonants are mapped to the right side of the keyboard. They are arranged logically according to their phonetic categories (Guttural, Palatal, Dental, etc.).</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li><strong>k</strong> = क / <strong>K</strong> = ख</li>
+                  <li><strong>i</strong> = ग / <strong>I</strong> = घ</li>
+                  <li><strong>;</strong> = च / <strong>:</strong> = छ</li>
+                  <li><strong>p</strong> = ज / <strong>P</strong> = झ</li>
+                  <li><strong>l</strong> = त / <strong>L</strong> = थ</li>
+                </ul>
+                
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-4">Special Characters (संयुक्त अक्षर)</h3>
+                <p>To type compound characters (samyuktakshars), use the Halant (्) key, which is located on 'd'.</p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>क्ष = क + ् + ष (k + d + &lt;)</li>
+                  <li>त्र = त + ् + र (l + d + j)</li>
+                  <li>ज्ञ = ज + ् + ञ (p + d + {'}'})</li>
+                  <li>श्र = श + ् + र (M + d + j)</li>
+                  <li>Full Stop (।) = SHIFT + . (&gt;)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b pb-2">Why Learn Hindi Typing?</h2>
+              <div className="text-gray-700 dark:text-gray-300 space-y-4">
+                <p>Hindi typing is an essential skill in today's digital landscape in India. With the Government's push towards digital governance, all official documentation, circulars, and communications are processed in Hindi.</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Government Jobs:</strong> It is a mandatory requirement for SSC LDC, UDC, Court Clerks, and State Public Service Commission jobs.</li>
+                  <li><strong>Data Entry & Freelancing:</strong> High demand exists for fast Hindi typists in media, translation, and content creation industries.</li>
+                  <li><strong>Productivity:</strong> Instead of relying on slow transliteration software, native InScript typing allows for professional, error-free document creation at speeds exceeding 40+ WPM.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -178,7 +246,7 @@ export default function Homepage() {
       <section className="py-24 bg-gray-50 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
         <div className="container-main">
           <header className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 py-2 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400">नवीनतम लेख और मार्गदर्शिकाएँ</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">नवीनतम लेख और मार्गदर्शिकाएँ</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               टाइपिंग स्पीड बढ़ाने और सरकारी परीक्षाओं की तैयारी के लिए हमारे विशेषज्ञों द्वारा लिखे गए ज्ञानवर्धक लेख पढ़ें।
             </p>
@@ -189,9 +257,9 @@ export default function Homepage() {
               <Link 
                 key={blog.slug} 
                 href={`/learn/${blog.slug}`}
-                className="group flex flex-col h-full glass-card rounded-3xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:border-primary-300 dark:hover:border-primary-700"
+                className="group flex flex-col h-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded overflow-hidden hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
-                <div className="p-6 flex flex-col h-full">
+                <div className="p-4 flex flex-col h-full">
                   <div className="flex items-center gap-2 mb-4">
                     <span className="px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-900/30 text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider">
                       {blog.category}

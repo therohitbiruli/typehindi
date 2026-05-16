@@ -62,52 +62,56 @@ export const TypingBox = memo(function TypingBox({
   }, []);
 
   return (
-    <div className="relative w-full rounded-2xl md:px-4 py-8 min-h-[200px]" onClick={handleFocus}>
-      {/* Target text display (Monkeytype style) */}
+    <div className="space-y-4">
+      {/* Target text display */}
       <div
-        className="font-hindi text-2xl md:text-4xl leading-relaxed tracking-wide pointer-events-none select-none z-10 relative text-center"
+        className="card cursor-text select-none font-hindi text-lg md:text-xl leading-relaxed tracking-wide bg-gray-50 border border-gray-300 p-4 rounded text-left"
+        onClick={handleFocus}
         id="typing-target"
       >
         {targetText.split("").map((char, index) => {
-          let className = "text-slate-400 dark:text-slate-600";
+          let className = "text-gray-500";
           if (index < typedText.length) {
-            className = typedText[index] === char ? "text-slate-800 dark:text-slate-200 font-bold" : "text-red-500 bg-red-100/50 dark:bg-red-900/30 rounded-sm";
+            className = typedText[index] === char ? "text-green-700 font-bold" : "text-red-700 bg-red-100";
           } else if (index === typedText.length) {
-            className = "border-b-4 border-primary-500 animate-pulse text-slate-800 dark:text-slate-200 font-bold";
+            className = "border-b-2 border-blue-500 text-black";
           }
           return (
-            <span key={index} className={`transition-colors duration-75 ${className}`}>
+            <span key={index} className={className}>
               {char}
             </span>
           );
         })}
       </div>
 
-      {/* Hidden textarea for input capture */}
-      <textarea
-        ref={textareaRef}
-        value={typedText}
-        onKeyDown={handleKeyDown}
-        onChange={() => {}}
-        onCopy={preventCopyPaste}
-        onPaste={preventCopyPaste}
-        onCut={preventCopyPaste}
-        disabled={isFinished}
-        className="absolute inset-0 w-full h-full opacity-0 resize-none cursor-text z-0"
-        spellCheck={false}
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="off"
-        id="typing-input"
-      />
-      
-      {isFinished && (
-        <div className="absolute inset-0 z-20 flex items-center justify-center rounded-2xl bg-white/60 backdrop-blur-md dark:bg-gray-900/60">
-          <p className="text-3xl font-extrabold text-primary-600 dark:text-primary-400">
-            ✓ पूर्ण! (Completed)
-          </p>
-        </div>
-      )}
+      {/* Visible textarea for input */}
+      <div className="relative">
+        <textarea
+          ref={textareaRef}
+          value={typedText}
+          onKeyDown={handleKeyDown}
+          onChange={() => {}}
+          onCopy={preventCopyPaste}
+          onPaste={preventCopyPaste}
+          onCut={preventCopyPaste}
+          disabled={isFinished}
+          className="w-full resize-none rounded border border-gray-400 bg-white p-4 font-hindi text-lg leading-relaxed focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
+          rows={4}
+          placeholder={isStarted ? "" : "यहाँ टाइप करना शुरू करें (Type here)..."}
+          spellCheck={false}
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          id="typing-input"
+        />
+        {isFinished && (
+          <div className="absolute inset-0 flex items-center justify-center rounded bg-white/90 border border-gray-300">
+            <p className="text-xl font-bold text-green-700">
+              ✓ पूर्ण! (Completed)
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 });

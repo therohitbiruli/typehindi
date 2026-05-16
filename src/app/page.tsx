@@ -9,8 +9,8 @@ export default function Homepage() {
       <section className="bg-white dark:bg-gray-900 pt-6 md:pt-8 pb-12 border-b border-gray-200 dark:border-gray-800">
         <div className="container-main">
           <div className="text-center mb-6">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Online Hindi Typing Test & Practice</h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">Practice Hindi typing in InScript layout for SSC, CPCT, and other exams.</p>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">ऑनलाइन हिंदी टाइपिंग टेस्ट और अभ्यास</h1>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">SSC, CPCT और अन्य परीक्षाओं के लिए इनस्क्रिप्ट लेआउट में हिंदी टाइपिंग का अभ्यास करें।</p>
           </div>
           <div className="bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded p-4 shadow-sm">
             <PracticeTool />
@@ -150,25 +150,25 @@ export default function Homepage() {
         <div className="container-main">
           <div className="max-w-4xl mx-auto space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b pb-2">Overview of the Hindi Typing Tool</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b pb-2">हिंदी टाइपिंग टूल का अवलोकन</h2>
               <div className="text-gray-700 dark:text-gray-300 space-y-4">
-                <p>Welcome to the most comprehensive Online Hindi Typing Test platform. This software uses the authentic InScript layout, mandated by the Government of India for all official purposes and examinations including SSC, CHSL, CGL, and State Police tests.</p>
-                <p>Here is how you can use this tool to improve your typing:</p>
+                <p>सबसे व्यापक ऑनलाइन हिंदी टाइपिंग टेस्ट प्लेटफॉर्म पर आपका स्वागत है। यह सॉफ़्टवेयर प्रामाणिक इनस्क्रिप्ट (InScript) लेआउट का उपयोग करता है, जिसे भारत सरकार द्वारा SSC, CHSL, CGL और राज्य पुलिस परीक्षाओं सहित सभी आधिकारिक कार्यों और परीक्षाओं के लिए अनिवार्य किया गया है।</p>
+                <p>अपनी टाइपिंग सुधारने के लिए आप इस टूल का उपयोग कैसे कर सकते हैं:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Select your time and difficulty:</strong> Choose from 1, 5, or 10-minute tests. The paragraphs are sourced from actual examination papers to give you realistic practice.</li>
-                  <li><strong>Type exactly what you see:</strong> Our real-time engine validates every keystroke. Green indicates correct characters, while red indicates errors.</li>
-                  <li><strong>Track your performance:</strong> At the end of the test, your WPM (Words Per Minute) and accuracy percentage are calculated based on standard examination rules.</li>
+                  <li><strong>अपना समय और कठिनाई स्तर चुनें:</strong> 1, 5 या 10 मिनट के टेस्ट में से चुनें। आपको यथार्थवादी अभ्यास देने के लिए अनुच्छेद वास्तविक परीक्षा पत्रों से लिए गए हैं।</li>
+                  <li><strong>बिल्कुल वैसा ही टाइप करें जैसा आप देखते हैं:</strong> हमारा रियल-टाइम इंजन हर कीस्ट्रोक को मान्य करता है। हरा रंग सही अक्षरों को दर्शाता है, जबकि लाल रंग त्रुटियों को दर्शाता है।</li>
+                  <li><strong>अपने प्रदर्शन को ट्रैक करें:</strong> टेस्ट के अंत में, मानक परीक्षा नियमों के आधार पर आपके WPM (शब्द प्रति मिनट) और सटीकता प्रतिशत की गणना की जाती है।</li>
                 </ul>
-                <p>Our tool requires no software installation or font downloads. It works instantly in your browser, saving your best scores locally.</p>
+                <p>हमारे टूल को किसी सॉफ़्टवेयर इंस्टॉलेशन या फ़ॉन्ट डाउनलोड की आवश्यकता नहीं है। यह आपके ब्राउज़र में तुरंत काम करता है और आपके सर्वश्रेष्ठ स्कोर को सुरक्षित रखता है।</p>
               </div>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b pb-2">How to Type Hindi Characters (InScript)?</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b pb-2">हिंदी अक्षर कैसे टाइप करें (इनस्क्रिप्ट)?</h2>
               <div className="text-gray-700 dark:text-gray-300 space-y-4">
-                <p>The InScript (Indian Script) keyboard layout is standardized by the Bureau of Indian Standards (BIS). It is a logical layout based on the phonetic nature of Indian scripts. Unlike transliteration tools where you type in English to get Hindi, InScript maps Hindi letters directly to the keys.</p>
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-4">Vowels (स्वर) and Matras</h3>
-                <p>Vowels are mapped to the left side of the keyboard. Pressing the key directly gives the 'Matra' (मात्रा), and holding SHIFT + Key gives the independent Vowel.</p>
+                <p>इनस्क्रिप्ट (InScript) कीबोर्ड लेआउट भारतीय मानक ब्यूरो (BIS) द्वारा मानकीकृत है। यह भारतीय लिपियों की ध्वन्यात्मक प्रकृति पर आधारित एक तार्किक लेआउट है। लिप्यंतरण (transliteration) टूल के विपरीत जहाँ आप हिंदी प्राप्त करने के लिए अंग्रेजी में टाइप करते हैं, इनस्क्रिप्ट हिंदी अक्षरों को सीधे कुंजियों से जोड़ता है।</p>
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-4">स्वर और मात्राएँ</h3>
+                <p>स्वर कीबोर्ड के बाईं ओर मैप किए गए हैं। कुंजी को सीधे दबाने से 'मात्रा' मिलती है, और SHIFT + कुंजी दबाने से स्वतंत्र स्वर मिलता है।</p>
                 <ul className="list-disc pl-6 space-y-1">
                   <li><strong>a</strong> = ो / <strong>A</strong> = ओ</li>
                   <li><strong>s</strong> = े / <strong>S</strong> = ए</li>
@@ -177,8 +177,8 @@ export default function Homepage() {
                   <li><strong>g</strong> = ु / <strong>G</strong> = उ</li>
                 </ul>
                 
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-4">Consonants (व्यंजन)</h3>
-                <p>Consonants are mapped to the right side of the keyboard. They are arranged logically according to their phonetic categories (Guttural, Palatal, Dental, etc.).</p>
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-4">व्यंजन</h3>
+                <p>व्यंजन कीबोर्ड के दाईं ओर मैप किए गए हैं। उन्हें उनकी ध्वन्यात्मक श्रेणियों (कंठ्य, तालव्य, दंत्य, आदि) के अनुसार तार्किक रूप से व्यवस्थित किया गया है।</p>
                 <ul className="list-disc pl-6 space-y-1">
                   <li><strong>k</strong> = क / <strong>K</strong> = ख</li>
                   <li><strong>i</strong> = ग / <strong>I</strong> = घ</li>
@@ -187,26 +187,26 @@ export default function Homepage() {
                   <li><strong>l</strong> = त / <strong>L</strong> = थ</li>
                 </ul>
                 
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-4">Special Characters (संयुक्त अक्षर)</h3>
-                <p>To type compound characters (samyuktakshars), use the Halant (्) key, which is located on 'd'.</p>
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-4">संयुक्त अक्षर</h3>
+                <p>संयुक्त अक्षर टाइप करने के लिए हलंत (्) कुंजी का उपयोग करें, जो 'd' पर स्थित है।</p>
                 <ul className="list-disc pl-6 space-y-1">
                   <li>क्ष = क + ् + ष (k + d + &lt;)</li>
                   <li>त्र = त + ् + र (l + d + j)</li>
                   <li>ज्ञ = ज + ् + ञ (p + d + {'}'})</li>
                   <li>श्र = श + ् + र (M + d + j)</li>
-                  <li>Full Stop (।) = SHIFT + . (&gt;)</li>
+                  <li>पूर्ण विराम (।) = SHIFT + . (&gt;)</li>
                 </ul>
               </div>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b pb-2">Why Learn Hindi Typing?</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b pb-2">हिंदी टाइपिंग क्यों सीखें?</h2>
               <div className="text-gray-700 dark:text-gray-300 space-y-4">
-                <p>Hindi typing is an essential skill in today's digital landscape in India. With the Government's push towards digital governance, all official documentation, circulars, and communications are processed in Hindi.</p>
+                <p>आज के डिजिटल परिदृश्य में भारत में हिंदी टाइपिंग एक आवश्यक कौशल है। डिजिटल प्रशासन की दिशा में सरकार के प्रयासों के साथ, सभी आधिकारिक दस्तावेज, परिपत्र और संचार हिंदी में संसाधित किए जाते हैं।</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Government Jobs:</strong> It is a mandatory requirement for SSC LDC, UDC, Court Clerks, and State Public Service Commission jobs.</li>
-                  <li><strong>Data Entry & Freelancing:</strong> High demand exists for fast Hindi typists in media, translation, and content creation industries.</li>
-                  <li><strong>Productivity:</strong> Instead of relying on slow transliteration software, native InScript typing allows for professional, error-free document creation at speeds exceeding 40+ WPM.</li>
+                  <li><strong>सरकारी नौकरियाँ:</strong> SSC LDC, UDC, कोर्ट क्लर्क और राज्य लोक सेवा आयोग की नौकरियों के लिए यह एक अनिवार्य आवश्यकता है।</li>
+                  <li><strong>डेटा एंट्री और फ्रीलांसिंग:</strong> मीडिया, अनुवाद और सामग्री निर्माण उद्योगों में तेज हिंदी टाइपिस्टों की भारी मांग है।</li>
+                  <li><strong>उत्पादकता:</strong> धीमे लिप्यंतरण सॉफ़्टवेयर पर निर्भर रहने के बजाय, मूल इनस्क्रिप्ट टाइपिंग 40+ WPM से अधिक गति पर पेशेवर, त्रुटि-मुक्त दस्तावेज़ निर्माण की अनुमति देती है।</li>
                 </ul>
               </div>
             </div>

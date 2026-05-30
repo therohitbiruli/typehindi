@@ -26,8 +26,13 @@ export const metadata: Metadata = {
     template: "%s | TypeHindi",
   },
   description:
-    "Free online Hindi typing practice with InScript keyboard layout. Improve your Hindi typing speed for SSC, CGL, CHSL exams. Real-time WPM tracking, lessons, and typing games.",
+    "Free online Hindi typing practice with Mangal Font (InScript keyboard layout). Improve your Hindi typing speed for SSC, CGL, CHSL exams. Real-time WPM tracking, lessons, and typing games.",
   keywords: [
+    "mangal font hindi typing test",
+    "online hindi typing test mangal font",
+    "hindi mangal typing test",
+    "hindi typing tutor mangal font",
+    "hindi typing test online mangal font",
     "Hindi typing practice",
     "InScript keyboard",
     "Hindi typing test",
@@ -36,6 +41,7 @@ export const metadata: Metadata = {
     "free Hindi typing",
     "हिंदी टाइपिंग अभ्यास",
     "इंस्क्रिप्ट कीबोर्ड",
+    "मंगल फॉन्ट टाइपिंग"
   ],
   openGraph: {
     title: "TypeHindi - Free Hindi Typing Practice",
@@ -62,7 +68,7 @@ const jsonLd = {
   "@type": "WebSite",
   "name": "TypeHindi",
   "url": "https://typehindi.in",
-  "description": "The ultimate Hindi typing platform with InScript keyboard layout, games, and WPM tracking.",
+  "description": "The ultimate Hindi typing platform with Mangal Font & InScript keyboard layout, typing tests, and WPM tracking.",
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://typehindi.in/search?q={search_term_string}",

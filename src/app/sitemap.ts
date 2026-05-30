@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy-policy',
     '/terms',
     '/disclaimer',
+    '/mangal-font-typing-test',
     ...blogs.map(blog => `/learn/${blog.slug}`),
   ].map((route) => ({
     url: `${baseUrl}${route}`,

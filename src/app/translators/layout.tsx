@@ -12,7 +12,7 @@ export default function TranslatorsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col min-h-screen bg-[#f5f5f5]">
+    <div className="flex flex-col min-h-screen bg-[#f5f5f5] dark:bg-gray-950">
       <section className="bg-gradient-to-r from-[#4A8D9B] to-[#D59850] pt-12 pb-16 border-b border-gray-300">
         <div className="container-main px-4 text-center text-white">
           <h1 className="text-3xl font-light tracking-wide mb-2">Native Indian Language Translators</h1>

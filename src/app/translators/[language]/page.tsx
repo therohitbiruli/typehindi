@@ -10,7 +10,8 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { language: string } }): Metadata {
+export async function generateMetadata(props: { params: Promise<{ language: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const languageName = params.language.replace("english-to-", "").replace(/^\w/, (c) => c.toUpperCase());
   return {
     title: `English to ${languageName} Typing & Translator Tool | TypeHindi.in`,
@@ -18,7 +19,8 @@ export function generateMetadata({ params }: { params: { language: string } }): 
   };
 }
 
-export default function LanguageTranslatorPage({ params }: { params: { language: string } }) {
+export default async function LanguageTranslatorPage(props: { params: Promise<{ language: string }> }) {
+  const params = await props.params;
   const isMatch = params.language.startsWith("english-to-");
   const langName = params.language.replace("english-to-", "");
   const formattedLangName = langName.charAt(0).toUpperCase() + langName.slice(1);

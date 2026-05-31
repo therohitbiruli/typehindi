@@ -47,6 +47,10 @@ export default function Homepage() {
             <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">🔍</span>
             <span className="text-gray-600 font-light text-lg">कीबोर्ड लेआउट</span>
           </Link>
+          <Link href="/translators" className="flex flex-col items-center justify-center py-10 border-r border-gray-200 hover:bg-gray-50 transition-colors group">
+            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">🌐</span>
+            <span className="text-gray-600 font-light text-lg">ट्रांसलेटर (Translators)</span>
+          </Link>
           <Link href="/blog" className="flex flex-col items-center justify-center py-10 border-gray-200 hover:bg-gray-50 transition-colors group">
             <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">📰</span>
             <span className="text-gray-600 font-light text-lg">ब्लॉग (लेख)</span>

@@ -28,7 +28,7 @@ export default function BlogPage() {
           <Link 
             key={blog.slug} 
             href={`/learn/${blog.slug}`}
-            className="group flex flex-col h-full bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-200 dark:hover:border-primary-800"
+            className="group flex flex-col h-full bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow-sm rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-300 dark:hover:border-primary-600"
           >
             <div className="p-6 flex flex-col h-full">
               <div className="flex items-center gap-2 mb-4">

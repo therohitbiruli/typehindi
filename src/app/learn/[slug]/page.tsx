@@ -50,7 +50,7 @@ export default async function BlogDetailPage({ params }: Props) {
         ]}
       />
 
-      <article className="mt-8 max-w-4xl mx-auto">
+      <article className="mt-8 max-w-5xl lg:max-w-6xl mx-auto">
         <header className="mb-10 text-center">
           <div className="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-semibold mb-4">
             {blog.category}
@@ -82,16 +82,23 @@ export default async function BlogDetailPage({ params }: Props) {
 
 // Simple helper to convert basic markdown/text to HTML for the blog
 function formatContent(content: string) {
-  return content
+  let html = content
     .replace(/### (.*)/g, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
     .replace(/## (.*)/g, '<h2 class="text-3xl font-bold mt-10 mb-6">$1</h2>')
     .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8"><img src="$2" alt="$1" class="w-full rounded-xl shadow-md border border-gray-200 dark:border-gray-800" /><figcaption class="text-center text-sm text-gray-500 mt-3">$1</figcaption></figure>')
-    .replace(/\n\n/g, '</p><p class="mb-4">')
-    .replace(/- \*\*(.*?)\*\*(.*)/g, '<li class="mb-2"><strong>$1</strong>$2</li>')
-    .replace(/\* \*\*(.*?)\*\*(.*)/g, '<li class="mb-2"><strong>$1</strong>$2</li>')
-    .replace(/<\/p><p class="mb-4"><figure/g, '<figure')
-    .replace(/<\/figure><\/p>/g, '</figure>')
-    .replace(/<\/p><p class="mb-4">- /g, '<ul><li class="mb-2">')
-    .replace(/<\/p><p class="mb-4">\* /g, '<ul><li class="mb-2">')
-    .trim();
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+  // Convert markdown lists to styled <li> elements
+  html = html.replace(/(?:^|\n)- (.*)/g, '<li class="ml-6 list-disc mb-1">$1</li>');
+  html = html.replace(/(?:^|\n)\d+\. (.*)/g, '<li class="ml-6 list-decimal mb-1">$1</li>');
+
+  // Convert double newlines to paragraphs
+  html = html.replace(/\n\n/g, '</p><p class="mb-4">');
+
+  // Clean up paragraph wrapping around block elements
+  html = html.replace(/<\/p><p class="mb-4"><figure/g, '<figure');
+  html = html.replace(/<\/figure><\/p>/g, '</figure>');
+  html = html.replace(/<\/p><p class="mb-4"><h/g, '<h');
+
+  return html.trim();
 }

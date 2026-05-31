@@ -59,7 +59,7 @@ export default function LearnPage() {
                 href={`/learn/${blog.slug}`}
                 className="block group"
               >
-                <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 transition-all hover:shadow-md hover:border-primary-200 dark:hover:border-primary-800">
+                <div className="bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow-sm rounded-2xl p-5 transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-600">
                   <span className="text-xs font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-2 block">
                     {blog.category}
                   </span>

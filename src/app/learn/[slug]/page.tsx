@@ -85,9 +85,12 @@ function formatContent(content: string) {
   return content
     .replace(/### (.*)/g, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
     .replace(/## (.*)/g, '<h2 class="text-3xl font-bold mt-10 mb-6">$1</h2>')
+    .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8"><img src="$2" alt="$1" class="w-full rounded-xl shadow-md border border-gray-200 dark:border-gray-800" /><figcaption class="text-center text-sm text-gray-500 mt-3">$1</figcaption></figure>')
     .replace(/\n\n/g, '</p><p class="mb-4">')
     .replace(/- \*\*(.*?)\*\*(.*)/g, '<li class="mb-2"><strong>$1</strong>$2</li>')
     .replace(/\* \*\*(.*?)\*\*(.*)/g, '<li class="mb-2"><strong>$1</strong>$2</li>')
+    .replace(/<\/p><p class="mb-4"><figure/g, '<figure')
+    .replace(/<\/figure><\/p>/g, '</figure>')
     .replace(/<\/p><p class="mb-4">- /g, '<ul><li class="mb-2">')
     .replace(/<\/p><p class="mb-4">\* /g, '<ul><li class="mb-2">')
     .trim();

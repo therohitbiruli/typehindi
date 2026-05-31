@@ -5,52 +5,80 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export function generateStaticParams() {
-  return LANGUAGES.map((lang) => ({
-    language: `english-to-${lang.toLowerCase()}`,
-  }));
+  const params: { language: string }[] = [];
+  LANGUAGES.forEach((lang) => {
+    params.push({ language: `english-to-${lang.name.toLowerCase()}` });
+    params.push({ language: `hindi-to-${lang.name.toLowerCase()}` });
+  });
+  return params;
 }
 
 export async function generateMetadata(props: { params: Promise<{ language: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const languageName = params.language.replace("english-to-", "").replace(/^\w/, (c) => c.toUpperCase());
+  const isHindiSource = params.language.startsWith("hindi-to-");
+  const sourceName = isHindiSource ? "Hindi" : "English";
+  const prefix = isHindiSource ? "hindi-to-" : "english-to-";
+  
+  const targetLangStr = params.language.replace(prefix, "");
+  const langObj = LANGUAGES.find(l => l.name.toLowerCase() === targetLangStr);
+  const targetName = langObj ? langObj.name : targetLangStr.charAt(0).toUpperCase() + targetLangStr.slice(1);
+  const targetHindiName = langObj ? langObj.hindiName : targetName;
+
   return {
-    title: `English to ${languageName} Typing & Translator Tool | TypeHindi.in`,
-    description: `Free online English to ${languageName} typing tool. Convert your English text into ${languageName} script instantly.`,
+    title: `${sourceName} to ${targetName} (${targetHindiName}) Typing & Translator Tool | TypeHindi.in`,
+    description: `Free online ${sourceName} to ${targetName} typing tool. Convert your ${sourceName} text into ${targetName} script instantly.`,
   };
 }
 
 export default async function LanguageTranslatorPage(props: { params: Promise<{ language: string }> }) {
   const params = await props.params;
-  const isMatch = params.language.startsWith("english-to-");
-  const langName = params.language.replace("english-to-", "");
-  const formattedLangName = langName.charAt(0).toUpperCase() + langName.slice(1);
-
-  if (!isMatch || !LANGUAGES.some(l => l.toLowerCase() === langName)) {
+  
+  const isEnglishSource = params.language.startsWith("english-to-");
+  const isHindiSource = params.language.startsWith("hindi-to-");
+  
+  if (!isEnglishSource && !isHindiSource) {
     notFound();
   }
 
+  const prefix = isHindiSource ? "hindi-to-" : "english-to-";
+  const targetLangStr = params.language.replace(prefix, "");
+  
+  const langObj = LANGUAGES.find(l => l.name.toLowerCase() === targetLangStr);
+  if (!langObj) {
+    notFound();
+  }
+
+  const sourceName = isHindiSource ? "Hindi" : "English";
+  const sourceHindiName = isHindiSource ? "हिंदी" : "अंग्रेजी";
+  
   return (
     <div className="max-w-5xl mx-auto">
       <div className="mb-4 text-sm text-gray-500">
-        <Link href="/translators" className="text-blue-600 hover:underline">Translators</Link> &gt; English to {formattedLangName}
+        <Link href="/translators" className="text-blue-600 hover:underline">Translators</Link> &gt; {sourceName} to {langObj.name}
       </div>
 
-      <TranslatorTool language={formattedLangName} />
+      <TranslatorTool 
+        language={langObj.name} 
+        hindiLanguageName={langObj.hindiName}
+        sourceLanguage={sourceName} 
+      />
 
-      {/* Language Specific SEO Text mimicking TypingBaba layout density */}
+      {/* Language Specific SEO Text translated to Hindi */}
       <div className="bg-white border border-gray-200 shadow-sm p-6 md:p-8 space-y-6">
-        <h3 className="text-xl font-normal text-red-600 border-b border-gray-100 pb-2">How to use English to {formattedLangName} Typing Tool</h3>
+        <h3 className="text-xl font-normal text-red-600 border-b border-gray-100 pb-2">
+          {sourceHindiName} से {langObj.hindiName} टाइपिंग टूल का उपयोग कैसे करें
+        </h3>
         <div className="text-sm text-gray-600 leading-relaxed space-y-3">
-          <p>This is a free online English to {formattedLangName} transliteration tool. By using this tool, you can convert English letters into {formattedLangName} script instantly. For example, typing <strong>"namaste"</strong> in English will automatically be converted to the corresponding {formattedLangName} script.</p>
-          <p>It utilizes phonetic translation, meaning you just type the words as they sound. This tool makes it incredibly simple for users who do not know the complex {formattedLangName} keyboard layouts to generate accurate text for documents, emails, and social media.</p>
+          <p>यह एक मुफ्त ऑनलाइन {sourceHindiName} से {langObj.hindiName} लिप्यंतरण (transliteration) टूल है। इस टूल का उपयोग करके, आप {sourceHindiName} अक्षरों को तुरंत {langObj.hindiName} लिपि में बदल सकते हैं। उदाहरण के लिए, {sourceHindiName} में <strong>"नमस्ते"</strong> टाइप करने पर यह स्वचालित रूप से संबंधित {langObj.hindiName} लिपि में परिवर्तित हो जाएगा।</p>
+          <p>यह ध्वन्यात्मक (phonetic) अनुवाद का उपयोग करता है, जिसका अर्थ है कि आप शब्दों को वैसे ही टाइप करते हैं जैसे वे सुनाई देते हैं। यह टूल उन उपयोगकर्ताओं के लिए अविश्वसनीय रूप से सरल बनाता है जो जटिल {langObj.hindiName} कीबोर्ड लेआउट को नहीं जानते हैं, ताकि वे दस्तावेज़ों, ईमेल और सोशल मीडिया के लिए सटीक टेक्स्ट उत्पन्न कर सकें।</p>
         </div>
 
-        <h3 className="text-xl font-normal text-blue-800 border-b border-gray-100 pb-2">Key Features</h3>
+        <h3 className="text-xl font-normal text-blue-800 border-b border-gray-100 pb-2">मुख्य विशेषताएं (Key Features)</h3>
         <ul className="list-disc pl-5 text-sm text-gray-600 space-y-2">
-          <li><strong>Instant Conversion:</strong> The text is converted as soon as you press the spacebar.</li>
-          <li><strong>Easy to Use:</strong> No need to download or install complex fonts or software.</li>
-          <li><strong>Phonetic Typing:</strong> Type exactly how the word sounds in English.</li>
-          <li><strong>One-Click Copy:</strong> Copy your converted {formattedLangName} text to the clipboard with a single click.</li>
+          <li><strong>त्वरित रूपांतरण (Instant Conversion):</strong> जैसे ही आप स्पेसबार दबाते हैं, टेक्स्ट तुरंत बदल जाता है।</li>
+          <li><strong>उपयोग में आसान:</strong> किसी जटिल फॉन्ट या सॉफ़्टवेयर को डाउनलोड या इंस्टॉल करने की आवश्यकता नहीं है।</li>
+          <li><strong>ध्वन्यात्मक टाइपिंग:</strong> शब्द जैसा सुनाई देता है, ठीक वैसा ही टाइप करें।</li>
+          <li><strong>एक-क्लिक कॉपी:</strong> एक क्लिक से अपने परिवर्तित {langObj.hindiName} टेक्स्ट को क्लिपबोर्ड पर कॉपी करें।</li>
         </ul>
       </div>
     </div>

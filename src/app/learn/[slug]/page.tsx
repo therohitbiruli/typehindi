@@ -50,7 +50,7 @@ export default async function BlogDetailPage({ params }: Props) {
         ]}
       />
 
-      <article className="mt-8 max-w-5xl lg:max-w-6xl mx-auto">
+      <article className="mt-8 mx-auto w-full">
         <header className="mb-10 text-center">
           <div className="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-semibold mb-4">
             {blog.category}
@@ -67,7 +67,7 @@ export default async function BlogDetailPage({ params }: Props) {
 
         <AdPlaceholder position="top" />
 
-        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-12 shadow-sm border border-gray-100 dark:border-gray-800">
+        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-12 shadow-sm border border-gray-300 dark:border-gray-700">
           <div 
             className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-p:leading-relaxed prose-a:text-primary-600"
             dangerouslySetInnerHTML={{ __html: formatContent(blog.content) }}

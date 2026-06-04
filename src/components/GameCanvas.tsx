@@ -8,6 +8,7 @@ interface FallingWord {
   y: number;
   speed: number;
   id: number;
+  color: string;
 }
 
 const GAME_WORDS = [
@@ -27,6 +28,15 @@ const GAME_SENTENCES = [
   "परिश्रम सफलता की कुंजी है।",
   "आज का दिन बहुत शुभ है।",
   "सभी का सम्मान करो।"
+];
+
+const WORD_COLORS = [
+  "#ef4444", // red
+  "#3b82f6", // blue
+  "#10b981", // green
+  "#f59e0b", // yellow/amber
+  "#8b5cf6", // purple
+  "#ec4899", // pink
 ];
 
 type GameMode = "words" | "symbols" | "sentences";
@@ -59,6 +69,7 @@ export function GameCanvas() {
     else if (gameModeRef.current === "sentences") sourceArray = GAME_SENTENCES;
 
     const text = sourceArray[Math.floor(Math.random() * sourceArray.length)];
+    const color = WORD_COLORS[Math.floor(Math.random() * WORD_COLORS.length)];
     const baseSpeed = gameModeRef.current === "sentences" ? 0.2 : 0.5;
     const speed = baseSpeed + Math.min(scoreRef.current * 0.05, 2);
     
@@ -68,6 +79,7 @@ export function GameCanvas() {
       y: -20,
       speed,
       id: nextIdRef.current++,
+      color,
     });
   }, []);
 
@@ -130,7 +142,7 @@ export function GameCanvas() {
       ctx.stroke();
 
       // Update and draw words
-      ctx.font = "20px 'Noto Sans Devanagari', sans-serif";
+      ctx.font = "bold 20px 'Noto Sans Devanagari', sans-serif";
       ctx.textAlign = "left";
 
       wordsRef.current = wordsRef.current.filter((word) => {
@@ -148,23 +160,24 @@ export function GameCanvas() {
 
         // Draw word background
         const metrics = ctx.measureText(word.text);
-        const padding = 8;
-        ctx.fillStyle = isDark ? "#1f2937" : "#ffffff";
-        ctx.strokeStyle = isDark ? "#4b5563" : "#d1d5db";
-        ctx.lineWidth = 1;
+        const padding = 10;
+        
+        ctx.fillStyle = word.color;
+        ctx.strokeStyle = isDark ? "#ffffff22" : "#00000022";
+        ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.roundRect(
           word.x - padding,
-          word.y - 18,
+          word.y - 20,
           metrics.width + padding * 2,
-          30,
-          6
+          32,
+          8
         );
         ctx.fill();
         ctx.stroke();
 
-        // Draw word text
-        ctx.fillStyle = isDark ? "#e5e7eb" : "#1f2937";
+        // Draw word text (white looks best on vibrant backgrounds)
+        ctx.fillStyle = "#ffffff";
         ctx.fillText(word.text, word.x, word.y + 4);
 
         return true;

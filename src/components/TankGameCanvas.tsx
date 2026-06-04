@@ -9,7 +9,7 @@ interface Tank {
   y: number;
   speed: number;
   color: string;
-  angle: number; // For rotating the tank body to face center
+  angle: number;
   exploded: boolean;
   explosionFrame: number;
 }
@@ -22,14 +22,21 @@ const TANK_COLORS = [
   "#8b5cf6", // purple
 ];
 
-const ENGLISH_LETTERS = "abcdefghijklmnopqrstuvwxyz".split("");
+const ALPHABETS: Record<string, string[]> = {
+  English: "abcdefghijklmnopqrstuvwxyz".split(""),
+  Hindi: "अआइईउऊऋएऐओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह".split(""),
+  Tamil: "அஆஇஈஉஊஎஏஐஒஓஔகஙசஞடணதநபமயரலவழளறன".split(""),
+  Marathi: "अआइईउऊऋएऐओऔकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसह".split(""),
+  Bengali: "অআইঈউঊঋএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলবশষসহ".split(""),
+};
 
 export function TankGameCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [input, setInput] = useState("");
+  const [isPaused, setIsPaused] = useState(false);
+  const [language, setLanguage] = useState("Hindi");
   const [lives, setLives] = useState(3);
 
   const tanksRef = useRef<Tank[]>([]);
@@ -38,30 +45,35 @@ export function TankGameCanvas() {
   const animFrameRef = useRef<number>(0);
   const lastSpawnRef = useRef(0);
   const nextIdRef = useRef(0);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const isPausedRef = useRef(false);
 
-  // Turret angle points towards mouse or center
   const turretAngleRef = useRef(0);
+  const languageRef = useRef("Hindi");
+
+  useEffect(() => {
+    languageRef.current = language;
+  }, [language]);
+
+  const togglePause = () => {
+    isPausedRef.current = !isPausedRef.current;
+    setIsPaused(isPausedRef.current);
+  };
 
   const spawnTank = useCallback((canvasWidth: number, canvasHeight: number) => {
-    // Determine spawn edge: 0=top, 1=right, 2=bottom, 3=left
     const edge = Math.floor(Math.random() * 4);
     let x = 0;
     let y = 0;
     
-    // Spawn just outside the canvas
     if (edge === 0) { x = Math.random() * canvasWidth; y = -50; }
     else if (edge === 1) { x = canvasWidth + 50; y = Math.random() * canvasHeight; }
     else if (edge === 2) { x = Math.random() * canvasWidth; y = canvasHeight + 50; }
     else if (edge === 3) { x = -50; y = Math.random() * canvasHeight; }
 
-    const text = ENGLISH_LETTERS[Math.floor(Math.random() * ENGLISH_LETTERS.length)];
+    const letters = ALPHABETS[languageRef.current];
+    const text = letters[Math.floor(Math.random() * letters.length)];
     const color = TANK_COLORS[Math.floor(Math.random() * TANK_COLORS.length)];
     
-    // Speed increases slightly with score
     const speed = 0.5 + Math.min(scoreRef.current * 0.02, 2.0);
-
-    // Calculate angle towards center (where base is)
     const centerX = canvasWidth / 2;
     const centerY = canvasHeight / 2;
     const angle = Math.atan2(centerY - y, centerX - x);
@@ -85,20 +97,20 @@ export function TankGameCanvas() {
     livesRef.current = 3;
     lastSpawnRef.current = 0;
     nextIdRef.current = 0;
+    isPausedRef.current = false;
     setScore(0);
     setLives(3);
     setGameOver(false);
     setIsPlaying(true);
-    setInput("");
-    inputRef.current?.focus();
+    setIsPaused(false);
+    
+    // Auto-focus window so typing works immediately without clicking
+    window.focus();
   }, []);
 
   const stopGame = useCallback(() => {
     setIsPlaying(false);
     setGameOver(true);
-    if (animFrameRef.current) {
-      cancelAnimationFrame(animFrameRef.current);
-    }
   }, []);
 
   const drawTank = (ctx: CanvasRenderingContext2D, tank: Tank) => {
@@ -106,16 +118,13 @@ export function TankGameCanvas() {
     ctx.translate(tank.x, tank.y);
     ctx.rotate(tank.angle);
 
-    // Tank tracks
-    ctx.fillStyle = "#374151"; // dark gray
+    ctx.fillStyle = "#374151"; 
     ctx.fillRect(-20, -18, 40, 8);
     ctx.fillRect(-20, 10, 40, 8);
 
-    // Tank body
     ctx.fillStyle = tank.color;
     ctx.fillRect(-15, -12, 30, 24);
 
-    // Tank turret (facing forward / angle 0 relative to tank)
     ctx.fillStyle = "#1f2937";
     ctx.beginPath();
     ctx.arc(0, 0, 10, 0, Math.PI * 2);
@@ -130,7 +139,6 @@ export function TankGameCanvas() {
     ctx.translate(x, y);
     ctx.globalAlpha = Math.max(1 - frame / 30, 0);
     
-    // Orange/yellow blast
     ctx.fillStyle = "#f97316";
     ctx.beginPath();
     ctx.arc(0, 0, frame * 1.5, 0, Math.PI * 2);
@@ -148,7 +156,6 @@ export function TankGameCanvas() {
     ctx.save();
     ctx.translate(x, y);
 
-    // Draw base structure
     ctx.fillStyle = "#1e293b";
     ctx.beginPath();
     ctx.arc(0, 0, 30, 0, Math.PI * 2);
@@ -159,7 +166,6 @@ export function TankGameCanvas() {
     ctx.arc(0, 0, 20, 0, Math.PI * 2);
     ctx.fill();
     
-    // Base gun facing turretAngle
     ctx.rotate(turretAngleRef.current);
     ctx.fillStyle = "#94a3b8";
     ctx.fillRect(0, -6, 35, 12);
@@ -167,7 +173,6 @@ export function TankGameCanvas() {
     ctx.restore();
   };
 
-  // Game loop
   useEffect(() => {
     if (!isPlaying) return;
 
@@ -176,7 +181,7 @@ export function TankGameCanvas() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let lastTime = 0;
+    let lastTime = performance.now();
 
     const gameLoop = (timestamp: number) => {
       if (!isPlaying) return;
@@ -186,22 +191,14 @@ export function TankGameCanvas() {
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
 
-      // Spawn tanks
-      if (timestamp - lastSpawnRef.current > Math.max(2000 - scoreRef.current * 40, 600)) {
-        spawnTank(canvas.width, canvas.height);
-        lastSpawnRef.current = timestamp;
-      }
-
-      // Draw Grass background
-      ctx.fillStyle = "#4ade80"; // Bright grass green
+      // Draw Grass background & Roads
+      ctx.fillStyle = "#4ade80";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw simple roads (cross)
-      ctx.fillStyle = "#94a3b8"; // Road gray
+      ctx.fillStyle = "#94a3b8";
       ctx.fillRect(0, centerY - 40, canvas.width, 80);
       ctx.fillRect(centerX - 40, 0, 80, canvas.height);
       
-      // Road lines
       ctx.strokeStyle = "#cbd5e1";
       ctx.lineWidth = 2;
       ctx.setLineDash([20, 20]);
@@ -213,51 +210,73 @@ export function TankGameCanvas() {
       ctx.stroke();
       ctx.setLineDash([]);
 
-      // Update and draw tanks
-      tanksRef.current = tanksRef.current.filter((tank) => {
-        if (tank.exploded) {
-          tank.explosionFrame += delta / 16;
-          drawExplosion(ctx, tank.x, tank.y, tank.explosionFrame);
-          return tank.explosionFrame < 30; // Keep until animation finishes
+      if (!isPausedRef.current) {
+        if (timestamp - lastSpawnRef.current > Math.max(2000 - scoreRef.current * 40, 600)) {
+          spawnTank(canvas.width, canvas.height);
+          lastSpawnRef.current = timestamp;
         }
 
-        // Move tank
-        tank.x += Math.cos(tank.angle) * tank.speed * (delta / 16);
-        tank.y += Math.sin(tank.angle) * tank.speed * (delta / 16);
-
-        // Distance to base
-        const dist = Math.hypot(centerX - tank.x, centerY - tank.y);
-        
-        // Tank reached base
-        if (dist < 40) {
-          livesRef.current--;
-          setLives(livesRef.current);
-          if (livesRef.current <= 0) {
-            stopGame();
+        tanksRef.current = tanksRef.current.filter((tank) => {
+          if (tank.exploded) {
+            tank.explosionFrame += delta / 16;
+            drawExplosion(ctx, tank.x, tank.y, tank.explosionFrame);
+            return tank.explosionFrame < 30;
           }
-          return false; // Remove tank
-        }
 
-        drawTank(ctx, tank);
+          tank.x += Math.cos(tank.angle) * tank.speed * (delta / 16);
+          tank.y += Math.sin(tank.angle) * tank.speed * (delta / 16);
 
-        // Draw Letter Box
-        ctx.fillStyle = "#111827";
-        ctx.beginPath();
-        ctx.roundRect(tank.x - 12, tank.y - 35, 24, 24, 4);
-        ctx.fill();
+          const dist = Math.hypot(centerX - tank.x, centerY - tank.y);
+          if (dist < 40) {
+            livesRef.current--;
+            setLives(livesRef.current);
+            if (livesRef.current <= 0) stopGame();
+            return false;
+          }
 
+          drawTank(ctx, tank);
+
+          ctx.fillStyle = "#111827";
+          ctx.beginPath();
+          ctx.roundRect(tank.x - 12, tank.y - 35, 24, 24, 4);
+          ctx.fill();
+
+          ctx.fillStyle = "#ffffff";
+          ctx.font = "bold 16px 'Noto Sans Devanagari', 'Inter', sans-serif";
+          ctx.textAlign = "center";
+          ctx.fillText(tank.text, tank.x, tank.y - 18);
+
+          return true;
+        });
+      } else {
+        // Paused state: just draw tanks at current positions
+        tanksRef.current.forEach(tank => {
+          if (tank.exploded) {
+            drawExplosion(ctx, tank.x, tank.y, tank.explosionFrame);
+          } else {
+            drawTank(ctx, tank);
+            ctx.fillStyle = "#111827";
+            ctx.beginPath();
+            ctx.roundRect(tank.x - 12, tank.y - 35, 24, 24, 4);
+            ctx.fill();
+            ctx.fillStyle = "#ffffff";
+            ctx.font = "bold 16px 'Noto Sans Devanagari', 'Inter', sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText(tank.text, tank.x, tank.y - 18);
+          }
+        });
+        
+        // Draw PAUSED overlay text
+        ctx.fillStyle = "rgba(0,0,0,0.4)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "#ffffff";
-        ctx.font = "bold 16px 'Inter', sans-serif";
+        ctx.font = "bold 32px 'Inter', sans-serif";
         ctx.textAlign = "center";
-        ctx.fillText(tank.text, tank.x, tank.y - 18);
+        ctx.fillText("PAUSED", centerX, centerY - 80);
+      }
 
-        return true;
-      });
-
-      // Draw Base (Player)
       drawBase(ctx, centerX, centerY);
 
-      // Draw HUD
       ctx.fillStyle = "#111827";
       ctx.font = "bold 18px 'Inter', sans-serif";
       ctx.textAlign = "left";
@@ -277,16 +296,14 @@ export function TankGameCanvas() {
     };
   }, [isPlaying, spawnTank, stopGame]);
 
-  // Handle typing to shoot
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (!isPlaying) return;
+    if (!isPlaying || isPausedRef.current) return;
     
     // Ignore special keys
-    if (e.key.length > 1) return;
+    if (e.key.length > 1 && e.key !== "Backspace") return;
     
-    const key = e.key.toLowerCase();
+    const key = e.key;
     
-    // Find the closest tank with this letter
     const canvas = canvasRef.current;
     if (!canvas) return;
     const centerX = canvas.width / 2;
@@ -306,10 +323,7 @@ export function TankGameCanvas() {
     });
 
     if (closestTank) {
-      // Turn turret towards target
       turretAngleRef.current = Math.atan2((closestTank as Tank).y - centerY, (closestTank as Tank).x - centerX);
-      
-      // Explode tank
       (closestTank as Tank).exploded = true;
       scoreRef.current++;
       setScore(scoreRef.current);
@@ -321,7 +335,6 @@ export function TankGameCanvas() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [handleKeyDown]);
 
-  // Resize canvas
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -340,6 +353,39 @@ export function TankGameCanvas() {
 
   return (
     <div className="space-y-4">
+      {/* Settings Bar */}
+      <div className="flex flex-col sm:flex-row justify-between items-center bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-3 rounded-lg shadow-sm gap-4">
+        <div className="flex items-center gap-3">
+          <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Target Language:</label>
+          <select 
+            value={language}
+            onChange={(e) => {
+              setLanguage(e.target.value);
+              // Restart game automatically when changing language
+              if (isPlaying) startGame();
+            }}
+            className="rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-1.5 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 font-medium"
+          >
+            {Object.keys(ALPHABETS).map(lang => (
+              <option key={lang} value={lang}>{lang}</option>
+            ))}
+          </select>
+        </div>
+        
+        <div className="flex gap-2">
+          {isPlaying && !gameOver && (
+            <button onClick={togglePause} className="btn-secondary px-4 py-1.5 text-sm">
+              {isPaused ? "▶️ Resume" : "⏸️ Pause"}
+            </button>
+          )}
+          {(isPlaying || gameOver) && (
+            <button onClick={startGame} className="btn-secondary px-4 py-1.5 text-sm text-red-600 dark:text-red-400">
+              🔄 Restart
+            </button>
+          )}
+        </div>
+      </div>
+
       <div className="card overflow-hidden p-0 relative">
         <canvas
           ref={canvasRef}
@@ -350,10 +396,13 @@ export function TankGameCanvas() {
         
         {!isPlaying && !gameOver && (
           <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center rounded-lg">
-            <button onClick={startGame} className="btn-primary text-lg px-8 py-3">
+            <button onClick={startGame} className="btn-primary text-lg px-8 py-3 shadow-lg transform transition hover:scale-105">
               🎮 Start Tank Defender
             </button>
-            <p className="text-white mt-4 font-medium">Type the letters on the tanks to destroy them!</p>
+            <p className="text-white mt-4 font-medium text-center px-4">
+              Type the letters on the tanks to destroy them!<br/>
+              <span className="text-sm text-gray-300">Selected Language: {language}</span>
+            </p>
           </div>
         )}
 
@@ -363,7 +412,7 @@ export function TankGameCanvas() {
             <p className="mb-6 text-xl">
               Final Score: <span className="font-bold text-blue-400">{score}</span>
             </p>
-            <button onClick={startGame} className="btn-primary">
+            <button onClick={startGame} className="btn-primary transform transition hover:scale-105">
               Play Again
             </button>
           </div>

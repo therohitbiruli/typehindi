@@ -90,8 +90,8 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
   }, [isFinished, stats.wpm, handleFinish]);
 
   const handleTypingInput = useCallback(
-    (text: string) => {
-      handleInput(text);
+    (text: string, insertedAtIndex?: number) => {
+      handleInput(text, insertedAtIndex);
     },
     [handleInput]
   );

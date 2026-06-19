@@ -7,7 +7,7 @@ import { keyMap } from "../data/keyboard-layout";
 interface TypingBoxProps {
   targetText: string;
   typedText: string;
-  onInput: (text: string) => void;
+  onInput: (text: string, insertedAtIndex?: number) => void;
   isFinished: boolean;
   isStarted: boolean;
 }
@@ -20,20 +20,66 @@ export const TypingBox = memo(function TypingBox({
   isStarted,
 }: TypingBoxProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const nextCursorRef = useRef<number | null>(null);
 
   // Auto-focus on mount
   useEffect(() => {
     textareaRef.current?.focus();
   }, []);
 
+  // Restore cursor selection position after re-render
+  useEffect(() => {
+    if (textareaRef.current && nextCursorRef.current !== null) {
+      textareaRef.current.setSelectionRange(nextCursorRef.current, nextCursorRef.current);
+      nextCursorRef.current = null;
+    }
+  }, [typedText]);
+
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
       if (isFinished) return;
 
+      const textarea = textareaRef.current;
+      if (!textarea) return;
+
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+
       // Handle Backspace
       if (e.key === "Backspace") {
         e.preventDefault();
-        onInput(typedText.slice(0, -1));
+        let newText = typedText;
+        let nextCursor = start;
+
+        if (start !== end) {
+          newText = typedText.substring(0, start) + typedText.substring(end);
+          nextCursor = start;
+        } else if (start > 0) {
+          newText = typedText.substring(0, start - 1) + typedText.substring(start);
+          nextCursor = start - 1;
+        }
+
+        nextCursorRef.current = nextCursor;
+        onInput(newText);
+        return;
+      }
+
+      // Handle Delete key
+      if (e.key === "Delete") {
+        e.preventDefault();
+        let newText = typedText;
+        let nextCursor = start;
+
+        if (start !== end) {
+          newText = typedText.substring(0, start) + typedText.substring(end);
+          nextCursor = start;
+        } else if (start < typedText.length) {
+          newText = typedText.substring(0, start) + typedText.substring(start + 1);
+          nextCursor = start;
+        }
+
+        nextCursorRef.current = nextCursor;
+        onInput(newText);
         return;
       }
 
@@ -43,9 +89,10 @@ export const TypingBox = memo(function TypingBox({
         e.preventDefault();
         const char = e.shiftKey ? mapping.shift : mapping.normal;
         
-        // Only append if it's not a modifier key by itself (though mapping only has actual keys)
         if (char) {
-          onInput(typedText + char);
+          const newText = typedText.substring(0, start) + char + typedText.substring(end);
+          nextCursorRef.current = start + char.length;
+          onInput(newText, start);
         }
       }
     },

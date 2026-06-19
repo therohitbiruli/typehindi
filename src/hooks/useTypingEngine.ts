@@ -57,7 +57,7 @@ export function useTypingEngine(targetText: string) {
   }, [typedText, targetText]);
 
   const handleInput = useCallback(
-    (input: string) => {
+    (input: string, insertedAtIndex?: number) => {
       if (isFinished) return;
 
       if (!isStarted) {
@@ -67,8 +67,8 @@ export function useTypingEngine(targetText: string) {
 
       // Track errors
       if (input.length > typedText.length) {
-        const newCharIndex = input.length - 1;
-        if (newCharIndex < targetText.length && input[newCharIndex] !== targetText[newCharIndex]) {
+        const indexToCompare = insertedAtIndex !== undefined ? insertedAtIndex : input.length - 1;
+        if (indexToCompare < targetText.length && input[indexToCompare] !== targetText[indexToCompare]) {
           errorsRef.current++;
         }
       }

@@ -65,7 +65,7 @@ export const TypingBox = memo(function TypingBox({
     <div className="space-y-4">
       {/* Target text display */}
       <div
-        className="card cursor-text select-none font-hindi text-lg md:text-xl leading-relaxed tracking-wide bg-gray-50 border border-gray-300 p-4 rounded text-left"
+        className="card cursor-text select-none font-hindi text-lg md:text-xl leading-relaxed tracking-wide bg-gray-50 border border-gray-300 p-4 pr-12 rounded text-left"
         onClick={handleFocus}
         id="typing-target"
       >

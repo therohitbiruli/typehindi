@@ -4,21 +4,13 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { TypingBox } from "./TypingBox";
 import { Stats } from "./Stats";
-import { TimerDisplay } from "./Timer";
 import { Keyboard } from "./Keyboard";
 import { useTypingEngine } from "../hooks/useTypingEngine";
-import { useTimer } from "../hooks/useTimer";
 import { useKeyPress } from "../hooks/useKeyPress";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { getRandomParagraph, getParagraphsByDifficulty } from "../data/paragraphs";
 import type { Paragraph } from "../data/paragraphs";
 import { getInscriptKeysForWord, getInscriptKeyInfoForChar } from "../utils/keyboardMapper";
-
-const TIMER_OPTIONS = [
-  { label: "1 मिनट", seconds: 60 },
-  { label: "5 मिनट", seconds: 300 },
-  { label: "10 मिनट", seconds: 600 },
-];
 
 const DIFFICULTY_OPTIONS: Array<{ label: string; value: "easy" | "medium" | "hard" }> = [
   { label: "सरल (Easy)", value: "easy" },
@@ -41,25 +33,25 @@ function getCurrentWord(targetText: string, cursorIndex: number): string {
   }
   
   const word = targetText.slice(start, end);
-  // Remove punctuation/symbols to get the clean word
   return word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()।?"':]/g, "").trim();
 }
 
 export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
   const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">("medium");
   const [paragraph, setParagraph] = useState<Paragraph>(() => getParagraphsByDifficulty(difficulty)[0]);
-  const [timerSeconds, setTimerSeconds] = useState(60);
-  const [showKeyboard, setShowKeyboard] = useState(true); // Default to true to assist typing guide
-  const [enableHighlights, setEnableHighlights] = useState(true); // Default to true for guided training
+  const [showKeyboard, setShowKeyboard] = useState(true);
+  const [enableHighlights, setEnableHighlights] = useState(true);
   const [bestWpm, setBestWpm] = useLocalStorage<number>("bestWpm", 0);
+  const [isFocusMode, setIsFocusMode] = useState(false);
 
-  const { typedText, isStarted, isFinished, stats, handleInput, reset, forceFinish } =
+  // Custom text pasting states
+  const [showPencilModal, setShowPencilModal] = useState(false);
+  const [pencilInputText, setPencilInputText] = useState("");
+  const [showTranslationPrompt, setShowTranslationPrompt] = useState(false);
+  const [isTranslating, setIsTranslating] = useState(false);
+
+  const { typedText, isStarted, isFinished, stats, handleInput, reset } =
     useTypingEngine(paragraph.text);
-
-  const { formattedTime, isRunning, start: startTimer, reset: resetTimer } = useTimer(
-    timerSeconds,
-    forceFinish
-  );
 
   const { activeKey, isShift } = useKeyPress();
 
@@ -76,12 +68,11 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
           wordCount: customEvent.detail.split(/\s+/).length
         });
         reset();
-        resetTimer(timerSeconds);
       }
     };
     window.addEventListener("load-custom-text", handleCustomText);
     return () => window.removeEventListener("load-custom-text", handleCustomText);
-  }, [reset, resetTimer, timerSeconds]);
+  }, [reset]);
 
   const handleFinish = useCallback(() => {
     if (stats.wpm > bestWpm) {
@@ -97,25 +88,20 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
 
   const handleTypingInput = useCallback(
     (text: string) => {
-      if (!isRunning && text.length === 1) {
-        startTimer();
-      }
       handleInput(text);
     },
-    [isRunning, startTimer, handleInput]
+    [handleInput]
   );
 
   const changeParagraph = useCallback(() => {
     const newP = getRandomParagraph(difficulty);
     setParagraph(newP);
     reset();
-    resetTimer(timerSeconds);
-  }, [difficulty, reset, resetTimer, timerSeconds]);
+  }, [difficulty, reset]);
 
   const handleReset = useCallback(() => {
     reset();
-    resetTimer(timerSeconds);
-  }, [reset, resetTimer, timerSeconds]);
+  }, [reset]);
 
   const handleDifficultyChange = useCallback(
     (d: "easy" | "medium" | "hard") => {
@@ -123,19 +109,86 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
       const newP = getRandomParagraph(d);
       setParagraph(newP);
       reset();
-      resetTimer(timerSeconds);
     },
-    [reset, resetTimer, timerSeconds]
+    [reset]
   );
 
-  const handleTimerChange = useCallback(
-    (seconds: number) => {
-      setTimerSeconds(seconds);
-      resetTimer(seconds);
+  // Custom text modal save handler
+  const handleSaveCustomText = () => {
+    const trimmed = pencilInputText.trim();
+    if (!trimmed) return;
+
+    // Check if text contains English characters
+    const hasEnglish = /[a-zA-Z]/.test(trimmed);
+    if (hasEnglish) {
+      setShowPencilModal(false);
+      setShowTranslationPrompt(true);
+    } else {
+      setParagraph({
+        id: 8888,
+        text: trimmed,
+        difficulty: "medium",
+        category: "कस्टम (Custom)",
+        wordCount: trimmed.split(/\s+/).length
+      });
       reset();
-    },
-    [resetTimer, reset]
-  );
+      setShowPencilModal(false);
+      setPencilInputText("");
+    }
+  };
+
+  // Perform custom text translation
+  const handleTranslateCustomText = async (shouldTranslate: boolean) => {
+    if (!shouldTranslate) {
+      // Keep raw English text
+      setParagraph({
+        id: 8888,
+        text: pencilInputText.trim(),
+        difficulty: "medium",
+        category: "कस्टम (Custom)",
+        wordCount: pencilInputText.trim().split(/\s+/).length
+      });
+      reset();
+      setShowTranslationPrompt(false);
+      setPencilInputText("");
+      return;
+    }
+
+    setIsTranslating(true);
+    try {
+      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=hi&dt=t&q=${encodeURIComponent(pencilInputText)}`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("Translation failed");
+      const data = await res.json();
+      const translated = data[0].map((item: any) => item[0]).join("");
+      
+      setParagraph({
+        id: 9999,
+        text: translated,
+        difficulty: "medium",
+        category: "अनुवादित (Translated)",
+        wordCount: translated.split(/\s+/).length
+      });
+      reset();
+      setShowTranslationPrompt(false);
+      setPencilInputText("");
+    } catch (err) {
+      console.error(err);
+      alert("अनुवाद विफल रहा। अंग्रेजी पाठ को वैसे ही लोड कर दिया गया है। (Translation failed. Loaded original text.)");
+      setParagraph({
+        id: 8888,
+        text: pencilInputText.trim(),
+        difficulty: "medium",
+        category: "कस्टम (Custom)",
+        wordCount: pencilInputText.trim().split(/\s+/).length
+      });
+      reset();
+      setShowTranslationPrompt(false);
+      setPencilInputText("");
+    } finally {
+      setIsTranslating(false);
+    }
+  };
 
   // Calculate current active word and its keys
   const activeWord = useMemo(() => {
@@ -156,149 +209,342 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
 
   return (
     <div className="w-full">
-      {/* Controls */}
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-100 dark:bg-gray-800 p-3 rounded border border-gray-300 dark:border-gray-700">
-        <div className="flex gap-1">
-          {DIFFICULTY_OPTIONS.map((opt) => (
-            <button
-              key={opt.value}
-              onClick={() => handleDifficultyChange(opt.value)}
-              className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
-                difficulty === opt.value
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-600"
-              }`}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Toggle options for training wheels */}
-        <div className="flex items-center gap-3">
-          <label className="flex items-center gap-1.5 text-xs font-semibold text-gray-600 dark:text-gray-300 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              checked={enableHighlights}
-              onChange={(e) => setEnableHighlights(e.target.checked)}
-              className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4"
-            />
-            <span>संकेत हाइलाइट (Guide Highlight)</span>
-          </label>
-        </div>
-
-        <div className="flex gap-1">
-          {TIMER_OPTIONS.map((opt) => (
-            <button
-              key={opt.seconds}
-              onClick={() => handleTimerChange(opt.seconds)}
-              className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
-                timerSeconds === opt.seconds
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-600"
-              }`}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="px-4 py-1.5 rounded bg-white border border-gray-300 dark:bg-gray-700 dark:border-gray-600 flex items-center gap-2 text-gray-800 font-bold dark:text-white">
-          <span>⏱</span>
-          <TimerDisplay formattedTime={formattedTime} isRunning={isRunning} />
-        </div>
-      </div>
-
-      {/* Stats */}
-      <div className="mb-6">
-        <Stats stats={stats} bestWpm={bestWpm} />
-      </div>
-
-      {/* Typing area */}
-      <div className="relative group mb-6">
-        <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-indigo-500 rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
-        <div className="relative">
-          <TypingBox
-            targetText={paragraph.text}
-            typedText={typedText}
-            onInput={handleTypingInput}
-            isFinished={isFinished}
-            isStarted={isStarted}
-          />
-        </div>
-      </div>
-
-      {/* Keystroke Clue Banner (connected to Learn page) */}
-      {activeWord && !isFinished && (
-        <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-orange-950/20 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-fade-in">
-          <div className="flex items-start sm:items-center gap-3">
-            <span className="text-2xl mt-0.5 sm:mt-0">💡</span>
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block mb-0.5">
-                कुंजी संकेत (Keystroke Hint)
-              </span>
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                शब्द <strong className="font-hindi text-base text-gray-900 dark:text-white">{activeWord}</strong> टाइप करने के लिए दबाएँ:
-              </p>
-              <div className="flex flex-wrap items-center gap-1.5 mt-2">
-                {activeWordKeys.map((stroke, i) => (
-                  <div key={i} className="flex items-center">
-                    {i > 0 && <span className="text-gray-400 text-xs mx-0.5">→</span>}
-                    <kbd className={`px-1.5 py-0.5 text-xs rounded border ${
-                      stroke.isShift
-                        ? "bg-indigo-50 border-indigo-200 dark:bg-indigo-950/50 dark:border-indigo-900 text-indigo-700 dark:text-indigo-300 font-bold"
-                        : "bg-white border-gray-300 dark:bg-gray-800 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-semibold"
-                    }`}>
-                      {stroke.isShift && "Shift+"}
-                      {stroke.key}
-                    </kbd>
-                  </div>
-                ))}
+      {/* 🧘 Focus Mode Fixed Fullscreen Container */}
+      {isFocusMode && (
+        <div className="fixed inset-0 z-50 bg-white dark:bg-gray-950 overflow-y-auto flex flex-col items-center py-12 px-4 sm:px-6 md:px-8 animate-fade-in">
+          <div className="max-w-4xl w-full space-y-6">
+            {/* Topbar inside focus mode */}
+            <div className="flex justify-between items-center border-b border-gray-200 dark:border-gray-800 pb-4">
+              <div className="flex items-center gap-4">
+                <span className="text-xl">🧘</span>
+                <h3 className="font-bold text-gray-800 dark:text-white text-base">
+                  फोकस मोड (Focus Mode)
+                </h3>
+                <label className="flex items-center gap-1.5 text-xs font-semibold text-gray-500 dark:text-gray-400 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={enableHighlights}
+                    onChange={(e) => setEnableHighlights(e.target.checked)}
+                    className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4"
+                  />
+                  <span>संकेत हाइलाइट (Guide Highlight)</span>
+                </label>
               </div>
+              <button
+                onClick={() => setIsFocusMode(false)}
+                className="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 text-xs font-semibold border border-gray-200 dark:border-gray-800 transition-all"
+              >
+                सामान्य मोड पर लौटें (Exit Focus Mode) ✕
+              </button>
             </div>
-          </div>
-          <div className="flex items-center">
-            <Link
-              href={`/learn?word=${encodeURIComponent(activeWord)}&layout=inscript`}
-              className="text-xs font-bold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-3 py-2 rounded-xl transition-all shadow-sm flex items-center gap-1 hover:shadow"
-            >
-              रेमिंगटन / पूर्ण मार्गदर्शिका ➔
-            </Link>
+
+            {/* Stats during focus mode */}
+            <Stats stats={stats} bestWpm={bestWpm} />
+
+            {/* Focus Mode Typing Box with Pencil Icon */}
+            <div className="relative group">
+              <button
+                onClick={() => setShowPencilModal(true)}
+                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm transition-all"
+                title="अपना कस्टम पाठ जोड़ें (Add Custom Text)"
+              >
+                ✏️
+              </button>
+              <TypingBox
+                targetText={paragraph.text}
+                typedText={typedText}
+                onInput={handleTypingInput}
+                isFinished={isFinished}
+                isStarted={isStarted}
+              />
+            </div>
+
+            {/* Keyboard hint in Focus Mode */}
+            {activeWord && !isFinished && (
+              <div className="bg-amber-50 dark:bg-gray-900/60 border border-amber-200 dark:border-amber-900/40 rounded-xl p-3.5 flex justify-between items-center">
+                <p className="text-xs text-gray-700 dark:text-gray-300">
+                  शब्द <strong className="font-hindi text-gray-900 dark:text-white">{activeWord}</strong> कुंजी संकेत:{" "}
+                  <span className="inline-flex gap-1.5 ml-2">
+                    {activeWordKeys.map((stroke, i) => (
+                      <kbd key={i} className="px-1.5 py-0.5 text-xs bg-white dark:bg-gray-850 border border-gray-300 dark:border-gray-700 rounded shadow-sm text-gray-800 dark:text-gray-200">
+                        {stroke.isShift && "Shift+"}
+                        {stroke.key}
+                      </kbd>
+                    ))}
+                  </span>
+                </p>
+              </div>
+            )}
+
+            {/* Focus Mode Action Buttons */}
+            <div className="flex justify-center gap-3">
+              <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5">
+                ↻ रीसेट
+              </button>
+              <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5">
+                ⟳ अनुच्छेद बदलें
+              </button>
+              <button
+                onClick={() => setShowKeyboard(!showKeyboard)}
+                className={`btn-secondary rounded-xl px-6 py-2.5 ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300" : ""}`}
+              >
+                ⌨ कीबोर्ड {showKeyboard ? "छुपाएँ" : "दिखाएँ"}
+              </button>
+            </div>
+
+            {/* Guided Virtual Keyboard */}
+            <Keyboard
+              activeKey={activeKey}
+              isShift={isShift}
+              visible={showKeyboard}
+              highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
+              highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
+            />
           </div>
         </div>
       )}
 
-      {/* Action buttons */}
-      <div className="mt-6 flex flex-wrap justify-center gap-3">
-        <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5">
-          ↻ रीसेट
-        </button>
-        <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5">
-          ⟳ अनुच्छेद बदलें
-        </button>
-        <button
-          onClick={() => setShowKeyboard(!showKeyboard)}
-          className={`btn-secondary rounded-xl px-6 py-2.5 ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300" : ""}`}
-        >
-          ⌨ कीबोर्ड {showKeyboard ? "छुपाएँ" : "दिखाएँ"}
-        </button>
-      </div>
+      {/* Normal Mode (Original Layout but with Timing Removed & Focus/Pencil Options Added) */}
+      {!isFocusMode && (
+        <>
+          {/* Controls */}
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-100 dark:bg-gray-800 p-3 rounded border border-gray-300 dark:border-gray-700">
+            <div className="flex gap-1">
+              {DIFFICULTY_OPTIONS.map((opt) => (
+                <button
+                  key={opt.value}
+                  onClick={() => handleDifficultyChange(opt.value)}
+                  className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+                    difficulty === opt.value
+                      ? "bg-blue-600 text-white"
+                      : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-600"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
 
-      {/* Keyboard Guide */}
-      <div className="mt-8">
-        <Keyboard
-          activeKey={activeKey}
-          isShift={isShift}
-          visible={showKeyboard}
-          highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
-          highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
-        />
-      </div>
+            {/* Guided Highlight toggles */}
+            <div className="flex items-center gap-4">
+              <label className="flex items-center gap-1.5 text-xs font-semibold text-gray-600 dark:text-gray-300 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={enableHighlights}
+                  onChange={(e) => setEnableHighlights(e.target.checked)}
+                  className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4"
+                />
+                <span>संकेत हाइलाइट (Guide Highlight)</span>
+              </label>
 
-      {/* Paragraph info */}
-      <div className="mt-6 text-center text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-widest">
-        कठिनाई: {paragraph.difficulty} | विषय: {paragraph.category} | शब्द: {paragraph.wordCount}
-      </div>
+              {/* Focus mode CTA button */}
+              <button
+                onClick={() => setIsFocusMode(true)}
+                className="px-3.5 py-1.5 rounded bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/40 dark:hover:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs font-bold transition-all border border-indigo-200/50 dark:border-indigo-900/50 flex items-center gap-1.5 shadow-sm"
+              >
+                🧘 फोकस मोड (Focus Mode)
+              </button>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="mb-6">
+            <Stats stats={stats} bestWpm={bestWpm} />
+          </div>
+
+          {/* Typing area with absolute Pencil Icon overlay */}
+          <div className="relative group mb-6">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-indigo-500 rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
+            <div className="relative">
+              {/* Pencil Icon Button */}
+              <button
+                onClick={() => setShowPencilModal(true)}
+                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border border-gray-200 dark:border-gray-700 shadow-sm transition-all"
+                title="अपना कस्टम पाठ जोड़ें (Add Custom Text)"
+              >
+                ✏️
+              </button>
+              <TypingBox
+                targetText={paragraph.text}
+                typedText={typedText}
+                onInput={handleTypingInput}
+                isFinished={isFinished}
+                isStarted={isStarted}
+              />
+            </div>
+          </div>
+
+          {/* Keystroke Clue Banner */}
+          {activeWord && !isFinished && (
+            <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-orange-950/20 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-fade-in">
+              <div className="flex items-start sm:items-center gap-3">
+                <span className="text-2xl mt-0.5 sm:mt-0">💡</span>
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block mb-0.5">
+                    कुंजी संकेत (Keystroke Hint)
+                  </span>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    शब्द <strong className="font-hindi text-base text-gray-900 dark:text-white">{activeWord}</strong> टाइप करने के लिए दबाएँ:
+                  </p>
+                  <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                    {activeWordKeys.map((stroke, i) => (
+                      <div key={i} className="flex items-center">
+                        {i > 0 && <span className="text-gray-400 text-xs mx-0.5">→</span>}
+                        <kbd className={`px-1.5 py-0.5 text-xs rounded border ${
+                          stroke.isShift
+                            ? "bg-indigo-50 border-indigo-200 dark:bg-indigo-950/50 dark:border-indigo-900 text-indigo-700 dark:text-indigo-300 font-bold"
+                            : "bg-white border-gray-300 dark:bg-gray-800 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-semibold"
+                        }`}>
+                          {stroke.isShift && "Shift+"}
+                          {stroke.key}
+                        </kbd>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <Link
+                  href={`/learn?word=${encodeURIComponent(activeWord)}&layout=inscript`}
+                  className="text-xs font-bold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-3 py-2 rounded-xl transition-all shadow-sm flex items-center gap-1 hover:shadow"
+                >
+                  रेमिंगटन / पूर्ण मार्गदर्शिका ➔
+                </Link>
+              </div>
+            </div>
+          )}
+
+          {/* Action buttons */}
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5">
+              ↻ रीसेट
+            </button>
+            <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5">
+              ⟳ अनुच्छेद बदलें
+            </button>
+            <button
+              onClick={() => setShowKeyboard(!showKeyboard)}
+              className={`btn-secondary rounded-xl px-6 py-2.5 ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300" : ""}`}
+            >
+              ⌨ कीबोर्ड {showKeyboard ? "छुपाएँ" : "दिखाएँ"}
+            </button>
+          </div>
+
+          {/* Guided Virtual Keyboard */}
+          <div className="mt-8">
+            <Keyboard
+              activeKey={activeKey}
+              isShift={isShift}
+              visible={showKeyboard}
+              highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
+              highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
+            />
+          </div>
+
+          {/* Paragraph info */}
+          <div className="mt-6 text-center text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-widest">
+            कठिनाई: {paragraph.difficulty} | विषय: {paragraph.category} | शब्द: {paragraph.wordCount}
+          </div>
+        </>
+      )}
+
+      {/* ✏️ Paste Custom Text Modal */}
+      {showPencilModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 animate-fade-in">
+          <div className="bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-3xl w-full max-w-lg p-6 shadow-2xl flex flex-col space-y-4">
+            <div className="flex justify-between items-center border-b border-gray-100 dark:border-gray-900 pb-3">
+              <h4 className="font-bold text-gray-900 dark:text-white text-base">
+                ✍️ अपना कस्टम पाठ जोड़ें (Add Custom Text)
+              </h4>
+              <button
+                onClick={() => {
+                  setShowPencilModal(false);
+                  setPencilInputText("");
+                }}
+                className="h-8 w-8 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-500 hover:text-gray-850 dark:hover:text-white flex items-center justify-center text-xs"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider block">
+                यहाँ अपना टेक्स्ट पेस्ट करें
+              </label>
+              <textarea
+                value={pencilInputText}
+                onChange={(e) => setPencilInputText(e.target.value)}
+                placeholder="यहाँ पर अपना हिंदी या किसी अन्य भाषा का पाठ पेस्ट करें (Paste your text here...)"
+                rows={6}
+                className="w-full p-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-850 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-primary-500 resize-none font-sans"
+              />
+            </div>
+
+            <div className="flex justify-end gap-2 pt-2 border-t border-gray-150 dark:border-gray-900">
+              <button
+                onClick={() => {
+                  setShowPencilModal(false);
+                  setPencilInputText("");
+                }}
+                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-xl text-xs font-semibold"
+              >
+                रद्द करें (Cancel)
+              </button>
+              <button
+                onClick={handleSaveCustomText}
+                disabled={!pencilInputText.trim()}
+                className="px-5 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-xl text-xs font-bold disabled:opacity-50"
+              >
+                सहेजें (Save Text)
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 🌐 English to Hindi Translation Option Modal */}
+      {showTranslationPrompt && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 animate-fade-in">
+          <div className="bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-3xl w-full max-w-md p-6 shadow-2xl flex flex-col space-y-4 text-center">
+            <div className="text-4xl">🌐</div>
+            <h4 className="font-bold text-gray-900 dark:text-white text-base">
+              अनुवाद विकल्प (Translation Option)
+            </h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300">
+              आपने अंग्रेजी/गैर-हिंदी पाठ पेस्ट किया है। क्या आप इसे अभ्यास के लिए हिंदी (Devanagari) में अनुवाद करना चाहते हैं?
+            </p>
+
+            <div className="flex flex-col gap-2 pt-4">
+              <button
+                onClick={() => handleTranslateCustomText(true)}
+                disabled={isTranslating}
+                className="w-full py-2.5 bg-primary-600 hover:bg-primary-700 text-white rounded-xl text-xs font-bold transition-all"
+              >
+                {isTranslating ? "अनुवाद हो रहा है..." : "हाँ, हिंदी में अनुवाद करें (Translate to Hindi)"}
+              </button>
+              
+              <button
+                onClick={() => handleTranslateCustomText(false)}
+                disabled={isTranslating}
+                className="w-full py-2.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl text-xs font-semibold transition-all"
+              >
+                नहीं, अंग्रेजी में ही टाइप करें (Practice as English)
+              </button>
+              
+              <button
+                onClick={() => {
+                  setShowTranslationPrompt(false);
+                  setPencilInputText("");
+                }}
+                disabled={isTranslating}
+                className="w-full py-2 bg-transparent text-gray-400 hover:text-gray-600 text-xs font-medium"
+              >
+                रद्द करें (Cancel)
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

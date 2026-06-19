@@ -1,4 +1,4 @@
-import { keyboardRows } from "../data/keyboard-layout";
+import { keyboardRows, physicalKeyLabels } from "../data/keyboard-layout";
 
 export interface Keystroke {
   key: string;
@@ -11,7 +11,7 @@ const inscriptMap: Record<string, { key: string; isShift: boolean }> = {};
 
 keyboardRows.forEach((row) => {
   row.forEach((key) => {
-    const keyLabel = key.label || key.code.replace("Key", "").replace("Digit", "");
+    const keyLabel = physicalKeyLabels[key.code] || key.label || key.code.replace("Key", "").replace("Digit", "");
     
     // Normal character
     if (key.normal && !inscriptMap[key.normal]) {
@@ -36,7 +36,7 @@ const remingtonMap: Record<string, { key: string; isShift: boolean; charProduced
   "ई": [{ key: "B", isShift: false }, { key: "Z", isShift: false }],
   "उ": [{ key: "M", isShift: false }],
   "ऊ": [{ key: "M", isShift: true }],
-  "ऋ": [{ key: "Minus (-)", isShift: true }],
+  "ऋ": [{ key: "-", isShift: true }],
   "ए": [{ key: "Comma (,)", isShift: false }],
   "ऐ": [{ key: "Comma (,)", isShift: true }],
   "ओ": [{ key: "V", isShift: true }, { key: "K", isShift: false }, { key: "S", isShift: false }],
@@ -50,28 +50,28 @@ const remingtonMap: Record<string, { key: string; isShift: boolean; charProduced
   "ै": [{ key: "A", isShift: false }],
   "ो": [{ key: "K", isShift: false }, { key: "S", isShift: false }],
   "ौ": [{ key: "K", isShift: false }, { key: "A", isShift: false }],
-  "ृ": [{ key: "Minus (-)", isShift: true }],
+  "ृ": [{ key: "-", isShift: true }],
   "ं": [{ key: "A", isShift: false }],
-  "ः": [{ key: "Percent (%)", isShift: true }],
+  "ः": [{ key: "%", isShift: true }],
   "्": [{ key: "D", isShift: false }],
-  "़": [{ key: "BracketLeft ([)", isShift: true }],
+  "़": [{ key: "[", isShift: true }],
   
   // Consonants
   "क": [{ key: "D", isShift: false }],
-  "ख": [{ key: "BracketRight (])", isShift: true }, { key: "K", isShift: false }],
+  "ख": [{ key: "]", isShift: true }, { key: "K", isShift: false }],
   "ग": [{ key: "X", isShift: false }],
-  "घ": [{ key: "Slash (/)", isShift: true }, { key: "K", isShift: false }],
+  "घ": [{ key: "/", isShift: true }, { key: "K", isShift: false }],
   "ङ": [{ key: "U", isShift: true }],
   "च": [{ key: "P", isShift: false }],
   "छ": [{ key: "N", isShift: true }],
   "ज": [{ key: "T", isShift: false }],
   "झ": [{ key: "E", isShift: true }, { key: "K", isShift: false }],
-  "ञ": [{ key: "Quote (')", isShift: true }],
+  "ञ": [{ key: "'", isShift: true }],
   "ट": [{ key: "V", isShift: true }],
   "ठ": [{ key: "B", isShift: true }],
-  "ड": [{ key: "BracketLeft ([)", isShift: false }],
-  "ढ": [{ key: "BracketRight (])", isShift: false }],
-  "ण": [{ key: "Period (.)", isShift: true }, { key: "K", isShift: false }],
+  "ड": [{ key: "[", isShift: false }],
+  "ढ": [{ key: "]", isShift: false }],
+  "ण": [{ key: ".", isShift: true }, { key: "K", isShift: false }],
   "त": [{ key: "R", isShift: false }],
   "थ": [{ key: "F", isShift: true }, { key: "K", isShift: false }],
   "द": [{ key: "N", isShift: false }],
@@ -82,11 +82,11 @@ const remingtonMap: Record<string, { key: string; isShift: boolean; charProduced
   "ब": [{ key: "Y", isShift: false }],
   "भ": [{ key: "G", isShift: true }, { key: "K", isShift: false }],
   "म": [{ key: "E", isShift: false }],
-  "य": [{ key: "Semicolon (;)", isShift: false }],
+  "य": [{ key: ";", isShift: false }],
   "र": [{ key: "J", isShift: false }],
   "ल": [{ key: "U", isShift: false }],
   "व": [{ key: "O", isShift: false }],
-  "श": [{ key: "Quote (')", isShift: false }, { key: "K", isShift: false }],
+  "श": [{ key: "'", isShift: false }, { key: "K", isShift: false }],
   "ष": [{ key: "Comma (,)", isShift: true }, { key: "K", isShift: false }],
   "स": [{ key: "L", isShift: false }],
   "ह": [{ key: "G", isShift: false }],
@@ -99,12 +99,12 @@ const remingtonMap: Record<string, { key: string; isShift: boolean; charProduced
 // Halves for Remington (since typing half letter is direct or with D)
 const remingtonHalves: Record<string, string> = {
   "क्": "D",
-  "ख्": "BracketRight (])",
+  "ख्": "]",
   "ग्": "X",
-  "घ्": "Slash (/)",
+  "घ्": "/",
   "च्": "P",
   "ज्": "T",
-  "ण्": "Period (.)",
+  "ण्": ".",
   "त्": "R",
   "थ्": "F",
   "ध्": "T",
@@ -115,7 +115,7 @@ const remingtonHalves: Record<string, string> = {
   "म्": "E",
   "ल्": "U",
   "व्": "O",
-  "श्": "Quote (')",
+  "श्": "'",
   "ष्": "Comma (,)",
   "स्": "L"
 };

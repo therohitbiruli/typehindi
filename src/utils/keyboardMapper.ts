@@ -224,3 +224,18 @@ export function getRemingtonKeysForWord(word: string): Keystroke[] {
   }
   return result;
 }
+
+export function getInscriptKeyInfoForChar(char: string): { code: string; isShift: boolean } | null {
+  if (!char) return null;
+  for (const row of keyboardRows) {
+    for (const key of row) {
+      if (key.normal === char) {
+        return { code: key.code, isShift: false };
+      }
+      if (key.shift === char) {
+        return { code: key.code, isShift: true };
+      }
+    }
+  }
+  return null;
+}

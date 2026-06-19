@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { TypingBox } from "./TypingBox";
 import { Stats } from "./Stats";
@@ -12,7 +12,7 @@ import { useKeyPress } from "../hooks/useKeyPress";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { getRandomParagraph, getParagraphsByDifficulty } from "../data/paragraphs";
 import type { Paragraph } from "../data/paragraphs";
-import { getInscriptKeysForWord } from "../utils/keyboardMapper";
+import { getInscriptKeysForWord, getInscriptKeyInfoForChar } from "../utils/keyboardMapper";
 
 const TIMER_OPTIONS = [
   { label: "1 मिनट", seconds: 60 },
@@ -49,7 +49,8 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
   const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">("medium");
   const [paragraph, setParagraph] = useState<Paragraph>(() => getParagraphsByDifficulty(difficulty)[0]);
   const [timerSeconds, setTimerSeconds] = useState(60);
-  const [showKeyboard, setShowKeyboard] = useState(false);
+  const [showKeyboard, setShowKeyboard] = useState(true); // Default to true to assist typing guide
+  const [enableHighlights, setEnableHighlights] = useState(true); // Default to true for guided training
   const [bestWpm, setBestWpm] = useLocalStorage<number>("bestWpm", 0);
 
   const { typedText, isStarted, isFinished, stats, handleInput, reset, forceFinish } =
@@ -61,6 +62,26 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
   );
 
   const { activeKey, isShift } = useKeyPress();
+
+  // Listen to custom event from the floating translator
+  useEffect(() => {
+    const handleCustomText = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      if (customEvent.detail) {
+        setParagraph({
+          id: 9999,
+          text: customEvent.detail,
+          difficulty: "medium",
+          category: "अनुवादित (Translated)",
+          wordCount: customEvent.detail.split(/\s+/).length
+        });
+        reset();
+        resetTimer(timerSeconds);
+      }
+    };
+    window.addEventListener("load-custom-text", handleCustomText);
+    return () => window.removeEventListener("load-custom-text", handleCustomText);
+  }, [reset, resetTimer, timerSeconds]);
 
   const handleFinish = useCallback(() => {
     if (stats.wpm > bestWpm) {
@@ -126,6 +147,13 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
     return getInscriptKeysForWord(activeWord);
   }, [activeWord]);
 
+  // Calculate the next character to highlight on the virtual keyboard
+  const nextKeyInfo = useMemo(() => {
+    if (isFinished) return null;
+    const nextChar = paragraph.text[typedText.length];
+    return getInscriptKeyInfoForChar(nextChar);
+  }, [paragraph.text, typedText.length, isFinished]);
+
   return (
     <div className="w-full">
       {/* Controls */}
@@ -144,6 +172,19 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
               {opt.label}
             </button>
           ))}
+        </div>
+
+        {/* Toggle options for training wheels */}
+        <div className="flex items-center gap-3">
+          <label className="flex items-center gap-1.5 text-xs font-semibold text-gray-600 dark:text-gray-300 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={enableHighlights}
+              onChange={(e) => setEnableHighlights(e.target.checked)}
+              className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4"
+            />
+            <span>संकेत हाइलाइट (Guide Highlight)</span>
+          </label>
         </div>
 
         <div className="flex gap-1">
@@ -189,7 +230,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
 
       {/* Keystroke Clue Banner (connected to Learn page) */}
       {activeWord && !isFinished && (
-        <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-orange-950/20 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-orange-950/20 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-fade-in">
           <div className="flex items-start sm:items-center gap-3">
             <span className="text-2xl mt-0.5 sm:mt-0">💡</span>
             <div>
@@ -245,7 +286,13 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
 
       {/* Keyboard Guide */}
       <div className="mt-8">
-        <Keyboard activeKey={activeKey} isShift={isShift} visible={showKeyboard} />
+        <Keyboard
+          activeKey={activeKey}
+          isShift={isShift}
+          visible={showKeyboard}
+          highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
+          highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
+        />
       </div>
 
       {/* Paragraph info */}

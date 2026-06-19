@@ -3,72 +3,137 @@ import { PracticeTool } from "../components/PracticeTool";
 
 export default function Homepage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#f5f5f5] dark:bg-gray-950">
-      {/* Hero Section - Gradient similar to TypingBaba */}
-      <section className="bg-gradient-to-r from-[#4A8D9B] to-[#D59850] pt-12 pb-24 border-b border-gray-300 dark:border-gray-800 relative">
-        <div className="container-main px-4">
-          <div className="text-center mb-12 text-white max-w-5xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl font-light tracking-wide mb-4">टाइपिंग से संबंधित सभी उपकरण एक ही स्थान पर</h1>
-            <p className="text-sm md:text-base font-light opacity-90 leading-relaxed">
-              हम आपको एक ही स्थान पर टाइपिंग के लिए उपकरणों की एक व्यापक सूची प्रदान करते हैं जो बिल्कुल मुफ्त और उपयोग में आसान है। इसके अलावा, हम सॉफ़्टवेयर में किसी भी तकनीकी खराबी के बिना वेबसाइट के कामकाज में अत्यधिक सटीकता और गति की गारंटी देते हैं।
+    <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950">
+      {/* 🌟 Premium Hero Section */}
+      <section className="bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
+        {/* Subtle grid background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+        
+        {/* Glow element */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div className="container-main px-4 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            {/* Glowing top badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 text-xs font-semibold mb-6 animate-pulse">
+              ✨ सर्वश्रेष्ठ हिंदी टाइपिंग प्लेटफॉर्म
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-indigo-200 leading-tight">
+              टाइपिंग से संबंधित सभी उपकरण <br/>
+              <span className="bg-gradient-to-r from-primary-400 to-indigo-400 bg-clip-text text-transparent">एक ही स्थान पर</span>
+            </h1>
+
+            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+              निःशुल्क और उपयोग में आसान हिंदी टाइपिंग टूल्स की एक व्यापक सूची। 100% सटीक WPM ट्रैकर, लाइव कीबोर्ड गाइड्स और आकर्षक टाइपिंग गेम्स के साथ अपनी गति बढ़ाएं।
             </p>
+
+            {/* Hero CTA buttons */}
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/practice" className="px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold text-sm transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 hover:-translate-y-0.5">
+                अभ्यास शुरू करें (Start Practice)
+              </Link>
+              <Link href="/game" className="px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-all border border-slate-800 hover:-translate-y-0.5">
+                टाइपिंग गेम्स खेलें (Play Games)
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Tools Grid (Overlapping the gradient just a bit or right below it) */}
-      <div className="container-main max-w-6xl px-4 -mt-16 relative z-10 mb-8">
-        <div className="bg-white dark:bg-gray-900 shadow-md grid grid-cols-2 md:grid-cols-4 border border-gray-200 dark:border-gray-800">
-          <Link href="/practice" className="flex flex-col items-center justify-center py-10 border-r border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">⌨️</span>
-            <span className="text-gray-600 dark:text-gray-300 font-light text-lg">टाइपिंग अभ्यास</span>
+      {/* 🚀 Tools Floating Grid */}
+      <div className="container-main max-w-6xl px-4 -mt-20 relative z-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <Link href="/practice" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-primary-500/40 dark:hover:border-primary-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              ⌨️
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">टाइपिंग अभ्यास</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">InScript Layout speed building practice with keystroke indicators</p>
           </Link>
-          <Link href="/test" className="flex flex-col items-center justify-center py-10 border-r border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">⏱️</span>
-            <span className="text-gray-600 dark:text-gray-300 font-light text-lg">टाइपिंग टेस्ट</span>
+
+          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              ⏱️
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">टाइपिंग टेस्ट</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Evaluate your typing proficiency with realistic exam conditions</p>
           </Link>
-          <Link href="/learn" className="flex flex-col items-center justify-center py-10 border-r border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">📚</span>
-            <span className="text-gray-600 dark:text-gray-300 font-light text-lg">टाइपिंग ट्यूटर (सीखें)</span>
+
+          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              📚
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">टाइपिंग ट्यूटर (सीखें)</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Step-by-step interactive lessons to master the InScript layout</p>
           </Link>
-          <Link href="/game" className="flex flex-col items-center justify-center py-10 border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">🎮</span>
-            <span className="text-gray-600 dark:text-gray-300 font-light text-lg">टाइपिंग गेम</span>
+
+          <Link href="/game" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-purple-500/40 dark:hover:border-purple-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              🎮
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">टाइपिंग गेम</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Fun and addictive typing games to build speed and muscle memory</p>
           </Link>
-          <Link href="/mangal-font-typing-test" className="flex flex-col items-center justify-center py-10 border-r border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">🅰️</span>
-            <span className="text-gray-600 dark:text-gray-300 font-light text-lg">मंगल फॉन्ट</span>
+
+          <Link href="/mangal-font-typing-test" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-rose-500/40 dark:hover:border-rose-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              🅰️
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">मंगल फॉन्ट</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Practice Mangal font typing specifically formatted for exams</p>
           </Link>
-          <Link href="/test" className="flex flex-col items-center justify-center py-10 border-r border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">📜</span>
-            <span className="text-gray-600 dark:text-gray-300 font-light text-lg">CPCT टेस्ट</span>
+
+          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-cyan-500/40 dark:hover:border-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              📜
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">CPCT टेस्ट</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Simulate the Computer Proficiency Certification Test pattern</p>
           </Link>
-          <Link href="/learn" className="flex flex-col items-center justify-center py-10 border-r border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">🔍</span>
-            <span className="text-gray-600 dark:text-gray-300 font-light text-lg">कीबोर्ड लेआउट</span>
+
+          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-sky-500/40 dark:hover:border-sky-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              🔍
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">कीबोर्ड लेआउट</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Visual layouts and guides for InScript and Remington layouts</p>
           </Link>
-          <Link href="/translators" className="flex flex-col items-center justify-center py-10 border-r border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">🌐</span>
-            <span className="text-gray-600 dark:text-gray-300 font-light text-lg">ट्रांसलेटर (Translators)</span>
+
+          <Link href="/translators" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-violet-500/40 dark:hover:border-violet-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              🌐
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">ट्रांसलेटर (Translators)</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Instantly translate English or other regional texts into Hindi</p>
           </Link>
-          <Link href="/blog" className="flex flex-col items-center justify-center py-10 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-            <span className="text-5xl mb-4 group-hover:scale-110 transition-transform">📰</span>
-            <span className="text-gray-600 dark:text-gray-300 font-light text-lg">ब्लॉग (लेख)</span>
+
+          <Link href="/blog" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-slate-500/40 dark:hover:border-slate-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              📰
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">ब्लॉग (लेख)</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Latest news, government exam patterns, and typing tips</p>
           </Link>
+
         </div>
       </div>
 
-      <section className="pb-16">
-        <div className="container-main max-w-6xl px-4 space-y-8">
+      <section className="pb-20">
+        <div className="container-main max-w-6xl px-4 space-y-10">
           
           {/* Main Hindi Typing Practice Container */}
-          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm p-4 md:p-6">
-             <h2 className="text-xl font-normal text-blue-800 dark:text-blue-400 border-b border-gray-100 dark:border-gray-800 pb-2 mb-4">हिंदी टाइपिंग टेस्ट और अभ्यास (Hindi Typing Test)</h2>
+          <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-slate-250 dark:border-slate-800">
+             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-6 flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+               <span className="w-2.5 h-6 rounded-full bg-primary-600"></span>
+               हिंदी टाइपिंग टेस्ट और अभ्यास (Hindi Typing Test)
+             </h2>
              <PracticeTool />
           </div>
 
           {/* Text Dense Content mimicking TypingBaba */}
-          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm p-6 md:p-10 space-y-10">
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-sm p-6 md:p-10 space-y-10">
             
             <div className="border-b border-blue-200 dark:border-gray-800 pb-2 mb-4">
                <h2 className="text-2xl font-normal text-red-600 inline-block">TypeHindi</h2><span className="text-2xl font-normal text-blue-800 dark:text-blue-400">.in</span>

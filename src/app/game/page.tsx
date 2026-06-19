@@ -24,49 +24,72 @@ export default function GamePage() {
       </div>
 
       {/* Game Selector Thumbnails */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
         <button
           onClick={() => setActiveGame("classic")}
-          className={`relative group rounded-2xl overflow-hidden aspect-[16/9] transition-all duration-300 ${
+          className={`relative group rounded-[2rem] overflow-hidden aspect-[16/9] transition-all duration-500 border-3 ${
             activeGame === "classic"
-              ? "ring-4 ring-primary-500 shadow-[0_0_20px_rgba(59,130,246,0.5)] transform scale-[1.02]"
-              : "ring-1 ring-gray-200 dark:ring-gray-700 hover:ring-primary-400 opacity-80 hover:opacity-100"
+              ? "border-primary-500 shadow-[0_15px_30px_rgba(99,102,241,0.25)] dark:shadow-[0_15px_30px_rgba(99,102,241,0.12)] scale-[1.02]"
+              : "border-slate-200 dark:border-slate-800/80 hover:border-primary-400 hover:scale-[1.01]"
           }`}
         >
           <Image
             src="/images/game_thumb_classic.png"
             alt="Classic Falling Words"
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 text-left">
-            <h3 className="text-2xl font-bold text-white mb-1">Classic Falling Words</h3>
-            <p className="text-gray-300 text-sm">Test your speed against gravity!</p>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-8 text-left">
+            <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-amber-500 text-white font-black text-[10px] uppercase tracking-widest shadow-sm">
+              🔥 POPULAR
+            </span>
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-2xl font-black text-white mb-1.5 tracking-wide">Classic Falling Words</h3>
+                <p className="text-slate-300 text-xs font-light">Test your speed against gravity!</p>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-white/10 group-hover:bg-primary-600 border border-white/20 flex items-center justify-center text-white text-lg transition-all transform group-hover:scale-110">
+                ▶
+              </div>
+            </div>
           </div>
         </button>
 
         <button
           onClick={() => setActiveGame("tank")}
-          className={`relative group rounded-2xl overflow-hidden aspect-[16/9] transition-all duration-300 ${
+          className={`relative group rounded-[2rem] overflow-hidden aspect-[16/9] transition-all duration-500 border-3 ${
             activeGame === "tank"
-              ? "ring-4 ring-primary-500 shadow-[0_0_20px_rgba(59,130,246,0.5)] transform scale-[1.02]"
-              : "ring-1 ring-gray-200 dark:ring-gray-700 hover:ring-primary-400 opacity-80 hover:opacity-100"
+              ? "border-primary-500 shadow-[0_15px_30px_rgba(99,102,241,0.25)] dark:shadow-[0_15px_30px_rgba(99,102,241,0.12)] scale-[1.02]"
+              : "border-slate-200 dark:border-slate-800/80 hover:border-primary-400 hover:scale-[1.01]"
           }`}
         >
           <Image
             src="/images/game_thumb_tank.png"
             alt="Tank Defender"
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 text-left">
-            <h3 className="text-2xl font-bold text-white mb-1">Tank Defender</h3>
-            <p className="text-gray-300 text-sm">Defend your base from incoming attacks!</p>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-8 text-left">
+            <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase tracking-widest shadow-sm">
+              ⚡ NEW
+            </span>
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-2xl font-black text-white mb-1.5 tracking-wide">Tank Defender</h3>
+                <p className="text-slate-300 text-xs font-light">Defend your base from incoming attacks!</p>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-white/10 group-hover:bg-primary-600 border border-white/20 flex items-center justify-center text-white text-lg transition-all transform group-hover:scale-110">
+                ▶
+              </div>
+            </div>
           </div>
         </button>
       </div>
 
-      {activeGame === "classic" ? <GameCanvas /> : <TankGameCanvas />}
+      {/* 🎮 Game Launcher Arena */}
+      <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-slate-250 dark:border-slate-800 mb-12">
+        {activeGame === "classic" ? <GameCanvas /> : <TankGameCanvas />}
+      </div>
 
       <AdPlaceholder position="bottom" />
 

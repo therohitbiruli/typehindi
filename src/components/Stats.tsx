@@ -63,7 +63,7 @@ function StatCard({
   icon: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 border-2 border-gray-400 dark:border-gray-650 rounded-2xl shadow-md">
+    <div className="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl shadow-sm">
       <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 font-bold mb-1">
         {icon}
         <span>{label}</span>

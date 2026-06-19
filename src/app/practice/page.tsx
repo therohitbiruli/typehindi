@@ -21,7 +21,7 @@ export default function PracticePage() {
       </div>
 
       {/* Practice Tool */}
-      <div className="bg-white dark:bg-gray-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border border-gray-100 dark:border-gray-800">
+      <div className="bg-white dark:bg-gray-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-gray-300 dark:border-gray-700">
         <PracticeTool />
       </div>
 

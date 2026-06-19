@@ -251,7 +251,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
               </div>
               <button
                 onClick={() => setIsFocusMode(false)}
-                className="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 text-xs font-bold border-2 border-gray-300 dark:border-gray-800 transition-all shadow-sm"
+                className="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 text-xs font-bold border border-gray-300 dark:border-gray-800 transition-all shadow-sm"
               >
                 सामान्य मोड पर लौटें (Exit Focus Mode) ✕
               </button>
@@ -264,7 +264,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
             <div className="relative group">
               <button
                 onClick={() => setShowPencilModal(true)}
-                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-850 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border-2 border-gray-400 dark:border-gray-700 shadow-sm transition-all"
+                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-850 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border border-gray-300 dark:border-gray-700 shadow-sm transition-all"
                 title="अपना कस्टम पाठ जोड़ें (Add Custom Text)"
               >
                 ✏️
@@ -280,7 +280,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
 
             {/* Keyboard hint in Focus Mode */}
             {activeWord && !isFinished && (
-              <div className="bg-amber-50 dark:bg-gray-900/60 border-2 border-amber-300 dark:border-amber-900/50 rounded-2xl p-3.5 flex justify-between items-center shadow-sm">
+              <div className="bg-amber-50 dark:bg-gray-900/60 border border-amber-300 dark:border-amber-900/50 rounded-2xl p-3.5 flex justify-between items-center shadow-sm">
                 <p className="text-xs text-gray-700 dark:text-gray-300">
                   शब्द <strong className="font-hindi text-gray-950 dark:text-white">{activeWord}</strong> कुंजी संकेत:{" "}
                   <span className="inline-flex gap-1.5 ml-2">
@@ -297,15 +297,15 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
 
             {/* Focus Mode Action Buttons */}
             <div className="flex justify-center gap-3">
-              <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5 border-2 border-gray-400 dark:border-gray-700 shadow-sm">
+              <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-750 shadow-sm">
                 ↻ रीसेट
               </button>
-              <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border-2 border-gray-400 dark:border-gray-700 shadow-sm">
+              <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-750 shadow-sm">
                 ⟳ अनुच्छेद बदलें
               </button>
               <button
                 onClick={handleKeyboardToggle}
-                className={`btn-secondary rounded-xl px-6 py-2.5 border-2 shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-gray-400 dark:border-gray-700"}`}
+                className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-gray-300 dark:border-gray-750"}`}
               >
                 ⌨ कीबोर्ड {showKeyboard ? "छुपाएँ" : "दिखाएँ"}
               </button>
@@ -327,7 +327,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
       {!isFocusMode && (
         <>
           {/* Controls */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-100 dark:bg-gray-855 p-3.5 rounded-2xl border-2 border-gray-400 dark:border-gray-700 shadow-md">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-100 dark:bg-gray-855 p-3.5 rounded-2xl border border-gray-300 dark:border-gray-800 shadow-md">
             <div className="flex gap-1">
               {DIFFICULTY_OPTIONS.map((opt) => (
                 <button
@@ -359,7 +359,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
               {/* Focus mode CTA button */}
               <button
                 onClick={() => setIsFocusMode(true)}
-                className="px-3.5 py-1.5 rounded bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/40 dark:hover:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs font-bold transition-all border-2 border-indigo-200 dark:border-indigo-900/50 flex items-center gap-1.5 shadow-sm"
+                className="px-3.5 py-1.5 rounded bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/40 dark:hover:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs font-bold transition-all border border-indigo-200 dark:border-indigo-900/40 flex items-center gap-1.5 shadow-sm"
               >
                 🧘 फोकस मोड (Focus Mode)
               </button>
@@ -378,7 +378,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
               {/* Pencil Icon Button */}
               <button
                 onClick={() => setShowPencilModal(true)}
-                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-850 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border-2 border-gray-400 dark:border-gray-700 shadow-sm transition-all"
+                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-850 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border border-gray-300 dark:border-gray-700 shadow-sm transition-all"
                 title="अपना कस्टम पाठ जोड़ें (Add Custom Text)"
               >
                 ✏️
@@ -395,7 +395,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
 
           {/* Keystroke Clue Banner */}
           {activeWord && !isFinished && (
-            <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-orange-950/20 border-2 border-amber-400 dark:border-amber-700/60 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-fade-in shadow-md">
+            <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-orange-950/20 border border-amber-300 dark:border-amber-800/40 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-fade-in shadow-md">
               <div className="flex items-start sm:items-center gap-3">
                 <span className="text-2xl mt-0.5 sm:mt-0">💡</span>
                 <div>
@@ -435,15 +435,15 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
 
           {/* Action buttons */}
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5 border-2 border-gray-400 dark:border-gray-700 shadow-sm">
+            <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm">
               ↻ रीसेट
             </button>
-            <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border-2 border-gray-400 dark:border-gray-700 shadow-sm">
+            <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm">
               ⟳ अनुच्छेद बदलें
             </button>
             <button
               onClick={handleKeyboardToggle}
-              className={`btn-secondary rounded-xl px-6 py-2.5 border-2 shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-gray-400 dark:border-gray-700"}`}
+              className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-gray-300 dark:border-gray-700"}`}
             >
               ⌨ कीबोर्ड {showKeyboard ? "छुपाएँ" : "दिखाएँ"}
             </button>

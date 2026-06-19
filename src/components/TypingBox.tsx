@@ -65,16 +65,16 @@ export const TypingBox = memo(function TypingBox({
     <div className="space-y-4">
       {/* Target text display */}
       <div
-        className="card cursor-text select-none font-hindi text-lg md:text-xl leading-relaxed tracking-wide bg-gray-50 border border-gray-300 p-4 pr-12 rounded text-left"
+        className="card cursor-text select-none font-hindi text-lg md:text-xl leading-relaxed tracking-wide bg-gray-50 dark:bg-gray-900 border-2 border-gray-400 dark:border-gray-700 p-4 pr-12 rounded-2xl text-left shadow-md"
         onClick={handleFocus}
         id="typing-target"
       >
         {targetText.split("").map((char, index) => {
-          let className = "text-gray-500";
+          let className = "text-gray-600 dark:text-gray-400";
           if (index < typedText.length) {
-            className = typedText[index] === char ? "text-green-700 font-bold" : "text-red-700 bg-red-100";
+            className = typedText[index] === char ? "text-green-800 dark:text-green-400 font-bold" : "text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-950/50";
           } else if (index === typedText.length) {
-            className = "border-b-2 border-blue-500 text-black";
+            className = "border-b-2 border-blue-600 text-black dark:text-white font-bold bg-blue-50 dark:bg-blue-950/30";
           }
           return (
             <span key={index} className={className}>
@@ -95,7 +95,7 @@ export const TypingBox = memo(function TypingBox({
           onPaste={preventCopyPaste}
           onCut={preventCopyPaste}
           disabled={isFinished}
-          className="w-full resize-none rounded border border-gray-400 bg-white p-4 font-hindi text-lg leading-relaxed focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
+          className="w-full resize-none rounded-2xl border-2 border-gray-400 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 font-hindi text-lg leading-relaxed focus:border-blue-600 dark:focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-600 dark:focus:ring-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:cursor-not-allowed text-gray-900 dark:text-gray-150 shadow-md"
           rows={4}
           placeholder={isStarted ? "" : "यहाँ टाइप करना शुरू करें (Type here)..."}
           spellCheck={false}
@@ -105,8 +105,8 @@ export const TypingBox = memo(function TypingBox({
           id="typing-input"
         />
         {isFinished && (
-          <div className="absolute inset-0 flex items-center justify-center rounded bg-white/90 border border-gray-300">
-            <p className="text-xl font-bold text-green-700">
+          <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-white/90 dark:bg-gray-950/90 border-2 border-green-600/50">
+            <p className="text-xl font-bold text-green-700 dark:text-green-400">
               ✓ पूर्ण! (Completed)
             </p>
           </div>

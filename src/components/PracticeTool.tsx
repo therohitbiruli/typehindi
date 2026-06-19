@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
+import Link from "next/link";
 import { TypingBox } from "./TypingBox";
 import { Stats } from "./Stats";
 import { TimerDisplay } from "./Timer";
@@ -11,6 +12,7 @@ import { useKeyPress } from "../hooks/useKeyPress";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { getRandomParagraph, getParagraphsByDifficulty } from "../data/paragraphs";
 import type { Paragraph } from "../data/paragraphs";
+import { getInscriptKeysForWord } from "../utils/keyboardMapper";
 
 const TIMER_OPTIONS = [
   { label: "1 मिनट", seconds: 60 },
@@ -23,6 +25,25 @@ const DIFFICULTY_OPTIONS: Array<{ label: string; value: "easy" | "medium" | "har
   { label: "मध्यम (Medium)", value: "medium" },
   { label: "कठिन (Hard)", value: "hard" },
 ];
+
+// Helper to extract the word at the current cursor index
+function getCurrentWord(targetText: string, cursorIndex: number): string {
+  if (!targetText) return "";
+  
+  let start = cursorIndex;
+  while (start > 0 && targetText[start - 1] !== " " && targetText[start - 1] !== "\n") {
+    start--;
+  }
+  
+  let end = cursorIndex;
+  while (end < targetText.length && targetText[end] !== " " && targetText[end] !== "\n") {
+    end++;
+  }
+  
+  const word = targetText.slice(start, end);
+  // Remove punctuation/symbols to get the clean word
+  return word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()।?"':]/g, "").trim();
+}
 
 export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
   const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">("medium");
@@ -95,6 +116,16 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
     [resetTimer, reset]
   );
 
+  // Calculate current active word and its keys
+  const activeWord = useMemo(() => {
+    return getCurrentWord(paragraph.text, typedText.length);
+  }, [paragraph.text, typedText.length]);
+
+  const activeWordKeys = useMemo(() => {
+    if (!activeWord) return [];
+    return getInscriptKeysForWord(activeWord);
+  }, [activeWord]);
+
   return (
     <div className="w-full">
       {/* Controls */}
@@ -143,7 +174,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
       </div>
 
       {/* Typing area */}
-      <div className="relative group">
+      <div className="relative group mb-6">
         <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-indigo-500 rounded-3xl blur opacity-10 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
         <div className="relative">
           <TypingBox
@@ -155,6 +186,46 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
           />
         </div>
       </div>
+
+      {/* Keystroke Clue Banner (connected to Learn page) */}
+      {activeWord && !isFinished && (
+        <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-orange-950/20 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-start sm:items-center gap-3">
+            <span className="text-2xl mt-0.5 sm:mt-0">💡</span>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block mb-0.5">
+                कुंजी संकेत (Keystroke Hint)
+              </span>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                शब्द <strong className="font-hindi text-base text-gray-900 dark:text-white">{activeWord}</strong> टाइप करने के लिए दबाएँ:
+              </p>
+              <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                {activeWordKeys.map((stroke, i) => (
+                  <div key={i} className="flex items-center">
+                    {i > 0 && <span className="text-gray-400 text-xs mx-0.5">→</span>}
+                    <kbd className={`px-1.5 py-0.5 text-xs rounded border ${
+                      stroke.isShift
+                        ? "bg-indigo-50 border-indigo-200 dark:bg-indigo-950/50 dark:border-indigo-900 text-indigo-700 dark:text-indigo-300 font-bold"
+                        : "bg-white border-gray-300 dark:bg-gray-800 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-semibold"
+                    }`}>
+                      {stroke.isShift && "Shift+"}
+                      {stroke.key}
+                    </kbd>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center">
+            <Link
+              href={`/learn?word=${encodeURIComponent(activeWord)}&layout=inscript`}
+              className="text-xs font-bold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-3 py-2 rounded-xl transition-all shadow-sm flex items-center gap-1 hover:shadow"
+            >
+              रेमिंगटन / पूर्ण मार्गदर्शिका ➔
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* Action buttons */}
       <div className="mt-6 flex flex-wrap justify-center gap-3">

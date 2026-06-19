@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { Keyboard } from "../../components/Keyboard";
 import { LessonCard } from "../../components/LessonCard";
@@ -10,14 +11,65 @@ import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { useKeyPress } from "../../hooks/useKeyPress";
 import { lessons } from "../../data/lessons";
 import { wordTypingGuides } from "../../data/word-typing-guide";
+import {
+  getInscriptKeysForWord,
+  getRemingtonKeysForWord,
+  phoneticTransliterationMap
+} from "../../utils/keyboardMapper";
 
-export default function LearnPage() {
+function LearnPageContent() {
   const { activeKey, isShift } = useKeyPress();
+  const searchParams = useSearchParams();
+  const guideRef = useRef<HTMLDivElement>(null);
+
+  // States
   const [selectedWord, setSelectedWord] = useState(wordTypingGuides[0].word);
+  const [customInput, setCustomInput] = useState("");
   const [activeLayoutTab, setActiveLayoutTab] = useState<"inscript" | "remington">("inscript");
   const [keyboardViewTab, setKeyboardViewTab] = useState<"inscript" | "remington">("inscript");
+  const [modalImage, setModalImage] = useState<{ src: string; title: string } | null>(null);
 
-  const currentWordData = wordTypingGuides.find(w => w.word === selectedWord) || wordTypingGuides[0];
+  // Handle URL redirect query param
+  useEffect(() => {
+    const wordParam = searchParams.get("word");
+    const layoutParam = searchParams.get("layout");
+    if (wordParam) {
+      setSelectedWord(wordParam);
+      setCustomInput(wordParam);
+      if (layoutParam === "remington" || layoutParam === "inscript") {
+        setActiveLayoutTab(layoutParam);
+      }
+      // Scroll to guide section
+      setTimeout(() => {
+        guideRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 500);
+    }
+  }, [searchParams]);
+
+  // Handle input word change
+  const handleInputChange = (val: string) => {
+    setCustomInput(val);
+    if (!val.trim()) return;
+
+    // Check English phonetic matching
+    const normalized = val.toLowerCase().trim();
+    if (phoneticTransliterationMap[normalized]) {
+      setSelectedWord(phoneticTransliterationMap[normalized]);
+    } else {
+      setSelectedWord(val.trim());
+    }
+  };
+
+  // Determine current active word's guide data
+  const staticData = wordTypingGuides.find(w => w.word === selectedWord);
+  
+  // Calculate keys on the fly using the mapper utility
+  const dynamicInscriptKeys = getInscriptKeysForWord(selectedWord);
+  const dynamicRemingtonKeys = getRemingtonKeysForWord(selectedWord);
+
+  const displayMeaning = staticData ? staticData.meaning : "उपयोगकर्ता खोज शब्द";
+  const displayInscriptKeys = staticData ? staticData.inscript : dynamicInscriptKeys;
+  const displayRemingtonKeys = staticData ? staticData.remington : dynamicRemingtonKeys;
 
   return (
     <div className="container-main py-6">
@@ -41,31 +93,64 @@ export default function LearnPage() {
         </div>
       </div>
 
-      {/* NEW: Word Typing Guide Section */}
-      <section className="mb-12">
+      {/* Word Typing Guide Section */}
+      <section ref={guideRef} className="mb-12 scroll-mt-20">
         <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
           <div className="bg-gradient-to-r from-primary-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-100 dark:border-gray-800">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
               ⌨️ शब्द टाइपिंग मार्गदर्शिका (Word Typing Guide)
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              सीखें कि किसी विशिष्ट हिंदी शब्द को टाइप करने के लिए कौन सी कुंजियाँ दबानी पड़ती हैं।
+              सीखें कि किसी विशिष्ट हिंदी शब्द को टाइप करने के लिए कौन सी कुंजियाँ दबानी पड़ती हैं। आप कोई भी शब्द टाइप कर सकते हैं!
             </p>
           </div>
 
           <div className="p-6 md:p-8 grid gap-8 lg:grid-cols-12">
             {/* Left Column: Word selector & Keystroke guide */}
             <div className="lg:col-span-7 space-y-6">
+              {/* Dynamic Word Search */}
+              <div className="space-y-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+                  अपना शब्द खोजें या टाइप करें (Search or Type Any Word)
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={customInput}
+                    onChange={(e) => handleInputChange(e.target.value)}
+                    placeholder="उदा. gyan, namaste, या हिंदी में 'परीक्षा'..."
+                    className="flex-1 px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  />
+                  {customInput && (
+                    <button
+                      onClick={() => {
+                        setCustomInput("");
+                        setSelectedWord(wordTypingGuides[0].word);
+                      }}
+                      className="px-3 text-xs font-semibold text-gray-400 hover:text-gray-600"
+                    >
+                      Clear
+                    </button>
+                  )}
+                </div>
+                <p className="text-[11px] text-gray-400">
+                  अंग्रेजी या हिंदी दोनों में टाइप करें। उदाहरण: <span className="font-mono bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded">namaste</span> लिखने पर <span className="font-semibold text-primary-500">नमस्ते</span> का गाइड दिखेगा।
+                </p>
+              </div>
+
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-2">
-                  शब्द चुनें (Select a Word)
+                  त्वरित अभ्यास के लिए शब्द (Quick Practice Words)
                 </label>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2">
                   {wordTypingGuides.map((guide) => (
                     <button
                       key={guide.word}
-                      onClick={() => setSelectedWord(guide.word)}
-                      className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
+                      onClick={() => {
+                        setSelectedWord(guide.word);
+                        setCustomInput(guide.word);
+                      }}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                         selectedWord === guide.word
                           ? "bg-primary-500 text-white shadow-md shadow-primary-500/20 scale-[1.03]"
                           : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -105,10 +190,10 @@ export default function LearnPage() {
               <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 text-center lg:text-left">
                 <div className="mb-4">
                   <div className="text-5xl font-hindi font-bold text-gray-900 dark:text-white tracking-wide">
-                    {currentWordData.word}
+                    {selectedWord}
                   </div>
                   <div className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                    अर्थ: {currentWordData.meaning}
+                    अर्थ / श्रेणी: {displayMeaning}
                   </div>
                 </div>
 
@@ -117,7 +202,7 @@ export default function LearnPage() {
                     कुंजी अनुक्रम (Key Sequence)
                   </h4>
                   <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
-                    {(activeLayoutTab === "inscript" ? currentWordData.inscript : currentWordData.remington).map((stroke, i) => (
+                    {(activeLayoutTab === "inscript" ? displayInscriptKeys : displayRemingtonKeys).map((stroke, i) => (
                       <div key={i} className="flex items-center">
                         {i > 0 && <span className="text-gray-300 dark:text-gray-700 mx-2 text-xl font-light">→</span>}
                         <div className="flex flex-col items-center">
@@ -166,7 +251,14 @@ export default function LearnPage() {
                 </div>
               </div>
 
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">
+              {/* Modal trigger container */}
+              <div
+                onClick={() => setModalImage({
+                  src: keyboardViewTab === "inscript" ? "/images/inscript-keyboard-map.png" : "/images/remington-keyboard-map.png",
+                  title: keyboardViewTab === "inscript" ? "इनस्क्रिप्ट कीबोर्ड लेआउट (InScript)" : "रेमिंगटन गैल लेआउट (Remington GAIL)"
+                })}
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 cursor-pointer group shadow-sm hover:shadow-md transition-all"
+              >
                 {keyboardViewTab === "inscript" ? (
                   <Image
                     src="/images/inscript-keyboard-map.png"
@@ -182,9 +274,15 @@ export default function LearnPage() {
                     className="object-contain"
                   />
                 )}
+                {/* Visual hover feedback */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-200">
+                  <span className="bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+                    🔍 बड़ा चित्र देखें (Zoom Map)
+                  </span>
+                </div>
               </div>
               <p className="text-xs text-gray-400 dark:text-gray-500 text-center">
-                चित्र को बड़े पैमाने पर देखने के लिए हमारे कीबोर्ड लेआउट पेज पर जाएँ।
+                चित्र को बड़े पैमाने पर देखने के लिए उस पर क्लिक करें।
               </p>
             </div>
           </div>
@@ -203,7 +301,7 @@ export default function LearnPage() {
         </div>
       </div>
 
-      {/* NEW: Navigation Redirect Cards (Premium CTAs to Game and Blog) */}
+      {/* Navigation Redirect Cards */}
       <section className="mt-8 grid gap-6 md:grid-cols-2">
         {/* Game Redirect Card */}
         <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-gray-900 dark:to-purple-950/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
@@ -256,7 +354,46 @@ export default function LearnPage() {
         </div>
       </section>
 
+      {/* Lightbox Modal */}
+      {modalImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 animate-fade-in">
+          <div className="relative max-w-5xl w-full bg-white dark:bg-gray-950 rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl p-6">
+            <div className="flex justify-between items-center mb-4">
+              <h4 className="text-lg font-bold text-gray-900 dark:text-white">
+                {modalImage.title}
+              </h4>
+              <button
+                onClick={() => setModalImage(null)}
+                className="h-10 w-10 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white flex items-center justify-center font-bold text-lg"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="relative w-full aspect-[4/3] max-h-[75vh] bg-gray-50 dark:bg-gray-900 rounded-2xl overflow-hidden">
+              <Image
+                src={modalImage.src}
+                alt={modalImage.title}
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       <AdPlaceholder position="bottom" />
     </div>
+  );
+}
+
+export default function LearnPage() {
+  return (
+    <Suspense fallback={
+      <div className="container-main py-12 text-center text-gray-500">
+        लोड हो रहा है (Loading)...
+      </div>
+    }>
+      <LearnPageContent />
+    </Suspense>
   );
 }

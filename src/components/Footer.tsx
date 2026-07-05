@@ -12,7 +12,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-slate-800 bg-slate-950 dark:border-slate-900 dark:bg-black">
+    <footer className="mt-auto border-t border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-gray-950">
       <div className="container-main py-8">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
@@ -20,13 +20,13 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-slate-400 transition-colors hover:text-white dark:text-slate-400 dark:hover:text-white"
+                className="text-sm text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
               >
                 {link.label}
               </Link>
             ))}
           </div>
-          <p className="text-sm text-slate-500 dark:text-slate-600">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             © {new Date().getFullYear()} TypeHindi. सर्वाधिकार सुरक्षित।
           </p>
         </div>

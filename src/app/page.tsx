@@ -6,6 +6,15 @@ export default function Homepage() {
     <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950">
       {/* 🌟 Premium Hero Section */}
       <section className="bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
+        {/* Blurred background image with scale to hide edge artifacts */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30 blur-md scale-105 pointer-events-none"
+          style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        ></div>
+        
+        {/* Gradient dark overlay for readability and premium look */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/70 to-slate-950 pointer-events-none"></div>
+
         {/* Subtle grid background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
         

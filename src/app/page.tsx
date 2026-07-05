@@ -6,14 +6,11 @@ export default function Homepage() {
     <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950">
       {/* 🌟 Premium Hero Section */}
       <section className="bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
-        {/* Blurred background image with scale to hide edge artifacts */}
+        {/* Blurred background image blended directly with the dark bg */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30 blur-md scale-105 pointer-events-none"
+          className="absolute inset-0 bg-cover bg-center opacity-25 blur-[6px] scale-105 pointer-events-none"
           style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
         ></div>
-        
-        {/* Gradient dark overlay for readability and premium look */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/70 to-slate-950 pointer-events-none"></div>
 
         {/* Subtle grid background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
@@ -28,12 +25,12 @@ export default function Homepage() {
               ✨ सर्वश्रेष्ठ हिंदी टाइपिंग प्लेटफॉर्म
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-indigo-200 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] text-white">
               टाइपिंग से संबंधित सभी उपकरण <br/>
-              <span className="bg-gradient-to-r from-primary-400 to-indigo-400 bg-clip-text text-transparent">एक ही स्थान पर</span>
+              <span className="text-primary-400">एक ही स्थान पर</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+            <p className="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               निःशुल्क और उपयोग में आसान हिंदी टाइपिंग टूल्स की एक व्यापक सूची। 100% सटीक WPM ट्रैकर, लाइव कीबोर्ड गाइड्स और आकर्षक टाइपिंग गेम्स के साथ अपनी गति बढ़ाएं।
             </p>
 
@@ -233,12 +230,37 @@ export default function Homepage() {
               </div>
             </div>
 
-            <div className="border border-gray-200 dark:border-gray-800 p-4 border-l-4 border-l-red-500 dark:border-l-red-600 bg-gray-50 dark:bg-gray-800">
-              <h3 className="text-lg font-light text-gray-800 dark:text-gray-200 mb-2">हमारे उपयोगकर्ताओं की प्रतिक्रिया</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p><strong className="text-gray-800 dark:text-gray-200">"केवल दो महीनों में मेरी स्पीड 30 WPM से 70 WPM हो गई। इस साइट ने टाइपिंग सीखना आसान और मजेदार बना दिया!"</strong> — नेहा के., कॉलेज छात्रा</p>
-                <p><strong className="text-gray-800 dark:text-gray-200">"प्रोग्रेस ट्रैकिंग ने मुझे मेरे सरकारी टाइपिंग टेस्ट की तैयारी में बहुत मदद की। मैंने अच्छे अंकों से परीक्षा पास की!"</strong> — राकेश टी., नौकरी तलाशने वाला</p>
-                <p><strong className="text-gray-800 dark:text-gray-200">"हमारी पूरी क्लास इस प्लेटफॉर्म का उपयोग करती है। यह उपयोग में आसान है और छात्रों को जोड़े रखता है।"</strong> — प्रिया डी., स्कूल शिक्षिका</p>
+            {/* Split layout testimonial section with classroom image */}
+            <div className="border border-slate-200 dark:border-slate-800/80 rounded-[2rem] overflow-hidden bg-slate-50 dark:bg-slate-900/50 grid grid-cols-1 md:grid-cols-2">
+              <div className="p-6 md:p-8 flex flex-col justify-center space-y-4">
+                <div>
+                  <h3 className="text-xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2">
+                    <span className="w-2 h-5 rounded-full bg-primary-600"></span>
+                    हमारे उपयोगकर्ताओं की प्रतिक्रिया
+                  </h3>
+                </div>
+                <div className="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                  <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
+                    <p className="italic">"केवल दो महीनों में मेरी स्पीड 30 WPM से 70 WPM हो गई। इस साइट ने टाइपिंग सीखना आसान और मजेदार बना दिया!"</p>
+                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— नेहा के., कॉलेज छात्रा</span>
+                  </div>
+                  <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
+                    <p className="italic">"प्रोग्रेस ट्रैकिंग ने मुझे मेरे सरकारी टाइपिंग टेस्ट की तैयारी में बहुत मदद की। मैंने अच्छे अंकों से परीक्षा पास की!"</p>
+                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— राकेश टी., नौकरी तलाशने वाला</span>
+                  </div>
+                  <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
+                    <p className="italic">"हमारी पूरी क्लास इस प्लेटफॉर्म का उपयोग करती है। यह उपयोग में आसान है और छात्रों को जोड़े रखता है।"</p>
+                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— प्रिया डी., स्कूल शिक्षिका</span>
+                  </div>
+                </div>
+              </div>
+              <div className="relative min-h-[250px] md:min-h-full bg-slate-900">
+                <img 
+                  src="/images/hero-bg.jpg" 
+                  alt="TypeHindi Classroom Training" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-50 dark:from-slate-950/20 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </div>
             

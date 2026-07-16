@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms',
     '/disclaimer',
     '/mangal-font-typing-test',
-    ...blogs.map(blog => `/learn/${blog.slug}`),
+    ...blogs.map(blog => `/blog/${blog.slug}`),
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

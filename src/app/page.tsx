@@ -208,6 +208,34 @@ export default function Homepage() {
               </div>
             </div>
 
+            {/* Highlighted Guide / Article Section */}
+            <div className="border border-slate-200 dark:border-slate-800/80 rounded-[2rem] overflow-hidden bg-gradient-to-br from-indigo-50/50 to-white dark:from-slate-900/30 dark:to-slate-900/90 grid grid-cols-1 md:grid-cols-2">
+              <div className="relative min-h-[250px] md:min-h-[350px]">
+                <img 
+                  src="/images/setting-up-hindi-inscript-windows-mac.jpg" 
+                  alt="Windows 10/11 और macOS पर हिंदी इनस्क्रिप्ट कीबोर्ड कैसे सेट करें" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 md:p-10 flex flex-col justify-center space-y-4">
+                <span className="px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-bold w-fit uppercase tracking-wider">
+                  विस्तृत गाइड
+                </span>
+                <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white leading-snug">
+                  Windows 10/11 और macOS पर हिंदी इनस्क्रिप्ट कीबोर्ड कैसे सेट करें?
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                  बिना किसी बाहरी सॉफ्टवेयर के अपने कंप्यूटर पर हिंदी में टाइपिंग शुरू करना बहुत आसान है। इस स्टेप-बाय-स्टेप गाइड को पढ़कर आप कुछ ही मिनटों में अपने ऑपरेटिंग सिस्टम की डिफ़ॉल्ट सेटिंग्स से ही हिंदी इनस्क्रिप्ट कीबोर्ड को चालू कर सकते हैं।
+                </p>
+                <Link 
+                  href="/blog/setting-up-hindi-inscript-windows-mac" 
+                  className="inline-flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm hover:underline w-fit"
+                >
+                  पूरी स्टेप-बाय-स्टेप गाइड पढ़ें <span className="ml-1">→</span>
+                </Link>
+              </div>
+            </div>
+
             <div>
               <h3 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">अक्सर पूछे जाने वाले प्रश्न (FAQ)</h3>
               <div className="space-y-3 text-sm">

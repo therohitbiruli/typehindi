@@ -45,7 +45,7 @@ export default async function BlogDetailPage({ params }: Props) {
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
-          { label: "Learn", href: "/learn" },
+          { label: "Blog", href: "/blog" },
           { label: blog.title },
         ]}
       />
@@ -55,7 +55,7 @@ export default async function BlogDetailPage({ params }: Props) {
           <div className="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-semibold mb-4">
             {blog.category}
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-normal">
             {blog.title}
           </h1>
           <div className="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
@@ -131,6 +131,7 @@ function formatContent(content: string) {
     .replace(/### (.*)/g, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
     .replace(/## (.*)/g, '<h2 class="text-3xl font-bold mt-10 mb-6">$1</h2>')
     .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8"><img src="$2" alt="$1" class="w-full rounded-xl shadow-md border border-gray-200 dark:border-gray-800" /><figcaption class="text-center text-sm text-gray-500 mt-3">$1</figcaption></figure>')
+    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary-600 hover:underline">$1</a>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
   // Convert markdown lists to styled <li> elements

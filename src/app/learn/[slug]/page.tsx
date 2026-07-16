@@ -82,6 +82,51 @@ export default async function BlogDetailPage({ params }: Props) {
 
 // Simple helper to convert basic markdown/text to HTML for the blog
 function formatContent(content: string) {
+  // First, parse Markdown tables
+  const lines = content.split('\n');
+  let inTable = false;
+  let tableHtml = '';
+  const processedLines: string[] = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('|') && line.endsWith('|')) {
+      if (!inTable) {
+        inTable = true;
+        tableHtml = '<div class="overflow-x-auto my-8"><table class="w-full border-collapse border border-gray-300 dark:border-gray-700 text-left text-sm md:text-base">';
+        const cells = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+        tableHtml += '<thead><tr class="bg-gray-100 dark:bg-gray-800">';
+        cells.forEach(cell => {
+          tableHtml += `<th class="border border-gray-300 dark:border-gray-700 px-4 py-3 font-semibold">${cell}</th>`;
+        });
+        tableHtml += '</tr></thead><tbody>';
+      } else {
+        if (line.includes('---')) {
+          continue;
+        }
+        const cells = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+        tableHtml += '<tr class="odd:bg-white even:bg-gray-50/50 dark:odd:bg-gray-900 dark:even:bg-gray-800/30">';
+        cells.forEach(cell => {
+          tableHtml += `<td class="border border-gray-300 dark:border-gray-700 px-4 py-3">${cell}</td>`;
+        });
+        tableHtml += '</tr>';
+      }
+    } else {
+      if (inTable) {
+        tableHtml += '</tbody></table></div>';
+        processedLines.push(tableHtml);
+        inTable = false;
+        tableHtml = '';
+      }
+      processedLines.push(lines[i]);
+    }
+  }
+  if (inTable) {
+    tableHtml += '</tbody></table></div>';
+    processedLines.push(tableHtml);
+  }
+  content = processedLines.join('\n');
+
   let html = content
     .replace(/### (.*)/g, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
     .replace(/## (.*)/g, '<h2 class="text-3xl font-bold mt-10 mb-6">$1</h2>')
@@ -99,6 +144,8 @@ function formatContent(content: string) {
   html = html.replace(/<\/p><p class="mb-4"><figure/g, '<figure');
   html = html.replace(/<\/figure><\/p>/g, '</figure>');
   html = html.replace(/<\/p><p class="mb-4"><h/g, '<h');
+  html = html.replace(/<\/p><p class="mb-4"><div class="overflow-x-auto/g, '<div class="overflow-x-auto');
+  html = html.replace(/<\/table><\/div><\/p>/g, '</table></div>');
 
   return html.trim();
 }

@@ -212,7 +212,7 @@ export default function Homepage() {
             <div className="border border-slate-200 dark:border-slate-800/80 rounded-[2rem] overflow-hidden bg-gradient-to-br from-indigo-50/50 to-white dark:from-slate-900/30 dark:to-slate-900/90 grid grid-cols-1 md:grid-cols-2">
               <div className="relative min-h-[250px] md:min-h-[350px]">
                 <img 
-                  src="/images/setting-up-hindi-inscript-windows-mac.jpg" 
+                  src="/images/setting-up-hindi-inscript-windows-mac.webp" 
                   alt="Windows 10/11 और macOS पर हिंदी इनस्क्रिप्ट कीबोर्ड कैसे सेट करें" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />

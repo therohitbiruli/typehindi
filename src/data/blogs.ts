@@ -920,7 +920,7 @@ MP CPCT एक बहुत ही प्रसिद्ध परीक्ष�
     author: "TypeHindi Team",
     category: "Basics",
     content: `
-![Windows 10/11 और macOS पर हिंदी इनस्क्रिप्ट कीबोर्ड कैसे सेट करें?](/images/setting-up-hindi-inscript-windows-mac.jpg)
+![Windows 10/11 और macOS पर हिंदी इनस्क्रिप्ट कीबोर्ड कैसे सेट करें?](/images/setting-up-hindi-inscript-windows-mac.webp)
 
 आज के समय में हिंदी में टाइपिंग की आवश्यकता पहले से कहीं अधिक बढ़ गई है। चाहे आप सरकारी नौकरी की तैयारी कर रहे हों, ब्लॉग लिखते हों, कंटेंट क्रिएटर हों या ऑफिस में हिंदी में काम करते हों, **हिंदी इनस्क्रिप्ट (InScript) कीबोर्ड** सीखना एक महत्वपूर्ण कौशल बन गया है।
 

@@ -101,6 +101,19 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-screen flex-col antialiased">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-J3ZJWHC5EG"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-J3ZJWHC5EG');
+          `}
+        </Script>
         <ThemeProvider>
           <Header />
           <main className="flex-1">{children}</main>

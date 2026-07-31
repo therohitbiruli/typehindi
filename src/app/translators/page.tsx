@@ -54,13 +54,56 @@ export default function TranslatorsPage() {
         </div>
       </div>
 
-      {/* SEO Text */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm p-6 space-y-4">
-        <h3 className="text-lg font-normal text-blue-800 dark:text-blue-400 border-b border-gray-100 dark:border-gray-800 pb-2">हमारे नेटिव भारतीय अनुवादकों (Translators) के बारे में</h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-          क्षेत्रीय भारतीय भाषाओं में टाइप करने के लिए पहले जटिल कीबोर्ड लेआउट सीखने की आवश्यकता होती थी। हमारे अंग्रेजी/हिंदी से नेटिव ट्रांसलिटरेशन (लिप्यंतरण) टूल के साथ, आप आसानी से मानक अंग्रेजी (QWERTY) या हिंदी कीबोर्ड का उपयोग करके पंजाबी, मराठी, संथाली और गुजराती जैसी भाषाओं में टाइप कर सकते हैं। बस शब्द को वैसे ही टाइप करें जैसे वह अंग्रेजी या हिंदी में लगता है, और टूल स्वचालित रूप से इसे संबंधित मूल लिपि में बदल देगा।
+      {/* Explanation & FAQs */}
+      <section className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm p-8 space-y-8 rounded-xl">
+        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-3">
+          यह ट्रांसलेटर टूल कैसे काम करता है
+        </h3>
+        
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          यह टूल आपके द्वारा टाइप किए गए अंग्रेज़ी या रोमन लिपि के शब्दों को तुरंत देवनागरी हिंदी में बदल देता है। यह पूरी तरह ब्राउज़र में काम करता है, इसलिए आपका टाइप किया हुआ टेक्स्ट कहीं सर्वर पर नहीं भेजा जाता — गति तेज़ रहती है और प्राइवेसी भी बनी रहती है।
         </p>
-      </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="border border-gray-100 dark:border-gray-800 rounded-lg p-5">
+            <h4 className="font-semibold text-blue-800 dark:text-blue-400 text-lg mb-2">कब इस्तेमाल करें</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+              अगर आपको हिंदी कीबोर्ड लेआउट याद नहीं है लेकिन जल्दी में देवनागरी में कुछ टाइप करना है — जैसे व्हाट्सऐप मैसेज, ईमेल, या कोई फॉर्म — तो यह टूल उपयोगी है। यह इनस्क्रिप्ट सीखने का विकल्प नहीं है; सरकारी टाइपिंग परीक्षाओं (SSC, स्टेनोग्राफर आदि) के लिए आपको असली कीबोर्ड लेआउट (Learn सेक्शन) ही सीखना होगा, क्योंकि परीक्षा केंद्रों में ट्रांसलेटर टूल की सुविधा नहीं मिलती।
+            </p>
+          </div>
+
+          <div className="border border-gray-100 dark:border-gray-800 rounded-lg p-5">
+            <h4 className="font-semibold text-blue-800 dark:text-blue-400 text-lg mb-2">सटीकता और सीमाएँ</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+              ट्रांसलिटरेशन टूल ध्वनि के आधार पर शब्द बदलते हैं, इसलिए कुछ जटिल या कम इस्तेमाल होने वाले शब्दों में सुझाव सटीक नहीं भी हो सकता — ऐसे में आप सुझाव सूची से सही विकल्प चुन सकते हैं।
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-6 pt-4 border-t border-gray-100 dark:border-gray-800">
+          <h4 className="text-xl font-semibold text-gray-900 dark:text-white">अक्सर पूछे जाने वाले प्रश्न</h4>
+          
+          <div className="space-y-4">
+            <div className="bg-gray-50 dark:bg-gray-800/40 rounded-lg p-5">
+              <h5 className="font-semibold text-gray-900 dark:text-white mb-2">
+                क्या यह टूल सरकारी टाइपिंग टेस्ट की तैयारी के लिए काम आएगा?
+              </h5>
+              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                सीधे तौर पर नहीं — परीक्षा में आपको इनस्क्रिप्ट कीबोर्ड से ही टाइप करना होता है। यह टूल केवल रोज़मर्रा के हिंदी टाइपिंग कार्यों के लिए है।
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-800/40 rounded-lg p-5">
+              <h5 className="font-semibold text-gray-900 dark:text-white mb-2">
+                क्या डेटा सेव होता है?
+              </h5>
+              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                नहीं, कुछ भी सर्वर पर सेव या भेजा नहीं जाता।
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       
     </div>
   );

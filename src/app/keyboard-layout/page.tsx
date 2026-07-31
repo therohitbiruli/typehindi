@@ -55,24 +55,70 @@ export default function KeyboardLayoutPage() {
         </div>
       </div>
 
-      {/* Explanation */}
-      <section className="mt-8 space-y-4">
-        <h2 className="heading-2">InScript लेआउट की विशेषताएँ</h2>
-        <div className="prose max-w-none text-gray-600 dark:text-gray-300 space-y-3">
-          <p>
-            InScript (Indian Script) कीबोर्ड लेआउट भारत सरकार द्वारा विकसित मानकीकृत कीबोर्ड लेआउट है। इसमें स्वर कीबोर्ड के बाएँ भाग में और व्यंजन दाएँ भाग में व्यवस्थित होते हैं। यह ध्वन्यात्मक सिद्धांत पर आधारित है जिससे दोनों हाथों का समान उपयोग होता है।
+      {/* Explanation & User Guide */}
+      <section className="mt-12 border-t border-gray-100 dark:border-gray-800 pt-8 space-y-8">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            इनस्क्रिप्ट कीबोर्ड लेआउट क्या है और यह कैसे काम करता है?
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+            इनस्क्रिप्ट (InScript) भारत सरकार के C-DAC द्वारा विकसित मानक कीबोर्ड लेआउट है, जो हर Windows, macOS और Linux सिस्टम में पहले से इंस्टॉल होता है। इसकी सबसे बड़ी खासियत इसकी वैज्ञानिक संरचना है — सभी स्वर (vowels) कीबोर्ड के बाईं ओर और व्यंजन (consonants) दाईं ओर व्यवस्थित होते हैं। इससे दोनों हाथों का समान उपयोग होता है और टाइपिंग की गति स्वाभाविक रूप से बढ़ती है।
           </p>
-          <h3 className="heading-3">लेआउट की संरचना</h3>
-          <ul className="list-disc pl-5 space-y-1">
-            <li><strong>बायाँ भाग:</strong> स्वर और मात्राएँ (ा, ि, ी, ु, ू, े, ै, ो, ौ)</li>
-            <li><strong>दायाँ भाग:</strong> व्यंजन (क, ख, ग, घ, च, छ, ज, झ, आदि)</li>
-            <li><strong>D कुंजी:</strong> हलंत (्) — संयुक्त अक्षर बनाने के लिए</li>
-            <li><strong>Shift कुंजी:</strong> महाप्राण व्यंजन और स्वतंत्र स्वर</li>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+            मात्रा और संयुक्त अक्षर कैसे टाइप करें
+          </h3>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+            हिंदी की मात्राएँ (ा, ि, ी, ु, ू आदि) व्यंजन के तुरंत बाद टाइप होती हैं — जैसे "क" टाइप करने के बाद "ी" दबाने से "की" बनता है। संयुक्त अक्षर (जैसे "क्ष", "त्र") बनाने के लिए हलंत (Halant) की का उपयोग होता है, जो दो व्यंजनों को बिना स्वर के जोड़ देता है। ऊपर दिया गया इंटरैक्टिव कीबोर्ड हर कुंजी पर होवर करने से आपको उसका ठीक स्थान दिखाता है, ताकि आप बिना रटे इसे व्यावहारिक रूप से याद कर सकें।
+          </p>
+        </div>
+
+        <div className="bg-blue-50/50 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/30 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-200 mb-3">
+            अभ्यास के लिए सुझाव
+          </h3>
+          <ul className="space-y-2 text-blue-950 dark:text-blue-300">
+            <li className="flex items-start">
+              <span className="text-blue-500 mr-2">•</span>
+              <span>शुरुआत में केवल स्वर और सामान्य व्यंजनों पर ध्यान दें, संयुक्त अक्षर बाद में सीखें</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-500 mr-2">•</span>
+              <span>कीबोर्ड को बार-बार देखने की बजाय याद से टाइप करने की कोशिश करें (टच टाइपिंग)</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-500 mr-2">•</span>
+              <span>रोज़ाना 15-20 मिनट अभ्यास से 2-3 हफ्तों में लेआउट याद हो जाता है</span>
+            </li>
           </ul>
-          <h3 className="heading-3">अन्य लेआउट से तुलना</h3>
-          <p>
-            रेमिंगटन (Remington) लेआउट पुराने टाइपराइटर पर आधारित है जबकि InScript यूनिकोड मानक पर आधारित आधुनिक लेआउट है। InScript का सबसे बड़ा लाभ यह है कि एक बार सीखने के बाद आप सभी भारतीय भाषाओं (तमिल, तेलुगु, बंगाली, मराठी आदि) में टाइप कर सकते हैं क्योंकि सभी के लिए एक ही लेआउट पैटर्न है।
-          </p>
+        </div>
+
+        <div className="space-y-6">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-2">
+            अक्सर पूछे जाने वाले प्रश्न
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="card p-5">
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                क्या इनस्क्रिप्ट सीखने के लिए कोई सॉफ्टवेयर इंस्टॉल करना पड़ता है?
+              </h4>
+              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                नहीं, यह हर आधुनिक ऑपरेटिंग सिस्टम में पहले से मौजूद होता है। बस भाषा सेटिंग्स में इसे सक्षम करना होता है।
+              </p>
+            </div>
+            
+            <div className="card p-5">
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                क्या यह लेआउट सिर्फ हिंदी के लिए है?
+              </h4>
+              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                नहीं, चूंकि यह यूनिकोड आधारित है, इसी लेआउट से आप मराठी, संस्कृत, कोंकणी जैसी अन्य भारतीय भाषाएँ भी टाइप कर सकते हैं।
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

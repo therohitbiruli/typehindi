@@ -144,7 +144,7 @@ export const TypingBox = memo(function TypingBox({
           disabled={isFinished}
           className="w-full resize-none rounded-2xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 font-hindi text-lg leading-relaxed focus:border-blue-600 dark:focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-600 dark:focus:ring-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:cursor-not-allowed text-gray-900 dark:text-gray-150 shadow-sm"
           rows={4}
-          placeholder={isStarted ? "" : "यहाँ टाइप करना शुरू करें (Type here)..."}
+          placeholder={isStarted ? "" : "Start typing here..."}
           spellCheck={false}
           autoComplete="off"
           autoCorrect="off"
@@ -154,7 +154,7 @@ export const TypingBox = memo(function TypingBox({
         {isFinished && (
           <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-white/90 dark:bg-gray-950/90 border border-green-600/50">
             <p className="text-xl font-bold text-green-700 dark:text-green-400">
-              ✓ पूर्ण! (Completed)
+              ✓ Completed!
             </p>
           </div>
         )}

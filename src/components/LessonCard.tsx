@@ -13,7 +13,7 @@ export const LessonCard = memo(function LessonCard({ lesson }: LessonCardProps) 
   return (
     <div className="card" id={`lesson-${lesson.id}`}>
       <h3 className="heading-3 mb-2">
-        पाठ {lesson.id}: {lesson.title}
+        Lesson {lesson.id}: {lesson.title}
       </h3>
       <p className="mb-4 text-sm text-gray-500 dark:text-gray-400">
         {lesson.description}
@@ -23,7 +23,7 @@ export const LessonCard = memo(function LessonCard({ lesson }: LessonCardProps) 
       {lesson.characters.length > 0 && (
         <div className="mb-4">
           <h4 className="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-            अक्षर (Characters):
+            Characters:
           </h4>
           <div className="flex flex-wrap gap-2">
             {lesson.characters.map((char, i) => (
@@ -53,7 +53,7 @@ export const LessonCard = memo(function LessonCard({ lesson }: LessonCardProps) 
       {/* Practice words */}
       <div>
         <h4 className="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-          अभ्यास शब्द (Practice Words):
+          Practice Words:
         </h4>
         <div className="flex flex-wrap gap-2">
           {lesson.practiceWords.map((word, i) => (

@@ -15,9 +15,9 @@ import { getRandomParagraph, getParagraphsByDifficulty } from "../../data/paragr
 import type { Paragraph } from "../../data/paragraphs";
 
 const TEST_DURATIONS = [
-  { label: "1 मिनट", seconds: 60 },
-  { label: "5 मिनट", seconds: 300 },
-  { label: "10 मिनट", seconds: 600 },
+  { label: "1 Minute", seconds: 60 },
+  { label: "5 Minutes", seconds: 300 },
+  { label: "10 Minutes", seconds: 600 },
 ];
 
 export default function TestPage() {
@@ -26,8 +26,6 @@ export default function TestPage() {
   const [showKeyboard, setShowKeyboard] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [bestTestWpm, setBestTestWpm] = useLocalStorage<number>("bestTestWpm", 0);
-
-
 
   const { typedText, isStarted, isFinished, stats, handleInput, reset, forceFinish } =
     useTypingEngine(paragraph.text);
@@ -85,36 +83,36 @@ export default function TestPage() {
 
       <AdPlaceholder position="top" />
 
-      <h1 className="heading-1 mb-2">हिंदी टाइपिंग टेस्ट (Hindi Typing Test)</h1>
+      <h1 className="heading-1 mb-2">Hindi Typing Test</h1>
       <p className="text-muted mb-6">
-        निर्धारित समय में टेस्ट दें और अपनी WPM, सटीकता और त्रुटियाँ जानें।
+        Take a timed typing test to evaluate your WPM speed, accuracy, and error counts.
       </p>
 
       {/* Results Modal */}
       {showResults && (
         <div className="mb-6 rounded-lg border-2 border-primary-200 bg-primary-50 p-6 dark:border-primary-800 dark:bg-primary-900/20">
-          <h2 className="heading-2 mb-4 text-center">📊 टेस्ट परिणाम (Test Results)</h2>
+          <h2 className="heading-2 mb-4 text-center">📊 Test Results</h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             <div className="text-center">
-              <p className="text-sm text-gray-500 dark:text-gray-400">गति (WPM)</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Speed (WPM)</p>
               <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">{stats.wpm}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-500 dark:text-gray-400">सटीकता</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Accuracy</p>
               <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">{stats.accuracy}%</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-500 dark:text-gray-400">कुल त्रुटियाँ</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Total Errors</p>
               <p className="text-3xl font-bold text-red-600 dark:text-red-400">{stats.totalErrors}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-500 dark:text-gray-400">सर्वश्रेष्ठ WPM</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Best WPM</p>
               <p className="text-3xl font-bold text-amber-600 dark:text-amber-400">{bestTestWpm}</p>
             </div>
           </div>
           <div className="mt-4 text-center">
             <button onClick={startNewTest} className="btn-primary px-8">
-              नया टेस्ट दें (New Test)
+              New Test
             </button>
           </div>
         </div>
@@ -158,13 +156,13 @@ export default function TestPage() {
       {/* Controls */}
       <div className="mt-4 flex flex-wrap gap-2">
         <button onClick={startNewTest} className="btn-secondary">
-          ↻ नया टेस्ट (New Test)
+          ↻ New Test
         </button>
         <button
           onClick={() => setShowKeyboard(!showKeyboard)}
           className={`btn-secondary ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30" : ""}`}
         >
-          ⌨ कीबोर्ड {showKeyboard ? "छुपाएँ" : "दिखाएँ"}
+          ⌨ {showKeyboard ? "Hide" : "Show"} Keyboard
         </button>
       </div>
 
@@ -174,35 +172,35 @@ export default function TestPage() {
 
       {/* Test Guide & Criteria */}
       <section className="mt-12 border-t border-gray-100 dark:border-gray-900 pt-12 pb-8">
-        <h2 className="text-2xl font-bold mb-6">SSC स्टेनोग्राफर और LDC के लिए पासिंग क्राइटेरिया</h2>
+        <h2 className="text-2xl font-bold mb-6">Passing Criteria for SSC Stenographer & LDC</h2>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="card bg-gray-50 dark:bg-gray-900/50">
-            <h3 className="font-bold mb-3 text-lg">स्टेनोग्राफर (Grade C & D)</h3>
+            <h3 className="font-bold mb-3 text-lg">Stenographer (Grade C & D)</h3>
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-              <li>• ग्रेड C के लिए 100 WPM की डिक्टेशन गति।</li>
-              <li>• ग्रेड D के लिए 80 WPM की डिक्टेशन गति।</li>
-              <li>• ट्रांसक्रिप्शन के दौरान 95-97% सटीकता (Accuracy) अनिवार्य है।</li>
-              <li>• हिंदी स्टेनोग्राफर के लिए ट्रांसक्रिप्शन समय: 65 मिनट (Grade D)।</li>
+              <li>• Dictation speed of 100 WPM for Grade C.</li>
+              <li>• Dictation speed of 80 WPM for Grade D.</li>
+              <li>• 95-97% transcription accuracy is mandatory.</li>
+              <li>• Transcription time for Hindi Stenographer: 65 minutes (Grade D).</li>
             </ul>
           </div>
           <div className="card bg-gray-50 dark:bg-gray-900/50">
-            <h3 className="font-bold mb-3 text-lg">LDC / JSA / क्लर्क</h3>
+            <h3 className="font-bold mb-3 text-lg">LDC / JSA / Clerk</h3>
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-              <li>• SSC CHSL के लिए 30-35 WPM की हिंदी टाइपिंग गति।</li>
-              <li>• टाइपिंग टेस्ट आमतौर पर 10 मिनट का होता है।</li>
-              <li>• 1750 की-डिप्रेशन (Key Depressions) 10 मिनट में।</li>
-              <li>• UR कैटेगरी के लिए 7% और अन्य के लिए 10% त्रुटि मान्य।</li>
+              <li>• 30-35 WPM Hindi typing speed is required for SSC CHSL.</li>
+              <li>• Typing test duration is typically 10 minutes.</li>
+              <li>• 1750 Key Depressions (KDPH) in 10 minutes.</li>
+              <li>• 7% error limit for UR category and 10% for other categories.</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-8 prose prose-sm max-w-none text-gray-600 dark:text-gray-400">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">टेस्ट के दौरान इन बातों का ध्यान रखें:</h3>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Important things to keep in mind during the test:</h3>
           <p>
-            जब आप TypeHindi पर टेस्ट दे रहे हों, तो अपनी गति के साथ-साथ त्रुटियों (Errors) पर भी नज़र रखें। वास्तविक परीक्षा में, बैकस्पेस का अधिक उपयोग आपकी गति को प्रभावित कर सकता है। हमारा टेस्ट मोड आपको वह सटीकता और दबाव प्रदान करता है जो वास्तविक सरकारी परीक्षा केंद्रों में महसूस होता है। 
+            When taking a test on TypeHindi, keep an eye on both your typing speed and errors. In the actual exam, using the backspace key excessively can slow you down. Our test mode simulates the exact interface layout, timer pressure, and scoring system used in government typing centers.
           </p>
           <p>
-            नियमित रूप से 10 मिनट का टेस्ट देने से आपकी एकाग्रता बढ़ती है और आप लंबी अवधि तक बिना थके टाइप करने में सक्षम होते हैं।
+            Taking a 10-minute test regularly builds concentration, builds muscle memory, and trains your fingers to type for longer durations without fatigue.
           </p>
         </div>
       </section>

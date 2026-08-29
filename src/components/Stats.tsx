@@ -12,7 +12,7 @@ export const Stats = memo(function Stats({ stats, bestWpm }: StatsProps) {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4" id="typing-stats">
       <StatCard
-        label="गति (WPM)"
+        label="Speed (WPM)"
         value={stats.wpm.toString()}
         icon={
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary-500">
@@ -21,7 +21,7 @@ export const Stats = memo(function Stats({ stats, bestWpm }: StatsProps) {
         }
       />
       <StatCard
-        label="सटीकता"
+        label="Accuracy"
         value={`${stats.accuracy}%`}
         icon={
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-500">
@@ -31,7 +31,7 @@ export const Stats = memo(function Stats({ stats, bestWpm }: StatsProps) {
         }
       />
       <StatCard
-        label="त्रुटियाँ"
+        label="Errors"
         value={stats.totalErrors.toString()}
         icon={
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-red-500">
@@ -41,7 +41,7 @@ export const Stats = memo(function Stats({ stats, bestWpm }: StatsProps) {
         }
       />
       <StatCard
-        label="सर्वश्रेष्ठ WPM"
+        label="Best WPM"
         value={bestWpm?.toString() ?? "—"}
         icon={
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-amber-500">

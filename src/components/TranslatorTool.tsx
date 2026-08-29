@@ -12,9 +12,6 @@ export function TranslatorTool({ language, hindiLanguageName, sourceLanguage }: 
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
 
-  const isHindiSource = sourceLanguage === "Hindi";
-  const sourceHindiName = isHindiSource ? "हिंदी" : "अंग्रेजी";
-
   const handleTranslate = () => {
     // Placeholder logic for future API integration
     // E.g., fetch from Google Input Tools API here
@@ -34,13 +31,13 @@ export function TranslatorTool({ language, hindiLanguageName, sourceLanguage }: 
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm p-4 md:p-6 mb-8">
       <h2 className="text-xl font-normal text-blue-800 dark:text-blue-400 border-b border-gray-100 dark:border-gray-800 pb-2 mb-4 capitalize">
-        {sourceHindiName} से {hindiLanguageName} टाइपिंग टूल ({sourceLanguage} to {language})
+        {sourceLanguage} to {language} Transliteration Tool
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Input Text Area */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{sourceHindiName} में टाइप करें ({sourceLanguage})</label>
+          <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Type in {sourceLanguage}</label>
           <textarea
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
@@ -51,7 +48,7 @@ export function TranslatorTool({ language, hindiLanguageName, sourceLanguage }: 
 
         {/* Output Text Area */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-300 capitalize">{hindiLanguageName} आउटपुट ({language})</label>
+          <label className="text-sm font-medium text-gray-700 dark:text-gray-300 capitalize">{language} Output</label>
           <textarea
             value={outputText}
             readOnly
@@ -67,24 +64,24 @@ export function TranslatorTool({ language, hindiLanguageName, sourceLanguage }: 
           onClick={handleTranslate}
           className="px-6 py-2 bg-[#4A8D9B] hover:bg-[#3c7682] dark:bg-[#3c7682] dark:hover:bg-[#4A8D9B] text-white transition-colors text-sm font-medium"
         >
-          अनुवाद करें (Translate)
+          Translate
         </button>
         <button
           onClick={handleCopy}
           className="px-6 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200 text-gray-800 transition-colors text-sm font-medium"
         >
-          कॉपी करें (Copy)
+          Copy
         </button>
         <button
           onClick={handleClear}
           className="px-6 py-2 bg-red-100 hover:bg-red-200 text-red-700 dark:bg-red-900/30 dark:hover:bg-red-900/50 dark:text-red-400 transition-colors text-sm font-medium"
         >
-          साफ़ करें (Clear)
+          Clear
         </button>
       </div>
 
       <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-900/30 text-xs text-gray-600 dark:text-gray-400">
-        <strong className="text-gray-800 dark:text-gray-300">सुझाव (Tip):</strong> कोई शब्द टाइप करने के बाद उसे तुरंत {hindiLanguageName} में बदलने के लिए स्पेसबार (Spacebar) दबाएं।
+        <strong className="text-gray-800 dark:text-gray-300">Tip:</strong> Press the Spacebar after typing a word to instantly convert it into {language}.
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { href: "/about", label: "हमारे बारे में" },
-  { href: "/resources", label: "संसाधन" },
-  { href: "/blog", label: "ब्लॉग" },
-  { href: "/contact", label: "संपर्क करें" },
-  { href: "/privacy-policy", label: "गोपनीयता नीति" },
-  { href: "/disclaimer", label: "अस्वीकरण" },
-  { href: "/terms", label: "शर्तें" },
+  { href: "/about", label: "About Us" },
+  { href: "/resources", label: "Resources" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact Us" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/disclaimer", label: "Disclaimer" },
+  { href: "/terms", label: "Terms" },
 ];
 
 export function Footer() {
@@ -27,7 +27,7 @@ export function Footer() {
             ))}
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            © {new Date().getFullYear()} TypeHindi. सर्वाधिकार सुरक्षित।
+            © {new Date().getFullYear()} TypeHindi. All rights reserved.
           </p>
         </div>
       </div>

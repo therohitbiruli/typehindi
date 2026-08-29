@@ -67,7 +67,7 @@ function LearnPageContent() {
   const dynamicInscriptKeys = getInscriptKeysForWord(selectedWord);
   const dynamicRemingtonKeys = getRemingtonKeysForWord(selectedWord);
 
-  const displayMeaning = staticData ? staticData.meaning : "उपयोगकर्ता खोज शब्द";
+  const displayMeaning = staticData ? staticData.meaning : "User Search Word";
   const displayInscriptKeys = staticData ? staticData.inscript : dynamicInscriptKeys;
   const displayRemingtonKeys = staticData ? staticData.remington : dynamicRemingtonKeys;
 
@@ -77,16 +77,16 @@ function LearnPageContent() {
 
       <AdPlaceholder position="top" />
 
-      <h1 className="heading-1 mb-2">हिंदी टाइपिंग सीखें (Learn Hindi Typing)</h1>
+      <h1 className="heading-1 mb-2">Learn Hindi Typing</h1>
       <p className="text-muted mb-8">
-        कीबोर्ड लेआउट को चरणबद्ध तरीके से सीखें, कठिन शब्दों को टाइप करने का अभ्यास करें और अपनी स्पीड बढ़ाने के लिए आगे बढ़ें।
+        Learn the keyboard layout step-by-step, practice typing difficult words, and build your writing speed.
       </p>
 
       {/* Interactive Keyboard */}
       <div className="mb-12">
-        <h2 className="heading-2 mb-3">इंटरैक्टिव कीबोर्ड (Interactive Keyboard)</h2>
+        <h2 className="heading-2 mb-3">Interactive Keyboard</h2>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-          कोई भी कुंजी दबाएँ — कीबोर्ड पर संबंधित हिंदी अक्षर हाइलाइट होगा। Shift कुंजी दबाकर अतिरिक्त अक्षर देखें।
+          Press any key — the corresponding Hindi character will highlight on the keyboard map. Hold Shift to see secondary characters.
         </p>
         <div className="bg-white dark:bg-gray-900 rounded-3xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
           <Keyboard activeKey={activeKey} isShift={isShift} visible={true} />
@@ -98,10 +98,10 @@ function LearnPageContent() {
         <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
           <div className="bg-gradient-to-r from-primary-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-100 dark:border-gray-800">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
-              ⌨️ शब्द टाइपिंग मार्गदर्शिका (Word Typing Guide)
+              ⌨️ Word Typing Guide
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              सीखें कि किसी विशिष्ट हिंदी शब्द को टाइप करने के लिए कौन सी कुंजियाँ दबानी पड़ती हैं। आप कोई भी शब्द टाइप कर सकते हैं!
+              Learn which keys to press to type any specific Hindi word. You can search or type any word you want!
             </p>
           </div>
 
@@ -111,14 +111,14 @@ function LearnPageContent() {
               {/* Dynamic Word Search */}
               <div className="space-y-2">
                 <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
-                  अपना शब्द खोजें या टाइप करें (Search or Type Any Word)
+                  Search or Type Any Word
                 </label>
                 <div className="flex gap-2">
                   <input
                     type="text"
                     value={customInput}
                     onChange={(e) => handleInputChange(e.target.value)}
-                    placeholder="उदा. gyan, namaste, या हिंदी में 'परीक्षा'..."
+                    placeholder="e.g., gyan, namaste, or type in Hindi..."
                     className="flex-1 px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   />
                   {customInput && (
@@ -134,13 +134,13 @@ function LearnPageContent() {
                   )}
                 </div>
                 <p className="text-[11px] text-gray-400">
-                  अंग्रेजी या हिंदी दोनों में टाइप करें। उदाहरण: <span className="font-mono bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded">namaste</span> लिखने पर <span className="font-semibold text-primary-500">नमस्ते</span> का गाइड दिखेगा।
+                  Type in either English phonetics or Hindi directly. Example: typing <span className="font-mono bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded">namaste</span> will display the typing guide for <span className="font-semibold text-primary-500">नमस्ते</span>.
                 </p>
               </div>
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-2">
-                  त्वरित अभ्यास के लिए शब्द (Quick Practice Words)
+                  Quick Practice Words
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {wordTypingGuides.map((guide) => (
@@ -172,7 +172,7 @@ function LearnPageContent() {
                       : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
-                  इनस्क्रिप्ट लेआउट (InScript Layout)
+                  InScript Layout
                 </button>
                 <button
                   onClick={() => setActiveLayoutTab("remington")}
@@ -182,7 +182,7 @@ function LearnPageContent() {
                       : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                   }`}
                 >
-                  रेमिंगटन गैल लेआउट (Remington GAIL)
+                  Remington GAIL Layout
                 </button>
               </div>
 
@@ -193,13 +193,13 @@ function LearnPageContent() {
                     {selectedWord}
                   </div>
                   <div className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                    अर्थ / श्रेणी: {displayMeaning}
+                    Meaning / Category: {displayMeaning}
                   </div>
                 </div>
 
                 <div className="mt-6">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3 text-left">
-                    कुंजी अनुक्रम (Key Sequence)
+                    Key Sequence
                   </h4>
                   <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
                     {(activeLayoutTab === "inscript" ? displayInscriptKeys : displayRemingtonKeys).map((stroke, i) => (
@@ -229,9 +229,9 @@ function LearnPageContent() {
             <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-gray-150 dark:border-gray-800 pt-6 lg:pt-0 lg:pl-8 space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider">
-                  लेआउट मानचित्र (Layout Map)
+                  Layout Map
                 </h3>
-                <div className="flex gap-2 bg-gray-100 dark:bg-gray-800 p-0.5 rounded-lg text-xs">
+                <div className="flex gap-2 bg-gray-100 dark:bg-gray-855 p-0.5 rounded-lg text-xs">
                   <button
                     onClick={() => setKeyboardViewTab("inscript")}
                     className={`px-2 py-1 rounded-md font-semibold ${
@@ -255,7 +255,7 @@ function LearnPageContent() {
               <div
                 onClick={() => setModalImage({
                   src: keyboardViewTab === "inscript" ? "/images/inscript-keyboard-map.png" : "/images/remington-keyboard-map.png",
-                  title: keyboardViewTab === "inscript" ? "इनस्क्रिप्ट कीबोर्ड लेआउट (InScript)" : "रेमिंगटन गैल लेआउट (Remington GAIL)"
+                  title: keyboardViewTab === "inscript" ? "InScript Keyboard Layout" : "Remington GAIL Layout"
                 })}
                 className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 cursor-pointer group shadow-sm hover:shadow-md transition-all"
               >
@@ -277,12 +277,12 @@ function LearnPageContent() {
                 {/* Visual hover feedback */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-200">
                   <span className="bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
-                    🔍 बड़ा चित्र देखें (Zoom Map)
+                    🔍 Zoom Map
                   </span>
                 </div>
               </div>
               <p className="text-xs text-gray-400 dark:text-gray-500 text-center">
-                चित्र को बड़े पैमाने पर देखने के लिए उस पर क्लिक करें।
+                Click on the layout map to view in full screen.
               </p>
             </div>
           </div>
@@ -292,7 +292,7 @@ function LearnPageContent() {
       {/* Grid of Lessons */}
       <div className="mb-12">
         <h2 className="heading-2 mb-6 flex items-center gap-2">
-          <span>📚</span> पाठ और अभ्यास (Lessons)
+          <span>📚</span> Lessons & Exercises
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
           {lessons.map((lesson) => (
@@ -304,7 +304,7 @@ function LearnPageContent() {
       {/* Navigation Redirect Cards */}
       <section className="mt-8 grid gap-6 md:grid-cols-2">
         {/* Game Redirect Card */}
-        <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-gray-900 dark:to-purple-950/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
+        <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-gray-900 dark:to-purple-955/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
           <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-6 translate-y-6 group-hover:scale-110 transition-transform duration-300">
             <span className="text-9xl">🎮</span>
           </div>
@@ -313,23 +313,23 @@ function LearnPageContent() {
               🎮
             </span>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              टाइपिंग गेम्स खेलें (Play Typing Games)
+              Play Typing Games
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-              क्या आप पाठों का अभ्यास करते-करते थक गए हैं? हमारे 'कैनवास-आधारित' टाइपिंग गेम्स खेलें और मनोरंजन के साथ अपनी गति और सटीकता को निखारें।
+              Tired of standard drills? Play our canvas-based typing games to sharpen your speed and accuracy in an engaging way.
             </p>
           </div>
           <Link
             href="/game"
             className="inline-flex items-center justify-center py-3 px-6 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-all shadow-md shadow-indigo-500/10 hover:shadow-indigo-500/20 max-w-xs"
           >
-            गेम ज़ोन में जाएँ (Go to Game Zone)
+            Go to Game Zone
             <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>
 
         {/* Blog Redirect Card */}
-        <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-emerald-50/50 to-teal-50/50 dark:from-gray-900 dark:to-teal-950/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
+        <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-emerald-50/50 to-teal-50/50 dark:from-gray-900 dark:to-teal-955/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
           <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-6 translate-y-6 group-hover:scale-110 transition-transform duration-300">
             <span className="text-9xl">📰</span>
           </div>
@@ -338,17 +338,17 @@ function LearnPageContent() {
               📰
             </span>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              मार्गदर्शिका और लेख पढ़ें (Read Guides & Articles)
+              Read Guides & Articles
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-              मंगल फॉन्ट, इनस्क्रिप्ट बनाम रेमिंगटन लेआउट, और सरकारी टाइपिंग परीक्षा नियमों से संबंधित हमारे विशेषज्ञों के 20+ ज्ञानवर्धक लेख पढ़ें।
+              Read 20+ insightful articles by experts covering Mangal font, InScript vs Remington layouts, and official government exam criteria.
             </p>
           </div>
           <Link
             href="/blog"
             className="inline-flex items-center justify-center py-3 px-6 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-all shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 max-w-xs"
           >
-            सभी लेख देखें (View All Articles)
+            View All Articles
             <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>
@@ -390,7 +390,7 @@ export default function LearnPage() {
   return (
     <Suspense fallback={
       <div className="container-main py-12 text-center text-gray-500">
-        लोड हो रहा है (Loading)...
+        Loading...
       </div>
     }>
       <LearnPageContent />

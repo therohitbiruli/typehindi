@@ -22,25 +22,25 @@ export default function Homepage() {
           <div className="text-center max-w-4xl mx-auto">
             {/* Glowing top badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 text-xs font-semibold mb-6 animate-pulse">
-              ✨ सर्वश्रेष्ठ हिंदी टाइपिंग प्लेटफॉर्म
+              ✨ The Best Hindi Typing Platform
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] text-white">
-              टाइपिंग से संबंधित सभी उपकरण <br/>
-              <span className="text-primary-400">एक ही स्थान पर</span>
+              All Typing Tools <br/>
+              <span className="text-primary-400">in One Place</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              निःशुल्क और उपयोग में आसान हिंदी टाइपिंग टूल्स की एक व्यापक सूची। 100% सटीक WPM ट्रैकर, लाइव कीबोर्ड गाइड्स और आकर्षक टाइपिंग गेम्स के साथ अपनी गति बढ़ाएं।
+              A comprehensive catalog of free and easy-to-use Hindi typing tools. Improve your speed with a 100% accurate WPM tracker, live keyboard guides, and engaging typing games.
             </p>
 
             {/* Hero CTA buttons */}
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/practice" className="px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold text-sm transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 hover:-translate-y-0.5">
-                अभ्यास शुरू करें (Start Practice)
+                Start Practice
               </Link>
               <Link href="/game" className="px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-all border border-slate-800 hover:-translate-y-0.5">
-                टाइपिंग गेम्स खेलें (Play Games)
+                Play Games
               </Link>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function Homepage() {
             <div className="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               ⌨️
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">टाइपिंग अभ्यास</h4>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Practice</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">InScript Layout speed building practice with keystroke indicators</p>
           </Link>
 
@@ -63,7 +63,7 @@ export default function Homepage() {
             <div className="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               ⏱️
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">टाइपिंग टेस्ट</h4>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Test</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Evaluate your typing proficiency with realistic exam conditions</p>
           </Link>
 
@@ -71,7 +71,7 @@ export default function Homepage() {
             <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               📚
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">टाइपिंग ट्यूटर (सीखें)</h4>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Tutor (Learn)</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Step-by-step interactive lessons to master the InScript layout</p>
           </Link>
 
@@ -79,7 +79,7 @@ export default function Homepage() {
             <div className="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               🎮
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">टाइपिंग गेम</h4>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Games</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Fun and addictive typing games to build speed and muscle memory</p>
           </Link>
 
@@ -87,7 +87,7 @@ export default function Homepage() {
             <div className="w-14 h-14 rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               🅰️
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">मंगल फॉन्ट</h4>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Mangal Font</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Practice Mangal font typing specifically formatted for exams</p>
           </Link>
 
@@ -95,7 +95,7 @@ export default function Homepage() {
             <div className="w-14 h-14 rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               📜
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">CPCT टेस्ट</h4>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">CPCT Test</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Simulate the Computer Proficiency Certification Test pattern</p>
           </Link>
 
@@ -103,7 +103,7 @@ export default function Homepage() {
             <div className="w-14 h-14 rounded-2xl bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               🔍
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">कीबोर्ड लेआउट</h4>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Keyboard Layout</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Visual layouts and guides for InScript and Remington layouts</p>
           </Link>
 
@@ -111,7 +111,7 @@ export default function Homepage() {
             <div className="w-14 h-14 rounded-2xl bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               🌐
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">ट्रांसलेटर (Translators)</h4>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Translators</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Instantly translate English or other regional texts into Hindi</p>
           </Link>
 
@@ -119,7 +119,7 @@ export default function Homepage() {
             <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               📰
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">ब्लॉग (लेख)</h4>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Blog (Articles)</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Latest news, government exam patterns, and typing tips</p>
           </Link>
 
@@ -133,7 +133,7 @@ export default function Homepage() {
           <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-slate-250 dark:border-slate-800">
              <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-6 flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
                <span className="w-2.5 h-6 rounded-full bg-primary-600"></span>
-               हिंदी टाइपिंग टेस्ट और अभ्यास (Hindi Typing Test)
+               Hindi Typing Test & Practice
              </h2>
              <PracticeTool />
           </div>
@@ -146,63 +146,63 @@ export default function Homepage() {
             </div>
 
             <div className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed space-y-3">
-              <p className="text-red-600 dark:text-red-400 font-medium">प्रिय उपयोगकर्ताओं,</p>
-              <p>TypeHindi.in पर आप सभी का स्वागत है, जहाँ हमने आपकी दैनिक कार्य आवश्यकताओं के लिए विभिन्न <i>टाइपिंग-संबंधित उपकरणों</i> को सावधानीपूर्वक संकलित और एकत्रित किया है। इस डिजिटल युग में, तेज और सटीक टाइपिंग कौशल का महत्व बहुत अधिक है। चाहे आप एक छात्र हों, किसी सरकारी कार्यालय में काम करने वाले अधिकारी हों, या एक स्वतंत्र व्यक्ति जो अपने टाइपिंग कौशल को निखारना चाहता हो, आप बिल्कुल निराश नहीं होंगे। जो बात <strong className="text-gray-800 dark:text-gray-200">TypeHindi</strong> को अन्य वेबसाइटों से अलग बनाती है, वह हमारा दृष्टिकोण है। हमने इस वेबसाइट को एक बहुत ही सरल डिज़ाइन और आसान नेविगेशन के साथ बनाया है, जिससे वेबसाइट के हर पेज से हर <strong className="text-gray-800 dark:text-gray-200">टाइपिंग टूल</strong> तक पहुँचा जा सकता है。</p>
+              <p className="text-red-600 dark:text-red-400 font-medium">Dear Users,</p>
+              <p>Welcome to TypeHindi.in, where we have carefully compiled and collected various typing-related tools for your daily tasks. In this digital era, fast and accurate typing skills are highly essential. Whether you are a student, a government officer, or an individual looking to refine your typing skills, you will find exactly what you need. What makes TypeHindi stand out is our approach. We designed this website with a simple interface and clean navigation, making every typing tool accessible from any page.</p>
             </div>
 
             <div>
-              <h3 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">टाइपिंग कौशल क्यों मायने रखता है? (Why Typing Skills Matter?)</h3>
+               <h3 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">Why Typing Skills Matter?</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                आज के इस आधुनिक युग में, चाहे आप कुछ भी कर रहे हों, आपको कभी न कभी कीबोर्ड पर काम करना ही पड़ता है। यदि आपको टाइपिंग नहीं आती है, तो कीबोर्ड पर कुंजियों (keys) को खोजने में आपका काफी समय बर्बाद होगा। टाइपिंग कौशल काम या घर पर आपकी उत्पादकता (productivity) में काफी सुधार करते हैं, आपका ध्यान बढ़ाते हैं, गलतियों को कम करते हैं और आपका बहुमूल्य समय बचाते हैं।
+                In today's modern age, no matter what you do, you will likely need to work on a keyboard. If you do not know how to type, you will waste valuable time searching for keys. Developing proper typing skills significantly enhances productivity, improves focus, reduces errors, and saves your precious time.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">ऑनलाइन टाइपिंग क्यों सीखें?</h3>
+               <h3 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">Why Learn Typing Online?</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                किसी अकादमी में टाइपिंग इंस्ट्रक्टर से <Link href="/learn" className="text-blue-600 dark:text-blue-400 hover:underline">टाइपिंग सीखने</Link> में आपका कीमती समय और ऊर्जा बर्बाद होती है, जिसका उपयोग आप अन्य कार्यों के लिए कर सकते हैं। अपने घर के आराम से <Link href="/learn" className="text-blue-600 dark:text-blue-400 hover:underline">ऑनलाइन टाइपिंग सीखने</Link> से आपको किसी भी समय और अपनी गति से सीखने की सुविधा मिलती है, जो इस प्रतिस्पर्धी दुनिया में एक बहुत बड़ा फायदा है।
+                Learning typing from an instructor in an academy can consume a lot of time and energy that could be spent on other tasks. Learning typing online from the comfort of your home gives you the flexibility to practice anytime and learn at your own pace, which is a great advantage in today's competitive world.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">TypeHindi.in द्वारा प्रदान किए जाने वाले टूल</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">ये TypeHindi.in द्वारा प्रदान किए जाने वाले मुख्य उपकरण हैं।</p>
+               <h3 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">Tools Provided by TypeHindi.in</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">These are the primary tools offered by TypeHindi.in.</p>
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">टाइपिंग उपकरण</h4>
+                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">Typing Tools</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-[13px] leading-relaxed">
-                    ये टाइपिंग टूल अन्य टाइपिंग वेबसाइटों की तुलना में सबसे उन्नत हैं। यहाँ हमने एक ही स्थान पर इतनी सारी सुविधाएँ प्रदान की हैं कि आपको अपने काम के लिए कहीं और जाने की आवश्यकता नहीं है। हमारे उपकरणों का उपयोग करके आप अपनी हिंदी टाइपिंग स्पीड को आसानी से ट्रैक और बेहतर कर सकते हैं।
+                    Our typing tools are among the most advanced compared to other typing websites. We provide all the necessary features in one place so you don't have to look elsewhere. Easily track and improve your Hindi typing speed using our speed tracking tools.
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">ऑनलाइन कीबोर्ड</h4>
+                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">Online Keyboard</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-[13px] leading-relaxed">
-                    ये कीबोर्ड टूल उन उपयोगकर्ताओं के लिए डिज़ाइन किए गए हैं जो अपनी भाषा के कीबोर्ड लेआउट से परिचित नहीं हैं। उदाहरण के लिए, यदि आप हिंदी कीबोर्ड लेआउट नहीं जानते हैं, लेकिन सीधे देवनागरी में टाइप करना चाहते हैं, तो यह टूल आपके लिए है। यहाँ हमने एक <Link href="/mangal-font-typing-test" className="text-blue-600 dark:text-blue-400 hover:underline">ऑनलाइन हिंदी कीबोर्ड</Link> प्रदान किया है जिसे देखकर आप बहुत कुशलता से टाइप कर सकते हैं।
+                    These tools are designed for users who are not familiar with the local keyboard layout. For example, if you don't know the Hindi keyboard layout but want to type directly in Devanagari script, this is for you. We provide an online Hindi keyboard layout guide to help you type efficiently.
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">टाइपिंग ट्यूटर (सीखें)</h4>
+                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">Typing Tutor (Learn)</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-[13px] leading-relaxed">
-                    ये ट्यूटर इंटरनेट पर मिलने वाले सबसे व्यापक टाइपिंग ट्यूटर्स में से एक हैं। हर प्रकार का शिक्षार्थी, चाहे वह नौसिखिया हो या उन्नत, इस टूल का उपयोग करके संतुष्ट होगा। इसे इतने सरल तरीके से डिज़ाइन किया गया है कि टाइपिंग के सभी बुनियादी नियम आपको आसानी से समझ आ जाएंगे।
+                    Our typing tutor is one of the most comprehensive learning programs available online. Designed for learners of all levels—from beginners to advanced—it makes understanding the basic rules of touch typing simple and engaging.
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">टाइपिंग टेस्ट</h4>
+                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">Typing Test</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-[13px] leading-relaxed">
-                    टाइपिंग टेस्ट उन उपयोगकर्ताओं के लिए डिज़ाइन किए गए हैं जो टाइपिंग में कुशल हो गए हैं लेकिन अपने कौशल का परीक्षण करना चाहते हैं। वेबसाइट पर मुख्य रूप से <Link href="/test" className="text-blue-600 dark:text-blue-400 hover:underline">हिंदी टाइपिंग टेस्ट</Link> और <Link href="/mangal-font-typing-test" className="text-blue-600 dark:text-blue-400 hover:underline">मंगल फॉन्ट टाइपिंग टेस्ट</Link> उपलब्ध हैं। हमने अभ्यास मोड (Practice Mode) और परीक्षा मोड (Exam Mode) दोनों प्रदान किए हैं।
+                    Our typing tests are designed for users who want to assess their typing proficiency. We offer both Hindi Typing Tests and Mangal Font Typing Tests. Both Practice Mode and realistic Exam Mode are available.
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">टाइपिंग गेम</h4>
+                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">Typing Games</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-[13px] leading-relaxed">
-                    यहाँ हमने हिंदी और अंग्रेजी उपयोगकर्ताओं के लिए एक लोकप्रिय <Link href="/game" className="text-blue-600 dark:text-blue-400 hover:underline">वर्ड-फॉलिंग (शब्द-पतन) गेम</Link> दिया है। यह गेम शानदार तरीके से आपके टाइपिंग कौशल को बढ़ाता है और मनोरंजन भी प्रदान करता है। इस गेम का मुख्य उद्देश्य स्क्रीन पर गिरते हुए शब्दों को जमीन पर छूने से पहले सही ढंग से टाइप करके नष्ट करना है।
+                    We offer a popular word-falling typing game for both Hindi and English learners. It is a fun way to improve typing speed and build muscle memory. The goal is to type and destroy the falling words before they hit the ground.
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">फ़ॉन्ट कन्वर्टर्स</h4>
+                  <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">Font Converters</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-[13px] leading-relaxed">
-                    हिंदी उपयोगकर्ताओं के लिए कई फ़ॉन्ट कन्वर्टर दिए गए हैं, जैसे कि क्रुतिदेव से यूनिकोड (KrutiDev to Unicode), चाणक्य से यूनिकोड, और इसके विपरीत। आप आसानी से अपनी पुरानी फाइलों को आधुनिक फॉन्ट में बदल सकते हैं।
+                    We provide multiple font converters for Hindi users, such as KrutiDev to Unicode, Chanakya to Unicode, and vice versa. Easily convert your legacy documents into modern unicode font format.
                   </p>
                 </div>
               </div>
@@ -213,47 +213,47 @@ export default function Homepage() {
               <div className="relative min-h-[250px] md:min-h-[350px]">
                 <img 
                   src="/images/setting-up-hindi-inscript-windows-mac.webp" 
-                  alt="Windows 10/11 और macOS पर हिंदी इनस्क्रिप्ट कीबोर्ड कैसे सेट करें" 
+                  alt="How to Set Up Hindi InScript Keyboard on Windows 10/11 and macOS" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <div className="p-6 md:p-10 flex flex-col justify-center space-y-4">
                 <span className="px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-bold w-fit uppercase tracking-wider">
-                  विस्तृत गाइड
+                  Detailed Guide
                 </span>
                 <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white leading-snug">
-                  Windows 10/11 और macOS पर हिंदी इनस्क्रिप्ट कीबोर्ड कैसे सेट करें?
+                  How to Set Up Hindi InScript Keyboard on Windows 10/11 and macOS?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                  बिना किसी बाहरी सॉफ्टवेयर के अपने कंप्यूटर पर हिंदी में टाइपिंग शुरू करना बहुत आसान है। इस स्टेप-बाय-स्टेप गाइड को पढ़कर आप कुछ ही मिनटों में अपने ऑपरेटिंग सिस्टम की डिफ़ॉल्ट सेटिंग्स से ही हिंदी इनस्क्रिप्ट कीबोर्ड को चालू कर सकते हैं।
+                  Start typing in Hindi on your computer without installing any third-party software. By reading this step-by-step guide, you can enable the default InScript keyboard in your operating system settings in just a few minutes.
                 </p>
                 <Link 
                   href="/blog/setting-up-hindi-inscript-windows-mac" 
                   className="inline-flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm hover:underline w-fit"
                 >
-                  पूरी स्टेप-बाय-स्टेप गाइड पढ़ें <span className="ml-1">→</span>
+                  Read the Full Step-by-Step Guide <span className="ml-1">→</span>
                 </Link>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">अक्सर पूछे जाने वाले प्रश्न (FAQ)</h3>
+              <h3 className="text-xl font-light text-gray-800 dark:text-gray-200 mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">Frequently Asked Questions (FAQ)</h3>
               <div className="space-y-3 text-sm">
                 <div>
-                  <span className="text-red-600 dark:text-red-400 font-bold">Q:</span> <span className="text-gray-800 dark:text-gray-200">क्या TypeHindi का उपयोग निःशुल्क है?</span><br />
-                  <span className="text-blue-700 dark:text-blue-400 font-bold">A:</span> <span className="text-gray-600 dark:text-gray-400">बिल्कुल। हम आपसे किसी भी चीज़ के लिए कोई शुल्क नहीं लेते हैं। इसका उपयोग करना पूरी तरह से निःशुल्क है।</span>
+                  <span className="text-red-600 dark:text-red-400 font-bold">Q:</span> <span className="text-gray-800 dark:text-gray-200">Is TypeHindi free to use?</span><br />
+                  <span className="text-blue-700 dark:text-blue-400 font-bold">A:</span> <span className="text-gray-600 dark:text-gray-400">Absolutely. The platform is 100% free and we do not charge for any of our services.</span>
                 </div>
                 <div>
-                  <span className="text-red-600 dark:text-red-400 font-bold">Q:</span> <span className="text-gray-800 dark:text-gray-200">बिना देखे टाइपिंग (Touch Typing) सीखने में कितना समय लगता है?</span><br />
-                  <span className="text-blue-700 dark:text-blue-400 font-bold">A:</span> <span className="text-gray-600 dark:text-gray-400">यह इस बात पर निर्भर करता है कि आप कितने घंटे अभ्यास करते हैं। उदाहरण के लिए, यदि आप रोज़ाना 15-30 मिनट अभ्यास करते हैं, तो आपको 2-4 सप्ताह में काफी सुधार देखने को मिलेगा।</span>
+                  <span className="text-red-600 dark:text-red-400 font-bold">Q:</span> <span className="text-gray-800 dark:text-gray-200">How long does it take to learn touch typing?</span><br />
+                  <span className="text-blue-700 dark:text-blue-400 font-bold">A:</span> <span className="text-gray-600 dark:text-gray-400">It depends on your daily practice. If you practice for 15-30 minutes every day, you should see significant speed and accuracy improvements within 2 to 4 weeks.</span>
                 </div>
                 <div>
-                  <span className="text-red-600 dark:text-red-400 font-bold">Q:</span> <span className="text-gray-800 dark:text-gray-200">क्या मैं इस वेबसाइट का उपयोग आधिकारिक सरकारी टाइपिंग टेस्ट की तैयारी के लिए कर सकता हूँ?</span><br />
-                  <span className="text-blue-700 dark:text-blue-400 font-bold">A:</span> <span className="text-gray-600 dark:text-gray-400">हाँ, इस वेबसाइट ने SSC, रेलवे, हाई कोर्ट आदि जैसी हर सरकारी परीक्षा के टाइपिंग टेस्ट के लिए सुविधाएँ प्रदान की हैं। हमने WPM और सटीकता की गणना के लिए उन्हीं तरीकों का उपयोग किया है जो वास्तविक परीक्षाओं में उपयोग किए जाते हैं।</span>
+                  <span className="text-red-600 dark:text-red-400 font-bold">Q:</span> <span className="text-gray-800 dark:text-gray-200">Can I use this site to prepare for official government typing tests?</span><br />
+                  <span className="text-blue-700 dark:text-blue-400 font-bold">A:</span> <span className="text-gray-600 dark:text-gray-400">Yes, this platform provides dedicated typing test simulations for exams like SSC, Railways, High Courts, etc. Our calculation methods for WPM and accuracy match the standards used in real exams.</span>
                 </div>
                 <div>
-                  <span className="text-red-600 dark:text-red-400 font-bold">Q:</span> <span className="text-gray-800 dark:text-gray-200">क्या मेरे बच्चे इस वेबसाइट पर अभ्यास कर सकते हैं?</span><br />
-                  <span className="text-blue-700 dark:text-blue-400 font-bold">A:</span> <span className="text-gray-600 dark:text-gray-400">निश्चित रूप से, इस टाइपिंग वेबसाइट का डिज़ाइन बहुत ही सरल है ताकि हर उम्र का उपयोगकर्ता इसका लाभ उठा सके।</span>
+                  <span className="text-red-600 dark:text-red-400 font-bold">Q:</span> <span className="text-gray-800 dark:text-gray-200">Can children practice on this website?</span><br />
+                  <span className="text-blue-700 dark:text-blue-400 font-bold">A:</span> <span className="text-gray-600 dark:text-gray-400">Definitely. The simple and clean design makes it accessible and easy to use for learners of all age groups.</span>
                 </div>
               </div>
             </div>
@@ -263,22 +263,22 @@ export default function Homepage() {
               <div className="p-6 md:p-8 flex flex-col justify-center space-y-4">
                 <div>
                   <h3 className="text-xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2">
-                    <span className="w-2 h-5 rounded-full bg-primary-600"></span>
-                    हमारे उपयोगकर्ताओं की प्रतिक्रिया
+                    <span className="w-2.5 h-5 rounded-full bg-primary-600"></span>
+                    What Our Users Say
                   </h3>
                 </div>
                 <div className="space-y-3 text-sm text-gray-600 dark:text-gray-300">
                   <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
-                    <p className="italic">"केवल दो महीनों में मेरी स्पीड 30 WPM से 70 WPM हो गई। इस साइट ने टाइपिंग सीखना आसान और मजेदार बना दिया!"</p>
-                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— नेहा के., कॉलेज छात्रा</span>
+                    <p className="italic">"My typing speed went from 30 WPM to 70 WPM in just two months. This platform made learning Hindi typing easy and fun!"</p>
+                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— Neha K., College Student</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
-                    <p className="italic">"प्रोग्रेस ट्रैकिंग ने मुझे मेरे सरकारी टाइपिंग टेस्ट की तैयारी में बहुत मदद की। मैंने अच्छे अंकों से परीक्षा पास की!"</p>
-                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— राकेश टी., नौकरी तलाशने वाला</span>
+                    <p className="italic">"The progress tracking features helped me immensely during my preparation for the government typing exam. I passed with great scores!"</p>
+                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— Rakesh T., Job Seeker</span>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
-                    <p className="italic">"हमारी पूरी क्लास इस प्लेटफॉर्म का उपयोग करती है। यह उपयोग में आसान है और छात्रों को जोड़े रखता है।"</p>
-                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— प्रिया डी., स्कूल शिक्षिका</span>
+                    <p className="italic">"Our entire class uses this platform. It is user-friendly and keeps the students highly engaged during lessons."</p>
+                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— Priya D., School Teacher</span>
                   </div>
                 </div>
               </div>
@@ -293,7 +293,7 @@ export default function Homepage() {
             </div>
             
             <div className="border-t border-gray-100 dark:border-gray-800 pt-4 text-center text-sm text-gray-500 dark:text-gray-400">
-              हमारी वेबसाइट पर आने के लिए धन्यवाद...... 🎯
+              Thank you for visiting our website! 🎯
             </div>
 
           </div>

@@ -10,8 +10,23 @@ export default function Homepage() {
   // Get first 2 lessons for preview
   const previewLessons = lessons.slice(0, 2);
   
-  // Get first 2 blogs for preview
-  const previewBlogs = blogs.slice(0, 2);
+  // Get first 2 blogs for preview (sorted latest to oldest)
+  const HINDI_MONTHS: Record<string, number> = {
+    "जनवरी": 0, "फरवरी": 1, "मार्च": 2, "अप्रैल": 3, "मई": 4, "जून": 5,
+    "जुलाई": 6, "अगस्त": 7, "सितंबर": 8, "अक्टूबर": 9, "नवंबर": 10, "दिसंबर": 11
+  };
+  const sortedBlogs = [...blogs].sort((a, b) => {
+    const parse = (d: string) => {
+      const clean = d.replace(",", "");
+      const parts = clean.split(/\s+/);
+      if (parts.length === 3) {
+        return new Date(parseInt(parts[2], 10), HINDI_MONTHS[parts[1]] ?? 0, parseInt(parts[0], 10)).getTime();
+      }
+      return 0;
+    };
+    return parse(b.date) - parse(a.date);
+  });
+  const previewBlogs = sortedBlogs.slice(0, 2);
 
   // Get first 4 languages for preview
   const previewLanguages = LANGUAGES.slice(0, 4);

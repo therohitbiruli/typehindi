@@ -9,7 +9,26 @@ export const metadata: Metadata = {
   description: "Read the latest articles on Hindi typing, SSC exam strategies, Stenography tips, and InScript keyboard guides.",
 };
 
+const HINDI_MONTHS: Record<string, number> = {
+  "जनवरी": 0, "फरवरी": 1, "मार्च": 2, "अप्रैल": 3, "मई": 4, "जून": 5,
+  "जुलाई": 6, "अगस्त": 7, "सितंबर": 8, "अक्टूबर": 9, "नवंबर": 10, "दिसंबर": 11
+};
+
+function parseHindiDate(dateStr: string): Date {
+  const clean = dateStr.replace(",", "");
+  const parts = clean.split(/\s+/);
+  if (parts.length === 3) {
+    const day = parseInt(parts[0], 10);
+    const month = HINDI_MONTHS[parts[1]] ?? 0;
+    const year = parseInt(parts[2], 10);
+    return new Date(year, month, day);
+  }
+  return new Date(0);
+}
+
 export default function BlogPage() {
+  const sortedBlogs = [...blogs].sort((a, b) => parseHindiDate(b.date).getTime() - parseHindiDate(a.date).getTime());
+
   return (
     <div className="container-main py-6">
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
@@ -24,7 +43,7 @@ export default function BlogPage() {
       </div>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {blogs.map((blog) => (
+        {sortedBlogs.map((blog) => (
           <Link 
             key={blog.slug} 
             href={`/blog/${blog.slug}`}

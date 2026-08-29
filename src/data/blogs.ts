@@ -1,9 +1,13 @@
 export interface BlogPost {
   slug: string;
   title: string;
+  titleEn?: string;
   excerpt: string;
+  excerptEn?: string;
   content: string;
+  contentEn?: string;
   date: string;
+  dateEn?: string;
   author: string;
   category: "Basics" | "Exam Guide";
 }
@@ -11,11 +15,116 @@ export interface BlogPost {
 export const blogs: BlogPost[] = [
   {
     slug: "santhali-bhasha-ka-itihas-aur-kshetra",
+    titleEn: "Where did the Santhali language originate and where is it spoken? – Complete Guide",
+    excerptEn: "Santhali is one of the oldest tribal languages in India. Learn about its origin, who created the Ol Chiki script, and the regions in India and the world where this language is spoken.",
+    dateEn: "June 15, 2026",
     title: "संथाली भाषा का निर्माण कहाँ हुआ था और यह भाषा कहाँ बोली जाती है? – पूरी जानकारी",
     excerpt: "संथाली भाषा भारत की प्राचीनतम आदिवासी भाषाओं में से एक है। जानें इसका उद्गम कहाँ हुआ, ओल चिकी लिपि किसने बनाई, और यह भाषा भारत व विश्व के किन क्षेत्रों में बोली जाती है।",
     date: "15 जून, 2026",
     author: "TypeHindi Team",
     category: "Basics",
+    contentEn: `
+![Santhali Language – India's Rich Tribal Heritage](/images/santhali-language-hero.png)
+
+India is a country of diversities, and hundreds of languages and dialects are spoken here. Among these, one extremely ancient and rich language is **Santhali (Santhali / Santali)**. Santhali is the mother tongue of tribal communities in India, especially the **Santhal (Santal)** tribe. This language is spoken not only in India but also in Bangladesh and Nepal. In 2003, it was included in the **Eighth Schedule** of the Indian Constitution, giving it the status of an **official national language**. In this detailed article, we will find out **where Santhali language originated** and **where it is spoken**.
+
+## Origin and History of Santhali Language
+
+### How old is the Santhali language?
+
+Santhali belongs to the **Munda** branch of the **Austro-Asiatic** language family. Linguists believe that Munda languages are among the **oldest languages** of the Indian subcontinent, which were probably spoken here **even before the arrival of Aryans and Dravidians**. This means the roots of Santhali are **thousands of years old**.
+
+Santhali does not have a single fixed "origin place," as it is not a language created by a person or institution but has **developed naturally**. However, linguists connect its region of origin to the **Chota Nagpur Plateau** and surrounding areas. This region is spread across modern-day **Jharkhand, West Bengal, and Odisha**.
+
+### Santhal Tribe – Carrier of the Language
+
+The Santhal tribe is the **third largest tribal community** in India. Their population is estimated to be between **7 million and 10 million**. Santhal people have historically relied on agriculture, forest produce collection, and hunting. Their language, culture, and traditions have been passed down orally (Oral Tradition) from generation to generation.
+
+Historically, Santhals lived in the **Rajmahal Hills of Bihar** and the dense forests of the **Chota Nagpur Plateau**. In the 18th and 19th centuries during British rule, many Santhal families settled in different parts of Assam, Bengal, and Odisha in search of work. This is why Santhali is spoken in such a wide geographical area today.
+
+### Santhal Rebellion (1855-56) – Struggle for Language and Identity
+
+The **Santhal Hul**, also known as the Santhal Rebellion, took place in 1855-56 against the oppression of British rule, landlords, and moneylenders. The rebellion was led by **Sidhu and Kanhu Murmu**. This rebellion was not only against economic exploitation but also carried the spirit of saving the Santhali language, culture, and identity. Even today, this rebellion remains a symbol of pride and resistance for the Santhal community.
+
+## Ol Chiki Script – Santhali's Own Script
+
+![Ol Chiki Script – Santhali's Indigenous Script](/images/ol-chiki-script-chart.png)
+
+The most revolutionary event in the history of Santhali was the creation of the **Ol Chiki** script. Before this, Santhali did not have its own script. People used **Devanagari, Bengali, Odia, or Roman** scripts, which could not correctly represent the specific sounds of Santhali.
+
+### Pandit Raghunath Murmu – Founder of Ol Chiki
+
+**Pandit Raghunath Murmu (1905-1982)** invented the Ol Chiki script in 1925. He belonged to the Mayurbhanj district of Odisha. He realized that an **independent and scientific script** was needed to express the unique sounds of Santhali (such as glottal stops and nasal sounds).
+
+Key features of Ol Chiki script:
+- It has **30 letters** – 6 vowels and 24 consonants.
+- It is written from **Left to Right**.
+- The shape of each letter is **inspired by nature** – like mountains, rivers, birds, etc.
+- This script is completely **phonetic**, meaning what is spoken is written.
+- In 2005, Ol Chiki was included in **Unicode** (Unicode Block: U+1C50 to U+1C7F).
+
+## Where is Santhali Spoken?
+
+![Map of Santhali Speaking Regions](/images/santhali-speaking-regions.png)
+
+The geographical spread of Santhali is very wide. It is primarily spoken in several states of **Eastern and Central India**, but speakers are also found in Bangladesh and Nepal.
+
+### Major Indian States Where Santhali is Spoken:
+
+**1. Jharkhand:**
+Jharkhand is the **heartland** of Santhali. It is most widely spoken in the Santhal Pargana division – which includes Dumka, Deoghar, Godda, Sahibganj, Pakur, and Jamtara districts. The Jharkhand government has declared Santhali as one of the **official languages of the state**.
+
+**2. West Bengal:**
+In West Bengal, especially in **Bankura, Purulia, Medinipur, Birbhum, and Malda** districts, there is a large population of Santhali speakers. It is the main colloquial language in areas bordering the Rajmahal Hills.
+
+**3. Odisha:**
+A large Santhal population resides in the **Mayurbhanj, Keonjhar, Balasore, and Sundargarh** districts of Odisha. Mayurbhanj district, which is the birthplace of Pandit Raghunath Murmu, is a major center of Santhali language and culture.
+
+**4. Bihar:**
+Santhali-speaking communities are found in the **Bhagalpur, Katihar, and Banka** districts of Bihar. Historically, the Rajmahal region of Bihar has been a major habitat of the Santhal tribe.
+
+**5. Assam:**
+During the 19th century under the British rule, a large number of Santhals were brought to the **tea gardens of Assam** as laborers. Even today, Santhali-speaking communities live in many districts of Assam and keep their language and culture alive.
+
+**6. Tripura:**
+Santhals also settled in the tea gardens and agricultural areas of Tripura, where Santhali is used.
+
+### Outside India:
+
+**Bangladesh:**
+The Santhal community resides in the **Rajshahi, Ranger, and Dinajpur** divisions of Bangladesh, numbering about **200,000 to 300,000** speakers.
+
+**Nepal:**
+The Santhal community is found in the **Terai** region of Nepal, especially in **Jhapa and Morang** districts.
+
+### Numbers and Figures
+According to the 2011 Indian census, the number of Santhali speakers in India is around **7.3 million**. If Bangladesh and Nepal are included, the total number exceeds **8 million**. Thus, Santhali is the most widely spoken language in the **Austro-Asiatic language family**.
+
+## Constitutional and Educational Status of Santhali
+
+### Included in the Eighth Schedule (2003)
+In 2003, through the **92nd Constitutional Amendment**, Santhali was included in the Eighth Schedule of the Indian Constitution. This was a historic achievement because:
+- It gave the right to use it in **official government work**.
+- Candidates got the option to write exam papers in it for **Union Public Service Commission (UPSC)**.
+- It opened the way for government assistance for the **development of education and literature** in Santhali.
+
+### Santhali in Education
+Today, Santhali is taught as a **medium or subject** in many schools in Jharkhand, West Bengal, and Odisha. Higher education in Santhali language and literature is available at **Sido Kanhu Murmu University (Dumka, Jharkhand)**.
+
+## Santhali Language and the Digital World
+
+With the inclusion of Ol Chiki script in Unicode, Santhali has made its place in the digital world:
+- **Google** has added support for Santhali in many of its services.
+- **Wikipedia** has its own version in Santhali.
+- **Smartphone keyboards** like Gboard support typing in Ol Chiki script.
+- On **TypeHindi.in**, we have also provided an [English to Santhali Translator](/translators/english-to-santhali) which allows you to type directly in Santhali (Ol Chiki) using an English keyboard.
+
+## Conclusion
+
+Santhali is not just a medium of colloquial communication; it is a symbol of **thousands of years of tribal culture, knowledge, and identity**. Originating from the soil of the Chota Nagpur Plateau, this language has spread to Jharkhand, West Bengal, Odisha, Bihar, Assam, Tripura, Bangladesh, and Nepal. The Ol Chiki script created by Pandit Raghunath Murmu gave this language a **written identity**, and Unicode has made it **immortal in the digital world**.
+
+If you want to learn to type in Santhali or express your thoughts in Ol Chiki script, use [TypeHindi.in's Santhali Translator](/translators/english-to-santhali). Make your mother tongue digital and carry this rich heritage forward!
+`,
     content: `
 ![संथाली भाषा – भारत की समृद्ध आदिवासी विरासत](/images/santhali-language-hero.png)
 

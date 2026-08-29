@@ -3,7 +3,7 @@ import { PracticeTool } from "../components/PracticeTool";
 import { lessons } from "../data/lessons";
 import { blogs } from "../data/blogs";
 import { LANGUAGES } from "./translators/page";
-import { GameCanvas } from "../components/GameCanvas";
+import { HomepageGame } from "../components/HomepageGame";
 
 export default function Homepage() {
   // Get first 2 lessons for preview
@@ -199,13 +199,10 @@ export default function Homepage() {
               Typing Word Games
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-              Make learning fun! Build rapid reflexes and muscle memory by typing falling letters and words correctly before they crash onto the ground. Play the classic falling words game directly below or head to the game hub to explore other modes.
+              Make learning fun! Build rapid reflexes and muscle memory by typing falling letters and words correctly before they crash onto the ground. Play our tank defender game directly below or head to the game hub to explore other modes.
             </p>
             
-            {/* Embedded Active Game Canvas */}
-            <div className="border border-slate-250 dark:border-slate-800 rounded-3xl p-4 bg-slate-50/50 dark:bg-slate-900/50 shadow-inner">
-              <GameCanvas />
-            </div>
+            <HomepageGame />
 
             <div className="flex justify-end pt-2">
               <Link href="/game" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">

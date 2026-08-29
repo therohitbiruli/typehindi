@@ -28,8 +28,8 @@ export default function Homepage() {
   });
   const previewBlogs = sortedBlogs.slice(0, 4);
 
-  // Get first 4 languages for preview
-  const previewLanguages = LANGUAGES.slice(0, 4);
+  // Get first 8 languages for preview (2 rows of 4)
+  const previewLanguages = LANGUAGES.slice(0, 8);
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950">

@@ -43,7 +43,7 @@ export async function generateStaticParams() {
 export default async function BlogDetailPage({ params, searchParams }: Props) {
   const { slug } = await params;
   const resolvedSearchParams = await searchParams;
-  const lang = resolvedSearchParams.lang === "en" ? "en" : "hi";
+  const lang = resolvedSearchParams.lang === "hi" ? "hi" : "en";
 
   const blog = blogs.find((b) => b.slug === slug);
 
@@ -70,7 +70,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
         {/* Toggle on the far right */}
         <div className="flex rounded-lg bg-slate-155 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
           <Link
-            href={`/blog/${slug}`}
+            href={`/blog/${slug}?lang=hi`}
             className={`px-3 py-1 rounded-md transition-all ${
               lang === "hi"
                 ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"
@@ -80,7 +80,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
             HI
           </Link>
           <Link
-            href={`/blog/${slug}?lang=en`}
+            href={`/blog/${slug}`}
             className={`px-3 py-1 rounded-md transition-all ${
               lang === "en"
                 ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"

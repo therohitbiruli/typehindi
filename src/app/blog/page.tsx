@@ -32,7 +32,7 @@ interface PageProps {
 
 export default async function BlogPage({ searchParams }: PageProps) {
   const resolvedSearchParams = await searchParams;
-  const lang = resolvedSearchParams.lang === "en" ? "en" : "hi";
+  const lang = resolvedSearchParams.lang === "hi" ? "hi" : "en";
   
   const sortedBlogs = [...blogs].sort((a, b) => parseHindiDate(b.date).getTime() - parseHindiDate(a.date).getTime());
 
@@ -44,7 +44,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
         {/* Toggle on the far right */}
         <div className="flex rounded-lg bg-slate-150 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
           <Link
-            href="/blog"
+            href="/blog?lang=hi"
             className={`px-3 py-1 rounded-md transition-all ${
               lang === "hi"
                 ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"
@@ -54,7 +54,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
             HI
           </Link>
           <Link
-            href="/blog?lang=en"
+            href="/blog"
             className={`px-3 py-1 rounded-md transition-all ${
               lang === "en"
                 ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"
@@ -89,7 +89,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
           return (
             <Link 
               key={blog.slug} 
-              href={`/blog/${blog.slug}${lang === "en" ? "?lang=en" : ""}`}
+              href={`/blog/${blog.slug}${lang === "hi" ? "?lang=hi" : ""}`}
               className="group flex flex-col h-full bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow-sm rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-300 dark:hover:border-primary-600"
             >
               <div className="p-6 flex flex-col h-full">

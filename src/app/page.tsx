@@ -142,7 +142,7 @@ export default function Homepage() {
         <div className="container-main max-w-6xl px-4 space-y-16">
           
           {/* ⌨️ SECTION: PRACTICE */}
-          <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-slate-250 dark:border-slate-800">
+          <div id="practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-slate-250 dark:border-slate-800">
              <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-6 flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
                <span className="w-2.5 h-6 rounded-full bg-primary-600"></span>
                Hindi Typing Practice
@@ -156,7 +156,7 @@ export default function Homepage() {
           </div>
 
           {/* ⏱️ SECTION: TEST */}
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+          <div id="test" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-amber-500"></span>
               Typing Test (Timed Exams Simulator)
@@ -189,7 +189,7 @@ export default function Homepage() {
           </div>
 
           {/* 📚 SECTION: LEARN */}
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+          <div id="learn" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-emerald-500"></span>
               Typing Tutor & Lessons
@@ -225,7 +225,7 @@ export default function Homepage() {
           </div>
 
           {/* 🎮 SECTION: GAME */}
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+          <div id="game" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-purple-500"></span>
               Typing Word Games
@@ -248,7 +248,7 @@ export default function Homepage() {
           </div>
 
           {/* 🔍 SECTION: KEYBOARD LAYOUT */}
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+          <div id="keyboard-layout" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-sky-500"></span>
               Interactive Keyboard Layout Guide
@@ -275,7 +275,7 @@ export default function Homepage() {
           </div>
 
           {/* 🌐 SECTION: TRANSLATORS */}
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+          <div id="translators" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-violet-500"></span>
               Indian Language Transliterators
@@ -303,7 +303,7 @@ export default function Homepage() {
           </div>
 
           {/* 📰 SECTION: BLOG */}
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+          <div id="blog" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-slate-500"></span>
               Latest Typing & Exam Guides
@@ -339,7 +339,7 @@ export default function Homepage() {
           </div>
 
           {/* ℹ️ SECTION: ABOUT */}
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+          <div id="about" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-slate-700"></span>
               About Our Platform

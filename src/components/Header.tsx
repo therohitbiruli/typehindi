@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
@@ -21,6 +21,7 @@ const navItems = [
 export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState(pathname);
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prev) => !prev);
@@ -29,6 +30,57 @@ export function Header() {
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
   }, []);
+
+  // Update activeSection when pathname changes (subpage navigation)
+  useEffect(() => {
+    setActiveSection(pathname);
+  }, [pathname]);
+
+  // Scroll Spy logic for Homepage
+  useEffect(() => {
+    if (pathname !== "/") return;
+
+    const sections = ["practice", "test", "learn", "game", "keyboard-layout", "translators", "blog", "about"];
+    
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      // Find the first intersecting entry
+      const visibleSection = entries.find(entry => entry.isIntersecting);
+      if (visibleSection) {
+        setActiveSection(`/${visibleSection.target.id}`);
+      } else {
+        // If we scrolled back to top
+        if (window.scrollY < 200) {
+          setActiveSection("/");
+        }
+      }
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      root: null,
+      rootMargin: "-25% 0px -55% 0px", // triggers when section dominates the viewport center
+      threshold: 0,
+    });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        observer.observe(el);
+      }
+    });
+
+    const handleScroll = () => {
+      if (window.scrollY < 120) {
+        setActiveSection("/");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/20 bg-white/80 backdrop-blur-md shadow-sm dark:border-gray-800/50 dark:bg-gray-950/80">
@@ -57,7 +109,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={`rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
-                  pathname === item.href
+                  activeSection === item.href
                     ? "bg-primary-600 text-white shadow-sm shadow-primary-500/10"
                     : "text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-100"
                 }`}
@@ -99,7 +151,7 @@ export function Header() {
                 href={item.href}
                 onClick={closeMenu}
                 className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                  pathname === item.href
+                  activeSection === item.href
                     ? "bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300"
                     : "text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
                 }`}

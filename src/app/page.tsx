@@ -1,7 +1,19 @@
 import Link from "next/link";
 import { PracticeTool } from "../components/PracticeTool";
+import { lessons } from "../data/lessons";
+import { blogs } from "../data/blogs";
+import { LANGUAGES } from "./translators/page";
 
 export default function Homepage() {
+  // Get first 2 lessons for preview
+  const previewLessons = lessons.slice(0, 2);
+  
+  // Get first 2 blogs for preview
+  const previewBlogs = blogs.slice(0, 2);
+
+  // Get first 4 languages for preview
+  const previewLanguages = LANGUAGES.slice(0, 4);
+
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-950">
       {/* 🌟 Premium Hero Section */}
@@ -26,7 +38,7 @@ export default function Homepage() {
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] text-white">
-              All Typing Tools <br/>
+              For Your Typing Jobs Preparation <br/>
               <span className="text-primary-400">in One Place</span>
             </h1>
 
@@ -127,15 +139,231 @@ export default function Homepage() {
       </div>
 
       <section className="pb-20">
-        <div className="container-main max-w-6xl px-4 space-y-10">
+        <div className="container-main max-w-6xl px-4 space-y-16">
           
-          {/* Main Hindi Typing Practice Container */}
+          {/* ⌨️ SECTION: PRACTICE */}
           <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-slate-250 dark:border-slate-800">
              <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-6 flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
                <span className="w-2.5 h-6 rounded-full bg-primary-600"></span>
-               Hindi Typing Test & Practice
+               Hindi Typing Practice
              </h2>
              <PracticeTool />
+             <div className="mt-6 flex justify-end">
+               <Link href="/practice" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
+                 Launch Practice Hub ➔
+               </Link>
+             </div>
+          </div>
+
+          {/* ⏱️ SECTION: TEST */}
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="w-2.5 h-6 rounded-full bg-amber-500"></span>
+              Typing Test (Timed Exams Simulator)
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+              Test your typing speed under realistic SSC, CHSL, and state government exam criteria. We calculate net WPM, accuracy percentages, and count error penalties using standard formulas.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-2">
+              <Link href="/test" className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-2xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center">
+                <span className="text-3xl mb-1">⏱️</span>
+                <span className="font-bold text-gray-950 dark:text-white text-base">1 Minute Test</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">Quick speed benchmark</span>
+              </Link>
+              <Link href="/test" className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-2xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center">
+                <span className="text-3xl mb-1">⏱️</span>
+                <span className="font-bold text-gray-950 dark:text-white text-base">5 Minutes Test</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">Stamina building trial</span>
+              </Link>
+              <Link href="/test" className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-2xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center">
+                <span className="text-3xl mb-1">⏱️</span>
+                <span className="font-bold text-gray-950 dark:text-white text-base">10 Minutes Test</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">Standard exam duration</span>
+              </Link>
+            </div>
+            <div className="flex justify-end pt-2">
+              <Link href="/test" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
+                Start Exam Test Simulator ➔
+              </Link>
+            </div>
+          </div>
+
+          {/* 📚 SECTION: LEARN */}
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="w-2.5 h-6 rounded-full bg-emerald-500"></span>
+              Typing Tutor & Lessons
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+              Master touch typing with our structured curriculum. Start with the home row vowels and slowly advance to complex conjunct consonants.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2 py-2">
+              {previewLessons.map((lesson) => (
+                <div key={lesson.id} className="border border-slate-200 dark:border-slate-850 p-5 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50">
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base mb-1">
+                    Lesson {lesson.id}: {lesson.title}
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                    {lesson.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mb-2">
+                    {lesson.characters.slice(0, 8).map((char, index) => (
+                      <span key={index} className="px-2 py-1 rounded bg-white dark:bg-slate-800 text-xs border border-slate-200 dark:border-slate-700 font-hindi">
+                        {char}
+                      </span>
+                    ))}
+                    {lesson.characters.length > 8 && <span className="text-xs text-gray-400 px-1 py-1">+{lesson.characters.length - 8} more</span>}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-end pt-2">
+              <Link href="/learn" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
+                Browse All Lessons ➔
+              </Link>
+            </div>
+          </div>
+
+          {/* 🎮 SECTION: GAME */}
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="w-2.5 h-6 rounded-full bg-purple-500"></span>
+              Typing Word Games
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+              Make learning fun! Build rapid reflexes and muscle memory by typing falling letters and words correctly before they crash onto the ground. Great for both young learners and adults trying to increase speed.
+            </p>
+            <div className="bg-gradient-to-br from-purple-50/50 to-indigo-50/50 dark:from-slate-900/30 dark:to-slate-900/90 border border-slate-200 dark:border-slate-800/50 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="space-y-2 max-w-xl">
+                <span className="px-2.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-xs font-bold uppercase tracking-wider">Interactive Game Mode</span>
+                <h4 className="font-bold text-gray-900 dark:text-white text-base">De-stress & Improve Hand-Eye Coordination</h4>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                  Multiple levels, dynamic word-fall paths, and scoring ladders based on keystroke accuracy. Practice Hindi/English vocabulary in a relaxed, game-like setting.
+                </p>
+              </div>
+              <Link href="/game" className="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-md shadow-purple-500/10 hover:shadow-purple-500/20 whitespace-nowrap">
+                Start Playing Game 🎮
+              </Link>
+            </div>
+          </div>
+
+          {/* 🔍 SECTION: KEYBOARD LAYOUT */}
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="w-2.5 h-6 rounded-full bg-sky-500"></span>
+              Interactive Keyboard Layout Guide
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+              Explore the scientific key layouts of standard Hindi input structures. Learn the exact placement of vowels on the left side and consonants on the right side.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+              <div className="space-y-4">
+                <h4 className="font-bold text-gray-900 dark:text-white text-base">InScript vs Remington GAIL</h4>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                  InScript is standard for official government typing jobs and is supported natively by Windows and macOS. Remington GAIL is heavily favored in high court exams. Toggle between layouts, view shifting key map results, and master modifiers.
+                </p>
+              </div>
+              <div className="relative aspect-[16/9] border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-inner bg-slate-50 dark:bg-slate-950 flex items-center justify-center">
+                <span className="text-xs font-mono text-gray-400">Interactive Map Preview</span>
+                <div className="absolute inset-0 bg-black/5 flex items-center justify-center">
+                  <Link href="/keyboard-layout" className="px-4 py-2 bg-white dark:bg-gray-800 text-xs font-bold rounded-lg border border-gray-300 dark:border-gray-700 shadow hover:shadow-md transition-all">
+                    Open Layout Map 🔍
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 🌐 SECTION: TRANSLATORS */}
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="w-2.5 h-6 rounded-full bg-violet-500"></span>
+              Indian Language Transliterators
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+              Convert phonetic English/Hindi letters into native Indian scripts instantly. Our translation tool operates fully client-side for rapid response and security.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-2">
+              {previewLanguages.map((lang) => (
+                <Link
+                  key={`home-trans-${lang.name}`}
+                  href={`/translators/english-to-${lang.name.toLowerCase()}`}
+                  className="flex flex-col items-center justify-center p-5 border border-gray-200 dark:border-gray-800 hover:border-violet-500 dark:hover:border-violet-500 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 transition-all text-center group"
+                >
+                  <span className="text-xl mb-1 text-gray-500 group-hover:text-violet-600">A→{lang.nativeChar}</span>
+                  <span className="text-xs font-bold text-gray-800 dark:text-gray-200">English to {lang.name}</span>
+                </Link>
+              ))}
+            </div>
+            <div className="flex justify-end pt-2">
+              <Link href="/translators" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
+                Browse All Translators ➔
+              </Link>
+            </div>
+          </div>
+
+          {/* 📰 SECTION: BLOG */}
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="w-2.5 h-6 rounded-full bg-slate-500"></span>
+              Latest Typing & Exam Guides
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+              Stay updated with typing requirements for government jobs, recruitment syllabus updates, keyboard layout setup tutorials, and typing improvement tips.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2 py-2">
+              {previewBlogs.map((blog) => (
+                <div key={blog.slug} className="border border-slate-200 dark:border-slate-850 p-5 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 flex flex-col justify-between">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider block mb-1">
+                      {blog.date} | {blog.category}
+                    </span>
+                    <h3 className="font-extrabold text-gray-900 dark:text-white text-base leading-snug mb-2">
+                      {blog.title}
+                    </h3>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                      {blog.excerpt}
+                    </p>
+                  </div>
+                  <Link href={`/blog/${blog.slug}`} className="text-xs font-bold text-primary-600 dark:text-primary-400 hover:underline w-fit">
+                    Read Full Article ➔
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-end pt-2">
+              <Link href="/blog" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
+                Browse All Articles ➔
+              </Link>
+            </div>
+          </div>
+
+          {/* ℹ️ SECTION: ABOUT */}
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="w-2.5 h-6 rounded-full bg-slate-700"></span>
+              About Our Platform
+            </h2>
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="space-y-4 flex-1">
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  TypeHindi.in is a free online Hindi typing practice platform designed to help students and office professionals learn and master Hindi typing on the InScript keyboard layout. Our platform provides high-quality timed tests modeled after official government exams, complete touch typing tutor lessons, and useful guides.
+                </p>
+                <div className="flex justify-start">
+                  <Link href="/about" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
+                    Learn More About Us ➔
+                  </Link>
+                </div>
+              </div>
+              <div className="flex-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl space-y-3">
+                <h4 className="font-bold text-gray-900 dark:text-white text-sm">Key Features</h4>
+                <ul className="text-xs text-gray-500 dark:text-gray-400 space-y-1.5 pl-4 list-disc">
+                  <li><strong>100% Client-Side:</strong> Everything runs safely in your browser.</li>
+                  <li><strong>No Registration Needed:</strong> Start practicing immediately.</li>
+                  <li><strong>Private Data:</strong> Scores are stored locally on your device.</li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Text Dense Content mimicking TypingBaba */}
@@ -272,11 +500,11 @@ export default function Homepage() {
                     <p className="italic">"My typing speed went from 30 WPM to 70 WPM in just two months. This platform made learning Hindi typing easy and fun!"</p>
                     <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— Neha K., College Student</span>
                   </div>
-                  <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
+                  <div className="bg-white dark:bg-slate-950 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
                     <p className="italic">"The progress tracking features helped me immensely during my preparation for the government typing exam. I passed with great scores!"</p>
                     <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— Rakesh T., Job Seeker</span>
                   </div>
-                  <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
+                  <div className="bg-white dark:bg-slate-950 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
                     <p className="italic">"Our entire class uses this platform. It is user-friendly and keeps the students highly engaged during lessons."</p>
                     <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— Priya D., School Teacher</span>
                   </div>

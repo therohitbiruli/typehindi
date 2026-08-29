@@ -4,6 +4,7 @@ import { lessons } from "../data/lessons";
 import { blogs } from "../data/blogs";
 import { LANGUAGES } from "./translators/page";
 import { HomepageGame } from "../components/HomepageGame";
+import { HomepageKeyboard } from "../components/HomepageKeyboard";
 
 export default function Homepage() {
   // Get first 2 lessons for preview
@@ -272,23 +273,15 @@ export default function Homepage() {
               Interactive Keyboard Layout Guide
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-              Explore the scientific key layouts of standard Hindi input structures. Learn the exact placement of vowels on the left side and consonants on the right side.
+              Explore the scientific key layouts of standard Hindi input structures. Learn the exact placement of vowels on the left side and consonants on the right side. Toggle layouts or see live key highlights by typing.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-              <div className="space-y-4">
-                <h4 className="font-bold text-gray-900 dark:text-white text-base">InScript vs Remington GAIL</h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-                  InScript is standard for official government typing jobs and is supported natively by Windows and macOS. Remington GAIL is heavily favored in high court exams. Toggle between layouts, view shifting key map results, and master modifiers.
-                </p>
-              </div>
-              <div className="relative aspect-[16/9] border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-inner bg-slate-50 dark:bg-slate-950 flex items-center justify-center">
-                <span className="text-xs font-mono text-gray-400">Interactive Map Preview</span>
-                <div className="absolute inset-0 bg-black/5 flex items-center justify-center">
-                  <Link href="/keyboard-layout" className="px-4 py-2 bg-white dark:bg-gray-800 text-xs font-bold rounded-lg border border-gray-300 dark:border-gray-700 shadow hover:shadow-md transition-all">
-                    Open Layout Map 🔍
-                  </Link>
-                </div>
-              </div>
+            
+            <HomepageKeyboard />
+
+            <div className="flex justify-end pt-2">
+              <Link href="/keyboard-layout" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
+                Open Full Keyboard Reference ➔
+              </Link>
             </div>
           </div>
 
@@ -356,33 +349,7 @@ export default function Homepage() {
             </div>
           </div>
 
-          {/* 8. ℹ️ SECTION: ABOUT */}
-          <div id="about" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
-            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
-              <span className="w-2.5 h-6 rounded-full bg-slate-700"></span>
-              About Our Platform
-            </h2>
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="space-y-4 flex-1">
-                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                  TypeHindi.in is a free online Hindi typing practice platform designed to help students and office professionals learn and master Hindi typing on the InScript keyboard layout. Our platform provides high-quality timed tests modeled after official government exams, complete touch typing tutor lessons, and useful guides.
-                </p>
-                <div className="flex justify-start">
-                  <Link href="/about" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
-                    Learn More About Us ➔
-                  </Link>
-                </div>
-              </div>
-              <div className="flex-1 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl space-y-3">
-                <h4 className="font-bold text-gray-900 dark:text-white text-sm">Key Features</h4>
-                <ul className="text-xs text-gray-500 dark:text-gray-400 space-y-1.5 pl-4 list-disc">
-                  <li><strong>100% Client-Side:</strong> Everything runs safely in your browser.</li>
-                  <li><strong>No Registration Needed:</strong> Start practicing immediately.</li>
-                  <li><strong>Private Data:</strong> Scores are stored locally on your device.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+
 
           {/* Text Dense Content mimicking TypingBaba */}
           <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-sm p-6 md:p-10 space-y-10">

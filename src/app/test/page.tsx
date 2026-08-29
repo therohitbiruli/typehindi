@@ -302,6 +302,14 @@ export default function TestPage() {
             This guide explains everything candidates need to know about preparing for typing tests in India, including typing speed requirements, practice methods, accuracy improvement, keyboard familiarity, common mistakes and strategies for government job typing examinations.
           </p>
 
+          <div className="my-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm max-w-3xl mx-auto">
+            <img 
+              src="/images/government-job-typing-prep.jpg" 
+              alt="A candidate practicing typing at a desk for Indian government clerical job exams such as SSC, LDC, UDC, and Stenographer"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-8 border-b pb-2">
             Understanding Typing Tests for Government Jobs
           </h3>
@@ -337,6 +345,14 @@ export default function TestPage() {
           <p>
             Typing skills are required for a wide variety of jobs in India. Some of the most common positions include clerical, administrative and data-entry roles.
           </p>
+
+          <div className="my-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm max-w-4xl mx-auto">
+            <img 
+              src="/images/typing-jobs-in-india.jpg" 
+              alt="Visual table explaining various typing jobs in India, speed requirements and responsibilities for SSC LDC, UDC, Clerks, Data Entry Operators, Assistants and Stenographers"
+              className="w-full h-auto object-cover"
+            />
+          </div>
 
           <h4 className="text-base font-bold text-gray-900 dark:text-white mt-4">
             SSC LDC and Clerical Posts

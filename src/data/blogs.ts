@@ -20,7 +20,7 @@ export const blogs: BlogPost[] = [
     dateEn: "30 August, 2026",
     title: "SSC CGL Typing Test Preparation: Complete Guide to DEST, Speed, Accuracy and Practice Strategy",
     excerpt: "A complete guide to the SSC CGL Data Entry Speed Test (DEST), covering typing speed, accuracy, rules, and a 30-day practice strategy to qualify.",
-    date: "30 ?????, 2026",
+    date: "30 अगस्त, 2026",
     author: "TypeHindi Team",
     category: "Exam Guide",
     contentEn: `\n# SSC CGL Typing Test Preparation: Complete Guide to DEST, Speed, Accuracy and [Practice](/practice) Strategy

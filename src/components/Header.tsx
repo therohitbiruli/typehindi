@@ -40,7 +40,7 @@ export function Header() {
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const sections = ["practice", "test", "learn", "game", "keyboard-layout", "translators", "blog", "about"];
+    const sections = ["practice", "learn", "game", "test", "keyboard-layout", "translators", "blog", "about"];
     
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       // Find the first intersecting entry

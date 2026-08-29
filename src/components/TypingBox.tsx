@@ -10,6 +10,7 @@ interface TypingBoxProps {
   onInput: (text: string, insertedAtIndex?: number) => void;
   isFinished: boolean;
   isStarted: boolean;
+  language?: "hindi" | "english";
 }
 
 export const TypingBox = memo(function TypingBox({
@@ -18,6 +19,7 @@ export const TypingBox = memo(function TypingBox({
   onInput,
   isFinished,
   isStarted,
+  language = "hindi",
 }: TypingBoxProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const nextCursorRef = useRef<number | null>(null);
@@ -83,6 +85,18 @@ export const TypingBox = memo(function TypingBox({
         return;
       }
 
+      // Handle English inputs natively
+      if (language === "english") {
+        if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          const char = e.key;
+          const newText = typedText.substring(0, start) + char + typedText.substring(end);
+          nextCursorRef.current = start + char.length;
+          onInput(newText, start);
+        }
+        return;
+      }
+
       // Check for mapped keys (InScript mapping)
       const mapping = keyMap[e.code];
       if (mapping) {
@@ -96,7 +110,7 @@ export const TypingBox = memo(function TypingBox({
         }
       }
     },
-    [onInput, typedText, isFinished]
+    [onInput, typedText, isFinished, language]
   );
 
   // Prevent copy/paste

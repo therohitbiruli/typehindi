@@ -71,14 +71,6 @@ export default function Homepage() {
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">InScript Layout speed building practice with keystroke indicators</p>
           </Link>
 
-          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
-            <div className="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
-              ⏱️
-            </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Test</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Evaluate your typing proficiency with realistic exam conditions</p>
-          </Link>
-
           <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
             <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
               📚
@@ -93,6 +85,14 @@ export default function Homepage() {
             </div>
             <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Games</h4>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Fun and addictive typing games to build speed and muscle memory</p>
+          </Link>
+
+          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+              ⏱️
+            </div>
+            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Test</h4>
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Evaluate your typing proficiency with realistic exam conditions</p>
           </Link>
 
           <Link href="/mangal-font-typing-test" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-slate-200 dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-rose-500/40 dark:hover:border-rose-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-sm">
@@ -141,7 +141,7 @@ export default function Homepage() {
       <section className="pb-20">
         <div className="container-main max-w-6xl px-4 space-y-16">
           
-          {/* ⌨️ SECTION: PRACTICE */}
+          {/* 1. ⌨️ SECTION: PRACTICE */}
           <div id="practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-slate-250 dark:border-slate-800">
              <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-6 flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
                <span className="w-2.5 h-6 rounded-full bg-primary-600"></span>
@@ -155,40 +155,7 @@ export default function Homepage() {
              </div>
           </div>
 
-          {/* ⏱️ SECTION: TEST */}
-          <div id="test" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
-            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
-              <span className="w-2.5 h-6 rounded-full bg-amber-500"></span>
-              Typing Test (Timed Exams Simulator)
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-              Test your typing speed under realistic SSC, CHSL, and state government exam criteria. We calculate net WPM, accuracy percentages, and count error penalties using standard formulas.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-2">
-              <Link href="/test" className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-2xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center">
-                <span className="text-3xl mb-1">⏱️</span>
-                <span className="font-bold text-gray-950 dark:text-white text-base">1 Minute Test</span>
-                <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">Quick speed benchmark</span>
-              </Link>
-              <Link href="/test" className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-2xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center">
-                <span className="text-3xl mb-1">⏱️</span>
-                <span className="font-bold text-gray-950 dark:text-white text-base">5 Minutes Test</span>
-                <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">Stamina building trial</span>
-              </Link>
-              <Link href="/test" className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-2xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center">
-                <span className="text-3xl mb-1">⏱️</span>
-                <span className="font-bold text-gray-950 dark:text-white text-base">10 Minutes Test</span>
-                <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">Standard exam duration</span>
-              </Link>
-            </div>
-            <div className="flex justify-end pt-2">
-              <Link href="/test" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
-                Start Exam Test Simulator ➔
-              </Link>
-            </div>
-          </div>
-
-          {/* 📚 SECTION: LEARN */}
+          {/* 2. 📚 SECTION: LEARN */}
           <div id="learn" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-emerald-500"></span>
@@ -224,7 +191,7 @@ export default function Homepage() {
             </div>
           </div>
 
-          {/* 🎮 SECTION: GAME */}
+          {/* 3. 🎮 SECTION: GAME */}
           <div id="game" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-purple-500"></span>
@@ -247,7 +214,61 @@ export default function Homepage() {
             </div>
           </div>
 
-          {/* 🔍 SECTION: KEYBOARD LAYOUT */}
+          {/* 4. ⏱️ SECTION: TEST */}
+          <div id="test" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
+            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="w-2.5 h-6 rounded-full bg-amber-500"></span>
+              Typing Test (Timed Exams Simulator)
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+              Evaluate your typing speed in both <strong>Hindi and English</strong> under realistic competitive exam environments. Learn how key recruitment tests evaluate candidates:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-2">
+              <div className="border border-slate-100 dark:border-slate-800 p-5 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50">
+                <h4 className="font-extrabold text-gray-950 dark:text-white text-sm mb-1">SSC Typing Exams</h4>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                  Conducted on-screen for 10 minutes. Requires 35 WPM in English or 30 WPM in Hindi. Strict category-wise error threshold limits (5% to 7%) are evaluated dynamically.
+                </p>
+              </div>
+              <div className="border border-slate-100 dark:border-slate-800 p-5 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50">
+                <h4 className="font-extrabold text-gray-950 dark:text-white text-sm mb-1">LDC & Clerk Jobs</h4>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                  Requires a typing speed of 30-35 WPM. Depending on state boards (like CPCT, High Courts), backspace edits might be fully disabled or carry high speed penalties.
+                </p>
+              </div>
+              <div className="border border-slate-100 dark:border-slate-800 p-5 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50">
+                <h4 className="font-extrabold text-gray-950 dark:text-white text-sm mb-1">Stenography Skill Tests</h4>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                  Focuses on typing out stenography shorthand voice dictations. Grade C candidates target 100 WPM, while Grade D candidates target 80 WPM with high transcription accuracy.
+                </p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <Link href="/test" className="flex flex-col items-center justify-center p-5 border border-dashed border-gray-250 dark:border-gray-800 rounded-xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center">
+                <span className="text-2xl mb-1">⏱️</span>
+                <span className="font-bold text-gray-950 dark:text-white text-sm">1 Minute Test</span>
+                <span className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">Quick speed benchmark</span>
+              </Link>
+              <Link href="/test" className="flex flex-col items-center justify-center p-5 border border-dashed border-gray-250 dark:border-gray-800 rounded-xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center">
+                <span className="text-2xl mb-1">⏱️</span>
+                <span className="font-bold text-gray-950 dark:text-white text-sm">5 Minutes Test</span>
+                <span className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">Stamina building trial</span>
+              </Link>
+              <Link href="/test" className="flex flex-col items-center justify-center p-5 border border-dashed border-gray-250 dark:border-gray-800 rounded-xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center">
+                <span className="text-2xl mb-1">⏱️</span>
+                <span className="font-bold text-gray-950 dark:text-white text-sm">10 Minutes Test</span>
+                <span className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">Standard exam duration</span>
+              </Link>
+            </div>
+            <div className="flex justify-end pt-2">
+              <Link href="/test" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
+                Know More & Take Test ➔
+              </Link>
+            </div>
+          </div>
+
+          {/* 5. 🔍 SECTION: KEYBOARD LAYOUT */}
           <div id="keyboard-layout" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-sky-500"></span>
@@ -274,7 +295,7 @@ export default function Homepage() {
             </div>
           </div>
 
-          {/* 🌐 SECTION: TRANSLATORS */}
+          {/* 6. 🌐 SECTION: TRANSLATORS */}
           <div id="translators" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-violet-500"></span>
@@ -302,7 +323,7 @@ export default function Homepage() {
             </div>
           </div>
 
-          {/* 📰 SECTION: BLOG */}
+          {/* 7. 📰 SECTION: BLOG */}
           <div id="blog" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-slate-500"></span>
@@ -338,7 +359,7 @@ export default function Homepage() {
             </div>
           </div>
 
-          {/* ℹ️ SECTION: ABOUT */}
+          {/* 8. ℹ️ SECTION: ABOUT */}
           <div id="about" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
             <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-slate-700"></span>

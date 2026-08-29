@@ -82,6 +82,38 @@ export const paragraphs: Paragraph[] = [
   },
 ];
 
+// ===== ENGLISH PARAGRAPHS FOR TIMED TESTING =====
+export const englishParagraphs: Paragraph[] = [
+  {
+    id: 201,
+    text: "The quick brown fox jumps over the lazy dog. This is a very common sentence that contains every letter of the English alphabet. Typing it repeatedly helps build muscle memory for touch typing. Focus on keeping your fingers on the home row keys.",
+    difficulty: "easy",
+    category: "General",
+    wordCount: 44,
+  },
+  {
+    id: 202,
+    text: "Technology has changed the way we live and work. Computers are used in almost every office and school. Learning to type quickly and accurately is an essential skill in the modern world. Consistent daily practice of thirty minutes will yield great results.",
+    difficulty: "easy",
+    category: "Technology",
+    wordCount: 43,
+  },
+  {
+    id: 203,
+    text: "Continuous practice is the key to mastering typing. Initially, you should focus on key placement and accuracy rather than speed. Once your fingers memorize the positions of the letters, your WPM speed will increase naturally and error rates will drop.",
+    difficulty: "medium",
+    category: "Education",
+    wordCount: 42,
+  },
+  {
+    id: 204,
+    text: "Competitive exams for government jobs often include a mandatory typing speed test. For example, Staff Selection Commission candidates are required to achieve a minimum speed of thirty-five words per minute in English. It is evaluated with strict rules regarding backspaces.",
+    difficulty: "hard",
+    category: "Exams",
+    wordCount: 43,
+  }
+];
+
 // Daily challenge paragraphs
 export const dailyChallenges: Paragraph[] = [
   {
@@ -107,12 +139,14 @@ export const dailyChallenges: Paragraph[] = [
   },
 ];
 
-export function getParagraphsByDifficulty(difficulty: "easy" | "medium" | "hard"): Paragraph[] {
-  return paragraphs.filter((p) => p.difficulty === difficulty);
+export function getParagraphsByDifficulty(difficulty: "easy" | "medium" | "hard", language: "hindi" | "english" = "hindi"): Paragraph[] {
+  const pool = language === "english" ? englishParagraphs : paragraphs;
+  return pool.filter((p) => p.difficulty === difficulty);
 }
 
-export function getRandomParagraph(difficulty?: "easy" | "medium" | "hard"): Paragraph {
-  const filtered = difficulty ? getParagraphsByDifficulty(difficulty) : paragraphs;
+export function getRandomParagraph(difficulty?: "easy" | "medium" | "hard", language: "hindi" | "english" = "hindi"): Paragraph {
+  const pool = language === "english" ? englishParagraphs : paragraphs;
+  const filtered = difficulty ? pool.filter((p) => p.difficulty === difficulty) : pool;
   return filtered[Math.floor(Math.random() * filtered.length)];
 }
 

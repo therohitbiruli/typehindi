@@ -3,6 +3,7 @@ import { PracticeTool } from "../components/PracticeTool";
 import { lessons } from "../data/lessons";
 import { blogs } from "../data/blogs";
 import { LANGUAGES } from "./translators/page";
+import { GameCanvas } from "../components/GameCanvas";
 
 export default function Homepage() {
   // Get first 2 lessons for preview
@@ -198,18 +199,17 @@ export default function Homepage() {
               Typing Word Games
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-              Make learning fun! Build rapid reflexes and muscle memory by typing falling letters and words correctly before they crash onto the ground. Great for both young learners and adults trying to increase speed.
+              Make learning fun! Build rapid reflexes and muscle memory by typing falling letters and words correctly before they crash onto the ground. Play the classic falling words game directly below or head to the game hub to explore other modes.
             </p>
-            <div className="bg-gradient-to-br from-purple-50/50 to-indigo-50/50 dark:from-slate-900/30 dark:to-slate-900/90 border border-slate-200 dark:border-slate-800/50 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="space-y-2 max-w-xl">
-                <span className="px-2.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 text-xs font-bold uppercase tracking-wider">Interactive Game Mode</span>
-                <h4 className="font-bold text-gray-900 dark:text-white text-base">De-stress & Improve Hand-Eye Coordination</h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-                  Multiple levels, dynamic word-fall paths, and scoring ladders based on keystroke accuracy. Practice Hindi/English vocabulary in a relaxed, game-like setting.
-                </p>
-              </div>
-              <Link href="/game" className="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-md shadow-purple-500/10 hover:shadow-purple-500/20 whitespace-nowrap">
-                Start Playing Game 🎮
+            
+            {/* Embedded Active Game Canvas */}
+            <div className="border border-slate-250 dark:border-slate-800 rounded-3xl p-4 bg-slate-50/50 dark:bg-slate-900/50 shadow-inner">
+              <GameCanvas />
+            </div>
+
+            <div className="flex justify-end pt-2">
+              <Link href="/game" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
+                Play More Games ➔
               </Link>
             </div>
           </div>

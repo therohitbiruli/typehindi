@@ -26,51 +26,95 @@ function parseHindiDate(dateStr: string): Date {
   return new Date(0);
 }
 
-export default function BlogPage() {
+interface PageProps {
+  searchParams: Promise<{ lang?: string }>;
+}
+
+export default async function BlogPage({ searchParams }: PageProps) {
+  const resolvedSearchParams = await searchParams;
+  const lang = resolvedSearchParams.lang === "en" ? "en" : "hi";
+  
   const sortedBlogs = [...blogs].sort((a, b) => parseHindiDate(b.date).getTime() - parseHindiDate(a.date).getTime());
 
   return (
     <div className="container-main py-6">
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+        <Breadcrumb items={[{ label: lang === "en" ? "Home" : "होम", href: "/" }, { label: lang === "en" ? "Blog" : "ब्लॉग" }]} />
+        
+        {/* Toggle on the far right */}
+        <div className="flex rounded-lg bg-slate-150 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
+          <Link
+            href="/blog"
+            className={`px-3 py-1 rounded-md transition-all ${
+              lang === "hi"
+                ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"
+                : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            }`}
+          >
+            HI
+          </Link>
+          <Link
+            href="/blog?lang=en"
+            className={`px-3 py-1 rounded-md transition-all ${
+              lang === "en"
+                ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"
+                : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            }`}
+          >
+            EN
+          </Link>
+        </div>
+      </div>
 
       <AdPlaceholder position="top" />
 
       <div className="mb-10 text-center">
-        <h1 className="heading-1 mb-3">हिंदी टाइपिंग लेख और मार्गदर्शिकाएँ</h1>
+        <h1 className="heading-1 mb-3">
+          {lang === "en" ? "Hindi Typing Articles and Guides" : "हिंदी टाइपिंग लेख और मार्गदर्शिकाएँ"}
+        </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          अपनी टाइपिंग गति सुधारने और सरकारी परीक्षाओं में सफल होने के लिए हमारे विशेषज्ञों द्वारा लिखे गए विस्तृत लेख पढ़ें।
+          {lang === "en" 
+            ? "Read detailed articles written by our experts to improve your typing speed and crack government exams."
+            : "अपनी टाइपिंग गति सुधारने और सरकारी परीक्षाओं में सफल होने के लिए हमारे विशेषज्ञों द्वारा लिखे गए विस्तृत लेख पढ़ें।"}
         </p>
       </div>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {sortedBlogs.map((blog) => (
-          <Link 
-            key={blog.slug} 
-            href={`/blog/${blog.slug}`}
-            className="group flex flex-col h-full bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow-sm rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-300 dark:hover:border-primary-600"
-          >
-            <div className="p-6 flex flex-col h-full">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-900/30 text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider">
-                  {blog.category}
-                </span>
-                <span className="text-xs text-gray-400">{blog.date}</span>
+        {sortedBlogs.map((blog) => {
+          const title = lang === "en" && blog.titleEn ? blog.titleEn : blog.title;
+          const excerpt = lang === "en" && blog.excerptEn ? blog.excerptEn : blog.excerpt;
+          const date = lang === "en" && blog.dateEn ? blog.dateEn : blog.date;
+          const buttonText = lang === "en" ? "Read full article" : "पूरा लेख पढ़ें";
+
+          return (
+            <Link 
+              key={blog.slug} 
+              href={`/blog/${blog.slug}${lang === "en" ? "?lang=en" : ""}`}
+              className="group flex flex-col h-full bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow-sm rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-300 dark:hover:border-primary-600"
+            >
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-900/30 text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider">
+                    {blog.category}
+                  </span>
+                  <span className="text-xs text-gray-400">{date}</span>
+                </div>
+                
+                <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors leading-tight line-clamp-3">
+                  {title}
+                </h2>
+                
+                <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-3 mb-6 flex-grow">
+                  {excerpt}
+                </p>
+                
+                <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm">
+                  {buttonText} <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+                </div>
               </div>
-              
-              <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors leading-tight">
-                {blog.title}
-              </h2>
-              
-              <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-3 mb-6 flex-grow">
-                {blog.excerpt}
-              </p>
-              
-              <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm">
-                पूरा लेख पढ़ें <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
-              </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
 
       <AdPlaceholder position="bottom" />

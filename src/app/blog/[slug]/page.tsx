@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Script from "next/script";
 import { blogs } from "../../../data/blogs";
 import { Breadcrumb } from "../../../components/Breadcrumb";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
@@ -59,15 +58,41 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
   return (
     <div className="container-main py-8">
-      <Breadcrumb
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: title },
-        ]}
-      />
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+        <Breadcrumb
+          items={[
+            { label: lang === "en" ? "Home" : "होम", href: "/" },
+            { label: lang === "en" ? "Blog" : "ब्लॉग", href: "/blog" },
+            { label: title },
+          ]}
+        />
+        
+        {/* Toggle on the far right */}
+        <div className="flex rounded-lg bg-slate-155 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
+          <Link
+            href={`/blog/${slug}`}
+            className={`px-3 py-1 rounded-md transition-all ${
+              lang === "hi"
+                ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"
+                : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            }`}
+          >
+            HI
+          </Link>
+          <Link
+            href={`/blog/${slug}?lang=en`}
+            className={`px-3 py-1 rounded-md transition-all ${
+              lang === "en"
+                ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"
+                : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            }`}
+          >
+            EN
+          </Link>
+        </div>
+      </div>
 
-      <article className="mt-8 mx-auto w-full">
+      <article className="mt-4 mx-auto w-full">
         <header className="mb-6 text-center">
           <div className="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-semibold mb-4">
             {blog.category}
@@ -82,61 +107,14 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
           </div>
         </header>
 
-        {/* Language Selection Toggle */}
-        <div className="flex justify-center gap-2 mb-8">
-          <Link
-            href={`/blog/${slug}`}
-            className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-              lang === "hi"
-                ? "bg-primary-600 text-white shadow-md shadow-primary-500/20"
-                : "bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-300"
-            }`}
-          >
-            हिन्दी (Original)
-          </Link>
-          <Link
-            href={`/blog/${slug}?lang=en`}
-            className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
-              lang === "en"
-                ? "bg-primary-600 text-white shadow-md shadow-primary-500/20"
-                : "bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-300"
-            }`}
-          >
-            English
-          </Link>
-        </div>
-
         <AdPlaceholder position="top" />
 
         <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-12 shadow-sm border border-gray-300 dark:border-gray-700">
           {showTranslateWidget && (
-            <div className="mb-6 p-4 rounded-2xl bg-amber-500/5 dark:bg-amber-500/10 border border-amber-200/50 dark:border-amber-800/30 flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="text-xs text-amber-700 dark:text-amber-300 text-center md:text-left leading-relaxed">
-                <strong className="block text-sm font-extrabold mb-0.5">English Translation In Progress ⏳</strong>
-                Our editors are currently translating this article. You can use the Google Translate widget to translate it instantly.
-              </div>
-              <div id="google_translate_element" className="translate-widget border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-slate-950 p-1"></div>
-              
-              <Script
-                id="google-translate-init"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    window.googleTranslateElementInit = function() {
-                      new google.translate.TranslateElement({
-                        pageLanguage: 'hi',
-                        includedLanguages: 'en',
-                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                      }, 'google_translate_element');
-                    }
-                  `
-                }}
-              />
-              <Script
-                id="google-translate-script"
-                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-                strategy="afterInteractive"
-              />
+            <div className="mb-6 p-4 rounded-2xl bg-amber-500/5 dark:bg-amber-500/10 border border-amber-200/50 dark:border-amber-800/30 text-center">
+              <span className="text-xs text-amber-700 dark:text-amber-300 font-medium">
+                ⏳ This article is currently only available in Hindi. Showing original version below.
+              </span>
             </div>
           )}
 

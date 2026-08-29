@@ -342,13 +342,13 @@ export default function Homepage() {
                 <div key={blog.slug} className="border border-slate-200 dark:border-slate-850 p-5 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 flex flex-col justify-between">
                   <div>
                     <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider block mb-1">
-                      {blog.date} | {blog.category}
+                      {blog.dateEn || blog.date} | {blog.category}
                     </span>
                     <h3 className="font-extrabold text-gray-900 dark:text-white text-base leading-snug mb-2">
-                      {blog.title}
+                      {blog.titleEn || blog.title}
                     </h3>
                     <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
-                      {blog.excerpt}
+                      {blog.excerptEn || blog.excerpt}
                     </p>
                   </div>
                   <Link href={`/blog/${blog.slug}`} className="text-xs font-bold text-primary-600 dark:text-primary-400 hover:underline w-fit">

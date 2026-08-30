@@ -30,7 +30,7 @@ export default function GamePage() {
           className={`relative group rounded-[2rem] overflow-hidden aspect-[16/9] transition-all duration-500 border-3 ${
             activeGame === "classic"
               ? "border-primary-500 shadow-[0_15px_30px_rgba(99,102,241,0.25)] dark:shadow-[0_15px_30px_rgba(99,102,241,0.12)] scale-[1.02]"
-              : "border-slate-200 dark:border-slate-800/80 hover:border-primary-400 hover:scale-[1.01]"
+              : "border-[#D9E1EC] dark:border-slate-800/80 hover:border-primary-400 hover:scale-[1.01]"
           }`}
         >
           <Image
@@ -60,7 +60,7 @@ export default function GamePage() {
           className={`relative group rounded-[2rem] overflow-hidden aspect-[16/9] transition-all duration-500 border-3 ${
             activeGame === "tank"
               ? "border-primary-500 shadow-[0_15px_30px_rgba(99,102,241,0.25)] dark:shadow-[0_15px_30px_rgba(99,102,241,0.12)] scale-[1.02]"
-              : "border-slate-200 dark:border-slate-800/80 hover:border-primary-400 hover:scale-[1.01]"
+              : "border-[#D9E1EC] dark:border-slate-800/80 hover:border-primary-400 hover:scale-[1.01]"
           }`}
         >
           <Image
@@ -87,7 +87,7 @@ export default function GamePage() {
       </div>
 
       {/* 🎮 Game Launcher Arena */}
-      <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-slate-250 dark:border-slate-800 mb-12">
+      <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#D9E1EC] dark:border-slate-800 mb-12">
         {activeGame === "classic" ? <GameCanvas /> : <TankGameCanvas />}
       </div>
 
@@ -95,8 +95,8 @@ export default function GamePage() {
 
       {/* Instructions */}
       <section className="mt-12">
-        <div className="card bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 md:p-8">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-4">
+        <div className="card bg-[#EEF2F7] dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 p-6 md:p-8">
+          <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white border-b border-[#D9E1EC] dark:border-gray-700 pb-4">
             खेल के बारे में (About the Game)
           </h2>
           

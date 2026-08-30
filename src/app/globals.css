@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --background: 255 255 255;
-    --foreground: 23 23 23;
-    --card: 249 250 251;
-    --card-border: 229 231 235;
-    --muted: 107 114 128;
+    --background: 244 247 251; /* #F4F7FB */
+    --foreground: 30 41 59;     /* #1E293B */
+    --card: 255 255 255;        /* #FFFFFF */
+    --card-border: 217 225 236; /* #D9E1EC */
+    --muted: 100 116 139;       /* #64748B */
   }
 
   .dark {
@@ -36,31 +36,31 @@
   }
 
   .card {
-    @apply rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-900;
+    @apply rounded-2xl border border-[#D9E1EC] bg-white p-5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all dark:border-gray-700 dark:bg-gray-900;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-offset-gray-900;
+    @apply inline-flex items-center justify-center rounded-xl bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-primary-500 shadow-md shadow-primary-500/20 hover:shadow-primary-500/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-offset-gray-900;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700;
+    @apply inline-flex items-center justify-center rounded-xl border border-[#D9E1EC] bg-[#EEF2F7] px-5 py-2.5 text-sm font-semibold text-slate-800 transition-all hover:bg-slate-200/80 hover:border-slate-300 hover:text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700;
   }
 
   .heading-1 {
-    @apply text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl;
+    @apply text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl;
   }
 
   .heading-2 {
-    @apply text-2xl font-semibold tracking-tight text-gray-900 dark:text-white;
+    @apply text-2xl font-bold tracking-tight text-slate-900 dark:text-white;
   }
 
   .heading-3 {
-    @apply text-xl font-semibold text-gray-900 dark:text-white;
+    @apply text-xl font-bold text-slate-900 dark:text-white;
   }
 
   .text-muted {
-    @apply text-gray-500 dark:text-gray-400;
+    @apply text-slate-500 dark:text-gray-400;
   }
 
   .char-correct {
@@ -76,21 +76,20 @@
   }
 
   .char-upcoming {
-    @apply text-gray-400 dark:text-gray-500;
+    @apply text-slate-400 dark:text-gray-500;
   }
 
   .key {
-    @apply flex h-10 w-10 items-center justify-center rounded-md border border-gray-300 bg-white text-xs font-medium text-gray-700 shadow-sm transition-all dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300;
+    @apply flex h-10 w-10 items-center justify-center rounded-lg border border-[#D9E1EC] bg-white text-xs font-semibold text-slate-800 shadow-sm transition-all hover:border-primary-400/60 hover:bg-slate-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300;
   }
 
   .key-active {
-    @apply border-primary-500 bg-primary-100 text-primary-700 shadow-md dark:bg-primary-900/50 dark:text-primary-300;
+    @apply border-primary-500 bg-primary-50 text-primary-700 shadow-md ring-2 ring-primary-500/30 dark:bg-primary-900/50 dark:text-primary-300;
   }
 
   .key-highlight {
     @apply border-amber-500 bg-amber-50 text-amber-800 shadow-md dark:bg-amber-950/40 dark:text-amber-300 ring-2 ring-amber-400/40;
   }
-
 }
 
 /* Smooth scrolling */

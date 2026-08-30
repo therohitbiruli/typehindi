@@ -27,12 +27,12 @@ export default function MangalFontTestPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50 dark:bg-gray-900 flex-grow">
+      <section className="py-12 bg-[#F4F7FB] dark:bg-gray-900 flex-grow">
         <div className="container-main max-w-5xl">
           <AdPlaceholder position="top" />
 
           {/* Dedicated Mangal Font SEO Section */}
-          <div className="mt-8 mb-8 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded shadow-sm overflow-hidden">
+          <div className="mt-8 mb-8 border border-[#D9E1EC] dark:border-gray-700 bg-white dark:bg-gray-900 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] overflow-hidden">
             <div className="bg-primary-700 text-white px-5 py-3 border-b border-primary-800">
               <h2 className="text-xl font-bold">What is Mangal Font Typing?</h2>
             </div>

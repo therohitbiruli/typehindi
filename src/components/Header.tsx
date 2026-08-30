@@ -83,7 +83,7 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/20 bg-white/80 backdrop-blur-md shadow-sm dark:border-gray-800/50 dark:bg-gray-950/80">
+    <header className="sticky top-0 z-50 border-b border-[#D9E1EC] bg-[#F4F7FB]/90 backdrop-blur-md shadow-[0_2px_12px_-2px_rgba(0,0,0,0.04)] dark:border-gray-800/50 dark:bg-gray-950/80">
       <div className="container-main">
         <div className="flex h-14 items-center justify-between">
           {/* Logo */}
@@ -110,8 +110,8 @@ export function Header() {
                 href={item.href}
                 className={`rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                   activeSection === item.href
-                    ? "bg-primary-600 text-white shadow-sm shadow-primary-500/10"
-                    : "text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-100"
+                    ? "bg-primary-600 text-white shadow-sm shadow-primary-500/25"
+                    : "text-slate-600 hover:bg-[#EEF2F7] hover:text-slate-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-100"
                 }`}
               >
                 {item.label}
@@ -125,7 +125,7 @@ export function Header() {
             <ThemeToggle />
             <button
               onClick={toggleMenu}
-              className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+              className="rounded-lg p-2 text-slate-600 hover:bg-[#EEF2F7] dark:text-gray-400 dark:hover:bg-gray-800"
               aria-label="Toggle menu"
               id="mobile-menu-button"
             >
@@ -144,7 +144,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="border-t border-gray-200 pb-3 pt-2 md:hidden dark:border-gray-800">
+          <nav className="border-t border-[#D9E1EC] pb-3 pt-2 md:hidden dark:border-gray-800">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -152,8 +152,8 @@ export function Header() {
                 onClick={closeMenu}
                 className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                   activeSection === item.href
-                    ? "bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300"
-                    : "text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+                    ? "bg-primary-50 text-primary-700 font-semibold dark:bg-primary-900/30 dark:text-primary-300"
+                    : "text-slate-700 hover:bg-[#EEF2F7] dark:text-gray-400 dark:hover:bg-gray-800"
                 }`}
               >
                 {item.label}

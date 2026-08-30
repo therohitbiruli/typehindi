@@ -109,7 +109,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
         <AdPlaceholder position="top" />
 
-        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-12 shadow-sm border border-gray-300 dark:border-gray-700">
+        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-12 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#D9E1EC] dark:border-gray-700">
           {showTranslateWidget && (
             <div className="mb-6 p-4 rounded-2xl bg-amber-500/5 dark:bg-amber-500/10 border border-amber-200/50 dark:border-amber-800/30 text-center">
               <span className="text-xs text-amber-700 dark:text-amber-300 font-medium">

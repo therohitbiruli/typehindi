@@ -141,17 +141,17 @@ export function LearningProgressDashboard({
           </div>
         </div>
 
-        {/* 4 Key Milestone Stat Cards */}
+        {/* Metrics Overview Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-150 dark:border-gray-800 shadow-sm">
-            <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
+          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
+            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-gray-400 mb-1">
               <span>Daily Path</span>
               <span className="text-base">🗓️</span>
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">
-              {completedDaysCount} <span className="text-sm font-normal text-gray-400">/ {totalDaysCount} Days</span>
+            <div className="text-2xl font-bold text-slate-900 dark:text-white">
+              {completedDaysCount} <span className="text-sm font-normal text-slate-400">/ {totalDaysCount} Days</span>
             </div>
-            <div className="w-full bg-gray-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
+            <div className="w-full bg-slate-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
               <div
                 className="bg-indigo-500 h-full rounded-full transition-all duration-500"
                 style={{ width: (completedDaysCount / totalDaysCount) * 100 + "%" }}
@@ -159,15 +159,15 @@ export function LearningProgressDashboard({
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-150 dark:border-gray-800 shadow-sm">
-            <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
+          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
+            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-gray-400 mb-1">
               <span>Keys Mastered</span>
               <span className="text-base">⌨️</span>
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">
-              {completedKeysCount} <span className="text-sm font-normal text-gray-400">/ {totalKeysCount}</span>
+            <div className="text-2xl font-bold text-slate-900 dark:text-white">
+              {completedKeysCount} <span className="text-sm font-normal text-slate-400">/ {totalKeysCount}</span>
             </div>
-            <div className="w-full bg-gray-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
+            <div className="w-full bg-slate-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
               <div
                 className="bg-emerald-500 h-full rounded-full transition-all duration-500"
                 style={{ width: (completedKeysCount / totalKeysCount) * 100 + "%" }}
@@ -175,15 +175,15 @@ export function LearningProgressDashboard({
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-150 dark:border-gray-800 shadow-sm">
-            <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
+          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
+            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-gray-400 mb-1">
               <span>Matra Mastery</span>
               <span className="text-base">🎯</span>
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">
-              {completedMatrasCount} <span className="text-sm font-normal text-gray-400">/ {totalMatrasCount}</span>
+            <div className="text-2xl font-bold text-slate-900 dark:text-white">
+              {completedMatrasCount} <span className="text-sm font-normal text-slate-400">/ {totalMatrasCount}</span>
             </div>
-            <div className="w-full bg-gray-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
+            <div className="w-full bg-slate-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
               <div
                 className="bg-amber-500 h-full rounded-full transition-all duration-500"
                 style={{ width: (completedMatrasCount / totalMatrasCount) * 100 + "%" }}
@@ -191,15 +191,15 @@ export function LearningProgressDashboard({
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-150 dark:border-gray-800 shadow-sm">
-            <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
+          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
+            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-gray-400 mb-1">
               <span>Challenges</span>
               <span className="text-base">🏆</span>
             </div>
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">
-              {completedChallengesCount} <span className="text-sm font-normal text-gray-400">/ {totalChallengesCount}</span>
+            <div className="text-2xl font-bold text-slate-900 dark:text-white">
+              {completedChallengesCount} <span className="text-sm font-normal text-slate-400">/ {totalChallengesCount}</span>
             </div>
-            <div className="w-full bg-gray-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
+            <div className="w-full bg-slate-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
               <div
                 className="bg-rose-500 h-full rounded-full transition-all duration-500"
                 style={{ width: (completedChallengesCount / totalChallengesCount) * 100 + "%" }}

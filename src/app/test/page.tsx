@@ -104,13 +104,13 @@ export default function TestPage() {
       </p>
 
       {/* Settings Grid with Language and target typing Job selectors */}
-      <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-2xl shadow-sm">
+      <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 p-4 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
         {/* Language Selector */}
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+          <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-500">
             Language Mode
           </label>
-          <div className="flex gap-2 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+          <div className="flex gap-2 bg-[#EEF2F7] dark:bg-slate-800 p-1 rounded-xl">
             <button
               onClick={() => handleLanguageChange("hindi")}
               disabled={isStarted && !showResults}

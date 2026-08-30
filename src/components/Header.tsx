@@ -83,7 +83,7 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#D9E1EC] bg-[#F4F7FB]/90 backdrop-blur-md shadow-[0_2px_12px_-2px_rgba(0,0,0,0.04)] dark:border-gray-800/50 dark:bg-gray-950/80">
+    <header className="sticky top-0 z-50 border-b border-[#D9E1EC] bg-[#F4F7FB]/90 backdrop-blur-md shadow-[0_2px_12px_-2px_rgba(0,0,0,0.04)] dark:border-slate-800/80 dark:bg-slate-950/90">
       <div className="container-main">
         <div className="flex h-14 items-center justify-between">
           {/* Logo */}

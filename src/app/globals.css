@@ -12,11 +12,11 @@
   }
 
   .dark {
-    --background: 15 15 15;
-    --foreground: 237 237 237;
-    --card: 30 30 30;
-    --card-border: 55 55 55;
-    --muted: 156 163 175;
+    --background: 10 15 29;     /* Deep dark navy/slate #0A0F1D */
+    --foreground: 241 245 249;   /* #F1F5F9 Slate-100 */
+    --card: 15 23 42;           /* #0F172A Slate-900 */
+    --card-border: 30 41 59;    /* #1E293B Slate-800 */
+    --muted: 148 163 184;       /* #94A3B8 Slate-400 */
   }
 
   body {
@@ -36,7 +36,7 @@
   }
 
   .card {
-    @apply rounded-2xl border border-[#D9E1EC] bg-white p-5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all dark:border-gray-700 dark:bg-gray-900;
+    @apply rounded-2xl border border-[#D9E1EC] bg-white p-5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all dark:border-slate-800 dark:bg-slate-900;
   }
 
   .btn-primary {

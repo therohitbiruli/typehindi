@@ -2,6 +2,7 @@
 
 export interface GameInfo {
   id: "tank" | "target" | "classic" | "runner" | "builder" | "matra";
+  slug: string;
   title: string;
   hindiTitle: string;
   category: "ACTION & REFLEX" | "SPEED GAMES" | "LEARNING GAMES";
@@ -19,6 +20,7 @@ export interface GameInfo {
 export const GAME_CATALOG: GameInfo[] = [
   {
     id: "tank",
+    slug: "tank-defender",
     title: "Tank Defender",
     hindiTitle: "टैंक डिफेंडर",
     category: "ACTION & REFLEX",
@@ -34,6 +36,7 @@ export const GAME_CATALOG: GameInfo[] = [
   },
   {
     id: "target",
+    slug: "typing-target",
     title: "Typing Target",
     hindiTitle: "टाइपिंग टार्गेट",
     category: "ACTION & REFLEX",
@@ -49,6 +52,7 @@ export const GAME_CATALOG: GameInfo[] = [
   },
   {
     id: "classic",
+    slug: "falling-words",
     title: "Classic Falling Words",
     hindiTitle: "क्लासिक फॉलिंग वर्ड्स",
     category: "SPEED GAMES",
@@ -64,6 +68,7 @@ export const GAME_CATALOG: GameInfo[] = [
   },
   {
     id: "runner",
+    slug: "word-runner",
     title: "Word Runner",
     hindiTitle: "वर्ड रनर",
     category: "SPEED GAMES",
@@ -79,6 +84,7 @@ export const GAME_CATALOG: GameInfo[] = [
   },
   {
     id: "builder",
+    slug: "hindi-word-builder",
     title: "Hindi Word Builder",
     hindiTitle: "हिंदी वर्ड बिल्डर",
     category: "LEARNING GAMES",
@@ -94,6 +100,7 @@ export const GAME_CATALOG: GameInfo[] = [
   },
   {
     id: "matra",
+    slug: "matra-challenge",
     title: "Matra Challenge",
     hindiTitle: "मात्रा चैलेंज",
     category: "LEARNING GAMES",

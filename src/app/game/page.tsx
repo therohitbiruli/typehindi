@@ -1,20 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
-import { GameCanvas } from "../../components/GameCanvas";
-import { TankGameCanvas } from "../../components/TankGameCanvas";
-import { TypingTargetGame } from "../../components/games/TypingTargetGame";
-import { WordRunnerGame } from "../../components/games/WordRunnerGame";
-import { WordBuilderGame } from "../../components/games/WordBuilderGame";
-import { MatraChallengeGame } from "../../components/games/MatraChallengeGame";
-import { UnifiedGameResults } from "../../components/games/UnifiedGameResults";
 import { GAME_CATALOG, GameInfo } from "../../data/gameData";
 
 type Difficulty = "Beginner" | "Intermediate" | "Advanced";
-type GameScreen = "hub" | "difficulty" | "playing" | "results";
 
 interface HubStats {
   gamesPlayed: number;
@@ -23,34 +15,19 @@ interface HubStats {
   bestSpeed: number;
 }
 
-interface GameResult {
-  score: number;
-  accuracy: number;
-  wpm?: number;
-  correct: number;
-  incorrect: number;
-  streak: number;
-}
-
 const DIFFICULTY_COLORS: Record<Difficulty, string> = {
   Beginner: "text-emerald-400 border-emerald-500/50 bg-emerald-500/10",
   Intermediate: "text-amber-400 border-amber-500/50 bg-amber-500/10",
   Advanced: "text-rose-400 border-rose-500/50 bg-rose-500/10",
 };
 
-export default function GamePage() {
-  const [screen, setScreen] = useState<GameScreen>("hub");
-  const [selectedGame, setSelectedGame] = useState<GameInfo | null>(null);
-  const [difficulty, setDifficulty] = useState<Difficulty>("Intermediate");
-  const [gameResult, setGameResult] = useState<GameResult | null>(null);
+export default function GameHubPage() {
   const [hubStats, setHubStats] = useState<HubStats>({
     gamesPlayed: 0,
     highestScore: 0,
     bestAccuracy: 0,
     bestSpeed: 0,
   });
-
-  const arenaRef = useRef<HTMLDivElement>(null);
 
   // Load stats from localStorage
   useEffect(() => {
@@ -60,45 +37,6 @@ export default function GamePage() {
     } catch (_) {}
   }, []);
 
-  const openDifficultyPicker = (game: GameInfo) => {
-    setSelectedGame(game);
-    setScreen("difficulty");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const startGame = (diff: Difficulty) => {
-    setDifficulty(diff);
-    setScreen("playing");
-    setGameResult(null);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleGameOver = useCallback((stats: GameResult) => {
-    setGameResult(stats);
-    setScreen("results");
-    // Update hub stats
-    try {
-      const saved = localStorage.getItem("typehindi_game_hub_stats");
-      const cur = saved
-        ? JSON.parse(saved)
-        : { gamesPlayed: 0, highestScore: 0, bestAccuracy: 0, bestSpeed: 0 };
-      const updated = {
-        gamesPlayed: cur.gamesPlayed + 1,
-        highestScore: Math.max(cur.highestScore, stats.score),
-        bestAccuracy: Math.max(cur.bestAccuracy, Math.round(stats.accuracy)),
-        bestSpeed: Math.max(cur.bestSpeed, Math.round(stats.wpm ?? 0)),
-      };
-      localStorage.setItem("typehindi_game_hub_stats", JSON.stringify(updated));
-      setHubStats(updated);
-    } catch (_) {}
-  }, []);
-
-  const backToHub = () => {
-    setScreen("hub");
-    setSelectedGame(null);
-    setGameResult(null);
-  };
-
   const scrollToGames = () => {
     const el = document.getElementById("choose-games");
     if (el) {
@@ -106,150 +44,9 @@ export default function GamePage() {
     }
   };
 
-  // ── Difficulty Picker Screen ─────────────────────────────────────────────
-  if (screen === "difficulty" && selectedGame) {
-    return (
-      <div className="container-main py-6">
-        <Breadcrumb
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Games", href: "/game" },
-            { label: selectedGame.title },
-          ]}
-        />
-        <div className="max-w-xl mx-auto mt-10 text-center">
-          <div className="text-6xl mb-4">{selectedGame.icon}</div>
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-1 block">
-            Select Difficulty
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">
-            {selectedGame.title}
-          </h2>
-          <p className="text-slate-400 text-sm mb-8 leading-relaxed">
-            {selectedGame.description}
-          </p>
-
-          <div className="grid grid-cols-1 gap-4 mb-8">
-            {(["Beginner", "Intermediate", "Advanced"] as Difficulty[]).map((d) => (
-              <button
-                key={d}
-                onClick={() => startGame(d)}
-                className={`flex items-center justify-between w-full p-5 rounded-2xl border-2 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${DIFFICULTY_COLORS[d]}`}
-              >
-                <div className="text-left">
-                  <div className="font-black text-lg">{d}</div>
-                  <div className="text-xs opacity-75 mt-0.5">
-                    {d === "Beginner"
-                      ? "Simple Hindi characters, foundational words & relaxed pace"
-                      : d === "Intermediate"
-                      ? "Common Hindi vocabulary, matras & balanced speed"
-                      : "Complex words, conjuncts (संयुक्त अक्षर) & high-speed reflexes"}
-                  </div>
-                </div>
-                <span className="text-2xl font-bold">→</span>
-              </button>
-            ))}
-          </div>
-
-          <button
-            onClick={backToHub}
-            className="text-sm font-semibold text-slate-400 hover:text-white transition-colors"
-          >
-            ← Back to Game Hub
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  // ── Playing / Results Screen ─────────────────────────────────────────────
-  if ((screen === "playing" || screen === "results") && selectedGame) {
-    return (
-      <div className="container-main py-6" ref={arenaRef}>
-        <div className="max-w-4xl mx-auto">
-          {/* Game container */}
-          <div className="rounded-[2.5rem] overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl shadow-black/60 min-h-[620px] flex flex-col">
-            {/* Header strip */}
-            <div className="flex items-center justify-between px-6 py-4 bg-slate-950/90 border-b border-slate-800">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">{selectedGame.icon}</span>
-                <div>
-                  <span className="text-base font-bold text-white block leading-tight">
-                    {selectedGame.title}
-                  </span>
-                  <span className="text-xs text-slate-400">{selectedGame.hindiTitle}</span>
-                </div>
-                <span
-                  className={`text-xs px-2.5 py-0.5 rounded-full border ml-2 ${DIFFICULTY_COLORS[difficulty]}`}
-                >
-                  {difficulty}
-                </span>
-              </div>
-              <button
-                onClick={backToHub}
-                className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
-              >
-                ← Back to Hub
-              </button>
-            </div>
-
-            {/* Game content */}
-            <div className="flex-1 flex flex-col">
-              {screen === "results" && gameResult ? (
-                <UnifiedGameResults
-                  gameTitle={selectedGame.title}
-                  gameId={selectedGame.id}
-                  score={gameResult.score}
-                  accuracy={gameResult.accuracy}
-                  wpm={gameResult.wpm}
-                  correctCount={gameResult.correct}
-                  incorrectCount={gameResult.incorrect}
-                  bestStreak={gameResult.streak}
-                  difficulty={difficulty}
-                  onPlayAgain={() => startGame(difficulty)}
-                  onChangeDifficulty={() => setScreen("difficulty")}
-                  onBackToHub={backToHub}
-                />
-              ) : selectedGame.id === "classic" ? (
-                <GameCanvas />
-              ) : selectedGame.id === "tank" ? (
-                <TankGameCanvas />
-              ) : selectedGame.id === "target" ? (
-                <TypingTargetGame
-                  difficulty={difficulty}
-                  onGameOver={handleGameOver}
-                  onBackToHub={backToHub}
-                />
-              ) : selectedGame.id === "runner" ? (
-                <WordRunnerGame
-                  difficulty={difficulty}
-                  onGameOver={handleGameOver}
-                  onBackToHub={backToHub}
-                />
-              ) : selectedGame.id === "builder" ? (
-                <WordBuilderGame
-                  difficulty={difficulty}
-                  onGameOver={handleGameOver}
-                  onBackToHub={backToHub}
-                />
-              ) : selectedGame.id === "matra" ? (
-                <MatraChallengeGame
-                  difficulty={difficulty}
-                  onGameOver={handleGameOver}
-                  onBackToHub={backToHub}
-                />
-              ) : null}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // ── Complete Game Hub Page ───────────────────────────────────────────────
   return (
     <div className="container-main py-6">
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Games" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Game Hub" }]} />
       <AdPlaceholder position="top" />
 
       {/* ========================================================================= */}
@@ -408,28 +205,29 @@ export default function GamePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. GAME HUB - CHOOSE YOUR TYPING GAME */}
+      {/* 3. GAME HUB - CHOOSE YOUR TYPING GAME (DEDICATED URL LINKS) */}
       {/* ========================================================================= */}
       <section id="choose-games" className="mb-20 scroll-mt-8">
         <div className="text-center mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-2 block">
-            6 Interactive Games
+            6 Dedicated Games
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
             Choose Your Typing Game
           </h2>
           <p className="text-slate-400 text-base max-w-2xl mx-auto">
-            Select any game below to test your skills, customize your difficulty, and track your
-            progress.
+            Click any game below to open its dedicated interactive gaming arena with custom difficulty
+            modes.
           </p>
         </div>
 
         {/* 6 Game Cards in 3-col Desktop / 2-col Tablet / 1-col Mobile Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {GAME_CATALOG.map((game) => (
-            <div
-              key={game.id}
-              className="group relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900 flex flex-col transition-all duration-300 hover:border-slate-600 hover:shadow-2xl hover:shadow-black/40 hover:-translate-y-1"
+            <Link
+              key={game.slug}
+              href={`/game/${game.slug}`}
+              className="group relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900 flex flex-col transition-all duration-300 hover:border-primary-500/60 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1"
             >
               {/* Visual preview banner */}
               <div
@@ -470,7 +268,9 @@ export default function GamePage() {
               {/* Info Container */}
               <div className="flex-1 flex flex-col p-6 gap-3">
                 <div>
-                  <h3 className="text-xl font-extrabold text-white leading-tight">{game.title}</h3>
+                  <h3 className="text-xl font-extrabold text-white leading-tight group-hover:text-primary-300 transition-colors">
+                    {game.title}
+                  </h3>
                   <p
                     className="text-xs text-slate-400 font-medium mt-0.5"
                     style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
@@ -501,15 +301,12 @@ export default function GamePage() {
                     {game.difficulty}
                   </span>
 
-                  <button
-                    onClick={() => openDifficultyPicker(game)}
-                    className="btn-primary rounded-xl px-4 py-2 text-xs font-bold flex items-center gap-1.5 shadow-md shadow-primary-500/20"
-                  >
+                  <span className="btn-primary rounded-xl px-4 py-2 text-xs font-bold flex items-center gap-1.5 shadow-md shadow-primary-500/20 group-hover:scale-105 transition-transform">
                     Play Now <span>→</span>
-                  </button>
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -517,7 +314,7 @@ export default function GamePage() {
       <AdPlaceholder position="bottom" />
 
       {/* ========================================================================= */}
-      {/* 4. DETAILED GAME GUIDES */}
+      {/* 4. DETAILED GAME GUIDES (WITH DIRECT LINKS TO EACH GAME ROUTE) */}
       {/* ========================================================================= */}
       <section className="mb-20">
         <div className="text-center mb-16">
@@ -594,12 +391,12 @@ export default function GamePage() {
                   for common vowels and consonants on your keyboard layout to build rapid reflexes.
                 </div>
 
-                <button
-                  onClick={() => openDifficultyPicker(GAME_CATALOG.find((g) => g.id === "classic")!)}
-                  className="btn-primary rounded-xl px-5 py-2.5 text-sm font-bold flex items-center gap-2 shadow-md"
+                <Link
+                  href="/game/falling-words"
+                  className="btn-primary inline-flex rounded-xl px-5 py-2.5 text-sm font-bold items-center gap-2 shadow-md"
                 >
                   Play Classic Falling Words →
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -618,8 +415,8 @@ export default function GamePage() {
                   Tank Defender (टैंक डिफेंडर)
                 </h3>
                 <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  <strong>Overview:</strong> Defend your military base from incoming armored tanks by
-                  typing the Hindi character or word mounted on each attacking vehicle.
+                  <strong>Overview:</strong> Defend your base by typing Hindi characters or words
+                  shown on incoming enemy tanks.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
@@ -664,12 +461,12 @@ export default function GamePage() {
                   targeting distant vehicles.
                 </div>
 
-                <button
-                  onClick={() => openDifficultyPicker(GAME_CATALOG.find((g) => g.id === "tank")!)}
-                  className="btn-primary rounded-xl px-5 py-2.5 text-sm font-bold flex items-center gap-2 shadow-md"
+                <Link
+                  href="/game/tank-defender"
+                  className="btn-primary inline-flex rounded-xl px-5 py-2.5 text-sm font-bold items-center gap-2 shadow-md"
                 >
                   Play Tank Defender →
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -734,12 +531,12 @@ export default function GamePage() {
                   time. Do not look away from your active word until you finish typing it.
                 </div>
 
-                <button
-                  onClick={() => openDifficultyPicker(GAME_CATALOG.find((g) => g.id === "target")!)}
-                  className="btn-primary rounded-xl px-5 py-2.5 text-sm font-bold flex items-center gap-2 shadow-md"
+                <Link
+                  href="/game/typing-target"
+                  className="btn-primary inline-flex rounded-xl px-5 py-2.5 text-sm font-bold items-center gap-2 shadow-md"
                 >
                   Play Typing Target →
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -803,12 +600,12 @@ export default function GamePage() {
                   cadence. Pausing abruptly interrupts your speed multiplier.
                 </div>
 
-                <button
-                  onClick={() => openDifficultyPicker(GAME_CATALOG.find((g) => g.id === "runner")!)}
-                  className="btn-primary rounded-xl px-5 py-2.5 text-sm font-bold flex items-center gap-2 shadow-md"
+                <Link
+                  href="/game/word-runner"
+                  className="btn-primary inline-flex rounded-xl px-5 py-2.5 text-sm font-bold items-center gap-2 shadow-md"
                 >
                   Play Word Runner →
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -873,12 +670,12 @@ export default function GamePage() {
                   the word.
                 </div>
 
-                <button
-                  onClick={() => openDifficultyPicker(GAME_CATALOG.find((g) => g.id === "builder")!)}
-                  className="btn-primary rounded-xl px-5 py-2.5 text-sm font-bold flex items-center gap-2 shadow-md"
+                <Link
+                  href="/game/hindi-word-builder"
+                  className="btn-primary inline-flex rounded-xl px-5 py-2.5 text-sm font-bold items-center gap-2 shadow-md"
                 >
                   Play Hindi Word Builder →
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -943,12 +740,12 @@ export default function GamePage() {
                   even if the short vowel visual sign appears on the left side!
                 </div>
 
-                <button
-                  onClick={() => openDifficultyPicker(GAME_CATALOG.find((g) => g.id === "matra")!)}
-                  className="btn-primary rounded-xl px-5 py-2.5 text-sm font-bold flex items-center gap-2 shadow-md"
+                <Link
+                  href="/game/matra-challenge"
+                  className="btn-primary inline-flex rounded-xl px-5 py-2.5 text-sm font-bold items-center gap-2 shadow-md"
                 >
                   Play Matra Challenge →
-                </button>
+                </Link>
               </div>
             </div>
           </div>

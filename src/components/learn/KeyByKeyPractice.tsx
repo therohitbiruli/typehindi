@@ -56,15 +56,33 @@ export function KeyByKeyPractice({
     }
   };
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (selectedItemIndex < filteredItems.length - 1) {
-      setSelectedItemIndex(selectedItemIndex + 1);
+      setSelectedItemIndex(prev => prev + 1);
     } else {
       setSelectedItemIndex(0);
     }
-  };
+  }, [selectedItemIndex, filteredItems.length]);
+
+  // Global listener: hitting Enter when finished moves to next key automatically
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if (isFinished && e.key === "Enter") {
+        e.preventDefault();
+        handleNext();
+      }
+    };
+    window.addEventListener("keydown", handleGlobalKeyDown);
+    return () => window.removeEventListener("keydown", handleGlobalKeyDown);
+  }, [isFinished, handleNext]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleNext();
+      return;
+    }
+
     if (isFinished) return;
 
     if (e.key === "Backspace") {
@@ -294,9 +312,9 @@ export function KeyByKeyPractice({
                   value={typedText}
                   onKeyDown={handleKeyDown}
                   onChange={() => {}}
-                  disabled={isFinished}
-                  placeholder={typedText.length === 0 ? "Click here and start typing..." : ""}
-                  className="w-full px-5 py-4 rounded-2xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 font-hindi text-xl text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 disabled:opacity-60 shadow-sm"
+                  readOnly={isFinished}
+                  placeholder={typedText.length === 0 ? "Type here (Press Enter ⏎ to skip to Next Key)..." : isFinished ? "Completed! Press Enter ⏎ to advance →" : ""}
+                  className="w-full px-5 py-4 rounded-2xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 font-hindi text-xl text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm read-only:bg-emerald-50/40 dark:read-only:bg-emerald-950/20"
                   autoFocus
                 />
                 {typedText.length > 0 && !isFinished && (
@@ -349,9 +367,10 @@ export function KeyByKeyPractice({
                   </div>
                   <button
                     onClick={handleNext}
-                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
+                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex-shrink-0 flex items-center gap-1.5"
                   >
-                    Next Key →
+                    <span>Next Key →</span>
+                    <kbd className="px-1.5 py-0.5 rounded bg-emerald-700/80 text-[10px] font-mono border border-emerald-500/50">Enter ⏎</kbd>
                   </button>
                 </div>
               )}
@@ -379,8 +398,8 @@ export function KeyByKeyPractice({
                 onClick={handleNext}
                 className="px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold transition-all flex items-center gap-1.5 shadow-sm"
               >
-                <span>Next Key</span>
-                <span>→</span>
+                <span>Next Key →</span>
+                <kbd className="px-1.5 py-0.5 rounded bg-primary-700/80 text-[10px] font-mono border border-primary-500/40">Enter ⏎</kbd>
               </button>
             </div>
           </div>

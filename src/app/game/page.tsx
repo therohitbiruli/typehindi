@@ -105,7 +105,7 @@ export default function GamePage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-bold uppercase tracking-widest mb-4">
             🎮 Typing Game Hub
           </div>
-          <h1 className="heading-1 mb-3 text-4xl md:text-5xl">खेलें और सीखें</h1>
+          <h1 className="heading-1 mb-3 text-4xl md:text-5xl">Play and Learn</h1>
           <p className="text-muted text-lg max-w-2xl mx-auto">
             Play, practice, and improve your Hindi typing skills through 6 interactive games.
           </p>

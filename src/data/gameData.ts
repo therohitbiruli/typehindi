@@ -44,7 +44,8 @@ export const GAME_CATALOG: GameInfo[] = [
     difficulty: "Beginner",
     gradient: "from-amber-950/60 via-slate-900 to-slate-950",
     accentColor: "border-amber-500/50 hover:border-amber-400 text-amber-400",
-    icon: "🎯"
+    icon: "🎯",
+    thumbImage: "/images/game_thumb_target.jpg"
   },
   {
     id: "classic",
@@ -73,7 +74,8 @@ export const GAME_CATALOG: GameInfo[] = [
     difficulty: "Intermediate",
     gradient: "from-cyan-950/60 via-slate-900 to-slate-950",
     accentColor: "border-cyan-500/50 hover:border-cyan-400 text-cyan-400",
-    icon: "⚡"
+    icon: "⚡",
+    thumbImage: "/images/game_thumb_runner.jpg"
   },
   {
     id: "builder",
@@ -87,7 +89,8 @@ export const GAME_CATALOG: GameInfo[] = [
     difficulty: "Beginner",
     gradient: "from-indigo-950/60 via-slate-900 to-slate-950",
     accentColor: "border-indigo-500/50 hover:border-indigo-400 text-indigo-400",
-    icon: "🔤"
+    icon: "🔤",
+    thumbImage: "/images/game_thumb_builder.jpg"
   },
   {
     id: "matra",
@@ -101,7 +104,8 @@ export const GAME_CATALOG: GameInfo[] = [
     difficulty: "Beginner",
     gradient: "from-fuchsia-950/60 via-slate-900 to-slate-950",
     accentColor: "border-fuchsia-500/50 hover:border-fuchsia-400 text-fuchsia-400",
-    icon: "🪄"
+    icon: "🪄",
+    thumbImage: "/images/game_thumb_matra.jpg"
   }
 ];
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, Suspense } from "react";
+import { useState, useEffect, useRef, Suspense, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -17,19 +17,116 @@ import {
   phoneticTransliterationMap
 } from "../../utils/keyboardMapper";
 
+// Learning Expansion Modules & Data
+import { keyPracticeItems, matraMasteryList, dailyJourneyDays, finalChallengesList } from "../../data/learn-data";
+import { LearningProgressDashboard } from "../../components/learn/LearningProgressDashboard";
+import { DailyTypingJourney } from "../../components/learn/DailyTypingJourney";
+import { KeyByKeyPractice } from "../../components/learn/KeyByKeyPractice";
+import { FingerPlacementGuide } from "../../components/learn/FingerPlacementGuide";
+import { MatraMastery } from "../../components/learn/MatraMastery";
+import { DifficultWordsPractice } from "../../components/learn/DifficultWordsPractice";
+import { CommonMistakesTrainer } from "../../components/learn/CommonMistakesTrainer";
+import { FinalChallenges } from "../../components/learn/FinalChallenges";
+
 function LearnPageContent() {
   const { activeKey, isShift } = useKeyPress();
   const searchParams = useSearchParams();
   const guideRef = useRef<HTMLDivElement>(null);
 
-  // States
+  // States for Word Typing Guide & Layouts
   const [selectedWord, setSelectedWord] = useState(wordTypingGuides[0].word);
   const [customInput, setCustomInput] = useState("");
   const [activeLayoutTab, setActiveLayoutTab] = useState<"inscript" | "remington">("inscript");
   const [keyboardViewTab, setKeyboardViewTab] = useState<"inscript" | "remington">("inscript");
   const [modalImage, setModalImage] = useState<{ src: string; title: string } | null>(null);
 
-  // Handle URL redirect query param
+  // User Learning Progress States (stored in localStorage)
+  const [completedKeys, setCompletedKeys] = useState<string[]>([]);
+  const [completedMatras, setCompletedMatras] = useState<string[]>([]);
+  const [completedDays, setCompletedDays] = useState<number[]>([1]);
+  const [completedChallenges, setCompletedChallenges] = useState<string[]>([]);
+
+  // Load user progress from localStorage on mount
+  useEffect(() => {
+    try {
+      const savedKeys = localStorage.getItem("typehindi_completed_keys");
+      if (savedKeys) setCompletedKeys(JSON.parse(savedKeys));
+
+      const savedMatras = localStorage.getItem("typehindi_completed_matras");
+      if (savedMatras) setCompletedMatras(JSON.parse(savedMatras));
+
+      const savedDays = localStorage.getItem("typehindi_journey_days");
+      if (savedDays) {
+        setCompletedDays(JSON.parse(savedDays));
+      } else {
+        localStorage.setItem("typehindi_journey_days", JSON.stringify([1]));
+      }
+
+      const savedChallenges = localStorage.getItem("typehindi_completed_challenges");
+      if (savedChallenges) setCompletedChallenges(JSON.parse(savedChallenges));
+    } catch (_) {}
+  }, []);
+
+  // Save callbacks
+  const handleKeyComplete = useCallback((keyId: string) => {
+    setCompletedKeys(prev => {
+      if (!prev.includes(keyId)) {
+        const updated = [...prev, keyId];
+        try { localStorage.setItem("typehindi_completed_keys", JSON.stringify(updated)); } catch (_) {}
+        return updated;
+      }
+      return prev;
+    });
+  }, []);
+
+  const handleMatraComplete = useCallback((matraId: string) => {
+    setCompletedMatras(prev => {
+      if (!prev.includes(matraId)) {
+        const updated = [...prev, matraId];
+        try { localStorage.setItem("typehindi_completed_matras", JSON.stringify(updated)); } catch (_) {}
+        return updated;
+      }
+      return prev;
+    });
+  }, []);
+
+  const handleDayComplete = useCallback((dayNumber: number) => {
+    setCompletedDays(prev => {
+      if (!prev.includes(dayNumber)) {
+        const updated = [...prev, dayNumber];
+        try { localStorage.setItem("typehindi_journey_days", JSON.stringify(updated)); } catch (_) {}
+        return updated;
+      }
+      return prev;
+    });
+  }, []);
+
+  const handleChallengeComplete = useCallback((challengeId: string) => {
+    setCompletedChallenges(prev => {
+      if (!prev.includes(challengeId)) {
+        const updated = [...prev, challengeId];
+        try { localStorage.setItem("typehindi_completed_challenges", JSON.stringify(updated)); } catch (_) {}
+        return updated;
+      }
+      return prev;
+    });
+  }, []);
+
+  const handleResetProgress = useCallback(() => {
+    try {
+      localStorage.removeItem("typehindi_completed_keys");
+      localStorage.removeItem("typehindi_completed_matras");
+      localStorage.removeItem("typehindi_journey_days");
+      localStorage.removeItem("typehindi_completed_challenges");
+      localStorage.removeItem("typehindi_weak_words");
+      setCompletedKeys([]);
+      setCompletedMatras([]);
+      setCompletedDays([1]);
+      setCompletedChallenges([]);
+    } catch (_) {}
+  }, []);
+
+  // Handle URL redirect query param for Word Guide
   useEffect(() => {
     const wordParam = searchParams.get("word");
     const layoutParam = searchParams.get("layout");
@@ -39,7 +136,6 @@ function LearnPageContent() {
       if (layoutParam === "remington" || layoutParam === "inscript") {
         setActiveLayoutTab(layoutParam);
       }
-      // Scroll to guide section
       setTimeout(() => {
         guideRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 500);
@@ -51,7 +147,6 @@ function LearnPageContent() {
     setCustomInput(val);
     if (!val.trim()) return;
 
-    // Check English phonetic matching
     const normalized = val.toLowerCase().trim();
     if (phoneticTransliterationMap[normalized]) {
       setSelectedWord(phoneticTransliterationMap[normalized]);
@@ -60,10 +155,7 @@ function LearnPageContent() {
     }
   };
 
-  // Determine current active word's guide data
   const staticData = wordTypingGuides.find(w => w.word === selectedWord);
-  
-  // Calculate keys on the fly using the mapper utility
   const dynamicInscriptKeys = getInscriptKeysForWord(selectedWord);
   const dynamicRemingtonKeys = getRemingtonKeysForWord(selectedWord);
 
@@ -77,24 +169,74 @@ function LearnPageContent() {
 
       <AdPlaceholder position="top" />
 
-      <h1 className="heading-1 mb-2">Learn Hindi Typing</h1>
-      <p className="text-muted mb-8">
-        Learn the keyboard layout step-by-step, practice typing difficult words, and build your writing speed.
-      </p>
-
-      {/* Interactive Keyboard */}
-      <div className="mb-12">
-        <h2 className="heading-2 mb-3">Interactive Keyboard</h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-          Press any key — the corresponding Hindi character will highlight on the keyboard map. Hold Shift to see secondary characters.
+      {/* Hero Heading & Overview */}
+      <div className="mb-8">
+        <h1 className="heading-1 mb-2">Learn Hindi Typing (हिंदी टाइपिंग सीखें)</h1>
+        <p className="text-muted text-base max-w-3xl leading-relaxed">
+          Welcome to the complete interactive Hindi typing learning system. Master the InScript keyboard layout step-by-step with finger placement guidance, matra drills, difficult word exercises, and daily progression.
         </p>
-        <div className="bg-white dark:bg-gray-900 rounded-3xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+      </div>
+
+      {/* 1. Overall Progress Dashboard */}
+      <LearningProgressDashboard
+        completedKeysCount={completedKeys.length}
+        totalKeysCount={keyPracticeItems.length}
+        completedMatrasCount={completedMatras.length}
+        totalMatrasCount={matraMasteryList.length}
+        completedDaysCount={completedDays.length}
+        totalDaysCount={dailyJourneyDays.length}
+        completedChallengesCount={completedChallenges.length}
+        totalChallengesCount={finalChallengesList.length}
+        onResetProgress={handleResetProgress}
+      />
+
+      {/* Quick Jump Section Navigation */}
+      <div className="sticky top-16 z-30 mb-10 py-3 bg-slate-50/90 dark:bg-slate-950/90 backdrop-blur-md border-y border-slate-200/80 dark:border-slate-800/80 -mx-4 px-4 overflow-x-auto no-scrollbar">
+        <div className="flex items-center gap-2 min-w-max">
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mr-1 flex items-center gap-1">
+            🧭 Jump to:
+          </span>
+          {[
+            { id: "interactive-keyboard", label: "1. Keyboard & Guide", icon: "⌨️" },
+            { id: "existing-lessons", label: "2. Lessons & Drills", icon: "📚" },
+            { id: "key-practice", label: "3. Key-by-Key", icon: "🔤" },
+            { id: "finger-guide", label: "4. Finger Placement", icon: "🖐️" },
+            { id: "matra-mastery", label: "5. Matra Mastery", icon: "✨" },
+            { id: "difficult-words", label: "6. Difficult Words", icon: "🎯" },
+            { id: "common-mistakes", label: "7. Common Mistakes", icon: "⚠️" },
+            { id: "daily-journey", label: "8. Daily Journey", icon: "🗓️" },
+            { id: "final-challenges", label: "9. Final Challenges", icon: "🏆" },
+          ].map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 dark:hover:border-primary-500 dark:hover:text-primary-400 transition-all shadow-xs"
+            >
+              <span className="mr-1">{item.icon}</span>
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* 1. Interactive Virtual Keyboard & Word Typing Guide (Preserved) */}
+      <div id="interactive-keyboard" className="mb-14 scroll-mt-24">
+        <div className="mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950/60 text-indigo-800 dark:text-indigo-300 text-xs font-semibold mb-2">
+            <span>⌨️ Section 1</span>
+          </div>
+          <h2 className="heading-2 mb-2">Interactive Keyboard (इंटरैक्टिव कीबोर्ड)</h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Press any key on your physical keyboard — the corresponding Hindi character will highlight on the map. Hold Shift to see secondary characters.
+          </p>
+        </div>
+        <div className="bg-white dark:bg-gray-900 rounded-3xl p-4 shadow-sm border border-gray-100 dark:border-gray-800 mb-8">
           <Keyboard activeKey={activeKey} isShift={isShift} visible={true} />
         </div>
       </div>
 
-      {/* Word Typing Guide Section */}
-      <section ref={guideRef} className="mb-12 scroll-mt-20">
+      {/* Word Typing Guide Section (Preserved) */}
+      <section ref={guideRef} id="word-guide" className="mb-14 scroll-mt-24">
         <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
           <div className="bg-gradient-to-r from-primary-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-100 dark:border-gray-800">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
@@ -274,7 +416,6 @@ function LearnPageContent() {
                     className="object-contain"
                   />
                 )}
-                {/* Visual hover feedback */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-200">
                   <span className="bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
                     🔍 Zoom Map
@@ -289,11 +430,19 @@ function LearnPageContent() {
         </div>
       </section>
 
-      {/* Grid of Lessons */}
-      <div className="mb-12">
-        <h2 className="heading-2 mb-6 flex items-center gap-2">
-          <span>📚</span> Lessons & Exercises
-        </h2>
+      {/* 2. Existing Lessons & Exercises (Preserved) */}
+      <div id="existing-lessons" className="mb-14 scroll-mt-24">
+        <div className="mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-xs font-semibold mb-2">
+            <span>📚 Section 2</span>
+          </div>
+          <h2 className="heading-2 mb-2 flex items-center gap-2">
+            <span>📚</span> Lessons & Exercises (पाठ एवं अभ्यास)
+          </h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Structured step-by-step touch typing curriculum covering home row, vowels, consonants, matras, conjuncts, and full sentences.
+          </p>
+        </div>
         <div className="grid gap-6 md:grid-cols-2">
           {lessons.map((lesson) => (
             <LessonCard key={lesson.id} lesson={lesson} />
@@ -301,8 +450,41 @@ function LearnPageContent() {
         </div>
       </div>
 
-      {/* Navigation Redirect Cards */}
-      <section className="mt-8 grid gap-6 md:grid-cols-2">
+      {/* 3. Key-by-Key Practice */}
+      <KeyByKeyPractice
+        completedKeys={completedKeys}
+        onKeyComplete={handleKeyComplete}
+      />
+
+      {/* 4. Finger Placement Guide */}
+      <FingerPlacementGuide />
+
+      {/* 5. Matra Mastery */}
+      <MatraMastery
+        completedMatras={completedMatras}
+        onMatraComplete={handleMatraComplete}
+      />
+
+      {/* 6. Difficult Hindi Words Practice */}
+      <DifficultWordsPractice />
+
+      {/* 7. Common Typing Mistakes Trainer */}
+      <CommonMistakesTrainer />
+
+      {/* 8. Daily Hindi Typing Journey (14 Stages) */}
+      <DailyTypingJourney
+        completedDays={completedDays}
+        onDayComplete={handleDayComplete}
+      />
+
+      {/* 9. Final Typing Challenges */}
+      <FinalChallenges
+        completedChallenges={completedChallenges}
+        onChallengeComplete={handleChallengeComplete}
+      />
+
+      {/* 12. Navigation Redirect Cards (Preserved) */}
+      <section className="mt-8 mb-12 grid gap-6 md:grid-cols-2">
         {/* Game Redirect Card */}
         <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-gray-900 dark:to-purple-955/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
           <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-6 translate-y-6 group-hover:scale-110 transition-transform duration-300">
@@ -354,7 +536,7 @@ function LearnPageContent() {
         </div>
       </section>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal (Preserved) */}
       {modalImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 animate-fade-in">
           <div className="relative max-w-5xl w-full bg-white dark:bg-gray-950 rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl p-6">

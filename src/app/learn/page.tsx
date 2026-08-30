@@ -191,9 +191,9 @@ function LearnPageContent() {
       />
 
       {/* Quick Jump Section Navigation */}
-      <div className="sticky top-16 z-30 mb-10 py-3 bg-[#F4F7FB]/90 dark:bg-slate-950/90 backdrop-blur-md border-y border-[#D9E1EC] dark:border-slate-800/80 -mx-4 px-4 overflow-x-auto no-scrollbar">
+      <div className="sticky top-16 z-30 mb-10 py-3 bg-slate-950/90 backdrop-blur-md border-y border-slate-800/80 -mx-4 px-4 overflow-x-auto no-scrollbar">
         <div className="flex items-center gap-2 min-w-max">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mr-1 flex items-center gap-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-500 mr-1 flex items-center gap-1">
             🧭 Jump to:
           </span>
           {[
@@ -210,7 +210,7 @@ function LearnPageContent() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-primary-500 hover:text-primary-600 dark:hover:border-primary-500 dark:hover:text-primary-400 transition-all shadow-sm"
+              className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:border-primary-500 hover:text-primary-400 transition-all shadow-sm"
             >
               <span className="mr-1">{item.icon}</span>
               {item.label}

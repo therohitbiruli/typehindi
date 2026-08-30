@@ -27,7 +27,7 @@ export default function MangalFontTestPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#F4F7FB] dark:bg-gray-900 flex-grow">
+      <section className="py-12 bg-slate-950 flex-grow">
         <div className="container-main max-w-5xl">
           <AdPlaceholder position="top" />
 

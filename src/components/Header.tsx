@@ -83,7 +83,7 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#D9E1EC] bg-[#F4F7FB]/90 backdrop-blur-md shadow-[0_2px_12px_-2px_rgba(0,0,0,0.04)] dark:border-slate-800/80 dark:bg-slate-950/90">
+    <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md shadow-lg">
       <div className="container-main">
         <div className="flex h-14 items-center justify-between">
           {/* Logo */}
@@ -111,21 +111,19 @@ export function Header() {
                 className={`rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                   activeSection === item.href
                     ? "bg-primary-600 text-white shadow-sm shadow-primary-500/25"
-                    : "text-slate-600 hover:bg-[#EEF2F7] hover:text-slate-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-100"
+                    : "text-slate-400 hover:bg-slate-900 hover:text-slate-100"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
-            <ThemeToggle />
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle />
             <button
               onClick={toggleMenu}
-              className="rounded-lg p-2 text-slate-600 hover:bg-[#EEF2F7] dark:text-gray-400 dark:hover:bg-gray-800"
+              className="rounded-lg p-2 text-slate-400 hover:bg-slate-800 hover:text-slate-100"
               aria-label="Toggle menu"
               id="mobile-menu-button"
             >
@@ -144,7 +142,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="border-t border-[#D9E1EC] pb-3 pt-2 md:hidden dark:border-gray-800">
+          <nav className="border-t border-slate-800 pb-3 pt-2 md:hidden">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -152,8 +150,8 @@ export function Header() {
                 onClick={closeMenu}
                 className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                   activeSection === item.href
-                    ? "bg-primary-50 text-primary-700 font-semibold dark:bg-primary-900/30 dark:text-primary-300"
-                    : "text-slate-700 hover:bg-[#EEF2F7] dark:text-gray-400 dark:hover:bg-gray-800"
+                    ? "bg-primary-900/40 text-primary-300 font-semibold"
+                    : "text-slate-400 hover:bg-slate-800 hover:text-white"
                 }`}
               >
                 {item.label}

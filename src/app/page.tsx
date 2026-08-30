@@ -28,7 +28,7 @@ export default function Homepage() {
   const previewLanguages = LANGUAGES.slice(0, 8);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F4F7FB] dark:bg-slate-950">
+    <div className="flex flex-col min-h-screen bg-slate-950">
       {/* 🌟 Premium Hero Section */}
       <section className="bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
         {/* Blurred background image blended directly with the dark bg */}

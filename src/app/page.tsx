@@ -1,15 +1,11 @@
 import Link from "next/link";
 import { PracticeTool } from "../components/PracticeTool";
-import { lessons } from "../data/lessons";
 import { blogs } from "../data/blogs";
 import { LANGUAGES } from "./translators/page";
 import { HomepageGame } from "../components/HomepageGame";
 import { HomepageKeyboard } from "../components/HomepageKeyboard";
 
 export default function Homepage() {
-  // Get first 2 lessons for preview
-  const previewLessons = lessons.slice(0, 2);
-  
   // Get first 4 blogs for preview (sorted latest to oldest)
   const HINDI_MONTHS: Record<string, number> = {
     "जनवरी": 0, "फरवरी": 1, "मार्च": 2, "अप्रैल": 3, "मई": 4, "जून": 5,
@@ -172,40 +168,210 @@ export default function Homepage() {
              </div>
           </div>
 
-          {/* 2. 📚 SECTION: LEARN */}
-          <div id="learn" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-6">
-            <h2 className="text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
-              <span className="w-2.5 h-6 rounded-full bg-emerald-500"></span>
-              Typing Tutor & Lessons
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-              Master touch typing with our structured curriculum. Start with the home row vowels and slowly advance to complex conjunct consonants.
-            </p>
-            <div className="grid gap-6 md:grid-cols-2 py-2">
-              {previewLessons.map((lesson) => (
-                <div key={lesson.id} className="border border-slate-200 dark:border-slate-850 p-5 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50">
-                  <h3 className="font-bold text-gray-900 dark:text-white text-base mb-1">
-                    Lesson {lesson.id}: {lesson.title}
+          {/* 2. 📚 SECTION: LEARN (Step by Step Hindi Typing Learning System) */}
+          <div id="learn" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-md p-6 md:p-10 space-y-8">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-semibold mb-3">
+                📚 Complete Learning System
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white flex items-center gap-3">
+                <span className="w-2.5 h-7 rounded-full bg-emerald-500"></span>
+                Learn Hindi Typing Step by Step
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mt-2 max-w-3xl leading-relaxed">
+                Master Hindi typing with structured lessons, interactive practice, keyboard guidance, and progressive challenges.
+              </p>
+            </div>
+
+            {/* 6 Feature Overview Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              
+              {/* Card 1: Interactive Lessons */}
+              <Link
+                href="/learn#existing-lessons"
+                className="p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    📚
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base mb-1.5">
+                    Interactive Lessons
                   </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
-                    {lesson.description}
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Learn Hindi typing step by step, starting with vowels and progressing through consonants, matras, conjunct characters, words, and sentences.
                   </p>
-                  <div className="flex flex-wrap gap-1.5 mb-2">
-                    {lesson.characters.slice(0, 8).map((char, index) => (
-                      <span key={index} className="px-2 py-1 rounded bg-white dark:bg-slate-800 text-xs border border-slate-200 dark:border-slate-700 font-hindi">
-                        {char}
-                      </span>
-                    ))}
-                    {lesson.characters.length > 8 && <span className="text-xs text-gray-400 px-1 py-1">+{lesson.characters.length - 8} more</span>}
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>Explore Lessons</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+              {/* Card 2: Key-by-Key Learning */}
+              <Link
+                href="/learn#key-practice"
+                className="p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    ⌨️
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base mb-1.5">
+                    Key-by-Key Learning
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Understand individual Hindi characters, their keyboard positions, and practice each key progressively.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>Practice Keys</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+              {/* Card 3: Finger Placement */}
+              <Link
+                href="/learn#finger-guide"
+                className="p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    🖐️
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base mb-1.5">
+                    Finger Placement
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Learn proper finger placement and discover which fingers should be used for different keys on the Hindi InScript keyboard.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>View Finger Guide</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+              {/* Card 4: Matra Mastery */}
+              <Link
+                href="/learn#matra-mastery"
+                className="p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    ✨
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base mb-1.5">
+                    Matra Mastery
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Practice Hindi matras through interactive exercises, word practice, and progressively more difficult challenges.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>Master Matras</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+              {/* Card 5: Difficult Words & Mistakes */}
+              <Link
+                href="/learn#difficult-words"
+                className="p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    🎯
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base mb-1.5">
+                    Difficult Words & Mistakes
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Practice difficult Hindi words, conjunct characters, and improve common typing mistakes.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>Train Difficult Words</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+              {/* Card 6: Typing Challenges */}
+              <Link
+                href="/learn#final-challenges"
+                className="p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    🏆
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base mb-1.5">
+                    Typing Challenges
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Test your skills with timed challenges focused on speed, accuracy, matras, difficult words, and mixed Hindi typing.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>Take Challenges</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+            </div>
+
+            {/* Compact Learning Journey Visualization & Progression Indicator */}
+            <div className="rounded-2xl bg-slate-50/80 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800/80 p-5">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                      Progressive Learning Journey
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-200/50 dark:border-emerald-800/50">
+                      Beginner ➔ Confident
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs font-medium text-gray-700 dark:text-gray-300">
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs">Learn Characters</span>
+                    <span className="text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs">Practice Keys</span>
+                    <span className="text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs">Master Matras</span>
+                    <span className="text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs">Type Words</span>
+                    <span className="text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs">Build Speed</span>
+                    <span className="text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-semibold shadow-2xs">Take Challenges</span>
                   </div>
                 </div>
-              ))}
+
+                {/* Small progression meter badge */}
+                <div className="flex items-center gap-3 self-start lg:self-auto bg-white dark:bg-slate-900 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 shadow-2xs">
+                  <span className="text-lg">📈</span>
+                  <div className="text-left">
+                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Skill Level</div>
+                    <div className="text-xs font-bold text-gray-800 dark:text-gray-200">Zero to 40+ WPM</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex justify-end pt-2">
-              <Link href="/learn" className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
-                Browse All Lessons ➔
+
+            {/* Prominent Call to Action */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left">
+                Start from scratch or jump directly to your level. 100% free, saved in your browser.
+              </p>
+              <Link
+                href="/learn"
+                className="w-full sm:w-auto px-7 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/30 flex items-center justify-center gap-2 group flex-shrink-0"
+              >
+                <span>Start Learning Hindi Typing</span>
+                <span className="group-hover:translate-x-1 transition-transform font-bold">→</span>
               </Link>
             </div>
+
           </div>
 
           {/* 3. 🎮 SECTION: GAME */}

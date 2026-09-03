@@ -36,7 +36,7 @@ function getCurrentWord(targetText: string, cursorIndex: number): string {
   return word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()।?"':]/g, "").trim();
 }
 
-export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
+export function PracticeTool({ showSEO = false, autoFocus = false }: { showSEO?: boolean; autoFocus?: boolean }) {
   const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">("medium");
   const [paragraph, setParagraph] = useState<Paragraph>(() => getParagraphsByDifficulty(difficulty)[0]);
   const [showKeyboard, setShowKeyboard] = useState(true);
@@ -275,6 +275,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
                 onInput={handleTypingInput}
                 isFinished={isFinished}
                 isStarted={isStarted}
+                autoFocus={autoFocus}
               />
             </div>
 
@@ -389,6 +390,7 @@ export function PracticeTool({ showSEO = false }: { showSEO?: boolean }) {
                 onInput={handleTypingInput}
                 isFinished={isFinished}
                 isStarted={isStarted}
+                autoFocus={autoFocus}
               />
             </div>
           </div>

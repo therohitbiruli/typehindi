@@ -22,7 +22,7 @@ export default function PracticePage() {
 
       {/* Practice Tool */}
       <div className="bg-white dark:bg-gray-900 rounded-[2.5rem] p-6 sm:p-10 shadow-xl shadow-primary-500/5 border-2 border-gray-300 dark:border-gray-700">
-        <PracticeTool />
+        <PracticeTool autoFocus={true} />
       </div>
 
       <AdPlaceholder position="bottom" />

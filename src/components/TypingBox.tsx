@@ -11,6 +11,7 @@ interface TypingBoxProps {
   isFinished: boolean;
   isStarted: boolean;
   language?: "hindi" | "english";
+  autoFocus?: boolean;
 }
 
 export const TypingBox = memo(function TypingBox({
@@ -20,14 +21,17 @@ export const TypingBox = memo(function TypingBox({
   isFinished,
   isStarted,
   language = "hindi",
+  autoFocus = false,
 }: TypingBoxProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const nextCursorRef = useRef<number | null>(null);
 
-  // Auto-focus on mount
+  // Auto-focus on mount if explicitly enabled without scrolling the window
   useEffect(() => {
-    textareaRef.current?.focus();
-  }, []);
+    if (autoFocus) {
+      textareaRef.current?.focus({ preventScroll: true });
+    }
+  }, [autoFocus]);
 
   // Restore cursor selection position after re-render
   useEffect(() => {

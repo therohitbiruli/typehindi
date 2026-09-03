@@ -56,6 +56,16 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
   const content = lang === "en" && blog.contentEn ? blog.contentEn : blog.content;
   const showTranslateWidget = lang === "en" && !blog.contentEn;
 
+  // Filter out current blog and get 4 related posts (same category prioritized)
+  const relatedBlogs = blogs
+    .filter((b) => b.slug !== slug)
+    .sort((a, b) => {
+      if (a.category === blog.category && b.category !== blog.category) return -1;
+      if (b.category === blog.category && a.category !== blog.category) return 1;
+      return 0;
+    })
+    .slice(0, 4);
+
   return (
     <div className="container-main py-8">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
@@ -123,6 +133,60 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
             dangerouslySetInnerHTML={{ __html: formatContent(content) }}
           />
         </div>
+
+        {/* Related Articles & More Guides */}
+        <section className="mt-14 pt-10 border-t border-slate-200 dark:border-slate-800">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div>
+              <div className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400 mb-1">
+                {lang === "en" ? "Explore More" : "और अधिक पढ़ें"}
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+                {lang === "en" ? "Related Articles & Typing Guides" : "संबंधित लेख और टाइपिंग गाइड"}
+              </h2>
+            </div>
+            <Link
+              href={lang === "hi" ? "/blog?lang=hi" : "/blog"}
+              className="inline-flex items-center gap-2 self-start sm:self-auto px-4 py-2 rounded-xl text-sm font-semibold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors border border-primary-200/60 dark:border-primary-800/40"
+            >
+              {lang === "en" ? "View All Articles" : "सभी लेख देखें"} →
+            </Link>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {relatedBlogs.map((item) => {
+              const itemTitle = lang === "en" && item.titleEn ? item.titleEn : item.title;
+              const itemExcerpt = lang === "en" && item.excerptEn ? item.excerptEn : item.excerpt;
+              const itemDate = lang === "en" && item.dateEn ? item.dateEn : item.date;
+
+              return (
+                <Link
+                  key={item.slug}
+                  href={`/blog/${item.slug}${lang === "hi" ? "?lang=hi" : ""}`}
+                  className="group flex flex-col justify-between bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-primary-400 dark:hover:border-primary-600 transition-all hover:-translate-y-1"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="px-2.5 py-0.5 rounded-md bg-primary-50 dark:bg-primary-900/30 text-[11px] font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider">
+                        {item.category}
+                      </span>
+                      <span className="text-[11px] text-gray-400">{itemDate}</span>
+                    </div>
+                    <h3 className="font-bold text-sm text-gray-900 dark:text-white line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
+                      {itemTitle}
+                    </h3>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-3 leading-relaxed">
+                      {itemExcerpt}
+                    </p>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800/80 flex items-center text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline">
+                    {lang === "en" ? "Read guide" : "लेख पढ़ें"} →
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
 
         <AdPlaceholder position="bottom" />
       </article>

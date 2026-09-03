@@ -15,7 +15,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-xs leading-relaxed text-slate-400">
-              India&apos;s leading free Hindi typing platform for students, typists, and government exam aspirants. Practice InScript keyboard, Remington Gail, speed tests, and interactive typing games.
+              A comprehensive and free Hindi typing platform for students, typists, and government exam aspirants. Practice InScript keyboard, Remington Gail, speed tests, and interactive typing games.
             </p>
           </div>
 
@@ -134,9 +134,14 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/blog" className="text-slate-400 transition-colors hover:text-primary-400 hover:underline">
-                  RSS Feed / Updates
-                </Link>
+                <a
+                  href="/feed.xml"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 transition-colors hover:text-primary-400 hover:underline"
+                >
+                  RSS Feed (XML)
+                </a>
               </li>
             </ul>
           </div>

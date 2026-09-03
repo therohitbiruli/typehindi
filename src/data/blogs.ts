@@ -12,7 +12,271 @@ export interface BlogPost {
   category: "Basics" | "Exam Guide";
 }
 
-export const blogs: BlogPost[] = [
+export const blogs: BlogPost[] = [  {
+    slug: "mecl-recruitment-2026-stenographer-assistant-typing-jobs",
+    titleEn: "MECL Non-Executive Recruitment 2026: Stenographer, Assistant and Typing Jobs, 122 Vacancies, Eligibility, Salary and Selection Process",
+    excerptEn: "Complete guide to MECL Non-Executive Recruitment 2026 for 122 vacancies including Stenographer (English 40 WPM typing & 80 WPM shorthand), Assistant (Hindi), eligibility, and salary.",
+    dateEn: "03 September, 2026",
+    title: "MECL भर्ती 2026: स्टेनोग्राफर, सहायक और टाइपिंग पद, 122 रिक्तियां, पात्रता, वेतन और चयन प्रक्रिया",
+    excerpt: "एमईसीएल गैर-कार्यकारी भर्ती 2026 (122 पद) जिसमें स्टेनोग्राफर (अंग्रेजी टाइपिंग 40 WPM व आशुलिपि 80 WPM), सहायक (हिंदी), योग्यता, वेतनमान और चयन प्रक्रिया की पूरी जानकारी।",
+    date: "03 सितंबर, 2026",
+    author: "TypeHindi Team",
+    category: "Exam Guide",
+    contentEn: `\n# MECL Non-Executive Recruitment 2026: Stenographer, Assistant and Typing Jobs, 122 Vacancies, Eligibility, Salary and Selection Process
+
+![MECL Recruitment 2026](/images/mecl-recruitment-2026.jpg)
+
+**Mineral Exploration and Consultancy Limited (MECL)** has announced Non-Executive Recruitment 2026 for a total of **122 vacancies across 16 posts**. The recruitment is particularly interesting for candidates looking for government-sector jobs involving stenography, typing, Hindi typing, office work, and computer-based skills.
+
+Among the advertised positions, **Stenographer (English)** and **Assistant (Hindi)** are the two posts most directly connected with typing and language skills. The recruitment also includes Assistant posts in Materials, Accounts, IT, and HR, along with technical and other non-executive positions.
+
+MECL is a **Miniratna-I Central Public Sector Enterprise (CPSE)** under the Ministry of Mines, Government of India. Candidates selected through this recruitment can be posted at MECL's corporate office, project sites, or other establishments across India or overseas, according to organizational requirements.
+
+The online application window is scheduled from **12 September 2026 to 11 October 2026**.
+
+---
+
+## MECL Non-Executive Recruitment 2026: Overview
+
+| Particular | Details |
+|---|---|
+| **Organization** | Mineral Exploration and Consultancy Limited (MECL) |
+| **Ministry** | Ministry of Mines, Government of India |
+| **Enterprise Category** | Miniratna-I CPSE |
+| **Recruitment Type** | Non-Executive Recruitment 2026 |
+| **Advertisement No.** | 03/Rectt./2026 |
+| **Total Vacancies** | 122 |
+| **Total Posts** | 16 |
+| **Application Mode** | Online ([mecl.co.in](https://www.mecl.co.in)) |
+| **Application Start Date** | 12 September 2026 |
+| **Last Date to Apply** | 11 October 2026 |
+| **Maximum Age Limit** | 30 years (Cut-off: 1 September 2026) |
+| **Selection Framework** | Screening, Written Test, Document Verification, Skill / Trade Test |
+| **Written Exam Center** | Nagpur |
+| **Job Location** | MECL offices/projects across India or overseas |
+
+---
+
+## Is MECL Recruitment 2026 a Typing Job Recruitment?
+
+For TypeHindi readers and typing aspirants, this is the most critical question:
+
+**Yes, there are explicit typing and stenography posts in this recruitment.**
+
+The most directly relevant positions are:
+* **Stenographer (English):** 4 Vacancies (Requires 40 WPM English typing + 80 WPM shorthand)
+* **Assistant (Hindi):** 1 Vacancy (Requires Hindi & English degree background and language proficiency)
+
+The recruitment also includes several Assistant positions (Materials, Accounts, IT, HR). While these are not strict typing-test jobs, keyboard fluency on [TypeHindi Daily Practice Tool](/practice) gives candidates a strong competitive advantage in modern office administration.
+
+---
+
+## MECL Stenographer Recruitment 2026
+
+The **Stenographer (English)** position is a **W-4 grade post** with a pay scale of **₹20,200 – ₹49,300**.
+
+* **Vacancies:** 4 Backlog Vacancies (OBC-NCL: 3, ST: 1).
+* **Essential Qualifications:**
+  * Graduation degree in any stream from a recognized university.
+  * Recognized certificate in **Shorthand at 80 words per minute (English)**.
+  * Recognized certificate in **Typing at 40 words per minute (English)**.
+
+### Why the MECL Stenographer Post Is Crucial for Typing Aspirants
+
+Unlike general computer-based vacancies where typing is merely desirable, the MECL Stenographer post explicitly mandates qualifying speed certifications:
+
+* **English Typing:** 40 WPM
+* **English Shorthand:** 80 WPM
+
+A stenographer's core workflow combines:
+$$\\text{Listening / Dictation} \\longrightarrow \\text{Shorthand Notes} \\longrightarrow \\text{Transcription} \\longrightarrow \\text{Typing Accuracy}$$
+
+To prepare effectively, candidates should build a comfortable speed buffer (45+ WPM) using [Step-by-Step Typing Lessons & Guidelines](/learn) and [Interactive Typing Games](/game) to maintain 98%+ accuracy under timed conditions.
+
+---
+
+## Assistant (Hindi): Another Relevant Post
+
+The second position of strong interest to bilingual typists is **Assistant (Hindi)**.
+
+* **Grade & Pay Scale:** W-4 Grade (₹20,200 – ₹49,300)
+* **Vacancy:** 1 Backlog Vacancy (SC Category)
+* **Eligibility:** Graduation degree with Hindi and English as main subjects, or degree in English with prescribed Advanced Hindi qualifications.
+
+### How Hindi Typing Fits into the Assistant (Hindi) Role
+
+While this post is primarily language-oriented rather than an LDC speed test, working as a Hindi Assistant in a Central PSU requires extensive bilingual correspondence, report formatting, and digital documentation.
+
+Candidates mastering the [Hindi InScript Keyboard Layout](/keyboard-layout) and [Mangal Font Hindi Typing Test](/mangal-font-typing-test) will find their daily workflow significantly smoother when handling official translation, drafting, and central government circulars.
+
+---
+
+## Other Assistant Posts in MECL Recruitment 2026
+
+MECL has advertised several other office and technical assistant positions:
+
+| Post Name | Grade | Vacancies | Educational Requirements |
+|---|---|---|---|
+| **Assistant (Materials)** | W-4 | 16 | Graduation with Mathematics OR B.Com |
+| **Assistant (Accounts)** | W-4 | 10 | B.Com from a recognized university |
+| **Assistant (IT)** | W-4 | 3 | BCA / BCS / B.Sc (CS/IT) or Graduate with IT Diploma |
+| **Assistant (HR)** | W-4 | 3 | BA / B.Com / B.Sc / BBA / BBM / BSW |
+| **Stenographer (English)** | W-4 | 4 | Graduate + 80 WPM Shorthand & 40 WPM Typing |
+| **Assistant (Hindi)** | W-4 | 1 | Graduate with Hindi & English subjects |
+
+---
+
+## Total Vacancies Breakdown (122 Posts)
+
+| Post Name | Total Vacancies | Post Name | Total Vacancies |
+|---|---|---|---|
+| **Accountant (W-7)** | 6 | **Electrician (W-4)** | 7 |
+| **Technician - Survey (W-4)** | 12 | **Machinist (W-4)** | 2 |
+| **Technician - Sampling (W-4)** | 7 | **Technician - Drilling (W-4)** | 12 |
+| **Technician - Laboratory (W-4)** | 2 | **Mechanic (W-4)** | 1 |
+| **Assistant - Materials (W-4)** | 16 | **Mechanic-cum-Operator - Drilling (W-4)** | 30 |
+| **Assistant - Accounts (W-4)** | 10 | **Junior Driver (W-3)** | 6 |
+| **Stenographer - English (W-4)** | 4 | **Assistant - IT (W-4)** | 3 |
+| **Assistant - Hindi (W-4)** | 1 | **Assistant - HR (W-4)** | 3 |
+| **Grand Total** | **122 Vacancies** | | |
+
+---
+
+## MECL Non-Executive Salary Structure 2026
+
+The pay scales for the non-executive positions are structured as follows:
+
+* **W-7 Grade (Accountant):** ₹22,900 – ₹55,900
+* **W-4 Grade (Stenographer, Assistants, Technicians, Mechanics):** ₹20,200 – ₹49,300
+* **W-3 Grade (Junior Driver):** ₹19,600 – ₹47,900
+
+*In addition to basic pay, selected candidates are entitled to Industrial Dearness Allowance (IDA), HRA, medical benefits, PF, gratuity, and project allowances as per MECL CPSE rules.*
+
+---
+
+## Selection Process for MECL Recruitment 2026
+
+The selection framework follows a multi-stage evaluation:
+
+1. **Stage 1: Document Screening:** Verification of online applications and uploaded certificates.
+2. **Stage 2: Written Examination:** Conducted at **Nagpur**; forms the primary merit component.
+3. **Stage 3: Document Verification:** Scrutiny of original certificates, category proof, and typing/shorthand credentials.
+4. **Stage 4: Skill Test / Trade Test:** Mandatory for Stenographer and technical trade posts (qualifying in nature).
+5. **Stage 5: Final Merit & Medical Fitness:** Merit list based on written test scores among candidates who qualify the skill/trade test.
+
+---
+
+## MECL Recruitment 2026: Important Dates & Fees
+
+| Event | Date |
+|---|---|
+| **Crucial Date for Age & Qualification** | 1 September 2026 |
+| **Online Application Start Date** | **12 September 2026** |
+| **Last Date to Apply Online** | **11 October 2026** |
+| **Written Exam Date** | To be notified on official portal |
+
+### Application Fee:
+* **General / OBC-NCL / EWS:** ₹500
+* **SC / ST / PwD / Ex-Servicemen / Departmental Candidates:** **Exempted (₹0)**
+
+---
+
+## Final Takeaway & Preparation Strategy
+
+The MECL Non-Executive Recruitment 2026 provides a prime PSU career opportunity for candidates combining stenography, typing, and administrative skills.
+
+* **For Stenographers:** Ensure your English typing speed is solid at **40+ WPM** and shorthand is polished at **80 WPM**.
+* **For Bilingual & Hindi Typists:** The Assistant (Hindi) and Assistant (HR/IT) posts offer stable Central PSU careers.
+* **Next Steps:** Keep practicing daily on [TypeHindi.in](/) using our [Typing Speed Test](/test) and [InScript Keyboard Layout](/keyboard-layout) to stay exam-ready!
+`,
+    content: `\n# MECL भर्ती 2026: स्टेनोग्राफर, सहायक और टाइपिंग पद, 122 रिक्तियां, पात्रता, वेतन और चयन प्रक्रिया
+
+![MECL Recruitment 2026](/images/mecl-recruitment-2026.jpg)
+
+**मिनरल एक्सप्लोरेशन एंड कंसल्टेंसी लिमिटेड (MECL)** ने 16 विभिन्न पदों पर कुल **122 गैर-कार्यकारी (Non-Executive) रिक्तियों** के लिए भर्ती 2026 की अधिसूचना जारी की है। यह भर्ती स्टेनोग्राफी, टाइपिंग, हिंदी अनुवाद, कंप्यूटर एवं कार्यालयीन कार्यों से जुड़े सरकारी नौकरी के इच्छुक उम्मीदवारों के लिए एक बेहतरीन अवसर है।
+
+विज्ञापित पदों में **स्टेनोग्राफर (अंग्रेजी)** और **सहायक (हिंदी)** दो ऐसे पद हैं जो सीधे भाषा और टाइपिंग दक्षता से जुड़े हैं। इसके अलावा सामग्री, लेखा, आईटी और मानव संसाधन (HR) में सहायक पद तथा तकनीकी पद शामिल हैं।
+
+MECL भारत सरकार के खान मंत्रालय (Ministry of Mines) के अधीन एक **मिनीरत्न-I केंद्रीय सार्वजनिक क्षेत्र उद्यम (CPSE)** है। ऑनलाइन आवेदन की प्रक्रिया **12 सितंबर 2026 से 11 अक्टूबर 2026** तक चलेगी।
+
+---
+
+## एमईसीएल भर्ती 2026: संक्षिप्त विवरण
+
+| विवरण | जानकारी |
+|---|---|
+| **संस्थान** | मिनरल एक्सप्लोरेशन एंड कंसल्टेंसी लिमिटेड (MECL) |
+| **मंत्रालय** | खान मंत्रालय, भारत सरकार (Miniratna-I CPSE) |
+| **विज्ञापन संख्या** | 03/Rectt./2026 |
+| **कुल रिक्तियां** | 122 पद |
+| **आवेदन मोड** | ऑनलाइन ([mecl.co.in](https://www.mecl.co.in)) |
+| **आवेदन प्रारंभ तिथि** | 12 सितंबर 2026 |
+| **आवेदन की अंतिम तिथि** | 11 अक्टूबर 2026 |
+| **अधिकतम आयु सीमा** | 30 वर्ष (गणना तिथि: 01 सितंबर 2026) |
+| **लिखित परीक्षा केंद्र** | नागपुर (Nagpur) |
+| **चयन प्रक्रिया** | स्क्रीनिंग, लिखित परीक्षा, दस्तावेज़ सत्यापन, स्किल/ट्रेड टेस्ट |
+
+---
+
+## क्या यह टाइपिंग और स्टेनोग्राफी भर्ती है?
+
+**हाँ, इस भर्ती में विशेष रूप से टाइपिंग और स्टेनोग्राफी के पद शामिल हैं।**
+
+1. **स्टेनोग्राफर (अंग्रेजी):** 4 पद (बैकलॉग - OBC-NCL: 3, ST: 1)
+   * **शैक्षणिक योग्यता:** किसी भी विषय में स्नातक (Graduation)।
+   * **तकनीकी योग्यता:** अंग्रेजी शॉर्टहैंड में **80 शब्द प्रति मिनट (WPM)** और अंग्रेजी टाइपिंग में **40 शब्द प्रति मिनट (WPM)** का प्रमाण पत्र।
+
+2. **सहायक (हिंदी):** 1 पद (बैकलॉग - SC: 1)
+   * **शैक्षणिक योग्यता:** हिंदी और अंग्रेजी विषयों के साथ स्नातक।
+   * **कार्यप्रणाली:** केंद्रीय उपक्रमों में हिंदी पत्राचार, अनुवाद एवं [मंगल फॉन्ट हिंदी टाइपिंग](/mangal-font-typing-test) के माध्यम से डिजिटल दस्तावेजीकरण।
+
+अपनी गति और सटीकता को निखारने के लिए उम्मीदवार [TypeHindi टाइपिंग प्रैक्टिस टूल](/practice) और [हिंदी इनस्क्रिप्ट कीबोर्ड लेआउट](/keyboard-layout) का उपयोग कर सकते हैं।
+
+---
+
+## अन्य सहायक एवं तकनीकी पद (Assistant Posts)
+
+* **सहायक (Materials):** 16 पद (गणित के साथ स्नातक या B.Com)
+* **सहायक (Accounts):** 10 पद (B.Com)
+* **सहायक (IT):** 3 पद (BCA / BCS / B.Sc IT / CS)
+* **सहायक (HR):** 3 पद (BA / B.Com / B.Sc / BBA / BBM / BSW)
+* **अकाउंटेंट (W-7):** 6 पद (₹22,900 – ₹55,900)
+* **ड्रिलिंग/मैकेनिक/इलेक्ट्रीशियन/तकनीशियन:** 79 पद
+
+---
+
+## वेतनमान (Pay Scale)
+
+* **W-7 ग्रेड (अकाउंटेंट):** ₹22,900 – ₹55,900
+* **W-4 ग्रेड (स्टेनोग्राफर, सहायक, तकनीशियन):** ₹20,200 – ₹49,300
+* **W-3 ग्रेड (जूनियर ड्राइवर):** ₹19,600 – ₹47,900
+* *मूल वेतन के अतिरिक्त केंद्रीय सार्वजनिक क्षेत्र के नियमानुसार महंगाई भत्ता (IDA), मकान किराया भत्ता (HRA) व अन्य भत्ते देय होंगे।*
+
+---
+
+## चयन प्रक्रिया (Selection Process)
+
+1. **लिखित परीक्षा (Written Test):** नागपुर में आयोजित की जाएगी और अंतिम मेरिट का मुख्य आधार होगी।
+2. **स्किल/ट्रेड टेस्ट (Skill Test):** स्टेनोग्राफर पद के लिए शॉर्टहैंड और टाइपिंग स्किल टेस्ट अनिवार्य एवं क्वालिफाइंग प्रकृति का होगा।
+3. **दस्तावेज़ सत्यापन एवं मेडिकल परीक्षण:** प्रमाण पत्रों की जांच उपरांत अंतिम चयन।
+
+---
+
+## महत्वपूर्ण तिथियां एवं आवेदन शुल्क
+
+* **ऑनलाइन आवेदन की अंतिम तिथि:** **11 अक्टूबर 2026**
+* **आवेदन शुल्क:** 
+  * सामान्य / OBC-NCL / EWS: ₹500
+  * SC / ST / PwD / Ex-Servicemen: **निःशुल्क (₹0)**
+
+---
+
+## निष्कर्ष (Conclusion)
+
+MECL गैर-कार्यकारी भर्ती 2026 स्टेनोग्राफी और कार्यालयीन कंप्यूटर कौशल वाले अभ्यर्थियों के लिए एक सुरक्षित सार्वजनिक क्षेत्र करियर प्रदान करती है। अपनी टाइपिंग गति बढ़ाने के लिए [TypeHindi.in](/) पर नियमित अभ्यास करें और [टाइपिंग गेम्स](/game) के जरिए अपने रिफ्लेक्स मजबूत बनाएं।
+`
+  },
+
   {
     slug: "iit-tirupati-recruitment-2026-computer-it-typing-jobs",
     titleEn: "IIT Tirupati Recruitment 2026: Computer, IT and Typing Skills, Eligibility, Salary and Selection Process",

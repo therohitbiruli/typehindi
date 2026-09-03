@@ -14,6 +14,276 @@ export interface BlogPost {
 
 export const blogs: BlogPost[] = [
   {
+    slug: "iit-tirupati-recruitment-2026-computer-it-typing-jobs",
+    titleEn: "IIT Tirupati Recruitment 2026: Computer, IT and Typing Skills, Eligibility, Salary and Selection Process",
+    excerptEn: "Complete overview of IIT Tirupati non-teaching recruitment 2026 for Hindi Translator, Junior Technical Superintendent, and Technician posts with computer, IT and typing skill requirements.",
+    dateEn: "03 September, 2026",
+    title: "IIT तिरुपति भर्ती 2026: कंप्यूटर, आईटी और टाइपिंग कौशल, योग्यता, वेतन और चयन प्रक्रिया",
+    excerpt: "आईआईटी तिरुपति गैर-शिक्षण भर्ती 2026 (हिंदी अनुवादक, जूनियर टेक्निकल सुपरिंटेंडेंट, तकनीशियन) के लिए कंप्यूटर, आईटी, टाइपिंग कौशल, पात्रता, वेतन और चयन प्रक्रिया की पूरी जानकारी।",
+    date: "03 सितंबर, 2026",
+    author: "TypeHindi Team",
+    category: "Exam Guide",
+    contentEn: `\n# IIT Tirupati Recruitment 2026: Computer, IT and Typing Skills, Eligibility, Salary and Selection Process
+
+![IIT Tirupati Recruitment 2026](/images/iit-tirupati-recruitment-2026.jpg)
+
+Government jobs that involve computers, documentation, data handling and office work often attract candidates who are already preparing for typing tests. However, not every computer-oriented government vacancy is officially a typing post. The **IIT Tirupati Recruitment 2026** is a prime example.
+
+The **Indian Institute of Technology Tirupati** has announced recruitment for several non-teaching positions, including **Hindi Translator**, **Junior Technical Superintendent (CSE & Network Security)**, **Junior Technician (Systems & CSE)** and other administrative and technical posts. The recruitment is being conducted on a direct recruitment basis, and applications are being accepted online. The last date for submission is **30 September 2026 up to 5:00 PM**.
+
+For candidates practicing on [TypeHindi Daily Practice Arena](/practice) and preparing for computer work and government employment, some of these posts are worth understanding because they involve significant use of computers, documentation, software, technical systems and office applications.
+
+At the same time, there is an important point to understand before applying:
+
+> **Important Clarification:** This recruitment does not advertise a dedicated LDC, clerk, typist or data-entry post, and the official notification does not specify a separate typing-speed test for these positions. The relevance of typing here is primarily through computer-based work, documentation and software usage rather than a conventional typing-test vacancy.
+
+---
+
+## IIT Tirupati Recruitment 2026: Overview
+
+| Particular | Details |
+|---|---|
+| **Organization** | Indian Institute of Technology Tirupati (IIT Tirupati) |
+| **Recruitment Type** | Non-Teaching Staff Recruitment (Direct Recruitment) |
+| **Advertisement No.** | IITT/STAFFREC/01/2026 |
+| **Advertisement Date** | 31 August 2026 |
+| **Application Mode** | Online ([IIT Tirupati Portal](https://iittp.ac.in)) |
+| **Application Start Date** | 31 August 2026 |
+| **Last Date to Apply** | 30 September 2026 (5:00 PM) |
+| **Major Groups** | Group A, Group B and Group C |
+| **Selection for Group B/C** | Objective Test, Descriptive Written Test, Skill / Trade Test |
+
+---
+
+## Is This a Typing Job Recruitment?
+
+This is the first question a typing-job aspirant should ask.
+
+The answer is: **not directly**.
+
+The recruitment does not list conventional clerical posts such as:
+* Lower Division Clerk (LDC)
+* Upper Division Clerk (UDC)
+* Junior Clerk / Typist
+* Data Entry Operator (DEO)
+* Junior Assistant
+
+It also does not specify a conventional typing-speed cutoff (such as 30 WPM or 35 WPM).
+
+However, several positions involve computer applications, technical documentation, office tools, web applications, databases and language software. That makes this recruitment highly relevant to individuals developing their keyboard fluency on [TypeHindi Step-by-Step Lessons](/learn), even though it is not classified as a traditional typing-test recruitment.
+
+---
+
+## Which IIT Tirupati Posts Are Most Relevant to Computer and Typing Skills?
+
+Several positions stand out for candidates with computer, IT, and Hindi documentation backgrounds:
+
+### 1. Hindi Translator (Group B)
+
+The **Hindi Translator** post is a Group B position at **Pay Level 6** (Pay Scale: **₹35,400 to ₹1,12,400**). One vacancy is available under the UR category.
+
+* **Essential Qualification:** Bachelor's degree with Hindi and English as main subjects, minimum 55% marks or equivalent CGPA, and two years of translation experience from English to Hindi and vice versa in Central/State Government offices or autonomous bodies.
+* **Desirable Experience:**
+  * Diploma or certificate course in translation.
+  * Knowledge of operating Hindi application software packages on computer.
+  * Experience translating technical and scientific documents.
+
+#### Why Is This Relevant to Typing?
+
+While Hindi Translator is not officially a typing-test post, day-to-day work requires extensive Hindi document preparation. Translators in premier central institutes routinely create, format, and edit bilingual notices, reports, and administrative files using Unicode fonts and official software.
+
+For aspirants mastering the [Hindi InScript Keyboard Layout](/keyboard-layout) and [Mangal Font Hindi Typing](/mangal-font-typing-test), keyboard familiarity, typing accuracy, and speed with Hindi software are essential assets on the job.
+
+---
+
+### 2. Junior Technical Superintendent – Computer Science & Engineering (Group B)
+
+There are **2 vacancies** (1 UR, 1 EWS) at **Pay Level 6** (₹35,400 – ₹1,12,400).
+
+* **Educational Routes:**
+  * BE / B.Tech in CSE / IT / Electronics, or M.Sc (CS/IT) / MCA with at least 55% marks and 2 years of relevant experience.
+  * B.Sc in Computer Science / IT or BCA with at least 55% marks and 4 years of relevant experience.
+  * Relevant Engineering Diploma with prescribed experience.
+* **Desirable Technical Areas:**
+  * Linux server administration, networking, virtualization, and cloud infrastructure.
+  * Programming, data structures, algorithms, databases, Git, VS Code, and Vim.
+
+While this is an advanced technical role, rapid keyboard navigation, command-line fluency, and fast error-free typing directly improve daily programming and system administration efficiency.
+
+---
+
+### 3. Junior Technical Superintendent – Network Security (Group B)
+
+IIT Tirupati has advertised **1 vacancy** for Junior Technical Superintendent – Network Security at **Pay Level 6** (₹35,400 – ₹1,12,400).
+
+* **Qualifications:** BE/B.Tech/M.Sc in CSE, IT, ECE, Software Sciences, or MCA / BCA with relevant experience.
+* **Key Experience:** Cybersecurity, firewall rules, VPN configuration, security monitoring, Linux administration, and shell scripting.
+
+---
+
+### 4. Junior Technician – Systems (Group C)
+
+This is a Group C position at **Pay Level 4** (Pay Scale: **₹25,500 to ₹81,100**).
+
+* **Qualifications:** BE/B.Tech/M.Sc/MCA in CSE/IT/ECE, or B.Sc (CS/IT) / BCA, Diploma, or ITI in Computer Science / IT with relevant experience.
+* **Desirable Experience:** Technical laboratory setup, software installation, website maintenance, and system troubleshooting.
+
+---
+
+### 5. Junior Technician – Computer Science & Engineering (Group C)
+
+A backlog Group C position at **Pay Level 4** (₹25,500 – ₹81,100).
+
+* **Desirable Skills:** Web systems, Linux, database queries, office documentation tools, Git, and technical lab management.
+
+---
+
+## Where Does Typing Fit Into These IIT Jobs?
+
+| Category | Type 1: Typing-Test Jobs | Type 2: Computer-Oriented Jobs |
+|---|---|---|
+| **Example Posts** | LDC, UDC, Junior Clerk, DEO | Hindi Translator, Technical Asst, Systems Admin |
+| **Typing Criteria** | Mandates qualifying WPM speed test | Evaluates trade & subject knowledge |
+| **Exam Stage** | Explicit typing exam cutoff | Typing is a practical daily productivity asset |
+
+The IIT Tirupati positions belong to **Type 2 (Computer-Oriented Jobs)**. Typing speed is not tested as an isolated cutoff score, but keyboard mastery directly powers your daily work output and technical documentation.
+
+---
+
+## Selection Process for IIT Tirupati Group B and C Posts
+
+For Group B and Group C positions, the recruitment notification specifies a three-stage selection framework:
+
+1. **Level I – Objective-Based Test:** Evaluates core subject knowledge, aptitude, and general awareness.
+2. **Level II – Descriptive Written Test:** Evaluates in-depth domain knowledge, problem-solving, and written communication.
+3. **Level III – Skill Test / Trade Test:** Assesses hands-on technical proficiency, software handling, or language translation skills relevant to the role.
+
+> *Note: Specific schedules and testing patterns for each level will be communicated directly to shortlisted candidates via email and the recruitment portal.*
+
+---
+
+## Application Dates & Fee Details
+
+| Detail | Information |
+|---|---|
+| **Notification Date** | 31 August 2026 |
+| **Online Application Start** | 31 August 2026 |
+| **Last Date for Submission** | **30 September 2026 (5:00 PM)** |
+| **Official Website** | [iittp.ac.in](https://iittp.ac.in) |
+
+### Application Fee Breakdown:
+
+| Category / Group | Application Fee | Processing Fee | Total |
+|---|---|---|---|
+| **Group A Posts** | ₹500 | ₹200 | ₹700 |
+| **Group B Posts** | ₹300 | ₹200 | ₹500 |
+| **Group C Posts** | ₹200 | ₹200 | ₹400 |
+| **SC / ST / PwBD / Female / ESM** | Exempted (₹0) | ₹200 | ₹200 |
+
+---
+
+## Why Strong Typing Skills Give You a Workplace Advantage
+
+Even when an exam does not require an SSC-style typing test, building muscle memory on the keyboard offers immense professional benefits:
+
+* **High Productivity:** Quickly drafting reports, technical guides, emails, and translations without looking down at keys.
+* **Accuracy Under Pressure:** Avoiding typos when writing command-line scripts, database queries, and government correspondence.
+* **Bilingual Versatility:** Switching smoothly between English and Hindi typing using tools like [TypeHindi InScript Practice](/practice) and [Interactive Typing Games](/game).
+
+---
+
+## Summary & Recommendations
+
+* **If you are only targeting clerical typing-test posts (LDC/DEO):** This recruitment does not contain dedicated typing-speed test posts.
+* **If you have an IT, BCA, B.Tech, or Hindi translation background:** These Group B and Group C positions offer excellent central government pay scales (Pay Level 4 & 6) and career growth at an Institute of National Importance.
+* **Preparation Tip:** Continue sharpening your typing speed and keyboard accuracy on [TypeHindi.in](/) to stay prepared for both typing-mandatory exams and high-efficiency computer roles.
+`,
+    content: `\n# IIT तिरुपति भर्ती 2026: कंप्यूटर, आईटी और टाइपिंग कौशल, योग्यता, वेतन और चयन प्रक्रिया
+
+![IIT Tirupati Recruitment 2026](/images/iit-tirupati-recruitment-2026.jpg)
+
+कंप्यूटर, दस्तावेजीकरण (Documentation), डेटा हैंडलिंग और कार्यालयीन कार्यों से जुड़े सरकारी पद अक्सर उन उम्मीदवारों को आकर्षित करते हैं जो पहले से ही टाइपिंग परीक्षाओं की तैयारी कर रहे हैं। हालांकि, हर कंप्यूटर-आधारित सरकारी पद आधिकारिक रूप से टाइपिंग-टेस्ट पद नहीं होता। **आईआईटी तिरुपति भर्ती 2026 (IIT Tirupati Recruitment 2026)** इसका एक प्रमुख उदाहरण है।
+
+**भारतीय प्रौद्योगिकी संस्थान तिरुपति (IIT Tirupati)** ने गैर-शिक्षण पदों (Non-Teaching Posts) पर सीधी भर्ती की घोषणा की है, जिसमें **हिंदी अनुवादक (Hindi Translator)**, **जूनियर टेक्निकल सुपरिंटेंडेंट (CSE और नेटवर्क सिक्योरिटी)**, **जूनियर तकनीशियन** और अन्य प्रशासनिक व तकनीकी पद शामिल हैं। ऑनलाइन आवेदन की अंतिम तिथि **30 सितंबर 2026 (शाम 5:00 बजे तक)** है।
+
+यदि आप [TypeHindi टाइपिंग प्रैक्टिस](/practice) के माध्यम से अपनी कीबोर्ड गति और दक्षता बढ़ा रहे हैं, तो इन पदों की कार्यप्रणाली को समझना आपके लिए बेहद उपयोगी साबित होगा।
+
+> **महत्वपूर्ण बिंदु:** इस भर्ती में एलडीसी (LDC), क्लर्क या डेटा एंट्री ऑपरेटर (DEO) का कोई समर्पित टाइपिंग पद नहीं है, और न ही इसके लिए अलग से टाइपिंग स्पीड टेस्ट निर्धारित है। यहाँ टाइपिंग कौशल का महत्व दैनिक कंप्यूटर संचालन, सॉफ्टवेयर उपयोग और दस्तावेजीकरण के लिए है।
+
+---
+
+## आईआईटी तिरुपति भर्ती 2026: मुख्य विवरण
+
+| विवरण | जानकारी |
+|---|---|
+| **संस्थान** | भारतीय प्रौद्योगिकी संस्थान तिरुपति (IIT Tirupati) |
+| **भर्ती का प्रकार** | गैर-शिक्षण कर्मचारी सीधी भर्ती (Direct Recruitment) |
+| **विज्ञापन संख्या** | IITT/STAFFREC/01/2026 |
+| **विज्ञापन तिथि** | 31 अगस्त 2026 |
+| **आवेदन मोड** | ऑनलाइन ([iittp.ac.in](https://iittp.ac.in)) |
+| **आवेदन की अंतिम तिथि** | 30 सितंबर 2026, सायं 5:00 बजे तक |
+| **पद समूह** | ग्रुप A, ग्रुप B और ग्रुप C |
+| **चयन प्रक्रिया (Group B/C)** | ऑब्जेक्टिव टेस्ट, वर्णनात्मक लिखित परीक्षा (Descriptive), स्किल/ट्रेड टेस्ट |
+
+---
+
+## क्या यह टाइपिंग जॉब भर्ती है?
+
+सीधा उत्तर है: **प्रत्यक्ष रूप से नहीं**।
+
+इस अधिसूचना में क्लर्क, एलडीसी, या डेटा एंट्री ऑपरेटर जैसे पद शामिल नहीं हैं, और न ही कोई निश्चित WPM स्पीड टेस्ट का उल्लेख है। 
+
+हालांकि, कई पदों में कंप्यूटर सॉफ्टवेयर, हिंदी ऍप्लिकेशन्स, डेटाबेस, और तकनीकी दस्तावेज़ तैयार करने का कार्य शामिल है। इसलिए, जो अभ्यर्थी [हिंदी टाइपिंग पाठ और ट्यूटोरियल](/learn) से कीबोर्ड सीख रहे हैं, उनके लिए यह व्यावहारिक रूप से बेहद उपयोगी है।
+
+---
+
+## प्रमुख पद और कंप्यूटर/टाइपिंग कौशल की प्रासंगिकता
+
+### 1. हिंदी अनुवादक (Hindi Translator - Group B)
+* **वेतनमान:** पे लेवल 6 (₹35,400 – ₹1,12,400)
+* **अनिवार्य योग्यता:** हिंदी और अंग्रेजी मुख्य विषयों के साथ स्नातक (न्यूनतम 55% अंक) और 2 वर्ष का अनुवाद अनुभव।
+* **वांछनीय योग्यता:** कंप्यूटर पर हिंदी अनुप्रयोग सॉफ्टवेयर (Hindi Application Software Packages) चलाने का ज्ञान तथा वैज्ञानिक/तकनीकी अनुवाद का अनुभव।
+* **टाइपिंग का महत्व:** यद्यपि टाइपिंग परीक्षा नहीं है, परंतु [हिंदी इनस्क्रिप्ट कीबोर्ड लेआउट](/keyboard-layout) और [मंगल फॉन्ट टाइपिंग](/mangal-font-typing-test) का ज्ञान दैनिक शासकीय अनुवाद व ई-फाइलिंग में बहुत सहायक होता है।
+
+### 2. जूनियर टेक्निकल सुपरिंटेंडेंट – CSE (Group B)
+* **वेतनमान:** पे लेवल 6 (₹35,400 – ₹1,12,400)
+* **योग्यता:** B.Tech (CSE/IT) / MCA या B.Sc (IT) / BCA के साथ आवश्यक अनुभव।
+* **प्रमुख क्षेत्र:** लिनक्स सर्वर, नेटवर्किंग, प्रोग्रामिंग, गिट, वीएस कोड और डेटाबेस प्रशासन।
+
+### 3. जूनियर तकनीशियन – सिस्टम्स एवं CSE (Group C)
+* **वेतनमान:** पे लेवल 4 (₹25,500 – ₹81,100)
+* **योग्यता:** ITI / डिप्लोमा / BCA / B.Sc / B.Tech और प्रयोगशाला/सॉफ्टवेयर रखरखाव का अनुभव।
+
+---
+
+## कंप्यूटर नौकरियों में टाइपिंग का व्यावहारिक महत्व
+
+सरकारी व संस्थागत डिजिटल कार्यप्रणाली में टाइपिंग दो प्रकार से काम आती है:
+
+1. **टाइपिंग-टेस्ट जॉब्स (LDC / DEO):** जहाँ परीक्षा में निश्चित गति (30-35 WPM) उत्तीर्ण करना अनिवार्य होता है।
+2. **कंप्यूटर-उन्मुख तकनीकी पद (IIT तकनीकी पद / अनुवादक):** जहाँ कोडिंग, कमांड-लाइन, ड्राफ्टिंग और अनुवाद में टाइपिंग स्पीड कार्यक्षमता को कई गुना बढ़ा देती है।
+
+अपने रिफ्लेक्स और सटीकता को बेहतर बनाने के लिए आप [टाइपहैंडी इंटरैक्टिव गेम्स](/game) का उपयोग कर सकते हैं।
+
+---
+
+## आवेदन शुल्क एवं महत्वपूर्ण तिथियाँ
+
+* **आवेदन की अंतिम तिथि:** 30 सितंबर 2026 (शाम 5:00 बजे)
+* **आवेदन शुल्क:** 
+  * ग्रुप A: ₹500 (+ ₹200 प्रोसेसिंग शुल्क)
+  * ग्रुप B: ₹300 (+ ₹200 प्रोसेसिंग शुल्क)
+  * ग्रुप C: ₹200 (+ ₹200 प्रोसेसिंग शुल्क)
+  * आरक्षित वर्ग एवं महिला उम्मीदवार: आवेदन शुल्क से छूट (केवल ₹200 प्रोसेसिंग शुल्क देय)।
+
+---
+
+## निष्कर्ष (Key Takeaway)
+
+आईआईटी तिरुपति भर्ती 2026 पारंपरिक एलडीसी टाइपिंग टेस्ट वाली भर्ती नहीं है, बल्कि यह उच्च तकनीकी और अनुवाद कौशल वाले पदों के लिए एक शानदार अवसर है। यदि आपके पास संबंधित योग्यता है, तो 30 सितंबर 2026 से पहले अवश्य आवेदन करें और अपनी कंप्यूटर व टाइपिंग क्षमता को [TypeHindi.in](/) पर लगातार निखारते रहें।
+`
+  },
+  {
     slug: "ssc-cgl-typing-test-preparation-guide",
     titleEn: "SSC CGL Typing Test Preparation: Complete Guide to DEST, Speed, Accuracy and Practice Strategy",
     excerptEn: "A complete guide to the SSC CGL Data Entry Speed Test (DEST), covering typing speed, accuracy, rules, and a 30-day practice strategy to qualify.",

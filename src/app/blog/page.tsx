@@ -93,11 +93,8 @@ export default async function BlogPage({ searchParams }: PageProps) {
               className="group flex flex-col h-full bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-700 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-400/60 hover:-translate-y-1 dark:hover:border-primary-600"
             >
               <div className="p-6 flex flex-col h-full">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-900/30 text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider">
-                    {blog.category}
-                  </span>
-                  <span className="text-xs text-gray-400">{date}</span>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">{date}</span>
                 </div>
                 
                 <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors leading-tight line-clamp-3">

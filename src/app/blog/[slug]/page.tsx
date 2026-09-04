@@ -56,14 +56,9 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
   const content = lang === "en" && blog.contentEn ? blog.contentEn : blog.content;
   const showTranslateWidget = lang === "en" && !blog.contentEn;
 
-  // Filter out current blog and get 4 related posts (same category prioritized)
+  // Filter out current blog and get 4 latest posts
   const relatedBlogs = blogs
     .filter((b) => b.slug !== slug)
-    .sort((a, b) => {
-      if (a.category === blog.category && b.category !== blog.category) return -1;
-      if (b.category === blog.category && a.category !== blog.category) return 1;
-      return 0;
-    })
     .slice(0, 4);
 
   return (
@@ -104,9 +99,6 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
       <article className="mt-4 mx-auto w-full">
         <header className="mb-6 text-center">
-          <div className="inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-semibold mb-4">
-            {blog.category}
-          </div>
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-normal">
             {title}
           </h1>
@@ -166,11 +158,8 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
                   className="group flex flex-col justify-between bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-primary-400 dark:hover:border-primary-600 transition-all hover:-translate-y-1"
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="px-2.5 py-0.5 rounded-md bg-primary-50 dark:bg-primary-900/30 text-[11px] font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider">
-                        {item.category}
-                      </span>
-                      <span className="text-[11px] text-gray-400">{itemDate}</span>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400">{itemDate}</span>
                     </div>
                     <h3 className="font-bold text-sm text-gray-900 dark:text-white line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
                       {itemTitle}

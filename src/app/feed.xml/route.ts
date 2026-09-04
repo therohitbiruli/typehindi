@@ -49,7 +49,6 @@ export async function GET() {
       <link>${link}</link>
       <guid isPermaLink="true">${link}</guid>
       <description>${escapeXml(description)}</description>
-      <category>${escapeXml(blog.category)}</category>
       <pubDate>${pubDate}</pubDate>
     </item>`;
     })

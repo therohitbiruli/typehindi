@@ -515,7 +515,7 @@ export default function Homepage() {
                 <div key={blog.slug} className="border border-[#D9E1EC] dark:border-slate-850 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
                   <div>
                     <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider block mb-1">
-                      {blog.dateEn || blog.date} | {blog.category}
+                      {blog.dateEn || blog.date}
                     </span>
                     <h3 className="font-extrabold text-slate-900 dark:text-white text-base leading-snug mb-2">
                       {blog.titleEn || blog.title}

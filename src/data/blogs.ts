@@ -13,6 +13,301 @@ export interface BlogPost {
 }
 
 export const blogs: BlogPost[] = [  {
+    slug: "india-post-gds-recruitment-2026-bpm-abpm-dak-sevak",
+    titleEn: "India Post GDS Recruitment 2026: BPM, ABPM and Dak Sevak Eligibility, Salary, Selection Process and How to Apply",
+    excerptEn: "Complete guide to India Post Gramin Dak Sevak (GDS) Recruitment 2026 Schedule-II for 10th pass candidates. Check BPM, ABPM, Dak Sevak salary, computer knowledge criteria, merit list, and application procedure.",
+    dateEn: "04 September, 2026",
+    title: "इंडिया पोस्ट जीडीएस भर्ती 2026: BPM, ABPM और डाक सेवक पात्रता, वेतन, चयन प्रक्रिया और ऑनलाइन आवेदन",
+    excerpt: "भारतीय डाक विभाग द्वारा 10वीं पास के लिए ग्रामीण डाक सेवक (GDS) भर्ती 2026 (BPM, ABPM व डाक सेवक पद)। पात्रता, TRCA वेतनमान, कंप्यूटर ज्ञान, मेरिट सूची व ऑनलाइन आवेदन की पूरी जानकारी।",
+    date: "04 सितंबर, 2026",
+    author: "TypeHindi Team",
+    category: "Exam Guide",
+    contentEn: `\n# India Post GDS Recruitment 2026: BPM, ABPM and Dak Sevak Eligibility, Salary, Selection Process and How to Apply
+
+![India Post GDS Recruitment 2026](/images/india-post-gds-recruitment-2026.jpg)
+
+The **Department of Posts, Government of India** has released the **Gramin Dak Sevak (GDS) Online Engagement Schedule-II, July-2026** notification for engagement to the posts of **Branch Postmaster (BPM)**, **Assistant Branch Postmaster (ABPM)** and **Dak Sevak** across postal circles nationwide. The notification is dated 20 August 2026, and eligible candidates can submit their applications online through the official GDS engagement portal.
+
+This recruitment is particularly attractive for candidates seeking government-sector postal employment after **Class 10 (10th Pass)**. It is also of great interest to computer and typing learners because **computer literacy** is one of the mandatory additional qualification criteria for GDS engagement. 
+
+However, candidates should note an essential distinction: **this is not a traditional typing-test recruitment**. Selection is based on an automated system-generated merit list derived from Class 10 marks rather than a conventional competitive written test or a qualifying speed exam.
+
+---
+
+## India Post GDS Recruitment 2026: Overview
+
+| Particular | Details |
+|---|---|
+| **Organization** | Department of Posts, Ministry of Communications, Govt. of India |
+| **Recruitment Scheme** | Gramin Dak Sevak (GDS) Online Engagement |
+| **Schedule** | Schedule-II, July-2026 |
+| **Notification Date** | 20 August 2026 |
+| **Posts Advertised** | Branch Postmaster (BPM), Assistant Branch Postmaster (ABPM), Dak Sevak |
+| **Minimum Qualification** | 10th Standard Pass (with Math & English) |
+| **Application Mode** | Online ([indiapostgdsonline.gov.in](https://indiapostgdsonline.gov.in)) |
+| **One-Time Registration Window** | 31 August to 19 September 2026 (5:00 PM) |
+| **Online Application Window** | 2 September to 21 September 2026 (5:00 PM) |
+| **Application Correction Window** | 23 September to 24 September 2026 (5:00 PM) |
+| **Selection Mode** | 10th Standard Board Merit List (No Written Exam) |
+| **Application Fee** | ₹100 (Exempted for Female, SC, ST, PwBD, Transwomen) |
+
+---
+
+## What Is India Post GDS Recruitment?
+
+**GDS** stands for **Gramin Dak Sevak**. Under this engagement scheme, the Department of Posts appoints candidates to manage and operate postal counters, mail delivery, parcel logistics, and India Post Payments Bank (IPPB) financial services, primarily serving rural and semi-rural regions across India.
+
+### Key Employment Conditions:
+* **Non-Regular Service:** GDS personnel are not regular Central Government employees. Their terms and service conditions are governed by the *Gramin Dak Sevak (Conduct and Engagement) Rules, 2020*.
+* **Working Hours:** GDS staff typically work for **4 to 5 hours per day**.
+* **Retirement Age:** A GDS employee cannot be retained in service beyond the age of 65.
+* **Secondary Source of Income:** The rules prescribe that a candidate should have adequate means of livelihood or an alternate source of income in addition to GDS allowances.
+
+---
+
+## Is GDS a Typing Job?
+
+For candidates practicing on [TypeHindi Daily Practice Tool](/practice) and [Hindi Typing Lessons](/learn), this is an important question.
+
+**No, GDS is not a conventional typing-test job.**
+
+The notification does not prescribe a dedicated words-per-minute (WPM) speed test (such as 30 or 35 WPM), nor is there a practical typing test at the examination center.
+
+However, **computer knowledge is a mandatory additional qualification**. Selected candidates are required to submit an official undertaking confirming that they are computer literate and capable of operating smartphones, hand-held POS terminals, laptops, or desktop computers from Day 1 of engagement. Fast, accurate data entry and keyboard fluency directly help in daily counter operations, IPPB transactions, and customer bookings.
+
+---
+
+## GDS Posts Available
+
+The GDS recruitment covers three primary categories of engagement:
+
+![GDS Posts 2026: BPM, ABPM, Dak Sevak](/images/gds-posts-bpm-abpm-dak-sevak.jpg)
+
+### 1. Branch Postmaster (BPM)
+The Branch Postmaster is the administrative and operational in-charge of the Branch Post Office (BO).
+* **Key Responsibilities:**
+  * Managing daily postal operations, counter bookings, and mail dispatch.
+  * Facilitating India Post Payments Bank (IPPB) deposits, withdrawals, and digital financial services.
+  * Marketing and promoting postal savings schemes, insurance (PLI/RPLI), and government social-security programs.
+  * Overall supervision of single-handed or multi-handed branch post offices.
+* **Residence & Accommodation Mandate:** A selected BPM must arrange suitable accommodation for running the Branch Post Office at their own cost and reside within the village jurisdiction of the post office.
+
+### 2. Assistant Branch Postmaster (ABPM)
+ABPMs assist the BPM with counter operations and direct customer delivery.
+* **Key Responsibilities:**
+  * Counter sales of postage stamps, stationery, and money orders.
+  * Mail conveyance, sorting, and door-to-door mail/parcel delivery.
+  * Performing IPPB transactions and combined BPM duties when required.
+* **Residence Mandate:** Must reside within the delivery jurisdiction of the Branch Post Office.
+
+### 3. Dak Sevak
+Dak Sevaks work across departmental post offices, sub-post offices (SO), head post offices (HO), and Railway Mail Service (RMS) transit mail offices.
+* **Key Responsibilities:**
+  * Handling mail bags, transit dispatches, packet sorting, and parcel conveyance.
+  * Assisting postmasters with counter receipts and dispatch operations.
+
+---
+
+## GDS Salary & TRCA Structure 2026
+
+GDS personnel receive compensation under the **Time Related Continuity Allowance (TRCA)** framework rather than the 7th Pay Commission Matrix:
+
+| Post | Initial TRCA Slab | Working Hours |
+|---|---|---|
+| **Branch Postmaster (BPM)** | **₹12,000 – ₹29,380** | 4 to 5 Hours / Day |
+| **ABPM / Dak Sevak** | **₹10,000 – ₹24,470** | 4 to 5 Hours / Day |
+
+*In addition to basic TRCA, GDS employees receive Dearness Allowance (DA), an annual increment of 3%, GDS Gratuity, and coverage under the Service Discharge Benefit Scheme (SDBS).*
+
+---
+
+## Eligibility Criteria: Age & Educational Qualification
+
+### 1. Age Limit (Calculated as on Application Closing Date):
+* **Minimum Age:** 18 Years
+* **Maximum Age:** 40 Years
+
+#### Upper Age Relaxations:
+| Category | Relaxation |
+|---|---|
+| **SC / ST** | 5 Years (Up to 45 Years) |
+| **OBC (Non-Creamy Layer)** | 3 Years (Up to 43 Years) |
+| **EWS** | No Relaxation |
+| **PwBD (General)** | 10 Years |
+| **PwBD + OBC / SC / ST** | 13 to 15 Years |
+
+### 2. Educational Qualifications:
+* **10th Standard (Secondary School Examination) Pass** from a recognized Board of School Education recognized by the Central/State Government.
+* **Mandatory Subjects:** Must have passed **Mathematics** and **English** as compulsory or elective subjects.
+* **Compulsory Local Language:** The candidate must have studied the official local language of the applied Postal Circle/Division up to at least Class 10.
+
+### 3. Additional Required Skills:
+1. **Knowledge of Computers:** Basic computer operation and digital literacy.
+2. **Knowledge of Cycling:** Candidate must know how to ride a bicycle or two-wheeler (undertaking required).
+3. **Adequate Means of Livelihood:** Capacity to supplement income beyond GDS TRCA.
+
+---
+
+## Selection Process: System-Generated Merit List
+
+The GDS selection model differs completely from traditional SSC or banking exams:
+
+$$\\text{10th Board Marks} \\longrightarrow \\text{Automated Merit List} \\longrightarrow \\text{Document Verification} \\longrightarrow \\text{Provisional Offer}$$
+
+1. **No Written Examination & No Interview:** Candidates are ranked purely based on their 10th standard percentage or converted grade points.
+2. **Grade Point Conversion:** For school boards awarding grades/points (such as CBSE), grade points are multiplied by a standard factor of **9.5** to arrive at percentage equivalency.
+3. **Tie-Breaking Criteria:** In case of equal marks, priority is assigned based on date of birth (older candidates first), gender (female/transgender priority), and category rules.
+
+---
+
+## How to Apply Online: Step-by-Step Guide
+
+The application process is conducted on the official portal ([indiapostgdsonline.gov.in](https://indiapostgdsonline.gov.in)):
+
+1. **Part A – One-Time Registration:**
+   * Enter mobile number and email ID (verified via OTP).
+   * Enter Name, Father's Name, Mother's Name, Date of Birth, and Gender matching your 10th certificate exactly.
+   * Receive your unique **Registration Number** and password.
+2. **Part B – Fill Online Application:**
+   * Select your educational board, passing year, subject-wise marks, and roll number.
+   * **Select Division:** Choose one Postal Division and prioritize your post preferences (BPM/ABPM/Dak Sevak) based on location and vacancy suitability.
+3. **Upload Photograph & Signature:**
+   * **Photograph:** Recent color photo (30 KB to 100 KB, 320×400 px, light background).
+   * **Signature:** Clear black/blue ink signature on white paper (20 KB to 100 KB, 300×120 px).
+4. **Pay Application Fee:**
+   * Fee of **₹100** payable online via UPI, Net Banking, or Debit/Credit Card. (Exempted for Female, SC, ST, PwBD, Transwomen).
+5. **Print Confirmation:** Download and save the final application submission form for document verification.
+
+---
+
+## Document Verification & Joining Formalities
+
+Shortlisted candidates will receive SMS/email alerts and must report to the Divisional Head with original certificates and two sets of self-attested photocopies:
+* Class 10 Marksheet & Passing Certificate
+* Date of Birth Proof & Identity Card (Aadhaar / Voter ID)
+* Caste / EWS / PwBD Certificate (if applicable)
+* Compulsory Medical Fitness Certificate issued by a Government Medical Officer
+* Computer & Cycling Undertakings
+
+Upon successful verification, candidates receive a provisional engagement offer and undergo pre-joining orientation within 30 days.
+
+---
+
+## Comparison: GDS vs Traditional Typing Government Jobs
+
+| Feature | India Post GDS 2026 | Traditional LDC / Typist / Clerk |
+|---|---|---|
+| **Minimum Qualification** | 10th Pass | 12th Pass or Graduation |
+| **Selection Mode** | 10th Merit List (Automated) | Written Exam + Skill Test |
+| **Typing Speed Test** | No (Computer literacy required) | Yes (30–35 WPM mandatory) |
+| **Employment Status** | Non-Executive (TRCA Slabs) | Regular Central/State Pay Matrix |
+| **Daily Hours** | 4 to 5 Hours / Day | 7 to 8 Hours / Day |
+
+---
+
+## Conclusion & Next Steps
+
+The **India Post GDS Recruitment 2026** is one of India's largest employment drives for 10th-pass candidates. While it does not feature an active typing test, building strong keyboard familiarity on [Hindi InScript Keyboard Layout](/keyboard-layout) and [Mangal Font Typing Test](/mangal-font-typing-test) empowers candidates with practical computer literacy for digital postal counters and banking terminals.
+
+Make sure to complete your one-time registration and division preference selection before the **21 September 2026** deadline!
+`,
+    content: `\n# इंडिया पोस्ट जीडीएस भर्ती 2026: BPM, ABPM और डाक सेवक पात्रता, वेतन, चयन प्रक्रिया और ऑनलाइन आवेदन
+
+![India Post GDS Recruitment 2026](/images/india-post-gds-recruitment-2026.jpg)
+
+**भारतीय डाक विभाग (Department of Posts)** ने देश भर के विभिन्न डाक मंडलों में **शाखा पोस्टमास्टर (BPM)**, **सहायक शाखा पोस्टमास्टर (ABPM)** और **डाक सेवक (Dak Sevak)** के पदों पर भर्ती हेतु **ग्रामीण डाक सेवक (GDS) ऑनलाइन एंगेजमेंट अनुसूची-II (जुलाई 2026)** की अधिसूचना जारी की है।
+
+यह भर्ती 10वीं पास युवाओं के लिए डाक विभाग से जुड़ने का एक उत्कृष्ट अवसर है। इसके अलावा, कंप्यूटर और टाइपिंग सीखने वाले उम्मीदवारों के लिए भी यह बेहद प्रासंगिक है क्योंकि जीडीएस पदों के लिए **कंप्यूटर का बुनियादी ज्ञान** एक अनिवार्य अतिरिक्त योग्यता है।
+
+> **महत्वपूर्ण बिंदु:** यह पारंपरिक टाइपिंग-स्पीड टेस्ट वाली भर्ती नहीं है। इसमें कोई लिखित परीक्षा या टाइपिंग परीक्षा नहीं होती, बल्कि उम्मीदवारों का चयन 10वीं कक्षा के अंकों के आधार पर तैयार **सिस्टम-जनरेटेड मेरिट लिस्ट** से होता है।
+
+---
+
+## इंडिया पोस्ट जीडीएस भर्ती 2026: मुख्य विवरण
+
+| विवरण | जानकारी |
+|---|---|
+| **विभाग** | डाक विभाग, संचार मंत्रालय, भारत सरकार |
+| **भर्ती का नाम** | ग्रामीण डाक सेवक (GDS) ऑनलाइन एंगेजमेंट |
+| **अनुसूची** | Schedule-II, July-2026 |
+| **पद नाम** | ब्रांच पोस्टमास्टर (BPM), सहायक ब्रांच पोस्टमास्टर (ABPM), डाक सेवक |
+| **न्यूनतम योग्यता** | 10वीं पास (गणित व अंग्रेजी विषयों के साथ) |
+| **आवेदन मोड** | ऑनलाइन ([indiapostgdsonline.gov.in](https://indiapostgdsonline.gov.in)) |
+| **वन-टाइम रजिस्ट्रेशन** | 31 अगस्त से 19 सितंबर 2026 (शाम 5:00 बजे) |
+| **ऑनलाइन आवेदन** | 02 सितंबर से 21 सितंबर 2026 (शाम 5:00 बजे) |
+| **फॉर्म संशोधन विंडो** | 23 से 24 सितंबर 2026 |
+| **चयन आधार** | 10वीं बोर्ड परीक्षा मेरिट लिस्ट |
+| **आवेदन शुल्क** | ₹100 (महिला, SC, ST, PwBD व ट्रांसजेंडर उम्मीदवारों के लिए निःशुल्क) |
+
+---
+
+## क्या जीडीएस एक टाइपिंग जॉब है?
+
+अक्सर [TypeHindi टाइपिंग प्रैक्टिस](/practice) करने वाले छात्र यह पूछते हैं कि क्या जीडीएस में टाइपिंग टेस्ट होता है?
+
+**उत्तर है: प्रत्यक्ष रूप से नहीं।**
+
+अधिसूचना में 30 या 35 शब्द प्रति मिनट (WPM) जैसे किसी टाइपिंग टेस्ट का उल्लेख नहीं है। हालांकि, चयनित उम्मीदवार को यह स्व-घोषणा (Undertaking) देनी होती है कि वह कंप्यूटर, स्मार्टफोन या पीओएस मशीन चलाने में सक्षम है। डिजिटल डाकघरों में बिलिंग, पार्सल ट्रैकिंग और आईपीपीबी बैंकिंग के लिए कंप्यूटर व कीबोर्ड दक्षता अत्यंत महत्वपूर्ण होती है।
+
+---
+
+## विज्ञापित पद एवं कार्य विवरण (GDS Posts 2026)
+
+ग्रामीण डाक सेवक के अंतर्गत तीन मुख्य पद होते हैं:
+
+![GDS Posts 2026: BPM, ABPM, Dak Sevak](/images/gds-posts-bpm-abpm-dak-sevak.jpg)
+
+### 1. ब्रांच पोस्टमास्टर (Branch Postmaster - BPM)
+* **कार्य:** शाखा डाकघर का समग्र प्रबंधन, डाक संचालन, इंडिया पोस्ट पेमेंट्स बैंक (IPPB) लेन-देन और डाक बीमा योजनाओं का प्रचार।
+* **शर्त:** चयनित बीपीएम को डाकघर संचालित करने के लिए स्वयं के खर्च पर उपयुक्त स्थान की व्यवस्था करनी होती है और संबंधित गांव में निवास करना अनिवार्य है।
+
+### 2. सहायक ब्रांच पोस्टमास्टर (ABPM)
+* **कार्य:** टिकट व स्टेशनरी की बिक्री, घर-घर डाक व पार्सल वितरण, आईपीपीबी सेवाएं और बीपीएम की सहायता।
+
+### 3. डाक सेवक (Dak Sevak)
+* **कार्य:** मुख्य डाकघरों, उप डाकघरों या रेलवे मेल सर्विस (RMS) में मेल बैग हैंडलिंग, पार्सल छंटाई और वितरण सहायता।
+
+---
+
+## वेतन एवं टीआरसीए (TRCA Slab 2026)
+
+जीडीएस कर्मचारियों को टाइम रिलेटेड कंटीन्यूटी अलाउंस (TRCA) के तहत मानदेय दिया जाता है:
+
+* **ब्रांच पोस्टमास्टर (BPM):** ₹12,000 – ₹29,380 प्रति माह
+* **ABPM / डाक सेवक:** ₹10,000 – ₹24,470 प्रति माह
+* *टीआरसीए के साथ महंगाई भत्ता (DA), 3% वार्षिक वृद्धि और सामाजिक सुरक्षा लाभ नियमानुसार देय होते हैं।*
+
+---
+
+## शैक्षणिक योग्यता एवं आयु सीमा
+
+* **शैक्षणिक योग्यता:** मान्यता प्राप्त बोर्ड से 10वीं कक्षा उत्तीर्ण (गणित और अंग्रेजी अनिवार्य विषयों के साथ)।
+* **स्थानीय भाषा:** उम्मीदवार ने संबंधित राज्य/सर्कल की स्थानीय भाषा कम से कम 10वीं तक पढ़ी हो।
+* **आयु सीमा:** 18 से 40 वर्ष (आरक्षित श्रेणियों जैसे SC/ST को 5 वर्ष, OBC को 3 वर्ष की छूट)।
+* **अतिरिक्त आवश्यकता:** कंप्यूटर ज्ञान, साइकिल चलाने का ज्ञान और आजीविका का वैकल्पिक साधन।
+
+---
+
+## चयन प्रक्रिया (Selection Process)
+
+1. **मेरिट सूची (Merit List):** 10वीं बोर्ड परीक्षा में प्राप्त अंकों के आधार पर स्वचालित रूप से तैयार होती है।
+2. **दस्तावेज़ सत्यापन (Document Verification):** शॉर्टलिस्ट किए गए अभ्यर्थियों के 10वीं अंकपत्र, जाति प्रमाण पत्र, और चिकित्सा प्रमाण पत्र की जांच।
+3. **प्रारंभिक कार्यभार (Engagement):** सत्यापन उपरांत 30 दिनों के भीतर पदभार ग्रहण।
+
+---
+
+## ऑनलाइन आवेदन कैसे करें?
+
+1. आधिकारिक पोर्टल [indiapostgdsonline.gov.in](https://indiapostgdsonline.gov.in) पर जाएं।
+2. **One-Time Registration** पूरा करें (मोबाइल व ईमेल ओटीपी सत्यापन)।
+3. 10वीं के अंक, बोर्ड विवरण दर्ज करें और एक डाक मंडल (Division) चुनकर पद प्राथमिकताएं तय करें।
+4. फोटो और हस्ताक्षर अपलोड करें व ₹100 शुल्क का भुगतान करें।
+5. आवेदन की अंतिम तिथि **21 सितंबर 2026** है।
+
+कंप्यूटर दक्षता और कीबोर्ड पर अपनी पकड़ मजबूत करने के लिए [हिंदी इनस्क्रिप्ट कीबोर्ड लेआउट](/keyboard-layout) और [मंगल फॉन्ट टाइपिंग टेस्ट](/mangal-font-typing-test) पर नियमित अभ्यास करते रहें।
+`
+  },
+  {
     slug: "mecl-recruitment-2026-stenographer-assistant-typing-jobs",
     titleEn: "MECL Non-Executive Recruitment 2026: Stenographer, Assistant and Typing Jobs, 122 Vacancies, Eligibility, Salary and Selection Process",
     excerptEn: "Complete guide to MECL Non-Executive Recruitment 2026 for 122 vacancies including Stenographer (English 40 WPM typing & 80 WPM shorthand), Assistant (Hindi), eligibility, and salary.",

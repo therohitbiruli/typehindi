@@ -39,8 +39,8 @@ export function HomepageGame() {
           Defend your base by typing the Hindi letters shown on incoming enemy tanks!
         </p>
 
-        {/* Desktop Device / Keyboard Instruction */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/30 text-amber-300 text-[11px] font-medium mb-5 shadow-sm">
+        {/* Mobile-only Keyboard Instruction */}
+        <div className="inline-flex md:hidden items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/30 text-amber-300 text-[11px] font-medium mb-5 shadow-sm">
           <span>⌨️</span>
           <span>Best played on Desktop / Laptop with Physical Keyboard</span>
         </div>

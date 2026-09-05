@@ -84,8 +84,8 @@ export default function GameHubPage() {
           </Link>
         </div>
 
-        {/* Desktop Keyboard Notice */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs max-w-xl mx-auto text-center">
+        {/* Mobile-only Keyboard Notice */}
+        <div className="inline-flex md:hidden items-center gap-2 px-4 py-2 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs max-w-xl mx-auto text-center">
           <span>💻</span>
           <span><strong>Device Notice:</strong> Typing games are best experienced on a Desktop or Laptop with a physical keyboard.</span>
         </div>

@@ -388,8 +388,8 @@ export default function Homepage() {
               Make learning fun! Build rapid reflexes and muscle memory by typing falling letters and words correctly before they crash onto the ground. Play our tank defender game directly below or head to the game hub to explore other modes.
             </p>
 
-            {/* Desktop Keyboard Notice Banner */}
-            <div className="flex items-start sm:items-center gap-3 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-300 text-xs">
+            {/* Mobile-only Keyboard Notice Banner */}
+            <div className="flex md:hidden items-start sm:items-center gap-3 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-300 text-xs">
               <span className="text-lg flex-shrink-0">💻</span>
               <p className="leading-relaxed">
                 <strong>Device Notice:</strong> Typing games are designed to build touch-typing muscle memory and are best experienced on a <strong>Desktop or Laptop device with a physical keyboard</strong>.

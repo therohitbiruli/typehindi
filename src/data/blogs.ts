@@ -21,6 +21,256 @@ export function getBlogImage(blog: BlogPost): string {
 }
 
 export const blogs: BlogPost[] = [  {
+    slug: "khunti-forest-division-recruitment-2026-walk-in-interview",
+    titleEn: "Khunti Forest Division Recruitment 2026: Walk-in Interview for 5 Posts, ₹30,000 Salary, Eligibility and How to Apply",
+    excerptEn: "Complete guide to Khunti Forest Division Jharkhand Recruitment 2026 for Team Leader, RS-GIS Expert, Statistician, and Field Data Collector posts. ₹30,000 monthly salary, walk-in interview details, eligibility, and application procedure.",
+    dateEn: "05 September, 2026",
+    title: "खूंटी वन प्रमंडल भर्ती 2026: 5 पदों पर वॉक-इन इंटरव्यू, ₹30,000 वेतन, पात्रता व आवेदन प्रक्रिया",
+    excerpt: "खूंटी वन प्रमंडल, झारखंड द्वारा वर्किंग प्लान प्रोजेक्ट के तहत टीम लीडर, RS-GIS एक्सपर्ट, सांख्यिकीविद् व फील्ड डेटा कलेक्टर के 5 पदों पर भर्ती। ₹30,000 मानदेय, वॉक-इन इंटरव्यू और आवेदन की पूरी जानकारी।",
+    date: "05 सितंबर, 2026",
+    author: "TypeHindi Team",
+    category: "Exam Guide",
+    contentEn: `\n# Khunti Forest Division Recruitment 2026: Walk-in Interview for 5 Posts, ₹30,000 Salary, Eligibility and How to Apply
+
+![Khunti Forest Division Recruitment 2026](/images/khunti-forest-division-recruitment-2026.jpg)
+
+The **Office of the Divisional Forest Officer (DFO), Khunti Forest Division, Jharkhand** has announced a specialized short-term technical recruitment drive under its Working Plan project. The recruitment is conducted through a direct **Walk-in Interview** for a total of **5 technical positions**: **Team Leader (01)**, **RS-GIS Expert (01)**, **Statistician (01)**, and **Field Data Collector (02)**.
+
+Selected candidates will contribute to the formulation of the Working Plan of Khunti Forest Division in strict compliance with the **[National Working Plan Code (NWPC), 2023](https://forest.jharkhand.gov.in)**. This is a temporary, project-specific engagement lasting for a duration of **four months**.
+
+All four categories of posts offer an attractive consolidated monthly remuneration of **₹30,000**, making this an exceptional opportunity for candidates with backgrounds in forestry, ecology, statistics, wildlife biology, computer applications, data entry, GIS, and remote sensing.
+
+---
+
+## Khunti Forest Division Recruitment 2026: Overview
+
+| Particular | Details |
+|---|---|
+| **Organization** | Office of the Divisional Forest Officer, Khunti Forest Division |
+| **Department** | Department of Forest, Environment & Climate Change, Govt. of Jharkhand |
+| **Recruitment Type** | Temporary / Project-Specific Technical Engagement |
+| **Advertisement Notice** | Notice No. 02 (Dated: 1 September 2026) |
+| **Total Vacancies** | 05 Posts |
+| **Application Mode** | Email, Registered Post, or Direct Office Submission |
+| **Selection Process** | Direct Walk-in Interview & Document Verification |
+| **Interview Date & Time** | **15 September 2026 at 11:00 AM** |
+| **Application Cut-off Time** | **15 September 2026 up to 10:30 AM** |
+| **Project Duration** | 04 Months |
+| **Consolidated Remuneration** | **₹30,000 per month (All Posts)** |
+| **Job Location** | Khunti Forest Division (Khunti & 5 blocks of Ranchi District, Jharkhand) |
+
+---
+
+## Vacancy Breakdown & Eligibility Criteria
+
+A total of 5 technical vacancies are available across four specialized domains:
+
+| Post Name | Vacancies | Minimum Prescribed Educational Qualification | Monthly Remuneration |
+|---|---|---|---|
+| **Team Leader** | 01 | Postgraduate Degree in Forestry, Ecology, Statistics, Wildlife Biology, or Allied Discipline | **₹30,000** |
+| **RS-GIS Expert** | 01 | Diploma or Equivalent in Remote Sensing & Geographic Information Systems (GIS) | **₹30,000** |
+| **Statistician** | 01 | Graduation in Mathematics, Statistics, or Computer Science with statistical analysis software proficiency | **₹30,000** |
+| **Field Data Collector** | 02 | Graduation in Forestry, Ecology, Statistics, Wildlife Biology, or Allied Discipline | **₹30,000** |
+
+---
+
+## Detailed Job Profiles & Responsibilities
+
+### 1. Team Leader (01 Post)
+* **Qualifications:** Master's / Postgraduate degree in Forestry, Ecology, Statistics, Wildlife Biology, or allied environmental sciences.
+* **Role & Duties:** Overall supervision and coordination of the technical team, ensuring timely completion of field surveys, data consolidation, and preparation of the official Working Plan report according to NWPC-2023 guidelines.
+* **Remuneration:** ₹30,000 per month (Consolidated).
+
+### 2. RS-GIS Expert (01 Post)
+* **Qualifications:** Diploma or equivalent certification in Remote Sensing & GIS.
+* **Role & Duties:** Preparation of thematic GIS layers, satellite image processing, spatial forest mapping, boundary demarcation, and land-use pattern analysis using ArcGIS / QGIS tools.
+* **Remuneration:** ₹30,000 per month (Consolidated).
+
+### 3. Statistician (01 Post)
+* **Qualifications:** Bachelor's degree in Mathematics, Statistics, or Computer Science. Must be proficient in statistical software (SPSS, R, MS Excel) and fast computer data management.
+* **Role & Duties:** Validation, cleaning, statistical modeling, and quantitative analysis of field sample enumeration data, carbon stock assessment, and socio-economic datasets.
+* **Remuneration:** ₹30,000 per month (Consolidated).
+
+### 4. Field Data Collector (02 Posts)
+* **Qualifications:** Bachelor's degree in Forestry, Ecology, Statistics, Wildlife Biology, or allied discipline.
+* **Role & Duties:** Conducting on-ground sample plot measurements, tree enumeration, soil surveys, biodiversity documentation, socio-economic rural surveys, and human-wildlife conflict assessments.
+* **Remuneration:** ₹30,000 per month (Consolidated).
+
+---
+
+## Working Plan Project Scope & Administrative Coverage
+
+The Working Plan of Khunti Forest Division forms the scientific foundation for forest management, silviculture, wildlife conservation, and rural livelihood support across:
+1. **Khunti District** (all forest ranges and protected forests).
+2. **Five Administrative Blocks of Ranchi District** falling under the administrative jurisdiction of Khunti Forest Division.
+
+### Core Activities Undertaken:
+* Socio-economic baseline surveys and community dependency mapping.
+* Forest carbon stock quantification and carbon sequestration modeling.
+* Soil fertility, watershed, and biodiversity conservation assessments.
+* Human-wildlife conflict zone identification and mitigation planning.
+* Creation of digital GIS spatial databases and technical documentation.
+
+---
+
+## Importance of Computer & Data Entry Skills
+
+For roles such as **Statistician** and **Field Data Collector**, candidates are required to compile, tabulate, and document complex field records rapidly into state forest portals and databases. Candidates preparing on [TypeHindi Daily Practice Tool](/practice) and [Hindi InScript Keyboard Layout](/keyboard-layout) have a distinct advantage when handling official reports, Hindi documentation, and data entry workflows.
+
+To test your data entry speed and accuracy before attending recruitment interviews, you can take a timed [Mangal Font Hindi Typing Test](/mangal-font-typing-test) or practice touch typing on our [Interactive Hindi Typing Lessons](/learn).
+
+---
+
+## Selection Process & Walk-in Interview Schedule
+
+The selection is based entirely on the **Walk-in Interview** and physical document verification. There is **no written examination**.
+
+$$\\text{Application Submission (by 10:30 AM)} \\longrightarrow \\text{Document Verification} \\longrightarrow \\text{Walk-in Interview (11:00 AM)} \\longrightarrow \\text{Final Selection}$$
+
+### Interview Schedule:
+* **Date:** **15 September 2026**
+* **Reporting & Application Cut-off:** **10:30 AM**
+* **Interview Start Time:** **11:00 AM**
+* **Venue:** Office of the Divisional Forest Officer, Khunti Forest Division, Khunti, Kamanta, Khunti-Chaibasa Road, District-Khunti, Jharkhand – 835210.
+* **GPS Coordinates:** 23.052181° N, 85.285582° E
+
+---
+
+## How to Apply: Application Submission Modes
+
+Candidates must submit their application in the prescribed pro forma attached to the official advertisement before **15 September 2026, 10:30 AM** using any of the following modes:
+
+1. **Option 1: By Email:**
+   * Email your duly filled application form along with scanned copies of educational and experience certificates to **[dfokhunti2@gmail.com](mailto:dfokhunti2@gmail.com)**. Mention the post applied for in the subject line.
+2. **Option 2: By Speed Post / Registered Post:**
+   * Send your application envelope addressed to:
+     > *Office of the Divisional Forest Officer, Khunti Forest Division, Khunti, Kamanta, Khunti-Chaibasa Road, District-Khunti, Jharkhand – 835210.*
+3. **Option 3: Direct In-Person Submission:**
+   * Submit your application directly at the DFO Office counter on or before the morning of the interview by 10:30 AM.
+
+---
+
+## Essential Documents to Carry on Interview Day
+
+Candidates attending the walk-in interview must carry:
+1. Duly filled application form in the prescribed format.
+2. Two sets of self-attested photocopies of all educational marksheets and degree certificates.
+3. Relevant work experience certificates (Working Plan preparation, GIS mapping, ecological field surveys, or statistical research).
+4. Original educational certificates and degrees for physical verification.
+5. Two recent passport-sized color photographs.
+6. Valid photo identity proof (Aadhaar Card, Voter ID, or Driving License).
+
+---
+
+## Nature of Engagement & Key Terms
+
+* **Duration:** 4 Months (Contractual / Project-specific).
+* **Remuneration:** Fixed consolidated pay of ₹30,000/month. No separate HRA, DA, medical, or accommodation allowances are admissible.
+* **Field Travel:** Official field travel expenses during project surveys are reimbursable as per departmental norms.
+* **No Regularization Claim:** This engagement is purely temporary and does not confer any right to permanent government appointment.
+
+---
+
+## Summary
+
+The **Khunti Forest Division Recruitment 2026** offers a rewarding 4-month opportunity for forestry graduates, GIS technicians, statisticians, and field researchers looking for professional field exposure and a ₹30,000/month salary. 
+
+Make sure to prepare your documentation and arrive at the DFO Khunti office before **10:30 AM on 15 September 2026** for the walk-in interview!
+`,
+    content: `\n# खूंटी वन प्रमंडल भर्ती 2026: 5 पदों पर वॉक-इन इंटरव्यू, ₹30,000 वेतन, पात्रता व आवेदन प्रक्रिया
+
+![Khunti Forest Division Recruitment 2026](/images/khunti-forest-division-recruitment-2026.jpg)
+
+**वन प्रमंडल पदाधिकारी (DFO) कार्यालय, खूंटी वन प्रमंडल, झारखंड** द्वारा वर्किंग प्लान (Working Plan) परियोजना के अंतर्गत तकनीकी टीम के गठन हेतु संविदा आधारित भर्ती की घोषणा की गई है। इस भर्ती के तहत **टीम लीडर (01)**, **RS-GIS एक्सपर्ट (01)**, **सांख्यिकीविद् (01)**, और **फील्ड डेटा कलेक्टर (02)** के कुल **5 पदों** पर सीधी भर्ती वॉक-इन इंटरव्यू (Walk-in Interview) के माध्यम से की जा रही है।
+
+चयनित अभ्यर्थी **[राष्ट्रीय वर्किंग प्लान कोड (NWPC), 2023](https://forest.jharkhand.gov.in)** के दिशा-निर्देशों के अनुसार खूंटी वन प्रमंडल की 4 माह की कार्य योजना तैयार करने में तकनीकी योगदान देंगे।
+
+सभी पदों के लिए **₹30,000 प्रति माह** का एकमुश्त मानदेय निर्धारित किया गया है, जो वानिकी (Forestry), पारिस्थितिकी (Ecology), सांख्यिकी, जीआईएस एवं कंप्यूटर डेटा मैनेजमेंट पृष्ठभूमि वाले अभ्यर्थियों के लिए एक बेहतरीन अवसर है।
+
+---
+
+## खूंटी वन प्रमंडल भर्ती 2026: मुख्य विवरण
+
+| विवरण | जानकारी |
+|---|---|
+| **विभाग / संस्था** | वन प्रमंडल पदाधिकारी कार्यालय, खूंटी वन प्रमंडल, झारखंड |
+| **भर्ती का प्रकार** | अल्पकालिक / परियोजना-आधारित तकनीकी संविदा |
+| **विज्ञापन संख्या** | सूचना संख्या - 02 (दिनांक: 01 सितंबर 2026) |
+| **कुल पद संख्या** | 05 पद |
+| **आवेदन का माध्यम** | ईमेल, डाक द्वारा अथवा कार्यालय में सीधे जमा |
+| **चयन प्रक्रिया** | सीधी वॉक-इन इंटरव्यू एवं मूल प्रमाण पत्र सत्यापन |
+| **इंटरव्यू की तिथि व समय** | **15 सितंबर 2026 (पूर्वाह्न 11:00 बजे)** |
+| **आवेदन जमा करने की अंतिम तिथि** | **15 सितंबर 2026 (प्रातः 10:30 बजे तक)** |
+| **परियोजना अवधि** | 04 माह |
+| **मासिक मानदेय** | **₹30,000 प्रति माह (सभी पदों के लिए)** |
+| **कार्य क्षेत्र** | खूंटी वन प्रमंडल (खूंटी जिला एवं रांची जिले के 5 प्रखंड) |
+
+---
+
+## पदवार रिक्तियां एवं शैक्षणिक योग्यता
+
+| पद नाम | रिक्तियां | निर्धारित न्यूनतम शैक्षणिक योग्यता | मासिक मानदेय |
+|---|---|---|---|
+| **टीम लीडर (Team Leader)** | 01 | वानिकी (Forestry), पारिस्थितिकी (Ecology), सांख्यिकी, वन्यजीव जीवविज्ञान या संबद्ध विषय में स्नातकोत्तर (PG) | **₹30,000** |
+| **RS-GIS एक्सपर्ट** | 01 | रिमोट सेंसिंग और जीआईएस (GIS) में डिप्लोमा या समकक्ष योग्यता | **₹30,000** |
+| **सांख्यिकीविद् (Statistician)** | 01 | गणित, सांख्यिकी या कंप्यूटर साइंस में स्नातक एवं सांख्यिकी विश्लेषण सॉफ्टवेयर में दक्षता | **₹30,000** |
+| **फील्ड डेटा कलेक्टर** | 02 | वानिकी, पारिस्थितिकी, सांख्यिकी, वन्यजीव जीवविज्ञान या संबद्ध विषय में स्नातक (Graduation) | **₹30,000** |
+
+---
+
+## कार्य विवरण एवं जिम्मेदारियां
+
+1. **टीम लीडर:** तकनीकी टीम का समग्र नेतृत्व, कार्य योजना का समन्वय एवं रिपोर्ट संकलन।
+2. **RS-GIS एक्सपर्ट:** विषयगत जीआईएस लेयर्स का निर्माण, उपग्रह चित्रों का विश्लेषण एवं डिजिटल वानिकी मानचित्रण।
+3. **सांख्यिकीविद्:** वन सर्वेक्षण डेटा का सत्यापन, सांख्यिकीय मॉडलिंग, कार्बन स्टॉक गणना एवं डेटाबेस प्रबंधन।
+4. **फील्ड डेटा कलेक्टर:** वन क्षेत्रों में फील्ड सर्वे, पौधों की गणना, मिट्टी सर्वेक्षण, जैव विविधता दस्तावेजीकरण और सामाजिक-आर्थिक सर्वेक्षण।
+
+---
+
+## कंप्यूटर एवं डेटा एंट्री कौशल का महत्व
+
+सांख्यिकीविद् एवं फील्ड डेटा कलेक्टर जैसे पदों के लिए सर्वेक्षण डेटा को कंप्यूटर में तेजी और सटीकता के साथ प्रविष्ट करना आवश्यक होता है। [TypeHindi डेली प्रैक्टिस टूल](/practice) और [हिंदी इनस्क्रिप्ट कीबोर्ड लेआउट](/keyboard-layout) पर अभ्यास करने वाले अभ्यर्थियों को डिजिटल डेटा प्रबंधन व कार्यालयीन रिपोर्टिंग में विशेष लाभ मिलता है।
+
+इंटरव्यू से पहले अपनी टाइपिंग व डेटा एंट्री गति परखने के लिए आप [मंगल फॉन्ट टाइपिंग टेस्ट](/mangal-font-typing-test) दे सकते हैं अथवा [स्टेप-बाय-स्टेप हिंदी टाइपिंग लेसन्स](/learn) से अभ्यास कर सकते हैं।
+
+---
+
+## वॉक-इन इंटरव्यू का स्थान एवं समय
+
+* **इंटरव्यू की तिथि:** **15 सितंबर 2026**
+* **आवेदन जमा करने की अंतिम समय सीमा:** **प्रातः 10:30 बजे**
+* **इंटरव्यू प्रारंभ:** **पूर्वाह्न 11:00 बजे**
+* **साक्षात्कार स्थल:** वन प्रमंडल पदाधिकारी कार्यालय, खूंटी वन प्रमंडल, कमंता, खूंटी-चाईबासा रोड, जिला-खूंटी, झारखंड – 835210
+* **जीपीएस निर्देशांक:** 23.052181° N, 85.285582° E
+
+---
+
+## आवेदन कैसे करें?
+
+अभ्यर्थी निम्नलिखित तीन में से किसी भी माध्यम से 15 सितंबर 2026 को प्रातः 10:30 बजे तक अपना आवेदन भेज सकते हैं:
+1. **ईमेल द्वारा:** अपना विधिवत भरा हुआ आवेदन पत्र एवं आवश्यक प्रमाण पत्र **[dfokhunti2@gmail.com](mailto:dfokhunti2@gmail.com)** पर ईमेल करें।
+2. **डाक द्वारा:** अपना आवेदन पत्र वन प्रमंडल पदाधिकारी कार्यालय, खूंटी वन प्रमंडल, कमंता, खूंटी-चाईबासा रोड, खूंटी, झारखंड - 835210 के पते पर भेजें।
+3. **सीधे कार्यालय में:** इंटरव्यू के दिन सुबह 10:30 बजे तक कार्यालय काउंटर पर हाथों-हाथ जमा करें।
+
+---
+
+## इंटरव्यू के समय साथ ले जाने वाले आवश्यक दस्तावेज
+
+1. निर्धारित प्रारूप में भरा हुआ आवेदन पत्र।
+2. सभी शैक्षणिक प्रमाण पत्रों एवं अंकपत्रों की 2 सेट स्व-अभिप्रमाणित (Self-attested) छायाप्रतियां।
+3. प्रासंगिक कार्य अनुभव प्रमाण पत्र (यदि लागू हो)।
+4. सत्यापन हेतु सभी मूल शैक्षणिक एवं पहचान प्रमाण पत्र।
+5. दो हालिया पासपोर्ट साइज रंगीन फोटो।
+6. वैध पहचान पत्र (आधार कार्ड/वोटर आईडी)।
+
+---
+
+## निष्कर्ष
+
+खूंटी वन प्रमंडल भर्ती 2026 वानिकी, जीआईएस, सांख्यिकी एवं पर्यावरण क्षेत्र के योग्य युवाओं के लिए 4 माह का व्यावहारिक फील्ड अनुभव एवं ₹30,000 मासिक मानदेय प्राप्त करने का एक बेहतरीन अवसर है। इच्छुक अभ्यर्थी 15 सितंबर 2026 को समय पर खूंटी डीएफओ कार्यालय पहुंचकर वॉक-इन इंटरव्यू में शामिल हों!
+`
+  },
+  {
     slug: "india-post-gds-recruitment-2026-bpm-abpm-dak-sevak",
     titleEn: "India Post GDS Recruitment 2026: BPM, ABPM and Dak Sevak Eligibility, Salary, Selection Process and How to Apply",
     excerptEn: "Complete guide to India Post Gramin Dak Sevak (GDS) Recruitment 2026 Schedule-II for 10th pass candidates. Check BPM, ABPM, Dak Sevak salary, computer knowledge criteria, merit list, and application procedure.",

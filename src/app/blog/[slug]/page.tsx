@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { blogs } from "../../../data/blogs";
+import Image from "next/image";
+import { blogs, getBlogImage } from "../../../data/blogs";
 import { Breadcrumb } from "../../../components/Breadcrumb";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
 
@@ -155,21 +156,34 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
                 <Link
                   key={item.slug}
                   href={`/blog/${item.slug}${lang === "hi" ? "?lang=hi" : ""}`}
-                  className="group flex flex-col justify-between bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-primary-400 dark:hover:border-primary-600 transition-all hover:-translate-y-1"
+                  className="group flex flex-col justify-between bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary-400 dark:hover:border-primary-600 transition-all hover:-translate-y-1"
                 >
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400">{itemDate}</span>
-                    </div>
-                    <h3 className="font-bold text-sm text-gray-900 dark:text-white line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
-                      {itemTitle}
-                    </h3>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-3 leading-relaxed">
-                      {itemExcerpt}
-                    </p>
+                  <div className="relative aspect-[16/10] w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                    <Image
+                      src={getBlogImage(item)}
+                      alt={itemTitle}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
-                  <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800/80 flex items-center text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline">
-                    {lang === "en" ? "Read guide" : "लेख पढ़ें"} →
+
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow justify-between">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400">{item.author} · {itemDate}</span>
+                      </div>
+                      <h3 className="font-bold text-sm text-gray-900 dark:text-white line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
+                        {itemTitle}
+                      </h3>
+                      <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">
+                        {itemExcerpt}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800/80 flex items-center text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline">
+                      {lang === "en" ? "Read guide" : "लेख पढ़ें"} →
+                    </div>
                   </div>
                 </Link>
               );

@@ -16,27 +16,41 @@ export function HomepageGame() {
   }
 
   return (
-    <div className="relative rounded-[2rem] overflow-hidden aspect-[16/9] max-w-4xl mx-auto border-3 border-slate-200 dark:border-slate-800/80 shadow-md group">
+    <div className="relative rounded-3xl sm:rounded-[2rem] overflow-hidden min-h-[340px] sm:aspect-[16/9] w-full max-w-4xl mx-auto border-2 sm:border-3 border-slate-200 dark:border-slate-800/80 shadow-md group flex items-center justify-center">
       <Image
         src="/images/game_thumb_tank.png"
         alt="Tank Defender Game"
         fill
         className="object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-slate-950/70 flex flex-col items-center justify-center p-6 text-center">
-        <span className="px-3 py-1 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase tracking-widest shadow-sm mb-4">
-          ⚡ New Interactive Mode
+      {/* Dark overlay with responsive padding & clean layout */}
+      <div className="absolute inset-0 bg-slate-950/80 sm:bg-slate-950/70 flex flex-col items-center justify-center p-4 sm:p-8 text-center z-10">
+        
+        {/* Mode badge */}
+        <span className="px-3 py-1 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase tracking-widest shadow-sm mb-3">
+          ⚡ Interactive Game Mode
         </span>
-        <h3 className="text-2xl md:text-3xl font-black text-white mb-2 tracking-wide">Tank Defender</h3>
-        <p className="text-slate-200 text-sm max-w-md mb-6 font-light leading-relaxed">
-          Defend your base by typing the letters shown on incoming enemy tanks!
+
+        <h3 className="text-xl sm:text-3xl font-black text-white mb-2 tracking-wide">
+          Tank Defender
+        </h3>
+        
+        <p className="text-slate-200 text-xs sm:text-sm max-w-md mb-4 sm:mb-5 font-normal leading-relaxed px-2">
+          Defend your base by typing the Hindi letters shown on incoming enemy tanks!
         </p>
+
+        {/* Desktop Device / Keyboard Instruction */}
+        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/30 text-amber-300 text-[11px] font-medium mb-5 shadow-sm">
+          <span>⌨️</span>
+          <span>Best played on Desktop / Laptop with Physical Keyboard</span>
+        </div>
+
         <button
           onClick={() => setIsPlaying(true)}
-          className="px-8 py-3.5 rounded-2xl bg-primary-600 hover:bg-primary-500 text-white font-extrabold text-sm transition-all shadow-lg shadow-primary-500/20 hover:shadow-primary-500/30 transform hover:-translate-y-0.5 active:translate-y-0"
+          className="w-full sm:w-auto px-7 sm:px-9 py-3 sm:py-3.5 rounded-2xl bg-primary-600 hover:bg-primary-500 text-white font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
         >
-          Play Typing Game 🎮
+          <span>Play Typing Game</span>
+          <span>🎮</span>
         </button>
       </div>
     </div>

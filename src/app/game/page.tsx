@@ -68,7 +68,7 @@ export default function GameHubPage() {
           Repetitive typing drills can often feel monotonous. Our gamified challenges turn everyday
           keystroke practice into fast-paced reflex drills, spelling quests, and dynamic obstacle runs.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
           <button
             onClick={scrollToGames}
             className="btn-primary rounded-xl px-7 py-3.5 text-base font-bold shadow-lg shadow-primary-500/25 flex items-center gap-2"
@@ -82,6 +82,12 @@ export default function GameHubPage() {
           >
             Standard Practice →
           </Link>
+        </div>
+
+        {/* Desktop Keyboard Notice */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs max-w-xl mx-auto text-center">
+          <span>💻</span>
+          <span><strong>Device Notice:</strong> Typing games are best experienced on a Desktop or Laptop with a physical keyboard.</span>
         </div>
       </section>
 

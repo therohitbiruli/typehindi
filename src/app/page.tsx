@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PracticeTool } from "../components/PracticeTool";
-import { blogs } from "../data/blogs";
+import { blogs, getBlogImage } from "../data/blogs";
 import { LANGUAGES } from "./translators/page";
 import { HomepageGame } from "../components/HomepageGame";
 import { HomepageKeyboard } from "../components/HomepageKeyboard";
@@ -386,6 +387,14 @@ export default function Homepage() {
             <p className="text-slate-600 dark:text-gray-300 text-sm leading-relaxed">
               Make learning fun! Build rapid reflexes and muscle memory by typing falling letters and words correctly before they crash onto the ground. Play our tank defender game directly below or head to the game hub to explore other modes.
             </p>
+
+            {/* Desktop Keyboard Notice Banner */}
+            <div className="flex items-start sm:items-center gap-3 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-300 text-xs">
+              <span className="text-lg flex-shrink-0">💻</span>
+              <p className="leading-relaxed">
+                <strong>Device Notice:</strong> Typing games are designed to build touch-typing muscle memory and are best experienced on a <strong>Desktop or Laptop device with a physical keyboard</strong>.
+              </p>
+            </div>
             
             <HomepageGame />
 
@@ -420,53 +429,36 @@ export default function Homepage() {
                 </p>
               </div>
               <div className="border border-[#D9E1EC] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
-                <h4 className="font-extrabold text-slate-900 dark:text-white text-sm mb-1">Stenography Skill Tests</h4>
+                <h4 className="font-extrabold text-slate-900 dark:text-white text-sm mb-1">Stenographer Grade C & D</h4>
                 <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
-                  Focuses on typing out stenography shorthand voice dictations. Grade C candidates target 100 WPM, while Grade D candidates target 80 WPM with high transcription accuracy.
+                  Focuses on Shorthand transcription on computer. English transcription time is 50/40 mins and Hindi transcription time is 65/55 mins.
                 </p>
               </div>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <Link href="/test" className="flex flex-col items-center justify-center p-5 border border-dashed border-[#D9E1EC] dark:border-gray-800 bg-[#F8FAFC]/80 dark:bg-slate-900/40 rounded-2xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center group">
-                <span className="text-2xl mb-1 group-hover:scale-110 transition-transform">⏱️</span>
-                <span className="font-bold text-slate-900 dark:text-white text-sm">1 Minute Test</span>
-                <span className="text-[10px] text-slate-500 dark:text-gray-400 mt-0.5">Quick speed benchmark</span>
-              </Link>
-              <Link href="/test" className="flex flex-col items-center justify-center p-5 border border-dashed border-[#D9E1EC] dark:border-gray-800 bg-[#F8FAFC]/80 dark:bg-slate-900/40 rounded-2xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center group">
-                <span className="text-2xl mb-1 group-hover:scale-110 transition-transform">⏱️</span>
-                <span className="font-bold text-slate-900 dark:text-white text-sm">5 Minutes Test</span>
-                <span className="text-[10px] text-slate-500 dark:text-gray-400 mt-0.5">Stamina building trial</span>
-              </Link>
-              <Link href="/test" className="flex flex-col items-center justify-center p-5 border border-dashed border-[#D9E1EC] dark:border-gray-800 bg-[#F8FAFC]/80 dark:bg-slate-900/40 rounded-2xl hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500/5 transition-all text-center group">
-                <span className="text-2xl mb-1 group-hover:scale-110 transition-transform">⏱️</span>
-                <span className="font-bold text-slate-900 dark:text-white text-sm">10 Minutes Test</span>
-                <span className="text-[10px] text-slate-500 dark:text-gray-400 mt-0.5">Standard exam duration</span>
-              </Link>
-            </div>
             <div className="flex justify-end pt-2">
               <Link href="/test" className="btn-secondary rounded-xl px-6 py-2.5 border border-[#D9E1EC] dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
-                Know More & Take Test ➔
+                Launch Typing Test ➔
               </Link>
             </div>
           </div>
 
-          {/* 5. 🔍 SECTION: KEYBOARD LAYOUT */}
-          <div id="keyboard-layout" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden">
+          {/* 5. 🔍 SECTION: KEYBOARD */}
+          <div id="keyboard" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden">
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-sky-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-sky-500"></span>
-              Interactive Keyboard Layout Guide
+              InScript Keyboard Layout
             </h2>
             <p className="text-slate-600 dark:text-gray-300 text-sm leading-relaxed">
-              Explore the scientific key layouts of standard Hindi input structures. Learn the exact placement of vowels on the left side and consonants on the right side. Toggle layouts or see live key highlights by typing.
+              Standardized by the Government of India, the InScript keyboard layout maps all Indic scripts symmetrically based on phonetics. Vowels are positioned on the left side, and consonants on the right.
             </p>
             
             <HomepageKeyboard />
 
             <div className="flex justify-end pt-2">
               <Link href="/keyboard-layout" className="btn-secondary rounded-xl px-6 py-2.5 border border-[#D9E1EC] dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
-                Open Full Keyboard Reference ➔
+                Full Layout Reference ➔
               </Link>
             </div>
           </div>
@@ -476,17 +468,17 @@ export default function Homepage() {
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-violet-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-violet-500"></span>
-              Indian Language Transliterators
+              Regional Language Translators
             </h2>
             <p className="text-slate-600 dark:text-gray-300 text-sm leading-relaxed">
-              Convert phonetic English/Hindi letters into native Indian scripts instantly. Our translation tool operates fully client-side for rapid response and security.
+              Convert and transliterate words across various Indian languages instantly into Hindi or English. Perfect for regional administrative tasks, exam forms, and daily communication.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-2">
               {previewLanguages.map((lang) => (
                 <Link
                   key={`home-trans-${lang.name}`}
                   href={`/translators/english-to-${lang.name.toLowerCase()}`}
-                  className="flex flex-col items-center justify-center p-5 border border-[#D9E1EC] dark:border-gray-800 hover:border-violet-500 dark:hover:border-violet-500 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md transition-all text-center group"
+                  className="flex flex-col items-center justify-center p-5 border border-[#D9E1EC] dark:border-slate-800 hover:border-violet-500 dark:hover:border-violet-500 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md transition-all text-center group"
                 >
                   <span className="text-xl mb-1 text-slate-500 group-hover:text-violet-600 transition-colors">A→{lang.nativeChar}</span>
                   <span className="text-xs font-bold text-slate-800 dark:text-gray-200">English to {lang.name}</span>
@@ -495,7 +487,7 @@ export default function Homepage() {
             </div>
             <div className="flex justify-end pt-2">
               <Link href="/translators" className="btn-secondary rounded-xl px-6 py-2.5 border border-[#D9E1EC] dark:border-gray-700 shadow-sm text-sm font-bold flex items-center gap-2">
-                Browse All Translators ➔
+                View All Languages ➔
               </Link>
             </div>
           </div>
@@ -512,22 +504,41 @@ export default function Homepage() {
             </p>
             <div className="grid gap-6 md:grid-cols-2 py-2">
               {previewBlogs.map((blog) => (
-                <div key={blog.slug} className="border border-[#D9E1EC] dark:border-slate-850 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                <Link
+                  key={blog.slug}
+                  href={`/blog/${blog.slug}`}
+                  className="group border border-[#D9E1EC] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md hover:border-primary-400 dark:hover:border-primary-600 transition-all flex flex-col justify-between"
+                >
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider block mb-1">
-                      {blog.dateEn || blog.date}
+                    {/* Featured Image Thumbnail */}
+                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-800">
+                      <Image
+                        src={getBlogImage(blog)}
+                        alt={blog.titleEn || blog.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+
+                    <span className="text-[11px] font-semibold text-slate-400 dark:text-slate-500 tracking-wide block mb-1.5">
+                      {blog.author} · {blog.dateEn || blog.date}
                     </span>
-                    <h3 className="font-extrabold text-slate-900 dark:text-white text-base leading-snug mb-2">
+
+                    <h3 className="font-bold text-slate-900 dark:text-white text-base sm:text-lg leading-snug mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
                       {blog.titleEn || blog.title}
                     </h3>
-                    <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+
+                    <p className="text-xs sm:text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
                       {blog.excerptEn || blog.excerpt}
                     </p>
                   </div>
-                  <Link href={`/blog/${blog.slug}`} className="text-xs font-bold text-primary-600 dark:text-primary-400 hover:underline w-fit">
-                    Read Full Article ➔
-                  </Link>
-                </div>
+
+                  <div className="text-xs font-bold text-primary-600 dark:text-primary-400 group-hover:underline flex items-center gap-1 mt-auto">
+                    <span>Read Full Article</span>
+                    <span className="transition-transform group-hover:translate-x-1">→</span>
+                  </div>
+                </Link>
               ))}
             </div>
             <div className="flex justify-end pt-2">

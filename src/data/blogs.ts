@@ -12,6 +12,14 @@ export interface BlogPost {
   category: "Basics" | "Exam Guide";
 }
 
+export function getBlogImage(blog: BlogPost): string {
+  const match = (blog.contentEn || blog.content).match(/!\[.*?\]\((.*?)\)/);
+  if (match && match[1]) {
+    return match[1];
+  }
+  return "/images/government-job-typing-prep.jpg";
+}
+
 export const blogs: BlogPost[] = [  {
     slug: "india-post-gds-recruitment-2026-bpm-abpm-dak-sevak",
     titleEn: "India Post GDS Recruitment 2026: BPM, ABPM and Dak Sevak Eligibility, Salary, Selection Process and How to Apply",

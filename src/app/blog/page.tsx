@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { blogs } from "../../data/blogs";
+import Image from "next/image";
+import { blogs, getBlogImage } from "../../data/blogs";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 
@@ -92,21 +93,33 @@ export default async function BlogPage({ searchParams }: PageProps) {
               href={`/blog/${blog.slug}${lang === "hi" ? "?lang=hi" : ""}`}
               className="group flex flex-col h-full bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-700 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-400/60 hover:-translate-y-1 dark:hover:border-primary-600"
             >
-              <div className="p-6 flex flex-col h-full">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">{date}</span>
+              {/* Featured Image Thumbnail */}
+              <div className="relative aspect-[16/10] w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                <Image
+                  src={getBlogImage(blog)}
+                  alt={title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">{blog.author} · {date}</span>
                 </div>
                 
-                <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-primary-600 transition-colors leading-tight line-clamp-3">
+                <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-tight line-clamp-2">
                   {title}
                 </h2>
                 
-                <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-3 mb-6 flex-grow">
+                <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-3 mb-6 flex-grow leading-relaxed">
                   {excerpt}
                 </p>
                 
-                <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm">
-                  {buttonText} <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+                <div className="flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm mt-auto">
+                  <span>{buttonText}</span>
+                  <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
                 </div>
               </div>
             </Link>

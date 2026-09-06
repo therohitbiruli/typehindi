@@ -9,6 +9,13 @@ export type StrokeCategory =
   | 'grammalogue'
   | 'phrase';
 
+export interface WordBuildingItem {
+  word: string;
+  formula: string;
+  explanation: string;
+  outlineSvg?: string;
+}
+
 export interface ShorthandStroke {
   id: string;
   name: string;
@@ -25,6 +32,36 @@ export interface ShorthandStroke {
     transcription: string;
     note?: string;
   }>;
+  startPoint?: { x: number; y: number };
+  endPoint?: { x: number; y: number };
+  targetAngle?: number; // expected angle in degrees (e.g. 120 for P/B, 90 for T/D, 60 for CH/J, 0 for K/G, 30 for Ray)
+  animationPoints?: Array<{ x: number; y: number }>;
+  wordBuilding?: WordBuildingItem[];
+}
+
+export interface StrokeAnalysisResult {
+  directionStatus: 'good' | 'reversed' | 'inconclusive';
+  directionMessage: string;
+  angleStatus: 'good' | 'too-shallow' | 'too-steep' | 'inconclusive';
+  angleMessage: string;
+  measuredAngle: number;
+  expectedAngle: number;
+  lengthStatus: 'good' | 'too-short' | 'too-long';
+  lengthMessage: string;
+  weightStatus: 'good' | 'too-light' | 'too-heavy';
+  weightMessage: string;
+  continuityStatus: 'good' | 'multiple-strokes';
+  continuityMessage: string;
+  overallScore: number; // 0 to 100
+  feedbackSummary: string;
+  ruleToRemember: string;
+}
+
+export interface StrokeMasteryRecord {
+  strokeId: string;
+  attemptsCount: number;
+  bestScore: number;
+  lastPracticed: string;
 }
 
 export interface ShorthandExercise {

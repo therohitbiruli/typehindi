@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 import { ShorthandNav } from "../../../components/shorthand/ShorthandNav";
-import { ShorthandCanvas } from "../../../components/shorthand/ShorthandCanvas";
+import { ShorthandTeacher } from "../../../components/shorthand/ShorthandTeacher";
 import { StrokeExplorer } from "../../../components/shorthand/StrokeExplorer";
 import { ShorthandStroke } from "../../../data/shorthand/types";
 import { pitmanStrokes } from "../../../data/shorthand/strokes";
 
 export default function ShorthandPracticePage() {
-  const [activeStroke, setActiveStroke] = useState<ShorthandStroke>(pitmanStrokes[0]);
+  const [activeStrokeId, setActiveStrokeId] = useState<string>(pitmanStrokes[0].id);
 
   const handleSelectForPractice = (stroke: ShorthandStroke) => {
-    setActiveStroke(stroke);
+    setActiveStrokeId(stroke.id);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -20,23 +20,23 @@ export default function ShorthandPracticePage() {
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-10">
-        <div className="max-w-2xl space-y-1">
+        <div className="max-w-3xl space-y-1">
           <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
-            Interactive Drawing Board
+            Interactive Shorthand Teacher & Practice
           </span>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-100">
-            Practice Shorthand Strokes on Canvas
+            Master Pitman Shorthand Strokes Step-by-Step
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Practice drawing Pitman consonant outlines, vowel signs, and grammalogues with your mouse, finger, or stylus pen on our double-ruled steno guidelines.
+            Follow the full pedagogical workflow: Learn the rule, watch the stroke animation, practice across 4 graduated tiers (Guided, Assisted, Free Practice, Test), receive instant angle & direction feedback, and build real words.
           </p>
         </div>
 
-        {/* Practice Canvas */}
-        <ShorthandCanvas
-          key={activeStroke.id}
-          initialStroke={activeStroke}
-          onStrokeSelected={(s) => setActiveStroke(s)}
+        {/* Shorthand Teacher (Interactive Learning & Practice System) */}
+        <ShorthandTeacher
+          key={activeStrokeId}
+          initialStrokeId={activeStrokeId}
+          onStrokeChange={(s) => setActiveStrokeId(s.id)}
         />
 
         {/* Character Explorer underneath */}

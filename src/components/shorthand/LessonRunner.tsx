@@ -3,7 +3,8 @@
 import { use, useState, useEffect } from "react";
 import Link from "next/link";
 import { ShorthandNav } from "./ShorthandNav";
-import { ShorthandCanvas } from "./ShorthandCanvas";
+import { ShorthandTeacher } from "./ShorthandTeacher";
+import { ShorthandStroke } from "../../data/shorthand/types";
 import { ShorthandLesson } from "../../data/shorthand/types";
 import { shorthandLessons } from "../../data/shorthand/lessons";
 import { markLessonComplete, getShorthandProgress } from "../../data/shorthand/storage";
@@ -222,8 +223,12 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                 </div>
               </div>
 
-              {/* Shorthand Canvas */}
-              <ShorthandCanvas initialStroke={lesson.demonstrationStrokes[0]} />
+              {/* Shorthand Teacher (Guided Practice System) */}
+              <ShorthandTeacher
+                key={lesson.demonstrationStrokes[0]?.id}
+                initialStrokeId={lesson.demonstrationStrokes[0]?.id}
+                showWordBuilding={true}
+              />
 
               {/* Practice Drills */}
               <div className="space-y-3 pt-4">

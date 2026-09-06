@@ -374,7 +374,40 @@ export default function Homepage() {
                 <span className="group-hover:translate-x-1 transition-transform font-bold">→</span>
               </Link>
             </div>
+          </div>
 
+          {/* 🌟 SECTION: SHORTHAND FEATURE BANNER */}
+          <div id="shorthand" className="bg-gradient-to-r from-purple-950/30 via-slate-900 to-[#0F172A] rounded-[2rem] border border-purple-500/30 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-8 space-y-5 relative overflow-hidden">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="space-y-2 max-w-2xl">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] font-bold text-purple-400 uppercase tracking-wider">
+                  <span>✍️</span> New Section: English Pitman Stenography
+                </div>
+                <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                  Learn Shorthand on TypeHindi
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Learn shorthand from the basics, practice dictation, improve transcription and prepare for stenography exams.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 shrink-0">
+                <Link
+                  href="/shorthand"
+                  className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-md shadow-purple-900/30 transition-all flex items-center gap-1.5"
+                >
+                  <span>Learn Shorthand</span>
+                  <span>→</span>
+                </Link>
+                <Link
+                  href="/shorthand/dictation"
+                  className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-slate-700 transition-all flex items-center gap-1.5"
+                >
+                  <span>Practice Dictation</span>
+                  <span>→</span>
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* 3. 🎮 SECTION: GAME */}

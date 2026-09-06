@@ -945,6 +945,11 @@ Practice converting shorthand notes into a properly formatted computer document 
 
 A candidate who can take shorthand at high speed but struggles with transcription can still lose valuable marks.
 
+> ✍️ **Practice on TypeHindi Shorthand:**
+> - [Learn Pitman Shorthand Step-by-Step (13 Levels)](/shorthand/learn) — Master basic strokes, 1st/2nd/3rd place vowels, and phraseography.
+> - [Audio Dictation Studio (40–120 WPM)](/shorthand/dictation) — Practice taking notes from natural spoken English passages with countdown timers.
+> - [Delhi High Court SPA & PA Exam Simulator](/shorthand/tests?exam=dhc-spa-2026) — Simulate the official 5-minute dictation and 45-minute transcription test with automatic word-diff error scoring.
+
 ---
 
 # Best Strategy for the Typing Test

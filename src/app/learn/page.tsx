@@ -170,11 +170,102 @@ function LearnPageContent() {
       <AdPlaceholder position="top" />
 
       {/* Hero Heading & Overview */}
-      <div className="mb-8">
-        <h1 className="heading-1 mb-2">Learn Hindi Typing (हिंदी टाइपिंग सीखें)</h1>
+      <div className="mb-6">
+        <h1 className="heading-1 mb-2">Learn Typing & Stenography (टाइपिंग और शॉर्टहैंड सीखें)</h1>
         <p className="text-muted text-base max-w-3xl leading-relaxed">
-          Welcome to the complete interactive Hindi typing learning system. Master the InScript keyboard layout step-by-step with finger placement guidance, matra drills, difficult word exercises, and daily progression.
+          Welcome to TypeHindi's comprehensive learning system. Master Hindi touch-typing, English typing, or English Pitman shorthand stenography with interactive drills, dictations, and official exam simulators.
         </p>
+      </div>
+
+      {/* 🧭 Learning Pathways Selector */}
+      <div className="mb-8 p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Select Your Learning Pathway:
+          </span>
+          <span className="text-[11px] text-purple-400 font-semibold">3 Comprehensive Tracks</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Track 1: Hindi Typing */}
+          <div className="p-4 rounded-xl bg-slate-950 border border-emerald-500/50 space-y-2 relative">
+            <div className="flex items-center justify-between">
+              <span className="text-lg">⌨️</span>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300">
+                Current Page
+              </span>
+            </div>
+            <h3 className="font-bold text-slate-100 text-sm">Hindi Typing (InScript & Remington)</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Step-by-step key practice, finger guides, matra drills, and daily typing journey below.
+            </p>
+          </div>
+
+          {/* Track 2: English Typing */}
+          <Link
+            href="/practice"
+            className="p-4 rounded-xl bg-slate-950/70 hover:bg-slate-950 border border-slate-800 hover:border-sky-500/40 space-y-2 transition-all group"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-lg">💻</span>
+              <span className="text-[10px] font-medium text-slate-400 group-hover:text-sky-400">
+                Explore Track →
+              </span>
+            </div>
+            <h3 className="font-bold text-slate-100 text-sm group-hover:text-sky-300">English Typing</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Speed drills, touch typing practice, and accuracy benchmarks on QWERTY layout.
+            </p>
+          </Link>
+
+          {/* Track 3: Shorthand */}
+          <div className="p-4 rounded-xl bg-gradient-to-br from-purple-950/40 to-slate-950 border border-purple-500/40 space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <span className="text-lg">✍️</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300">
+                  New Section
+                </span>
+              </div>
+              <Link href="/shorthand" className="text-xs font-bold text-purple-400 hover:text-purple-300">
+                Overview →
+              </Link>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-100 text-sm">English Pitman Shorthand</h3>
+              <p className="text-xs text-slate-400 leading-relaxed mt-0.5">
+                From basic strokes to 120 WPM court stenographer examinations.
+              </p>
+            </div>
+            {/* Shorthand Sublinks */}
+            <div className="grid grid-cols-2 gap-1.5 pt-1">
+              <Link
+                href="/shorthand/learn"
+                className="px-2.5 py-1 rounded-md bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 text-[11px] font-semibold text-center border border-purple-500/30 transition-colors"
+              >
+                1. Learn
+              </Link>
+              <Link
+                href="/shorthand/practice"
+                className="px-2.5 py-1 rounded-md bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 text-[11px] font-semibold text-center border border-purple-500/30 transition-colors"
+              >
+                2. Practice
+              </Link>
+              <Link
+                href="/shorthand/dictation"
+                className="px-2.5 py-1 rounded-md bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 text-[11px] font-semibold text-center border border-purple-500/30 transition-colors"
+              >
+                3. Dictation
+              </Link>
+              <Link
+                href="/shorthand/tests"
+                className="px-2.5 py-1 rounded-md bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 text-[11px] font-semibold text-center border border-purple-500/30 transition-colors"
+              >
+                4. Tests
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 1. Overall Progress Dashboard */}

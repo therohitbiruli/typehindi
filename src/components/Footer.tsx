@@ -60,6 +60,11 @@ export function Footer() {
                   Learn Hindi Typing
                 </Link>
               </li>
+              <li>
+                <Link href="/shorthand" className="text-slate-400 transition-colors hover:text-primary-400 hover:underline">
+                  Shorthand Practice & Dictation
+                </Link>
+              </li>
             </ul>
           </div>
 

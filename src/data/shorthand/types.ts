@@ -162,3 +162,61 @@ export interface ShorthandNote {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface WordPracticeComponent {
+  part: string;
+  label: string;
+  strokeType: 'stroke' | 'vowel' | 'hook' | 'circle' | 'diphthong';
+  description: string;
+  weight?: 'light' | 'heavy';
+  sign?: string;
+}
+
+export interface WordAnimationStep {
+  order: number;
+  label: string;
+  type: 'stroke' | 'vowel' | 'join';
+  pathD: string;
+  weight: 'light' | 'heavy';
+  startPoint: { x: number; y: number };
+  endPoint: { x: number; y: number };
+  dotOrDash?: 'dot' | 'dash' | 'path';
+  directionText: string;
+}
+
+export interface WordPracticeItem {
+  id: string;
+  lessonId?: string;
+  strokeId: string;
+  word: string;
+  phonetic: string;
+  shorthandSvgPath?: string; // undefined if verified outline coming soon
+  svgViewBox?: string;
+  position: '1st (above line)' | '2nd (on line)' | '3rd (through line)';
+  components: WordPracticeComponent[];
+  rulesToNotice: {
+    strokeUsed: string;
+    joining: string;
+    vowelIndication: string;
+    positionAndWeight: string;
+  };
+  progressiveSteps: Array<{
+    step: number;
+    title: string;
+    formula: string;
+    explanation: string;
+    svgPartialPath?: string;
+  }>;
+  explanation: string;
+  animationSteps?: WordAnimationStep[];
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+}
+
+export interface WordPracticeProgressRecord {
+  wordId: string;
+  strokeId: string;
+  viewed: boolean;
+  practiced: boolean;
+  bestScore?: number;
+  lastPracticed?: string;
+}

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { ShorthandStroke, StrokeAnalysisResult, StrokeMasteryRecord } from "../../data/shorthand/types";
 import { pitmanStrokes } from "../../data/shorthand/strokes";
+import { WordPracticeSection } from "./WordPracticeSection";
 
 interface Point {
   x: number;
@@ -523,7 +524,15 @@ export function ShorthandTeacher({
           <button
             key={step.id}
             type="button"
-            onClick={() => setActiveStep(step.id as any)}
+            onClick={() => {
+              setActiveStep(step.id as any);
+              if (step.id === "words") {
+                setTimeout(() => {
+                  const el = document.getElementById("word-practice-area");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }, 50);
+              }
+            }}
             className={`px-3 py-1.5 rounded-xl font-semibold transition-all whitespace-nowrap ${
               activeStep === step.id
                 ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
@@ -791,10 +800,16 @@ export function ShorthandTeacher({
               </button>
               <button
                 type="button"
-                onClick={() => setActiveStep("words")}
-                className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
+                onClick={() => {
+                  setActiveStep("words");
+                  setTimeout(() => {
+                    const el = document.getElementById("word-practice-area");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }, 50);
+                }}
+                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold transition-all shadow-md shadow-purple-900/30 flex items-center gap-1.5"
               >
-                Practice in Words →
+                <span>Practice in Words →</span>
               </button>
             </div>
           </div>
@@ -902,62 +917,16 @@ export function ShorthandTeacher({
       )}
 
       {/* 8. & 9. PRACTICE IN WORDS & WORD BUILDING */}
-      {showWordBuilding && stroke.wordBuilding && stroke.wordBuilding.length > 0 && (
-        <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
-                Word Application & Building
-              </span>
-              <h3 className="text-lg font-bold text-slate-100">
-                Practice Stroke {stroke.name} in Real Words
-              </h3>
-            </div>
-            <span className="text-[11px] text-slate-400">Verified Pitman Outlines</span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {stroke.wordBuilding.map((wb, idx) => (
-              <div
-                key={idx}
-                className="p-4 rounded-2xl bg-slate-950 border border-slate-800/90 space-y-2 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-base font-extrabold text-slate-100">{wb.word}</h4>
-                    <button
-                      type="button"
-                      onClick={() => speakSound(wb.word)}
-                      className="p-1 rounded bg-slate-800 hover:bg-slate-700 text-xs text-slate-300"
-                      title="Pronounce word"
-                    >
-                      🔊
-                    </button>
-                  </div>
-                  <div className="text-[11px] font-bold text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded mt-1 inline-block">
-                    {wb.formula}
-                  </div>
-                  <p className="text-xs text-slate-400 mt-2 leading-relaxed">{wb.explanation}</p>
-                </div>
-
-                <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between">
-                  <span className="text-[10px] text-slate-500">Pitman Form</span>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setActiveStep("try");
-                      setPracticeMode("guided");
-                      window.scrollTo({ top: 400, behavior: "smooth" });
-                    }}
-                    className="text-xs text-purple-400 hover:text-purple-300 font-semibold"
-                  >
-                    Trace in Canvas →
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      {showWordBuilding && (
+        <WordPracticeSection
+          key={stroke.id}
+          stroke={stroke}
+          onNextStroke={handleNextStroke}
+          onBackToStroke={() => {
+            setActiveStep("try");
+            window.scrollTo({ top: 350, behavior: "smooth" });
+          }}
+        />
       )}
     </div>
   );

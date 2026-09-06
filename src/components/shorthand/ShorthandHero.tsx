@@ -1,23 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { getShorthandProgress } from "../../data/shorthand/storage";
 
 export function ShorthandHero() {
-  const [completedCount, setCompletedCount] = useState(0);
-  const [streak, setStreak] = useState(1);
-  const [bestWpm, setBestWpm] = useState(0);
-
-  useEffect(() => {
-    const progress = getShorthandProgress();
-    setCompletedCount(progress.completedLessons?.length || 0);
-    setStreak(progress.currentStreak || 1);
-    setBestWpm(progress.bestDictationWpm || 0);
-  }, []);
-
-  const completionPercent = Math.min(100, Math.round((completedCount / 13) * 100));
-
   return (
     <section className="relative overflow-hidden pt-12 pb-14 border-b border-slate-800/80 bg-gradient-to-b from-[#0B1120] via-[#0F172A] to-[#0B1120]">
       {/* Background glow accents */}
@@ -66,53 +51,81 @@ export function ShorthandHero() {
             </div>
           </div>
 
-          {/* Right Column: Local Progress Card */}
+          {/* Right Column: Self-Paced Learning Tools Card */}
           <div className="lg:col-span-4">
             <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl relative backdrop-blur-sm space-y-4">
               <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                  Your Progress
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                  Self-Paced Learning Tools
                 </span>
-                <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2.5 py-0.5 rounded-full">
-                  ⚡ {streak} Day Streak
+                <span className="text-[11px] font-semibold text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2.5 py-0.5 rounded-full">
+                  100% Free
                 </span>
               </div>
 
-              <div>
-                <div className="flex items-center justify-between text-xs mb-1.5">
-                  <span className="font-semibold text-slate-200">
-                    {completedCount === 0 ? "Beginner" : completedCount < 6 ? "Intermediate" : "Advanced"}
-                  </span>
-                  <span className="font-bold text-purple-400">{completionPercent}% Complete</span>
-                </div>
-                {/* Progress bar */}
-                <div className="w-full h-2.5 rounded-full bg-slate-800 overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-purple-500 to-sky-400 transition-all duration-500"
-                    style={{ width: `${completionPercent}%` }}
-                  />
-                </div>
-                <p className="text-[11px] text-slate-400 mt-2">
-                  {completedCount} of 13 Curriculum levels completed
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-800 text-center">
-                <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800/80">
-                  <span className="text-[10px] text-slate-400 uppercase">Best Speed</span>
-                  <div className="text-sm font-bold text-slate-100 mt-0.5">
-                    {bestWpm > 0 ? `${bestWpm} WPM` : "Not tested"}
+              <div className="space-y-2 text-xs">
+                <Link
+                  href="/shorthand/learn"
+                  className="flex items-center justify-between p-3 rounded-xl bg-slate-950/80 hover:bg-slate-950 border border-slate-800/80 hover:border-purple-500/40 transition-colors group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-base">📚</span>
+                    <div>
+                      <h4 className="font-bold text-slate-200 group-hover:text-purple-300">13 Pitman Levels</h4>
+                      <p className="text-[11px] text-slate-400">Step-by-step curriculum & rules</p>
+                    </div>
                   </div>
-                </div>
-                <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800/80">
-                  <span className="text-[10px] text-slate-400 uppercase">Account Status</span>
-                  <div className="text-sm font-bold text-emerald-400 mt-0.5">100% Free</div>
-                </div>
+                  <span className="text-slate-500 group-hover:text-purple-400">→</span>
+                </Link>
+
+                <Link
+                  href="/shorthand/practice"
+                  className="flex items-center justify-between p-3 rounded-xl bg-slate-950/80 hover:bg-slate-950 border border-slate-800/80 hover:border-purple-500/40 transition-colors group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-base">✍️</span>
+                    <div>
+                      <h4 className="font-bold text-slate-200 group-hover:text-purple-300">Drawing Canvas</h4>
+                      <p className="text-[11px] text-slate-400">Touch & stylus practice board</p>
+                    </div>
+                  </div>
+                  <span className="text-slate-500 group-hover:text-purple-400">→</span>
+                </Link>
+
+                <Link
+                  href="/shorthand/dictation"
+                  className="flex items-center justify-between p-3 rounded-xl bg-slate-950/80 hover:bg-slate-950 border border-slate-800/80 hover:border-purple-500/40 transition-colors group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-base">🎙️</span>
+                    <div>
+                      <h4 className="font-bold text-slate-200 group-hover:text-purple-300">Audio Dictation</h4>
+                      <p className="text-[11px] text-slate-400">40 to 120 WPM paced speech</p>
+                    </div>
+                  </div>
+                  <span className="text-slate-500 group-hover:text-purple-400">→</span>
+                </Link>
+
+                <Link
+                  href="/shorthand/tests"
+                  className="flex items-center justify-between p-3 rounded-xl bg-slate-950/80 hover:bg-slate-950 border border-slate-800/80 hover:border-purple-500/40 transition-colors group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-base">💻</span>
+                    <div>
+                      <h4 className="font-bold text-slate-200 group-hover:text-purple-300">Exam Simulator</h4>
+                      <p className="text-[11px] text-slate-400">Delhi High Court & SSC tests</p>
+                    </div>
+                  </div>
+                  <span className="text-slate-500 group-hover:text-purple-400">→</span>
+                </Link>
               </div>
 
-              <p className="text-[10px] text-slate-400 text-center italic">
-                Progress is saved locally in your browser. No account required.
-              </p>
+              <div className="pt-2 border-t border-slate-800 text-center">
+                <span className="text-[11px] text-slate-400">
+                  Open access for independent learners • No account required
+                </span>
+              </div>
             </div>
           </div>
         </div>

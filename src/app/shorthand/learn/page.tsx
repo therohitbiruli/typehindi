@@ -20,8 +20,6 @@ export default function ShorthandCurriculumPage() {
     return l.difficulty === difficultyFilter;
   });
 
-  const completionPercent = Math.round((completedSlugs.length / shorthandLessons.length) * 100);
-
   return (
     <div className="min-h-screen bg-[#070B14] text-slate-100">
       <ShorthandNav />
@@ -41,19 +39,13 @@ export default function ShorthandCurriculumPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800/80 shrink-0 text-center sm:text-left min-w-[200px]">
-            <div className="flex items-center justify-between text-xs mb-1.5">
-              <span className="text-slate-400">Curriculum Progress</span>
-              <span className="font-bold text-purple-400">{completionPercent}%</span>
-            </div>
-            <div className="w-full h-2 rounded-full bg-slate-800 overflow-hidden mb-2">
-              <div
-                className="h-full bg-gradient-to-r from-purple-500 to-sky-400"
-                style={{ width: `${completionPercent}%` }}
-              />
-            </div>
-            <span className="text-[11px] text-slate-400">
-              {completedSlugs.length} of {shorthandLessons.length} lessons mastered
+          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800/80 shrink-0 text-center sm:text-left min-w-[200px] space-y-1">
+            <span className="text-[10px] text-purple-400 font-bold uppercase tracking-wider block">
+              Curriculum Standard
+            </span>
+            <div className="text-base font-black text-slate-100">English Pitman</div>
+            <span className="text-[11px] text-slate-400 block">
+              Self-paced • 13 progressive levels
             </span>
           </div>
         </div>

@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { getShorthandProgress } from "../../data/shorthand/storage";
 
 const navItems = [
   { href: "/shorthand", label: "Overview" },
@@ -18,14 +16,6 @@ const navItems = [
 
 export function ShorthandNav() {
   const pathname = usePathname();
-  const [streak, setStreak] = useState(1);
-  const [completedCount, setCompletedCount] = useState(0);
-
-  useEffect(() => {
-    const progress = getShorthandProgress();
-    setStreak(progress.currentStreak || 1);
-    setCompletedCount(progress.completedLessons?.length || 0);
-  }, [pathname]);
 
   return (
     <div className="sticky top-[57px] z-30 border-b border-slate-800/80 bg-[#0B1120]/95 backdrop-blur-md">
@@ -60,16 +50,6 @@ export function ShorthandNav() {
               );
             })}
           </nav>
-
-          {/* Mini Status Pill */}
-          <div className="hidden sm:flex items-center gap-2 shrink-0">
-            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 rounded-full">
-              ⚡ {streak}d streak
-            </span>
-            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2 py-0.5 rounded-full">
-              ✓ {completedCount}/13 lessons
-            </span>
-          </div>
         </div>
       </div>
     </div>

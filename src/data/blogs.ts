@@ -21,6 +21,1388 @@ export function getBlogImage(blog: BlogPost): string {
 }
 
 export const blogs: BlogPost[] = [  {
+    slug: "delhi-high-court-recruitment-2026-spa-pa-typing-shorthand",
+    titleEn: "Delhi High Court Recruitment 2026: Senior Personal Assistant and Personal Assistant Vacancies, Typing Test, Shorthand, Eligibility, Salary and How to Apply",
+    excerptEn: "Complete guide to Delhi High Court SPA & PA Recruitment 2026 for 150 vacancies. Check 40 WPM English typing test rules, 100/110 WPM shorthand criteria, Level 7/8 pay matrix, syllabus, and application process.",
+    dateEn: "06 September, 2026",
+    title: "दिल्ली उच्च न्यायालय भर्ती 2026: सीनियर पर्सनल असिस्टेंट व पर्सनल असिस्टेंट के 150 पद, टाइपिंग टेस्ट, शॉर्टहैंड, पात्रता, वेतन और आवेदन प्रक्रिया",
+    excerpt: "दिल्ली हाईकोर्ट द्वारा सीनियर पर्सनल असिस्टेंट (SPA) और पर्सनल असिस्टेंट (PA) के 150 पदों पर भर्ती। 40 WPM टाइपिंग टेस्ट, 100/110 WPM शॉर्टहैंड, लेवल 7/8 वेतनमान और ऑनलाइन आवेदन की पूरी जानकारी।",
+    date: "06 सितंबर, 2026",
+    author: "TypeHindi Team",
+    category: "Exam Guide",
+    contentEn: `\n# Delhi High Court Recruitment 2026: Senior Personal Assistant and Personal Assistant Vacancies, Typing Test, Shorthand, Eligibility, Salary and How to Apply
+
+![Delhi High Court Recruitment 2026](/images/delhi-high-court-spa-pa-recruitment-2026.jpg)
+
+The **Delhi High Court, New Delhi** has announced recruitment for the posts of **Senior Personal Assistant (SPA)** and **Personal Assistant (PA)** through the **Senior Personal Assistant and Personal Assistant Examination 2026**.
+
+For typing and stenography aspirants, this is one of the more important recruitment opportunities to watch because the selection process directly includes an **English Typing Test and English Shorthand Test**. Candidates who are preparing for SSC Stenographer, Court Stenographer, secretarial posts or other government typing examinations can find this recruitment particularly relevant.
+
+The recruitment includes **117 vacancies for Senior Personal Assistant** and **33 vacancies for Personal Assistant**, taking the total number of advertised vacancies to **150**.
+
+The posts require candidates to be graduates and have prescribed shorthand and English typing speeds. The selection process then moves through typing, shorthand, descriptive examination and interview stages.
+
+This article explains the Delhi High Court Recruitment 2026 in detail, including vacancies, eligibility, age limit, typing test, shorthand test, written examination, fees, important dates, application procedure and preparation strategy.
+
+---
+
+# Delhi High Court Recruitment 2026: Overview
+
+| Particular | Details |
+|---|---|
+| **Organization** | High Court of Delhi |
+| **Recruitment** | Senior Personal Assistant and Personal Assistant Examination 2026 |
+| **Total Vacancies** | 150 |
+| **Senior Personal Assistant** | 117 |
+| **Personal Assistant** | 33 |
+| **Application Mode** | Online ([delhihighcourt.nic.in](https://delhihighcourt.nic.in)) |
+| **Application Start** | 15 September 2026 |
+| **Application Last Date** | 5 October 2026 |
+| **Last Date Time** | 11:00 PM |
+| **Correction Window** | 12 October to 14 October 2026 |
+| **Minimum Qualification** | Graduation |
+| **Typing Requirement** | 40 WPM English |
+| **Shorthand Requirement – SPA** | 110 WPM English |
+| **Shorthand Requirement – PA** | 100 WPM English |
+| **Selection** | Typing + Shorthand + Descriptive Exam + Interview |
+| **Exam Medium** | English |
+
+The online application process begins on **15 September 2026 at 11:00 AM**, while the last date and time for submission is **5 October 2026 at 11:00 PM**.
+
+The examination date and examination venue will be announced later through a public notice on the **[Delhi High Court Official Website](https://delhihighcourt.nic.in)**.
+
+---
+
+# Delhi High Court Vacancy 2026
+
+The recruitment is divided into two posts.
+
+## Senior Personal Assistant – 117 Vacancies
+
+There are **117 vacancies** for Senior Personal Assistant.
+
+The post is classified as **Group B** and is placed at **Level 8 of the 7th CPC Pay Matrix**.
+
+The vacancy distribution includes General, EWS, OBC-NCL, SC and ST categories, along with horizontal reservation for eligible Persons with Benchmark Disabilities.
+
+Out of the 117 vacancies, **7 vacancies are reserved horizontally for PwBD candidates**.
+
+---
+
+# Personal Assistant – 33 Vacancies
+
+There are **33 vacancies** for Personal Assistant.
+
+The Personal Assistant post is also classified as **Group B**, but is placed at **Level 7 of the 7th CPC Pay Matrix**.
+
+The vacancies include EWS, OBC-NCL, SC and ST categories along with horizontal reservation for eligible PwBD candidates.
+
+An important point for candidates is that there are **no General-category vacancies for the Personal Assistant post** in this recruitment.
+
+Therefore, candidates should carefully check the category-wise vacancy details before applying.
+
+---
+
+# Total Vacancies
+
+The complete vacancy count is:
+
+| Post | Vacancies |
+|---|---:|
+| **Senior Personal Assistant** | 117 |
+| **Personal Assistant** | 33 |
+| **Total** | **150** |
+
+This makes the recruitment particularly attractive for candidates preparing for shorthand and typing-based government jobs.
+
+---
+
+# Delhi High Court Senior Personal Assistant Eligibility
+
+To apply for **Senior Personal Assistant**, candidates must meet both educational and skill requirements.
+
+## Educational Qualification
+
+Candidates must be:
+
+**Graduates from a recognized University.**
+
+The final result of the qualifying degree must have been declared on or before the last date of submission of the online application.
+
+## Shorthand Requirement
+
+Candidates must have:
+
+### 110 words per minute in English Shorthand
+
+## Typing Requirement
+
+Candidates must have:
+
+### 40 words per minute in English Typewriting on Computer
+
+Candidates must also have:
+
+### Good Working Knowledge of Computer
+
+Therefore, the basic requirement can be summarized as:
+
+**Graduation + 110 WPM Shorthand + 40 WPM English Typing + Computer Knowledge**
+
+---
+
+# Delhi High Court Personal Assistant Eligibility
+
+For **Personal Assistant**, candidates must also be graduates from a recognized university.
+
+The skill requirements are:
+
+### 100 WPM English Shorthand
+
+and
+
+### 40 WPM English Typing on Computer
+
+Candidates must also have good working knowledge of computers.
+
+Therefore:
+
+**Graduation + 100 WPM Shorthand + 40 WPM English Typing + Computer Knowledge**
+
+is the basic eligibility combination.
+
+---
+
+# Typing Test in Delhi High Court Recruitment 2026
+
+This is one of the most important sections for TypeHindi readers.
+
+The Delhi High Court has made the **English Typing Test a qualifying stage**.
+
+The test is conducted on computers.
+
+## Duration
+
+### 10 minutes
+
+## Required Speed
+
+### 40 words per minute
+
+The typing speed calculation uses the **characters-with-space** method. Candidates can sharpen their continuous accuracy using the [TypeHindi Daily Practice Tool](/practice) and [Hindi InScript Keyboard Layout](/keyboard-layout).
+
+This is important because candidates should not assume that the calculation is based only on the number of words appearing on the screen.
+
+---
+
+# How Many Mistakes Are Allowed in the Typing Test?
+
+The permissible number of mistakes is:
+
+### 3% of the total words typed
+
+The typing test is qualifying in nature.
+
+That means you need to successfully qualify the typing test before you can move forward in the selection process.
+
+Marks from the typing test are **not added to the final merit list**.
+
+So:
+
+**Typing Test = Qualifying**
+
+not
+
+**Typing Test = Final Merit Marks**
+
+This makes accuracy extremely important.
+
+---
+
+# What Does the Typing Test Mean for Candidates?
+
+Candidates should not practice merely to touch 40 WPM.
+
+A better strategy is to build a comfortable buffer.
+
+For example, if your current speed is exactly 40 WPM but your accuracy is inconsistent, the margin for error is very small.
+
+A safer preparation target would be to build:
+
+**45–50+ WPM with strong accuracy**
+
+so that you can comfortably handle the test conditions. You can evaluate your baseline speed through our [Mangal Font Hindi & English Typing Test](/mangal-font-typing-test).
+
+The aim should be:
+
+**Speed + Accuracy + Consistency**
+
+rather than speed alone.
+
+---
+
+# Delhi High Court Shorthand Test – Senior Personal Assistant
+
+Candidates who qualify the typing test move to the **English Shorthand Test**.
+
+For Senior Personal Assistant, the required shorthand speed is:
+
+## 110 words per minute
+
+The shorthand test consists of:
+
+### Dictation
+
+A passage of:
+
+**550 words**
+
+is dictated in:
+
+**5 minutes**
+
+This corresponds to a speed of 110 words per minute.
+
+---
+
+# Transcription Time for Senior Personal Assistant
+
+After dictation, candidates receive:
+
+### 45 minutes
+
+to transcribe the dictated passage on a computer.
+
+There is **no additional time for reading the passage**.
+
+Candidates therefore need to be comfortable with the entire process:
+
+**Listen → Record in Shorthand → Read Notes → Type Accurately**
+
+This is very different from an ordinary typing test.
+
+---
+
+# Mistakes Allowed in the SPA Shorthand Test
+
+The permitted mistakes are:
+
+### 5% of the total words dictated
+
+Since the dictation contains 550 words, the maximum permissible level is **27.5 mistakes**.
+
+Candidates making more than the prescribed limit are disqualified.
+
+There is also a marks deduction system for shorthand mistakes.
+
+A full mistake results in a deduction of **4 marks**, while a half mistake results in a deduction of **2 marks**.
+
+Candidates who reach the maximum permissible mistakes receive the minimum stipulated marks rather than being automatically awarded zero.
+
+---
+
+# Two Shorthand Attempts
+
+One useful feature of the recruitment is that candidates are given:
+
+### Two opportunities
+
+to appear in the shorthand dictation and transcription test.
+
+The **better of the two performances** is considered.
+
+This gives candidates some room to recover from an unexpectedly difficult first attempt.
+
+---
+
+# Delhi High Court Shorthand Test – Personal Assistant
+
+For the Personal Assistant post, the shorthand requirement is slightly lower.
+
+### Required Speed
+
+**100 words per minute**
+
+### Dictation
+
+A passage of:
+
+**500 words**
+
+is dictated in:
+
+**5 minutes**
+
+### Transcription
+
+Candidates get:
+
+**45 minutes**
+
+to transcribe the passage on a computer.
+
+Again, the process is:
+
+**5 minutes Dictation + 45 minutes Transcription**
+
+Candidates are not given additional time specifically for reading the dictated material.
+
+---
+
+# Mistakes Allowed in PA Shorthand Test
+
+For Personal Assistant, the maximum permissible mistakes are:
+
+### 5% of the dictated words
+
+For a 500-word passage, that works out to:
+
+### 25 mistakes
+
+Candidates exceeding this limit are disqualified.
+
+Just like Senior Personal Assistant, candidates are given **two shorthand dictation/transcription opportunities**, with the better performance considered.
+
+---
+
+# Senior Personal Assistant vs Personal Assistant
+
+The biggest difference between the two posts is the shorthand speed requirement.
+
+![Delhi High Court SPA vs PA Comparison](/images/delhi-high-court-spa-vs-pa.jpg)
+
+| Requirement | Senior Personal Assistant | Personal Assistant |
+|---|---:|---:|
+| **Graduation** | Yes | Yes |
+| **English Typing** | 40 WPM | 40 WPM |
+| **English Shorthand** | 110 WPM | 100 WPM |
+| **Computer Knowledge** | Yes | Yes |
+| **Typing Test** | Qualifying | Qualifying |
+| **Descriptive Exam** | Yes | Yes |
+| **Interview** | Yes | Yes |
+
+So if you already have 110 WPM shorthand and 40 WPM typing, you can target the SPA requirement.
+
+Candidates at 100 WPM shorthand may still be eligible for the PA requirement, provided they meet all other conditions.
+
+---
+
+# Delhi High Court Main Descriptive Examination
+
+Candidates who qualify the typing and shorthand stages move to the **Main Descriptive Examination**.
+
+The examination carries:
+
+### 100 Marks
+
+and has a duration of:
+
+### 120 Minutes
+
+The examination is conducted in **English**.
+
+The paper includes:
+
+### Essay Writing
+
+A 250-word essay carries:
+
+**40 marks**
+
+### Letter Writing
+
+Carries:
+
+**15 marks**
+
+### Grammar and Comprehension Passage
+
+Carries:
+
+**25 marks**
+
+### Translation
+
+Hindi to English:
+
+**10 marks**
+
+English to Hindi:
+
+**10 marks**
+
+Total:
+
+**100 marks**
+
+---
+
+# Minimum Marks in the Descriptive Examination
+
+Candidates belonging to the General category need:
+
+### 50 marks out of 100
+
+Candidates belonging to reserved categories, including PwBD candidates, need:
+
+### 45 marks out of 100
+
+Only candidates who qualify the Main Descriptive Examination move to the interview stage.
+
+---
+
+# Delhi High Court Interview
+
+The final stage is the interview.
+
+The interview carries:
+
+### 15 Marks
+
+There is **no minimum qualifying mark** specified for the interview.
+
+Candidates who qualify the descriptive examination are called for the interview.
+
+---
+
+# How Is Final Merit Prepared?
+
+This is a very important point.
+
+The final selection or merit list is prepared by adding marks obtained in:
+
+### Stage II – English Shorthand Test
+
+### Stage III – Main Descriptive Examination
+
+### Stage IV – Interview
+
+The **English Typing Test is qualifying in nature** and is not added to the final merit score.
+
+In simple terms:
+
+**Typing → Qualify**
+
+↓
+
+**Shorthand → Merit Marks**
+
+↓
+
+**Descriptive Exam → Merit Marks**
+
+↓
+
+**Interview → Merit Marks**
+
+↓
+
+**Final Merit List**
+
+Therefore, candidates should not underestimate the shorthand stage even after clearing the typing test.
+
+---
+
+# Tie-Breaking Rules
+
+If two or more candidates obtain the same marks, the tie is resolved using prescribed criteria.
+
+The first comparison is based on the marks obtained in the shorthand test.
+
+If the tie continues, the marks obtained in the Main Descriptive Examination are considered.
+
+The interview marks are then considered.
+
+After those criteria, the candidate's date of birth is used, with the **older candidate receiving preference over the younger candidate**.
+
+---
+
+# Age Limit for Delhi High Court PA and SPA Recruitment
+
+The candidate's age must be:
+
+### Minimum: 18 years
+
+### Maximum: 32 years
+
+The age is calculated as on:
+
+### 1 January 2026
+
+The notification states that candidates should have been born:
+
+**Not earlier than 2 January 1994**
+
+and
+
+**Not later than 1 January 2008**
+
+The date of birth mentioned in the Matriculation or Secondary Examination certificate is used for determining age eligibility.
+
+---
+
+# Age Relaxation
+
+Applicable age relaxation is available for eligible categories.
+
+| Category | Relaxation |
+|---|---:|
+| **SC / ST** | 5 years |
+| **OBC-NCL** | 3 years |
+| **PwBD – General / EWS** | 10 years |
+| **PwBD – OBC** | 13 years |
+| **PwBD – SC / ST** | 15 years |
+| **Ex-Servicemen** | 3 years, subject to applicable conditions |
+
+PwBD candidates must satisfy the disability requirements specified for the reserved vacancies.
+
+The notification also contains special provisions for employees already serving in the Delhi High Court.
+
+---
+
+# Reservation
+
+The Delhi High Court provides reservation in direct recruitment broadly as follows:
+
+| Category | Reservation |
+|---|---:|
+| **SC** | 15% |
+| **ST** | 7.5% |
+| **OBC-NCL** | 27% |
+| **EWS** | 10% |
+| **PwBD** | 4% horizontal |
+
+Candidates seeking reservation or age relaxation must have the appropriate valid certificate by the specified cut-off date.
+
+One particularly important point concerns **OBC candidates**.
+
+Candidates seeking OBC reservation must possess an OBC certificate issued by the **Government of NCT of Delhi** for a caste recognized/notified as OBC in Delhi.
+
+An OBC certificate issued by another state does not automatically provide the OBC reservation benefit in this recruitment.
+
+---
+
+# Application Fee
+
+The examination fee differs according to category.
+
+### General / OBC-NCL / EWS
+
+**₹1,500**
+
+### SC / ST / eligible PwBD categories
+
+**₹1,300**
+
+Applicable transaction charges may be extra.
+
+The fee can be paid through:
+
+* UPI
+* Net Banking
+* Credit Card
+* Debit Card
+
+The examination fee is non-refundable.
+
+Candidates should therefore confirm their eligibility before making payment.
+
+---
+
+# How to Apply for Delhi High Court Recruitment 2026
+
+The application process is completely online.
+
+Candidates should apply through the **Delhi High Court's official recruitment website**.
+
+The application procedure can be broadly divided into the following steps.
+
+---
+
+## Step 1: Registration
+
+Register using:
+
+* Active email ID
+* Active mobile number
+
+A system-generated registration/application number will be provided.
+
+Save this number carefully because it will be required throughout the recruitment process.
+
+---
+
+## Step 2: Fill the Online Application
+
+Log in and complete the application form.
+
+Enter details such as:
+
+* Name
+* Date of Birth
+* Parent/Spouse details
+* Category
+* Educational qualification
+* Address
+* Mobile number
+* Email address
+
+Your name, date of birth and other personal information should match your Matriculation certificate.
+
+---
+
+## Step 3: Select the Post
+
+Candidates who want to apply for both:
+
+**Senior Personal Assistant**
+
+and
+
+**Personal Assistant**
+
+must submit **separate applications** for the two posts.
+
+A separate fee is also required for each application.
+
+This is an important point because submitting one application does not automatically make you a candidate for both posts.
+
+---
+
+# Step 4: Upload Photograph
+
+Candidates need to upload a scanned colour passport-size photograph in JPEG format.
+
+The photograph should be:
+
+* 100 KB to 200 KB
+* About 3.5 cm × 4.5 cm
+* Not more than three months old from the publication of the examination notice
+
+The photograph should be clear and show the candidate's face properly.
+
+Candidates should not upload photographs in which the face is covered by a cap, mask or spectacles.
+
+The face should cover approximately 75% of the photograph.
+
+---
+
+# Step 5: Capture Live Photograph
+
+A **live photograph is mandatory** during the application process.
+
+The photograph can be captured using:
+
+* Webcam
+* Mobile device
+
+The image should be captured in good lighting.
+
+The face should be clearly visible and properly aligned.
+
+The live photograph is compared with the uploaded passport-size photograph.
+
+A mismatch can prevent the candidate from continuing with the application.
+
+---
+
+# Step 6: Upload Thumb Impression
+
+Candidates must upload their **left-hand thumb impression** in JPEG format.
+
+The required file size is:
+
+**50 KB to 200 KB**
+
+If the left-hand thumb is unavailable, the right-hand thumb impression can be used.
+
+---
+
+# Step 7: Upload Signature
+
+The scanned signature must be uploaded in JPEG format.
+
+Required size:
+
+**50 KB to 150 KB**
+
+The signature must be clear and readable.
+
+Writing your full name in capital letters instead of providing an actual signature is not accepted.
+
+---
+
+# Step 8: Pay the Examination Fee
+
+Pay the applicable examination fee online.
+
+Remember:
+
+**SPA and PA require separate applications and separate fees.**
+
+After successful payment, a **Confirmation Page** must be generated.
+
+The application is considered successfully submitted only after the required fee has been paid and the confirmation page has been generated.
+
+---
+
+# Step 9: Save Your Application
+
+After submitting the application, candidates should download and save:
+
+* Confirmation Page
+* Application Form
+* Registration Number
+* Admit Card
+* Score Card
+* Other relevant documents
+
+The Delhi High Court advises candidates to retain these documents for future reference.
+
+There is no requirement to send a printed copy of the online application to the High Court.
+
+---
+
+# Application Correction Window
+
+A correction window is provided after the application deadline.
+
+The correction window starts on:
+
+### 12 October 2026 at 11:00 AM
+
+and ends on:
+
+### 14 October 2026 at 11:00 PM
+
+Candidates can make permitted corrections during this period.
+
+However, certain critical fields cannot be changed, including:
+
+* Name
+* Category
+* Date of Birth
+* Mobile Number
+
+Candidates should therefore take extreme care while filling the original application.
+
+---
+
+# What Is the Examination Medium?
+
+The examination medium is:
+
+## English
+
+Candidates should therefore be comfortable writing and understanding English for the descriptive examination.
+
+This is particularly important because the Main Descriptive Examination includes:
+
+* Essay
+* Letter writing
+* Grammar
+* Comprehension
+* Hindi-English translation
+* English-Hindi translation
+
+---
+
+# What Does a Delhi High Court Personal Assistant Do?
+
+The job is much more than simply typing.
+
+Senior Personal Assistants and Personal Assistants assist Hon'ble Judges with important secretarial and administrative responsibilities.
+
+Their duties can include:
+
+* Taking dictation
+* Transcribing court proceedings
+* Typing orders and judgments
+* Checking documents for accuracy
+* Handling court records
+* Maintaining files
+* Coordinating with Registry branches
+* Uploading official documents
+* Maintaining electronic records
+* Handling confidential information
+* Supporting the Private Secretary
+* Managing official correspondence
+
+The role therefore requires a combination of:
+
+**Typing + Shorthand + Computer Skills + Accuracy + Confidentiality**
+
+---
+
+# Typing Is a Core Skill in This Job
+
+The duties specified for SPA and PA make it clear why typing and shorthand are central to the recruitment.
+
+Employees may need to take dictation related to:
+
+* Court proceedings
+* Orders
+* Judgments
+* Official correspondence
+
+and then transcribe the material accurately and quickly.
+
+They are also responsible for checking typed documents before they are placed before the Judge.
+
+That means typing accuracy is not merely an examination requirement.
+
+It is an important practical workplace skill.
+
+---
+
+# Computer Skills Are Also Important
+
+The job involves modern digital court systems.
+
+Responsibilities can include:
+
+* Uploading documents
+* Managing electronic records
+* Handling digital files
+* Working with official servers
+* Updating records
+* Processing court documents
+* Securely managing confidential digital information
+
+Candidates therefore need more than typing speed.
+
+They should also be comfortable using computers and handling documents accurately. Touch typing lessons on [Step-by-Step Hindi & English Typing Guide](/learn) help candidates develop effortless muscle memory.
+
+---
+
+# Working Hours and Job Requirements
+
+Candidates should be aware that the role can require work beyond normal office hours.
+
+The notification states that selected candidates may have to work:
+
+* At odd hours
+* On holidays
+* At the residential office of the Hon'ble Judge
+
+when required in the interest of justice or efficient official work.
+
+The job also requires strict confidentiality because employees may deal with:
+
+* Draft judgments
+* Judicial proceedings
+* Official correspondence
+* Case records
+* Confidential electronic data
+
+---
+
+# How to Prepare for the Delhi High Court Typing Test
+
+For a TypeHindi reader, the first practical goal should be:
+
+## 40 WPM English Typing
+
+But don't stop at 40.
+
+Build enough speed that 40 WPM feels comfortable rather than maximum effort.
+
+A useful preparation progression is:
+
+**30 WPM → 35 WPM → 40 WPM → 45 WPM → 50+ WPM**
+
+At every stage, maintain accuracy.
+
+Because the test allows only a limited percentage of mistakes, inaccurate speed is not useful.
+
+---
+
+# How to Prepare for Shorthand
+
+Shorthand preparation should be separated from ordinary typing preparation.
+
+For SPA:
+
+### Target 110 WPM
+
+For PA:
+
+### Target 100 WPM
+
+Practice in three stages:
+
+### Stage 1 – Accuracy
+
+Become comfortable taking dictation correctly.
+
+### Stage 2 – Speed
+
+Gradually increase dictation speed.
+
+### Stage 3 – Transcription
+
+Practice converting shorthand notes into a properly formatted computer document within the 45-minute limit.
+
+A candidate who can take shorthand at high speed but struggles with transcription can still lose valuable marks.
+
+---
+
+# Best Strategy for the Typing Test
+
+Do not spend the entire 10 minutes trying to type as quickly as possible.
+
+Instead:
+
+**Start controlled**
+
+↓
+
+**Maintain rhythm**
+
+↓
+
+**Avoid unnecessary corrections**
+
+↓
+
+**Keep accuracy high**
+
+↓
+
+**Build speed naturally**
+
+The goal is to finish the test with a strong accuracy percentage while staying comfortably above the minimum speed. You can also build agility with our [Interactive Typing Games](/game).
+
+---
+
+# Practice Like the Real Test
+
+A good practice session should recreate the actual conditions:
+
+### 10-Minute Timer
+
+Use exactly 10 minutes.
+
+### English Text
+
+Practice continuous English passages rather than isolated words.
+
+### Characters With Spaces
+
+Be aware that the recruitment calculates speed using the characters-with-space method.
+
+### Error Control
+
+Track both:
+
+**WPM + Accuracy**
+
+A candidate should know their average performance before entering the examination.
+
+---
+
+# Delhi High Court Recruitment Preparation Strategy
+
+Candidates should divide their preparation into four areas.
+
+## 1. Typing
+
+Target:
+
+**40 WPM comfortably**
+
+Focus on:
+
+* Accuracy
+* Continuous typing
+* Punctuation
+* Numbers
+* Common English words
+* Keyboard familiarity
+
+## 2. Shorthand
+
+Target:
+
+**100–110 WPM**
+
+depending on the post.
+
+Practice both:
+
+**Dictation + Transcription**
+
+## 3. Descriptive English
+
+Prepare:
+
+* Essay writing
+* Letter writing
+* Grammar
+* Comprehension
+* Translation
+
+## 4. Interview
+
+Prepare to discuss:
+
+* Your education
+* Typing and shorthand experience
+* Computer skills
+* General awareness
+* Interest in the position
+* Office and secretarial work
+
+---
+
+# Which Post Should You Target?
+
+Your shorthand speed can help determine your target.
+
+### If your shorthand speed is 100 WPM
+
+You can target:
+
+**Personal Assistant**
+
+provided you meet the other eligibility requirements.
+
+### If your shorthand speed is 110 WPM
+
+You can target:
+
+**Senior Personal Assistant**
+
+provided you meet all other requirements.
+
+Since separate applications are required, candidates who are eligible and want to compete for both posts need to submit separate applications and pay the applicable fee for each.
+
+---
+
+# Important Dates
+
+| Event | Date |
+|---|---|
+| **Online Application Starts** | 15 September 2026 |
+| **Application Start Time** | 11:00 AM |
+| **Last Date to Apply** | 5 October 2026 |
+| **Closing Time** | 11:00 PM |
+| **Correction Window Starts** | 12 October 2026 |
+| **Correction Window Ends** | 14 October 2026 |
+| **Admit Card** | To be announced |
+| **Examination Date** | To be announced |
+
+The examination schedule is tentative and candidates should regularly check official Delhi High Court recruitment updates.
+
+---
+
+# Delhi High Court SPA and PA Recruitment: Frequently Asked Questions
+
+## How many total vacancies are there?
+
+There are **150 vacancies** in total.
+
+117 are for Senior Personal Assistant and 33 are for Personal Assistant.
+
+## Is typing required?
+
+Yes.
+
+Both posts require **40 WPM English typing on computer**.
+
+## Is shorthand required?
+
+Yes.
+
+SPA requires **110 WPM English shorthand**, while PA requires **100 WPM English shorthand**.
+
+## Is there a typing test?
+
+Yes.
+
+There is a **10-minute English typing test** conducted on computers.
+
+## Is the typing test counted in final merit?
+
+No.
+
+The typing test is qualifying in nature.
+
+## How many mistakes are allowed in typing?
+
+The permissible number is **3% of the total words typed**.
+
+## Is shorthand counted in final merit?
+
+Yes.
+
+Marks obtained in the shorthand test contribute to the final merit.
+
+## How long is the shorthand dictation?
+
+Five minutes.
+
+For SPA, the passage contains 550 words.
+
+For PA, it contains 500 words.
+
+## How much time is given for transcription?
+
+45 minutes.
+
+## Are two shorthand attempts available?
+
+Yes.
+
+Candidates are given two opportunities, and the better performance is considered.
+
+## How many marks is the descriptive examination?
+
+100 marks.
+
+## What is the duration of the descriptive exam?
+
+120 minutes.
+
+## Is there an interview?
+
+Yes.
+
+The interview carries 15 marks.
+
+## Can I apply for both SPA and PA?
+
+Yes, provided you are eligible for both, but you must submit **separate applications and separate fees** for each post.
+
+## What is the application fee?
+
+₹1,500 for General/OBC-NCL/EWS candidates and ₹1,300 for the specified SC/ST/PwBD categories.
+
+## What is the age limit?
+
+18 to 32 years as on 1 January 2026, subject to applicable relaxation.
+
+---
+
+# Final Verdict
+
+The **Delhi High Court Senior Personal Assistant and Personal Assistant Examination 2026** is a major opportunity for candidates who have built skills in **English typing and shorthand**.
+
+The recruitment offers:
+
+**117 Senior Personal Assistant vacancies**
+
+and
+
+**33 Personal Assistant vacancies**
+
+for a total of:
+
+## 150 Vacancies
+
+Both posts require graduation, **40 WPM English typing** and good computer knowledge. The main difference is the shorthand requirement:
+
+**Senior Personal Assistant – 110 WPM**
+
+**Personal Assistant – 100 WPM**
+
+The selection process begins with a **10-minute qualifying English typing test**, followed by the shorthand test. Successful candidates then move to the **100-mark Main Descriptive Examination** and finally the **15-mark interview**.
+
+The final merit is based on the shorthand test, descriptive examination and interview, while the typing test is qualifying.
+
+For a serious typing or stenography aspirant, this recruitment is particularly valuable because the skills being tested are also directly connected to the actual job. Delhi High Court Personal Assistants and Senior Personal Assistants deal with dictation, transcription, orders, judgments, records, official correspondence and digital court documents.
+
+The biggest mistake would be to prepare only for 40 WPM typing.
+
+A serious candidate should aim for:
+
+**40+ WPM typing**
+
+*
+
+**100/110 WPM shorthand**
+
+*
+
+**Strong English writing**
+
+*
+
+**Accurate computer work**
+
+*
+
+**Consistent practice under time pressure**
+
+The application window opens on **15 September 2026** and closes on **5 October 2026 at 11:00 PM**. Candidates who are eligible should complete their applications carefully and avoid waiting until the final hours.
+
+**Type fast. Write shorthand faster. But in the High Court, accuracy is what matters most.**
+`,
+    content: `\n# दिल्ली उच्च न्यायालय भर्ती 2026: सीनियर पर्सनल असिस्टेंट व पर्सनल असिस्टेंट के 150 पद, टाइपिंग टेस्ट, शॉर्टहैंड, पात्रता, वेतन और आवेदन प्रक्रिया
+
+![Delhi High Court Recruitment 2026](/images/delhi-high-court-spa-pa-recruitment-2026.jpg)
+
+**दिल्ली उच्च न्यायालय, नई दिल्ली (Delhi High Court)** ने **सीनियर पर्सनल असिस्टेंट (SPA)** और **पर्सनल असिस्टेंट (PA)** परीक्षा 2026 के माध्यम से कुल **150 पदों** पर भर्ती की आधिकारिक अधिसूचना जारी की है।
+
+टाइपिंग और आशुलिपि (Stenography) के अभ्यर्थियों के लिए यह एक अत्यंत महत्वपूर्ण भर्ती है क्योंकि चयन प्रक्रिया में सीधे तौर पर **अंग्रेजी टाइपिंग टेस्ट और अंग्रेजी शॉर्टहैंड टेस्ट** शामिल हैं। जो उम्मीदवार एसएससी स्टेनोग्राफर, कोर्ट स्टेनोग्राफर या न्यायिक सेवा में जाने की तैयारी कर रहे हैं, उनके लिए यह एक शानदार अवसर है।
+
+इस भर्ती में **सीनियर पर्सनल असिस्टेंट के 117 पद** और **पर्सनल असिस्टेंट के 33 पद** शामिल हैं।
+
+---
+
+# दिल्ली हाईकोर्ट भर्ती 2026: मुख्य विवरण
+
+| विवरण | जानकारी |
+|---|---|
+| संस्था | दिल्ली उच्च न्यायालय (High Court of Delhi) |
+| परीक्षा का नाम | सीनियर पर्सनल असिस्टेंट एवं पर्सनल असिस्टेंट परीक्षा 2026 |
+| कुल रिक्तियां | 150 पद |
+| सीनियर पर्सनल असिस्टेंट (SPA) | 117 पद |
+| पर्सनल असिस्टेंट (PA) | 33 पद |
+| आवेदन का माध्यम | ऑनलाइन ([delhihighcourt.nic.in](https://delhihighcourt.nic.in)) |
+| ऑनलाइन आवेदन प्रारंभ | 15 सितंबर 2026 |
+| आवेदन की अंतिम तिथि | 05 अक्टूबर 2026 (रात 11:00 बजे तक) |
+| फॉर्म संशोधन विंडो | 12 से 14 अक्टूबर 2026 |
+| न्यूनतम शैक्षणिक योग्यता | मान्यता प्राप्त विश्वविद्यालय से स्नातक (Graduation) |
+| टाइपिंग गति आवश्यकता | 40 WPM (अंग्रेजी, कंप्यूटर पर) |
+| शॉर्टहैंड गति – SPA | 110 WPM (अंग्रेजी) |
+| शॉर्टहैंड गति – PA | 100 WPM (अंग्रेजी) |
+| चयन के चरण | टाइपिंग टेस्ट + शॉर्टहैंड टेस्ट + वर्णनात्मक परीक्षा + साक्षात्कार |
+| परीक्षा का माध्यम | अंग्रेजी |
+
+---
+
+# पदवार रिक्तियां एवं वेतनमान
+
+## 1. सीनियर पर्सनल असिस्टेंट (SPA) – 117 पद
+* **वेतन स्तर:** पे मैट्रिक्स का लेवल-8 (Level 8, 7th CPC Pay Matrix) – ग्रुप 'बी' अराजपत्रित।
+* **आरक्षण:** 117 पदों में से 7 पद दिव्यांग (PwBD) श्रेणी के लिए क्षैतिज रूप से आरक्षित हैं।
+
+## 2. पर्सनल असिस्टेंट (PA) – 33 पद
+* **वेतन स्तर:** पे मैट्रिक्स का लेवल-7 (Level 7, 7th CPC Pay Matrix) – ग्रुप 'बी'।
+* **महत्वपूर्ण बिंदु:** इस भर्ती में पर्सनल असिस्टेंट पद के लिए अनारक्षित (General) वर्ग की कोई रिक्ति नहीं है। यह पद केवल आरक्षित वर्गों (EWS, OBC-NCL, SC, ST) के लिए विज्ञापित है।
+
+| पद का नाम | रिक्तियों की संख्या |
+|---|---:|
+| **सीनियर पर्सनल असिस्टेंट (SPA)** | 117 |
+| **पर्सनल असिस्टेंट (PA)** | 33 |
+| **कुल रिक्तियां** | **150** |
+
+---
+
+# शैक्षणिक योग्यता एवं कौशल मानदंड
+
+## 1. सीनियर पर्सनल असिस्टेंट (SPA)
+* **शैक्षणिक योग्यता:** किसी मान्यता प्राप्त विश्वविद्यालय से स्नातक डिग्री।
+* **शॉर्टहैंड गति:** 110 शब्द प्रति मिनट (अंग्रेजी शॉर्टहैंड)।
+* **टाइपिंग गति:** 40 शब्द प्रति मिनट (कंप्यूटर पर अंग्रेजी टाइपिंग)।
+* **कंप्यूटर ज्ञान:** कंप्यूटर संचालन का उत्कृष्ट व्यावहारिक ज्ञान।
+
+## 2. पर्सनल असिस्टेंट (PA)
+* **शैक्षणिक योग्यता:** स्नातक डिग्री।
+* **शॉर्टहैंड गति:** 100 शब्द प्रति मिनट (अंग्रेजी शॉर्टहैंड)।
+* **टाइपिंग गति:** 40 शब्द प्रति मिनट (कंप्यूटर पर अंग्रेजी टाइपिंग)।
+* **कंप्यूटर ज्ञान:** कंप्यूटर संचालन का ज्ञान।
+
+---
+
+# टाइपिंग टेस्ट का स्वरूप एवं नियम
+
+दिल्ली हाईकोर्ट भर्ती में **अंग्रेजी टाइपिंग टेस्ट एक क्वालिफाइंग (Qualifying) चरण** है।
+
+* **अवधि:** 10 मिनट
+* **निर्धारित गति:** 40 शब्द प्रति मिनट
+* **गति गणना पद्धति:** Characters with Space पद्धति के आधार पर।
+* **अनुमेय त्रुटियां (Mistakes Allowed):** कुल टाइप किए गए शब्दों का अधिकतम **3%**।
+* **महत्वपूर्ण:** टाइपिंग टेस्ट केवल अर्हक (Qualifying) है, इसके अंक अंतिम मेरिट में नहीं जुड़ते हैं।
+
+अपनी टाइपिंग सटीकता और गति को 45-50 WPM तक बढ़ाने के लिए आप [TypeHindi डेली प्रैक्टिस टूल](/practice) और [हिंदी इनस्क्रिप्ट कीबोर्ड लेआउट](/keyboard-layout) पर नियमित अभ्यास कर सकते हैं।
+
+---
+
+# शॉर्टहैंड टेस्ट (Shorthand Dictation & Transcription)
+
+टाइपिंग टेस्ट उत्तीर्ण करने वाले अभ्यर्थी शॉर्टहैंड टेस्ट में भाग लेंगे।
+
+## सीनियर पर्सनल असिस्टेंट (SPA)
+* **डिक्टेशन:** 550 शब्द (5 मिनट में, 110 WPM की गति से)।
+* **ट्रांसक्रिप्शन समय:** कंप्यूटर पर टाइप करने के लिए 45 मिनट।
+* **अधिकतम गलतियां:** कुल शब्दों का 5% (अधिकतम 27.5 गलतियां)।
+
+## पर्सनल असिस्टेंट (PA)
+* **डिक्टेशन:** 500 शब्द (5 मिनट में, 100 WPM की गति से)।
+* **ट्रांसक्रिप्शन समय:** कंप्यूटर पर टाइप करने के लिए 45 मिनट।
+* **अधिकतम गलतियां:** कुल शब्दों का 5% (अधिकतम 25 गलतियां)।
+
+> **विशेष लाभ:** अभ्यर्थियों को शॉर्टहैंड टेस्ट के लिए **दो अवसर** दिए जाएंगे और दोनों में से बेहतर प्रदर्शन को मान्यता दी जाएगी।
+
+---
+
+# सीनियर पर्सनल असिस्टेंट बनाम पर्सनल असिस्टेंट (SPA vs PA)
+
+![Delhi High Court SPA vs PA Comparison](/images/delhi-high-court-spa-vs-pa.jpg)
+
+| मानदंड | सीनियर पर्सनल असिस्टेंट (SPA) | पर्सनल असिस्टेंट (PA) |
+|---|---:|---:|
+| **स्नातक योग्यता** | अनिवार्य | अनिवार्य |
+| **अंग्रेजी टाइपिंग** | 40 WPM | 40 WPM |
+| **अंग्रेजी शॉर्टहैंड** | 110 WPM | 100 WPM |
+| **पे लेवल** | Level 8 | Level 7 |
+| **टाइपिंग टेस्ट** | क्वालिफाइंग | क्वालिफाइंग |
+| **मुख्य लिखित परीक्षा** | 100 अंक | 100 अंक |
+| **साक्षात्कार** | 15 अंक | 15 अंक |
+
+---
+
+# मुख्य वर्णनात्मक परीक्षा (Main Descriptive Exam)
+
+* **कुल अंक:** 100 अंक
+* **समय अवधि:** 120 मिनट (2 घंटे)
+* **माध्यम:** अंग्रेजी
+* **पाठ्यक्रम:**
+  * निबंध लेखन (250 शब्द) – 40 अंक
+  * पत्र लेखन – 15 अंक
+  * व्याकरण एवं समझ (Comprehension) – 25 अंक
+  * हिंदी से अंग्रेजी अनुवाद – 10 अंक
+  * अंग्रेजी से हिंदी अनुवाद – 10 अंक
+* **न्यूनतम अर्हक अंक:** सामान्य वर्ग के लिए 50 अंक और आरक्षित वर्गों के लिए 45 अंक।
+
+---
+
+# अंतिम मेरिट सूची (Final Merit Preparation)
+
+अंतिम चयन सूची निम्नलिखित चरणों के अंकों को जोड़कर बनाई जाती है:
+1. **स्टेज-2:** अंग्रेजी शॉर्टहैंड टेस्ट के अंक
+2. **स्टेज-3:** मुख्य वर्णनात्मक परीक्षा (100 अंक)
+3. **स्टेज-4:** साक्षात्कार (15 अंक)
+
+*(टाइपिंग टेस्ट केवल क्वालिफाइंग है।)*
+
+---
+
+# आयु सीमा एवं छूट (Age Limit)
+
+* **न्यूनतम आयु:** 18 वर्ष
+* **अधिकतम आयु:** 32 वर्ष (01 जनवरी 2026 के अनुसार)
+* **आयु छूट:** अनुसूचित जाति/जनजाति को 5 वर्ष, ओबीसी (NCL) को 3 वर्ष तथा दिव्यांग अभ्यर्थियों को 10 से 15 वर्ष की छूट।
+
+---
+
+# आवेदन शुल्क एवं ऑनलाइन आवेदन प्रक्रिया
+
+* **सामान्य / ओबीसी / ईडब्ल्यूएस:** ₹1,500
+* **एससी / एसटी / दिव्यांग:** ₹1,300
+* **आवेदन प्रक्रिया:**
+  1. दिल्ली हाईकोर्ट के आधिकारिक भर्ती पोर्टल [delhihighcourt.nic.in](https://delhihighcourt.nic.in) पर जाएं।
+  2. मोबाइल और ईमेल से रजिस्ट्रेशन करें।
+  3. फोटो, लाइव वेबकैम फोटो, बाएं हाथ के अंगूठे का निशान और हस्ताक्षर अपलोड करें।
+  4. यदि दोनों पदों (SPA और PA) के लिए आवेदन करना है, तो दोनों के लिए **अलग-अलग फॉर्म और अलग-अलग शुल्क** का भुगतान करना होगा।
+  5. आवेदन की अंतिम तिथि **05 अक्टूबर 2026** है।
+
+कंप्यूटर टाइपिंग गति और कीबोर्ड नियंत्रण को बेहतर बनाने के लिए [मंगल फॉन्ट टाइपिंग टेस्ट](/mangal-font-typing-test), [स्टेप-बाय-स्टेप टाइपिंग लेसन्स](/learn) और [टाइपिंग गेम्स](/game) पर अभ्यास जारी रखें।
+`
+  },
+  {
     slug: "khunti-forest-division-recruitment-2026-walk-in-interview",
     titleEn: "Khunti Forest Division Recruitment 2026: Walk-in Interview for 5 Posts, ₹30,000 Salary, Eligibility and How to Apply",
     excerptEn: "Complete guide to Khunti Forest Division Jharkhand Recruitment 2026 for Team Leader, RS-GIS Expert, Statistician, and Field Data Collector posts. ₹30,000 monthly salary, walk-in interview details, eligibility, and application procedure.",

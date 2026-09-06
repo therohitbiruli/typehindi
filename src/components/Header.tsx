@@ -16,7 +16,6 @@ const navItems = [
   { href: "/keyboard-layout", label: "Keyboard Layout" },
   { href: "/translators", label: "Translators" },
   { href: "/blog", label: "Blog" },
-  { href: "/about", label: "About" },
 ];
 
 export function Header() {

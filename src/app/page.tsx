@@ -703,39 +703,6 @@ export default function Homepage() {
               </div>
             </div>
 
-            {/* Split layout testimonial section with classroom image */}
-            <div className="border border-slate-200 dark:border-slate-800/80 rounded-[2rem] overflow-hidden bg-slate-50 dark:bg-slate-900/50 grid grid-cols-1 md:grid-cols-2">
-              <div className="p-6 md:p-8 flex flex-col justify-center space-y-4">
-                <div>
-                  <h3 className="text-xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2">
-                    <span className="w-2.5 h-5 rounded-full bg-primary-600"></span>
-                    What Our Users Say
-                  </h3>
-                </div>
-                <div className="space-y-3 text-sm text-gray-600 dark:text-gray-300">
-                  <div className="bg-white dark:bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
-                    <p className="italic">"My typing speed went from 30 WPM to 70 WPM in just two months. This platform made learning Hindi typing easy and fun!"</p>
-                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— Neha K., College Student</span>
-                  </div>
-                  <div className="bg-white dark:bg-slate-950 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
-                    <p className="italic">"The progress tracking features helped me immensely during my preparation for the government typing exam. I passed with great scores!"</p>
-                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— Rakesh T., Job Seeker</span>
-                  </div>
-                  <div className="bg-white dark:bg-slate-950 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800/50">
-                    <p className="italic">"Our entire class uses this platform. It is user-friendly and keeps the students highly engaged during lessons."</p>
-                    <span className="block text-[11px] font-semibold text-gray-900 dark:text-white mt-1 text-right">— Priya D., School Teacher</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative min-h-[250px] md:min-h-full bg-slate-900">
-                <img 
-                  src="/images/hero-bg.jpg" 
-                  alt="TypeHindi Classroom Training" 
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-50 dark:from-slate-950/20 via-transparent to-transparent pointer-events-none"></div>
-              </div>
-            </div>
             
             <div className="border-t border-gray-100 dark:border-gray-800 pt-4 text-center text-sm text-gray-500 dark:text-gray-400">
               Thank you for visiting our website! 🎯

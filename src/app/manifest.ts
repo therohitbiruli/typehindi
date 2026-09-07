@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'TypeHindi.in - Best Hindi Typing Platform',
+    name: 'TypeHindi.in - Hindi Typing Platform',
     short_name: 'TypeHindi',
     description: 'Master Hindi typing with InScript keyboard. Free lessons, games, and WPM tracking.',
     start_url: '/',

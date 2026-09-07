@@ -46,9 +46,8 @@ export default function Homepage() {
 
         <div className="container-main px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            {/* Glowing top badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 text-xs font-semibold mb-6 animate-pulse">
-              ✨ The Best Hindi Typing Platform
+              ✨ Free Online Hindi Typing Platform
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] text-white">
@@ -617,7 +616,7 @@ export default function Homepage() {
                 <div>
                   <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">Typing Tools</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-[13px] leading-relaxed">
-                    Our typing tools are among the most advanced compared to other typing websites. We provide all the necessary features in one place so you don't have to look elsewhere. Easily track and improve your Hindi typing speed using our speed tracking tools.
+                    Our typing tools provide a comprehensive suite of features for practicing and evaluating Hindi typing. We provide key learning tools in one place so you can practice efficiently. Easily track and improve your Hindi typing speed using our speed tracking tools.
                   </p>
                 </div>
                 <div>
@@ -629,7 +628,7 @@ export default function Homepage() {
                 <div>
                   <h4 className="text-lg font-normal text-gray-800 dark:text-gray-200 mb-2">Typing Tutor (Learn)</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-[13px] leading-relaxed">
-                    Our typing tutor is one of the most comprehensive learning programs available online. Designed for learners of all levels—from beginners to advanced—it makes understanding the basic rules of touch typing simple and engaging.
+                    Our typing tutor provides a comprehensive, step-by-step learning curriculum. Designed for learners of all levels—from beginners to advanced—it makes understanding the basic rules of touch typing simple and structured.
                   </p>
                 </div>
                 <div>

@@ -98,7 +98,11 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">contact.typehindi@gmail.com</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    <a href="mailto:typehindi@support.com" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                      typehindi@support.com
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">

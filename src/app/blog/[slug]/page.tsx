@@ -127,6 +127,145 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
           />
         </div>
 
+        {/* Internal Linking: Interactive Practice Tools for Exam Preparation */}
+        <section className="mt-10 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-primary-950/20 via-slate-900/90 to-slate-950 border border-primary-500/30 shadow-lg shadow-primary-950/20">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-6">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary-400">
+                {lang === "en" ? "Interactive Practice Tools" : "इंटरएक्टिव प्रैक्टिस टूल्स"}
+              </span>
+              <h3 className="text-xl md:text-2xl font-black text-white mt-1">
+                {lang === "en" ? "Prepare & Test Your Speed on TypeHindi" : "TypeHindi पर अपनी स्पीड जांचें और अभ्यास करें"}
+              </h3>
+            </div>
+            <span className="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full w-fit border border-slate-700">
+              {lang === "en" ? "100% Free • No Login Needed" : "100% मुफ़्त • कोई लॉगिन नहीं"}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Link
+              href="/test"
+              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+            >
+              <div>
+                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                  <span>⏱️</span>
+                  <span>{lang === "en" ? "10-Min Typing Test" : "10-मिनट टाइपिंग टेस्ट"}</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                  {lang === "en"
+                    ? "Practice full 10-minute exam simulations for SSC CHSL, High Courts, and state clerical exams with real WPM & accuracy scoring."
+                    : "SSC CHSL, हाईकोर्ट और क्लर्क भर्ती परीक्षाओं के लिए सटीक WPM और एक्यूरेसी के साथ 10-मिनट टेस्ट दें।"}
+                </p>
+              </div>
+              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+                {lang === "en" ? "Start Test Simulator" : "टेस्ट शुरू करें"} →
+              </span>
+            </Link>
+
+            <Link
+              href="/mangal-font-typing-test"
+              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+            >
+              <div>
+                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                  <span>अ</span>
+                  <span>{lang === "en" ? "Mangal Font Test" : "मंगल फॉन्ट टाइपिंग टेस्ट"}</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                  {lang === "en"
+                    ? "Mandated by SSC for Hindi typing tests. Practice with official Unicode InScript layout and realistic passages."
+                    : "SSC द्वारा अनिवार्य मंगल फॉन्ट पर इनस्क्रिप्ट कीबोर्ड के साथ अभ्यास करें और अपनी स्पीड 30+ WPM बनाएं।"}
+                </p>
+              </div>
+              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+                {lang === "en" ? "Practice Mangal Font" : "मंगल फॉन्ट पर अभ्यास करें"} →
+              </span>
+            </Link>
+
+            <Link
+              href="/learn"
+              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+            >
+              <div>
+                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                  <span>📖</span>
+                  <span>{lang === "en" ? "Touch Typing Course" : "टच टाइपिंग सीखें"}</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                  {lang === "en"
+                    ? "Step-by-step interactive lessons for beginners. Master finger positions on home row, top row, and bottom row."
+                    : "शुरुआती छात्रों के लिए स्टेप-बाय-स्टेप गाइड। होम रो, टॉप रो और मात्राओं पर बिना देखे टाइप करना सीखें।"}
+                </p>
+              </div>
+              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+                {lang === "en" ? "Start Free Lessons" : "पाठ शुरू करें"} →
+              </span>
+            </Link>
+
+            <Link
+              href="/keyboard-layout"
+              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+            >
+              <div>
+                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                  <span>⌨️</span>
+                  <span>{lang === "en" ? "InScript Keyboard Guide" : "इनस्क्रिप्ट कीबोर्ड लेआउट"}</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                  {lang === "en"
+                    ? "Interactive visual map of all vowels, consonants, halants, and special conjunct characters in Devanagari script."
+                    : "देवनागरी लिपि के सभी स्वर, व्यंजन, मात्राएं और संयुक्त अक्षरों का सचित्र और स्पष्ट कीबोर्ड मैप।"}
+                </p>
+              </div>
+              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+                {lang === "en" ? "View Keyboard Map" : "कीबोर्ड लेआउट देखें"} →
+              </span>
+            </Link>
+
+            <Link
+              href="/game"
+              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+            >
+              <div>
+                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                  <span>🎮</span>
+                  <span>{lang === "en" ? "Speed-Building Games" : "टाइपिंग स्पीड गेम्स"}</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                  {lang === "en"
+                    ? "Build muscle memory and reflex speed while destroying falling words in Hindi and English."
+                    : "गिरते हुए शब्दों को तेजी से टाइप करके नष्ट करें और अपनी उंगलियों की रिफ्लेक्स स्पीड को तेजी से बढ़ाएं।"}
+                </p>
+              </div>
+              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+                {lang === "en" ? "Play Typing Games" : "गेम्स खेलें"} →
+              </span>
+            </Link>
+
+            <Link
+              href="/shorthand"
+              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+            >
+              <div>
+                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                  <span>⚡</span>
+                  <span>{lang === "en" ? "Pitman Shorthand Hub" : "शॉर्टहैंड व आशुलिपि"}</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                  {lang === "en"
+                    ? "Interactive steno stroke teacher, vector animated demonstrations, word builder, and 40–120 WPM audio dictations."
+                    : "पिटमैन शॉर्टहैंड स्ट्रोक टीचर, एनिमेटेड स्ट्रोक डेमो, वर्ड बिल्डर और 40 से 120 WPM ऑडियो डिक्टेशन।"}
+                </p>
+              </div>
+              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+                {lang === "en" ? "Explore Shorthand" : "शॉर्टहैंड सीखें"} →
+              </span>
+            </Link>
+          </div>
+        </section>
+
         {/* Related Articles & More Guides */}
         <section className="mt-14 pt-10 border-t border-slate-200 dark:border-slate-800">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
@@ -199,15 +338,24 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
 // Simple helper to convert basic markdown/text to HTML for the blog
 function formatContent(content: string) {
-  // First, parse Markdown tables
+  // First, parse Markdown tables and blockquotes
   const lines = content.split('\n');
   let inTable = false;
+  let inBlockquote = false;
   let tableHtml = '';
+  let blockquoteLines: string[] = [];
   const processedLines: string[] = [];
 
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
+    const rawLine = lines[i];
+    const line = rawLine.trim();
+
     if (line.startsWith('|') && line.endsWith('|')) {
+      if (inBlockquote) {
+        processedLines.push(`<div class="my-6 p-5 rounded-2xl bg-primary-500/5 dark:bg-primary-950/30 border-l-4 border-primary-500 text-sm md:text-base text-gray-700 dark:text-gray-200 shadow-sm space-y-2">\n${blockquoteLines.join('\n')}\n</div>`);
+        blockquoteLines = [];
+        inBlockquote = false;
+      }
       if (!inTable) {
         inTable = true;
         tableHtml = '<div class="overflow-x-auto my-8"><table class="w-full border-collapse border border-gray-300 dark:border-gray-700 text-left text-sm md:text-base">';
@@ -228,6 +376,15 @@ function formatContent(content: string) {
         });
         tableHtml += '</tr>';
       }
+    } else if (line.startsWith('>')) {
+      if (inTable) {
+        tableHtml += '</tbody></table></div>';
+        processedLines.push(tableHtml);
+        inTable = false;
+        tableHtml = '';
+      }
+      inBlockquote = true;
+      blockquoteLines.push(line.replace(/^>\s?/, ''));
     } else {
       if (inTable) {
         tableHtml += '</tbody></table></div>';
@@ -235,12 +392,20 @@ function formatContent(content: string) {
         inTable = false;
         tableHtml = '';
       }
-      processedLines.push(lines[i]);
+      if (inBlockquote) {
+        processedLines.push(`<div class="my-6 p-5 rounded-2xl bg-primary-500/5 dark:bg-primary-950/30 border-l-4 border-primary-500 text-sm md:text-base text-gray-700 dark:text-gray-200 shadow-sm space-y-2">\n${blockquoteLines.join('\n')}\n</div>`);
+        blockquoteLines = [];
+        inBlockquote = false;
+      }
+      processedLines.push(rawLine);
     }
   }
   if (inTable) {
     tableHtml += '</tbody></table></div>';
     processedLines.push(tableHtml);
+  }
+  if (inBlockquote) {
+    processedLines.push(`<div class="my-6 p-5 rounded-2xl bg-primary-500/5 dark:bg-primary-950/30 border-l-4 border-primary-500 text-sm md:text-base text-gray-700 dark:text-gray-200 shadow-sm space-y-2">\n${blockquoteLines.join('\n')}\n</div>`);
   }
   content = processedLines.join('\n');
 
@@ -248,7 +413,7 @@ function formatContent(content: string) {
     .replace(/### (.*)/g, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
     .replace(/## (.*)/g, '<h2 class="text-3xl font-bold mt-10 mb-6">$1</h2>')
     .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8"><img src="$2" alt="$1" class="w-full rounded-xl shadow-md border border-gray-200 dark:border-gray-800" /><figcaption class="text-center text-sm text-gray-500 mt-3">$1</figcaption></figure>')
-    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary-600 hover:underline">$1</a>')
+    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary-600 dark:text-primary-400 font-semibold underline underline-offset-2 hover:text-primary-500 dark:hover:text-primary-300 transition-colors">$1</a>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
   // Convert markdown lists to styled <li> elements
@@ -264,6 +429,8 @@ function formatContent(content: string) {
   html = html.replace(/<\/p><p class="mb-4"><h/g, '<h');
   html = html.replace(/<\/p><p class="mb-4"><div class="overflow-x-auto/g, '<div class="overflow-x-auto');
   html = html.replace(/<\/table><\/div><\/p>/g, '</table></div>');
+  html = html.replace(/<\/p><p class="mb-4"><div class="my-6/g, '<div class="my-6');
+  html = html.replace(/<\/div><\/p>/g, '</div>');
 
   return html.trim();
 }

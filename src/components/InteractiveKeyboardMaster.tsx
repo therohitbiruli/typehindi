@@ -322,7 +322,7 @@ export function InteractiveKeyboardMaster() {
                           : isSelected
                           ? "bg-primary-950 border-2 border-primary-400 text-white ring-2 ring-primary-500/30 z-10 shadow-lg shadow-primary-500/20"
                           : inCategory
-                          ? "bg-slate-800/90 border border-slate-700/80 text-slate-100 hover:border-primary-400 hover:bg-slate-750"
+                          ? "bg-slate-800/90 border border-slate-700/80 text-slate-100 hover:border-primary-400 hover:bg-slate-700"
                           : "bg-slate-900/40 border border-slate-800/50 text-slate-600 opacity-30 hover:opacity-80"
                       }`}
                       style={key.width ? { width: `${key.width * 3}rem` } : undefined}

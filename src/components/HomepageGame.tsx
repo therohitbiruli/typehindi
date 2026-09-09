@@ -9,7 +9,7 @@ export function HomepageGame() {
 
   if (isPlaying) {
     return (
-      <div className="border border-slate-250 dark:border-slate-800 rounded-[2rem] p-4 bg-slate-50/50 dark:bg-slate-900/50 shadow-inner relative max-w-4xl mx-auto overflow-hidden">
+      <div className="border border-slate-200 dark:border-slate-800 rounded-[2rem] p-4 bg-slate-50/50 dark:bg-slate-900/50 shadow-inner relative max-w-4xl mx-auto overflow-hidden">
         <TankGameCanvas />
       </div>
     );

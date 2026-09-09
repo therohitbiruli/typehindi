@@ -230,14 +230,14 @@ export default async function LanguagePracticePage({ params }: Props) {
           <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
             Natural sentence structures to develop fluid finger transitions across keyboard rows.
           </p>
-          <ul className="space-y-2.5 text-xs text-gray-700 dark:text-gray-300">
+          <ul className="space-y-2.5 text-xs">
             {langConfig.sentences.map((sent, idx) => (
               <li
                 key={idx}
-                className="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-750 flex items-start gap-2"
+                className="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-start gap-2.5 text-slate-800 dark:text-slate-200 shadow-sm"
               >
-                <span className="text-primary-500 font-bold">•</span>
-                <span>{sent}</span>
+                <span className="text-primary-500 font-bold mt-0.5">•</span>
+                <span className="leading-relaxed">{sent}</span>
               </li>
             ))}
           </ul>

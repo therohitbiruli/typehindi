@@ -120,7 +120,7 @@ export function LanguageKeyboardClient({
           <span>🧠</span> How the {langConfig.layoutName} Works
         </h2>
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-750">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5">
               1. Phonetic Symmetry
             </h3>
@@ -128,7 +128,7 @@ export function LanguageKeyboardClient({
               Vowels and matras are placed on the left hand, while consonants are organized logically on the right hand.
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-750">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5">
               2. Shift Key Pairs
             </h3>
@@ -136,7 +136,7 @@ export function LanguageKeyboardClient({
               Unaspirated consonants (e.g. क, त, प) are typed unshifted. Pressing Shift on the same key produces the aspirated form (ख, थ, फ).
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-750">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5">
               3. Halant / Virama
             </h3>
@@ -171,8 +171,8 @@ export function LanguageKeyboardClient({
 
         <div className="overflow-x-auto max-h-96 overflow-y-auto">
           <table className="w-full text-left text-xs border-collapse">
-            <thead className="sticky top-0 bg-slate-100 dark:bg-slate-850">
-              <tr className="border-b border-slate-200 dark:border-slate-750 text-gray-500 dark:text-gray-400">
+            <thead className="sticky top-0 bg-slate-100 dark:bg-slate-800">
+              <tr className="border-b border-slate-200 dark:border-slate-700 text-gray-500 dark:text-gray-400">
                 <th className="py-2.5 px-4 font-bold uppercase">Physical Key</th>
                 <th className="py-2.5 px-4 font-bold uppercase">Normal Press</th>
                 <th className="py-2.5 px-4 font-bold uppercase">Shift + Press</th>

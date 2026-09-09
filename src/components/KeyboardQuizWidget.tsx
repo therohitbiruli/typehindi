@@ -175,7 +175,7 @@ export function KeyboardQuizWidget() {
       {/* Options Grid */}
       <div className="grid grid-cols-2 gap-3 mb-6">
         {currentQ.options.map((opt) => {
-          let btnClass = "bg-slate-800/90 border-slate-700 text-slate-100 hover:border-primary-400 hover:bg-slate-750";
+          let btnClass = "bg-slate-800/90 border-slate-700 text-slate-100 hover:border-primary-400 hover:bg-slate-700";
 
           if (isAnswered) {
             if (opt === currentQ.correctAnswer) {

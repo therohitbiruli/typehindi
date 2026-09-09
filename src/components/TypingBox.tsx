@@ -143,6 +143,14 @@ export const TypingBox = memo(function TypingBox({
     [onInput, typedText, isFinished, language]
   );
 
+  // Controlled input change handler for native IME or standard input
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      onInput(e.target.value);
+    },
+    [onInput]
+  );
+
   // Prevent copy/paste
   const preventCopyPaste = useCallback((e: React.ClipboardEvent) => {
     e.preventDefault();
@@ -153,17 +161,17 @@ export const TypingBox = memo(function TypingBox({
   }, []);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4" onClick={handleFocus}>
       {/* Target text display */}
       <div
-        className={`card cursor-text select-none ${fontClass} text-lg md:text-xl leading-relaxed tracking-wide bg-gray-55 dark:bg-gray-900 border border-gray-300 dark:border-gray-800 p-4 pr-12 rounded-2xl text-left shadow-sm`}
+        className={`card cursor-text select-none ${fontClass} text-lg md:text-xl leading-relaxed tracking-wide bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 pr-12 rounded-2xl text-left shadow-sm`}
         onClick={handleFocus}
         id="typing-target"
       >
         {targetText.split("").map((char, index) => {
-          let className = "text-gray-650 dark:text-gray-400";
+          let className = "text-slate-500 dark:text-slate-400";
           if (index < typedText.length) {
-            className = typedText[index] === char ? "text-green-800 dark:text-green-400 font-bold" : "text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-950/50";
+            className = typedText[index] === char ? "text-green-700 dark:text-green-400 font-bold" : "text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-950/50";
           } else if (index === typedText.length) {
             className = "border-b-2 border-blue-600 text-black dark:text-white font-bold bg-blue-50 dark:bg-blue-950/30";
           }
@@ -176,17 +184,17 @@ export const TypingBox = memo(function TypingBox({
       </div>
 
       {/* Visible textarea for input */}
-      <div className="relative">
+      <div className="relative" onClick={handleFocus}>
         <textarea
           ref={textareaRef}
           value={typedText}
           onKeyDown={handleKeyDown}
-          onChange={() => {}}
+          onChange={handleChange}
           onCopy={preventCopyPaste}
           onPaste={preventCopyPaste}
           onCut={preventCopyPaste}
           disabled={isFinished}
-          className={`w-full resize-none rounded-2xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 ${fontClass} text-lg leading-relaxed focus:border-blue-600 dark:focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-600 dark:focus:ring-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:cursor-not-allowed text-gray-900 dark:text-gray-150 shadow-sm`}
+          className={`w-full resize-none rounded-2xl border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 ${fontClass} text-lg leading-relaxed text-slate-900 dark:text-white caret-blue-600 dark:caret-primary-400 placeholder:text-gray-400 dark:placeholder:text-slate-500 focus:border-primary-500 dark:focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 disabled:bg-gray-100 dark:disabled:bg-slate-800 disabled:cursor-not-allowed shadow-sm`}
           rows={4}
           placeholder={isStarted ? "" : "Start typing here..."}
           spellCheck={false}

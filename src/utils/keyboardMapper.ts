@@ -1,4 +1,5 @@
 import { keyboardRows, physicalKeyLabels } from "../data/keyboard-layout";
+import { LanguageId, LANGUAGES_CONFIG } from "../data/languages";
 
 export interface Keystroke {
   key: string;
@@ -225,9 +226,13 @@ export function getRemingtonKeysForWord(word: string): Keystroke[] {
   return result;
 }
 
-export function getInscriptKeyInfoForChar(char: string): { code: string; isShift: boolean } | null {
+export function getKeyInfoForChar(
+  char: string,
+  languageId: LanguageId = "hindi"
+): { code: string; isShift: boolean } | null {
   if (!char) return null;
-  for (const row of keyboardRows) {
+  const config = LANGUAGES_CONFIG[languageId] || LANGUAGES_CONFIG.hindi;
+  for (const row of config.keyboardRows) {
     for (const key of row) {
       if (key.normal === char) {
         return { code: key.code, isShift: false };
@@ -238,4 +243,8 @@ export function getInscriptKeyInfoForChar(char: string): { code: string; isShift
     }
   }
   return null;
+}
+
+export function getInscriptKeyInfoForChar(char: string): { code: string; isShift: boolean } | null {
+  return getKeyInfoForChar(char, "hindi");
 }

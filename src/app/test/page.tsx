@@ -13,6 +13,7 @@ import { useKeyPress } from "../../hooks/useKeyPress";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { getRandomParagraph } from "../../data/paragraphs";
 import type { Paragraph } from "../../data/paragraphs";
+import { getKeyInfoForChar } from "../../utils/keyboardMapper";
 
 const TEST_DURATIONS = [
   { label: "1 Min", seconds: 60 },
@@ -27,7 +28,8 @@ export default function TestPage() {
   const [paragraph, setParagraph] = useState<Paragraph>(() => getRandomParagraph("medium", "hindi"));
   const [showKeyboard, setShowKeyboard] = useState(false);
   const [showResults, setShowResults] = useState(false);
-  const [bestTestWpm, setBestTestWpm] = useLocalStorage<number>("bestTestWpm", 0);
+  const storageKey = language === "hindi" ? "bestTestWpm" : `typehindi_best_test_wpm_${language}`;
+  const [bestTestWpm, setBestTestWpm] = useLocalStorage<number>(storageKey, 0);
 
   const { typedText, isStarted, isFinished, stats, handleInput, reset, forceFinish } =
     useTypingEngine(paragraph.text);
@@ -52,14 +54,21 @@ export default function TestPage() {
   }, [isFinished, showResults, stats.wpm, bestTestWpm, setBestTestWpm]);
 
   const handleTypingInput = useCallback(
-    (text: string) => {
+    (text: string, insertedAtIndex?: number) => {
       if (!isRunning && text.length === 1) {
         startTimer();
       }
-      handleInput(text);
+      handleInput(text, insertedAtIndex);
     },
     [isRunning, startTimer, handleInput]
   );
+
+  const nextKeyInfo = useMemo(() => {
+    if (isFinished || showResults || !paragraph.text) return null;
+    const nextChar = paragraph.text[typedText.length];
+    if (!nextChar) return null;
+    return getKeyInfoForChar(nextChar, language);
+  }, [paragraph.text, typedText.length, isFinished, showResults, language]);
 
   const startNewTest = useCallback(() => {
     setParagraph(getRandomParagraph("medium", language));
@@ -292,6 +301,7 @@ export default function TestPage() {
 
       {/* Typing area */}
       <TypingBox
+        key={`test-${language}-${paragraph.id}`}
         targetText={paragraph.text}
         typedText={typedText}
         onInput={handleTypingInput}
@@ -313,7 +323,14 @@ export default function TestPage() {
         </button>
       </div>
 
-      <Keyboard activeKey={activeKey} isShift={isShift} visible={showKeyboard} language={language} />
+      <Keyboard
+        activeKey={activeKey}
+        isShift={isShift}
+        visible={showKeyboard}
+        language={language}
+        highlightKey={nextKeyInfo?.code}
+        highlightShift={nextKeyInfo?.isShift}
+      />
 
       <AdPlaceholder position="bottom" />
 

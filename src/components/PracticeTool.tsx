@@ -10,7 +10,7 @@ import { useKeyPress } from "../hooks/useKeyPress";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { getRandomParagraph, getParagraphsByDifficulty } from "../data/paragraphs";
 import type { Paragraph } from "../data/paragraphs";
-import { getInscriptKeysForWord, getInscriptKeyInfoForChar } from "../utils/keyboardMapper";
+import { getInscriptKeysForWord, getKeyInfoForChar } from "../utils/keyboardMapper";
 import { LanguageId, LANGUAGES_CONFIG, ALL_LANGUAGES, getRandomPassage, getPassagesByDifficulty } from "../data/languages";
 
 const DIFFICULTY_OPTIONS: Array<{ label: string; value: "easy" | "medium" | "hard" }> = [
@@ -256,9 +256,10 @@ export function PracticeTool({
 
   // Calculate the next character to highlight on the virtual keyboard
   const nextKeyInfo = useMemo(() => {
-    if (isFinished || languageId !== "hindi") return null;
+    if (isFinished || !paragraph.text) return null;
     const nextChar = paragraph.text[typedText.length];
-    return getInscriptKeyInfoForChar(nextChar);
+    if (!nextChar) return null;
+    return getKeyInfoForChar(nextChar, languageId);
   }, [paragraph.text, typedText.length, isFinished, languageId]);
 
   return (
@@ -305,17 +306,19 @@ export function PracticeTool({
                 ✏️
               </button>
               <TypingBox
+                key={`focus-${languageId}-${paragraph.id}`}
                 targetText={paragraph.text}
                 typedText={typedText}
                 onInput={handleTypingInput}
                 isFinished={isFinished}
                 isStarted={isStarted}
                 autoFocus={autoFocus}
+                language={languageId}
               />
             </div>
 
-            {/* Keyboard hint in Focus Mode */}
-            {activeWord && !isFinished && (
+            {/* Keyboard hint in Focus Mode (Hindi only) */}
+            {activeWord && !isFinished && languageId === "hindi" && (
               <div className="bg-amber-50 dark:bg-gray-900/60 border border-amber-300 dark:border-amber-900/50 rounded-2xl p-3.5 flex justify-between items-center shadow-sm">
                 <p className="text-xs text-gray-700 dark:text-gray-300">
                   Word <strong className="font-hindi text-gray-950 dark:text-white">{activeWord}</strong> keystroke clue:{" "}
@@ -364,10 +367,10 @@ export function PracticeTool({
       {!isFocusMode && (
         <>
           {/* 🌐 Language Switcher Bar */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-gray-100 dark:bg-gray-855 border border-gray-300 dark:border-gray-800 shadow-md">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
             <div className="flex items-center gap-2">
               <span className="text-lg">🌐</span>
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
                 Choose Language:
               </span>
             </div>
@@ -380,8 +383,8 @@ export function PracticeTool({
                     href={`/practice/${lang.slug}`}
                     className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                       isActive
-                        ? "bg-primary-600 text-white shadow-sm"
-                        : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-700"
+                        ? "bg-primary-600 text-white shadow-sm shadow-primary-500/30"
+                        : "bg-slate-950 text-slate-300 hover:bg-slate-800 hover:text-white border border-slate-800"
                     }`}
                   >
                     <span className="text-[11px] opacity-80">{lang.symbol}</span>
@@ -394,16 +397,16 @@ export function PracticeTool({
           </div>
 
           {/* Controls */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-100 dark:bg-gray-855 p-3.5 rounded-2xl border border-gray-300 dark:border-gray-800 shadow-md">
-            <div className="flex gap-1">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-slate-900/90 p-3.5 rounded-2xl border border-slate-800 shadow-md">
+            <div className="flex gap-1.5">
               {DIFFICULTY_OPTIONS.map((opt) => (
                 <button
                   key={opt.value}
                   onClick={() => handleDifficultyChange(opt.value)}
-                  className={`px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     difficulty === opt.value
-                      ? "bg-blue-600 text-white"
-                      : "bg-white text-gray-700 border-2 border-gray-300 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-600"
+                      ? "bg-primary-600 text-white shadow-sm shadow-primary-500/30"
+                      : "bg-slate-950 text-slate-300 border border-slate-800 hover:bg-slate-800 hover:text-white"
                   }`}
                 >
                   {opt.label}
@@ -413,12 +416,12 @@ export function PracticeTool({
 
             {/* Guided Highlight toggles */}
             <div className="flex items-center gap-4">
-              <label className="flex items-center gap-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300 cursor-pointer select-none">
+              <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-300 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={enableHighlights}
                   onChange={(e) => setEnableHighlights(e.target.checked)}
-                  className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4"
+                  className="rounded text-primary-600 focus:ring-primary-500 bg-slate-950 border-slate-700 h-4 w-4"
                 />
                 <span>Guide Highlight</span>
               </label>
@@ -426,7 +429,7 @@ export function PracticeTool({
               {/* Focus mode CTA button */}
               <button
                 onClick={() => setIsFocusMode(true)}
-                className="px-3.5 py-1.5 rounded bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/40 dark:hover:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs font-bold transition-all border border-indigo-200 dark:border-indigo-900/40 flex items-center gap-1.5 shadow-sm"
+                className="px-3.5 py-1.5 rounded-xl bg-primary-500/10 hover:bg-primary-500/20 text-primary-400 text-xs font-bold transition-all border border-primary-500/30 flex items-center gap-1.5 shadow-sm"
               >
                 🧘 Focus Mode
               </button>
@@ -451,18 +454,20 @@ export function PracticeTool({
                 ✏️
               </button>
               <TypingBox
+                key={`normal-${languageId}-${paragraph.id}`}
                 targetText={paragraph.text}
                 typedText={typedText}
                 onInput={handleTypingInput}
                 isFinished={isFinished}
                 isStarted={isStarted}
                 autoFocus={autoFocus}
+                language={languageId}
               />
             </div>
           </div>
 
-          {/* Keystroke Clue Banner */}
-          {activeWord && !isFinished && (
+          {/* Keystroke Clue Banner (Hindi only) */}
+          {activeWord && !isFinished && languageId === "hindi" && (
             <div className="mb-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-gray-900 dark:to-orange-950/20 border border-amber-300 dark:border-amber-800/40 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-fade-in shadow-md">
               <div className="flex items-start sm:items-center gap-3">
                 <span className="text-2xl mt-0.5 sm:mt-0">💡</span>

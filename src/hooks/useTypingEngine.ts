@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 
 export interface TypingStats {
   wpm: number;
@@ -24,14 +24,31 @@ export function useTypingEngine(targetText: string) {
   const [isStarted, setIsStarted] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   const startTimeRef = useRef<number | null>(null);
-  const errorsRef = useRef(0);
+
+  const reset = useCallback(() => {
+    setTypedText("");
+    setIsStarted(false);
+    setIsFinished(false);
+    startTimeRef.current = null;
+  }, []);
+
+  // Automatically reset whenever the target passage changes
+  useEffect(() => {
+    reset();
+  }, [targetText, reset]);
 
   const getStats = useCallback((): TypingStats => {
-    if (!typedText.length || !startTimeRef.current) {
-      return { wpm: 0, accuracy: 100, correctChars: 0, incorrectChars: 0, totalChars: 0, totalErrors: 0 };
+    if (!typedText.length) {
+      return {
+        wpm: 0,
+        accuracy: 100,
+        correctChars: 0,
+        incorrectChars: 0,
+        totalChars: 0,
+        totalErrors: 0,
+      };
     }
 
-    const elapsedMinutes = (Date.now() - startTimeRef.current) / 60000;
     let correct = 0;
     let incorrect = 0;
 
@@ -43,6 +60,9 @@ export function useTypingEngine(targetText: string) {
       }
     }
 
+    const elapsedMinutes = startTimeRef.current
+      ? (Date.now() - startTimeRef.current) / 60000
+      : 0;
     const wpm = elapsedMinutes > 0 ? Math.round((correct / 5) / elapsedMinutes) : 0;
     const accuracy = typedText.length > 0 ? Math.round((correct / typedText.length) * 100) : 100;
 
@@ -52,44 +72,28 @@ export function useTypingEngine(targetText: string) {
       correctChars: correct,
       incorrectChars: incorrect,
       totalChars: typedText.length,
-      totalErrors: errorsRef.current,
+      totalErrors: incorrect,
     };
   }, [typedText, targetText]);
 
   const handleInput = useCallback(
-    (input: string, insertedAtIndex?: number) => {
+    (input: string, _insertedAtIndex?: number) => {
       if (isFinished) return;
 
-      if (!isStarted) {
+      if (!isStarted && input.length > 0) {
         setIsStarted(true);
         startTimeRef.current = Date.now();
-      }
-
-      // Track errors
-      if (input.length > typedText.length) {
-        const indexToCompare = insertedAtIndex !== undefined ? insertedAtIndex : input.length - 1;
-        if (indexToCompare < targetText.length && input[indexToCompare] !== targetText[indexToCompare]) {
-          errorsRef.current++;
-        }
       }
 
       setTypedText(input);
 
       // Check if finished
-      if (input.length >= targetText.length) {
+      if (targetText.length > 0 && input.length >= targetText.length) {
         setIsFinished(true);
       }
     },
-    [isStarted, isFinished, targetText, typedText.length]
+    [isStarted, isFinished, targetText.length]
   );
-
-  const reset = useCallback(() => {
-    setTypedText("");
-    setIsStarted(false);
-    setIsFinished(false);
-    startTimeRef.current = null;
-    errorsRef.current = 0;
-  }, []);
 
   const forceFinish = useCallback(() => {
     setIsFinished(true);

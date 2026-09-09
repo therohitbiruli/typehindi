@@ -18,6 +18,7 @@ import {
   ALL_LANGUAGES,
   getRandomPassage,
 } from "../data/languages";
+import { getKeyInfoForChar } from "../utils/keyboardMapper";
 
 const TEST_DURATIONS = [
   { label: "1 Min", seconds: 60 },
@@ -87,14 +88,21 @@ export function TypingTestTool({
   }, [isFinished, showResults, stats.wpm, bestTestWpm, setBestTestWpm]);
 
   const handleTypingInput = useCallback(
-    (text: string) => {
+    (text: string, insertedAtIndex?: number) => {
       if (!isRunning && text.length === 1) {
         startTimer();
       }
-      handleInput(text);
+      handleInput(text, insertedAtIndex);
     },
     [isRunning, startTimer, handleInput]
   );
+
+  const nextKeyInfo = useMemo(() => {
+    if (isFinished || showResults || !paragraph.text) return null;
+    const nextChar = paragraph.text[typedText.length];
+    if (!nextChar) return null;
+    return getKeyInfoForChar(nextChar, activeLang);
+  }, [paragraph.text, typedText.length, isFinished, showResults, activeLang]);
 
   const startNewTest = useCallback(() => {
     if (activeLang === "hindi") {
@@ -261,12 +269,14 @@ export function TypingTestTool({
       {/* Typing area */}
       <div className="relative group mb-6">
         <TypingBox
+          key={`test-${activeLang}-${paragraph.id}`}
           targetText={paragraph.text}
           typedText={typedText}
           onInput={handleTypingInput}
           isFinished={isFinished || showResults}
           isStarted={isStarted}
           autoFocus={true}
+          language={activeLang}
         />
       </div>
 
@@ -297,6 +307,8 @@ export function TypingTestTool({
           isShift={isShift}
           visible={showKeyboard}
           language={activeLang}
+          highlightKey={nextKeyInfo?.code}
+          highlightShift={nextKeyInfo?.isShift}
         />
       </div>
     </div>

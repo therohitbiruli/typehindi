@@ -5,17 +5,20 @@ import { useState, useEffect, useCallback } from "react";
 export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((prev: T) => T)) => void] {
   const [storedValue, setStoredValue] = useState<T>(initialValue);
 
-  // Load from localStorage on mount
+  // Load from localStorage on mount or key change
   useEffect(() => {
     try {
       const item = window.localStorage.getItem(key);
       if (item) {
         setStoredValue(JSON.parse(item));
+      } else {
+        setStoredValue(initialValue);
       }
     } catch (error) {
       console.warn(`Error reading localStorage key "${key}":`, error);
+      setStoredValue(initialValue);
     }
-  }, [key]);
+  }, [key, initialValue]);
 
   const setValue = useCallback(
     (value: T | ((prev: T) => T)) => {

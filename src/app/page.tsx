@@ -261,54 +261,6 @@ export default function Homepage() {
             </div>
           </div>
 
-          {/* 📚 SECTION: LEARN TYPING IN YOUR LANGUAGE */}
-          <div className="bg-slate-900/60 rounded-[2.5rem] p-6 sm:p-10 border border-slate-800">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-                  Step-by-Step Educational Guides
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
-                  Learn Typing in Your Language
-                </h3>
-              </div>
-              <p className="text-xs text-slate-400 max-w-sm">
-                Master finger positioning, keyboard setups on Windows/Mac, and exam strategies tailored to each language.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-              {[
-                { name: "English", slug: "english-typing", symbol: "En", native: "English" },
-                { name: "Hindi", slug: "hindi-typing", symbol: "अ", native: "हिंदी" },
-                { name: "Marathi", slug: "marathi-typing", symbol: "म", native: "मराठी" },
-                { name: "Punjabi", slug: "punjabi-typing", symbol: "ਪ", native: "ਪੰਜਾਬੀ" },
-                { name: "Tamil", slug: "tamil-typing", symbol: "த", native: "தமிழ்" },
-                { name: "Bengali", slug: "bengali-typing", symbol: "ব", native: "বাংলা" },
-              ].map((lang) => (
-                <Link
-                  key={lang.slug}
-                  href={`/learn/${lang.slug}`}
-                  className="p-4 rounded-2xl bg-slate-950 border border-slate-800 hover:border-emerald-500/50 transition-all text-center flex flex-col items-center justify-between group hover:-translate-y-0.5"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 font-bold flex items-center justify-center text-base mb-2 group-hover:scale-110 transition-transform">
-                    {lang.symbol}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xs text-white group-hover:text-emerald-400 transition-colors">
-                      {lang.name}
-                    </h4>
-                    <span className="text-[10px] text-slate-500 block mb-3">
-                      {lang.native}
-                    </span>
-                  </div>
-                  <span className="text-[11px] font-semibold text-emerald-400 flex items-center gap-1 group-hover:underline">
-                    Learn Typing →
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
 
           {/* 1. ⌨️ SECTION: PRACTICE */}
           <div id="practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#D9E1EC] dark:border-slate-800 relative overflow-hidden">

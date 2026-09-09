@@ -154,6 +154,162 @@ export default function Homepage() {
       <section className="pb-20">
         <div className="container-main max-w-6xl px-4 space-y-16">
           
+          {/* 🌐 SECTION: TYPING PRACTICE IN MULTIPLE LANGUAGES */}
+          <div className="bg-slate-900/70 rounded-[2.5rem] p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-xs font-bold uppercase tracking-wider mb-3">
+                🌐 Multilingual Typing Hub
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+                Typing Practice in Multiple Languages
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                Learn, practice and test your typing skills in English and Indian languages.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  name: "English Typing",
+                  native: "English",
+                  symbol: "En",
+                  slug: "english-typing",
+                  description: "Master standard QWERTY touch typing, improve your WPM speed, and prepare for SSC and clerical exams with full passage exercises.",
+                  btnText: "Practice English Typing →",
+                  badge: "Standard QWERTY"
+                },
+                {
+                  name: "Hindi Typing",
+                  native: "हिंदी टाइपिंग",
+                  symbol: "अ",
+                  slug: "hindi-typing",
+                  description: "Practice Hindi typing on the official InScript and Mangal Unicode font layout with accurate WPM and exam simulation.",
+                  btnText: "Practice Hindi Typing →",
+                  badge: "InScript / Mangal"
+                },
+                {
+                  name: "Marathi Typing",
+                  native: "मराठी टायपिंग",
+                  symbol: "म",
+                  slug: "marathi-typing",
+                  description: "Practice Marathi typing with verified InScript layout, master characters like 'ळ', and prepare for MPSC clerk-typist recruitments.",
+                  btnText: "Practice Marathi Typing →",
+                  badge: "Marathi InScript"
+                },
+                {
+                  name: "Punjabi Typing",
+                  native: "ਪੰਜਾਬੀ ਟਾਈਪਿੰਗ",
+                  symbol: "ਪ",
+                  slug: "punjabi-typing",
+                  description: "Learn Gurmukhi InScript typing on Raavi Unicode font, master tippi, adhak, and qualify PSSSB clerk exams.",
+                  btnText: "Practice Punjabi Typing →",
+                  badge: "Gurmukhi InScript"
+                },
+                {
+                  name: "Tamil Typing",
+                  native: "தமிழ் தட்டச்சு",
+                  symbol: "த",
+                  slug: "tamil-typing",
+                  description: "Practice Tamil typing online with verified Tamil InScript layout, build typing speed and prepare for TNPSC typist examinations.",
+                  btnText: "Practice Tamil Typing →",
+                  badge: "Tamil InScript"
+                },
+                {
+                  name: "Bengali Typing",
+                  native: "বাংলা টাইপিং",
+                  symbol: "ব",
+                  slug: "bengali-typing",
+                  description: "Practice Bengali typing, improve your speed and accuracy, and build confidence with timed typing exercises for WBPSC clerkship.",
+                  btnText: "Practice Bengali Typing →",
+                  badge: "Bengali InScript"
+                }
+              ].map((lang) => (
+                <div
+                  key={lang.slug}
+                  className="rounded-2xl bg-slate-950 border border-slate-800/90 p-6 flex flex-col justify-between hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1 shadow-md group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <div className="w-12 h-12 rounded-2xl bg-primary-500/10 text-primary-400 font-bold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        {lang.symbol}
+                      </div>
+                      <span className="text-[10px] px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 font-semibold">
+                        {lang.badge}
+                      </span>
+                    </div>
+                    <div className="mb-2">
+                      <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors">
+                        {lang.name}
+                      </h3>
+                      <span className="text-xs text-slate-500 font-medium">{lang.native}</span>
+                    </div>
+                    <p className="text-xs text-slate-400 leading-relaxed mb-6">
+                      {lang.description}
+                    </p>
+                  </div>
+
+                  <Link
+                    href={`/practice/${lang.slug}`}
+                    className="w-full py-2.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold text-center transition-all shadow-md shadow-primary-500/20 group-hover:shadow-primary-500/30"
+                  >
+                    {lang.btnText}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 📚 SECTION: LEARN TYPING IN YOUR LANGUAGE */}
+          <div className="bg-slate-900/60 rounded-[2.5rem] p-6 sm:p-10 border border-slate-800">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                  Step-by-Step Educational Guides
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+                  Learn Typing in Your Language
+                </h3>
+              </div>
+              <p className="text-xs text-slate-400 max-w-sm">
+                Master finger positioning, keyboard setups on Windows/Mac, and exam strategies tailored to each language.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              {[
+                { name: "English", slug: "english-typing", symbol: "En", native: "English" },
+                { name: "Hindi", slug: "hindi-typing", symbol: "अ", native: "हिंदी" },
+                { name: "Marathi", slug: "marathi-typing", symbol: "म", native: "मराठी" },
+                { name: "Punjabi", slug: "punjabi-typing", symbol: "ਪ", native: "ਪੰਜਾਬੀ" },
+                { name: "Tamil", slug: "tamil-typing", symbol: "த", native: "தமிழ்" },
+                { name: "Bengali", slug: "bengali-typing", symbol: "ব", native: "বাংলা" },
+              ].map((lang) => (
+                <Link
+                  key={lang.slug}
+                  href={`/learn/${lang.slug}`}
+                  className="p-4 rounded-2xl bg-slate-950 border border-slate-800 hover:border-emerald-500/50 transition-all text-center flex flex-col items-center justify-between group hover:-translate-y-0.5"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 font-bold flex items-center justify-center text-base mb-2 group-hover:scale-110 transition-transform">
+                    {lang.symbol}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-xs text-white group-hover:text-emerald-400 transition-colors">
+                      {lang.name}
+                    </h4>
+                    <span className="text-[10px] text-slate-500 block mb-3">
+                      {lang.native}
+                    </span>
+                  </div>
+                  <span className="text-[11px] font-semibold text-emerald-400 flex items-center gap-1 group-hover:underline">
+                    Learn Typing →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* 1. ⌨️ SECTION: PRACTICE */}
           <div id="practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#D9E1EC] dark:border-slate-800 relative overflow-hidden">
              <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />

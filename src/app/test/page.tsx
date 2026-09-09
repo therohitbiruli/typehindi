@@ -103,6 +103,40 @@ export default function TestPage() {
         Take a timed typing test to evaluate your WPM speed, accuracy, and error counts.
       </p>
 
+      {/* 🌐 Multilingual Test Selector Bar */}
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="flex items-center gap-2">
+          <span className="text-lg">🌐</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
+            Language Tests:
+          </span>
+        </div>
+        <div className="flex flex-wrap items-center gap-1.5">
+          {[
+            { name: "English", native: "English", slug: "english-typing", symbol: "En" },
+            { name: "Hindi", native: "हिंदी", slug: "hindi-typing", symbol: "अ" },
+            { name: "Marathi", native: "मराठी", slug: "marathi-typing", symbol: "म" },
+            { name: "Punjabi", native: "ਪੰਜਾਬੀ", slug: "punjabi-typing", symbol: "ਪ" },
+            { name: "Tamil", native: "தமிழ்", slug: "tamil-typing", symbol: "த" },
+            { name: "Bengali", native: "বাংলা", slug: "bengali-typing", symbol: "ব" },
+          ].map((item) => (
+            <a
+              key={item.slug}
+              href={`/test/${item.slug}`}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                item.slug === `${language}-typing`
+                  ? "bg-primary-600 text-white shadow-sm"
+                  : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
+              }`}
+            >
+              <span className="text-[11px] opacity-80">{item.symbol}</span>
+              <span>{item.name}</span>
+              <span className="text-[10px] font-normal opacity-70">({item.native})</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
       {/* Settings Grid with Language and target typing Job selectors */}
       <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 p-4 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
         {/* Language Selector */}

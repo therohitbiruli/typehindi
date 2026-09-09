@@ -108,6 +108,31 @@ export default function KeyboardLayoutPage() {
             </span>
           ))}
         </div>
+
+        {/* Language Tabs Selector */}
+        <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mt-6">
+          {[
+            { name: "Hindi InScript", slug: "hindi", symbol: "अ", active: true },
+            { name: "English QWERTY", slug: "english", symbol: "En", active: false },
+            { name: "Marathi InScript", slug: "marathi", symbol: "म", active: false },
+            { name: "Punjabi Gurmukhi", slug: "punjabi", symbol: "ਪ", active: false },
+            { name: "Tamil InScript", slug: "tamil", symbol: "த", active: false },
+            { name: "Bengali InScript", slug: "bengali", symbol: "ব", active: false },
+          ].map((item) => (
+            <Link
+              key={item.slug}
+              href={`/keyboard-layout/${item.slug}`}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                item.active
+                  ? "bg-primary-600 text-white shadow-sm"
+                  : "bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800"
+              }`}
+            >
+              <span>{item.symbol}</span>
+              <span>{item.name}</span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* ========================================================================= */}

@@ -11,6 +11,7 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 import { getRandomParagraph, getParagraphsByDifficulty } from "../data/paragraphs";
 import type { Paragraph } from "../data/paragraphs";
 import { getInscriptKeysForWord, getInscriptKeyInfoForChar } from "../utils/keyboardMapper";
+import { LanguageId, LANGUAGES_CONFIG, ALL_LANGUAGES, getRandomPassage, getPassagesByDifficulty } from "../data/languages";
 
 const DIFFICULTY_OPTIONS: Array<{ label: string; value: "easy" | "medium" | "hard" }> = [
   { label: "Easy", value: "easy" },
@@ -36,12 +37,26 @@ function getCurrentWord(targetText: string, cursorIndex: number): string {
   return word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()।?"':]/g, "").trim();
 }
 
-export function PracticeTool({ showSEO = false, autoFocus = false }: { showSEO?: boolean; autoFocus?: boolean }) {
+export function PracticeTool({
+  showSEO = false,
+  autoFocus = false,
+  languageId = "hindi",
+}: {
+  showSEO?: boolean;
+  autoFocus?: boolean;
+  languageId?: LanguageId;
+}) {
   const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">("medium");
-  const [paragraph, setParagraph] = useState<Paragraph>(() => getParagraphsByDifficulty(difficulty)[0]);
+  const [paragraph, setParagraph] = useState<Paragraph>(() => {
+    if (languageId === "hindi") {
+      return getParagraphsByDifficulty(difficulty)[0];
+    }
+    return getRandomPassage(languageId, difficulty);
+  });
   const [showKeyboard, setShowKeyboard] = useState(true);
   const [enableHighlights, setEnableHighlights] = useState(true);
-  const [bestWpm, setBestWpm] = useLocalStorage<number>("bestWpm", 0);
+  const storageKey = languageId === "hindi" ? "bestWpm" : `typehindi_best_wpm_${languageId}`;
+  const [bestWpm, setBestWpm] = useLocalStorage<number>(storageKey, 0);
   const [isFocusMode, setIsFocusMode] = useState(false);
 
   // Custom text pasting states
@@ -96,11 +111,26 @@ export function PracticeTool({ showSEO = false, autoFocus = false }: { showSEO?:
     [handleInput]
   );
 
-  const changeParagraph = useCallback(() => {
-    const newP = getRandomParagraph(difficulty);
-    setParagraph(newP);
+  // Sync paragraph when language changes
+  useEffect(() => {
+    if (languageId === "hindi") {
+      setParagraph(getParagraphsByDifficulty(difficulty)[0]);
+    } else {
+      setParagraph(getRandomPassage(languageId, difficulty));
+    }
     reset();
-  }, [difficulty, reset]);
+  }, [languageId]);
+
+  const changeParagraph = useCallback(() => {
+    if (languageId === "hindi") {
+      const newP = getRandomParagraph(difficulty);
+      setParagraph(newP);
+    } else {
+      const newP = getRandomPassage(languageId, difficulty);
+      setParagraph(newP);
+    }
+    reset();
+  }, [difficulty, reset, languageId]);
 
   const handleReset = useCallback(() => {
     reset();
@@ -109,11 +139,16 @@ export function PracticeTool({ showSEO = false, autoFocus = false }: { showSEO?:
   const handleDifficultyChange = useCallback(
     (d: "easy" | "medium" | "hard") => {
       setDifficulty(d);
-      const newP = getRandomParagraph(d);
-      setParagraph(newP);
+      if (languageId === "hindi") {
+        const newP = getRandomParagraph(d);
+        setParagraph(newP);
+      } else {
+        const newP = getRandomPassage(languageId, d);
+        setParagraph(newP);
+      }
       reset();
     },
-    [reset]
+    [reset, languageId]
   );
 
   // Keyboard show/hide toggle with Ad verification
@@ -215,16 +250,16 @@ export function PracticeTool({ showSEO = false, autoFocus = false }: { showSEO?:
   }, [paragraph.text, typedText.length]);
 
   const activeWordKeys = useMemo(() => {
-    if (!activeWord) return [];
+    if (!activeWord || languageId !== "hindi") return [];
     return getInscriptKeysForWord(activeWord);
-  }, [activeWord]);
+  }, [activeWord, languageId]);
 
   // Calculate the next character to highlight on the virtual keyboard
   const nextKeyInfo = useMemo(() => {
-    if (isFinished) return null;
+    if (isFinished || languageId !== "hindi") return null;
     const nextChar = paragraph.text[typedText.length];
     return getInscriptKeyInfoForChar(nextChar);
-  }, [paragraph.text, typedText.length, isFinished]);
+  }, [paragraph.text, typedText.length, isFinished, languageId]);
 
   return (
     <div className="w-full">
@@ -319,6 +354,7 @@ export function PracticeTool({ showSEO = false, autoFocus = false }: { showSEO?:
               visible={showKeyboard}
               highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
               highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
+              language={languageId}
             />
           </div>
         </div>
@@ -327,6 +363,36 @@ export function PracticeTool({ showSEO = false, autoFocus = false }: { showSEO?:
       {/* Normal Mode */}
       {!isFocusMode && (
         <>
+          {/* 🌐 Language Switcher Bar */}
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-gray-100 dark:bg-gray-855 border border-gray-300 dark:border-gray-800 shadow-md">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">🌐</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+                Choose Language:
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              {ALL_LANGUAGES.map((lang) => {
+                const isActive = lang.id === languageId;
+                return (
+                  <Link
+                    key={lang.id}
+                    href={`/practice/${lang.slug}`}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                      isActive
+                        ? "bg-primary-600 text-white shadow-sm"
+                        : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-700"
+                    }`}
+                  >
+                    <span className="text-[11px] opacity-80">{lang.symbol}</span>
+                    <span>{lang.name}</span>
+                    <span className="text-[10px] font-normal opacity-70">({lang.nativeName})</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Controls */}
           <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-100 dark:bg-gray-855 p-3.5 rounded-2xl border border-gray-300 dark:border-gray-800 shadow-md">
             <div className="flex gap-1">
@@ -459,6 +525,7 @@ export function PracticeTool({ showSEO = false, autoFocus = false }: { showSEO?:
               visible={showKeyboard}
               highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
               highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
+              language={languageId}
             />
           </div>
 

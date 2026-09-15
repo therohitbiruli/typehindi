@@ -62,7 +62,7 @@ export function TranslatorTool({ language, hindiLanguageName, sourceLanguage }: 
       <div className="flex flex-wrap items-center gap-3 mt-4">
         <button
           onClick={handleTranslate}
-          className="px-6 py-2 bg-[#4A8D9B] hover:bg-[#3c7682] dark:bg-[#3c7682] dark:hover:bg-[#4A8D9B] text-white transition-colors text-sm font-medium"
+          className="px-6 py-2 bg-[#4A8D9B] hover:bg-[#3c7682] dark:bg-[#3c7682] dark:hover:bg-[#4A8D9B] text-gray-900 dark:text-white transition-colors text-sm font-medium"
         >
           Translate
         </button>

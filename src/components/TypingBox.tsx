@@ -169,7 +169,7 @@ export const TypingBox = memo(function TypingBox({
         id="typing-target"
       >
         {targetText.split("").map((char, index) => {
-          let className = "text-slate-500 dark:text-slate-400";
+          let className = "text-gray-500 dark:text-slate-400";
           if (index < typedText.length) {
             className = typedText[index] === char ? "text-green-700 dark:text-green-400 font-bold" : "text-red-700 bg-red-100 dark:text-red-400 dark:bg-red-950/50";
           } else if (index === typedText.length) {

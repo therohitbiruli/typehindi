@@ -126,7 +126,7 @@ export function WordBuilderGame({ difficulty, onGameOver, onBackToHub }: Props) 
   };
 
   if (!puzzle || done) {
-    return <div className="flex items-center justify-center h-full text-white text-xl">Loading...</div>;
+    return <div className="flex items-center justify-center h-full text-gray-900 dark:text-white text-xl">Loading...</div>;
   }
 
   const timeMax = TIME_PER_ROUND[difficulty];
@@ -138,24 +138,24 @@ export function WordBuilderGame({ difficulty, onGameOver, onBackToHub }: Props) 
   return (
     <div className="flex flex-col h-full">
       {/* HUD */}
-      <div className="flex items-center justify-between px-4 py-3 bg-slate-900/80 border-b border-slate-800 gap-4 flex-shrink-0">
+      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-slate-900/80 border-b border-gray-200 dark:border-slate-800 gap-4 flex-shrink-0">
         <div className="flex items-center gap-5 text-sm font-bold">
-          <span className="text-slate-400 font-medium">Round {round}/{Math.min(TOTAL_ROUNDS, shuffledPuzzles.length)}</span>
+          <span className="text-gray-500 dark:text-slate-400 font-medium">Round {round}/{Math.min(TOTAL_ROUNDS, shuffledPuzzles.length)}</span>
           <span className="text-amber-400">⭐ {score.toLocaleString()}</span>
           <span className="text-emerald-400">✅ {correct}</span>
           <span className="text-rose-400">❌ {incorrect}</span>
           <span className="text-orange-400">🔥 {streak}</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-24 h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div className="w-24 h-2 bg-gray-100 dark:bg-slate-800 rounded-full overflow-hidden">
             <div
               className={`h-full rounded-full transition-all duration-1000 ${timePct > 50 ? "bg-emerald-500" : timePct > 25 ? "bg-amber-500" : "bg-rose-500"}`}
               style={{ width: `${timePct}%` }}
             />
           </div>
-          <span className={`text-xs font-black tabular-nums ${timePct < 25 ? "text-rose-400" : "text-slate-300"}`}>{timeLeft}s</span>
+          <span className={`text-xs font-black tabular-nums ${timePct < 25 ? "text-rose-400" : "text-gray-600 dark:text-slate-300"}`}>{timeLeft}s</span>
         </div>
-        <button onClick={onBackToHub} className="text-xs text-slate-500 hover:text-slate-300 transition-colors">✕ Exit</button>
+        <button onClick={onBackToHub} className="text-xs text-gray-400 dark:text-slate-500 hover:text-gray-600 dark:text-slate-300 transition-colors">✕ Exit</button>
       </div>
 
       {/* Puzzle */}
@@ -168,7 +168,7 @@ export function WordBuilderGame({ difficulty, onGameOver, onBackToHub }: Props) 
         {/* Word display */}
         <div className="text-center">
           <div
-            className={`text-5xl md:text-6xl font-black mb-3 transition-all duration-300 ${result === "correct" ? "text-emerald-400" : result === "wrong" ? "text-rose-400" : "text-white"}`}
+            className={`text-5xl md:text-6xl font-black mb-3 transition-all duration-300 ${result === "correct" ? "text-emerald-400" : result === "wrong" ? "text-rose-400" : "text-gray-900 dark:text-white"}`}
             style={{ fontFamily: "'Noto Sans Devanagari', sans-serif", letterSpacing: "0.1em" }}
           >
             {result === "correct" || (result === "wrong" && selectedOption !== null)
@@ -184,12 +184,12 @@ export function WordBuilderGame({ difficulty, onGameOver, onBackToHub }: Props) 
         </div>
 
         {/* Hint */}
-        <p className="text-sm text-slate-400 text-center italic max-w-xs">💡 {puzzle.hint}</p>
+        <p className="text-sm text-gray-500 dark:text-slate-400 text-center italic max-w-xs">💡 {puzzle.hint}</p>
 
         {/* Options */}
         <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
           {options.map(opt => {
-            let btnClass = "border border-slate-700 bg-slate-800 text-white hover:border-indigo-400 hover:bg-indigo-950";
+            let btnClass = "border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-white hover:border-indigo-400 hover:bg-indigo-950";
             if (result) {
               if (opt === puzzle.missing) btnClass = "border-2 border-emerald-500 bg-emerald-950 text-emerald-300 font-black";
               else if (opt === selectedOption && result === "wrong") btnClass = "border-2 border-rose-500 bg-rose-950 text-rose-300";

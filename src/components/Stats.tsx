@@ -67,7 +67,7 @@ function StatCard({
       <div className="text-4xl font-black text-slate-900 dark:text-white mb-2 tracking-tight">
         {value}
       </div>
-      <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-slate-500 dark:text-gray-400 uppercase tracking-wider">
+      <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
         {icon}
         <span>{label}</span>
       </div>

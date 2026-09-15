@@ -18,7 +18,7 @@ export function ShorthandNav() {
   const pathname = usePathname();
 
   return (
-    <div className="sticky top-[57px] z-30 border-b border-slate-800/80 bg-[#0B1120]/95 backdrop-blur-md">
+    <div className="sticky top-[57px] z-30 border-b border-gray-200 dark:border-slate-800/80 bg-[#0B1120]/95 backdrop-blur-md">
       <div className="container-main">
         <div className="flex items-center justify-between gap-4 overflow-x-auto py-2.5 no-scrollbar">
           {/* Section Breadcrumb/Badge */}
@@ -42,7 +42,7 @@ export function ShorthandNav() {
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 whitespace-nowrap ${
                     isActive
                       ? "bg-purple-600/20 text-purple-300 border border-purple-500/40 shadow-sm"
-                      : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-transparent"
+                      : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800/60 border border-transparent"
                   }`}
                 >
                   {item.label}

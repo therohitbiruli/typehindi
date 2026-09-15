@@ -35,19 +35,19 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-slate-100">
+    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-8 space-y-6">
         {/* Lesson Breadcrumb & Title Header */}
-        <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+        <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               <Link href="/shorthand/learn" className="text-xs text-purple-400 hover:underline">
                 ← All Lessons
               </Link>
               <span className="text-slate-600">/</span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <span className="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">
                 Level {lesson.level}
               </span>
             </div>
@@ -59,13 +59,13 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
             )}
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-100">{lesson.title}</h1>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">{lesson.title}</h1>
+          <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl">
             {lesson.summary}
           </p>
 
           {/* Interactive Steps Pipeline Tabs: LEARN -> SEE -> PRACTICE -> TEST */}
-          <div className="grid grid-cols-4 gap-1.5 pt-3 border-t border-slate-800">
+          <div className="grid grid-cols-4 gap-1.5 pt-3 border-t border-gray-200 dark:border-slate-800">
             {[
               { id: "learn", label: "1. LEARN", icon: "📖" },
               { id: "see", label: "2. SEE", icon: "👁️" },
@@ -78,8 +78,8 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                 onClick={() => setActiveTab(t.id as any)}
                 className={`py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                   activeTab === t.id
-                    ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                    : "bg-slate-950/60 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800"
+                    ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+                    : "bg-white dark:bg-slate-950/60 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 border border-gray-200 dark:border-slate-800"
                 }`}
               >
                 <span>{t.icon}</span>
@@ -92,9 +92,9 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         {/* Tab 1: LEARN (Theory & Official Rules) */}
         {activeTab === "learn" && (
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
-              <h2 className="text-base font-bold text-slate-100">Overview</h2>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
+              <h2 className="text-base font-bold text-gray-900 dark:text-slate-100">Overview</h2>
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 leading-relaxed">
                 {lesson.learnContent.overview}
               </p>
 
@@ -102,9 +102,9 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                 <h3 className="text-xs font-bold uppercase tracking-wider text-purple-400">
                   Key Rules to Remember
                 </h3>
-                <ul className="space-y-2 text-xs text-slate-300">
+                <ul className="space-y-2 text-xs text-gray-600 dark:text-slate-300">
                   {lesson.learnContent.keyPoints.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-2 bg-slate-950 p-3 rounded-xl border border-slate-800">
+                    <li key={idx} className="flex items-start gap-2 bg-white dark:bg-slate-950 p-3 rounded-xl border border-gray-200 dark:border-slate-800">
                       <span className="text-purple-400 font-bold">✓</span>
                       <span>{point}</span>
                     </li>
@@ -119,9 +119,9 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {lesson.learnContent.rules.map((rule, idx) => (
-                      <div key={idx} className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5">
-                        <h4 className="text-xs font-bold text-slate-200">{rule.title}</h4>
-                        <p className="text-xs text-slate-400 leading-relaxed">{rule.detail}</p>
+                      <div key={idx} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1.5">
+                        <h4 className="text-xs font-bold text-gray-700 dark:text-slate-200">{rule.title}</h4>
+                        <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">{rule.detail}</p>
                         {rule.tip && (
                           <p className="text-[11px] text-amber-400/90 pt-1">💡 Tip: {rule.tip}</p>
                         )}
@@ -136,7 +136,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               <button
                 type="button"
                 onClick={() => setActiveTab("see")}
-                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
               >
                 Proceed to See Examples (Step 2) →
               </button>
@@ -147,18 +147,18 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         {/* Tab 2: SEE (Demonstration Strokes & Visual Vectors) */}
         {activeTab === "see" && (
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
-              <h2 className="text-base font-bold text-slate-100">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
+              <h2 className="text-base font-bold text-gray-900 dark:text-slate-100">
                 Visual Stroke Demonstrations for this Lesson
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-gray-500 dark:text-slate-400">
                 Study the exact direction, angle, light/heavy line thickness, and example words for each sign.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
                 {lesson.demonstrationStrokes.map((s) => (
-                  <div key={s.id} className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-3">
-                    <div className="w-20 h-20 mx-auto rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                  <div key={s.id} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 text-center space-y-3">
+                    <div className="w-20 h-20 mx-auto rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 flex items-center justify-center">
                       <svg viewBox="0 0 100 100" className="w-14 h-14 stroke-purple-400">
                         <path
                           d={s.svgPath}
@@ -172,7 +172,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
 
                     <div>
                       <div className="flex items-center justify-center gap-1.5">
-                        <h3 className="font-bold text-slate-100 text-sm">{s.name}</h3>
+                        <h3 className="font-bold text-gray-900 dark:text-slate-100 text-sm">{s.name}</h3>
                         <span className={`text-[9px] uppercase font-bold px-1.5 py-0.2 rounded ${
                           s.weight === "heavy" ? "bg-sky-500/20 text-sky-400" : "bg-purple-500/20 text-purple-400"
                         }`}>
@@ -180,10 +180,10 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                         </span>
                       </div>
                       <p className="text-[11px] text-purple-300 mt-0.5">{s.sound}</p>
-                      <p className="text-[10px] text-slate-400 mt-1">{s.angleDescription}</p>
+                      <p className="text-[10px] text-gray-500 dark:text-slate-400 mt-1">{s.angleDescription}</p>
                     </div>
 
-                    <div className="pt-2 border-t border-slate-800/80 text-[11px] text-slate-300">
+                    <div className="pt-2 border-t border-gray-200 dark:border-slate-800/80 text-[11px] text-gray-600 dark:text-slate-300">
                       <strong>Examples:</strong> {s.examples.map((ex) => ex.word).join(", ")}
                     </div>
                   </div>
@@ -195,14 +195,14 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               <button
                 type="button"
                 onClick={() => setActiveTab("learn")}
-                className="text-xs text-slate-400 hover:text-white"
+                className="text-xs text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white"
               >
                 ← Back to Learn
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("practice")}
-                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
               >
                 Practice Drawing on Canvas (Step 3) →
               </button>
@@ -213,11 +213,11 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         {/* Tab 3: PRACTICE (Interactive HTML5 Canvas) */}
         {activeTab === "practice" && (
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-base font-bold text-slate-100">Interactive Canvas Practice</h2>
-                  <p className="text-xs text-slate-400">
+                  <h2 className="text-base font-bold text-gray-900 dark:text-slate-100">Interactive Canvas Practice</h2>
+                  <p className="text-xs text-gray-500 dark:text-slate-400">
                     Use your mouse, finger, or stylus to trace and draw the target strokes.
                   </p>
                 </div>
@@ -237,9 +237,9 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                 </h3>
                 <div className="space-y-2">
                   {lesson.exercises.map((ex) => (
-                    <div key={ex.id} className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
-                      <p className="text-xs font-semibold text-slate-200">Exercise: {ex.prompt}</p>
-                      <p className="text-[11px] text-slate-400">💡 Hint: {ex.hint}</p>
+                    <div key={ex.id} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+                      <p className="text-xs font-semibold text-gray-700 dark:text-slate-200">Exercise: {ex.prompt}</p>
+                      <p className="text-[11px] text-gray-500 dark:text-slate-400">💡 Hint: {ex.hint}</p>
                       <p className="text-[11px] text-emerald-400/90 pt-1">Rule Note: {ex.explanation}</p>
                     </div>
                   ))}
@@ -251,14 +251,14 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               <button
                 type="button"
                 onClick={() => setActiveTab("see")}
-                className="text-xs text-slate-400 hover:text-white"
+                className="text-xs text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white"
               >
                 ← Back to See
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("test")}
-                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
               >
                 Take Mini Quiz (Step 4) →
               </button>
@@ -269,10 +269,10 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         {/* Tab 4: TEST (Mini Quiz & Completion) */}
         {activeTab === "test" && (
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-5">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-5">
               <div>
-                <h2 className="text-base font-bold text-slate-100">Lesson Mini Quiz</h2>
-                <p className="text-xs text-slate-400">
+                <h2 className="text-base font-bold text-gray-900 dark:text-slate-100">Lesson Mini Quiz</h2>
+                <p className="text-xs text-gray-500 dark:text-slate-400">
                   Verify your understanding of this lesson's rules and stroke characteristics.
                 </p>
               </div>
@@ -284,15 +284,15 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                   const isCorrect = selected === q.correctIndex;
 
                   return (
-                    <div key={q.id} className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
-                      <h3 className="text-xs font-bold text-slate-200">
+                    <div key={q.id} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-3">
+                      <h3 className="text-xs font-bold text-gray-700 dark:text-slate-200">
                         Q{qIdx + 1}: {q.question}
                       </h3>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {q.options.map((opt, optIdx) => {
                           const isThisSelected = selected === optIdx;
-                          let btnStyle = "bg-slate-900 hover:bg-slate-800 text-slate-300 border-slate-800";
+                          let btnStyle = "bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 border-gray-200 dark:border-slate-800";
                           if (hasAnswered) {
                             if (optIdx === q.correctIndex) {
                               btnStyle = "bg-emerald-950/60 border-emerald-500/60 text-emerald-300";
@@ -327,14 +327,14 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               </div>
 
               {/* Completion CTA */}
-              <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="text-xs text-slate-400">
+              <div className="pt-4 border-t border-gray-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="text-xs text-gray-500 dark:text-slate-400">
                   Completed all steps? Mark this lesson as finished to update your local streak.
                 </div>
                 <button
                   type="button"
                   onClick={handleFinishLesson}
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold shadow-lg shadow-emerald-900/20 transition-all shrink-0"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-gray-900 dark:text-white text-xs font-bold shadow-sm dark:shadow-lg shadow-emerald-900/20 transition-all shrink-0"
                 >
                   {isCompleted ? "✓ Lesson Completed" : "Mark as Completed ✓"}
                 </button>
@@ -346,7 +346,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               {lesson.prevLessonSlug ? (
                 <Link
                   href={`/shorthand/lessons/${lesson.prevLessonSlug}`}
-                  className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs font-semibold border border-slate-800 transition-colors"
+                  className="px-4 py-2 rounded-xl bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 text-xs font-semibold border border-gray-200 dark:border-slate-800 transition-colors"
                 >
                   ← Previous Lesson
                 </Link>
@@ -355,14 +355,14 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               {lesson.nextLessonSlug ? (
                 <Link
                   href={`/shorthand/lessons/${lesson.nextLessonSlug}`}
-                  className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
+                  className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
                 >
                   Next Lesson →
                 </Link>
               ) : (
                 <Link
                   href="/shorthand/learn"
-                  className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
+                  className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
                 >
                   Complete Curriculum Hub →
                 </Link>

@@ -118,7 +118,7 @@ export function FloatingTranslator() {
     return (
       <button
         onClick={handleResetDismiss}
-        className="fixed bottom-4 left-4 z-40 bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white px-2.5 py-1 rounded-lg text-[10px] font-semibold transition-all border border-gray-300 dark:border-gray-700 shadow-sm"
+        className="fixed bottom-4 left-4 z-40 bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-900 dark:text-white px-2.5 py-1 rounded-lg text-[10px] font-semibold transition-all border border-gray-300 dark:border-gray-700 shadow-sm"
       >
         🌐 Restore Translator
       </button>
@@ -133,14 +133,14 @@ export function FloatingTranslator() {
           <div className="relative group">
             <button
               onClick={() => setIsOpen(true)}
-              className="h-14 w-14 rounded-full bg-gradient-to-tr from-primary-600 to-indigo-600 hover:from-primary-700 hover:to-indigo-700 text-white shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 flex items-center justify-center text-2xl transition-all hover:scale-105"
+              className="h-14 w-14 rounded-full bg-gradient-to-tr from-primary-600 to-indigo-600 hover:from-primary-700 hover:to-indigo-700 text-gray-900 dark:text-white shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 flex items-center justify-center text-2xl transition-all hover:scale-105"
               title="Quick Multilingual Translator"
             >
               🌐
             </button>
             <button
               onClick={handleDismiss}
-              className="absolute -top-1.5 -right-1.5 h-5 w-5 rounded-full bg-gray-900 border border-white text-white hover:bg-red-600 flex items-center justify-center text-[9px] font-bold shadow-md transition-colors"
+              className="absolute -top-1.5 -right-1.5 h-5 w-5 rounded-full bg-gray-900 border border-white text-gray-900 dark:text-white hover:bg-red-600 flex items-center justify-center text-[9px] font-bold shadow-md transition-colors"
               title="Hide this translator permanently"
             >
               ✕
@@ -162,7 +162,7 @@ export function FloatingTranslator() {
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="h-7 w-7 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-500 hover:text-gray-800 dark:hover:text-white flex items-center justify-center text-xs font-bold"
+              className="h-7 w-7 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-500 hover:text-gray-800 dark:hover:text-gray-900 dark:text-white flex items-center justify-center text-xs font-bold"
             >
               ✕
             </button>
@@ -180,7 +180,7 @@ export function FloatingTranslator() {
                   onClick={() => selectLang(lang.code)}
                   className={`px-2 py-1 rounded-lg text-[10px] font-semibold transition-all border ${
                     targetLang === lang.code
-                      ? "bg-primary-600 text-white border-primary-600 shadow-sm shadow-primary-500/20"
+                      ? "bg-primary-600 text-gray-900 dark:text-white border-primary-600 shadow-sm shadow-primary-500/20"
                       : "bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-600 hover:text-primary-600 dark:hover:text-primary-400"
                   }`}
                   title={lang.labelEn}
@@ -227,7 +227,7 @@ export function FloatingTranslator() {
             <button
               onClick={handleTranslate}
               disabled={isLoading || !inputText.trim()}
-              className="flex-1 py-2 px-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl text-xs font-semibold disabled:opacity-50 transition-all flex items-center justify-center gap-1.5"
+              className="flex-1 py-2 px-3 bg-primary-600 hover:bg-primary-700 text-gray-900 dark:text-white rounded-xl text-xs font-semibold disabled:opacity-50 transition-all flex items-center justify-center gap-1.5"
             >
               {isLoading
                 ? "Translating..."
@@ -249,7 +249,7 @@ export function FloatingTranslator() {
           {translatedText && isPracticePage && (
             <button
               onClick={handleLoadToPractice}
-              className="w-full py-2 px-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-orange-500/10 flex items-center justify-center gap-1.5"
+              className="w-full py-2 px-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-gray-900 dark:text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-orange-500/10 flex items-center justify-center gap-1.5"
             >
               ✍️ Load to Practice
             </button>

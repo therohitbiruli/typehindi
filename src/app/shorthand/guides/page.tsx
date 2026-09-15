@@ -32,7 +32,7 @@ export default function ShorthandGuidesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-slate-100">
+    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-8">
@@ -40,16 +40,16 @@ export default function ShorthandGuidesPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
             Resources & Tools
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-100">
+          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
             Shorthand Reference Library & Personal Notebook
           </h1>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-gray-500 dark:text-slate-400">
             Study common pitfalls, manage your personal practice notebook, and generate printable ruled drill sheets.
           </p>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+        <div className="flex items-center gap-2 border-b border-gray-200 dark:border-slate-800 pb-3">
           {[
             { id: "notebook", label: "Personal Notebook", icon: "📓" },
             { id: "mistakes", label: "Common Mistakes Guide", icon: "⚠️" },
@@ -61,8 +61,8 @@ export default function ShorthandGuidesPage() {
               onClick={() => setActiveTab(t.id as any)}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                 activeTab === t.id
-                  ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                  : "bg-slate-900 text-slate-400 hover:text-white border border-slate-800"
+                  ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+                  : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white border border-gray-200 dark:border-slate-800"
               }`}
             >
               <span>{t.icon}</span>
@@ -76,15 +76,15 @@ export default function ShorthandGuidesPage() {
         {activeTab === "mistakes" && (
           <div className="space-y-4">
             <div className="max-w-2xl">
-              <h2 className="text-lg font-bold text-slate-100">5 Most Common Pitman Shorthand Mistakes</h2>
-              <p className="text-xs text-slate-400">Avoid these fundamental beginner habits to build genuine speed.</p>
+              <h2 className="text-lg font-bold text-gray-900 dark:text-slate-100">5 Most Common Pitman Shorthand Mistakes</h2>
+              <p className="text-xs text-gray-500 dark:text-slate-400">Avoid these fundamental beginner habits to build genuine speed.</p>
             </div>
 
             <div className="space-y-3">
               {commonMistakes.map((m, idx) => (
-                <div key={idx} className="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-1.5">
+                <div key={idx} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-1.5">
                   <h3 className="text-sm font-bold text-purple-300">{m.title}</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">{m.desc}</p>
+                  <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed">{m.desc}</p>
                 </div>
               ))}
             </div>

@@ -134,7 +134,7 @@ export function MatraChallengeGame({ difficulty, onGameOver, onBackToHub }: Prop
   };
 
   if (!matra || done) {
-    return <div className="flex items-center justify-center h-full text-white text-xl">Loading...</div>;
+    return <div className="flex items-center justify-center h-full text-gray-900 dark:text-white text-xl">Loading...</div>;
   }
 
   const timeMax = TIME_PER_ROUND[difficulty];
@@ -143,47 +143,47 @@ export function MatraChallengeGame({ difficulty, onGameOver, onBackToHub }: Prop
   return (
     <div className="flex flex-col h-full">
       {/* HUD */}
-      <div className="flex items-center justify-between px-4 py-3 bg-slate-900/80 border-b border-slate-800 gap-4 flex-shrink-0">
+      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-slate-900/80 border-b border-gray-200 dark:border-slate-800 gap-4 flex-shrink-0">
         <div className="flex items-center gap-5 text-sm font-bold">
-          <span className="text-slate-400 font-medium">Round {round}/{ROUNDS_TOTAL}</span>
+          <span className="text-gray-500 dark:text-slate-400 font-medium">Round {round}/{ROUNDS_TOTAL}</span>
           <span className="text-amber-400">⭐ {score.toLocaleString()}</span>
           <span className="text-emerald-400">✅ {correct}</span>
           <span className="text-rose-400">❌ {incorrect}</span>
           <span className="text-orange-400">🔥 {streak}</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-24 h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div className="w-24 h-2 bg-gray-100 dark:bg-slate-800 rounded-full overflow-hidden">
             <div
               className={`h-full rounded-full transition-all duration-1000 ${timePct > 50 ? "bg-fuchsia-500" : timePct > 25 ? "bg-amber-500" : "bg-rose-500"}`}
               style={{ width: `${timePct}%` }}
             />
           </div>
-          <span className={`text-xs font-black tabular-nums ${timePct < 25 ? "text-rose-400" : "text-slate-300"}`}>{timeLeft}s</span>
+          <span className={`text-xs font-black tabular-nums ${timePct < 25 ? "text-rose-400" : "text-gray-600 dark:text-slate-300"}`}>{timeLeft}s</span>
         </div>
-        <button onClick={onBackToHub} className="text-xs text-slate-500 hover:text-slate-300 transition-colors">✕ Exit</button>
+        <button onClick={onBackToHub} className="text-xs text-gray-400 dark:text-slate-500 hover:text-gray-600 dark:text-slate-300 transition-colors">✕ Exit</button>
       </div>
 
       {/* Game area */}
       <div className="flex-1 flex flex-col items-center justify-center gap-6 px-6 py-8 overflow-y-auto">
         {/* Matra info card */}
-        <div className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/30 shadow-lg">
+        <div className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/30 shadow-sm dark:shadow-lg">
           <div className="text-5xl font-black text-fuchsia-300" style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}>
             {matra.matraSymbol}
           </div>
           <div className="text-left">
-            <div className="text-xs text-slate-400 uppercase tracking-wider mb-0.5">Current Matra</div>
-            <div className="text-sm font-bold text-white">{matra.matraName}</div>
+            <div className="text-xs text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-0.5">Current Matra</div>
+            <div className="text-sm font-bold text-gray-900 dark:text-white">{matra.matraName}</div>
             <div className="text-xs text-fuchsia-300 mt-0.5">
-              {matra.exampleBase} + {matra.matraSymbol} = {matra.exampleTarget} &nbsp;&bull;&nbsp; InScript: <kbd className="bg-slate-800 px-1.5 py-0.5 rounded text-xs font-mono">{matra.inscriptKey}</kbd>
+              {matra.exampleBase} + {matra.matraSymbol} = {matra.exampleTarget} &nbsp;&bull;&nbsp; InScript: <kbd className="bg-gray-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs font-mono">{matra.inscriptKey}</kbd>
             </div>
           </div>
         </div>
 
         {/* Target word */}
         <div className="text-center">
-          <p className="text-xs text-slate-500 uppercase tracking-widest mb-3">Type this word</p>
+          <p className="text-xs text-gray-400 dark:text-slate-500 uppercase tracking-widest mb-3">Type this word</p>
           <div
-            className={`text-5xl md:text-6xl font-black tracking-wider transition-all duration-300 ${result === "correct" ? "text-emerald-400 scale-105" : result === "wrong" ? "text-rose-400" : "text-white"}`}
+            className={`text-5xl md:text-6xl font-black tracking-wider transition-all duration-300 ${result === "correct" ? "text-emerald-400 scale-105" : result === "wrong" ? "text-rose-400" : "text-gray-900 dark:text-white"}`}
             style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
           >
             {currentWord}
@@ -209,7 +209,7 @@ export function MatraChallengeGame({ difficulty, onGameOver, onBackToHub }: Prop
               ? "bg-emerald-950 border-2 border-emerald-500 text-emerald-300"
               : result === "wrong"
               ? "bg-rose-950 border-2 border-rose-500 text-rose-300"
-              : "bg-slate-800 border border-slate-700 text-white focus:border-fuchsia-500/60 focus:ring-1 focus:ring-fuchsia-500/30"
+              : "bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-gray-900 dark:text-white focus:border-fuchsia-500/60 focus:ring-1 focus:ring-fuchsia-500/30"
           }`}
           style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
           lang="hi"
@@ -220,7 +220,7 @@ export function MatraChallengeGame({ difficulty, onGameOver, onBackToHub }: Prop
           {matra.practiceWords.map(w => (
             <span
               key={w}
-              className={`text-sm px-3 py-1 rounded-full border ${w === currentWord ? "bg-fuchsia-500/20 border-fuchsia-500/50 text-fuchsia-300 font-bold" : "bg-slate-900 border-slate-800 text-slate-500"}`}
+              className={`text-sm px-3 py-1 rounded-full border ${w === currentWord ? "bg-fuchsia-500/20 border-fuchsia-500/50 text-fuchsia-300 font-bold" : "bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-gray-400 dark:text-slate-500"}`}
               style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
             >
               {w}

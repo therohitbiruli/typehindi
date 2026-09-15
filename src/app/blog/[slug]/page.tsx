@@ -74,7 +74,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
         />
         
         {/* Toggle on the far right */}
-        <div className="flex rounded-lg bg-slate-155 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
+        <div className="flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
           <Link
             href={`/blog/${slug}?lang=hi`}
             className={`px-3 py-1 rounded-md transition-all ${
@@ -128,17 +128,17 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
         </div>
 
         {/* Internal Linking: Interactive Practice Tools for Exam Preparation */}
-        <section className="mt-10 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-primary-950/20 via-slate-900/90 to-slate-950 border border-primary-500/30 shadow-lg shadow-primary-950/20">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4 mb-6">
+        <section className="mt-10 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-primary-50/50 via-white to-slate-50 dark:from-primary-950/20 dark:via-slate-900/90 dark:to-slate-950 border border-primary-100 dark:border-primary-500/30 shadow-sm dark:shadow-lg dark:shadow-primary-950/20">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-primary-400">
+              <span className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400">
                 {lang === "en" ? "Interactive Practice Tools" : "इंटरएक्टिव प्रैक्टिस टूल्स"}
               </span>
-              <h3 className="text-xl md:text-2xl font-black text-white mt-1">
+              <h3 className="text-xl md:text-2xl font-black text-gray-900 dark:text-white mt-1">
                 {lang === "en" ? "Prepare & Test Your Speed on TypeHindi" : "TypeHindi पर अपनी स्पीड जांचें और अभ्यास करें"}
               </h3>
             </div>
-            <span className="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full w-fit border border-slate-700">
+            <span className="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full w-fit border border-slate-200 dark:border-slate-700">
               {lang === "en" ? "100% Free • No Login Needed" : "100% मुफ़्त • कोई लॉगिन नहीं"}
             </span>
           </div>
@@ -146,120 +146,120 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <Link
               href="/test"
-              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>⏱️</span>
                   <span>{lang === "en" ? "10-Min Typing Test" : "10-मिनट टाइपिंग टेस्ट"}</span>
                 </div>
-                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
                   {lang === "en"
                     ? "Practice full 10-minute exam simulations for SSC CHSL, High Courts, and state clerical exams with real WPM & accuracy scoring."
                     : "SSC CHSL, हाईकोर्ट और क्लर्क भर्ती परीक्षाओं के लिए सटीक WPM और एक्यूरेसी के साथ 10-मिनट टेस्ट दें।"}
                 </p>
               </div>
-              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+              <span className="text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
                 {lang === "en" ? "Start Test Simulator" : "टेस्ट शुरू करें"} →
               </span>
             </Link>
 
             <Link
               href="/mangal-font-typing-test"
-              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>अ</span>
                   <span>{lang === "en" ? "Mangal Font Test" : "मंगल फॉन्ट टाइपिंग टेस्ट"}</span>
                 </div>
-                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
                   {lang === "en"
                     ? "Mandated by SSC for Hindi typing tests. Practice with official Unicode InScript layout and realistic passages."
                     : "SSC द्वारा अनिवार्य मंगल फॉन्ट पर इनस्क्रिप्ट कीबोर्ड के साथ अभ्यास करें और अपनी स्पीड 30+ WPM बनाएं।"}
                 </p>
               </div>
-              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+              <span className="text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
                 {lang === "en" ? "Practice Mangal Font" : "मंगल फॉन्ट पर अभ्यास करें"} →
               </span>
             </Link>
 
             <Link
               href="/learn"
-              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>📖</span>
                   <span>{lang === "en" ? "Touch Typing Course" : "टच टाइपिंग सीखें"}</span>
                 </div>
-                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
                   {lang === "en"
                     ? "Step-by-step interactive lessons for beginners. Master finger positions on home row, top row, and bottom row."
                     : "शुरुआती छात्रों के लिए स्टेप-बाय-स्टेप गाइड। होम रो, टॉप रो और मात्राओं पर बिना देखे टाइप करना सीखें।"}
                 </p>
               </div>
-              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+              <span className="text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
                 {lang === "en" ? "Start Free Lessons" : "पाठ शुरू करें"} →
               </span>
             </Link>
 
             <Link
               href="/keyboard-layout"
-              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>⌨️</span>
                   <span>{lang === "en" ? "InScript Keyboard Guide" : "इनस्क्रिप्ट कीबोर्ड लेआउट"}</span>
                 </div>
-                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
                   {lang === "en"
                     ? "Interactive visual map of all vowels, consonants, halants, and special conjunct characters in Devanagari script."
                     : "देवनागरी लिपि के सभी स्वर, व्यंजन, मात्राएं और संयुक्त अक्षरों का सचित्र और स्पष्ट कीबोर्ड मैप।"}
                 </p>
               </div>
-              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+              <span className="text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
                 {lang === "en" ? "View Keyboard Map" : "कीबोर्ड लेआउट देखें"} →
               </span>
             </Link>
 
             <Link
               href="/game"
-              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>🎮</span>
                   <span>{lang === "en" ? "Speed-Building Games" : "टाइपिंग स्पीड गेम्स"}</span>
                 </div>
-                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
                   {lang === "en"
                     ? "Build muscle memory and reflex speed while destroying falling words in Hindi and English."
                     : "गिरते हुए शब्दों को तेजी से टाइप करके नष्ट करें और अपनी उंगलियों की रिफ्लेक्स स्पीड को तेजी से बढ़ाएं।"}
                 </p>
               </div>
-              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+              <span className="text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
                 {lang === "en" ? "Play Typing Games" : "गेम्स खेलें"} →
               </span>
             </Link>
 
             <Link
               href="/shorthand"
-              className="p-4 rounded-2xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-slate-100 group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>⚡</span>
                   <span>{lang === "en" ? "Pitman Shorthand Hub" : "शॉर्टहैंड व आशुलिपि"}</span>
                 </div>
-                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
                   {lang === "en"
                     ? "Interactive steno stroke teacher, vector animated demonstrations, word builder, and 40–120 WPM audio dictations."
                     : "पिटमैन शॉर्टहैंड स्ट्रोक टीचर, एनिमेटेड स्ट्रोक डेमो, वर्ड बिल्डर और 40 से 120 WPM ऑडियो डिक्टेशन।"}
                 </p>
               </div>
-              <span className="text-xs font-semibold text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
+              <span className="text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline flex items-center gap-1 pt-1">
                 {lang === "en" ? "Explore Shorthand" : "शॉर्टहैंड सीखें"} →
               </span>
             </Link>

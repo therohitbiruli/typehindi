@@ -43,12 +43,10 @@ export function Header() {
     const sections = ["practice", "learn", "game", "test", "keyboard-layout", "translators", "blog"];
     
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      // Find the first intersecting entry
       const visibleSection = entries.find(entry => entry.isIntersecting);
       if (visibleSection) {
         setActiveSection(`/${visibleSection.target.id}`);
       } else {
-        // If we scrolled back to top
         if (window.scrollY < 200) {
           setActiveSection("/");
         }
@@ -57,7 +55,7 @@ export function Header() {
 
     const observer = new IntersectionObserver(observerCallback, {
       root: null,
-      rootMargin: "-25% 0px -55% 0px", // triggers when section dominates the viewport center
+      rootMargin: "-25% 0px -55% 0px",
       threshold: 0,
     });
 
@@ -83,6 +81,7 @@ export function Header() {
   }, [pathname]);
 
   return (
+    /* Header stays dark in both light and dark mode — editorial convention */
     <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md shadow-lg">
       <div className="container-main">
         <div className="flex h-14 items-center justify-between">
@@ -117,10 +116,15 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            {/* Theme Toggle */}
+            <div className="ml-1.5">
+              <ThemeToggle />
+            </div>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button + Theme Toggle */}
           <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
             <button
               onClick={toggleMenu}
               className="rounded-lg p-2 text-slate-400 hover:bg-slate-800 hover:text-slate-100"

@@ -136,25 +136,25 @@ export function TranscriptionEvaluator({
     <div className="w-full space-y-6">
       {/* Top Bar: Timers & Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
-          <span className="text-[10px] text-slate-400 uppercase font-semibold">Allowed Time</span>
-          <div className="text-base font-bold text-slate-200 mt-0.5">{allowedMinutes} Mins</div>
+        <div className="p-3.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+          <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Allowed Time</span>
+          <div className="text-base font-bold text-gray-700 dark:text-slate-200 mt-0.5">{allowedMinutes} Mins</div>
         </div>
 
-        <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
-          <span className="text-[10px] text-slate-400 uppercase font-semibold">Time Elapsed</span>
+        <div className="p-3.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+          <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Time Elapsed</span>
           <div className="text-base font-bold text-purple-400 mt-0.5">{formatTime(elapsedSeconds)}</div>
         </div>
 
-        <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
-          <span className="text-[10px] text-slate-400 uppercase font-semibold">Words Typed</span>
+        <div className="p-3.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+          <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Words Typed</span>
           <div className="text-base font-bold text-sky-400 mt-0.5">
             {evaluation.typedTotal} / {passage.wordCount}
           </div>
         </div>
 
-        <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
-          <span className="text-[10px] text-slate-400 uppercase font-semibold">Max Error Threshold</span>
+        <div className="p-3.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+          <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Max Error Threshold</span>
           <div className="text-base font-bold text-amber-400 mt-0.5">{evaluation.allowedErrorPct}%</div>
         </div>
       </div>
@@ -163,10 +163,10 @@ export function TranscriptionEvaluator({
         /* Typing Area */
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <label className="text-xs font-semibold text-slate-300">
+            <label className="text-xs font-semibold text-gray-600 dark:text-slate-300">
               Type your shorthand transcription into the box below:
             </label>
-            <span className="text-xs text-slate-400 font-mono">
+            <span className="text-xs text-gray-500 dark:text-slate-400 font-mono">
               {typedText.split(/\s+/).filter(Boolean).length} words
             </span>
           </div>
@@ -176,18 +176,18 @@ export function TranscriptionEvaluator({
             onChange={handleTextChange}
             placeholder="Read your handwritten shorthand notes and type the transcribed English words here..."
             rows={14}
-            className="w-full p-4 rounded-2xl bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-500 font-sans text-sm leading-relaxed focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors resize-y select-text"
+            className="w-full p-4 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-gray-900 dark:text-slate-100 placeholder-slate-500 font-sans text-sm leading-relaxed focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors resize-y select-text"
           />
 
           <div className="flex items-center justify-between pt-2">
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-gray-500 dark:text-slate-400">
               Double check your spelling and punctuation before final submission.
             </p>
             <button
               type="button"
               onClick={handleSubmit}
               disabled={!typedText.trim()}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs font-bold shadow-lg shadow-purple-900/30 transition-all"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed text-gray-900 dark:text-white text-xs font-bold shadow-sm dark:shadow-lg shadow-purple-900/30 transition-all"
             >
               Submit & Evaluate Transcription →
             </button>
@@ -208,7 +208,7 @@ export function TranscriptionEvaluator({
                 <h3 className="text-2xl font-black mt-1">
                   {evaluation.passed ? "CONGRATULATIONS — TEST QUALIFIED" : "TEST NOT QUALIFIED"}
                 </h3>
-                <p className="text-xs mt-1 text-slate-300">
+                <p className="text-xs mt-1 text-gray-600 dark:text-slate-300">
                   {evaluation.passed
                     ? `Your error rate of ${evaluation.actualErrorPct}% is well within the permitted threshold of ${evaluation.allowedErrorPct}%.`
                     : `Your error rate of ${evaluation.actualErrorPct}% exceeds the permissible threshold of ${evaluation.allowedErrorPct}%.`}
@@ -217,38 +217,38 @@ export function TranscriptionEvaluator({
 
               <div className="text-right shrink-0">
                 <div className="text-3xl font-black">{evaluation.accuracyPercentage}%</div>
-                <div className="text-[11px] text-slate-400">Word Accuracy</div>
+                <div className="text-[11px] text-gray-500 dark:text-slate-400">Word Accuracy</div>
               </div>
             </div>
           </div>
 
           {/* Detailed Score Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
-              <span className="text-[10px] uppercase font-semibold text-slate-400">Typing Speed</span>
-              <div className="text-xl font-bold text-slate-100 mt-1">{evaluation.typingWpm} WPM</div>
+            <div className="p-4 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+              <span className="text-[10px] uppercase font-semibold text-gray-500 dark:text-slate-400">Typing Speed</span>
+              <div className="text-xl font-bold text-gray-900 dark:text-slate-100 mt-1">{evaluation.typingWpm} WPM</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
+            <div className="p-4 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
               <span className="text-[10px] uppercase font-semibold text-emerald-400">Correct Words</span>
               <div className="text-xl font-bold text-emerald-400 mt-1">{evaluation.correctCount}</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
+            <div className="p-4 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
               <span className="text-[10px] uppercase font-semibold text-red-400">Total Mistakes</span>
               <div className="text-xl font-bold text-red-400 mt-1">{evaluation.errorsCount}</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
-              <span className="text-[10px] uppercase font-semibold text-slate-400">Time Taken</span>
-              <div className="text-xl font-bold text-slate-100 mt-1">{formatTime(elapsedSeconds)}</div>
+            <div className="p-4 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+              <span className="text-[10px] uppercase font-semibold text-gray-500 dark:text-slate-400">Time Taken</span>
+              <div className="text-xl font-bold text-gray-900 dark:text-slate-100 mt-1">{formatTime(elapsedSeconds)}</div>
             </div>
           </div>
 
           {/* Word Diff Visual Inspection */}
-          <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-              <h4 className="text-xs font-bold text-slate-200">Word Comparison & Error Breakdown</h4>
+          <div className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-3">
+            <div className="flex items-center justify-between border-b border-gray-200 dark:border-slate-800 pb-2">
+              <h4 className="text-xs font-bold text-gray-700 dark:text-slate-200">Word Comparison & Error Breakdown</h4>
               <div className="flex items-center gap-3 text-[10px]">
                 <span className="flex items-center gap-1 text-emerald-400">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" /> Correct
@@ -262,7 +262,7 @@ export function TranscriptionEvaluator({
               </div>
             </div>
 
-            <div className="max-h-64 overflow-y-auto p-3 rounded-xl bg-slate-950 border border-slate-800/80 text-xs leading-relaxed flex flex-wrap gap-1.5 font-mono">
+            <div className="max-h-64 overflow-y-auto p-3 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 text-xs leading-relaxed flex flex-wrap gap-1.5 font-mono">
               {evaluation.diffTokens.map((t, idx) => (
                 <span
                   key={idx}
@@ -290,7 +290,7 @@ export function TranscriptionEvaluator({
                 setStartTime(null);
                 setElapsedSeconds(0);
               }}
-              className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-colors"
+              className="px-5 py-2.5 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-700 dark:text-slate-200 text-xs font-bold transition-colors"
             >
               Try Again ↻
             </button>

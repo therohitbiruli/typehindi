@@ -54,13 +54,13 @@ export function ShorthandSpeedTrainer() {
             onClick={() => setActiveSpeed(m.wpm)}
             className={`p-4 rounded-xl text-left border transition-all ${
               activeSpeed === m.wpm
-                ? "bg-purple-900/40 border-purple-500 shadow-lg shadow-purple-950/30"
-                : "bg-slate-900/80 hover:bg-slate-800 border-slate-800"
+                ? "bg-purple-900/40 border-purple-500 shadow-sm dark:shadow-lg shadow-purple-950/30"
+                : "bg-gray-50 dark:bg-slate-900/80 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 border-gray-200 dark:border-slate-800"
             }`}
           >
             <span className="text-[10px] uppercase font-bold text-purple-400">{m.badge}</span>
-            <div className="text-xl font-black text-slate-100 mt-0.5">{m.wpm} WPM</div>
-            <p className="text-[11px] text-slate-400 mt-1 line-clamp-1">{m.title}</p>
+            <div className="text-xl font-black text-gray-900 dark:text-slate-100 mt-0.5">{m.wpm} WPM</div>
+            <p className="text-[11px] text-gray-500 dark:text-slate-400 mt-1 line-clamp-1">{m.title}</p>
           </button>
         ))}
       </div>
@@ -69,13 +69,13 @@ export function ShorthandSpeedTrainer() {
       {(() => {
         const item = speedMilestones.find((m) => m.wpm === activeSpeed) || speedMilestones[0];
         return (
-          <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+          <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200 dark:border-slate-800 pb-3">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
                   Target Speed Milestone
                 </span>
-                <h3 className="text-xl font-black text-slate-100">
+                <h3 className="text-xl font-black text-gray-900 dark:text-slate-100">
                   {item.wpm} WPM — {item.title}
                 </h3>
               </div>
@@ -84,18 +84,18 @@ export function ShorthandSpeedTrainer() {
               </span>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{item.desc}</p>
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 leading-relaxed">{item.desc}</p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 href={`/shorthand/dictation?speed=${item.wpm}`}
-                className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
+                className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
               >
                 Launch {item.wpm} WPM Dictation Drill →
               </Link>
               <Link
                 href="/shorthand/tests"
-                className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors"
+                className="px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-700 dark:text-slate-200 text-xs font-semibold border border-gray-300 dark:border-slate-700 transition-colors"
               >
                 Simulate Full Examination
               </Link>

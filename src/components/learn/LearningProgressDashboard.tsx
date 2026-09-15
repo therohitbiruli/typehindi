@@ -144,12 +144,12 @@ export function LearningProgressDashboard({
         {/* Metrics Overview Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
           <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
-            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-gray-400 mb-1">
+            <div className="flex items-center justify-between text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 mb-1">
               <span>Daily Path</span>
               <span className="text-base">🗓️</span>
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-white">
-              {completedDaysCount} <span className="text-sm font-normal text-slate-400">/ {totalDaysCount} Days</span>
+              {completedDaysCount} <span className="text-sm font-normal text-gray-500 dark:text-slate-400">/ {totalDaysCount} Days</span>
             </div>
             <div className="w-full bg-slate-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
               <div
@@ -160,12 +160,12 @@ export function LearningProgressDashboard({
           </div>
 
           <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
-            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-gray-400 mb-1">
+            <div className="flex items-center justify-between text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 mb-1">
               <span>Keys Mastered</span>
               <span className="text-base">⌨️</span>
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-white">
-              {completedKeysCount} <span className="text-sm font-normal text-slate-400">/ {totalKeysCount}</span>
+              {completedKeysCount} <span className="text-sm font-normal text-gray-500 dark:text-slate-400">/ {totalKeysCount}</span>
             </div>
             <div className="w-full bg-slate-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
               <div
@@ -176,12 +176,12 @@ export function LearningProgressDashboard({
           </div>
 
           <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
-            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-gray-400 mb-1">
+            <div className="flex items-center justify-between text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 mb-1">
               <span>Matra Mastery</span>
               <span className="text-base">🎯</span>
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-white">
-              {completedMatrasCount} <span className="text-sm font-normal text-slate-400">/ {totalMatrasCount}</span>
+              {completedMatrasCount} <span className="text-sm font-normal text-gray-500 dark:text-slate-400">/ {totalMatrasCount}</span>
             </div>
             <div className="w-full bg-slate-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
               <div
@@ -192,12 +192,12 @@ export function LearningProgressDashboard({
           </div>
 
           <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
-            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-gray-400 mb-1">
+            <div className="flex items-center justify-between text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 mb-1">
               <span>Challenges</span>
               <span className="text-base">🏆</span>
             </div>
             <div className="text-2xl font-bold text-slate-900 dark:text-white">
-              {completedChallengesCount} <span className="text-sm font-normal text-slate-400">/ {totalChallengesCount}</span>
+              {completedChallengesCount} <span className="text-sm font-normal text-gray-500 dark:text-slate-400">/ {totalChallengesCount}</span>
             </div>
             <div className="w-full bg-slate-100 dark:bg-gray-700 h-1.5 rounded-full mt-2 overflow-hidden">
               <div
@@ -266,7 +266,7 @@ export function LearningProgressDashboard({
                   onResetProgress();
                   setShowResetModal(false);
                 }}
-                className="px-4 py-2 rounded-xl text-xs font-semibold bg-red-600 text-white hover:bg-red-700"
+                className="px-4 py-2 rounded-xl text-xs font-semibold bg-red-600 text-gray-900 dark:text-white hover:bg-red-700"
               >
                 Yes, Reset
               </button>

@@ -178,9 +178,9 @@ function LearnPageContent() {
       </div>
 
       {/* 🧭 Learning Pathways Selector */}
-      <div className="mb-8 p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+      <div className="mb-8 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-3">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+          <span className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400">
             Select Your Learning Pathway:
           </span>
           <span className="text-[11px] text-purple-400 font-semibold">3 Comprehensive Tracks</span>
@@ -188,15 +188,15 @@ function LearnPageContent() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Track 1: Hindi Typing */}
-          <div className="p-4 rounded-xl bg-slate-950 border border-emerald-500/50 space-y-2 relative">
+          <div className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-emerald-500/50 space-y-2 relative">
             <div className="flex items-center justify-between">
               <span className="text-lg">⌨️</span>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300">
                 Current Page
               </span>
             </div>
-            <h3 className="font-bold text-slate-100 text-sm">Hindi Typing (InScript & Remington)</h3>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <h3 className="font-bold text-gray-900 dark:text-slate-100 text-sm">Hindi Typing (InScript & Remington)</h3>
+            <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
               Step-by-step key practice, finger guides, matra drills, and daily typing journey below.
             </p>
           </div>
@@ -204,22 +204,22 @@ function LearnPageContent() {
           {/* Track 2: English Typing */}
           <Link
             href="/practice"
-            className="p-4 rounded-xl bg-slate-950/70 hover:bg-slate-950 border border-slate-800 hover:border-sky-500/40 space-y-2 transition-all group"
+            className="p-4 rounded-xl bg-gray-50 dark:bg-slate-950/70 hover:bg-white dark:hover:bg-slate-900 border border-gray-200 dark:border-slate-800 hover:border-sky-500/40 space-y-2 transition-all group"
           >
             <div className="flex items-center justify-between">
               <span className="text-lg">💻</span>
-              <span className="text-[10px] font-medium text-slate-400 group-hover:text-sky-400">
+              <span className="text-[10px] font-medium text-gray-500 dark:text-slate-400 group-hover:text-sky-400">
                 Explore Track →
               </span>
             </div>
-            <h3 className="font-bold text-slate-100 text-sm group-hover:text-sky-300">English Typing</h3>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <h3 className="font-bold text-gray-900 dark:text-slate-100 text-sm group-hover:text-sky-300">English Typing</h3>
+            <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
               Speed drills, touch typing practice, and accuracy benchmarks on QWERTY layout.
             </p>
           </Link>
 
           {/* Track 3: Shorthand */}
-          <div className="p-4 rounded-xl bg-gradient-to-br from-purple-950/40 to-slate-950 border border-purple-500/40 space-y-3">
+          <div className="p-4 rounded-xl bg-gradient-to-br from-purple-50 to-white dark:from-purple-950/40 dark:to-slate-950 border border-purple-500/40 space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5">
                 <span className="text-lg">✍️</span>
@@ -232,8 +232,8 @@ function LearnPageContent() {
               </Link>
             </div>
             <div>
-              <h3 className="font-bold text-slate-100 text-sm">English Pitman Shorthand</h3>
-              <p className="text-xs text-slate-400 leading-relaxed mt-0.5">
+              <h3 className="font-bold text-gray-900 dark:text-slate-100 text-sm">English Pitman Shorthand</h3>
+              <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed mt-0.5">
                 From basic strokes to 120 WPM court stenographer examinations.
               </p>
             </div>
@@ -282,9 +282,9 @@ function LearnPageContent() {
       />
 
       {/* Quick Jump Section Navigation */}
-      <div className="sticky top-16 z-30 mb-10 py-3 bg-slate-950/90 backdrop-blur-md border-y border-slate-800/80 -mx-4 px-4 overflow-x-auto no-scrollbar">
+      <div className="sticky top-16 z-30 mb-10 py-3 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-y border-gray-200 dark:border-slate-800/80 -mx-4 px-4 overflow-x-auto no-scrollbar">
         <div className="flex items-center gap-2 min-w-max">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-500 mr-1 flex items-center gap-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-slate-500 mr-1 flex items-center gap-1">
             🧭 Jump to:
           </span>
           {[
@@ -301,7 +301,7 @@ function LearnPageContent() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:border-primary-500 hover:text-primary-400 transition-all shadow-sm"
+              className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-400 transition-all shadow-sm"
             >
               <span className="mr-1">{item.icon}</span>
               {item.label}
@@ -385,7 +385,7 @@ function LearnPageContent() {
                       }}
                       className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                         selectedWord === guide.word
-                          ? "bg-primary-500 text-white shadow-md shadow-primary-500/20 scale-[1.03]"
+                          ? "bg-primary-500 text-gray-900 dark:text-white shadow-md shadow-primary-500/20 scale-[1.03]"
                           : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                       }`}
                     >
@@ -402,7 +402,7 @@ function LearnPageContent() {
                   className={`pb-3 font-semibold text-sm transition-all border-b-2 ${
                     activeLayoutTab === "inscript"
                       ? "border-primary-500 text-primary-600 dark:text-primary-400"
-                      : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                      : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-600 dark:text-gray-300"
                   }`}
                 >
                   InScript Layout
@@ -412,7 +412,7 @@ function LearnPageContent() {
                   className={`pb-3 font-semibold text-sm transition-all border-b-2 ${
                     activeLayoutTab === "remington"
                       ? "border-primary-500 text-primary-600 dark:text-primary-400"
-                      : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                      : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-600 dark:text-gray-300"
                   }`}
                 >
                   Remington GAIL Layout
@@ -437,7 +437,7 @@ function LearnPageContent() {
                   <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
                     {(activeLayoutTab === "inscript" ? displayInscriptKeys : displayRemingtonKeys).map((stroke, i) => (
                       <div key={i} className="flex items-center">
-                        {i > 0 && <span className="text-gray-300 dark:text-gray-700 mx-2 text-xl font-light">→</span>}
+                        {i > 0 && <span className="text-gray-600 dark:text-gray-300 dark:text-gray-700 mx-2 text-xl font-light">→</span>}
                         <div className="flex flex-col items-center">
                           <kbd className={`px-3 py-2 rounded-lg border-b-4 font-mono text-sm font-bold shadow-sm transition-all ${
                             stroke.isShift
@@ -637,7 +637,7 @@ function LearnPageContent() {
               </h4>
               <button
                 onClick={() => setModalImage(null)}
-                className="h-10 w-10 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white flex items-center justify-center font-bold text-lg"
+                className="h-10 w-10 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-900 dark:text-white flex items-center justify-center font-bold text-lg"
               >
                 ✕
               </button>

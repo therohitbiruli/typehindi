@@ -263,7 +263,7 @@ export function WordRunnerGame({ difficulty, onGameOver, onBackToHub }: Props) {
   return (
     <div className="flex flex-col h-full">
       {/* HUD */}
-      <div className="flex items-center justify-between px-4 py-3 bg-slate-900/80 border-b border-slate-800 gap-4 flex-shrink-0">
+      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-slate-900/80 border-b border-gray-200 dark:border-slate-800 gap-4 flex-shrink-0">
         <div className="flex items-center gap-6 text-sm font-bold">
           <span className="text-amber-400">⭐ {score.toLocaleString()}</span>
           <span className="text-emerald-400">✅ {correct}</span>
@@ -272,25 +272,25 @@ export function WordRunnerGame({ difficulty, onGameOver, onBackToHub }: Props) {
           {boost > 0 && <span className="text-cyan-400 animate-pulse">⚡ BOOST!</span>}
         </div>
         <div className="flex items-center gap-3 flex-1 max-w-xs">
-          <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div className="flex-1 h-2 bg-gray-100 dark:bg-slate-800 rounded-full overflow-hidden">
             <div
               className={`h-full rounded-full transition-all ${timerPct > 40 ? "bg-cyan-500" : timerPct > 20 ? "bg-amber-500" : "bg-rose-500"}`}
               style={{ width: `${timerPct}%` }}
             />
           </div>
-          <span className={`text-xs font-black tabular-nums ${timerPct < 20 ? "text-rose-400" : "text-slate-300"}`}>{timeLeft}s</span>
+          <span className={`text-xs font-black tabular-nums ${timerPct < 20 ? "text-rose-400" : "text-gray-600 dark:text-slate-300"}`}>{timeLeft}s</span>
         </div>
-        <button onClick={onBackToHub} className="text-xs text-slate-500 hover:text-slate-300 transition-colors">✕ Exit</button>
+        <button onClick={onBackToHub} className="text-xs text-gray-400 dark:text-slate-500 hover:text-gray-600 dark:text-slate-300 transition-colors">✕ Exit</button>
       </div>
 
       {/* Track */}
-      <div className="flex-1 flex flex-col items-stretch bg-slate-950 overflow-hidden">
+      <div className="flex-1 flex flex-col items-stretch bg-white dark:bg-slate-950 overflow-hidden">
         <canvas ref={canvasRef} width={800} height={TRACK_HEIGHT} className="w-full" style={{ maxHeight: TRACK_HEIGHT }} />
 
         {/* Current word prompt */}
-        <div className="flex-1 flex flex-col items-center justify-center gap-3 py-4 px-6 bg-slate-950">
-          <p className="text-xs text-slate-500 uppercase tracking-widest">Type to boost</p>
-          <div className="text-3xl md:text-4xl font-black text-white tracking-wide" style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}>
+        <div className="flex-1 flex flex-col items-center justify-center gap-3 py-4 px-6 bg-white dark:bg-slate-950">
+          <p className="text-xs text-gray-400 dark:text-slate-500 uppercase tracking-widest">Type to boost</p>
+          <div className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white tracking-wide" style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}>
             {currentWord}
           </div>
           <input
@@ -300,7 +300,7 @@ export function WordRunnerGame({ difficulty, onGameOver, onBackToHub }: Props) {
             autoFocus
             disabled={!isPlaying}
             placeholder="Type here..."
-            className="w-full max-w-sm bg-slate-800 border border-slate-700 rounded-xl px-5 py-3 text-white text-xl font-bold placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/30 text-center"
+            className="w-full max-w-sm bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl px-5 py-3 text-gray-900 dark:text-white text-xl font-bold placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/30 text-center"
             style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
             lang="hi"
           />

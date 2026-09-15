@@ -146,7 +146,7 @@ export function TypingTargetGame({ difficulty, onGameOver, onBackToHub }: Props)
   return (
     <div className="flex flex-col h-full">
       {/* HUD */}
-      <div className="flex items-center justify-between px-4 py-3 bg-slate-900/80 border-b border-slate-800 gap-4 flex-shrink-0">
+      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-slate-900/80 border-b border-gray-200 dark:border-slate-800 gap-4 flex-shrink-0">
         <div className="flex items-center gap-6 text-sm font-bold">
           <span className="text-amber-400">⭐ {score.toLocaleString()}</span>
           <span className="text-emerald-400">✅ {correct}</span>
@@ -154,15 +154,15 @@ export function TypingTargetGame({ difficulty, onGameOver, onBackToHub }: Props)
           <span className="text-orange-400">🔥 {streak}</span>
         </div>
         <div className="flex items-center gap-3 flex-1 max-w-xs">
-          <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div className="flex-1 h-2 bg-gray-100 dark:bg-slate-800 rounded-full overflow-hidden">
             <div
               className={`h-full rounded-full transition-all ${timerPct > 40 ? "bg-emerald-500" : timerPct > 20 ? "bg-amber-500" : "bg-rose-500"}`}
               style={{ width: `${timerPct}%` }}
             />
           </div>
-          <span className={`text-xs font-black tabular-nums ${timerPct < 20 ? "text-rose-400" : "text-slate-300"}`}>{timeLeft}s</span>
+          <span className={`text-xs font-black tabular-nums ${timerPct < 20 ? "text-rose-400" : "text-gray-600 dark:text-slate-300"}`}>{timeLeft}s</span>
         </div>
-        <button onClick={onBackToHub} className="text-xs text-slate-500 hover:text-slate-300 transition-colors">✕ Exit</button>
+        <button onClick={onBackToHub} className="text-xs text-gray-400 dark:text-slate-500 hover:text-gray-600 dark:text-slate-300 transition-colors">✕ Exit</button>
       </div>
 
       {/* Arena */}
@@ -184,7 +184,7 @@ export function TypingTargetGame({ difficulty, onGameOver, onBackToHub }: Props)
                   <div className="absolute inset-0 rounded-full border-2 border-amber-400/30 animate-ping scale-150" style={{ animationDuration: "1.5s" }} />
                   {/* Target circle */}
                   <div
-                    className="relative flex items-center justify-center rounded-full border-2 border-amber-400/60 bg-slate-900/80 shadow-[0_0_20px_rgba(245,158,11,0.3)]"
+                    className="relative flex items-center justify-center rounded-full border-2 border-amber-400/60 bg-gray-50 dark:bg-slate-900/80 shadow-[0_0_20px_rgba(245,158,11,0.3)]"
                     style={{ width: 90, height: 90 }}
                   >
                     {/* Progress ring (SVG) */}
@@ -202,7 +202,7 @@ export function TypingTargetGame({ difficulty, onGameOver, onBackToHub }: Props)
                         style={{ transition: "stroke-dashoffset 0.05s linear, stroke 0.3s" }}
                       />
                     </svg>
-                    <span className="relative text-white text-base font-bold text-center px-1 leading-tight" style={{ fontSize: target.word.length > 4 ? "0.7rem" : "0.9rem" }}>
+                    <span className="relative text-gray-900 dark:text-white text-base font-bold text-center px-1 leading-tight" style={{ fontSize: target.word.length > 4 ? "0.7rem" : "0.9rem" }}>
                       {target.word}
                     </span>
                   </div>
@@ -225,7 +225,7 @@ export function TypingTargetGame({ difficulty, onGameOver, onBackToHub }: Props)
       </div>
 
       {/* Input */}
-      <div className="px-4 py-3 bg-slate-900/80 border-t border-slate-800 flex-shrink-0">
+      <div className="px-4 py-3 bg-gray-50 dark:bg-slate-900/80 border-t border-gray-200 dark:border-slate-800 flex-shrink-0">
         <input
           ref={inputRef}
           value={input}
@@ -233,7 +233,7 @@ export function TypingTargetGame({ difficulty, onGameOver, onBackToHub }: Props)
           autoFocus
           disabled={!isPlaying}
           placeholder="Type the target word..."
-          className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-lg font-bold placeholder:text-slate-600 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/30 text-center"
+          className="w-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white text-lg font-bold placeholder:text-slate-600 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/30 text-center"
           style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
           lang="hi"
         />

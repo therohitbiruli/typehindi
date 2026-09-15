@@ -16,7 +16,7 @@ export default function ShorthandPracticePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-slate-100">
+    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-10">
@@ -24,10 +24,10 @@ export default function ShorthandPracticePage() {
           <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
             Interactive Shorthand Teacher & Practice
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-100">
+          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
             Master Pitman Shorthand Strokes Step-by-Step
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 leading-relaxed">
             Follow the full pedagogical workflow: Learn the rule, watch the stroke animation, practice across 4 graduated tiers (Guided, Assisted, Free Practice, Test), receive instant angle & direction feedback, and build real words.
           </p>
         </div>
@@ -40,15 +40,15 @@ export default function ShorthandPracticePage() {
         />
 
         {/* Character Explorer underneath */}
-        <div className="pt-6 border-t border-slate-800 space-y-6">
+        <div className="pt-6 border-t border-gray-200 dark:border-slate-800 space-y-6">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
               Browse & Select
             </span>
-            <h2 className="text-xl font-bold text-slate-100">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-slate-100">
               Choose any Pitman Stroke to Practice Above
             </h2>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-gray-500 dark:text-slate-400">
               Click "Practice on Canvas" on any character card below to load it into the ghost guide.
             </p>
           </div>

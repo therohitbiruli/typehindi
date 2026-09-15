@@ -63,7 +63,7 @@ export function KeyboardQuizWidget() {
     const accuracyPct = Math.round((score / KEYBOARD_QUIZ_QUESTIONS.length) * 100);
 
     return (
-      <div className="card p-8 md:p-12 rounded-[2.5rem] border border-primary-500/30 bg-slate-900 shadow-2xl text-center max-w-2xl mx-auto animate-in fade-in zoom-in-95 duration-300">
+      <div className="card p-8 md:p-12 rounded-[2.5rem] border border-primary-500/30 bg-white dark:bg-slate-900 shadow-2xl text-center max-w-2xl mx-auto animate-in fade-in zoom-in-95 duration-300">
         <div className="w-20 h-20 rounded-3xl bg-primary-500/20 border-2 border-primary-500/40 flex items-center justify-center text-4xl mx-auto mb-4">
           🏆
         </div>
@@ -71,17 +71,17 @@ export function KeyboardQuizWidget() {
         <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-1 block">
           Quiz Completed
         </span>
-        <h3 className="text-3xl font-black text-white mb-2">Keyboard Knowledge Score</h3>
-        <p className="text-sm text-slate-400 mb-8">
+        <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-2">Keyboard Knowledge Score</h3>
+        <p className="text-sm text-gray-500 dark:text-slate-400 mb-8">
           Here is how well you know the Hindi InScript keyboard mappings.
         </p>
 
         {/* Score Ring / Box */}
-        <div className="p-6 rounded-3xl bg-slate-950 border border-slate-800 mb-8">
+        <div className="p-6 rounded-3xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 mb-8">
           <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-primary-300 to-amber-400">
             {score} / {KEYBOARD_QUIZ_QUESTIONS.length}
           </div>
-          <span className="text-xs text-slate-400 font-semibold mt-1 block">
+          <span className="text-xs text-gray-500 dark:text-slate-400 font-semibold mt-1 block">
             Accuracy: {accuracyPct}%
           </span>
         </div>
@@ -96,14 +96,14 @@ export function KeyboardQuizWidget() {
               {missedChars.map((ch) => (
                 <span
                   key={ch}
-                  className="w-9 h-9 rounded-xl bg-slate-900 border border-rose-500/40 text-rose-300 font-bold flex items-center justify-center text-lg"
+                  className="w-9 h-9 rounded-xl bg-white dark:bg-slate-900 border border-rose-500/40 text-rose-300 font-bold flex items-center justify-center text-lg"
                   style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                 >
                   {ch}
                 </span>
               ))}
             </div>
-            <p className="text-xs text-slate-400 mt-2">
+            <p className="text-xs text-gray-500 dark:text-slate-400 mt-2">
               Review these characters on the interactive keyboard above before starting your speed
               practice.
             </p>
@@ -126,14 +126,14 @@ export function KeyboardQuizWidget() {
 
           <Link
             href="/practice"
-            className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold border border-slate-700 bg-slate-800 text-white hover:bg-slate-700 transition-all"
+            className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-white hover:bg-slate-700 transition-all"
           >
             Practice Hindi Typing →
           </Link>
 
           <button
             onClick={scrollToKeyboard}
-            className="text-xs font-semibold text-slate-400 hover:text-white px-4 py-3"
+            className="text-xs font-semibold text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white px-4 py-3"
           >
             ↑ Back to Keyboard
           </button>
@@ -145,16 +145,16 @@ export function KeyboardQuizWidget() {
   const progressPct = ((currentIdx + 1) / KEYBOARD_QUIZ_QUESTIONS.length) * 100;
 
   return (
-    <div className="card p-6 md:p-8 rounded-[2.5rem] border border-slate-800 bg-slate-900/90 shadow-xl max-w-2xl mx-auto">
+    <div className="card p-6 md:p-8 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-xl max-w-2xl mx-auto">
       {/* Header & Progress Bar */}
-      <div className="flex items-center justify-between mb-4 text-xs font-bold text-slate-400">
+      <div className="flex items-center justify-between mb-4 text-xs font-bold text-gray-500 dark:text-slate-400">
         <span className="uppercase tracking-widest text-primary-400">
           Question {currentIdx + 1} of {KEYBOARD_QUIZ_QUESTIONS.length}
         </span>
         <span className="text-amber-400">Score: {score}</span>
       </div>
 
-      <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden mb-6">
+      <div className="w-full h-2 bg-gray-100 dark:bg-slate-800 rounded-full overflow-hidden mb-6">
         <div
           className="h-full bg-primary-500 transition-all duration-300 rounded-full"
           style={{ width: `${progressPct}%` }}
@@ -164,18 +164,18 @@ export function KeyboardQuizWidget() {
       {/* Target Character Callout */}
       <div className="text-center my-6">
         <div
-          className="w-20 h-20 rounded-3xl bg-slate-950 border-2 border-primary-500/40 flex items-center justify-center text-4xl font-black text-white mx-auto mb-3 shadow-lg shadow-primary-500/10"
+          className="w-20 h-20 rounded-3xl bg-white dark:bg-slate-950 border-2 border-primary-500/40 flex items-center justify-center text-4xl font-black text-gray-900 dark:text-white mx-auto mb-3 shadow-sm dark:shadow-lg shadow-primary-500/10"
           style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
         >
           {currentQ.charTarget}
         </div>
-        <h4 className="text-xl md:text-2xl font-black text-white">{currentQ.question}</h4>
+        <h4 className="text-xl md:text-2xl font-black text-gray-900 dark:text-white">{currentQ.question}</h4>
       </div>
 
       {/* Options Grid */}
       <div className="grid grid-cols-2 gap-3 mb-6">
         {currentQ.options.map((opt) => {
-          let btnClass = "bg-slate-800/90 border-slate-700 text-slate-100 hover:border-primary-400 hover:bg-slate-700";
+          let btnClass = "bg-gray-50 dark:bg-slate-800/90 border-gray-300 dark:border-slate-700 text-gray-900 dark:text-slate-100 hover:border-primary-400 hover:bg-slate-700";
 
           if (isAnswered) {
             if (opt === currentQ.correctAnswer) {
@@ -183,7 +183,7 @@ export function KeyboardQuizWidget() {
             } else if (opt === selectedOption) {
               btnClass = "bg-rose-950 border-rose-500 text-rose-300 font-black";
             } else {
-              btnClass = "bg-slate-900 border-slate-800 text-slate-600 opacity-40";
+              btnClass = "bg-white dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-gray-500 dark:text-slate-600 opacity-40";
             }
           }
 
@@ -202,14 +202,14 @@ export function KeyboardQuizWidget() {
 
       {/* Feedback & Explanation */}
       {isAnswered && (
-        <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 mb-6 animate-in fade-in duration-200">
+        <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 mb-6 animate-in fade-in duration-200">
           <div className="flex items-center gap-2 mb-1">
             <span className="text-lg">{isCorrect ? "✅" : "❌"}</span>
             <span className={`text-sm font-black ${isCorrect ? "text-emerald-400" : "text-rose-400"}`}>
               {isCorrect ? "Correct!" : "Incorrect!"}
             </span>
           </div>
-          <p className="text-xs text-slate-300">{currentQ.explanation}</p>
+          <p className="text-xs text-gray-600 dark:text-slate-300">{currentQ.explanation}</p>
         </div>
       )}
 
@@ -217,7 +217,7 @@ export function KeyboardQuizWidget() {
       {isAnswered && (
         <button
           onClick={handleNext}
-          className="btn-primary w-full rounded-2xl py-3.5 text-sm font-bold shadow-lg shadow-primary-500/25 flex items-center justify-center gap-2"
+          className="btn-primary w-full rounded-2xl py-3.5 text-sm font-bold shadow-sm dark:shadow-lg shadow-primary-500/25 flex items-center justify-center gap-2"
         >
           <span>
             {currentIdx + 1 === KEYBOARD_QUIZ_QUESTIONS.length ? "View Final Results →" : "Next Question →"}

@@ -743,27 +743,27 @@ export default function TestPage() {
             A useful practice routine can include the following stages:
           </p>
           
-          <h4 className="text-base font-bold text-gray-905 dark:text-white mt-3">Warm-Up Practice</h4>
+          <h4 className="text-base font-bold text-gray-900 dark:text-white mt-3">Warm-Up Practice</h4>
           <p>
             Spend a few minutes typing simple words and sentences. The purpose is to relax the fingers and develop rhythm.
           </p>
 
-          <h4 className="text-base font-bold text-gray-905 dark:text-white mt-3">Accuracy Practice</h4>
+          <h4 className="text-base font-bold text-gray-900 dark:text-white mt-3">Accuracy Practice</h4>
           <p>
             Practice slowly while focusing on typing every word correctly. Do not worry excessively about speed.
           </p>
 
-          <h4 className="text-base font-bold text-gray-905 dark:text-white mt-3">Speed Practice</h4>
+          <h4 className="text-base font-bold text-gray-900 dark:text-white mt-3">Speed Practice</h4>
           <p>
             Attempt timed typing tests. For example: 5-minute tests, 10-minute tests, or longer tests depending on examination requirements.
           </p>
 
-          <h4 className="text-base font-bold text-gray-905 dark:text-white mt-3">Error Analysis</h4>
+          <h4 className="text-base font-bold text-gray-900 dark:text-white mt-3">Error Analysis</h4>
           <p>
             Review mistakes carefully. Identify whether mistakes occur because of incorrect finger placement, difficult letters, capital letters, punctuation, numbers, or lack of concentration.
           </p>
 
-          <h4 className="text-base font-bold text-gray-905 dark:text-white mt-3">Final Timed Test</h4>
+          <h4 className="text-base font-bold text-gray-900 dark:text-white mt-3">Final Timed Test</h4>
           <p>
             End the session with one realistic typing test. This helps candidates track progress.
           </p>

@@ -20,10 +20,10 @@ function DictationContent() {
         <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
           Audio Dictation Studio
         </span>
-        <h1 className="text-2xl sm:text-3xl font-black text-slate-100">
+        <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
           Shorthand Audio Dictation Practice
         </h1>
-        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 leading-relaxed">
           Listen to spoken English passages at 40 to 120 WPM. Write your shorthand outlines on paper, and then test your transcription on computer.
         </p>
       </div>
@@ -32,15 +32,15 @@ function DictationContent() {
       <DictationPlayer initialPassage={initialPassage} />
 
       {/* Speed Milestones Ladder */}
-      <div className="pt-6 border-t border-slate-800 space-y-4">
+      <div className="pt-6 border-t border-gray-200 dark:border-slate-800 space-y-4">
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
             Speed Ladder
           </span>
-          <h2 className="text-xl font-bold text-slate-100">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-slate-100">
             Progressive Speed Training Benchmarks
           </h2>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-gray-500 dark:text-slate-400">
             Target speed milestones required by government stenography recruiting bodies.
           </p>
         </div>
@@ -52,10 +52,10 @@ function DictationContent() {
 
 export default function ShorthandDictationPage() {
   return (
-    <div className="min-h-screen bg-[#070B14] text-slate-100">
+    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
       <main className="container-main py-10">
-        <Suspense fallback={<div className="text-center py-12 text-slate-400">Loading dictation studio...</div>}>
+        <Suspense fallback={<div className="text-center py-12 text-gray-500 dark:text-slate-400">Loading dictation studio...</div>}>
           <DictationContent />
         </Suspense>
       </main>

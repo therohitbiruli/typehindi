@@ -367,10 +367,10 @@ export function PracticeTool({
       {!isFocusMode && (
         <>
           {/* 🌐 Language Switcher Bar */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-md">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 shadow-md">
             <div className="flex items-center gap-2">
               <span className="text-lg">🌐</span>
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+              <span className="text-xs font-bold uppercase tracking-wider text-gray-600 dark:text-slate-300">
                 Choose Language:
               </span>
             </div>
@@ -384,7 +384,7 @@ export function PracticeTool({
                     className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                       isActive
                         ? "bg-primary-600 text-white shadow-sm shadow-primary-500/30"
-                        : "bg-slate-950 text-slate-300 hover:bg-slate-800 hover:text-white border border-slate-800"
+                        : "bg-white dark:bg-slate-950 text-gray-600 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white border border-gray-200 dark:border-slate-800"
                     }`}
                   >
                     <span className="text-[11px] opacity-80">{lang.symbol}</span>
@@ -397,7 +397,7 @@ export function PracticeTool({
           </div>
 
           {/* Controls */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-slate-900/90 p-3.5 rounded-2xl border border-slate-800 shadow-md">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-50 dark:bg-slate-900/90 p-3.5 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-md">
             <div className="flex gap-1.5">
               {DIFFICULTY_OPTIONS.map((opt) => (
                 <button
@@ -406,7 +406,7 @@ export function PracticeTool({
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     difficulty === opt.value
                       ? "bg-primary-600 text-white shadow-sm shadow-primary-500/30"
-                      : "bg-slate-950 text-slate-300 border border-slate-800 hover:bg-slate-800 hover:text-white"
+                      : "bg-white dark:bg-slate-950 text-gray-600 dark:text-slate-300 border border-gray-200 dark:border-slate-800 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white"
                   }`}
                 >
                   {opt.label}
@@ -416,12 +416,12 @@ export function PracticeTool({
 
             {/* Guided Highlight toggles */}
             <div className="flex items-center gap-4">
-              <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-300 cursor-pointer select-none">
+              <label className="flex items-center gap-1.5 text-xs font-semibold text-gray-600 dark:text-slate-300 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={enableHighlights}
                   onChange={(e) => setEnableHighlights(e.target.checked)}
-                  className="rounded text-primary-600 focus:ring-primary-500 bg-slate-950 border-slate-700 h-4 w-4"
+                  className="rounded text-primary-600 focus:ring-primary-500 bg-white dark:bg-slate-950 border-gray-300 dark:border-slate-700 h-4 w-4"
                 />
                 <span>Guide Highlight</span>
               </label>
@@ -659,7 +659,7 @@ export function PracticeTool({
 
             {/* Ad Body Mockup */}
             <div className="bg-gray-50 dark:bg-gray-955 border-2 border-dashed border-gray-300 dark:border-gray-800 rounded-2xl p-6 flex flex-col items-center justify-center text-center space-y-4 min-h-[220px]">
-              <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-primary-600 to-indigo-600 flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-primary-500/10">
+              <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-primary-600 to-indigo-600 flex items-center justify-center text-white text-xl font-bold shadow-sm dark:shadow-lg shadow-primary-500/10">
                 TH
               </div>
               <div>

@@ -163,14 +163,14 @@ export default async function LanguagePracticePage({ params }: Props) {
 
       {/* Verified Exam Guidelines Section */}
       {langConfig.exams.length > 0 && (
-        <section className="mt-12 bg-slate-900/60 rounded-3xl p-6 sm:p-8 border border-slate-800">
+        <section className="mt-12 bg-gray-50 dark:bg-slate-900/60 rounded-3xl p-6 sm:p-8 border border-gray-200 dark:border-slate-800">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-2xl">🏛️</span>
             <div>
-              <h2 className="text-xl font-bold text-white">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">
                 {langConfig.name} Typing Requirements for Government Exams
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-gray-500 dark:text-slate-400">
                 Verified criteria from official recruitment notifications
               </p>
             </div>
@@ -180,21 +180,21 @@ export default async function LanguagePracticePage({ params }: Props) {
             {langConfig.exams.map((exam, i) => (
               <div
                 key={i}
-                className="bg-slate-950/80 rounded-2xl p-5 border border-slate-800 flex flex-col justify-between space-y-3"
+                className="bg-white dark:bg-slate-950/80 rounded-2xl p-5 border border-gray-200 dark:border-slate-800 flex flex-col justify-between space-y-3 shadow-sm dark:shadow-none"
               >
                 <div>
-                  <h3 className="font-bold text-sm text-slate-100 mb-1">{exam.examName}</h3>
+                  <h3 className="font-bold text-sm text-gray-900 dark:text-slate-100 mb-1">{exam.examName}</h3>
                   <div className="flex items-center gap-2 text-xs font-semibold text-primary-400">
                     <span>Target: {exam.targetWpm} WPM</span>
                     <span>•</span>
                     <span>{exam.durationMinutes} Mins</span>
                   </div>
-                  <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                  <p className="text-xs text-gray-500 dark:text-slate-400 mt-2 leading-relaxed">
                     {exam.notes}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
-                  Font/Layout: <span className="text-slate-300 font-medium">{exam.fontOrLayout}</span>
+                <div className="pt-3 border-t border-gray-200 dark:border-slate-800/80 text-[11px] text-gray-400 dark:text-slate-500">
+                  Font/Layout: <span className="text-gray-600 dark:text-slate-300 font-medium">{exam.fontOrLayout}</span>
                 </div>
               </div>
             ))}

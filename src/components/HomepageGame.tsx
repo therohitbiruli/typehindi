@@ -24,7 +24,7 @@ export function HomepageGame() {
         className="object-cover transition-transform duration-700 group-hover:scale-105"
       />
       {/* Dark overlay with responsive padding & clean layout */}
-      <div className="absolute inset-0 bg-slate-950/80 sm:bg-slate-950/70 flex flex-col items-center justify-center p-4 sm:p-8 text-center z-10">
+      <div className="absolute inset-0 bg-white dark:bg-slate-950/80 sm:bg-white dark:bg-slate-950/70 flex flex-col items-center justify-center p-4 sm:p-8 text-center z-10">
         
         {/* Mode badge */}
         <span className="px-3 py-1 rounded-full bg-emerald-500 text-white font-black text-[10px] uppercase tracking-widest shadow-sm mb-3">
@@ -40,14 +40,14 @@ export function HomepageGame() {
         </p>
 
         {/* Mobile-only Keyboard Instruction */}
-        <div className="inline-flex md:hidden items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/30 text-amber-300 text-[11px] font-medium mb-5 shadow-sm">
+        <div className="inline-flex md:hidden items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-50 dark:bg-slate-900/90 border border-amber-500/30 text-amber-300 text-[11px] font-medium mb-5 shadow-sm">
           <span>⌨️</span>
           <span>Best played on Desktop / Laptop with Physical Keyboard</span>
         </div>
 
         <button
           onClick={() => setIsPlaying(true)}
-          className="w-full sm:w-auto px-7 sm:px-9 py-3 sm:py-3.5 rounded-2xl bg-primary-600 hover:bg-primary-500 text-white font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
+          className="w-full sm:w-auto px-7 sm:px-9 py-3 sm:py-3.5 rounded-2xl bg-primary-600 hover:bg-primary-500 text-white font-extrabold text-xs sm:text-sm transition-all shadow-sm dark:shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
         >
           <span>Play Typing Game</span>
           <span>🎮</span>

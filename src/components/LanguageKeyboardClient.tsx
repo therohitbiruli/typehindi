@@ -60,8 +60,8 @@ export function LanguageKeyboardClient({
             href={`/keyboard-layout/${l.keyboardSlug}`}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
               l.id === langConfig.id
-                ? "bg-primary-600 text-white shadow-sm"
-                : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800"
+                ? "bg-primary-600 text-gray-900 dark:text-white shadow-sm"
+                : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-gray-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-800"
             }`}
           >
             <span>{l.symbol}</span>
@@ -87,7 +87,7 @@ export function LanguageKeyboardClient({
               onClick={() => setActiveShift(!activeShift)}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 border shadow-sm ${
                 activeShift
-                  ? "bg-primary-600 text-white border-primary-500"
+                  ? "bg-primary-600 text-gray-900 dark:text-white border-primary-500"
                   : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-300 dark:border-slate-700"
               }`}
             >
@@ -181,7 +181,7 @@ export function LanguageKeyboardClient({
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-gray-800 dark:text-gray-200">
               {filteredKeys.map((k) => (
-                <tr key={k.code} className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+                <tr key={k.code} className="hover:bg-slate-50 dark:hover:bg-gray-100 dark:bg-slate-800/40 transition-colors">
                   <td className="py-3 px-4 font-mono font-bold text-primary-500">
                     {k.label}
                   </td>

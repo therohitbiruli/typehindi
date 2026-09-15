@@ -35,10 +35,10 @@ function TestsContent() {
         <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
           Stenographer Skill Test Simulator
         </span>
-        <h1 className="text-2xl sm:text-3xl font-black text-slate-100">
+        <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
           {selectedExam.name}
         </h1>
-        <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 max-w-3xl leading-relaxed">
           {selectedExam.description}
         </p>
 
@@ -54,8 +54,8 @@ function TestsContent() {
               }}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
                 selectedExam.id === e.id
-                  ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                  : "bg-slate-950 hover:bg-slate-800 text-slate-400 border border-slate-800"
+                  ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+                  : "bg-white dark:bg-slate-950 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 border border-gray-200 dark:border-slate-800"
               }`}
             >
               {e.name}
@@ -72,14 +72,14 @@ function TestsContent() {
           className={`p-4 rounded-xl border text-left transition-all ${
             activeStep === "dictation"
               ? "bg-purple-950/40 border-purple-500 text-purple-200"
-              : "bg-slate-900 border-slate-800 text-slate-400"
+              : "bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-gray-500 dark:text-slate-400"
           }`}
         >
           <span className="text-[10px] uppercase font-bold tracking-wider">Step 1</span>
-          <h4 className="font-bold text-sm text-slate-100 mt-0.5">
+          <h4 className="font-bold text-sm text-gray-900 dark:text-slate-100 mt-0.5">
             🎙️ Audio Dictation ({selectedExam.dictationSpeedWpm} WPM)
           </h4>
-          <p className="text-[11px] text-slate-400 mt-0.5">
+          <p className="text-[11px] text-gray-500 dark:text-slate-400 mt-0.5">
             Take notes in your shorthand notebook during dictation.
           </p>
         </button>
@@ -90,14 +90,14 @@ function TestsContent() {
           className={`p-4 rounded-xl border text-left transition-all ${
             activeStep === "transcription"
               ? "bg-purple-950/40 border-purple-500 text-purple-200"
-              : "bg-slate-900 border-slate-800 text-slate-400"
+              : "bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-gray-500 dark:text-slate-400"
           }`}
         >
           <span className="text-[10px] uppercase font-bold tracking-wider">Step 2</span>
-          <h4 className="font-bold text-sm text-slate-100 mt-0.5">
+          <h4 className="font-bold text-sm text-gray-900 dark:text-slate-100 mt-0.5">
             💻 Computer Transcription ({selectedExam.transcriptionTimeMinutes} Mins)
           </h4>
-          <p className="text-[11px] text-slate-400 mt-0.5">
+          <p className="text-[11px] text-gray-500 dark:text-slate-400 mt-0.5">
             Type your notes on keyboard with full error evaluation.
           </p>
         </button>
@@ -126,10 +126,10 @@ function TestsContent() {
 
 export default function ShorthandTestsPage() {
   return (
-    <div className="min-h-screen bg-[#070B14] text-slate-100">
+    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
       <main className="container-main py-10">
-        <Suspense fallback={<div className="text-center py-12 text-slate-400">Loading exam simulator...</div>}>
+        <Suspense fallback={<div className="text-center py-12 text-gray-500 dark:text-slate-400">Loading exam simulator...</div>}>
           <TestsContent />
         </Suspense>
       </main>

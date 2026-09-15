@@ -147,15 +147,15 @@ export function DictationPlayer({
   const remainingSeconds = Math.max(0, totalSecondsEstimated - elapsedSeconds);
 
   return (
-    <div className="w-full rounded-2xl bg-slate-900 border border-slate-800 shadow-xl overflow-hidden">
+    <div className="w-full rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 shadow-xl overflow-hidden">
       {/* Top Header */}
-      <div className="p-5 bg-slate-950/80 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4">
+      <div className="p-5 bg-white dark:bg-slate-950/80 border-b border-gray-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
         <div>
           <span className="text-[11px] font-bold text-purple-400 uppercase tracking-wider">
             Audio Dictation System • {selectedPassage.category}
           </span>
-          <h3 className="text-lg font-bold text-slate-100 mt-0.5">{selectedPassage.title}</h3>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-slate-100 mt-0.5">{selectedPassage.title}</h3>
+          <p className="text-xs text-gray-500 dark:text-slate-400 mt-0.5">
             {selectedPassage.wordCount} words • Recommended: {selectedPassage.recommendedWpm} WPM
           </p>
         </div>
@@ -169,7 +169,7 @@ export function DictationPlayer({
               if (found) setSelectedPassage(found);
             }}
             disabled={isPlaying}
-            className="px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 text-xs text-slate-200 focus:outline-none focus:border-purple-500"
+            className="px-3 py-2 rounded-xl bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-xs text-gray-700 dark:text-slate-200 focus:outline-none focus:border-purple-500"
           >
             {dictationPassages.map((p) => (
               <option key={p.id} value={p.id}>
@@ -185,7 +185,7 @@ export function DictationPlayer({
         {/* Speed Selector (40 to 120 WPM) */}
         <div>
           <div className="flex items-center justify-between mb-2">
-            <label className="text-xs font-semibold text-slate-300">Dictation Speed (WPM):</label>
+            <label className="text-xs font-semibold text-gray-600 dark:text-slate-300">Dictation Speed (WPM):</label>
             <span className="text-xs font-bold text-purple-400 bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">
               {selectedWpm} WPM
             </span>
@@ -199,8 +199,8 @@ export function DictationPlayer({
                 onClick={() => setSelectedWpm(speed)}
                 className={`py-2 rounded-lg text-xs font-semibold transition-all ${
                   selectedWpm === speed
-                    ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                    : "bg-slate-800/80 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-700/50"
+                    ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+                    : "bg-gray-100 dark:bg-slate-800/80 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 border border-slate-700/50"
                 } disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 {speed}
@@ -211,23 +211,23 @@ export function DictationPlayer({
 
         {/* Timers & Countdown Display */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800/80 text-center">
-            <span className="text-[10px] text-slate-400 uppercase font-semibold">Total Words</span>
-            <div className="text-lg font-bold text-slate-100 mt-0.5">{selectedPassage.wordCount}</div>
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 text-center">
+            <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Total Words</span>
+            <div className="text-lg font-bold text-gray-900 dark:text-slate-100 mt-0.5">{selectedPassage.wordCount}</div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800/80 text-center">
-            <span className="text-[10px] text-slate-400 uppercase font-semibold">Est. Duration</span>
-            <div className="text-lg font-bold text-slate-100 mt-0.5">{formatTime(totalSecondsEstimated)}</div>
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 text-center">
+            <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Est. Duration</span>
+            <div className="text-lg font-bold text-gray-900 dark:text-slate-100 mt-0.5">{formatTime(totalSecondsEstimated)}</div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800/80 text-center">
-            <span className="text-[10px] text-slate-400 uppercase font-semibold">Elapsed Time</span>
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 text-center">
+            <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Elapsed Time</span>
             <div className="text-lg font-bold text-purple-400 mt-0.5">{formatTime(elapsedSeconds)}</div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800/80 text-center">
-            <span className="text-[10px] text-slate-400 uppercase font-semibold">Time Remaining</span>
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 text-center">
+            <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Time Remaining</span>
             <div className="text-lg font-bold text-sky-400 mt-0.5">{formatTime(remainingSeconds)}</div>
           </div>
         </div>
@@ -235,7 +235,7 @@ export function DictationPlayer({
         {/* Big Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           {countdown !== null ? (
-            <div className="px-8 py-3.5 rounded-xl bg-purple-600 text-white font-extrabold text-lg animate-pulse flex items-center gap-2">
+            <div className="px-8 py-3.5 rounded-xl bg-purple-600 text-gray-900 dark:text-white font-extrabold text-lg animate-pulse flex items-center gap-2">
               <span>Ready in</span>
               <span className="text-2xl">{countdown}</span>
             </div>
@@ -243,7 +243,7 @@ export function DictationPlayer({
             <button
               type="button"
               onClick={handleStartCountdown}
-              className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-sm font-bold shadow-lg shadow-purple-900/30 transition-all flex items-center gap-2"
+              className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-gray-900 dark:text-white text-sm font-bold shadow-sm dark:shadow-lg shadow-purple-900/30 transition-all flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -255,7 +255,7 @@ export function DictationPlayer({
             <button
               type="button"
               onClick={handlePause}
-              className="px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-bold shadow-lg transition-all flex items-center gap-2"
+              className="px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-bold shadow-sm dark:shadow-lg transition-all flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -267,16 +267,16 @@ export function DictationPlayer({
           <button
             type="button"
             onClick={handleRestart}
-            className="px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold border border-slate-700 transition-colors"
+            className="px-5 py-3.5 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-600 dark:text-slate-300 text-xs font-semibold border border-gray-300 dark:border-slate-700 transition-colors"
           >
             Restart
           </button>
         </div>
 
         {/* Hidden Passage Area / Reveal Toggle */}
-        <div className="border border-slate-800 rounded-xl bg-slate-950/60 p-4 space-y-3">
+        <div className="border border-gray-200 dark:border-slate-800 rounded-xl bg-white dark:bg-slate-950/60 p-4 space-y-3">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs text-slate-400">
+            <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-slate-400">
               <svg className="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
               </svg>
@@ -293,7 +293,7 @@ export function DictationPlayer({
           </div>
 
           {showPassageText && (
-            <div className="pt-3 border-t border-slate-800 text-xs leading-relaxed text-slate-300 font-mono bg-slate-950 p-4 rounded-lg select-text">
+            <div className="pt-3 border-t border-gray-200 dark:border-slate-800 text-xs leading-relaxed text-gray-600 dark:text-slate-300 font-mono bg-white dark:bg-slate-950 p-4 rounded-lg select-text">
               {selectedPassage.text}
             </div>
           )}
@@ -304,13 +304,13 @@ export function DictationPlayer({
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-purple-950/20 border border-purple-500/30">
             <div>
               <h4 className="text-xs font-bold text-purple-200">Finished writing shorthand notes?</h4>
-              <p className="text-[11px] text-slate-400 mt-0.5">
+              <p className="text-[11px] text-gray-500 dark:text-slate-400 mt-0.5">
                 Now open the transcription evaluator to type your notes on computer and get full word-accuracy scoring!
               </p>
             </div>
             <Link
               href={`/shorthand/tests?passage=${selectedPassage.id}&wpm=${selectedWpm}`}
-              className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shrink-0 transition-colors"
+              className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold shrink-0 transition-colors"
             >
               Transcribe on Computer →
             </Link>

@@ -29,9 +29,9 @@ export default function Homepage() {
   const previewLanguages = LANGUAGES.slice(0, 8);
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-950">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-950">
       {/* 🌟 Premium Hero Section */}
-      <section className="bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
+      <section className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white pt-20 pb-32 border-b border-gray-100 dark:border-slate-900 relative overflow-hidden">
         {/* Blurred background image blended directly with the dark bg */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-25 blur-[6px] scale-105 pointer-events-none"
@@ -50,21 +50,21 @@ export default function Homepage() {
               ✨ Free Online Hindi Typing Platform
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] text-slate-900 dark:text-white">
               For Your Typing Jobs Preparation <br/>
               <span className="text-primary-400">in One Place</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="text-base sm:text-lg text-gray-700 dark:text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               A comprehensive catalog of free and easy-to-use Hindi typing tools. Improve your speed with a 100% accurate WPM tracker, live keyboard guides, and engaging typing games.
             </p>
 
             {/* Hero CTA buttons */}
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/practice" className="px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold text-sm transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 hover:-translate-y-0.5">
+              <Link href="/practice" className="px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-gray-900 dark:text-white font-bold text-sm transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 hover:-translate-y-0.5">
                 Start Practice
               </Link>
-              <Link href="/game" className="px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-all border border-slate-800 hover:-translate-y-0.5">
+              <Link href="/game" className="px-8 py-3.5 rounded-xl bg-gray-100 dark:bg-slate-900 hover:bg-gray-200 dark:hover:bg-slate-800 text-gray-900 dark:text-white font-bold text-sm transition-all border border-gray-200 dark:border-slate-800 hover:-translate-y-0.5">
                 Play Games
               </Link>
             </div>
@@ -155,16 +155,16 @@ export default function Homepage() {
         <div className="container-main max-w-6xl px-4 space-y-16">
           
           {/* 🌐 SECTION: TYPING PRACTICE IN MULTIPLE LANGUAGES */}
-          <div className="bg-slate-900/70 rounded-[2.5rem] p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+          <div className="bg-gray-50 dark:bg-slate-900/70 rounded-[2.5rem] p-6 sm:p-10 border border-gray-200 dark:border-slate-800 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-xs font-bold uppercase tracking-wider mb-3">
                 🌐 Multilingual Typing Hub
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
                 Typing Practice in Multiple Languages
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-slate-300 leading-relaxed">
                 Learn, practice and test your typing skills in English and Indian languages.
               </p>
             </div>
@@ -228,31 +228,31 @@ export default function Homepage() {
               ].map((lang) => (
                 <div
                   key={lang.slug}
-                  className="rounded-2xl bg-slate-950 border border-slate-800/90 p-6 flex flex-col justify-between hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1 shadow-md group"
+                  className="rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/90 p-6 flex flex-col justify-between hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1 shadow-md group"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-4">
                       <div className="w-12 h-12 rounded-2xl bg-primary-500/10 text-primary-400 font-bold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
                         {lang.symbol}
                       </div>
-                      <span className="text-[10px] px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 font-semibold">
+                      <span className="text-[10px] px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-slate-400 font-semibold">
                         {lang.badge}
                       </span>
                     </div>
                     <div className="mb-2">
-                      <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors">
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                         {lang.name}
                       </h3>
-                      <span className="text-xs text-slate-500 font-medium">{lang.native}</span>
+                      <span className="text-xs text-gray-400 dark:text-slate-500 font-medium">{lang.native}</span>
                     </div>
-                    <p className="text-xs text-slate-400 leading-relaxed mb-6">
+                    <p className="text-xs text-gray-600 dark:text-slate-400 leading-relaxed mb-6">
                       {lang.description}
                     </p>
                   </div>
 
                   <Link
                     href={`/practice/${lang.slug}`}
-                    className="w-full py-2.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold text-center transition-all shadow-md shadow-primary-500/20 group-hover:shadow-primary-500/30"
+                    className="w-full py-2.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-gray-900 dark:text-white text-xs font-bold text-center transition-all shadow-md shadow-primary-500/20 group-hover:shadow-primary-500/30"
                   >
                     {lang.btnText}
                   </Link>
@@ -308,7 +308,7 @@ export default function Homepage() {
                   <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
                     Interactive Lessons
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed">
                     Learn Hindi typing step by step, starting with vowels and progressing through consonants, matras, conjunct characters, words, and sentences.
                   </p>
                 </div>
@@ -330,7 +330,7 @@ export default function Homepage() {
                   <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
                     Key-by-Key Learning
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed">
                     Understand individual Hindi characters, their keyboard positions, and practice each key progressively.
                   </p>
                 </div>
@@ -352,7 +352,7 @@ export default function Homepage() {
                   <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
                     Finger Placement
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed">
                     Learn proper finger placement and discover which fingers should be used for different keys on the Hindi InScript keyboard.
                   </p>
                 </div>
@@ -374,7 +374,7 @@ export default function Homepage() {
                   <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
                     Matra Mastery
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed">
                     Practice Hindi matras through interactive exercises, word practice, and progressively more difficult challenges.
                   </p>
                 </div>
@@ -396,7 +396,7 @@ export default function Homepage() {
                   <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
                     Difficult Words & Mistakes
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed">
                     Practice difficult Hindi words, conjunct characters, and improve common typing mistakes.
                   </p>
                 </div>
@@ -418,7 +418,7 @@ export default function Homepage() {
                   <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
                     Typing Challenges
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed">
                     Test your skills with timed challenges focused on speed, accuracy, matras, difficult words, and mixed Hindi typing.
                   </p>
                 </div>
@@ -444,16 +444,16 @@ export default function Homepage() {
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs font-medium text-slate-700 dark:text-gray-300">
                     <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Learn Characters</span>
-                    <span className="text-slate-400 text-xs">→</span>
+                    <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
                     <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Practice Keys</span>
-                    <span className="text-slate-400 text-xs">→</span>
+                    <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
                     <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Master Matras</span>
-                    <span className="text-slate-400 text-xs">→</span>
+                    <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
                     <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Type Words</span>
-                    <span className="text-slate-400 text-xs">→</span>
+                    <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
                     <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Build Speed</span>
-                    <span className="text-slate-400 text-xs">→</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-semibold shadow-sm">Take Challenges</span>
+                    <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-emerald-600 text-gray-900 dark:text-white font-semibold shadow-sm">Take Challenges</span>
                   </div>
                 </div>
 
@@ -461,7 +461,7 @@ export default function Homepage() {
                 <div className="flex items-center gap-3 self-start lg:self-auto bg-white dark:bg-slate-900 px-3.5 py-2 rounded-xl border border-[#D9E1EC] dark:border-slate-800 shadow-sm">
                   <span className="text-lg">📈</span>
                   <div className="text-left">
-                    <div className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Skill Level</div>
+                    <div className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold tracking-wider">Skill Level</div>
                     <div className="text-xs font-bold text-slate-800 dark:text-gray-200">Zero to 40+ WPM</div>
                   </div>
                 </div>
@@ -470,12 +470,12 @@ export default function Homepage() {
 
             {/* Prominent Call to Action */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
-              <p className="text-xs text-slate-500 dark:text-gray-400 text-center sm:text-left">
+              <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 text-center sm:text-left">
                 Start from scratch or jump directly to your level. 100% free, saved in your browser.
               </p>
               <Link
                 href="/learn"
-                className="w-full sm:w-auto px-7 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/30 flex items-center justify-center gap-2 group flex-shrink-0"
+                className="w-full sm:w-auto px-7 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-gray-900 dark:text-white font-bold text-sm transition-all shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/30 flex items-center justify-center gap-2 group flex-shrink-0"
               >
                 <span>Start Learning Hindi Typing</span>
                 <span className="group-hover:translate-x-1 transition-transform font-bold">→</span>
@@ -484,7 +484,7 @@ export default function Homepage() {
           </div>
 
           {/* 🌟 SECTION: SHORTHAND FEATURE BANNER */}
-          <div id="shorthand" className="bg-gradient-to-r from-purple-950/30 via-slate-900 to-[#0F172A] rounded-[2rem] border border-purple-500/30 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-8 space-y-5 relative overflow-hidden">
+          <div id="shorthand" className="bg-gradient-to-r from-purple-50 via-white to-purple-50 dark:from-purple-950/30 dark:via-slate-900 dark:to-[#0F172A] rounded-[2rem] border border-purple-200 dark:border-purple-500/30 shadow-sm dark:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-8 space-y-5 relative overflow-hidden">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-2 max-w-2xl">
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] font-bold text-purple-400 uppercase tracking-wider">
@@ -501,14 +501,14 @@ export default function Homepage() {
               <div className="flex flex-wrap items-center gap-3 shrink-0">
                 <Link
                   href="/shorthand"
-                  className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-md shadow-purple-900/30 transition-all flex items-center gap-1.5"
+                  className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white font-bold text-xs shadow-md shadow-purple-900/30 transition-all flex items-center gap-1.5"
                 >
                   <span>Learn Shorthand</span>
                   <span>→</span>
                 </Link>
                 <Link
                   href="/shorthand/dictation"
-                  className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-slate-700 transition-all flex items-center gap-1.5"
+                  className="px-5 py-2.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs border border-gray-300 dark:border-slate-700 transition-all flex items-center gap-1.5"
                 >
                   <span>Practice Dictation</span>
                   <span>→</span>
@@ -558,19 +558,19 @@ export default function Homepage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-2">
               <div className="border border-[#D9E1EC] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
                 <h4 className="font-extrabold text-slate-900 dark:text-white text-sm mb-1">SSC Typing Exams</h4>
-                <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
+                <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed">
                   Conducted on-screen for 10 minutes. Requires 35 WPM in English or 30 WPM in Hindi. Strict category-wise error threshold limits (5% to 7%) are evaluated dynamically.
                 </p>
               </div>
               <div className="border border-[#D9E1EC] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
                 <h4 className="font-extrabold text-slate-900 dark:text-white text-sm mb-1">LDC & Clerk Jobs</h4>
-                <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
+                <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed">
                   Requires a typing speed of 30-35 WPM. Depending on state boards (like CPCT, High Courts), backspace edits might be fully disabled or carry high speed penalties.
                 </p>
               </div>
               <div className="border border-[#D9E1EC] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
                 <h4 className="font-extrabold text-slate-900 dark:text-white text-sm mb-1">Stenographer Grade C & D</h4>
-                <p className="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">
+                <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed">
                   Focuses on Shorthand transcription on computer. English transcription time is 50/40 mins and Hindi transcription time is 65/55 mins.
                 </p>
               </div>
@@ -620,7 +620,7 @@ export default function Homepage() {
                   href={`/translators/english-to-${lang.name.toLowerCase()}`}
                   className="flex flex-col items-center justify-center p-5 border border-[#D9E1EC] dark:border-slate-800 hover:border-violet-500 dark:hover:border-violet-500 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md transition-all text-center group"
                 >
-                  <span className="text-xl mb-1 text-slate-500 group-hover:text-violet-600 transition-colors">A→{lang.nativeChar}</span>
+                  <span className="text-xl mb-1 text-gray-400 dark:text-slate-500 group-hover:text-violet-600 transition-colors">A→{lang.nativeChar}</span>
                   <span className="text-xs font-bold text-slate-800 dark:text-gray-200">English to {lang.name}</span>
                 </Link>
               ))}
@@ -661,7 +661,7 @@ export default function Homepage() {
                       />
                     </div>
 
-                    <span className="text-[11px] font-semibold text-slate-400 dark:text-slate-500 tracking-wide block mb-1.5">
+                    <span className="text-[11px] font-semibold text-gray-500 dark:text-slate-400 dark:text-slate-500 tracking-wide block mb-1.5">
                       {blog.author} · {blog.dateEn || blog.date}
                     </span>
 
@@ -669,7 +669,7 @@ export default function Homepage() {
                       {blog.titleEn || blog.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                    <p className="text-xs sm:text-sm text-gray-400 dark:text-slate-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
                       {blog.excerptEn || blog.excerpt}
                     </p>
                   </div>

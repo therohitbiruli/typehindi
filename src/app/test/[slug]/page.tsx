@@ -163,14 +163,14 @@ export default async function LanguageTestPage({ params }: Props) {
 
       {/* Verified Exam Guidelines */}
       {langConfig.exams.length > 0 && (
-        <section className="mt-12 bg-slate-900/60 rounded-3xl p-6 sm:p-8 border border-slate-800">
+        <section className="mt-12 bg-gray-50 dark:bg-slate-900/60 rounded-3xl p-6 sm:p-8 border border-gray-200 dark:border-slate-800">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-2xl">🏛️</span>
             <div>
-              <h2 className="text-xl font-bold text-white">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">
                 Official {langConfig.name} Typing Speed Standards
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-gray-500 dark:text-slate-400">
                 Mandatory benchmarks set by recruitment commissions for clerical and data entry posts
               </p>
             </div>
@@ -179,7 +179,7 @@ export default async function LanguageTestPage({ params }: Props) {
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="border-b border-slate-800 text-slate-400">
+                <tr className="border-b border-gray-300 dark:border-slate-800 text-gray-500 dark:text-slate-400">
                   <th className="pb-3 font-bold uppercase tracking-wider">Exam / Post</th>
                   <th className="pb-3 font-bold uppercase tracking-wider">Target Speed</th>
                   <th className="pb-3 font-bold uppercase tracking-wider">Duration</th>
@@ -187,14 +187,14 @@ export default async function LanguageTestPage({ params }: Props) {
                   <th className="pb-3 font-bold uppercase tracking-wider">Font / Layout</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 text-slate-200">
+              <tbody className="divide-y divide-gray-200 dark:divide-slate-800/60 text-gray-600 dark:text-slate-200">
                 {langConfig.exams.map((exam, i) => (
-                  <tr key={i} className="hover:bg-slate-800/30 transition-colors">
-                    <td className="py-3.5 font-bold text-slate-100">{exam.examName}</td>
-                    <td className="py-3.5 text-primary-400 font-bold">{exam.targetWpm} WPM</td>
+                  <tr key={i} className="hover:bg-gray-100 dark:hover:bg-slate-800/30 transition-colors">
+                    <td className="py-3.5 font-bold text-gray-900 dark:text-slate-100">{exam.examName}</td>
+                    <td className="py-3.5 text-primary-600 dark:text-primary-400 font-bold">{exam.targetWpm} WPM</td>
                     <td className="py-3.5">{exam.durationMinutes} Minutes</td>
-                    <td className="py-3.5 text-emerald-400">{exam.maxErrorPercent}%</td>
-                    <td className="py-3.5 text-slate-400">{exam.fontOrLayout}</td>
+                    <td className="py-3.5 text-emerald-600 dark:text-emerald-400">{exam.maxErrorPercent}%</td>
+                    <td className="py-3.5 text-gray-500 dark:text-slate-400">{exam.fontOrLayout}</td>
                   </tr>
                 ))}
               </tbody>

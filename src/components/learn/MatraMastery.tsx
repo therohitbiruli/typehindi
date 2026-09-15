@@ -149,7 +149,7 @@ export function MatraMastery({
             {/* Matra Mastery Progress Indicator */}
             <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-gray-200 dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
               <span>Completed:</span>
-              <span className="px-2 py-0.5 rounded-full bg-amber-500 text-white font-bold text-xs">
+              <span className="px-2 py-0.5 rounded-full bg-amber-500 text-gray-900 dark:text-white font-bold text-xs">
                 {completedMatras.length} / {matraMasteryList.length}
               </span>
             </div>
@@ -166,7 +166,7 @@ export function MatraMastery({
                   onClick={() => setSelectedMatraIndex(idx)}
                   className={`relative flex-shrink-0 flex flex-col items-center justify-center w-14 h-16 rounded-2xl transition-all border ${
                     isCurr
-                      ? "border-amber-500 bg-amber-500 text-white shadow-md shadow-amber-500/30 scale-105"
+                      ? "border-amber-500 bg-amber-500 text-gray-900 dark:text-white shadow-md shadow-amber-500/30 scale-105"
                       : "border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 hover:border-amber-300 dark:hover:border-amber-700"
                   }`}
                 >
@@ -175,7 +175,7 @@ export function MatraMastery({
                     {m.englishKey}
                   </span>
                   {isComp && (
-                    <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[9px] font-bold border-2 border-white dark:border-gray-900">
+                    <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 text-gray-900 dark:text-white flex items-center justify-center text-[9px] font-bold border-2 border-white dark:border-gray-900">
                       ✓
                     </span>
                   )}
@@ -281,7 +281,7 @@ export function MatraMastery({
                   onClick={() => setActiveMode(tab.id)}
                   className={`flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     activeMode === tab.id
-                      ? "bg-amber-500 text-white shadow-sm"
+                      ? "bg-amber-500 text-gray-900 dark:text-white shadow-sm"
                       : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200"
                   }`}
                 >
@@ -397,7 +397,7 @@ export function MatraMastery({
                   </div>
                   <button
                     onClick={resetExercise}
-                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
+                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-gray-900 dark:text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
                   >
                     Practice Again 🔄
                   </button>

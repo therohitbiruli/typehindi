@@ -28,7 +28,7 @@ export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
           {items.map((item, index) => (
             <li key={index} className="flex items-center gap-1">
               {index > 0 && (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-300 dark:text-gray-600">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-600 dark:text-gray-300 dark:text-gray-600">
                   <path d="M9 18l6-6-6-6" />
                 </svg>
               )}

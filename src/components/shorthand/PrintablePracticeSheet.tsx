@@ -12,17 +12,17 @@ export function PrintablePracticeSheet() {
   return (
     <div className="w-full space-y-6">
       {/* Web Controls */}
-      <div className="flex items-center justify-between p-4 rounded-xl bg-slate-900 border border-slate-800 print:hidden">
+      <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 print:hidden">
         <div>
-          <h4 className="text-xs font-bold text-slate-100">Printable Pitman Practice Sheets</h4>
-          <p className="text-[11px] text-slate-400">
+          <h4 className="text-xs font-bold text-gray-900 dark:text-slate-100">Printable Pitman Practice Sheets</h4>
+          <p className="text-[11px] text-gray-500 dark:text-slate-400">
             Generate clean double-ruled stenography sheets for pen and pencil drills.
           </p>
         </div>
         <button
           type="button"
           onClick={handlePrint}
-          className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors flex items-center gap-1.5"
+          className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors flex items-center gap-1.5"
         >
           <span>🖨️</span> Print / Save PDF
         </button>
@@ -35,7 +35,7 @@ export function PrintablePracticeSheet() {
             <h2 className="text-xl font-black uppercase tracking-wider">TYPEHINDI.IN • PITMAN SHORTHAND PRACTICE SHEET</h2>
             <p className="text-xs text-slate-600">Daily Consonant & Vowel Ruled Drill Sheet</p>
           </div>
-          <div className="text-right text-xs text-slate-500">
+          <div className="text-right text-xs text-gray-400 dark:text-slate-500">
             Date: _______________ | Target Speed: ________ WPM
           </div>
         </div>
@@ -51,13 +51,13 @@ export function PrintablePracticeSheet() {
               {/* Ruled lines for offline writing */}
               <div className="relative h-12 border-t border-sky-400/80 border-b border-sky-600 bg-sky-50/20">
                 <div className="absolute top-1/2 left-0 right-0 border-t border-dashed border-slate-300" />
-                <span className="absolute left-2 top-2 text-[10px] text-slate-400">Trace:</span>
+                <span className="absolute left-2 top-2 text-[10px] text-gray-500 dark:text-slate-400">Trace:</span>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="pt-4 border-t border-slate-400 text-center text-[10px] text-slate-500">
+        <div className="pt-4 border-t border-slate-400 text-center text-[10px] text-gray-400 dark:text-slate-500">
           Pitman Shorthand Exercise Material • Free educational resource from TypeHindi.in
         </div>
       </div>

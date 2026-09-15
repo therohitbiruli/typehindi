@@ -64,21 +64,21 @@ export default function GameHubPage() {
           improve speed, accuracy, reflexes, character recognition, matras, and difficult Hindi
           words.
         </p>
-        <p className="text-slate-400 text-sm max-w-2xl mx-auto mb-8">
+        <p className="text-gray-500 dark:text-slate-400 text-sm max-w-2xl mx-auto mb-8">
           Repetitive typing drills can often feel monotonous. Our gamified challenges turn everyday
           keystroke practice into fast-paced reflex drills, spelling quests, and dynamic obstacle runs.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
           <button
             onClick={scrollToGames}
-            className="btn-primary rounded-xl px-7 py-3.5 text-base font-bold shadow-lg shadow-primary-500/25 flex items-center gap-2"
+            className="btn-primary rounded-xl px-7 py-3.5 text-base font-bold shadow-sm dark:shadow-lg shadow-primary-500/25 flex items-center gap-2"
           >
             <span>Explore Games</span>
             <span>↓</span>
           </button>
           <Link
             href="/practice"
-            className="btn-secondary rounded-xl px-6 py-3.5 text-base font-semibold border border-slate-700 bg-slate-900/80 text-slate-200 hover:bg-slate-800 hover:text-white transition-all"
+            className="btn-secondary rounded-xl px-6 py-3.5 text-base font-semibold border border-gray-300 dark:border-slate-700 bg-gray-50 dark:bg-slate-900/80 text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 hover:text-gray-900 dark:text-white transition-all"
           >
             Standard Practice →
           </Link>
@@ -106,11 +106,11 @@ export default function GameHubPage() {
         ].map((s) => (
           <div
             key={s.label}
-            className="card p-5 text-center border border-slate-800 rounded-2xl bg-slate-900/70 shadow-lg"
+            className="card p-5 text-center border border-gray-200 dark:border-slate-800 rounded-2xl bg-gray-50 dark:bg-slate-900/70 shadow-sm dark:shadow-lg"
           >
             <div className="text-2xl mb-1">{s.icon}</div>
             <div className={`text-2xl sm:text-3xl font-black ${s.color}`}>{s.value}</div>
-            <div className="text-xs text-slate-400 mt-1 font-medium">{s.label}</div>
+            <div className="text-xs text-gray-500 dark:text-slate-400 mt-1 font-medium">{s.label}</div>
           </div>
         ))}
       </div>
@@ -123,10 +123,10 @@ export default function GameHubPage() {
           <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-2 block">
             Why Gamified Learning Works
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
             Why Learn Hindi Typing Through Games?
           </h2>
-          <p className="text-slate-400 text-base max-w-2xl mx-auto">
+          <p className="text-gray-500 dark:text-slate-400 text-base max-w-2xl mx-auto">
             Typing games bridge the gap between mechanical repetition and intuitive muscle memory by
             rewarding accuracy, timing, and cognitive recognition.
           </p>
@@ -134,12 +134,12 @@ export default function GameHubPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Benefit 1 */}
-          <div className="card p-6 rounded-3xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl mb-4">
               🚀
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Improve Typing Speed</h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Improve Typing Speed</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
               Games encourage users to type repeatedly and respond quickly. As challenges gradually
               become faster, users practice recognizing Hindi characters and typing them more
               efficiently without hesitation.
@@ -147,12 +147,12 @@ export default function GameHubPage() {
           </div>
 
           {/* Benefit 2 */}
-          <div className="card p-6 rounded-3xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-2xl mb-4">
               🎯
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Build Better Accuracy</h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Build Better Accuracy</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
               Typing games reward correct answers and streak combos. Users learn to focus on precision
               instead of blindly hammering keys, building true muscle memory for Remington and InScript
               layouts.
@@ -160,24 +160,24 @@ export default function GameHubPage() {
           </div>
 
           {/* Benefit 3 */}
-          <div className="card p-6 rounded-3xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-2xl mb-4">
               ⚡
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Improve Reflexes</h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Improve Reflexes</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
               Fast-paced game mechanics require users to spot words instantly and react. This
               sharpens neuromuscular reflexes between visual text perception and finger keystrokes.
             </p>
           </div>
 
           {/* Benefit 4 */}
-          <div className="card p-6 rounded-3xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center text-2xl mb-4">
               ✨
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Make Practice Engaging</h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Make Practice Engaging</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
               Traditional typing exercises can sometimes feel monotonous. Games introduce dynamic
               objectives, scoreboards, streaks, and progressive difficulty tiers that make daily
               practice fun and rewarding.
@@ -185,24 +185,24 @@ export default function GameHubPage() {
           </div>
 
           {/* Benefit 5 */}
-          <div className="card p-6 rounded-3xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-2xl mb-4">
               📚
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Learn Difficult Hindi Words</h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Learn Difficult Hindi Words</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
               Games systematically introduce complex vocabulary: common nouns, matra combinations,
               vowel modifiers, half-letters (हलंत), and challenging conjunct characters (संयुक्त अक्षर).
             </p>
           </div>
 
           {/* Benefit 6 */}
-          <div className="card p-6 rounded-3xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-2xl mb-4">
               🔄
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Practice Without Boredom</h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Practice Without Boredom</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
               Switching between target aiming, obstacle running, falling words, and spelling puzzles
               keeps learning fresh and tests different cognitive typing dimensions.
             </p>
@@ -218,10 +218,10 @@ export default function GameHubPage() {
           <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-2 block">
             6 Dedicated Games
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
             Choose Your Typing Game
           </h2>
-          <p className="text-slate-400 text-base max-w-2xl mx-auto">
+          <p className="text-gray-500 dark:text-slate-400 text-base max-w-2xl mx-auto">
             Click any game below to open its dedicated interactive gaming arena with custom difficulty
             modes.
           </p>
@@ -233,7 +233,7 @@ export default function GameHubPage() {
             <Link
               key={game.slug}
               href={`/game/${game.slug}`}
-              className="group relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900 flex flex-col transition-all duration-300 hover:border-primary-500/60 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1"
+              className="group relative rounded-3xl overflow-hidden border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900 flex flex-col transition-all duration-300 hover:border-primary-500/60 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1"
             >
               {/* Visual preview banner */}
               <div
@@ -274,25 +274,25 @@ export default function GameHubPage() {
               {/* Info Container */}
               <div className="flex-1 flex flex-col p-6 gap-3">
                 <div>
-                  <h3 className="text-xl font-extrabold text-white leading-tight group-hover:text-primary-300 transition-colors">
+                  <h3 className="text-xl font-extrabold text-gray-900 dark:text-white leading-tight group-hover:text-primary-300 transition-colors">
                     {game.title}
                   </h3>
                   <p
-                    className="text-xs text-slate-400 font-medium mt-0.5"
+                    className="text-xs text-gray-500 dark:text-slate-400 font-medium mt-0.5"
                     style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                   >
                     {game.hindiTitle}
                   </p>
                 </div>
 
-                <p className="text-sm text-slate-400 leading-relaxed flex-1">{game.description}</p>
+                <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed flex-1">{game.description}</p>
 
                 {/* Skills */}
                 <div className="flex flex-wrap gap-1.5 my-1">
                   {game.skills.map((s) => (
                     <span
                       key={s}
-                      className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300"
+                      className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-gray-100 dark:bg-slate-800/80 border border-gray-300 dark:border-slate-700 text-gray-600 dark:text-slate-300"
                     >
                       {s}
                     </span>
@@ -300,7 +300,7 @@ export default function GameHubPage() {
                 </div>
 
                 {/* Footer */}
-                <div className="flex items-center justify-between pt-3 border-t border-slate-800">
+                <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-slate-800">
                   <span
                     className={`text-xs font-bold px-2.5 py-1 rounded-full border ${DIFFICULTY_COLORS[game.difficulty]}`}
                   >
@@ -327,10 +327,10 @@ export default function GameHubPage() {
           <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-2 block">
             Comprehensive Handbook
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
             Detailed Game Guides & Tutorials
           </h2>
-          <p className="text-slate-400 text-base max-w-2xl mx-auto">
+          <p className="text-gray-500 dark:text-slate-400 text-base max-w-2xl mx-auto">
             Learn the mechanics, rules, scoring tips, and educational benefits of each individual
             typing game.
           </p>
@@ -338,7 +338,7 @@ export default function GameHubPage() {
 
         <div className="space-y-12">
           {/* 1. Classic Falling Words Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-slate-800 bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -347,30 +347,30 @@ export default function GameHubPage() {
                     Speed & Gravity Run
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
                   Classic Falling Words (क्लासिक फॉलिंग वर्ड्स)
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                   <strong>Overview:</strong> Practice Hindi typing by typing characters, words, and
                   sentences before gravity pulls them to the bottom of the screen.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       ⚙️ How It Works
                     </h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                       Hindi words spawn at random horizontal positions at the top of the canvas and
                       cascade downward. You must type the matching word in the input box and press
                       Enter or Space before it hits the baseline.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       🎮 How to Play
                     </h4>
-                    <ol className="text-xs text-slate-400 space-y-1 list-decimal list-inside">
+                    <ol className="text-xs text-gray-500 dark:text-slate-400 space-y-1 list-decimal list-inside">
                       <li>Start the game and watch descending words.</li>
                       <li>Type the active Hindi word in the input field.</li>
                       <li>Destroy words before they touch the bottom ground.</li>
@@ -380,18 +380,18 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2 mb-6">
-                  <span className="text-xs font-bold text-slate-400 mr-2">Skills Improved:</span>
+                  <span className="text-xs font-bold text-gray-500 dark:text-slate-400 mr-2">Skills Improved:</span>
                   {["Typing speed", "Accuracy", "Character recognition", "Reaction time"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-rose-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-rose-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 mb-6 text-xs text-slate-400">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-gray-500 dark:text-slate-400">
                   <strong className="text-amber-400">💡 Pro Tips:</strong> Focus on accuracy first.
                   Rushing causes spelling mistakes that lose precious seconds. Learn key positions
                   for common vowels and consonants on your keyboard layout to build rapid reflexes.
@@ -408,7 +408,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 2. Tank Defender Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-slate-800 bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -417,30 +417,30 @@ export default function GameHubPage() {
                     Base Defense & Combat
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
                   Tank Defender (टैंक डिफेंडर)
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                   <strong>Overview:</strong> Defend your base by typing Hindi characters or words
                   shown on incoming enemy tanks.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       ⚙️ How It Works
                     </h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                       Hostile tanks advance toward your base defense perimeter. Each tank displays a
                       unique Hindi glyph. Typing the exact character aims your turret and fires a
                       laser shell to destroy the enemy.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       🎮 How to Play
                     </h4>
-                    <ol className="text-xs text-slate-400 space-y-1 list-decimal list-inside">
+                    <ol className="text-xs text-gray-500 dark:text-slate-400 space-y-1 list-decimal list-inside">
                       <li>Select your language mode (Hindi / Devanagari).</li>
                       <li>Observe approaching enemy armored tanks.</li>
                       <li>Type the displayed character instantly.</li>
@@ -450,18 +450,18 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2 mb-6">
-                  <span className="text-xs font-bold text-slate-400 mr-2">Skills Improved:</span>
+                  <span className="text-xs font-bold text-gray-500 dark:text-slate-400 mr-2">Skills Improved:</span>
                   {["Reaction time", "Fast Hindi typing", "Pressure management", "Perception"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-emerald-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-emerald-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 mb-6 text-xs text-slate-400">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-gray-500 dark:text-slate-400">
                   <strong className="text-emerald-400">💡 Pro Tips:</strong> Stay calm when multiple
                   tanks swarm the perimeter. Prioritize the closest tank to your base first before
                   targeting distant vehicles.
@@ -478,7 +478,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 3. Typing Target Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-slate-800 bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -487,10 +487,10 @@ export default function GameHubPage() {
                     Arcade Precision & Radar
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
                   Typing Target (टाइपिंग टार्गेट)
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                   <strong>Overview:</strong> Lock onto radar targets scattered across the arena and
                   destroy them by typing the displayed Hindi words before their countdown rings
                   expire.
@@ -498,20 +498,20 @@ export default function GameHubPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       ⚙️ How It Works
                     </h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                       Glowing radar rings appear across the screen with Hindi words. A circular
                       countdown timer ticks down. Typing the word triggers a particle explosion and
                       awards time & streak bonuses.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       🎮 How to Play
                     </h4>
-                    <ol className="text-xs text-slate-400 space-y-1 list-decimal list-inside">
+                    <ol className="text-xs text-gray-500 dark:text-slate-400 space-y-1 list-decimal list-inside">
                       <li>Scan the radar screen for active glowing targets.</li>
                       <li>Type the word on the target with the least time remaining.</li>
                       <li>Earn combo multipliers (2x, 3x, 4x, 5x) for unbroken hits.</li>
@@ -521,18 +521,18 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2 mb-6">
-                  <span className="text-xs font-bold text-slate-400 mr-2">Skills Improved:</span>
+                  <span className="text-xs font-bold text-gray-500 dark:text-slate-400 mr-2">Skills Improved:</span>
                   {["Target acquisition", "Speed", "Reflexes", "Word recognition"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-amber-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-amber-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 mb-6 text-xs text-slate-400">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-gray-500 dark:text-slate-400">
                   <strong className="text-amber-400">💡 Pro Tips:</strong> Focus on one target at a
                   time. Do not look away from your active word until you finish typing it.
                 </div>
@@ -548,7 +548,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 4. Word Runner Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-slate-800 bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -557,30 +557,30 @@ export default function GameHubPage() {
                     High-Speed Obstacle Dash
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
                   Word Runner (वर्ड रनर)
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                   <strong>Overview:</strong> Sprint down a neon cyber-track by typing Hindi words to
                   activate nitro speed boosts and leap over incoming barrier blocks.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       ⚙️ How It Works
                     </h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                       Your cyber runner advances along the track. Obstacle blocks imprinted with
                       Devanagari characters move toward you. Typing the target word triggers a speed
                       surge and demolishes oncoming blocks.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       🎮 How to Play
                     </h4>
-                    <ol className="text-xs text-slate-400 space-y-1 list-decimal list-inside">
+                    <ol className="text-xs text-gray-500 dark:text-slate-400 space-y-1 list-decimal list-inside">
                       <li>Read the prompt word displayed on screen.</li>
                       <li>Type it accurately in the input box.</li>
                       <li>Trigger the continuous Nitro Sprint trail.</li>
@@ -590,18 +590,18 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2 mb-6">
-                  <span className="text-xs font-bold text-slate-400 mr-2">Skills Improved:</span>
+                  <span className="text-xs font-bold text-gray-500 dark:text-slate-400 mr-2">Skills Improved:</span>
                   {["Continuous typing", "Sustained speed", "Endurance", "Rhythm"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-cyan-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-cyan-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 mb-6 text-xs text-slate-400">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-gray-500 dark:text-slate-400">
                   <strong className="text-cyan-400">💡 Pro Tips:</strong> Establish a smooth typing
                   cadence. Pausing abruptly interrupts your speed multiplier.
                 </div>
@@ -617,7 +617,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 5. Hindi Word Builder Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-slate-800 bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -626,30 +626,30 @@ export default function GameHubPage() {
                     Spelling & Vocabulary Quest
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
                   Hindi Word Builder (हिंदी वर्ड बिल्डर)
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                   <strong>Overview:</strong> Master Hindi spelling, vocabulary, and conjunct characters
                   by solving incomplete word puzzles with context clues.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       ⚙️ How It Works
                     </h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                       A word is shown with a missing letter or matra (e.g., क _ म). You are provided
                       with a helpful definition hint and 4 candidate letter tiles to complete the word
                       correctly.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       🎮 Game Modes & Categories
                     </h4>
-                    <ul className="text-xs text-slate-400 space-y-1 list-disc list-inside">
+                    <ul className="text-xs text-gray-500 dark:text-slate-400 space-y-1 list-disc list-inside">
                       <li>Basic Characters (मूल वर्ण)</li>
                       <li>Vowel Matras (मात्रा अभ्यास)</li>
                       <li>Common Daily Words (दैनिक शब्द)</li>
@@ -659,18 +659,18 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2 mb-6">
-                  <span className="text-xs font-bold text-slate-400 mr-2">Skills Improved:</span>
+                  <span className="text-xs font-bold text-gray-500 dark:text-slate-400 mr-2">Skills Improved:</span>
                   {["Hindi spelling", "Word construction", "Vocabulary", "Grammar"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-indigo-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-indigo-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 mb-6 text-xs text-slate-400">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-gray-500 dark:text-slate-400">
                   <strong className="text-indigo-400">💡 Pro Tips:</strong> Read the Hindi meaning clue
                   carefully before choosing. Notice how different matras transform the entire meaning of
                   the word.
@@ -687,7 +687,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 6. Matra Challenge Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-slate-800 bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -696,30 +696,30 @@ export default function GameHubPage() {
                     Vowel Sign & Phonetics Mastery
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-3">
                   Matra Challenge (मात्रा चैलेंज)
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
                   <strong>Overview:</strong> Master all 12 Hindi vowel signs (ा, ि, ी, ु, ू, ृ, े, ै,
                   ो, ौ, ं, ँ) through rapid interactive typing drills and keyboard layout hints.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       ⚙️ How It Works
                     </h4>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                       Each round spotlights a specific Hindi matra with phonetic breakdown and InScript
                       keyboard key bindings (e.g., E for ा, F for ि, R for ी). You type practice words
                       containing the highlighted matra.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                       🎮 How to Play
                     </h4>
-                    <ol className="text-xs text-slate-400 space-y-1 list-decimal list-inside">
+                    <ol className="text-xs text-gray-500 dark:text-slate-400 space-y-1 list-decimal list-inside">
                       <li>Review the active matra rule and keyboard shortcut.</li>
                       <li>Type the full practice word accurately in the box.</li>
                       <li>Complete all 12 rounds before time runs out.</li>
@@ -729,18 +729,18 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2 mb-6">
-                  <span className="text-xs font-bold text-slate-400 mr-2">Skills Improved:</span>
+                  <span className="text-xs font-bold text-gray-500 dark:text-slate-400 mr-2">Skills Improved:</span>
                   {["Matra recognition", "Typing accuracy", "Phonetics", "Keyboard mapping"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-fuchsia-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-fuchsia-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 mb-6 text-xs text-slate-400">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-gray-500 dark:text-slate-400">
                   <strong className="text-fuchsia-400">💡 Pro Tips:</strong> In Devanagari Unicode
                   typing, always type the consonant first followed by the matra (e.g. क + ि = कि),
                   even if the short vowel visual sign appears on the left side!
@@ -766,10 +766,10 @@ export default function GameHubPage() {
           <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-2 block">
             Progressive Learning
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
             Choose Your Challenge Level
           </h2>
-          <p className="text-slate-400 text-base max-w-2xl mx-auto">
+          <p className="text-gray-500 dark:text-slate-400 text-base max-w-2xl mx-auto">
             Every game features three carefully calibrated difficulty tiers. Begin at your comfort
             zone and gradually climb the ranks.
           </p>
@@ -784,12 +784,12 @@ export default function GameHubPage() {
               </span>
               <span className="text-2xl">🌱</span>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Beginner (शुरुआती)</h3>
-            <p className="text-sm text-slate-300 leading-relaxed mb-4 flex-1">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Beginner (शुरुआती)</h3>
+            <p className="text-sm text-gray-600 dark:text-slate-300 leading-relaxed mb-4 flex-1">
               Focuses on simple 2–3 letter words without complex conjuncts (e.g., कम, जल, घर, कलम)
               and primary vowel signs. Features generous countdown timers and slower enemy speeds.
             </p>
-            <div className="text-xs text-emerald-400 font-semibold pt-3 border-t border-slate-800">
+            <div className="text-xs text-emerald-400 font-semibold pt-3 border-t border-gray-200 dark:border-slate-800">
               Ideal for: First-time Hindi typists & keyboard layout learners.
             </div>
           </div>
@@ -802,12 +802,12 @@ export default function GameHubPage() {
               </span>
               <span className="text-2xl">⚡</span>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Intermediate (मध्यम)</h3>
-            <p className="text-sm text-slate-300 leading-relaxed mb-4 flex-1">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Intermediate (मध्यम)</h3>
+            <p className="text-sm text-gray-600 dark:text-slate-300 leading-relaxed mb-4 flex-1">
               Introduces full vowel matras, punctuation, common vocabulary (e.g., भारत, शिक्षा, पुस्तक),
               and balanced pace to build speed and rhythm.
             </p>
-            <div className="text-xs text-amber-400 font-semibold pt-3 border-t border-slate-800">
+            <div className="text-xs text-amber-400 font-semibold pt-3 border-t border-gray-200 dark:border-slate-800">
               Ideal for: Users with basic keyboard familiarity aiming for 25–35 WPM.
             </div>
           </div>
@@ -820,12 +820,12 @@ export default function GameHubPage() {
               </span>
               <span className="text-2xl">🔥</span>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Advanced (उन्नत)</h3>
-            <p className="text-sm text-slate-300 leading-relaxed mb-4 flex-1">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Advanced (उन्नत)</h3>
+            <p className="text-sm text-gray-600 dark:text-slate-300 leading-relaxed mb-4 flex-1">
               Features complex multisyllabic terms, conjuncts (संयुक्त अक्षर जैसे दृष्टिकोण,
               विश्वविद्यालय, आत्मनिर्भर), fast spawn frequencies, and intense reflex challenges.
             </p>
-            <div className="text-xs text-rose-400 font-semibold pt-3 border-t border-slate-800">
+            <div className="text-xs text-rose-400 font-semibold pt-3 border-t border-gray-200 dark:border-slate-800">
               Ideal for: Competitive speed typists & Government typing exam candidates (SSC/LDC/High Court).
             </div>
           </div>
@@ -840,10 +840,10 @@ export default function GameHubPage() {
           <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-2 block">
             Holistic Skill Building
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
             What Can You Improve Through Typing Games?
           </h2>
-          <p className="text-slate-400 text-base max-w-2xl mx-auto">
+          <p className="text-gray-500 dark:text-slate-400 text-base max-w-2xl mx-auto">
             Gamified practice targets 9 essential cognitive and physical typing capabilities.
           </p>
         </div>
@@ -907,14 +907,14 @@ export default function GameHubPage() {
           ].map((skill) => (
             <div
               key={skill.title}
-              className="p-6 rounded-3xl border border-slate-800 bg-slate-900/60 flex flex-col justify-between"
+              className="p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 flex flex-col justify-between"
             >
               <div>
                 <div className="text-3xl mb-3">{skill.icon}</div>
-                <h3 className="text-lg font-bold text-white mb-2">{skill.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed mb-4">{skill.desc}</p>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{skill.title}</h3>
+                <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed mb-4">{skill.desc}</p>
               </div>
-              <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-gray-100 dark:bg-slate-800 rounded-full overflow-hidden">
                 <div className={`h-full ${skill.bar} w-full rounded-full`} />
               </div>
             </div>
@@ -932,10 +932,10 @@ export default function GameHubPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-3 block">
               Level Up Your Skills Today
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 leading-tight">
               Ready to Practice Hindi Typing Differently?
             </h2>
-            <p className="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
+            <p className="text-gray-600 dark:text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
               Choose a game, start typing, and practice your Hindi typing skills through interactive
               challenges designed for real speed and accuracy gains.
             </p>
@@ -949,7 +949,7 @@ export default function GameHubPage() {
               </button>
               <Link
                 href="/practice"
-                className="btn-secondary rounded-2xl px-7 py-4 text-base font-semibold border border-slate-700 bg-slate-800 text-white hover:bg-slate-700 transition-all"
+                className="btn-secondary rounded-2xl px-7 py-4 text-base font-semibold border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-white hover:bg-slate-700 transition-all"
               >
                 Practice Hindi Typing →
               </Link>

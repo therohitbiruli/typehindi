@@ -570,40 +570,40 @@ export function WordPracticeSection({
   // ==================== SCREEN 2: FINAL WORD PRACTICE COMPLETE ====================
   if (isCompletedScreen) {
     return (
-      <div className="p-8 rounded-3xl bg-slate-900 border border-purple-500/40 space-y-8 animate-fadeIn">
+      <div className="p-8 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-purple-500/40 space-y-8 animate-fadeIn">
         <div className="text-center max-w-xl mx-auto space-y-3">
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-purple-600 to-emerald-500 flex items-center justify-center text-2xl shadow-lg shadow-purple-900/30">
+          <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-purple-600 to-emerald-500 flex items-center justify-center text-2xl shadow-sm dark:shadow-lg shadow-purple-900/30">
             🎉
           </div>
           <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
             Stroke {stroke.name} Mastery Milestone
           </span>
-          <h3 className="text-2xl sm:text-3xl font-black text-slate-100">
+          <h3 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
             WORD PRACTICE COMPLETE
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300">
+          <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300">
             You have studied how stroke <strong>{stroke.name}</strong> ({stroke.sound}) is used in real Pitman words, how it joins subsequent strokes, and where vowels attach.
           </p>
         </div>
 
         {/* Milestone Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-center">
-          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-1">
-            <span className="text-xs text-slate-400 uppercase font-semibold">Words Studied</span>
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+            <span className="text-xs text-gray-500 dark:text-slate-400 uppercase font-semibold">Words Studied</span>
             <div className="text-3xl font-black text-purple-400">{words.length}</div>
-            <p className="text-[11px] text-slate-500">Outlines analyzed</p>
+            <p className="text-[11px] text-gray-400 dark:text-slate-500">Outlines analyzed</p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-1">
-            <span className="text-xs text-slate-400 uppercase font-semibold">Words Practiced</span>
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+            <span className="text-xs text-gray-500 dark:text-slate-400 uppercase font-semibold">Words Practiced</span>
             <div className="text-3xl font-black text-emerald-400">{totalPracticed}</div>
-            <p className="text-[11px] text-slate-500">Handwritten attempts</p>
+            <p className="text-[11px] text-gray-400 dark:text-slate-500">Handwritten attempts</p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-1">
-            <span className="text-xs text-slate-400 uppercase font-semibold">Best Stroke Accuracy</span>
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+            <span className="text-xs text-gray-500 dark:text-slate-400 uppercase font-semibold">Best Stroke Accuracy</span>
             <div className="text-3xl font-black text-sky-400">{avgAccuracy}%</div>
-            <p className="text-[11px] text-slate-500">Assistive match score</p>
+            <p className="text-[11px] text-gray-400 dark:text-slate-500">Assistive match score</p>
           </div>
         </div>
 
@@ -613,15 +613,15 @@ export function WordPracticeSection({
             <span className="text-[11px] font-bold uppercase tracking-wider text-purple-400">
               FROM STROKES TO WORDS & SPEED
             </span>
-            <h4 className="text-base font-bold text-slate-100 mt-1">
+            <h4 className="text-base font-bold text-gray-900 dark:text-slate-100 mt-1">
               Your Professional Stenography Path
             </h4>
-            <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+            <p className="text-xs text-gray-500 dark:text-slate-400 mt-1 leading-relaxed">
               Pitman shorthand becomes fast and fluent when individual consonant strokes are combined into words, short phrases, and rhythmic spoken sentences.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-300">
+          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-gray-600 dark:text-slate-300">
             <span className="px-3 py-1 rounded-lg bg-purple-500/20 text-purple-300 border border-purple-500/30">
               1. Individual Strokes ✓
             </span>
@@ -630,11 +630,11 @@ export function WordPracticeSection({
               2. Words & Joining ✓
             </span>
             <span>→</span>
-            <span className="px-3 py-1 rounded-lg bg-slate-800 text-slate-400 border border-slate-700">
+            <span className="px-3 py-1 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 border border-gray-300 dark:border-slate-700">
               3. Phraseography
             </span>
             <span>→</span>
-            <span className="px-3 py-1 rounded-lg bg-slate-800 text-slate-400 border border-slate-700">
+            <span className="px-3 py-1 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 border border-gray-300 dark:border-slate-700">
               4. Audio Dictation (80–120 WPM)
             </span>
           </div>
@@ -648,21 +648,21 @@ export function WordPracticeSection({
               setIsCompletedScreen(false);
               setCurrentIndex(0);
             }}
-            className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-colors"
+            className="px-5 py-2.5 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-700 dark:text-slate-200 text-xs font-bold transition-colors"
           >
             Practice Again ↺
           </button>
 
           <Link
             href="/shorthand/guides"
-            className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
+            className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
           >
             Continue to Phrases & Guides →
           </Link>
 
           <Link
             href="/shorthand/dictation"
-            className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors"
+            className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
           >
             Start Dictation Practice →
           </Link>
@@ -671,7 +671,7 @@ export function WordPracticeSection({
             <button
               type="button"
               onClick={onNextStroke}
-              className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-colors"
+              className="px-5 py-2.5 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-700 dark:text-slate-200 text-xs font-bold transition-colors"
             >
               Next Stroke in Curriculum →
             </button>
@@ -684,9 +684,9 @@ export function WordPracticeSection({
   // If no words available
   if (!currentWord) {
     return (
-      <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 text-center space-y-3">
-        <h3 className="text-base font-bold text-slate-100">Word Practice</h3>
-        <p className="text-xs text-slate-400">
+      <div className="p-8 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center space-y-3">
+        <h3 className="text-base font-bold text-gray-900 dark:text-slate-100">Word Practice</h3>
+        <p className="text-xs text-gray-500 dark:text-slate-400">
           Shorthand example words for Stroke {stroke.name} coming soon.
         </p>
       </div>
@@ -697,13 +697,13 @@ export function WordPracticeSection({
   return (
     <div id="word-practice-area" className="space-y-6 animate-fadeIn">
       {/* 2. SECTION HEADER */}
-      <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-2">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+      <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-2">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200 dark:border-slate-800 pb-3">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
               PRACTICE THIS STROKE IN WORDS
             </span>
-            <h3 className="text-xl font-black text-slate-100 mt-0.5">
+            <h3 className="text-xl font-black text-gray-900 dark:text-slate-100 mt-0.5">
               How Stroke {stroke.name} is Used in Real Words
             </h3>
           </div>
@@ -716,7 +716,7 @@ export function WordPracticeSection({
               <button
                 type="button"
                 onClick={onBackToStroke}
-                className="px-3 py-1 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold"
+                className="px-3 py-1 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-600 dark:text-slate-300 text-xs font-semibold"
               >
                 ← Back to Stroke
               </button>
@@ -724,7 +724,7 @@ export function WordPracticeSection({
           </div>
         </div>
 
-        <p className="text-xs text-slate-300 leading-relaxed">
+        <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed">
           You have learned this stroke. Now see how it is used inside real words.
           Observe how it connects smoothly to adjacent strokes without lifting the pen.
         </p>
@@ -733,19 +733,19 @@ export function WordPracticeSection({
       {/* 3. WORD CARD: OUTLINE & WHAT TO NOTICE */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Large Outline Display & Phonetic Specs (5 cols) */}
-        <div className="lg:col-span-5 p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col justify-between space-y-6">
+        <div className="lg:col-span-5 p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 flex flex-col justify-between space-y-6">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                <span className="text-[11px] font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider">
                   English Word
                 </span>
                 <div className="flex items-center gap-3 mt-0.5">
-                  <h2 className="text-3xl font-black text-slate-100">{currentWord.word}</h2>
+                  <h2 className="text-3xl font-black text-gray-900 dark:text-slate-100">{currentWord.word}</h2>
                   <button
                     type="button"
                     onClick={() => speakWord(currentWord.word)}
-                    className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm"
+                    className="p-2 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-700 dark:text-slate-200 text-sm"
                     title="Pronounce word"
                   >
                     🔊
@@ -754,28 +754,28 @@ export function WordPracticeSection({
               </div>
 
               <div className="text-right">
-                <span className="text-[10px] text-slate-500 uppercase font-bold block">
+                <span className="text-[10px] text-gray-400 dark:text-slate-500 uppercase font-bold block">
                   Phonetic / Position
                 </span>
                 <span className="text-xs font-mono font-bold text-purple-400">
                   {currentWord.phonetic}
                 </span>
-                <span className="text-[11px] text-slate-400 block mt-0.5">
+                <span className="text-[11px] text-gray-500 dark:text-slate-400 block mt-0.5">
                   {currentWord.position}
                 </span>
               </div>
             </div>
 
             {/* Large Shorthand Outline Viewport with Ruled Guidelines */}
-            <div className="relative w-full h-44 rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center p-4">
+            <div className="relative w-full h-44 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 overflow-hidden flex items-center justify-center p-4">
               {/* Notebook guideline lines inside SVG */}
               <div className="absolute inset-0 pointer-events-none flex flex-col justify-between py-6 px-4">
-                <div className="border-b border-dashed border-slate-800/80 w-full" />
+                <div className="border-b border-dashed border-gray-200 dark:border-slate-800/80 w-full" />
                 <div className="border-b-2 border-purple-500/50 w-full flex items-center justify-between">
                   <span className="text-[9px] text-purple-400 font-bold uppercase tracking-wider pl-1">
                     Steno Baseline
                   </span>
-                  <span className="text-[9px] text-slate-500 pr-1">Ruled 1/6"</span>
+                  <span className="text-[9px] text-gray-400 dark:text-slate-500 pr-1">Ruled 1/6"</span>
                 </div>
               </div>
 
@@ -810,7 +810,7 @@ export function WordPracticeSection({
                   <p className="text-xs text-amber-400/90 font-semibold">
                     Shorthand example coming soon.
                   </p>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-gray-400 dark:text-slate-500">
                     Verified outline is currently being cataloged.
                   </p>
                 </div>
@@ -832,24 +832,24 @@ export function WordPracticeSection({
           </div>
 
           {/* Word-Level Navigation (NON-BLOCKING) */}
-          <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+          <div className="pt-4 border-t border-gray-200 dark:border-slate-800 flex items-center justify-between">
             <button
               type="button"
               onClick={handlePrevWord}
               disabled={currentIndex === 0}
-              className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 disabled:opacity-30 disabled:pointer-events-none text-xs font-bold text-slate-200"
+              className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 disabled:opacity-30 disabled:pointer-events-none text-xs font-bold text-gray-700 dark:text-slate-200"
             >
               ← Previous Word
             </button>
 
-            <span className="text-[11px] text-slate-500 font-mono">
+            <span className="text-[11px] text-gray-400 dark:text-slate-500 font-mono">
               {currentIndex + 1} / {words.length}
             </span>
 
             <button
               type="button"
               onClick={handleNextWord}
-              className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-xs font-bold text-white shadow-md shadow-purple-900/30"
+              className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-xs font-bold text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
             >
               {currentIndex === words.length - 1 ? "Complete Word Practice ✓" : "Next Word →"}
             </button>
@@ -859,19 +859,19 @@ export function WordPracticeSection({
         {/* Right Column: Progressive Word Builder & What to Notice (7 cols) */}
         <div className="lg:col-span-7 space-y-6">
           {/* 4. SHOW THE WORD BEING BUILT (Progressive Component Reveal) */}
-          <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
+            <div className="flex items-center justify-between border-b border-gray-200 dark:border-slate-800 pb-3">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
                   WORD BUILDING BREAKDOWN
                 </span>
-                <h4 className="text-base font-bold text-slate-100 mt-0.5">
+                <h4 className="text-base font-bold text-gray-900 dark:text-slate-100 mt-0.5">
                   How "{currentWord.word}" is Constructed
                 </h4>
               </div>
 
               {/* Interactive Step Switcher */}
-              <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800">
+              <div className="flex items-center gap-1 bg-white dark:bg-slate-950 p-1 rounded-xl border border-gray-200 dark:border-slate-800">
                 {currentWord.progressiveSteps.map((s) => (
                   <button
                     key={s.step}
@@ -879,8 +879,8 @@ export function WordPracticeSection({
                     onClick={() => setActiveBuilderStep(s.step)}
                     className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-colors ${
                       activeBuilderStep === s.step
-                        ? "bg-purple-600 text-white"
-                        : "text-slate-400 hover:text-slate-200"
+                        ? "bg-purple-600 text-gray-900 dark:text-white"
+                        : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200"
                     }`}
                   >
                     Step {s.step}
@@ -891,7 +891,7 @@ export function WordPracticeSection({
 
             {/* Current Active Step Details */}
             {currentWord.progressiveSteps.find((s) => s.step === activeBuilderStep) && (
-              <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
+              <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-2">
                 {(() => {
                   const stepObj = currentWord.progressiveSteps.find(
                     (s) => s.step === activeBuilderStep
@@ -906,7 +906,7 @@ export function WordPracticeSection({
                           {stepObj.formula}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-300 leading-relaxed">
+                      <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed">
                         {stepObj.explanation}
                       </p>
                     </>
@@ -917,21 +917,21 @@ export function WordPracticeSection({
 
             {/* Component Chips */}
             <div className="space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400">
                 Structural Components:
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {currentWord.components.map((comp, idx) => (
                   <div
                     key={idx}
-                    className="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-2.5 text-xs"
+                    className="p-3 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex items-start gap-2.5 text-xs"
                   >
                     <span className="w-5 h-5 rounded bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center shrink-0 text-[11px]">
                       {comp.sign || idx + 1}
                     </span>
                     <div className="space-y-0.5">
-                      <strong className="text-slate-200 block">{comp.part}</strong>
-                      <span className="text-slate-400 text-[11px] leading-tight block">
+                      <strong className="text-gray-700 dark:text-slate-200 block">{comp.part}</strong>
+                      <span className="text-gray-500 dark:text-slate-400 text-[11px] leading-tight block">
                         {comp.description}
                       </span>
                     </div>
@@ -941,11 +941,11 @@ export function WordPracticeSection({
             </div>
 
             {/* What to Notice Checklist */}
-            <div className="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/80 space-y-2 text-xs">
+            <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-gray-200 dark:border-slate-800/80 space-y-2 text-xs">
               <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">
                 WHAT TO NOTICE IN THIS OUTLINE:
               </span>
-              <ul className="space-y-1.5 text-slate-300">
+              <ul className="space-y-1.5 text-gray-600 dark:text-slate-300">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-400 font-bold">1. Stroke:</span>
                   <span>{currentWord.rulesToNotice.strokeUsed}</span>
@@ -969,18 +969,18 @@ export function WordPracticeSection({
       </div>
 
       {/* 6. OPTIONAL WRITING PRACTICE (TRY WRITING IT) */}
-      <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+      <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200 dark:border-slate-800 pb-3">
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
                 TRY WRITING IT
               </span>
-              <span className="px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 text-[10px]">
+              <span className="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 text-[10px]">
                 Optional handwriting practice
               </span>
             </div>
-            <h4 className="text-base font-bold text-slate-100 mt-0.5">
+            <h4 className="text-base font-bold text-gray-900 dark:text-slate-100 mt-0.5">
               Practice Writing "{currentWord.word}" on Steno Ruled Lines
             </h4>
           </div>
@@ -988,22 +988,22 @@ export function WordPracticeSection({
           <button
             type="button"
             onClick={() => setShowCanvas((prev) => !prev)}
-            className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 transition-colors"
+            className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-xs font-bold text-gray-700 dark:text-slate-200 transition-colors"
           >
             {showCanvas ? "Hide Practice Canvas ▲" : "Open Practice Canvas ▼"}
           </button>
         </div>
 
-        <p className="text-xs text-slate-400">
+        <p className="text-xs text-gray-500 dark:text-slate-400">
           This writing step is completely optional. You can practice tracing or drawing this outline with mouse, finger, or stylus, or simply move to the next word.
         </p>
 
         {showCanvas && (
           <div className="space-y-4 animate-fadeIn">
             {/* Canvas Toolbar */}
-            <div className="p-3 rounded-2xl bg-slate-950 border border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div className="p-3 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
               {/* Mode Selector */}
-              <div className="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+              <div className="flex items-center gap-1 bg-gray-50 dark:bg-slate-900 p-1 rounded-xl border border-gray-200 dark:border-slate-800">
                 {(["guided", "assisted", "free", "test"] as const).map((m) => (
                   <button
                     key={m}
@@ -1011,8 +1011,8 @@ export function WordPracticeSection({
                     onClick={() => setPracticeMode(m)}
                     className={`px-3 py-1 rounded-lg font-semibold uppercase text-[10px] transition-colors ${
                       practiceMode === m
-                        ? "bg-purple-600 text-white"
-                        : "text-slate-400 hover:text-slate-200"
+                        ? "bg-purple-600 text-gray-900 dark:text-white"
+                        : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200"
                     }`}
                   >
                     {m}
@@ -1022,14 +1022,14 @@ export function WordPracticeSection({
 
               {/* Weight Selector */}
               <div className="flex items-center gap-2">
-                <span className="text-slate-400 text-[11px]">Weight:</span>
+                <span className="text-gray-500 dark:text-slate-400 text-[11px]">Weight:</span>
                 <button
                   type="button"
                   onClick={() => setUserWeight("light")}
                   className={`px-2.5 py-1 rounded-lg border text-xs font-semibold ${
                     userWeight === "light"
-                      ? "bg-purple-600 text-white border-purple-500"
-                      : "bg-slate-900 text-slate-400 border-slate-800"
+                      ? "bg-purple-600 text-gray-900 dark:text-white border-purple-500"
+                      : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 border-gray-200 dark:border-slate-800"
                   }`}
                 >
                   Light
@@ -1039,8 +1039,8 @@ export function WordPracticeSection({
                   onClick={() => setUserWeight("heavy")}
                   className={`px-2.5 py-1 rounded-lg border text-xs font-semibold ${
                     userWeight === "heavy"
-                      ? "bg-purple-600 text-white border-purple-500"
-                      : "bg-slate-900 text-slate-400 border-slate-800"
+                      ? "bg-purple-600 text-gray-900 dark:text-white border-purple-500"
+                      : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 border-gray-200 dark:border-slate-800"
                   }`}
                 >
                   Heavy
@@ -1053,7 +1053,7 @@ export function WordPracticeSection({
                   type="button"
                   onClick={handleUndo}
                   disabled={paths.length === 0}
-                  className="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 disabled:opacity-30 text-slate-300 text-xs"
+                  className="px-2.5 py-1 rounded-lg bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 disabled:opacity-30 text-gray-600 dark:text-slate-300 text-xs"
                 >
                   Undo
                 </button>
@@ -1061,14 +1061,14 @@ export function WordPracticeSection({
                   type="button"
                   onClick={handleRedo}
                   disabled={redoPaths.length === 0}
-                  className="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 disabled:opacity-30 text-slate-300 text-xs"
+                  className="px-2.5 py-1 rounded-lg bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 disabled:opacity-30 text-gray-600 dark:text-slate-300 text-xs"
                 >
                   Redo
                 </button>
                 <button
                   type="button"
                   onClick={handleClear}
-                  className="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs"
+                  className="px-2.5 py-1 rounded-lg bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 text-xs"
                 >
                   Clear
                 </button>
@@ -1076,7 +1076,7 @@ export function WordPracticeSection({
             </div>
 
             {/* Drawing Canvas */}
-            <div className="relative w-full h-[280px] bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden touch-none cursor-crosshair">
+            <div className="relative w-full h-[280px] bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden touch-none cursor-crosshair">
               <canvas
                 ref={canvasRef}
                 onPointerDown={handlePointerDown}
@@ -1089,14 +1089,14 @@ export function WordPracticeSection({
 
             {/* Evaluation Action */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-              <span className="text-[11px] text-slate-500">
+              <span className="text-[11px] text-gray-400 dark:text-slate-500">
                 Assistive evaluation checks direction, continuous joining, and proportions.
               </span>
 
               <button
                 type="button"
                 onClick={evaluateWordDrawing}
-                className="px-5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold shadow-md shadow-emerald-900/20"
+                className="px-5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-gray-900 dark:text-white text-xs font-bold shadow-md shadow-emerald-900/20"
               >
                 🔍 Evaluate My Writing
               </button>
@@ -1104,47 +1104,47 @@ export function WordPracticeSection({
 
             {/* Assistive Evaluation Feedback Card */}
             {evalResult && (
-              <div className="p-4 rounded-2xl bg-slate-950 border border-emerald-500/40 space-y-3 animate-fadeIn">
+              <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-emerald-500/40 space-y-3 animate-fadeIn">
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-[10px] uppercase font-bold text-emerald-400">
                       ASSISTIVE EVALUATION
                     </span>
-                    <h5 className="text-base font-bold text-slate-100">
+                    <h5 className="text-base font-bold text-gray-900 dark:text-slate-100">
                       Approximate Match: {evalResult.score}%
                     </h5>
                   </div>
-                  <span className="text-[11px] text-slate-400 bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">
+                  <span className="text-[11px] text-gray-500 dark:text-slate-400 bg-gray-50 dark:bg-slate-900 px-3 py-1 rounded-lg border border-gray-200 dark:border-slate-800">
                     Practiced ✓
                   </span>
                 </div>
 
-                <p className="text-xs text-slate-300">{evalResult.feedbackMessage}</p>
+                <p className="text-xs text-gray-600 dark:text-slate-300">{evalResult.feedbackMessage}</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs pt-1">
-                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
-                    <span className="text-[10px] text-slate-400 block uppercase font-bold">Direction</span>
+                  <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
+                    <span className="text-[10px] text-gray-500 dark:text-slate-400 block uppercase font-bold">Direction</span>
                     <span className={evalResult.directionCheck === "good" ? "text-emerald-400 font-semibold" : "text-amber-400 font-semibold"}>
                       {evalResult.directionCheck === "good" ? "✓ Correct direction" : "⚠ Check slant/direction"}
                     </span>
                   </div>
 
-                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
-                    <span className="text-[10px] text-slate-400 block uppercase font-bold">Continuous Flow</span>
+                  <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
+                    <span className="text-[10px] text-gray-500 dark:text-slate-400 block uppercase font-bold">Continuous Flow</span>
                     <span className={evalResult.continuityCheck === "good" ? "text-emerald-400 font-semibold" : "text-amber-400 font-semibold"}>
                       {evalResult.continuityCheck === "good" ? "✓ Smooth join" : "⚠ Lifted pen too often"}
                     </span>
                   </div>
 
-                  <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
-                    <span className="text-[10px] text-slate-400 block uppercase font-bold">Proportion</span>
+                  <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
+                    <span className="text-[10px] text-gray-500 dark:text-slate-400 block uppercase font-bold">Proportion</span>
                     <span className={evalResult.lengthCheck === "good" ? "text-emerald-400 font-semibold" : "text-amber-400 font-semibold"}>
                       {evalResult.lengthCheck === "good" ? "✓ Standard scale" : "⚠ Adjust stroke length"}
                     </span>
                   </div>
                 </div>
 
-                <p className="text-[10px] text-slate-500 italic">
+                <p className="text-[10px] text-gray-400 dark:text-slate-500 italic">
                   Note: Evaluation is an assistive learning aid based on geometric vector heuristics, not automated optical handwriting recognition.
                 </p>
               </div>
@@ -1159,7 +1159,7 @@ export function WordPracticeSection({
           <span className="text-[10px] font-bold uppercase tracking-wider text-purple-400">
             FROM STROKES TO WORDS
           </span>
-          <p className="text-xs text-slate-300 mt-0.5">
+          <p className="text-xs text-gray-600 dark:text-slate-300 mt-0.5">
             Shorthand mastery progresses from single strokes → joined words → brief phrases → timed speech dictation.
           </p>
         </div>
@@ -1167,13 +1167,13 @@ export function WordPracticeSection({
         <div className="flex items-center gap-2">
           <Link
             href="/shorthand/guides"
-            className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold whitespace-nowrap"
+            className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-700 dark:text-slate-200 text-xs font-semibold whitespace-nowrap"
           >
             Practice Phrases →
           </Link>
           <Link
             href="/shorthand/dictation"
-            className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold whitespace-nowrap"
+            className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold whitespace-nowrap"
           >
             Start Dictation →
           </Link>

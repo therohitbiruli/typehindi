@@ -49,7 +49,7 @@ export default function ShorthandLandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-slate-100">
+    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
       <ShorthandHero />
 
@@ -60,41 +60,41 @@ export default function ShorthandLandingPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
               Fundamental Principles
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
               What is Shorthand & How Does Stenography Work?
             </h2>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-slate-300 leading-relaxed">
               In normal longhand writing, recording spoken English at conversational speed (120 to 150 words per minute) is humanly impossible because alphabet characters are cumbersome. Shorthand solves this by replacing complex letters with simplified geometric strokes, loops, and hooks that represent <strong>sounds</strong> rather than spelling.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 space-y-3">
               <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-300 font-bold">
                 1
               </div>
-              <h3 className="font-bold text-slate-100 text-base">Phonetic Sound System</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <h3 className="font-bold text-gray-900 dark:text-slate-100 text-base">Phonetic Sound System</h3>
+              <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                 Silent letters are discarded. You write only what the ear hears. For example, "debt" is written simply as "d-t", and "rough" as "r-f".
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 space-y-3">
               <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-300 font-bold">
                 2
               </div>
-              <h3 className="font-bold text-slate-100 text-base">Light vs. Heavy Strokes</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <h3 className="font-bold text-gray-900 dark:text-slate-100 text-base">Light vs. Heavy Strokes</h3>
+              <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                 Voiceless sounds (P, T, CH, K) are drawn light and thin; voiced sounds (B, D, J, G) are drawn thick and heavy, allowing intuitive pairing.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 space-y-3">
               <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-300 font-bold">
                 3
               </div>
-              <h3 className="font-bold text-slate-100 text-base">Word-Signs & Phraseography</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <h3 className="font-bold text-gray-900 dark:text-slate-100 text-base">Word-Signs & Phraseography</h3>
+              <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                 High-frequency words ("the", "of", "and", "should") and phrases ("in accordance with") are condensed into swift single pen motions.
               </p>
             </div>
@@ -107,10 +107,10 @@ export default function ShorthandLandingPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
               The Professional Cycle
             </span>
-            <h2 className="text-2xl font-black text-slate-100">
+            <h2 className="text-2xl font-black text-gray-900 dark:text-slate-100">
               The 4-Step Stenography Workflow
             </h2>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-gray-500 dark:text-slate-400">
               From the spoken word to the certified typed legal document.
             </p>
           </div>
@@ -124,17 +124,17 @@ export default function ShorthandLandingPage() {
               <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
                 Curriculum Structure
               </span>
-              <h2 className="text-2xl font-black text-slate-100">
+              <h2 className="text-2xl font-black text-gray-900 dark:text-slate-100">
                 13-Level Pitman Shorthand Path
               </h2>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
                 A methodical progression from pen holding to official 120 WPM exam readiness.
               </p>
             </div>
 
             <Link
               href="/shorthand/learn"
-              className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors self-start sm:self-auto"
+              className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors self-start sm:self-auto"
             >
               View Full Curriculum (13 Levels) →
             </Link>
@@ -145,25 +145,25 @@ export default function ShorthandLandingPage() {
               <Link
                 key={l.id}
                 href={`/shorthand/lessons/${l.slug}`}
-                className="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between group space-y-3"
+                className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 hover:border-purple-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between group space-y-3"
               >
                 <div>
                   <div className="flex items-center justify-between text-xs mb-2">
                     <span className="font-bold text-purple-400 uppercase tracking-wider">
                       Level {l.level}
                     </span>
-                    <span className="text-[11px] text-slate-400">⏱ {l.estimatedMinutes} mins</span>
+                    <span className="text-[11px] text-gray-500 dark:text-slate-400">⏱ {l.estimatedMinutes} mins</span>
                   </div>
-                  <h3 className="font-bold text-slate-100 text-base group-hover:text-purple-300 transition-colors">
+                  <h3 className="font-bold text-gray-900 dark:text-slate-100 text-base group-hover:text-purple-300 transition-colors">
                     {l.title}
                   </h3>
-                  <p className="text-xs text-slate-400 mt-1 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-gray-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">
                     {l.subtitle}
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                  <span className="text-slate-400">{l.difficulty}</span>
+                <div className="pt-2 border-t border-gray-200 dark:border-slate-800/80 flex items-center justify-between text-xs">
+                  <span className="text-gray-500 dark:text-slate-400">{l.difficulty}</span>
                   <span className="text-purple-400 font-semibold group-hover:translate-x-1 transition-transform">
                     Start Lesson →
                   </span>
@@ -180,16 +180,16 @@ export default function ShorthandLandingPage() {
               <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
                 Interactive Catalog
               </span>
-              <h2 className="text-2xl font-black text-slate-100">
+              <h2 className="text-2xl font-black text-gray-900 dark:text-slate-100">
                 Pitman Shorthand Sign Explorer
               </h2>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
                 Browse verified consonant strokes, 12-vowel scheme, diphthongs, and word-signs.
               </p>
             </div>
             <Link
               href="/shorthand/practice"
-              className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors self-start sm:self-auto"
+              className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-700 dark:text-slate-200 text-xs font-semibold border border-gray-300 dark:border-slate-700 transition-colors self-start sm:self-auto"
             >
               Open Drawing Canvas →
             </Link>
@@ -203,10 +203,10 @@ export default function ShorthandLandingPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
               Recruitment Preparation
             </span>
-            <h2 className="text-2xl font-black text-slate-100">
+            <h2 className="text-2xl font-black text-gray-900 dark:text-slate-100">
               Government Stenography Exam Simulators
             </h2>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-gray-500 dark:text-slate-400">
               Configured strictly against current official recruitment parameters.
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function ShorthandLandingPage() {
             {officialExamPresets.map((exam) => (
               <div
                 key={exam.id}
-                className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4 flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between gap-2">
@@ -226,35 +226,35 @@ export default function ShorthandLandingPage() {
                       {exam.dictationSpeedWpm} WPM
                     </span>
                   </div>
-                  <h3 className="text-base font-bold text-slate-100">{exam.name}</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">{exam.description}</p>
+                  <h3 className="text-base font-bold text-gray-900 dark:text-slate-100">{exam.name}</h3>
+                  <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed">{exam.description}</p>
 
                   <div className="grid grid-cols-3 gap-2 pt-2 text-center text-xs">
-                    <div className="p-2 rounded-lg bg-slate-950 border border-slate-800">
-                      <span className="text-[10px] text-slate-400 block">Dictation</span>
-                      <strong className="text-slate-200">{exam.dictationDurationMinutes} Mins</strong>
+                    <div className="p-2 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800">
+                      <span className="text-[10px] text-gray-500 dark:text-slate-400 block">Dictation</span>
+                      <strong className="text-gray-700 dark:text-slate-200">{exam.dictationDurationMinutes} Mins</strong>
                     </div>
-                    <div className="p-2 rounded-lg bg-slate-950 border border-slate-800">
-                      <span className="text-[10px] text-slate-400 block">Transcription</span>
-                      <strong className="text-slate-200">{exam.transcriptionTimeMinutes} Mins</strong>
+                    <div className="p-2 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800">
+                      <span className="text-[10px] text-gray-500 dark:text-slate-400 block">Transcription</span>
+                      <strong className="text-gray-700 dark:text-slate-200">{exam.transcriptionTimeMinutes} Mins</strong>
                     </div>
-                    <div className="p-2 rounded-lg bg-slate-950 border border-slate-800">
-                      <span className="text-[10px] text-slate-400 block">Max Error</span>
+                    <div className="p-2 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800">
+                      <span className="text-[10px] text-gray-500 dark:text-slate-400 block">Max Error</span>
                       <strong className="text-amber-400">≤ {exam.allowedErrorPercentage}%</strong>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <div className="pt-3 border-t border-gray-200 dark:border-slate-800 flex items-center justify-between">
                   <Link
                     href={`/shorthand/tests?exam=${exam.id}`}
-                    className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
+                    className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
                   >
                     Take Exam Test →
                   </Link>
                   <Link
                     href="/shorthand/guides"
-                    className="text-xs text-slate-400 hover:text-purple-300"
+                    className="text-xs text-gray-500 dark:text-slate-400 hover:text-purple-300"
                   >
                     Read Exam Guide
                   </Link>
@@ -265,24 +265,24 @@ export default function ShorthandLandingPage() {
         </section>
 
         {/* Section 6: Frequently Asked Questions */}
-        <section className="space-y-6 pt-6 border-t border-slate-800">
+        <section className="space-y-6 pt-6 border-t border-gray-200 dark:border-slate-800">
           <div className="max-w-2xl space-y-1">
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
               Common Queries
             </span>
-            <h2 className="text-2xl font-black text-slate-100">
+            <h2 className="text-2xl font-black text-gray-900 dark:text-slate-100">
               Frequently Asked Questions About Shorthand
             </h2>
           </div>
 
           <div className="space-y-3">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
-                <h3 className="text-sm font-bold text-slate-100 flex items-center gap-2">
+              <div key={idx} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 space-y-2">
+                <h3 className="text-sm font-bold text-gray-900 dark:text-slate-100 flex items-center gap-2">
                   <span className="text-purple-400 font-black">Q.</span>
                   {faq.q}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-5">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 leading-relaxed pl-5">
                   {faq.a}
                 </p>
               </div>

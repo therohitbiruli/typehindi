@@ -68,7 +68,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
         <Breadcrumb items={[{ label: lang === "en" ? "Home" : "होम", href: "/" }, { label: lang === "en" ? "Blog" : "ब्लॉग" }]} />
         
         {/* Toggle on the far right */}
-        <div className="flex rounded-lg bg-slate-150 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
+        <div className="flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
           <Link
             href={getLangUrl("hi")}
             className={`px-3 py-1 rounded-md transition-all ${

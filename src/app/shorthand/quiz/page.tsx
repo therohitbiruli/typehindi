@@ -35,7 +35,7 @@ export default function ShorthandQuizPage() {
   const accuracy = Math.round((score / activeQuestions.length) * 100);
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-slate-100">
+    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-8">
@@ -44,17 +44,17 @@ export default function ShorthandQuizPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
               Interactive Examination
             </span>
-            <h1 className="text-2xl sm:text-3xl font-black text-slate-100">
+            <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
               Pitman Shorthand Knowledge Quiz
             </h1>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-gray-500 dark:text-slate-400">
               Test your mastery of shorthand consonant strokes, vowels, grammalogues, and phrasing rules.
             </p>
           </div>
 
           {/* Question Mode Selector */}
           {!isSubmitted && (
-            <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900 border border-slate-800">
+            <div className="flex items-center gap-1.5 p-1 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
               {[10, 20, 50].map((num) => (
                 <button
                   key={num}
@@ -65,8 +65,8 @@ export default function ShorthandQuizPage() {
                   }}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                     questionCount === num
-                      ? "bg-purple-600 text-white"
-                      : "text-slate-400 hover:text-white"
+                      ? "bg-purple-600 text-gray-900 dark:text-white"
+                      : "text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white"
                   }`}
                 >
                   {num} Qs
@@ -83,10 +83,10 @@ export default function ShorthandQuizPage() {
               <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
                 Quiz Complete
               </span>
-              <h3 className="text-2xl font-black text-slate-100 mt-1">
+              <h3 className="text-2xl font-black text-gray-900 dark:text-slate-100 mt-1">
                 Your Score: {score} / {activeQuestions.length} ({accuracy}%)
               </h3>
-              <p className="text-xs text-slate-300 mt-1">
+              <p className="text-xs text-gray-600 dark:text-slate-300 mt-1">
                 {accuracy >= 80
                   ? "Outstanding grasp of Pitman principles and strokes!"
                   : "Keep reviewing weak areas and vowel position rules."}
@@ -96,7 +96,7 @@ export default function ShorthandQuizPage() {
             <button
               type="button"
               onClick={handleRestart}
-              className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors self-start sm:self-auto"
+              className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors self-start sm:self-auto"
             >
               Try Again ↻
             </button>
@@ -111,22 +111,22 @@ export default function ShorthandQuizPage() {
             const isCorrect = userChoice === q.correctIndex;
 
             return (
-              <div key={q.id} className="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
+              <div key={q.id} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-black text-purple-400 uppercase tracking-wider">
                     Question {idx + 1} of {activeQuestions.length}
                   </span>
-                  <span className="text-[10px] text-slate-500 uppercase font-semibold">
+                  <span className="text-[10px] text-gray-400 dark:text-slate-500 uppercase font-semibold">
                     Category: {q.category}
                   </span>
                 </div>
 
-                <h3 className="text-sm font-bold text-slate-100 leading-snug">{q.question}</h3>
+                <h3 className="text-sm font-bold text-gray-900 dark:text-slate-100 leading-snug">{q.question}</h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
                   {q.options.map((opt, oIdx) => {
                     const isSelected = userChoice === oIdx;
-                    let style = "bg-slate-950 hover:bg-slate-800/80 text-slate-300 border-slate-800";
+                    let style = "bg-white dark:bg-slate-950 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800/80 text-gray-600 dark:text-slate-300 border-gray-200 dark:border-slate-800";
 
                     if (isSubmitted) {
                       if (oIdx === q.correctIndex) {
@@ -171,7 +171,7 @@ export default function ShorthandQuizPage() {
             <button
               type="button"
               onClick={() => setIsSubmitted(true)}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-purple-900/30 transition-all"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-gray-900 dark:text-white text-xs font-bold shadow-sm dark:shadow-lg shadow-purple-900/30 transition-all"
             >
               Submit Quiz & See Score →
             </button>

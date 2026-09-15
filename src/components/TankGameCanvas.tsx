@@ -396,12 +396,12 @@ export function TankGameCanvas() {
         
         {!isPlaying && !gameOver && (
           <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center rounded-lg">
-            <button onClick={startGame} className="btn-primary text-lg px-8 py-3 shadow-lg transform transition hover:scale-105">
+            <button onClick={startGame} className="btn-primary text-lg px-8 py-3 shadow-sm dark:shadow-lg transform transition hover:scale-105">
               🎮 Start Tank Defender
             </button>
             <p className="text-white mt-4 font-medium text-center px-4">
               Type the letters on the tanks to destroy them!<br/>
-              <span className="text-sm text-gray-300">Selected Language: {language}</span>
+              <span className="text-gray-300">Selected Language: {language}</span>
             </p>
           </div>
         )}

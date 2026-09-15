@@ -137,7 +137,7 @@ export function FinalChallenges({
             {/* Completed Badge */}
             <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-gray-200 dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
               <span>Completed:</span>
-              <span className="px-2 py-0.5 rounded-full bg-amber-500 text-white font-bold text-xs">
+              <span className="px-2 py-0.5 rounded-full bg-amber-500 text-gray-900 dark:text-white font-bold text-xs">
                 {completedChallenges.length} / {finalChallengesList.length}
               </span>
             </div>
@@ -154,7 +154,7 @@ export function FinalChallenges({
                   onClick={() => setSelectedChallengeIndex(idx)}
                   className={`p-3.5 rounded-2xl text-left transition-all border relative flex flex-col justify-between h-28 ${
                     isCurr
-                      ? "border-amber-500 bg-amber-500 text-white shadow-md shadow-amber-500/25 scale-105"
+                      ? "border-amber-500 bg-amber-500 text-gray-900 dark:text-white shadow-md shadow-amber-500/25 scale-105"
                       : isComp
                       ? "border-emerald-300 dark:border-emerald-800 bg-emerald-50/40 dark:bg-emerald-950/30 text-gray-900 dark:text-white"
                       : "border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-gray-900 dark:text-white hover:border-amber-300"
@@ -311,7 +311,7 @@ export function FinalChallenges({
                       setSelectedChallengeIndex(0);
                     }
                   }}
-                  className="px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-md"
+                  className="px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-gray-900 dark:text-white text-xs font-bold shadow-md"
                 >
                   Next Challenge →
                 </button>
@@ -338,7 +338,7 @@ export function FinalChallenges({
                     setSelectedChallengeIndex(0);
                   }
                 }}
-                className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold transition-all flex items-center gap-1.5 shadow-sm"
+                className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-gray-900 dark:text-white text-xs font-semibold transition-all flex items-center gap-1.5 shadow-sm"
               >
                 <span>Skip to Next</span>
                 <span>→</span>

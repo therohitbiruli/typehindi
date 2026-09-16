@@ -114,9 +114,9 @@ export function InteractiveKeyboardMaster() {
       {/* ========================================================================= */}
       {/* SEARCH TOOL: Find a Hindi Character */}
       {/* ========================================================================= */}
-      <section className="card p-6 md:p-8 rounded-3xl border border-primary-500/30 bg-gradient-to-br from-primary-950/40 via-slate-900 to-slate-900 shadow-xl">
+      <section className="card p-6 md:p-8 rounded-3xl border border-primary-200 dark:border-primary-500/30 bg-gradient-to-br from-primary-50/60 via-white to-slate-50 dark:from-primary-950/40 dark:via-slate-900 dark:to-slate-900 shadow-sm dark:shadow-xl">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-bold uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-500/20 text-primary-700 dark:text-primary-400 text-xs font-bold uppercase tracking-widest mb-3">
             🔍 Character Locator
           </div>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-2">
@@ -157,8 +157,8 @@ export function InteractiveKeyboardMaster() {
                 onClick={() => setSearchQuery(char)}
                 className={`w-9 h-9 rounded-xl border text-base font-bold transition-all flex items-center justify-center ${
                   searchQuery === char
-                    ? "bg-primary-600 border-primary-400 text-gray-900 dark:text-white scale-110 shadow-md shadow-primary-500/30"
-                    : "bg-gray-100 dark:bg-slate-800/80 border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-200 hover:border-primary-500/60 hover:text-gray-900 dark:text-white"
+                    ? "bg-primary-600 border-primary-400 text-white scale-110 shadow-md shadow-primary-500/30"
+                    : "bg-gray-100 dark:bg-slate-800/80 border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-200 hover:border-primary-500/60 hover:text-white"
                 }`}
                 style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
               >
@@ -172,7 +172,7 @@ export function InteractiveKeyboardMaster() {
             <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-emerald-500/40 animate-in fade-in zoom-in-95 duration-200 text-left flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div
-                  className="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-3xl font-black text-emerald-300"
+                  className="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-3xl font-black text-emerald-600 dark:text-emerald-300"
                   style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                 >
                   {searchResult.char}
@@ -183,7 +183,7 @@ export function InteractiveKeyboardMaster() {
                   </div>
                   <div className="text-lg font-black text-gray-900 dark:text-white flex items-center gap-2">
                     <span>Press:</span>
-                    <kbd className="px-2.5 py-1 rounded-lg bg-primary-600 text-gray-900 dark:text-white font-mono text-sm shadow-sm">
+                    <kbd className="px-2.5 py-1 rounded-lg bg-primary-600 text-white font-mono text-sm shadow-sm">
                       {searchResult.matchType === "shift"
                         ? `Shift + ${searchResult.keyDetail.englishKey}`
                         : searchResult.keyDetail.englishKey}
@@ -251,7 +251,7 @@ export function InteractiveKeyboardMaster() {
               onClick={() => setActiveCategory(cat.id)}
               className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all border ${
                 activeCategory === cat.id
-                  ? "bg-primary-600 border-primary-400 text-gray-900 dark:text-white shadow-sm dark:shadow-lg shadow-primary-500/20"
+                  ? "bg-primary-600 border-primary-400 text-white shadow-sm dark:shadow-lg shadow-primary-500/20"
                   : "bg-white dark:bg-slate-900/80 border-gray-200 dark:border-slate-800 text-gray-500 dark:text-slate-400 hover:border-gray-300 dark:border-slate-700 hover:text-gray-700 dark:text-slate-200"
               }`}
             >
@@ -316,13 +316,13 @@ export function InteractiveKeyboardMaster() {
                         key.width ? "flex-shrink-0" : "flex-1 max-w-[58px]"
                       } ${
                         isPhysActive
-                          ? "bg-primary-500 text-gray-900 dark:text-white ring-4 ring-primary-400/50 scale-105 z-20"
+                          ? "bg-primary-500 text-white ring-4 ring-primary-400/50 scale-105 z-20"
                           : isSearchMatch
-                          ? "bg-emerald-600/30 border-2 border-emerald-400 text-gray-900 dark:text-white ring-2 ring-emerald-400/50 z-10"
+                          ? "bg-emerald-600/30 border-2 border-emerald-400 text-emerald-950 dark:text-white ring-2 ring-emerald-400/50 z-10"
                           : isSelected
-                          ? "bg-primary-950 border-2 border-primary-400 text-gray-900 dark:text-white ring-2 ring-primary-500/30 z-10 shadow-sm dark:shadow-lg shadow-primary-500/20"
+                          ? "bg-primary-100 dark:bg-primary-950 border-2 border-primary-500 text-primary-950 dark:text-white ring-2 ring-primary-500/30 z-10 shadow-sm dark:shadow-lg shadow-primary-500/20"
                           : inCategory
-                          ? "bg-gray-50 dark:bg-slate-800/90 border border-gray-300 dark:border-slate-700/80 text-gray-900 dark:text-slate-100 hover:border-primary-400 hover:bg-gray-100 dark:hover:bg-slate-700"
+                          ? "bg-gray-50 dark:bg-slate-800/90 border border-gray-300 dark:border-slate-700/80 text-white hover:border-primary-400 hover:bg-gray-100 dark:hover:bg-slate-700"
                           : "bg-white dark:bg-slate-900/40 border border-gray-200 dark:border-slate-800/50 text-gray-500 dark:text-slate-600 opacity-30 hover:opacity-80"
                       }`}
                       style={key.width ? { width: `${key.width * 3}rem` } : undefined}

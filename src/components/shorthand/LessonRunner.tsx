@@ -35,7 +35,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-8 space-y-6">
@@ -43,7 +43,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <Link href="/shorthand/learn" className="text-xs text-purple-400 hover:underline">
+              <Link href="/shorthand/learn" className="text-xs text-purple-600 dark:text-purple-400 hover:underline">
                 ← All Lessons
               </Link>
               <span className="text-slate-600">/</span>
@@ -78,7 +78,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                 onClick={() => setActiveTab(t.id as any)}
                 className={`py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                   activeTab === t.id
-                    ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+                    ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
                     : "bg-white dark:bg-slate-950/60 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 border border-gray-200 dark:border-slate-800"
                 }`}
               >
@@ -136,7 +136,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               <button
                 type="button"
                 onClick={() => setActiveTab("see")}
-                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
               >
                 Proceed to See Examples (Step 2) →
               </button>
@@ -202,7 +202,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               <button
                 type="button"
                 onClick={() => setActiveTab("practice")}
-                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
               >
                 Practice Drawing on Canvas (Step 3) →
               </button>
@@ -258,7 +258,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               <button
                 type="button"
                 onClick={() => setActiveTab("test")}
-                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
               >
                 Take Mini Quiz (Step 4) →
               </button>
@@ -355,14 +355,14 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               {lesson.nextLessonSlug ? (
                 <Link
                   href={`/shorthand/lessons/${lesson.nextLessonSlug}`}
-                  className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+                  className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
                 >
                   Next Lesson →
                 </Link>
               ) : (
                 <Link
                   href="/shorthand/learn"
-                  className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+                  className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
                 >
                   Complete Curriculum Hub →
                 </Link>

@@ -199,7 +199,7 @@ export function DictationPlayer({
                 onClick={() => setSelectedWpm(speed)}
                 className={`py-2 rounded-lg text-xs font-semibold transition-all ${
                   selectedWpm === speed
-                    ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+                    ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
                     : "bg-gray-100 dark:bg-slate-800/80 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 border border-slate-700/50"
                 } disabled:opacity-50 disabled:cursor-not-allowed`}
               >
@@ -235,7 +235,7 @@ export function DictationPlayer({
         {/* Big Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           {countdown !== null ? (
-            <div className="px-8 py-3.5 rounded-xl bg-purple-600 text-gray-900 dark:text-white font-extrabold text-lg animate-pulse flex items-center gap-2">
+            <div className="px-8 py-3.5 rounded-xl bg-purple-600 text-white font-extrabold text-lg animate-pulse flex items-center gap-2">
               <span>Ready in</span>
               <span className="text-2xl">{countdown}</span>
             </div>
@@ -310,7 +310,7 @@ export function DictationPlayer({
             </div>
             <Link
               href={`/shorthand/tests?passage=${selectedPassage.id}&wpm=${selectedWpm}`}
-              className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold shrink-0 transition-colors"
+              className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shrink-0 transition-colors"
             >
               Transcribe on Computer →
             </Link>

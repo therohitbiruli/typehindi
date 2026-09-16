@@ -176,7 +176,7 @@ export function DifficultWordsPractice() {
                 }}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl border text-xs font-bold transition-all shadow-sm ${
                   isWeakWordsMode
-                    ? "bg-rose-600 border-rose-600 text-gray-900 dark:text-white shadow-rose-600/30"
+                    ? "bg-rose-600 border-rose-600 text-white shadow-rose-600/30"
                     : "bg-rose-50 dark:bg-rose-950/40 border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-300 hover:bg-rose-100"
                 }`}
               >
@@ -197,7 +197,7 @@ export function DifficultWordsPractice() {
                   }}
                   className={`flex-shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
                     selectedCategoryIndex === idx
-                      ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-600/20 scale-[1.02]"
+                      ? "bg-purple-600 text-white shadow-md shadow-purple-600/20 scale-[1.02]"
                       : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
                   }`}
                 >
@@ -220,7 +220,7 @@ export function DifficultWordsPractice() {
                   onClick={() => setSelectedWordIndex(idx)}
                   className={`flex-shrink-0 px-4 py-2 rounded-2xl font-hindi text-base font-bold transition-all border ${
                     isCurr
-                      ? "border-purple-500 bg-purple-500 text-gray-900 dark:text-white shadow-md shadow-purple-500/25 scale-105"
+                      ? "border-purple-500 bg-purple-500 text-white shadow-md shadow-purple-500/25 scale-105"
                       : "border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 hover:border-purple-300"
                   }`}
                 >
@@ -343,7 +343,7 @@ export function DifficultWordsPractice() {
                   </div>
                   <button
                     onClick={nextWord}
-                    className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-gray-900 dark:text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
+                    className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
                   >
                     Next Word →
                   </button>
@@ -371,7 +371,7 @@ export function DifficultWordsPractice() {
 
               <button
                 onClick={nextWord}
-                className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-gray-900 dark:text-white text-xs font-semibold transition-all flex items-center gap-1.5 shadow-sm"
+                className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold transition-all flex items-center gap-1.5 shadow-sm"
               >
                 <span>Next Word</span>
                 <span>→</span>

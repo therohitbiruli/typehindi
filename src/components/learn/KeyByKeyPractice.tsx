@@ -157,7 +157,7 @@ export function KeyByKeyPractice({
             {/* Completion Counter Badge */}
             <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-gray-200 dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
               <span>Mastered:</span>
-              <span className="px-2 py-0.5 rounded-full bg-emerald-500 text-gray-900 dark:text-white font-bold text-xs">
+              <span className="px-2 py-0.5 rounded-full bg-emerald-500 text-white font-bold text-xs">
                 {keyPracticeItems.filter(k => completedKeys.includes(k.id)).length} / {keyPracticeItems.length}
               </span>
             </div>
@@ -171,7 +171,7 @@ export function KeyByKeyPractice({
                 onClick={() => handleGroupChange(tab.id)}
                 className={`flex-shrink-0 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                   selectedGroup === tab.id
-                    ? "bg-emerald-600 text-gray-900 dark:text-white shadow-md shadow-emerald-600/20 scale-[1.02]"
+                    ? "bg-emerald-600 text-white shadow-md shadow-emerald-600/20 scale-[1.02]"
                     : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
                 }`}
               >
@@ -193,13 +193,13 @@ export function KeyByKeyPractice({
                   onClick={() => setSelectedItemIndex(idx)}
                   className={`relative flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl font-hindi text-xl font-bold transition-all border ${
                     isCurrent
-                      ? "border-emerald-500 bg-emerald-500 text-gray-900 dark:text-white shadow-md shadow-emerald-500/25 scale-105"
+                      ? "border-emerald-500 bg-emerald-500 text-white shadow-md shadow-emerald-500/25 scale-105"
                       : "border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 hover:border-emerald-300 dark:hover:border-emerald-700"
                   }`}
                 >
                   {item.char}
                   {isCompleted && (
-                    <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 text-gray-900 dark:text-white flex items-center justify-center text-[9px] font-bold border-2 border-white dark:border-gray-900">
+                    <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[9px] font-bold border-2 border-white dark:border-gray-900">
                       ✓
                     </span>
                   )}
@@ -367,7 +367,7 @@ export function KeyByKeyPractice({
                   </div>
                   <button
                     onClick={handleNext}
-                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-gray-900 dark:text-white font-bold text-xs shadow-md transition-all flex-shrink-0 flex items-center gap-1.5"
+                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex-shrink-0 flex items-center gap-1.5"
                   >
                     <span>Next Key →</span>
                     <kbd className="px-1.5 py-0.5 rounded bg-emerald-700/80 text-[10px] font-mono border border-emerald-500/50">Enter ⏎</kbd>
@@ -396,7 +396,7 @@ export function KeyByKeyPractice({
 
               <button
                 onClick={handleNext}
-                className="px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-gray-900 dark:text-white text-xs font-semibold transition-all flex items-center gap-1.5 shadow-sm"
+                className="px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-semibold transition-all flex items-center gap-1.5 shadow-sm"
               >
                 <span>Next Key →</span>
                 <kbd className="px-1.5 py-0.5 rounded bg-primary-700/80 text-[10px] font-mono border border-primary-500/40">Enter ⏎</kbd>

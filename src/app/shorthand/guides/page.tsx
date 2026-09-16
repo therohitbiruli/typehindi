@@ -32,12 +32,12 @@ export default function ShorthandGuidesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-8">
         <div className="space-y-1">
-          <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+          <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
             Resources & Tools
           </span>
           <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
@@ -61,8 +61,8 @@ export default function ShorthandGuidesPage() {
               onClick={() => setActiveTab(t.id as any)}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                 activeTab === t.id
-                  ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
-                  : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white border border-gray-200 dark:border-slate-800"
+                  ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
+                  : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 hover:text-white border border-gray-200 dark:border-slate-800"
               }`}
             >
               <span>{t.icon}</span>

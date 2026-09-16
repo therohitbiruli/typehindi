@@ -385,7 +385,7 @@ function LearnPageContent() {
                       }}
                       className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                         selectedWord === guide.word
-                          ? "bg-primary-500 text-gray-900 dark:text-white shadow-md shadow-primary-500/20 scale-[1.03]"
+                          ? "bg-primary-500 text-white shadow-md shadow-primary-500/20 scale-[1.03]"
                           : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                       }`}
                     >

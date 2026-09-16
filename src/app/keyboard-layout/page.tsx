@@ -124,7 +124,7 @@ export default function KeyboardLayoutPage() {
               href={`/keyboard-layout/${item.slug}`}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                 item.active
-                  ? "bg-primary-600 text-gray-900 dark:text-white shadow-sm"
+                  ? "bg-primary-600 text-white shadow-sm"
                   : "bg-white dark:bg-slate-900 text-gray-600 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-800"
               }`}
             >
@@ -593,10 +593,10 @@ export default function KeyboardLayoutPage() {
       {/* 12. FINAL CALL TO ACTION */}
       {/* ========================================================================= */}
       <section className="mb-12">
-        <div className="card p-10 md:p-14 rounded-[3rem] border border-primary-500/30 bg-gradient-to-br from-primary-950/40 via-slate-900 to-slate-900 text-center relative overflow-hidden shadow-2xl">
+        <div className="card p-10 md:p-14 rounded-[3rem] border border-primary-200 dark:border-primary-500/30 bg-gradient-to-br from-primary-50/70 via-white to-slate-50 dark:from-primary-950/40 dark:via-slate-900 dark:to-slate-900 text-center relative overflow-hidden shadow-sm dark:shadow-2xl">
           <div className="absolute top-0 right-0 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-3 block">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary-700 dark:text-primary-400 mb-3 block">
               Ready to Type?
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 leading-tight">

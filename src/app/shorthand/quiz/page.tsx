@@ -35,13 +35,13 @@ export default function ShorthandQuizPage() {
   const accuracy = Math.round((score / activeQuestions.length) * 100);
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-1">
-            <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               Interactive Examination
             </span>
             <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
@@ -65,8 +65,8 @@ export default function ShorthandQuizPage() {
                   }}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                     questionCount === num
-                      ? "bg-purple-600 text-gray-900 dark:text-white"
-                      : "text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white"
+                      ? "bg-purple-600 text-white"
+                      : "text-gray-500 dark:text-slate-400 hover:text-white"
                   }`}
                 >
                   {num} Qs
@@ -78,9 +78,9 @@ export default function ShorthandQuizPage() {
 
         {/* Results Banner if submitted */}
         {isSubmitted && (
-          <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/40 via-slate-900 to-sky-950/30 border border-purple-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-50 via-white to-sky-50 dark:from-purple-950/40 dark:via-slate-900 dark:to-sky-950/30 border border-purple-200 dark:border-purple-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
                 Quiz Complete
               </span>
               <h3 className="text-2xl font-black text-gray-900 dark:text-slate-100 mt-1">
@@ -96,7 +96,7 @@ export default function ShorthandQuizPage() {
             <button
               type="button"
               onClick={handleRestart}
-              className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors self-start sm:self-auto"
+              className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors self-start sm:self-auto"
             >
               Try Again ↻
             </button>

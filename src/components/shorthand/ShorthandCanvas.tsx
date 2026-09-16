@@ -264,7 +264,7 @@ export function ShorthandCanvas({
               onClick={() => setActiveWeight("light")}
               className={`px-2.5 py-1 rounded transition-colors font-medium ${
                 activeWeight === "light"
-                  ? "bg-purple-600 text-gray-900 dark:text-white shadow-sm"
+                  ? "bg-purple-600 text-white shadow-sm"
                   : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200"
               }`}
             >
@@ -275,7 +275,7 @@ export function ShorthandCanvas({
               onClick={() => setActiveWeight("heavy")}
               className={`px-2.5 py-1 rounded transition-colors font-medium ${
                 activeWeight === "heavy"
-                  ? "bg-sky-600 text-gray-900 dark:text-white shadow-sm"
+                  ? "bg-sky-600 text-white shadow-sm"
                   : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200"
               }`}
             >
@@ -361,7 +361,7 @@ export function ShorthandCanvas({
               onClick={() => handleSelectStroke(s)}
               className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-all shrink-0 ${
                 selectedStroke.id === s.id
-                  ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+                  ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
                   : "bg-slate-800/70 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 border border-slate-700/50"
               }`}
             >
@@ -480,7 +480,7 @@ export function ShorthandCanvas({
               <button
                 type="button"
                 onClick={() => setComparisonModal(false)}
-                className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+                className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
               >
                 Continue Practice
               </button>

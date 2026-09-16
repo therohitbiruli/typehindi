@@ -89,7 +89,7 @@ export function ShorthandSpeedTrainer() {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 href={`/shorthand/dictation?speed=${item.wpm}`}
-                className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+                className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
               >
                 Launch {item.wpm} WPM Dictation Drill →
               </Link>

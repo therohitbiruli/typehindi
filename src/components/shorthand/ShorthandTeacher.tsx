@@ -535,8 +535,8 @@ export function ShorthandTeacher({
             }}
             className={`px-3 py-1.5 rounded-xl font-semibold transition-all whitespace-nowrap ${
               activeStep === step.id
-                ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
-                : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800"
+                ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
+                : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800"
             }`}
           >
             {step.label}
@@ -545,10 +545,10 @@ export function ShorthandTeacher({
       </div>
 
       {/* 1. LESSON-FIRST INTERFACE: Stroke Header, Sound & Verified Rule */}
-      <div className="p-6 rounded-3xl bg-gradient-to-r from-purple-950/30 via-slate-900 to-[#0F172A] border border-purple-500/30 space-y-4">
+      <div className="p-6 rounded-3xl bg-gradient-to-r from-purple-50 via-white to-slate-50 dark:from-purple-950/30 dark:via-slate-900 dark:to-[#0F172A] border border-purple-200 dark:border-purple-500/30 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 dark:border-slate-800 pb-4">
           <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-300 font-extrabold text-2xl">
+            <div className="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/30 flex items-center justify-center text-purple-700 dark:text-purple-300 font-extrabold text-2xl">
               {stroke.name}
             </div>
             <div>
@@ -557,8 +557,8 @@ export function ShorthandTeacher({
                 <span
                   className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-full ${
                     stroke.weight === "heavy"
-                      ? "bg-sky-500/20 text-sky-300 border border-sky-500/30"
-                      : "bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                      ? "bg-sky-100 dark:bg-sky-500/20 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-500/30"
+                      : "bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30"
                   }`}
                 >
                   {stroke.weight} Line Weight
@@ -662,7 +662,7 @@ export function ShorthandTeacher({
                   onClick={() => setPracticeMode(m.id as any)}
                   className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
                     practiceMode === m.id
-                      ? "bg-purple-600 text-gray-900 dark:text-white shadow-sm"
+                      ? "bg-purple-600 text-white shadow-sm"
                       : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200"
                   }`}
                 >
@@ -674,12 +674,12 @@ export function ShorthandTeacher({
 
           {/* Right Tools: Weight Selector, Undo, Redo, Clear */}
           <div className="flex items-center gap-2">
-            <div className="flex items-center p-1 rounded-xl bg-gray-100 dark:bg-slate-800 border border-slate-700/60">
+            <div className="flex items-center p-1 rounded-xl bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700/60">
               <button
                 type="button"
                 onClick={() => setUserWeight("light")}
                 className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
-                  userWeight === "light" ? "bg-purple-600 text-gray-900 dark:text-white" : "text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white"
+                  userWeight === "light" ? "bg-purple-600 text-white" : "text-gray-500 dark:text-slate-400 hover:text-white"
                 }`}
               >
                 Light
@@ -688,7 +688,7 @@ export function ShorthandTeacher({
                 type="button"
                 onClick={() => setUserWeight("heavy")}
                 className={`px-2.5 py-1 rounded-lg font-medium transition-colors ${
-                  userWeight === "heavy" ? "bg-sky-600 text-gray-900 dark:text-white" : "text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white"
+                  userWeight === "heavy" ? "bg-sky-600 text-white" : "text-gray-500 dark:text-slate-400 hover:text-white"
                 }`}
               >
                 Heavy

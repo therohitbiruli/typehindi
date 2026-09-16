@@ -89,7 +89,7 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
             onClick={() => setSelectedCategory(cat.id)}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
               selectedCategory === cat.id
-                ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+                ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
                 : "bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 border border-gray-200 dark:border-slate-800"
             }`}
           >
@@ -259,7 +259,7 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
                     onSelectForPractice(activeModalStroke);
                     setActiveModalStroke(null);
                   }}
-                  className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+                  className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
                 >
                   Practice on Canvas →
                 </button>

@@ -180,7 +180,7 @@ export function FloatingTranslator() {
                   onClick={() => selectLang(lang.code)}
                   className={`px-2 py-1 rounded-lg text-[10px] font-semibold transition-all border ${
                     targetLang === lang.code
-                      ? "bg-primary-600 text-gray-900 dark:text-white border-primary-600 shadow-sm shadow-primary-500/20"
+                      ? "bg-primary-600 text-white border-primary-600 shadow-sm shadow-primary-500/20"
                       : "bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-600 hover:text-primary-600 dark:hover:text-primary-400"
                   }`}
                   title={lang.labelEn}
@@ -227,7 +227,7 @@ export function FloatingTranslator() {
             <button
               onClick={handleTranslate}
               disabled={isLoading || !inputText.trim()}
-              className="flex-1 py-2 px-3 bg-primary-600 hover:bg-primary-700 text-gray-900 dark:text-white rounded-xl text-xs font-semibold disabled:opacity-50 transition-all flex items-center justify-center gap-1.5"
+              className="flex-1 py-2 px-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl text-xs font-semibold disabled:opacity-50 transition-all flex items-center justify-center gap-1.5"
             >
               {isLoading
                 ? "Translating..."

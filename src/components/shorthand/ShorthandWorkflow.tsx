@@ -61,9 +61,9 @@ export function ShorthandWorkflow() {
       </div>
 
       {/* Shorthand + Typing Connection Section */}
-      <div className="p-8 rounded-3xl bg-gradient-to-r from-purple-950/40 via-slate-900 to-sky-950/30 border border-purple-500/30 space-y-6">
+      <div className="p-8 rounded-3xl bg-gradient-to-r from-purple-50 via-white to-sky-50 dark:from-purple-950/40 dark:via-slate-900 dark:to-sky-950/30 border border-purple-200 dark:border-purple-500/30 space-y-6">
         <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+          <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
             The Complete Stenography Ecosystem
           </span>
           <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-slate-100">
@@ -76,21 +76,21 @@ export function ShorthandWorkflow() {
 
         {/* The Equation */}
         <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold text-gray-700 dark:text-slate-200 bg-white dark:bg-slate-950/60 p-4 rounded-xl border border-gray-200 dark:border-slate-800">
-          <span className="px-2.5 py-1 rounded bg-purple-500/20 text-purple-300">Listening</span>
+          <span className="px-2.5 py-1 rounded bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300">Listening</span>
           <span className="text-gray-500 dark:text-slate-400">+</span>
-          <span className="px-2.5 py-1 rounded bg-purple-500/20 text-purple-300">Shorthand Speed</span>
+          <span className="px-2.5 py-1 rounded bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300">Shorthand Speed</span>
           <span className="text-gray-500 dark:text-slate-400">+</span>
-          <span className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300">Note Reading</span>
+          <span className="px-2.5 py-1 rounded bg-sky-100 dark:bg-sky-500/20 text-sky-700 dark:text-sky-300">Note Reading</span>
           <span className="text-gray-500 dark:text-slate-400">+</span>
-          <span className="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300">Computer Typing</span>
+          <span className="px-2.5 py-1 rounded bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300">Computer Typing</span>
           <span className="text-gray-500 dark:text-slate-400">=</span>
-          <span className="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300">Qualified Stenographer</span>
+          <span className="px-2.5 py-1 rounded bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300">Qualified Stenographer</span>
         </div>
 
         <div className="flex flex-wrap items-center gap-3 pt-2">
           <Link
             href="/practice"
-            className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white font-bold text-xs shadow-md shadow-purple-900/30 transition-colors"
+            className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-md shadow-purple-900/30 transition-colors"
           >
             Practice Typing on TypeHindi →
           </Link>

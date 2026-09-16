@@ -31,8 +31,8 @@ function TestsContent() {
   return (
     <div className="space-y-8">
       {/* Header Banner */}
-      <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-purple-950/40 via-slate-900 to-sky-950/30 border border-purple-500/30 space-y-3">
-        <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+      <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-purple-50 via-white to-sky-50 dark:from-purple-950/40 dark:via-slate-900 dark:to-sky-950/30 border border-purple-200 dark:border-purple-500/30 space-y-3">
+        <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
           Stenographer Skill Test Simulator
         </span>
         <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
@@ -54,8 +54,8 @@ function TestsContent() {
               }}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
                 selectedExam.id === e.id
-                  ? "bg-purple-600 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
-                  : "bg-white dark:bg-slate-950 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 border border-gray-200 dark:border-slate-800"
+                  ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
+                  : "bg-white dark:bg-slate-950 hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-600 dark:text-slate-400 border border-gray-200 dark:border-slate-800"
               }`}
             >
               {e.name}
@@ -126,7 +126,7 @@ function TestsContent() {
 
 export default function ShorthandTestsPage() {
   return (
-    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
       <main className="container-main py-10">
         <Suspense fallback={<div className="text-center py-12 text-gray-500 dark:text-slate-400">Loading exam simulator...</div>}>

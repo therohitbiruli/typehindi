@@ -175,7 +175,7 @@ export function MatraMastery({
                     {m.englishKey}
                   </span>
                   {isComp && (
-                    <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 text-gray-900 dark:text-white flex items-center justify-center text-[9px] font-bold border-2 border-white dark:border-gray-900">
+                    <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[9px] font-bold border-2 border-white dark:border-gray-900">
                       ✓
                     </span>
                   )}
@@ -397,7 +397,7 @@ export function MatraMastery({
                   </div>
                   <button
                     onClick={resetExercise}
-                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-gray-900 dark:text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
+                    className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
                   >
                     Practice Again 🔄
                   </button>

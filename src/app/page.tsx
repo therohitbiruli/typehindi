@@ -32,11 +32,14 @@ export default function Homepage() {
     <div className="flex flex-col min-h-screen bg-white dark:bg-slate-950">
       {/* 🌟 Premium Hero Section */}
       <section className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white pt-20 pb-32 border-b border-gray-100 dark:border-slate-900 relative overflow-hidden">
-        {/* Blurred background image blended directly with the dark bg */}
+        {/* Blurred background image - only visible in dark mode where it blends with deep navy */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-25 blur-[6px] scale-105 pointer-events-none"
+          className="hidden dark:block absolute inset-0 bg-cover bg-center opacity-20 blur-[6px] scale-105 pointer-events-none"
           style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
         ></div>
+
+        {/* Clean, subtle soft gradient for light mode */}
+        <div className="dark:hidden absolute inset-0 bg-gradient-to-b from-indigo-50/40 via-white to-white pointer-events-none"></div>
 
         {/* Subtle grid background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
@@ -46,25 +49,25 @@ export default function Homepage() {
 
         <div className="container-main px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-300 text-xs font-semibold mb-6 animate-pulse">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-50 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-500/30 text-primary-700 dark:text-primary-300 text-xs font-semibold mb-6">
               ✨ Free Online Hindi Typing Platform
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] text-slate-900 dark:text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight dark:drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] text-slate-900 dark:text-white">
               For Your Typing Jobs Preparation <br/>
-              <span className="text-primary-400">in One Place</span>
+              <span className="text-primary-600 dark:text-primary-400">in One Place</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-gray-700 dark:text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed mb-10 dark:drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               A comprehensive catalog of free and easy-to-use Hindi typing tools. Improve your speed with a 100% accurate WPM tracker, live keyboard guides, and engaging typing games.
             </p>
 
             {/* Hero CTA buttons */}
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/practice" className="px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-gray-900 dark:text-white font-bold text-sm transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 hover:-translate-y-0.5">
+              <Link href="/practice" className="px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold text-sm transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 hover:-translate-y-0.5">
                 Start Practice
               </Link>
-              <Link href="/game" className="px-8 py-3.5 rounded-xl bg-gray-100 dark:bg-slate-900 hover:bg-gray-200 dark:hover:bg-slate-800 text-gray-900 dark:text-white font-bold text-sm transition-all border border-gray-200 dark:border-slate-800 hover:-translate-y-0.5">
+              <Link href="/game" className="px-8 py-3.5 rounded-xl bg-gray-100 dark:bg-slate-900 hover:bg-gray-200 dark:hover:bg-slate-800 text-gray-900 dark:text-white font-bold text-sm transition-all border border-gray-200 dark:border-slate-800 hover:-translate-y-0.5 shadow-sm">
                 Play Games
               </Link>
             </div>
@@ -252,7 +255,7 @@ export default function Homepage() {
 
                   <Link
                     href={`/practice/${lang.slug}`}
-                    className="w-full py-2.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-gray-900 dark:text-white text-xs font-bold text-center transition-all shadow-md shadow-primary-500/20 group-hover:shadow-primary-500/30"
+                    className="w-full py-2.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold text-center transition-all shadow-md shadow-primary-500/20 group-hover:shadow-primary-500/30"
                   >
                     {lang.btnText}
                   </Link>
@@ -453,7 +456,7 @@ export default function Homepage() {
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
                     <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Build Speed</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-emerald-600 text-gray-900 dark:text-white font-semibold shadow-sm">Take Challenges</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-semibold shadow-sm">Take Challenges</span>
                   </div>
                 </div>
 
@@ -470,12 +473,12 @@ export default function Homepage() {
 
             {/* Prominent Call to Action */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
-              <p className="text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 text-center sm:text-left">
+              <p className="text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left">
                 Start from scratch or jump directly to your level. 100% free, saved in your browser.
               </p>
               <Link
                 href="/learn"
-                className="w-full sm:w-auto px-7 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-gray-900 dark:text-white font-bold text-sm transition-all shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/30 flex items-center justify-center gap-2 group flex-shrink-0"
+                className="w-full sm:w-auto px-7 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/30 flex items-center justify-center gap-2 group flex-shrink-0"
               >
                 <span>Start Learning Hindi Typing</span>
                 <span className="group-hover:translate-x-1 transition-transform font-bold">→</span>
@@ -487,7 +490,7 @@ export default function Homepage() {
           <div id="shorthand" className="bg-gradient-to-r from-purple-50 via-white to-purple-50 dark:from-purple-950/30 dark:via-slate-900 dark:to-[#0F172A] rounded-[2rem] border border-purple-200 dark:border-purple-500/30 shadow-sm dark:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-8 space-y-5 relative overflow-hidden">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-2 max-w-2xl">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] font-bold text-purple-400 uppercase tracking-wider">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
                   <span>✍️</span> New Section: English Pitman Stenography
                 </div>
                 <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
@@ -501,7 +504,7 @@ export default function Homepage() {
               <div className="flex flex-wrap items-center gap-3 shrink-0">
                 <Link
                   href="/shorthand"
-                  className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white font-bold text-xs shadow-md shadow-purple-900/30 transition-all flex items-center gap-1.5"
+                  className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-md shadow-purple-900/30 transition-all flex items-center gap-1.5"
                 >
                   <span>Learn Shorthand</span>
                   <span>→</span>

@@ -58,7 +58,7 @@ export function ShorthandNotebook() {
         <button
           type="button"
           onClick={() => setIsAdding((prev) => !prev)}
-          className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shrink-0"
+          className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shrink-0"
         >
           {isAdding ? "✕ Cancel" : "+ Add New Note"}
         </button>
@@ -112,7 +112,7 @@ export function ShorthandNotebook() {
           <div className="flex justify-end gap-2">
             <button
               type="submit"
-              className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold"
+              className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold"
             >
               Save Note
             </button>
@@ -130,8 +130,8 @@ export function ShorthandNotebook() {
               onClick={() => setFilterCategory(c)}
               className={`px-3 py-1 rounded-md text-xs font-medium whitespace-nowrap transition-colors ${
                 filterCategory === c
-                  ? "bg-purple-600 text-gray-900 dark:text-white"
-                  : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 hover:text-gray-900 dark:text-white border border-gray-200 dark:border-slate-800"
+                  ? "bg-purple-600 text-white"
+                  : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 hover:text-white border border-gray-200 dark:border-slate-800"
               }`}
             >
               {c}

@@ -16,12 +16,12 @@ export default function ShorthandPracticePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-10">
         <div className="max-w-3xl space-y-1">
-          <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+          <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
             Interactive Shorthand Teacher & Practice
           </span>
           <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
@@ -42,7 +42,7 @@ export default function ShorthandPracticePage() {
         {/* Character Explorer underneath */}
         <div className="pt-6 border-t border-gray-200 dark:border-slate-800 space-y-6">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               Browse & Select
             </span>
             <h2 className="text-xl font-bold text-gray-900 dark:text-slate-100">

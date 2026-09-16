@@ -49,7 +49,7 @@ export default function ShorthandLandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
       <ShorthandHero />
 
@@ -57,7 +57,7 @@ export default function ShorthandLandingPage() {
         {/* Section 1: What is Shorthand? */}
         <section className="space-y-6">
           <div className="max-w-3xl space-y-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               Fundamental Principles
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
@@ -134,7 +134,7 @@ export default function ShorthandLandingPage() {
 
             <Link
               href="/shorthand/learn"
-              className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors self-start sm:self-auto"
+              className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors self-start sm:self-auto"
             >
               View Full Curriculum (13 Levels) →
             </Link>
@@ -248,7 +248,7 @@ export default function ShorthandLandingPage() {
                 <div className="pt-3 border-t border-gray-200 dark:border-slate-800 flex items-center justify-between">
                   <Link
                     href={`/shorthand/tests?exam=${exam.id}`}
-                    className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+                    className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
                   >
                     Take Exam Test →
                   </Link>

@@ -22,7 +22,7 @@ export function PrintablePracticeSheet() {
         <button
           type="button"
           onClick={handlePrint}
-          className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors flex items-center gap-1.5"
+          className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors flex items-center gap-1.5"
         >
           <span>🖨️</span> Print / Save PDF
         </button>

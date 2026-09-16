@@ -21,14 +21,14 @@ export default function ShorthandCurriculumPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-8">
         {/* Header Banner */}
-        <div className="p-8 rounded-3xl bg-gradient-to-r from-purple-950/40 via-slate-900 to-[#0F172A] border border-purple-500/30 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-purple-50 via-white to-slate-50 dark:from-purple-950/40 dark:via-slate-900 dark:to-[#0F172A] border border-purple-200 dark:border-purple-500/30 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               Pitman Shorthand Curriculum
             </span>
             <h1 className="text-3xl font-black text-gray-900 dark:text-slate-100">
@@ -60,7 +60,7 @@ export default function ShorthandCurriculumPage() {
                 onClick={() => setDifficultyFilter(dif)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   difficultyFilter === dif
-                    ? "bg-purple-600 text-gray-900 dark:text-white"
+                    ? "bg-purple-600 text-white"
                     : "bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 border border-gray-200 dark:border-slate-800"
                 }`}
               >
@@ -126,7 +126,7 @@ export default function ShorthandCurriculumPage() {
                     className={`px-5 py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center gap-1.5 ${
                       isCompleted
                         ? "bg-gray-100 dark:bg-slate-800 hover:bg-slate-700 text-gray-700 dark:text-slate-200 border border-gray-300 dark:border-slate-700"
-                        : "bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+                        : "bg-purple-600 hover:bg-purple-500 text-white shadow-md shadow-purple-900/30"
                     }`}
                   >
                     {isCompleted ? "Review Lesson ↻" : "Start Lesson →"}

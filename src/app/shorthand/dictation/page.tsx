@@ -52,7 +52,7 @@ function DictationContent() {
 
 export default function ShorthandDictationPage() {
   return (
-    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
       <main className="container-main py-10">
         <Suspense fallback={<div className="text-center py-12 text-gray-500 dark:text-slate-400">Loading dictation studio...</div>}>

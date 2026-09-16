@@ -14,19 +14,19 @@ export default function ShorthandProgressPage() {
   }, []);
 
   if (!progress) {
-    return <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100 flex items-center justify-center">Loading progress...</div>;
+    return <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100 flex items-center justify-center">Loading progress...</div>;
   }
 
   const completedCount = progress.completedLessons.length;
   const completionPercent = Math.round((completedCount / 13) * 100);
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-8">
         <div className="space-y-1">
-          <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
+          <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
             Analytics & Activity
           </span>
           <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">

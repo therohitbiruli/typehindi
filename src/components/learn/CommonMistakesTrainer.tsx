@@ -108,8 +108,8 @@ export function CommonMistakesTrainer() {
                 onClick={() => setActiveTab("quiz")}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                   activeTab === "quiz"
-                    ? "bg-rose-600 text-gray-900 dark:text-white shadow-md shadow-rose-600/30"
-                    : "text-gray-500 hover:text-gray-900 dark:hover:text-gray-900 dark:text-white"
+                    ? "bg-rose-600 text-white shadow-md shadow-rose-600/30"
+                    : "text-gray-500 hover:text-gray-900 dark:hover:text-white"
                 }`}
               >
                 Quiz Challenge ({quizScore}/{quizAnsweredCount})
@@ -125,7 +125,7 @@ export function CommonMistakesTrainer() {
                 onClick={() => setSelectedLessonIndex(idx)}
                 className={`flex-shrink-0 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                   selectedLessonIndex === idx
-                    ? "bg-rose-600 text-gray-900 dark:text-white shadow-md shadow-rose-600/20 scale-[1.02]"
+                    ? "bg-rose-600 text-white shadow-md shadow-rose-600/20 scale-[1.02]"
                     : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
                 }`}
               >
@@ -262,7 +262,7 @@ export function CommonMistakesTrainer() {
                           setSelectedLessonIndex(0);
                         }
                       }}
-                      className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-gray-900 dark:text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
+                      className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex-shrink-0"
                     >
                       Next Lesson →
                     </button>
@@ -340,7 +340,7 @@ export function CommonMistakesTrainer() {
                           setSelectedOption(null);
                           setIsAnswerSubmitted(false);
                         }}
-                        className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-gray-900 dark:text-white font-bold text-xs shadow-md transition-all"
+                        className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-md transition-all"
                       >
                         Next Question →
                       </button>

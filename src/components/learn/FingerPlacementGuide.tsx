@@ -125,8 +125,8 @@ export function FingerPlacementGuide() {
                 onClick={() => setActivePracticeMode(true)}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                   activePracticeMode
-                    ? "bg-primary-600 text-gray-900 dark:text-white shadow-md shadow-primary-600/30"
-                    : "text-gray-500 hover:text-gray-900 dark:hover:text-gray-900 dark:text-white"
+                    ? "bg-primary-600 text-white shadow-md shadow-primary-600/30"
+                    : "text-gray-500 hover:text-gray-900 dark:hover:text-white"
                 }`}
               >
                 ⚡ Practice Mode
@@ -156,7 +156,7 @@ export function FingerPlacementGuide() {
                         onClick={() => setDifficulty(d)}
                         className={`px-2.5 py-1 rounded-lg text-xs font-semibold capitalize transition-all ${
                           difficulty === d
-                            ? "bg-indigo-600 text-gray-900 dark:text-white shadow-sm"
+                            ? "bg-indigo-600 text-white shadow-sm"
                             : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700"
                         }`}
                       >
@@ -264,7 +264,7 @@ export function FingerPlacementGuide() {
                         heights[fid] || "h-20"
                       } ${
                         isSelected
-                          ? "border-primary-500 bg-primary-500 text-gray-900 dark:text-white shadow-sm dark:shadow-lg shadow-primary-500/30 scale-105"
+                          ? "border-primary-500 bg-primary-500 text-white shadow-sm dark:shadow-lg shadow-primary-500/30 scale-105"
                           : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:border-primary-300"
                       }`}
                     >
@@ -312,7 +312,7 @@ export function FingerPlacementGuide() {
                         heights[fid] || "h-20"
                       } ${
                         isSelected
-                          ? "border-primary-500 bg-primary-500 text-gray-900 dark:text-white shadow-sm dark:shadow-lg shadow-primary-500/30 scale-105"
+                          ? "border-primary-500 bg-primary-500 text-white shadow-sm dark:shadow-lg shadow-primary-500/30 scale-105"
                           : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:border-primary-300"
                       }`}
                     >

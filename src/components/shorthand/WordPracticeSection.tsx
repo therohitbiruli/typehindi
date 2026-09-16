@@ -608,25 +608,25 @@ export function WordPracticeSection({
         </div>
 
         {/* From Strokes to Words Progression Banner */}
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-950/40 via-slate-950 to-slate-950 border border-purple-800/40 space-y-4 max-w-2xl mx-auto">
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-50 via-white to-slate-50 dark:from-purple-950/40 dark:via-slate-950 dark:to-slate-950 border border-purple-200 dark:border-purple-800/40 space-y-4 max-w-2xl mx-auto">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-purple-400">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               FROM STROKES TO WORDS & SPEED
             </span>
             <h4 className="text-base font-bold text-gray-900 dark:text-slate-100 mt-1">
               Your Professional Stenography Path
             </h4>
-            <p className="text-xs text-gray-500 dark:text-slate-400 mt-1 leading-relaxed">
+            <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
               Pitman shorthand becomes fast and fluent when individual consonant strokes are combined into words, short phrases, and rhythmic spoken sentences.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-gray-600 dark:text-slate-300">
-            <span className="px-3 py-1 rounded-lg bg-purple-500/20 text-purple-300 border border-purple-500/30">
+            <span className="px-3 py-1 rounded-lg bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30">
               1. Individual Strokes ✓
             </span>
             <span>→</span>
-            <span className="px-3 py-1 rounded-lg bg-purple-500/20 text-purple-300 border border-purple-500/30">
+            <span className="px-3 py-1 rounded-lg bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30">
               2. Words & Joining ✓
             </span>
             <span>→</span>
@@ -655,14 +655,14 @@ export function WordPracticeSection({
 
           <Link
             href="/shorthand/guides"
-            className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+            className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
           >
             Continue to Phrases & Guides →
           </Link>
 
           <Link
             href="/shorthand/dictation"
-            className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-gray-900 dark:text-white text-xs font-bold transition-colors"
+            className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors"
           >
             Start Dictation Practice →
           </Link>
@@ -849,7 +849,7 @@ export function WordPracticeSection({
             <button
               type="button"
               onClick={handleNextWord}
-              className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-xs font-bold text-gray-900 dark:text-white shadow-md shadow-purple-900/30"
+              className="px-5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-xs font-bold text-white shadow-md shadow-purple-900/30"
             >
               {currentIndex === words.length - 1 ? "Complete Word Practice ✓" : "Next Word →"}
             </button>
@@ -879,7 +879,7 @@ export function WordPracticeSection({
                     onClick={() => setActiveBuilderStep(s.step)}
                     className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-colors ${
                       activeBuilderStep === s.step
-                        ? "bg-purple-600 text-gray-900 dark:text-white"
+                        ? "bg-purple-600 text-white"
                         : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200"
                     }`}
                   >
@@ -1011,7 +1011,7 @@ export function WordPracticeSection({
                     onClick={() => setPracticeMode(m)}
                     className={`px-3 py-1 rounded-lg font-semibold uppercase text-[10px] transition-colors ${
                       practiceMode === m
-                        ? "bg-purple-600 text-gray-900 dark:text-white"
+                        ? "bg-purple-600 text-white"
                         : "text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200"
                     }`}
                   >
@@ -1028,7 +1028,7 @@ export function WordPracticeSection({
                   onClick={() => setUserWeight("light")}
                   className={`px-2.5 py-1 rounded-lg border text-xs font-semibold ${
                     userWeight === "light"
-                      ? "bg-purple-600 text-gray-900 dark:text-white border-purple-500"
+                      ? "bg-purple-600 text-white border-purple-500"
                       : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 border-gray-200 dark:border-slate-800"
                   }`}
                 >
@@ -1039,7 +1039,7 @@ export function WordPracticeSection({
                   onClick={() => setUserWeight("heavy")}
                   className={`px-2.5 py-1 rounded-lg border text-xs font-semibold ${
                     userWeight === "heavy"
-                      ? "bg-purple-600 text-gray-900 dark:text-white border-purple-500"
+                      ? "bg-purple-600 text-white border-purple-500"
                       : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 border-gray-200 dark:border-slate-800"
                   }`}
                 >
@@ -1173,7 +1173,7 @@ export function WordPracticeSection({
           </Link>
           <Link
             href="/shorthand/dictation"
-            className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-gray-900 dark:text-white text-xs font-bold whitespace-nowrap"
+            className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold whitespace-nowrap"
           >
             Start Dictation →
           </Link>

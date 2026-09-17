@@ -376,13 +376,12 @@ IMPORTANT: Output ONLY raw valid JSON matching the schema. No markdown wrapping 
   contents.push({ role: "user", parts });
 
   const CANDIDATE_MODELS = [
-    "gemini-flash-latest",
-    "gemini-3.8-flash",
-    "gemini-3.7-flash",
-    "gemini-3.5-flash",
+    "gemini-3-flash-preview",
+    "gemini-3.1-flash-lite",
+    "gemini-flash-lite-latest",
+    "gemini-3.5-flash-lite",
     "gemini-3.6-flash",
-    "gemini-2.5-flash",
-    "gemini-pro-latest",
+    "gemini-3.5-flash",
   ];
 
   const body = {
@@ -420,7 +419,14 @@ IMPORTANT: Output ONLY raw valid JSON matching the schema. No markdown wrapping 
         throw new Error(`Model ${model} returned empty content`);
       }
 
-      return JSON.parse(rawJson) as BlogPost;
+      let cleanJson = rawJson.trim();
+      if (cleanJson.startsWith("```json")) {
+        cleanJson = cleanJson.replace(/^```json\s*/i, "").replace(/\s*```$/, "");
+      } else if (cleanJson.startsWith("```")) {
+        cleanJson = cleanJson.replace(/^```\s*/, "").replace(/\s*```$/, "");
+      }
+
+      return JSON.parse(cleanJson) as BlogPost;
     } catch (e: any) {
       lastError = e;
       console.warn(`Model ${model} failed, trying next fallback model...`);

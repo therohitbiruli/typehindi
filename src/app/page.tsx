@@ -263,7 +263,7 @@ export default function Homepage() {
 
 
           {/* 1. ⌨️ SECTION: PRACTICE */}
-          <div id="practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#D9E1EC] dark:border-slate-800 relative overflow-hidden">
+          <section id="practice" aria-label="Hindi Typing Practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#D9E1EC] dark:border-slate-800 relative overflow-hidden scroll-mt-20">
              <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
              <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-6 flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
                <span className="w-2.5 h-6 rounded-full bg-primary-600"></span>
@@ -275,10 +275,10 @@ export default function Homepage() {
                  Launch Practice Hub ➔
                </Link>
              </div>
-          </div>
+          </section>
 
           {/* 2. 📚 SECTION: LEARN (Step by Step Hindi Typing Learning System) */}
-          <div id="learn" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-8 relative overflow-hidden">
+          <section id="learn" aria-label="Learn Hindi Typing" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-8 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
             <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-semibold mb-3">
@@ -481,44 +481,183 @@ export default function Homepage() {
                 <span className="group-hover:translate-x-1 transition-transform font-bold">→</span>
               </Link>
             </div>
-          </div>
+          </section>
 
-          {/* 🌟 SECTION: SHORTHAND FEATURE BANNER */}
-          <div id="shorthand" className="bg-gradient-to-r from-purple-50 via-white to-purple-50 dark:from-purple-950/30 dark:via-slate-900 dark:to-[#0F172A] rounded-[2rem] border border-purple-200 dark:border-purple-500/30 shadow-sm dark:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-8 space-y-5 relative overflow-hidden">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div className="space-y-2 max-w-2xl">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[11px] font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
-                  <span>✍️</span> New Section: English Pitman Stenography
-                </div>
-                <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
-                  Learn Shorthand on TypeHindi
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Learn shorthand from the basics, practice dictation, improve transcription and prepare for stenography exams.
-                </p>
+          {/* 🌟 SECTION: SHORTHAND */}
+          <section
+            id="shorthand"
+            aria-label="Learn Shorthand"
+            className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-8 relative overflow-hidden scroll-mt-20"
+          >
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl -z-10 pointer-events-none" />
+            
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-xs font-semibold mb-3">
+                <span>✎</span> SHORTHAND
               </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white flex items-center gap-3">
+                <span className="w-2.5 h-7 rounded-full bg-purple-500"></span>
+                Learn Shorthand
+              </h2>
+              <p className="text-slate-600 dark:text-gray-300 text-sm mt-2 max-w-3xl leading-relaxed">
+                Learn shorthand step by step, practice strokes and words, improve dictation and transcription, and prepare for stenographer examinations.
+              </p>
+            </div>
 
-              <div className="flex flex-wrap items-center gap-3 shrink-0">
-                <Link
-                  href="/shorthand"
-                  className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-md shadow-purple-900/30 transition-all flex items-center gap-1.5"
-                >
-                  <span>Learn Shorthand</span>
-                  <span>→</span>
-                </Link>
+            {/* 4 Feature Overview Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              
+              {/* Card 1: Learn Shorthand */}
+              <Link
+                href="/shorthand"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-purple-500/50 dark:hover:border-purple-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    📖
+                  </div>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
+                    Learn Shorthand
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
+                    Learn the fundamentals step by step.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-purple-600 dark:text-purple-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>Explore Lessons</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+              {/* Card 2: Stroke Practice */}
+              <Link
+                href="/shorthand/practice"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-purple-500/50 dark:hover:border-purple-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    ✍️
+                  </div>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
+                    Stroke Practice
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
+                    Practice shorthand strokes with guided exercises.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-purple-600 dark:text-purple-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>Practice Strokes</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+              {/* Card 3: Audio Dictation */}
+              <Link
+                href="/shorthand/dictation"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-purple-500/50 dark:hover:border-purple-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    🎙️
+                  </div>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
+                    Audio Dictation
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
+                    Listen to dictation and build shorthand speed.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-purple-600 dark:text-purple-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>Audio Player</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+              {/* Card 4: Stenography Tests */}
+              <Link
+                href="/shorthand/tests"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-purple-500/50 dark:hover:border-purple-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
+                    ⏱️
+                  </div>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1.5">
+                    Stenography Tests
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
+                    Practice timed dictation and transcription.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center text-xs font-semibold text-purple-600 dark:text-purple-400 group-hover:translate-x-0.5 transition-transform">
+                  <span>Speed Tests</span>
+                  <span className="ml-1">→</span>
+                </div>
+              </Link>
+
+            </div>
+
+            {/* Structured Shorthand Roadmap Indicator */}
+            <div className="rounded-2xl bg-[#EEF2F7] dark:bg-slate-950/60 border border-[#D9E1EC] dark:border-slate-800/80 p-5">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">
+                      Pitman Shorthand Progression
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 font-semibold border border-purple-200/50 dark:border-purple-800/50">
+                      Beginner ➔ Exam Ready
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs font-medium text-slate-700 dark:text-gray-300">
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Basic Strokes</span>
+                    <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Vowels & Diphthongs</span>
+                    <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Short Forms</span>
+                    <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Audio Dictation</span>
+                    <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-purple-600 text-white font-semibold shadow-sm">Steno Exam Sim</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 self-start lg:self-auto bg-white dark:bg-slate-900 px-3.5 py-2 rounded-xl border border-[#D9E1EC] dark:border-slate-800 shadow-sm">
+                  <span className="text-lg">🎯</span>
+                  <div className="text-left">
+                    <div className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold tracking-wider">Exam Speed</div>
+                    <div className="text-xs font-bold text-slate-800 dark:text-gray-200">80 - 120 WPM Ready</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left">
+                Complete stenographer preparation platform with audio dictation player and stroke exercises.
+              </p>
+              <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto justify-end">
                 <Link
                   href="/shorthand/dictation"
-                  className="px-5 py-2.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs border border-gray-300 dark:border-slate-700 transition-all flex items-center gap-1.5"
+                  className="w-full sm:w-auto px-5 py-3 rounded-xl border border-[#D9E1EC] dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm"
                 >
                   <span>Practice Dictation</span>
                   <span>→</span>
                 </Link>
+                <Link
+                  href="/shorthand"
+                  className="w-full sm:w-auto px-7 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm transition-all shadow-md shadow-purple-900/30 hover:shadow-purple-900/50 flex items-center justify-center gap-2 group flex-shrink-0"
+                >
+                  <span>Start Learning Shorthand</span>
+                  <span className="group-hover:translate-x-1 transition-transform font-bold">→</span>
+                </Link>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* 3. 🎮 SECTION: GAME */}
-          <div id="game" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden">
+          <section id="game" aria-label="Typing Word Games" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-purple-500"></span>
@@ -543,10 +682,10 @@ export default function Homepage() {
                 Play More Games ➔
               </Link>
             </div>
-          </div>
+          </section>
 
           {/* 4. ⏱️ SECTION: TEST */}
-          <div id="test" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden">
+          <section id="test" aria-label="Typing Test" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-amber-500"></span>
@@ -581,10 +720,11 @@ export default function Homepage() {
                 Launch Typing Test ➔
               </Link>
             </div>
-          </div>
+          </section>
 
           {/* 5. 🔍 SECTION: KEYBOARD */}
-          <div id="keyboard" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden">
+          <section id="keyboard-layout" aria-label="InScript Keyboard Layout" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
+            <span id="keyboard" className="scroll-mt-20" />
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-sky-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-sky-500"></span>
@@ -601,10 +741,10 @@ export default function Homepage() {
                 Full Layout Reference ➔
               </Link>
             </div>
-          </div>
+          </section>
 
           {/* 6. 🌐 SECTION: TRANSLATORS */}
-          <div id="translators" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden">
+          <section id="translators" aria-label="Regional Language Translators" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-violet-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-violet-500"></span>
@@ -630,10 +770,10 @@ export default function Homepage() {
                 View All Languages ➔
               </Link>
             </div>
-          </div>
+          </section>
 
           {/* 7. 📰 SECTION: BLOG */}
-          <div id="blog" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden">
+          <section id="blog" aria-label="Latest Typing and Exam Guides" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-slate-500"></span>
@@ -686,7 +826,7 @@ export default function Homepage() {
                 Browse All Articles ➔
               </Link>
             </div>
-          </div>
+          </section>
 
 
 

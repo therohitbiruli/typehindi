@@ -24,7 +24,7 @@ interface BlogPost {
 }
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: any): Promise<Response> {
     if (request.method !== "POST") {
       return new Response("TypeHindi Telegram Publisher Worker is Running.", { status: 200 });
     }
@@ -37,8 +37,6 @@ export default {
 
       const chatId = update.message.chat.id;
       const userId = String(update.message.from?.id || "");
-      const messageText = (update.message.text || update.message.caption || "").trim();
-      const document = update.message.document;
 
       // Security check: Only allow authorized user
       if (env.TELEGRAM_ALLOWED_USER_ID && userId !== env.TELEGRAM_ALLOWED_USER_ID) {
@@ -50,158 +48,184 @@ export default {
         return new Response("OK", { status: 200 });
       }
 
-      if (messageText === "/start" || messageText === "/help") {
-        const welcome =
-          `👋 *Welcome to TypeHindi Article Publisher!*\n\n` +
-          `You can send me any of the following:\n` +
-          `1. 📄 *A PDF file* (Official notification document)\n` +
-          `2. 🔗 *A Website link* (Official notification or news URL)\n` +
-          `3. ✍️ *Text prompt / notes* (Exam details and instructions)\n\n` +
-          `I will automatically:\n` +
-          `• Extract all information from your source\n` +
-          `• Write a complete 2,500+ word structured guide (Hindi + English)\n` +
-          `• Generate a bold 1200x630 banner image\n` +
-          `• Commit both to GitHub master to trigger live deployment\n` +
-          `• Request Google Search Console indexing`;
-        await sendTelegramMessage(env.TELEGRAM_BOT_TOKEN, chatId, welcome, "Markdown");
-        return new Response("OK", { status: 200 });
+      // Process in background with ctx.waitUntil so Telegram gets instant 200 OK
+      if (ctx && typeof ctx.waitUntil === "function") {
+        ctx.waitUntil(processTelegramUpdate(update, env));
+      } else {
+        await processTelegramUpdate(update, env);
       }
 
-      // Step 1: Detect Source Type (PDF, URL, or Text)
-      let sourcePrompt = messageText;
-      let pdfBase64: string | null = null;
+      // Return 200 OK immediately to prevent Telegram retries!
+      return new Response("OK", { status: 200 });
+    } catch (error: any) {
+      console.error("Webhook error:", error);
+      return new Response("OK", { status: 200 });
+    }
+  },
+};
 
-      const progressMsg = await sendTelegramMessage(
+async function processTelegramUpdate(update: any, env: Env): Promise<void> {
+  const chatId = update.message.chat.id;
+  const messageText = (update.message.text || update.message.caption || "").trim();
+  const document = update.message.document;
+
+  if (messageText === "/start" || messageText === "/help") {
+    const welcome =
+      `👋 *Welcome to TypeHindi Article Publisher!*\n\n` +
+      `You can send me any of the following:\n` +
+      `1. 📄 *A PDF file* (Official notification document)\n` +
+      `2. 🔗 *A Website link* (Official notification or news URL)\n` +
+      `3. ✍️ *Text prompt / notes* (Exam details and instructions)\n\n` +
+      `I will automatically:\n` +
+      `• Extract all information from your source\n` +
+      `• Write a complete 2,500+ word structured guide (Hindi + English)\n` +
+      `• Generate a bold 1200x630 banner image\n` +
+      `• Commit both to GitHub master to trigger live deployment\n` +
+      `• Request Google Search Console indexing`;
+    await sendTelegramMessage(env.TELEGRAM_BOT_TOKEN, chatId, welcome, "Markdown");
+    return;
+  }
+
+  let progressMsg: any = null;
+  try {
+    // Step 1: Detect Source Type (PDF, URL, or Text)
+    let sourcePrompt = messageText;
+    let pdfBase64: string | null = null;
+
+    progressMsg = await sendTelegramMessage(
+      env.TELEGRAM_BOT_TOKEN,
+      chatId,
+      `📥 *Received your request!*\nAnalyzing source input...`,
+      "Markdown"
+    );
+
+    if (document && (document.mime_type === "application/pdf" || document.file_name?.endsWith(".pdf"))) {
+      await editTelegramMessage(
         env.TELEGRAM_BOT_TOKEN,
         chatId,
-        `📥 *Received your request!*\nAnalyzing source input...`,
+        progressMsg.result.message_id,
+        `📄 *Downloading & reading PDF:* \`${escapeMarkdown(document.file_name || "Notification.pdf")}\`...`,
         "Markdown"
       );
-
-      if (document && document.mime_type === "application/pdf") {
+      pdfBase64 = await downloadTelegramFileBase64(env.TELEGRAM_BOT_TOKEN, document.file_id);
+      sourcePrompt = `[PDF Document Attached: ${document.file_name || "Notification"}]\nInstructions/Notes from user: ${messageText || "Generate full structured recruitment guide from this PDF."}`;
+    } else {
+      const urlMatch = messageText.match(/https?:\/\/[^\s]+/);
+      if (urlMatch) {
+        const targetUrl = urlMatch[0];
         await editTelegramMessage(
           env.TELEGRAM_BOT_TOKEN,
           chatId,
           progressMsg.result.message_id,
-          `📄 *Downloading & reading PDF notification:* \`${escapeMarkdown(document.file_name || "document.pdf")}\`...`,
+          `🔗 *Fetching website content from:* \`${escapeMarkdown(targetUrl)}\`...`,
           "Markdown"
         );
-        pdfBase64 = await downloadTelegramFileBase64(env.TELEGRAM_BOT_TOKEN, document.file_id);
-        sourcePrompt = `[PDF Document Attached: ${document.file_name || "Notification"}]\nInstructions/Notes from user: ${messageText || "Generate full structured recruitment guide from this PDF."}`;
-      } else {
-        const urlMatch = messageText.match(/https?:\/\/[^\s]+/);
-        if (urlMatch) {
-          const targetUrl = urlMatch[0];
-          await editTelegramMessage(
-            env.TELEGRAM_BOT_TOKEN,
-            chatId,
-            progressMsg.result.message_id,
-            `🔗 *Fetching website content from:* \`${escapeMarkdown(targetUrl)}\`...`,
-            "Markdown"
-          );
-          try {
-            const pageText = await fetchWebpageContent(targetUrl);
-            sourcePrompt = `Source Webpage Content (${targetUrl}):\n${pageText.slice(0, 25000)}\n\nUser Instructions: ${messageText}`;
-          } catch (e: any) {
-            sourcePrompt = `Source URL: ${targetUrl} (Could not fetch directly: ${e.message}). Please generate based on: ${messageText}`;
-          }
-        }
-      }
-
-      // Step 2: Call Gemini API with strict Article Structure
-      await editTelegramMessage(
-        env.TELEGRAM_BOT_TOKEN,
-        chatId,
-        progressMsg.result.message_id,
-        `⏳ *Generating comprehensive bilingual article with Gemini 3.6 Flash...*\nFollowing the official recruitment structure...`,
-        "Markdown"
-      );
-
-      const blogPost = await generateStructuredArticleWithGemini(env.GEMINI_API_KEY, sourcePrompt, pdfBase64);
-
-      // Step 3: Generate Bold Banner Image (SVG)
-      await editTelegramMessage(
-        env.TELEGRAM_BOT_TOKEN,
-        chatId,
-        progressMsg.result.message_id,
-        `🎨 *Creating bold featured banner image for:* \`${escapeMarkdown(blogPost.titleEn)}\`...`,
-        "Markdown"
-      );
-
-      const bannerSvg = generateBannerSvg(
-        blogPost.titleEn,
-        blogPost.organization || "Official Recruitment 2026",
-        blogPost.totalVacancies || "Check Notification"
-      );
-
-      // Prepend the image to content markdown
-      const imageTag = `![${blogPost.titleEn}](/images/blogs/${blogPost.slug}.svg)\n\n`;
-      blogPost.contentEn = imageTag + blogPost.contentEn;
-      blogPost.content = imageTag + blogPost.content;
-
-      // Step 4: Commit Image & Article to GitHub
-      await editTelegramMessage(
-        env.TELEGRAM_BOT_TOKEN,
-        chatId,
-        progressMsg.result.message_id,
-        `📦 *Committing article & banner image to GitHub master...*`,
-        "Markdown"
-      );
-
-      const repo = env.GITHUB_REPO || "therohitbiruli/typehindi";
-      // 4a: Commit image
-      await commitFileToGitHub(
-        env.GITHUB_TOKEN,
-        repo,
-        `public/images/blogs/${blogPost.slug}.svg`,
-        bannerSvg,
-        `feat(blog): add banner image for ${blogPost.titleEn}`,
-        false
-      );
-
-      // 4b: Commit blogs.ts
-      const commitResult = await commitBlogToGitHub(env.GITHUB_TOKEN, repo, blogPost);
-
-      // Step 5: Request Google Search Console Indexing
-      const liveUrl = `https://typehindi.in/blog/${blogPost.slug}`;
-      let indexingResult = "Skipped (No Service Account Key configured)";
-
-      if (env.GOOGLE_SERVICE_ACCOUNT_JSON) {
         try {
-          await editTelegramMessage(
-            env.TELEGRAM_BOT_TOKEN,
-            chatId,
-            progressMsg.result.message_id,
-            `📦 *Pushed to GitHub: \`${commitResult.sha.slice(0, 7)}\`*\n\n🚀 *Notifying Google Search Console for indexing...*`,
-            "Markdown"
-          );
-          await requestGoogleIndexing(env.GOOGLE_SERVICE_ACCOUNT_JSON, liveUrl);
-          indexingResult = "✅ Successfully queued for Google Indexing (HTTP 200)";
-        } catch (err: any) {
-          indexingResult = `⚠️ Indexing request error: ${err.message}`;
+          const pageText = await fetchWebpageContent(targetUrl);
+          sourcePrompt = `Source Webpage Content (${targetUrl}):\n${pageText.slice(0, 25000)}\n\nUser Instructions: ${messageText}`;
+        } catch (e: any) {
+          sourcePrompt = `Source URL: ${targetUrl} (Could not fetch directly: ${e.message}). Please generate based on: ${messageText}`;
         }
       }
-
-      // Step 6: Send Final Completion Card
-      const report =
-        `🎉 *Article Successfully Published!*\n\n` +
-        `📰 *Title (EN):* ${escapeMarkdown(blogPost.titleEn)}\n` +
-        `🇮🇳 *Title (HI):* ${escapeMarkdown(blogPost.title)}\n` +
-        `📂 *Category:* ${blogPost.category}\n` +
-        `🖼️ *Banner Image:* Generated with Bold Typography\n` +
-        `🔗 *Live URL:* [${liveUrl}](${liveUrl})\n` +
-        `📦 *GitHub Commit:* \`${commitResult.sha.slice(0, 7)}\`\n` +
-        `🔍 *Google Indexing:* ${indexingResult}\n\n` +
-        `_Auto-deployment is in progress on your hosting provider._`;
-
-      await sendTelegramMessage(env.TELEGRAM_BOT_TOKEN, chatId, report, "Markdown");
-      return new Response("OK", { status: 200 });
-    } catch (error: any) {
-      console.error("Publisher error:", error);
-      return new Response(`Error: ${error.message}`, { status: 500 });
     }
-  },
-};
+
+    // Step 2: Call Gemini API with strict Article Structure
+    await editTelegramMessage(
+      env.TELEGRAM_BOT_TOKEN,
+      chatId,
+      progressMsg.result.message_id,
+      `⏳ *Generating comprehensive bilingual article with Gemini 3.6 Flash...*\nFollowing the official recruitment structure (~25-35s)...`,
+      "Markdown"
+    );
+
+    const blogPost = await generateStructuredArticleWithGemini(env.GEMINI_API_KEY, sourcePrompt, pdfBase64);
+
+    // Step 3: Generate Bold Banner Image (SVG)
+    await editTelegramMessage(
+      env.TELEGRAM_BOT_TOKEN,
+      chatId,
+      progressMsg.result.message_id,
+      `🎨 *Creating bold featured banner image for:* \`${escapeMarkdown(blogPost.titleEn)}\`...`,
+      "Markdown"
+    );
+
+    const bannerSvg = generateBannerSvg(
+      blogPost.titleEn,
+      blogPost.organization || "Official Recruitment 2026",
+      blogPost.totalVacancies || "Check Notification"
+    );
+
+    // Prepend the image to content markdown
+    const imageTag = `![${blogPost.titleEn}](/images/blogs/${blogPost.slug}.svg)\n\n`;
+    blogPost.contentEn = imageTag + blogPost.contentEn;
+    blogPost.content = imageTag + blogPost.content;
+
+    // Step 4: Commit Image & Article to GitHub
+    await editTelegramMessage(
+      env.TELEGRAM_BOT_TOKEN,
+      chatId,
+      progressMsg.result.message_id,
+      `📦 *Committing article & banner image to GitHub master...*`,
+      "Markdown"
+    );
+
+    const repo = env.GITHUB_REPO || "therohitbiruli/typehindi";
+    // 4a: Commit image
+    await commitFileToGitHub(
+      env.GITHUB_TOKEN,
+      repo,
+      `public/images/blogs/${blogPost.slug}.svg`,
+      bannerSvg,
+      `feat(blog): add banner image for ${blogPost.titleEn}`,
+      false
+    );
+
+    // 4b: Commit blogs.ts
+    const commitResult = await commitBlogToGitHub(env.GITHUB_TOKEN, repo, blogPost);
+
+    // Step 5: Request Google Search Console Indexing
+    const liveUrl = `https://typehindi.in/blog/${blogPost.slug}`;
+    let indexingResult = "Skipped (No Service Account Key configured)";
+
+    if (env.GOOGLE_SERVICE_ACCOUNT_JSON) {
+      try {
+        await editTelegramMessage(
+          env.TELEGRAM_BOT_TOKEN,
+          chatId,
+          progressMsg.result.message_id,
+          `📦 *Pushed to GitHub: \`${commitResult.sha.slice(0, 7)}\`*\n\n🚀 *Notifying Google Search Console for indexing...*`,
+          "Markdown"
+        );
+        await requestGoogleIndexing(env.GOOGLE_SERVICE_ACCOUNT_JSON, liveUrl);
+        indexingResult = "✅ Successfully queued for Google Indexing (HTTP 200)";
+      } catch (err: any) {
+        indexingResult = `⚠️ Indexing request error: ${err.message}`;
+      }
+    }
+
+    // Step 6: Send Final Completion Card
+    const report =
+      `🎉 *Article Successfully Published!*\n\n` +
+      `📰 *Title (EN):* ${escapeMarkdown(blogPost.titleEn)}\n` +
+      `🇮🇳 *Title (HI):* ${escapeMarkdown(blogPost.title)}\n` +
+      `📂 *Category:* ${blogPost.category}\n` +
+      `🖼️ *Banner Image:* Generated with Bold Typography\n` +
+      `🔗 *Live URL:* [${liveUrl}](${liveUrl})\n` +
+      `📦 *GitHub Commit:* \`${commitResult.sha.slice(0, 7)}\`\n` +
+      `🔍 *Google Indexing:* ${indexingResult}\n\n` +
+      `_Auto-deployment is in progress on your hosting provider._`;
+
+    await sendTelegramMessage(env.TELEGRAM_BOT_TOKEN, chatId, report, "Markdown");
+  } catch (error: any) {
+    console.error("Processing error:", error);
+    const errText = `❌ *Publication Error:*\n${escapeMarkdown(error.message || "Unknown error")}`;
+    if (progressMsg?.result?.message_id) {
+      await editTelegramMessage(env.TELEGRAM_BOT_TOKEN, chatId, progressMsg.result.message_id, errText, "Markdown");
+    } else {
+      await sendTelegramMessage(env.TELEGRAM_BOT_TOKEN, chatId, errText, "Markdown");
+    }
+  }
+}
 
 // ─────────────────────────────────────────────────────────────
 // 1. GEMINI CONTENT GENERATION WITH USER'S EXACT STRUCTURE
@@ -640,10 +664,12 @@ async function downloadTelegramFileBase64(token: string, fileId: string): Promis
   }
 
   const buffer = await res.arrayBuffer();
-  let binary = "";
   const bytes = new Uint8Array(buffer);
-  for (let i = 0; i < bytes.byteLength; i++) {
-    binary += String.fromCharCode(bytes[i]);
+  let binary = "";
+  const chunkSize = 8192;
+  for (let i = 0; i < bytes.byteLength; i += chunkSize) {
+    const chunk = bytes.subarray(i, Math.min(i + chunkSize, bytes.byteLength));
+    binary += String.fromCharCode.apply(null, chunk as any);
   }
   return btoa(binary);
 }

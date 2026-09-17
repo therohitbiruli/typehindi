@@ -375,7 +375,15 @@ IMPORTANT: Output ONLY raw valid JSON matching the schema. No markdown wrapping 
   parts.push({ text: `Source Information & Prompt:\n${promptText}` });
   contents.push({ role: "user", parts });
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;
+  const CANDIDATE_MODELS = [
+    "gemini-flash-latest",
+    "gemini-3.8-flash",
+    "gemini-3.7-flash",
+    "gemini-3.5-flash",
+    "gemini-3.6-flash",
+    "gemini-2.5-flash",
+    "gemini-pro-latest",
+  ];
 
   const body = {
     contents,
@@ -386,24 +394,40 @@ IMPORTANT: Output ONLY raw valid JSON matching the schema. No markdown wrapping 
     },
   };
 
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
+  let lastError: Error | null = null;
+  for (const model of CANDIDATE_MODELS) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
 
-  if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(`Gemini API error (${res.status}): ${errText}`);
+      if (!res.ok) {
+        const errText = await res.text();
+        console.warn(`Model ${model} returned HTTP ${res.status}: ${errText}`);
+        if (res.status === 503 || res.status === 429 || res.status === 404) {
+          lastError = new Error(`Model ${model} (${res.status}): ${errText}`);
+          continue; // Try next fallback model automatically
+        }
+        throw new Error(`Gemini API error (${res.status}): ${errText}`);
+      }
+
+      const data = (await res.json()) as any;
+      const rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!rawJson) {
+        throw new Error(`Model ${model} returned empty content`);
+      }
+
+      return JSON.parse(rawJson) as BlogPost;
+    } catch (e: any) {
+      lastError = e;
+      console.warn(`Model ${model} failed, trying next fallback model...`);
+    }
   }
 
-  const data = (await res.json()) as any;
-  const rawJson = data.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!rawJson) {
-    throw new Error("Gemini returned empty response");
-  }
-
-  return JSON.parse(rawJson) as BlogPost;
+  throw lastError || new Error("All candidate Gemini models failed");
 }
 
 // ─────────────────────────────────────────────────────────────

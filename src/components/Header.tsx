@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useCallback, useEffect } from "react";
-import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -116,15 +115,10 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            {/* Theme Toggle */}
-            <div className="ml-1.5">
-              <ThemeToggle />
-            </div>
           </nav>
 
-          {/* Mobile Menu Button + Theme Toggle */}
-          <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle />
+          {/* Mobile Menu Button */}
+          <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
               className="rounded-lg p-2 text-slate-400 hover:bg-slate-800 hover:text-slate-100"

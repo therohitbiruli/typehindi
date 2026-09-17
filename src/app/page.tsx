@@ -29,17 +29,14 @@ export default function Homepage() {
   const previewLanguages = LANGUAGES.slice(0, 8);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-950">
+    <div className="flex flex-col min-h-screen bg-slate-950">
       {/* 🌟 Premium Hero Section */}
-      <section className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white pt-20 pb-32 border-b border-gray-100 dark:border-slate-900 relative overflow-hidden">
-        {/* Blurred background image - only visible in dark mode where it blends with deep navy */}
+      <section className="bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
+        {/* Blurred background image blending with deep navy */}
         <div 
-          className="hidden dark:block absolute inset-0 bg-cover bg-center opacity-20 blur-[6px] scale-105 pointer-events-none"
+          className="absolute inset-0 bg-cover bg-center opacity-25 blur-[6px] scale-105 pointer-events-none"
           style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
         ></div>
-
-        {/* Clean, subtle soft gradient for light mode */}
-        <div className="dark:hidden absolute inset-0 bg-gradient-to-b from-indigo-50/40 via-white to-white pointer-events-none"></div>
 
         {/* Subtle grid background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>

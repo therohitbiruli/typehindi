@@ -3,16 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  /* ── Light mode (default) ── */
-  :root {
-    --background: 255 255 255;     /* #FFFFFF — pure white canvas */
-    --foreground: 15 23 42;        /* #0F172A — Slate-900 */
-    --card: 255 255 255;           /* #FFFFFF */
-    --card-border: 229 231 235;    /* #E5E7EB — Gray-200 */
-    --muted: 100 116 139;          /* #64748B — Slate-500 */
-  }
-
-  /* ── Dark mode ── */
+  /* ── Dark theme (Permanent default) ── */
+  :root,
   .dark {
     --background: 10 15 29;        /* #0A0F1D — Deep dark navy */
     --foreground: 241 245 249;     /* #F1F5F9 — Slate-100 */

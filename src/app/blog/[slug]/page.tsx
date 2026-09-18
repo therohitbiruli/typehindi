@@ -417,8 +417,17 @@ function formatContent(content: string) {
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
   // Convert markdown lists to styled <li> elements
-  html = html.replace(/(?:^|\n)- (.*)/g, '<li class="ml-6 list-disc mb-1">$1</li>');
-  html = html.replace(/(?:^|\n)\d+\. (.*)/g, '<li class="ml-6 list-decimal mb-1">$1</li>');
+  // Support both - and * for unordered lists
+  html = html.replace(/(?:^|\n)[*-] (.*)/g, '\n<li class="ml-6 list-disc mb-1" data-list="ul">$1</li>');
+  html = html.replace(/(?:^|\n)\d+\. (.*)/g, '\n<li class="ml-6 list-decimal mb-1" data-list="ol">$1</li>');
+
+  // Wrap consecutive list items in their respective container tags
+  html = html.replace(/(<li [^>]*data-list="ul"[^>]*>.*?<\/li>(?:\n)*)+/g, (match) => {
+    return '\n<ul class="mb-4 space-y-1">\n' + match.replace(/data-list="ul"/g, '') + '</ul>\n';
+  });
+  html = html.replace(/(<li [^>]*data-list="ol"[^>]*>.*?<\/li>(?:\n)*)+/g, (match) => {
+    return '\n<ol class="mb-4 space-y-1">\n' + match.replace(/data-list="ol"/g, '') + '</ol>\n';
+  });
 
   // Convert double newlines to paragraphs
   html = html.replace(/\n\n/g, '</p><p class="mb-4">');
@@ -427,6 +436,11 @@ function formatContent(content: string) {
   html = html.replace(/<\/p><p class="mb-4"><figure/g, '<figure');
   html = html.replace(/<\/figure><\/p>/g, '</figure>');
   html = html.replace(/<\/p><p class="mb-4"><h/g, '<h');
+  html = html.replace(/<\/p><p class="mb-4"><ul/g, '<ul');
+  html = html.replace(/<\/ul><\/p>/g, '</ul>');
+  html = html.replace(/<\/p><p class="mb-4"><ol/g, '<ol');
+  html = html.replace(/<\/ol><\/p>/g, '</ol>');
+  html = html.replace(/<\/li><\/p><p class="mb-4"><li/g, '</li>\n<li');
   html = html.replace(/<\/p><p class="mb-4"><div class="overflow-x-auto/g, '<div class="overflow-x-auto');
   html = html.replace(/<\/table><\/div><\/p>/g, '</table></div>');
   html = html.replace(/<\/p><p class="mb-4"><div class="my-6/g, '<div class="my-6');

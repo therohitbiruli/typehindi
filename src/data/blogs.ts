@@ -17,7 +17,7 @@ export function getBlogImage(blog: BlogPost): string {
   if (match && match[1]) {
     return match[1];
   }
-  return "/images/government-job-typing-prep.jpg";
+  return `/images/${blog.slug}.jpg`;
 }
 
 export const blogs: BlogPost[] = [

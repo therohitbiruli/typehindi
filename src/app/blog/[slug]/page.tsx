@@ -121,10 +121,21 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
             </div>
           )}
 
-          <div 
-            className="prose prose-lg dark:prose-invert !max-w-none w-full prose-headings:font-bold prose-p:leading-relaxed prose-a:text-primary-600"
-            dangerouslySetInnerHTML={{ __html: formatContent(content) }}
-          />
+          <div className="mb-8 relative aspect-[21/9] md:aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800">
+              <Image 
+                src={getBlogImage(blog)} 
+                alt={title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            
+            <div 
+              className="prose prose-lg dark:prose-invert !max-w-none w-full prose-headings:font-bold prose-p:leading-relaxed prose-a:text-primary-600"
+              dangerouslySetInnerHTML={{ __html: formatContent(content) }}
+            />
         </div>
 
         {/* Internal Linking: Interactive Practice Tools for Exam Preparation */}

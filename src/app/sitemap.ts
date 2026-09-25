@@ -52,6 +52,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/keyboard-layout/punjabi',
     '/keyboard-layout/tamil',
     '/keyboard-layout/bengali',
+    '/mock-tests',
+    '/mock-tests/ssc-cgl',
+    '/mock-tests/ssc-chsl',
+    '/mock-tests/ssc-cpo',
+    '/mock-tests/ssc-gd',
+    '/mock-tests/rrb-ntpc',
+    ...['ssc-cgl', 'ssc-chsl', 'ssc-cpo', 'ssc-gd', 'rrb-ntpc'].flatMap(examId => 
+      Array.from({length: 10}).map((_, i) => `/mock-tests/${examId}/test-${i+1}`)
+    ),
+    '/pyq',
     ...blogs.map(blog => `/blog/${blog.slug}`),
   ].map((route) => ({
     url: `${baseUrl}${route}`,

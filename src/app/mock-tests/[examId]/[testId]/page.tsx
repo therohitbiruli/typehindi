@@ -35,8 +35,9 @@ export async function generateMetadata({ params }: Props) {
   const testNum = testId.split('-')[1] || "1";
   
   return {
-    title: `${name} Mock Test ${testNum} | TypeHindi`,
-    description: `Take ${name} full-length Mock Test ${testNum} with real PYQs.`,
+    title: `${name} Mock Test ${testNum} Free CBT | TypeHindi`,
+    description: `Take ${name} full-length Mock Test ${testNum} featuring 100 actual previous year questions. Interactive CBT format with instant scoring.`,
+    keywords: [`${name.toLowerCase()} mock test ${testNum}`, `free ${name.toLowerCase()} mock test`, `mock test railway`, `ssc cgl mock tests`, `ssc gd mock tests`, `${name.toLowerCase()} online cbt test`],
   };
 }
 

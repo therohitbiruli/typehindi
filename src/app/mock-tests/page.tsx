@@ -3,7 +3,8 @@ import { Breadcrumb } from "../../components/Breadcrumb";
 
 export const metadata = {
   title: "Free CBT Mock Tests for SSC & Railway Exams | TypeHindi",
-  description: "Take full-length mock tests for SSC CGL, CHSL, CPO, GD, and RRB NTPC with a real CBT-like interface.",
+  description: "Take full-length mock tests for SSC CGL, CHSL, CPO, GD, and RRB NTPC with a real CBT-like interface. Practice exactly like the real exam.",
+  keywords: ["mock test railway", "ssc cgl mock tests", "ssc gd mock tests", "ssc chsl mock test", "ssc cpo mock test", "free cbt mock test", "rrb ntpc mock test free", "online mock test hindi english", "railway cbt mock test", "previous year mock test"],
 };
 
 const EXAMS = [

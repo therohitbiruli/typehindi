@@ -19,8 +19,9 @@ export async function generateMetadata({ params }: Props) {
   const name = EXAM_NAMES[examId];
   if (!name) return { title: "Not Found" };
   return {
-    title: `${name} Mock Tests | TypeHindi`,
-    description: `Practice free full-length mock tests for ${name}.`,
+    title: `${name} Mock Tests Free CBT | TypeHindi`,
+    description: `Practice free full-length CBT mock tests for ${name}. Includes actual previous year questions, timed interface, and detailed score tracking.`,
+    keywords: [`${name.toLowerCase()} mock tests`, `free ${name.toLowerCase()} mock test`, `mock test ${name.toLowerCase()}`, `mock test railway`, `ssc cgl mock tests`, `ssc gd mock tests`, `${name.toLowerCase()} previous year mock test`],
   };
 }
 

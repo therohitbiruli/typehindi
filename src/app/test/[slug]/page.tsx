@@ -71,7 +71,7 @@ export default async function LanguageTestPage({ params }: Props) {
   return (
     <div className="container-main py-6">
       <script
-        type="application/ld+json"
+        type="application/ld+json" suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 

@@ -141,12 +141,28 @@ export default function Homepage() {
           </Link>
 
           <Link href="/blog" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-slate-500/50 dark:hover:border-slate-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
-              📰
-            </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Blog (Articles)</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Latest news, government exam patterns, and typing tips</p>
-          </Link>
+              <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                📰
+              </div>
+              <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Blog (Articles)</h4>
+              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Latest news, government exam patterns, and typing tips</p>
+            </Link>
+
+            <Link href="/mock-tests" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+              <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                🎯
+              </div>
+              <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Mock Tests</h4>
+              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Take full-length CBT mock tests for SSC, Railways, and more</p>
+            </Link>
+
+            <Link href="/pyq" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-amber-500/50 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+              <div className="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                📝
+              </div>
+              <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">PYQs (Previous Years)</h4>
+              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Download previous year question papers for SSC CGL and more</p>
+            </Link>
 
         </div>
       </div>

@@ -423,6 +423,7 @@ function formatContent(content: string) {
   let html = content
     .replace(/### (.*)/g, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
     .replace(/## (.*)/g, '<h2 class="text-3xl font-bold mt-10 mb-6">$1</h2>')
+    .replace(/!pdf\[(.*?)\]\((.*?)\)/g, '<div class="my-8"><div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-t-xl border border-slate-200 dark:border-slate-700 flex justify-between items-center"><span class="font-bold text-slate-700 dark:text-slate-300">$1</span><a href="$2" target="_blank" class="text-primary-600 font-semibold text-sm flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>Download</a></div><iframe src="https://docs.google.com/viewer?url=$2&embedded=true" class="w-full h-[600px] md:h-[800px] border border-t-0 border-slate-200 dark:border-slate-700 rounded-b-xl" frameborder="0"></iframe></div>')
     .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8"><img src="$2" alt="$1" class="w-full rounded-xl shadow-md border border-gray-200 dark:border-gray-800" /><figcaption class="text-center text-sm text-gray-500 mt-3">$1</figcaption></figure>')
     .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary-600 dark:text-primary-400 font-semibold underline underline-offset-2 hover:text-primary-500 dark:hover:text-primary-300 transition-colors">$1</a>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -454,6 +455,7 @@ function formatContent(content: string) {
   html = html.replace(/<\/li><\/p><p class="mb-4"><li/g, '</li>\n<li');
   html = html.replace(/<\/p><p class="mb-4"><div class="overflow-x-auto/g, '<div class="overflow-x-auto');
   html = html.replace(/<\/table><\/div><\/p>/g, '</table></div>');
+  html = html.replace(/<\/p><p class="mb-4"><div class="my-8/g, '<div class="my-8');
   html = html.replace(/<\/p><p class="mb-4"><div class="my-6/g, '<div class="my-6');
   html = html.replace(/<\/div><\/p>/g, '</div>');
 

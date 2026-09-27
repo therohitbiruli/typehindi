@@ -24,6 +24,7 @@ export function PYQTestEngine({ examName, shiftName, questions }: Props) {
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes default
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
 
   // Initialize states
   useEffect(() => {
@@ -41,7 +42,7 @@ export function PYQTestEngine({ examName, shiftName, questions }: Props) {
 
   // Timer
   useEffect(() => {
-    if (submitted || questions.length === 0) return;
+    if (!hasStarted || submitted || questions.length === 0) return;
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
@@ -53,7 +54,7 @@ export function PYQTestEngine({ examName, shiftName, questions }: Props) {
       });
     }, 1000);
     return () => clearInterval(timer);
-  }, [submitted, questions]);
+  }, [hasStarted, submitted, questions]);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -211,8 +212,56 @@ export function PYQTestEngine({ examName, shiftName, questions }: Props) {
   const currentState = states[currentQ.id] || { selectedOption: null, status: "unvisited" };
 
   return (
-    <div ref={containerRef} className={`flex flex-col lg:flex-row gap-6 ${isFullscreen ? 'p-6 bg-slate-50 dark:bg-[#0f172a] h-screen w-screen overflow-y-auto' : ''}`}>
-      {/* Main Question Area */}
+    <div ref={containerRef} className={`${hasStarted && isFullscreen ? 'p-6 bg-slate-50 dark:bg-[#0f172a] h-screen w-screen overflow-y-auto' : ''}`}>
+      {!hasStarted ? (
+        <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 shadow-sm max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-6 text-center">Instructions</h2>
+          <div className="space-y-6 text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">
+            <div>
+              <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-2">Please read the following instructions carefully:</h3>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Total duration of this mock test is <strong>{questions.length > 50 ? '60' : '30'} minutes</strong>.</li>
+                <li>The clock will be set at the server. The countdown timer in the top right corner of the screen will display the remaining time available for you to complete the examination.</li>
+                <li>When the timer reaches zero, the examination will end by itself. You will not be required to end or submit your examination.</li>
+                <li>Each question carries <strong>equal positive marks</strong>.</li>
+                <li>There is a <strong>negative marking</strong> for each wrong answer as per the official exam pattern. No marks will be deducted for unanswered questions.</li>
+              </ol>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-2">Navigating & Answering a Question:</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li>To select your answer, click on the button of one of the options.</li>
+                <li>To save your answer, you MUST click on the <strong>Save & Next</strong> button.</li>
+                <li>To mark the question for review, click on the <strong>Mark for Review</strong> button.</li>
+                <li>To change your answer, simply click on another desired option button.</li>
+                <li>To deselect your chosen answer, click on the <strong>Clear</strong> button.</li>
+              </ul>
+            </div>
+            <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl border border-amber-200 dark:border-amber-800/50">
+              <p className="font-bold text-amber-800 dark:text-amber-400 mb-1">Important Note</p>
+              <p className="text-amber-700 dark:text-amber-500 text-sm">For the best experience mimicking the real CBT exam, clicking 'Start Test' will automatically enter Full Screen mode. Please do not refresh the page during the test.</p>
+            </div>
+          </div>
+          
+          <div className="mt-10 flex justify-center border-t border-slate-100 dark:border-slate-800 pt-8">
+            <button 
+              onClick={() => {
+                setHasStarted(true);
+                if (!document.fullscreenElement && containerRef.current) {
+                  containerRef.current.requestFullscreen().catch((err) => {
+                    console.error("Error attempting to enable full-screen mode:", err.message);
+                  });
+                }
+              }} 
+              className="btn-primary px-10 py-4 rounded-2xl font-black text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+            >
+              Start Test
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="flex flex-col lg:flex-row gap-6">
+          {/* Main Question Area */}
       <div className="flex-grow bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm flex flex-col">
         {/* Header */}
         <div className="flex justify-between items-center p-5 border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/30">
@@ -342,6 +391,8 @@ export function PYQTestEngine({ examName, shiftName, questions }: Props) {
           Submit Test
         </button>
       </div>
+      </div>
+      )}
     </div>
   );
 }

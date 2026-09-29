@@ -936,7 +936,7 @@ export default function Homepage() {
                   Start typing in Hindi on your computer without installing any third-party software. By reading this step-by-step guide, you can enable the default InScript keyboard in your operating system settings in just a few minutes.
                 </p>
                 <Link 
-                  href="/blog/setting-up-hindi-inscript-windows-mac" 
+                  href="/learn/hindi-typing" 
                   className="inline-flex items-center text-primary-600 dark:text-primary-400 font-bold text-sm hover:underline w-fit"
                 >
                   Read the Full Step-by-Step Guide <span className="ml-1">→</span>

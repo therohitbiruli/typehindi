@@ -13,9 +13,29 @@ export async function generateMetadata({ params }: Props) {
   const paper = getAllPapers().find((p) => p.slug === slug);
   if (!paper) return { title: "Not Found" };
 
+  const examName = paper.examId.toUpperCase().replace('-', ' ');
+  const title = `${examName} PYQ ${paper.year} | ${paper.tier} Previous Year Question Paper Online | TypeHindi`;
+  const description = `Practice the official ${examName} PYQ ${paper.year} online. Attempt ${paper.title} real exam questions, download PDF, and check detailed solutions for all shifts.`;
+
   return {
-    title: `${paper.title} Online Practice | TypeHindi`,
-    description: paper.description,
+    title,
+    description,
+    keywords: [
+      `${examName} PYQ ${paper.year}`,
+      `${examName} Previous Year Question Paper ${paper.year}`,
+      `${examName} ${paper.year} PDF download`,
+      `${examName} ${paper.tier} PYQ`,
+      `${paper.title}`,
+      `TypeHindi PYQ`
+    ],
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+    },
+    alternates: {
+      canonical: `https://typehindi.in/pyq/${slug}`,
+    }
   };
 }
 
@@ -35,8 +55,36 @@ export default async function PyqDetailPage({ params }: Props) {
 
   const subjects = getUniqueSubjectsForPaper(paper);
 
+    const examName = paper.examId.toUpperCase().replace('-', ' ');
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `What is the ${examName} PYQ ${paper.year}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `The ${examName} PYQ ${paper.year} is the official previous year question paper for the ${paper.year} ${examName} ${paper.tier} examination. Practicing these questions helps candidates understand the exam pattern and improve time management.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Can I practice the ${examName} Previous Year Question Paper ${paper.year} online?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yes, you can attempt all shifts of the ${examName} ${paper.year} PYQ online in a real CBT simulated environment on TypeHindi, complete with section-wise analysis and solutions.`
+        }
+      }
+    ]
+  };
+
   return (
     <div className="container-main py-8 min-h-[70vh]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -65,6 +113,7 @@ export default async function PyqDetailPage({ params }: Props) {
             </div>
 
             <h1 className="text-3xl md:text-5xl font-black mb-6 leading-tight text-slate-900 dark:text-white">
+              <span className="block text-xl md:text-2xl text-emerald-600 dark:text-emerald-400 mb-2">{examName} PYQ {paper.year}</span>
               {paper.title}
             </h1>
             

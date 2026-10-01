@@ -1,3 +1,4 @@
+import { pyqPapers } from '../data/pyqStore';
 import { MetadataRoute } from 'next';
 import { blogs } from '../data/blogs';
 
@@ -61,7 +62,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...['ssc-cgl', 'ssc-chsl', 'ssc-cpo', 'ssc-gd', 'rrb-ntpc'].flatMap(examId => 
       Array.from({length: 10}).map((_, i) => `/mock-tests/${examId}/test-${i+1}`)
     ),
-    '/pyq',
+        '/pyq',
+    ...pyqPapers.map(paper => `/pyq/${paper.slug}`),
     ...blogs.map(blog => `/blog/${blog.slug}`),
   ].map((route) => ({
     url: `${baseUrl}${route}`,

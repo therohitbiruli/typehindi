@@ -3,8 +3,21 @@ import { getAllExams, getAllPapers } from "../../data/pyqApi";
 import { Breadcrumb } from "../../components/Breadcrumb";
 
 export const metadata = {
-  title: "Previous Year Question Papers (PYQs) Online Practice | TypeHindi",
-  description: "Practice previous year exam questions online with answers, explanations, subject-wise practice and performance analysis.",
+  title: "SSC CGL, CPO, CHSL & RRB NTPC Previous Year Question Papers (PYQ) | TypeHindi",
+  description: "Practice SSC CPO PYQ, SSC CGL PYQ, SSC CHSL PYQ, SSC GD PYQ and RRB NTPC previous year exam question papers online. Chapter-wise and full mock tests with solutions.",
+  keywords: [
+    "SSC CPO PYQ",
+    "SSC CGL PYQ",
+    "SSC CHSL PYQ",
+    "SSC GD PYQ",
+    "RRB NTPC PYQ",
+    "SSC CPO Previous Year Question Paper",
+    "Previous Year Question Papers Online",
+    "TypeHindi PYQ"
+  ],
+  alternates: {
+    canonical: "https://typehindi.in/pyq",
+  }
 };
 
 export default function PyqHubPage() {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useCallback, useEffect } from "react";
 
 const navItems = [
@@ -19,6 +19,7 @@ const navItems = [
 
 export function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(pathname);
 
@@ -154,10 +155,22 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md shadow-lg">
       <div className="container-main">
         <div className="flex h-14 items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-2"
+          <div className="flex items-center">
+            {pathname !== "/" && (
+              <button
+                onClick={() => router.back()}
+                className="mr-2 sm:mr-4 flex h-9 w-9 items-center justify-center rounded-full bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white transition-all shadow-sm"
+                aria-label="Go back"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+              </button>
+            )}
+            {/* Logo */}
+            <Link
+              href="/"
+              className="flex items-center gap-2"
             onClick={(e) => handleNavClick(e, "/")}
           >
             <Image 
@@ -169,6 +182,7 @@ export function Header() {
               priority
             />
           </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-1.5 md:flex">

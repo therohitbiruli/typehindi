@@ -104,9 +104,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
             {title}
           </h1>
           <div className="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
-            <span>{blog.author}</span>
-            <span>•</span>
-            <time>{date}</time>
+            {blog.author && (<><span>{blog.author}</span><span>&bull;</span></>)}<time>{date}</time>
           </div>
         </header>
 

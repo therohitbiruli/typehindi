@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { PYQQuestion } from "../../data/pyqModels";
+import { MathText } from "./MathText";
 
 interface Props {
   question: PYQQuestion;
@@ -25,7 +26,7 @@ export function PYQQuestionCard({ question, index }: Props) {
       </div>
       
       <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-6 leading-relaxed whitespace-pre-wrap">
-        {question.questionEn}
+        <MathText text={question.questionEn} />
       </h3>
 
       <div className="space-y-3 mb-8">
@@ -51,7 +52,7 @@ export function PYQQuestionCard({ question, index }: Props) {
                   {String.fromCharCode(65 + optIdx)}
                 </div>
                 <span className={`text-base ${textClass}`}>
-                  {opt}
+                  <MathText text={opt} />
                 </span>
               </div>
             </div>
@@ -85,7 +86,7 @@ export function PYQQuestionCard({ question, index }: Props) {
             {question.explanationEn ? (
               <p className="text-sm text-primary-900 dark:text-primary-200 leading-relaxed">
                 <strong className="font-semibold block mb-1">Explanation:</strong>
-                {question.explanationEn}
+                <MathText text={question.explanationEn} />
               </p>
             ) : (
               <p className="text-sm text-primary-900 dark:text-primary-200 italic opacity-80">

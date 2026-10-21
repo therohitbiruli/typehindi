@@ -5,6 +5,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import Script from "next/script";
 import "./globals.css";
+import "katex/dist/katex.min.css";
 
 const inter = Inter({
   subsets: ["latin"],

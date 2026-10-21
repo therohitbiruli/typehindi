@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { PYQQuestion } from "../../data/pyqModels";
+import { MathText } from "./MathText";
 
 interface Props {
   examName: string;
@@ -296,7 +297,7 @@ export function PYQTestEngine({ examName, shiftName, questions }: Props) {
           </div>
 
           <h3 className="text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-8 leading-relaxed">
-            {currentQ.questionEn}
+            <MathText text={currentQ.questionEn} />
           </h3>
 
           <div className="space-y-3">
@@ -313,7 +314,7 @@ export function PYQTestEngine({ examName, shiftName, questions }: Props) {
                   className="w-5 h-5 text-primary-600 focus:ring-primary-500 border-slate-300"
                 />
                 <span className={`text-base ${currentState.selectedOption === idx ? 'text-primary-900 dark:text-primary-100 font-medium' : 'text-slate-700 dark:text-slate-300'}`}>
-                  {opt}
+                  <MathText text={opt} />
                 </span>
               </label>
             ))}

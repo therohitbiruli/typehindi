@@ -5,19 +5,18 @@ const path = require('path');
 // 1. Path to your Service Account JSON key file
 const KEY_FILE_PATH = path.join(__dirname, 'google-service-account.json');
 
-// 2. Base URL of your website
+// 2. Base URL (Note: www.typehindi.in is verified in Google Search Console for this service account)
 const BASE_URL = 'https://www.typehindi.in';
 
 async function submitUrls() {
   if (!fs.existsSync(KEY_FILE_PATH)) {
     console.error(`\n❌ ERROR: Service account key not found at:\n${KEY_FILE_PATH}`);
-    console.error(`Please download the JSON key from Google Cloud Console and save it as 'google-service-account.json' in this folder.\n`);
+    console.error(`Please save your Google Cloud JSON key as 'google-service-account.json' in this folder.\n`);
     process.exit(1);
   }
 
-  console.log('🔑 Authenticating with Google...');
+  console.log('🔑 Authenticating with Google Indexing API...');
   
-  // Set up auth client
   const auth = new google.auth.GoogleAuth({
     keyFile: KEY_FILE_PATH,
     scopes: ['https://www.googleapis.com/auth/indexing'],
@@ -26,49 +25,115 @@ async function submitUrls() {
   const authClient = await auth.getClient();
   const indexing = google.indexing({ version: 'v3', auth: authClient });
 
-  // 3. Extract all blog slugs directly from blogs.ts
+  const args = process.argv.slice(2);
+  let urlsToSubmit = [];
+
   const blogsFilePath = path.join(__dirname, '../src/data/blogs.ts');
-  const content = fs.readFileSync(blogsFilePath, 'utf8');
-  
-  // Simple regex to grab all slugs from the array
-  const slugs = [];
-  const regex = /"slug"\s*:\s*"([^"]+)"/g;
-  let match;
-  while ((match = regex.exec(content)) !== null) {
-    slugs.push(match[1]);
+  const pyqFilePath = path.join(__dirname, '../src/data/pyqStore.ts');
+
+  function getBlogUrls() {
+    const content = fs.readFileSync(blogsFilePath, 'utf8');
+    const regex = /(?:slug|"slug")\s*:\s*["']([^"']+)["']/g;
+    const slugs = [];
+    let match;
+    while ((match = regex.exec(content)) !== null) {
+      if (!slugs.includes(match[1])) slugs.push(match[1]);
+    }
+    return slugs.map(slug => `${BASE_URL}/blog/${slug}`);
   }
 
-  if (slugs.length === 0) {
-    console.error('❌ Could not find any blog slugs in src/data/blogs.ts');
-    process.exit(1);
+  function getPyqUrls() {
+    const content = fs.readFileSync(pyqFilePath, 'utf8');
+    const regex = /slug:\s*["']([^"']+)["']/g;
+    const slugs = [];
+    let match;
+    while ((match = regex.exec(content)) !== null) {
+      if (match[1].includes('previous-year-question-paper') && !slugs.includes(match[1])) {
+        slugs.push(match[1]);
+      }
+    }
+    return slugs.map(slug => `${BASE_URL}/pyq/${slug}`);
   }
 
-  console.log(`📝 Found ${slugs.length} articles to submit for indexing.`);
-  console.log('🚀 Sending requests to Google Search Indexing API...\n');
+  const mainPages = [
+    `${BASE_URL}/`,
+    `${BASE_URL}/practice`,
+    `${BASE_URL}/learn`,
+    `${BASE_URL}/mock-tests`,
+    `${BASE_URL}/pyq`,
+    `${BASE_URL}/keyboard-layout`,
+    `${BASE_URL}/blog`,
+    `${BASE_URL}/shorthand`,
+    `${BASE_URL}/translators`
+  ];
+
+  if (args.length === 0 || args.includes('--blogs')) {
+    urlsToSubmit = getBlogUrls();
+    console.log(`📝 Loaded ${urlsToSubmit.length} blog articles.`);
+  } else if (args.includes('--pyq')) {
+    urlsToSubmit = getPyqUrls();
+    console.log(`📝 Loaded ${urlsToSubmit.length} PYQ papers.`);
+  } else if (args.includes('--all')) {
+    urlsToSubmit = [...mainPages, ...getBlogUrls(), ...getPyqUrls()];
+    // Deduplicate
+    urlsToSubmit = Array.from(new Set(urlsToSubmit));
+    console.log(`📝 Loaded ${urlsToSubmit.length} total URLs (main pages, blogs, and PYQs).`);
+  } else if (fs.existsSync(args[0])) {
+    const fileContent = fs.readFileSync(args[0], 'utf8');
+    urlsToSubmit = fileContent
+      .split('\n')
+      .map(u => u.trim())
+      .filter(u => u.startsWith('http'));
+    console.log(`📄 Loaded ${urlsToSubmit.length} URLs from file: ${args[0]}`);
+  } else {
+    urlsToSubmit = args.filter(u => u.startsWith('http'));
+    console.log(`🎯 Received ${urlsToSubmit.length} direct URL(s) from arguments.`);
+  }
+
+  if (urlsToSubmit.length === 0) {
+    console.log('⚠️ No valid URLs found to submit.');
+    console.log('Usage:');
+    console.log('  node scripts/submit-to-google.js                 (submits all blogs)');
+    console.log('  node scripts/submit-to-google.js --pyq           (submits all PYQ papers)');
+    console.log('  node scripts/submit-to-google.js --all           (submits main pages + blogs + PYQs)');
+    console.log('  node scripts/submit-to-google.js <url1> <url2>   (submits specific URLs)');
+    console.log('  node scripts/submit-to-google.js urls.txt        (submits URLs listed in a text file)');
+    return;
+  }
+
+  console.log(`🚀 Sending ${urlsToSubmit.length} requests to Google Search Indexing API...\n`);
 
   let successCount = 0;
-  
-  for (const slug of slugs) {
-    const targetUrl = `${BASE_URL}/blog/${slug}`;
+  let failCount = 0;
+
+  for (let i = 0; i < urlsToSubmit.length; i++) {
+    const targetUrl = urlsToSubmit[i];
     try {
-      const response = await indexing.urlNotifications.publish({
+      await indexing.urlNotifications.publish({
         requestBody: {
           url: targetUrl,
           type: 'URL_UPDATED',
         },
       });
-      console.log(`✅ SUCCESS: ${targetUrl}`);
+      console.log(`[${i + 1}/${urlsToSubmit.length}] ✅ SUCCESS: ${targetUrl}`);
       successCount++;
     } catch (error) {
-      console.error(`❌ FAILED: ${targetUrl}`);
-      console.error(`   Reason: ${error.message}`);
+      const msg = error.response?.data?.error?.message || error.message;
+      console.error(`[${i + 1}/${urlsToSubmit.length}] ❌ FAILED: ${targetUrl}`);
+      console.error(`       Reason: ${msg}`);
+      failCount++;
     }
     
-    // Tiny delay to avoid rate limiting
-    await new Promise(resolve => setTimeout(resolve, 500));
+    if (i < urlsToSubmit.length - 1) {
+      await new Promise(resolve => setTimeout(resolve, 350));
+    }
   }
 
-  console.log(`\n🎉 Finished! Successfully submitted ${successCount} out of ${slugs.length} URLs to Google.`);
+  console.log(`\n🎉 Completed!`);
+  console.log(`   ✅ Successful: ${successCount}`);
+  if (failCount > 0) {
+    console.log(`   ❌ Failed: ${failCount}`);
+  }
 }
 
 submitUrls().catch(console.error);

@@ -48,11 +48,31 @@ export function getQuestionsForShift(examId: string, year: string, date: string,
   return [];
 }
 
+function matchesSubject(qSubject: string, targetSubject: string): boolean {
+  if (qSubject === targetSubject) return true;
+  const s1 = qSubject.toLowerCase();
+  const s2 = targetSubject.toLowerCase();
+  if (s1 === s2) return true;
+  if (
+    (s1 === "general intelligence" || s1 === "general intelligence and reasoning" || s1 === "reasoning") &&
+    (s2 === "general intelligence" || s2 === "general intelligence and reasoning" || s2 === "reasoning")
+  ) {
+    return true;
+  }
+  if (
+    (s1 === "quantitative aptitude" || s1 === "mathematics" || s1 === "maths" || s1 === "quant") &&
+    (s2 === "quantitative aptitude" || s2 === "mathematics" || s2 === "maths" || s2 === "quant")
+  ) {
+    return true;
+  }
+  return false;
+}
+
 export function getQuestionsBySubject(examId: string, year: string, subject: string): PYQQuestion[] {
   const actualQs = pyqQuestions.filter(q => 
     q.exam === examId && 
     q.year === year && 
-    q.subject === subject
+    matchesSubject(q.subject, subject)
   );
 
   if (actualQs.length > 0) return actualQs;
@@ -60,7 +80,7 @@ export function getQuestionsBySubject(examId: string, year: string, subject: str
   // Fallback 1: Return questions for the same exam and subject from another year
   const sameExamOtherYearQs = pyqQuestions.filter(q =>
     q.exam === examId &&
-    q.subject === subject
+    matchesSubject(q.subject, subject)
   );
 
   if (sameExamOtherYearQs.length > 0) {
@@ -73,7 +93,7 @@ export function getQuestionsBySubject(examId: string, year: string, subject: str
 
   // Fallback 2: Global subject fallback from other exams
   const globalSubjectQs = pyqQuestions.filter(q =>
-    q.subject === subject
+    matchesSubject(q.subject, subject)
   );
 
   if (globalSubjectQs.length > 0) {
@@ -100,6 +120,6 @@ export function getUniqueSubjectsForPaper(paper: PYQPaper): string[] {
 
 export function getTopicsForSubject(examId: string, subject: string): string[] {
   const topics = new Set<string>();
-  pyqQuestions.filter(q => q.exam === examId && q.subject === subject && q.topic).forEach(q => topics.add(q.topic!));
+  pyqQuestions.filter(q => q.exam === examId && matchesSubject(q.subject, subject) && q.topic).forEach(q => topics.add(q.topic!));
   return Array.from(topics);
 }

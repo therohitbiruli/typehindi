@@ -55,8 +55,37 @@ export function getQuestionsBySubject(examId: string, year: string, subject: str
     q.subject === subject
   );
 
-  // For subjects, we'll just return what's actually in DB since it aggregates across shifts
-  return actualQs;
+  if (actualQs.length > 0) return actualQs;
+
+  // Fallback 1: Return questions for the same exam and subject from another year
+  const sameExamOtherYearQs = pyqQuestions.filter(q =>
+    q.exam === examId &&
+    q.subject === subject
+  );
+
+  if (sameExamOtherYearQs.length > 0) {
+    return sameExamOtherYearQs.slice(0, 100).map((q, idx) => ({
+      ...q,
+      id: `${examId}-${year}-${subject.toLowerCase().replace(/[^a-z0-9]/g, '')}-fb-${idx}`,
+      year: year
+    }));
+  }
+
+  // Fallback 2: Global subject fallback from other exams
+  const globalSubjectQs = pyqQuestions.filter(q =>
+    q.subject === subject
+  );
+
+  if (globalSubjectQs.length > 0) {
+    return globalSubjectQs.slice(0, 100).map((q, idx) => ({
+      ...q,
+      id: `${examId}-${year}-${subject.toLowerCase().replace(/[^a-z0-9]/g, '')}-gfb-${idx}`,
+      exam: examId,
+      year: year
+    }));
+  }
+
+  return [];
 }
 
 export function getQuestionById(id: string): PYQQuestion | undefined {

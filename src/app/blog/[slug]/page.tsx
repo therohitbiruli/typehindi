@@ -30,7 +30,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       description: excerpt,
       type: "article",
       publishedTime: lang === "en" && blog.dateEn ? blog.dateEn : blog.date,
-      authors: [blog.author],
+      authors: [blog.author || "TypeHindi Team"],
     },
   };
 }

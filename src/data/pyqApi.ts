@@ -31,18 +31,9 @@ export function getQuestionsForShift(examId: string, year: string, date: string,
 
   if (actualQs.length > 0) return actualQs;
 
-  // For JEE Main, provide authentic JEE Main questions (Physics, Chemistry, Maths)
+  // For JEE Main, never serve duplicate questions from other shifts
   if (examId === 'jee-main') {
-    const jeeQs = pyqQuestions.filter(q => q.exam === 'jee-main');
-    if (jeeQs.length > 0) {
-      return jeeQs.map((q, idx) => ({
-        ...q,
-        id: `${examId}-${year}-${date.replace(/[^a-zA-Z0-9]/g, '')}-s${shiftNumber}-${idx}`,
-        year: year,
-        date: date,
-        shift: shiftNumber
-      }));
-    }
+    return [];
   }
 
   // Global Mock Fallback: if questions haven't been OCR'd yet, serve a cloned set
@@ -83,7 +74,6 @@ function matchesSubject(qSubject: string, targetSubject: string): boolean {
 }
 
 export function hasQuestionsForShift(examId: string, year: string, date: string, shiftNumber: number): boolean {
-  if (examId === 'jee-main') return true;
   return pyqQuestions.some(q => 
     q.exam === examId && 
     q.year === year && 

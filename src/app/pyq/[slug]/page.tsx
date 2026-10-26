@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getAllPapers, getUniqueSubjectsForPaper } from "../../../data/pyqApi";
+import { getAllPapers, getUniqueSubjectsForPaper, hasQuestionsForShift } from "../../../data/pyqApi";
 import { Breadcrumb } from "../../../components/Breadcrumb";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
 
@@ -195,19 +195,30 @@ export default async function PyqDetailPage({ params }: Props) {
                 </div>
 
                 <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center gap-3">
-                  <Link 
-                    href={`/pyq/${paper.slug}/${shift.slug}/test`}
-                    className="flex-grow sm:flex-grow-0 bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm px-4 py-2 rounded-xl text-center transition-colors inline-flex justify-center items-center gap-1.5"
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>
-                    Attempt
-                  </Link>
-                  <Link 
-                    href={`/pyq/${paper.slug}/${shift.slug}/questions`}
-                    className="flex-grow sm:flex-grow-0 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm px-4 py-2 rounded-xl text-center transition-colors"
-                  >
-                    View Qs
-                  </Link>
+                  {hasQuestionsForShift(paper.examId, paper.year, shift.date, shift.shift) ? (
+                    <>
+                      <Link 
+                        href={`/pyq/${paper.slug}/${shift.slug}/test`}
+                        className="flex-grow sm:flex-grow-0 bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm px-4 py-2 rounded-xl text-center transition-colors inline-flex justify-center items-center gap-1.5"
+                      >
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>
+                        Attempt
+                      </Link>
+                      <Link 
+                        href={`/pyq/${paper.slug}/${shift.slug}/questions`}
+                        className="flex-grow sm:flex-grow-0 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm px-4 py-2 rounded-xl text-center transition-colors"
+                      >
+                        View Qs
+                      </Link>
+                    </>
+                  ) : (
+                    <Link 
+                      href={`/pyq/${paper.slug}/${shift.slug}/questions`}
+                      className="flex-grow sm:flex-grow-0 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm px-4 py-2 rounded-xl text-center transition-colors"
+                    >
+                      View Paper
+                    </Link>
+                  )}
 
                   {/* PDFs and solutions as secondary options */}
                   <div className="flex flex-wrap gap-2.5 ml-auto items-center">

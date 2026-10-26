@@ -32,6 +32,7 @@ export interface PYQShift {
   durationMinutes: number;
   englishPdfUrl?: string;
   hindiPdfUrl?: string;
+  solutionsUrl?: string;
   subjectsCovered: string[];
 }
 

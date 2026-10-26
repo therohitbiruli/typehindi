@@ -17,8 +17,9 @@ export async function generateMetadata({ params }: Props) {
   const shift = getShiftBySlug(paper, shiftSlug);
   if (!shift) return { title: "Not Found" };
 
+  const examLabel = paper.examId === 'jee-main' ? 'JEE Main' : paper.examId.toUpperCase();
   return {
-    title: `${paper.examId.toUpperCase()} ${paper.year} ${shift.date} Shift ${shift.shift} Test | TypeHindi`,
+    title: `${examLabel} ${paper.year} ${shift.date} Shift ${shift.shift} Test | TypeHindi`,
     description: `Take the official ${paper.title} online test for ${shift.date} Shift ${shift.shift}.`,
   };
 }
@@ -32,6 +33,7 @@ export default async function PYQTestPage({ params }: Props) {
   if (!shift) notFound();
 
   const questions = getQuestionsForShift(paper.examId, paper.year, shift.date, shift.shift);
+  const examLabel = paper.examId === 'jee-main' ? 'JEE Main' : paper.examId.toUpperCase();
 
   // Shuffle the questions dynamically on every load
   const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
@@ -40,11 +42,11 @@ export default async function PYQTestPage({ params }: Props) {
     <div className="container-main py-4 min-h-screen flex flex-col">
       <div className="mb-4">
         <BackButton />
-      <Breadcrumb
+        <Breadcrumb
           items={[
             { label: "Home", href: "/" },
             { label: "PYQs", href: "/pyq" },
-            { label: paper.examId.toUpperCase(), href: `/pyq/${paper.slug}` },
+            { label: examLabel, href: `/pyq/${paper.slug}` },
             { label: "Test" },
           ]}
         />
@@ -52,7 +54,7 @@ export default async function PYQTestPage({ params }: Props) {
       
       <div className="flex-grow">
         <PYQTestEngine 
-          examName={`${paper.examId.toUpperCase()} ${paper.year}`} 
+          examName={`${examLabel} ${paper.year}`} 
           shiftName={`${shift.date} | Shift ${shift.shift}`}
           questions={shuffledQuestions}
         />

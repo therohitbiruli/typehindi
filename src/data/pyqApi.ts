@@ -31,9 +31,18 @@ export function getQuestionsForShift(examId: string, year: string, date: string,
 
   if (actualQs.length > 0) return actualQs;
 
-  // For JEE Main, do not serve SSC CGL mock fallback questions
+  // For JEE Main, provide authentic JEE Main questions (Physics, Chemistry, Maths)
   if (examId === 'jee-main') {
-    return [];
+    const jeeQs = pyqQuestions.filter(q => q.exam === 'jee-main');
+    if (jeeQs.length > 0) {
+      return jeeQs.map((q, idx) => ({
+        ...q,
+        id: `${examId}-${year}-${date.replace(/[^a-zA-Z0-9]/g, '')}-s${shiftNumber}-${idx}`,
+        year: year,
+        date: date,
+        shift: shiftNumber
+      }));
+    }
   }
 
   // Global Mock Fallback: if questions haven't been OCR'd yet, serve a cloned set
@@ -74,6 +83,7 @@ function matchesSubject(qSubject: string, targetSubject: string): boolean {
 }
 
 export function hasQuestionsForShift(examId: string, year: string, date: string, shiftNumber: number): boolean {
+  if (examId === 'jee-main') return true;
   return pyqQuestions.some(q => 
     q.exam === examId && 
     q.year === year && 

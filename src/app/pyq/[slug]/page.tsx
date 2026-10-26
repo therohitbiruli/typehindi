@@ -209,13 +209,16 @@ export default async function PyqDetailPage({ params }: Props) {
                     View Qs
                   </Link>
 
-                  {/* PDFs as secondary options */}
-                  <div className="flex gap-2 ml-auto">
+                  {/* PDFs and solutions as secondary options */}
+                  <div className="flex flex-wrap gap-2.5 ml-auto items-center">
                     {shift.englishPdfUrl && (
                       <a href={shift.englishPdfUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 underline underline-offset-2">PDF(EN)</a>
                     )}
                     {shift.hindiPdfUrl && (
                       <a href={shift.hindiPdfUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 underline underline-offset-2">PDF(HI)</a>
+                    )}
+                    {shift.solutionsUrl && (
+                      <a href={shift.solutionsUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-amber-600 dark:text-amber-400 hover:underline underline-offset-2">Solutions</a>
                     )}
                   </div>
                 </div>

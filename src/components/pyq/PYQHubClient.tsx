@@ -342,18 +342,39 @@ export function PYQHubClient({ exams, papers }: Props) {
               </button>
             </div>
           ) : (
-            filteredExams.map(({ exam, papers: examPapers }) => (
+            filteredExams.map(({ exam, papers: examPapers }) => {
+              const isJeeMain = exam.id === 'jee-main';
+              const totalShifts = examPapers.reduce((sum, p) => sum + p.shifts.length, 0);
+
+              return (
               <div 
                 key={exam.id} 
                 className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[1.5rem] p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{exam.name}</h2>
+                    <div className="flex items-center gap-3">
+                      <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                        {isJeeMain ? "JEE Main Previous Year Question Papers" : exam.name}
+                      </h2>
+                      {isJeeMain && (
+                        <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">
+                          Engineering
+                        </span>
+                      )}
+                    </div>
                     <p className="text-slate-500 text-sm mt-1">{exam.shortDescription}</p>
+                    {isJeeMain && (
+                      <div className="flex flex-wrap items-center gap-2 mt-2">
+                        <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">Sessions:</span>
+                        <span className="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">January & April</span>
+                        <span className="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Paper 1 (B.E./B.Tech)</span>
+                        <span className="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Paper 2 (B.Arch/Plan)</span>
+                      </div>
+                    )}
                   </div>
                   <div className="text-xs font-semibold bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full border border-primary-100 dark:border-primary-800/30">
-                    {examPapers.length} {examPapers.length === 1 ? 'Paper' : 'Papers'} Available
+                    {isJeeMain ? `${totalShifts} Verified Papers (${examPapers.length} Years)` : `${examPapers.length} ${examPapers.length === 1 ? 'Paper' : 'Papers'} Available`}
                   </div>
                 </div>
 
@@ -375,10 +396,10 @@ export function PYQHubClient({ exams, papers }: Props) {
 
                 <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
                   <Link 
-                    href={`/pyq/${examPapers[0].slug}`}
+                    href={isJeeMain ? "/pyq/jee-main-previous-year-question-papers" : `/pyq/${examPapers[0].slug}`}
                     className="btn-primary w-full sm:w-auto text-center px-6 py-2.5 rounded-xl font-bold inline-flex justify-center items-center gap-2"
                   >
-                    Practice {exam.name} PYQs
+                    {isJeeMain ? "Explore All JEE Main Papers" : `Practice ${exam.name} PYQs`}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -388,7 +409,8 @@ export function PYQHubClient({ exams, papers }: Props) {
                   </span>
                 </div>
               </div>
-            ))
+              );
+            })
           )}
 
         </div>

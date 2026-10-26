@@ -31,6 +31,11 @@ export function getQuestionsForShift(examId: string, year: string, date: string,
 
   if (actualQs.length > 0) return actualQs;
 
+  // For JEE Main, do not serve SSC CGL mock fallback questions
+  if (examId === 'jee-main') {
+    return [];
+  }
+
   // Global Mock Fallback: if questions haven't been OCR'd yet, serve a cloned set
   // so the user never sees a broken/empty state.
   const fallbackQs = pyqQuestions.filter(q => q.exam === 'ssc-cgl' && q.year === '2025' && q.date === '13 Sep 2025');
@@ -66,6 +71,15 @@ function matchesSubject(qSubject: string, targetSubject: string): boolean {
     return true;
   }
   return false;
+}
+
+export function hasQuestionsForShift(examId: string, year: string, date: string, shiftNumber: number): boolean {
+  return pyqQuestions.some(q => 
+    q.exam === examId && 
+    q.year === year && 
+    q.date === date && 
+    q.shift === shiftNumber
+  );
 }
 
 export function getQuestionsBySubject(examId: string, year: string, subject: string): PYQQuestion[] {

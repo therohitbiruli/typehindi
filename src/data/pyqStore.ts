@@ -1,7 +1,10 @@
 // @ts-nocheck
 import { PYQQuestion, PYQExam, PYQPaper } from "./pyqModels";
+import { jeeMainExam, jeeMainPapers } from "./jeeMainPyqs";
+import { jeeMainQuestions } from "./jeeMainQuestions";
 
 export const pyqExams: PYQExam[] = [
+  jeeMainExam,
   { id: "ssc-cgl", name: "SSC CGL", shortDescription: "Combined Graduate Level Examination" },
   { id: "ssc-chsl", name: "SSC CHSL", shortDescription: "Combined Higher Secondary Level Examination" },
   { id: "ssc-cpo", name: "SSC CPO", shortDescription: "Central Police Organization Examination" },
@@ -10,6 +13,7 @@ export const pyqExams: PYQExam[] = [
 ];
 
 export const pyqPapers: PYQPaper[] = [
+  ...jeeMainPapers,
   {
     slug: "ssc-cgl-previous-year-question-paper-2025",
     examId: "ssc-cgl",
@@ -1211269,4 +1211273,4 @@ const _allQuestions: any[] = [
     difficulty: "Medium"
   }
 ];
-export const pyqQuestions: PYQQuestion[] = _allQuestions;
+export const pyqQuestions: PYQQuestion[] = [..._allQuestions, ...jeeMainQuestions];

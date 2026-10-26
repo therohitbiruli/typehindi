@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
   const paper = getAllPapers().find((p) => p.slug === slug);
   if (!paper) return { title: "Not Found" };
 
-  const examName = paper.examId.toUpperCase().replace('-', ' ');
+  const examName = paper.examId === 'jee-main' ? 'JEE Main' : paper.examId.toUpperCase().replace('-', ' ');
   const title = `${examName} PYQ ${paper.year} | ${paper.tier} Previous Year Question Paper Online | TypeHindi`;
   const description = `Practice the official ${examName} PYQ ${paper.year} online. Attempt ${paper.title} real exam questions, download PDF, and check detailed solutions for all shifts.`;
 
@@ -55,7 +55,7 @@ export default async function PyqDetailPage({ params }: Props) {
 
   const subjects = getUniqueSubjectsForPaper(paper);
 
-    const examName = paper.examId.toUpperCase().replace('-', ' ');
+    const examName = paper.examId === 'jee-main' ? 'JEE Main' : paper.examId.toUpperCase().replace('-', ' ');
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -231,9 +231,23 @@ export default async function PyqDetailPage({ params }: Props) {
           </h2>
           
           <div className="space-y-5 text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-            <p>
-              The <strong className="font-semibold text-slate-800 dark:text-slate-200">{paper.title}</strong> is an important resource for candidates preparing for the Staff Selection Commission Combined Graduate Level examination. SSC CGL is one of the major competitive examinations conducted for recruitment to various Group B and Group C posts in central government departments and offices. Solving the <strong className="font-semibold text-slate-800 dark:text-slate-200">{paper.examId.toUpperCase().replace('-', ' ')} {paper.year} Question Paper</strong> gives aspirants an opportunity to practice questions based on the actual examination pattern and understand the type of questions asked in different shifts.
-            </p>
+            {paper.examId === 'jee-main' ? (
+              <>
+                <p>
+                  The <strong className="font-semibold text-slate-800 dark:text-slate-200">{paper.title}</strong> is an essential study resource for students preparing for the National Testing Agency (NTA) Joint Entrance Examination (Main). JEE Main is the premier undergraduate engineering admission test in India for NITs, IIITs, and CFTIs, and acts as the screening gateway for JEE Advanced. Practicing the <strong className="font-semibold text-slate-800 dark:text-slate-200">{paper.title}</strong> gives engineering aspirants realistic exposure to NTA's exam pattern, question variety, and shifting difficulty across test sessions.
+                </p>
+                <p>
+                  This official collection covers <strong className="font-semibold text-slate-800 dark:text-slate-200">Physics, Chemistry, and Mathematics</strong>. With 75 questions per shift and 180 minutes of exam duration, regular practice helps students develop speed, accuracy, and effective question selection while minimizing negative marks.
+                </p>
+                <p>
+                  Looking for all 25 years of papers? Explore our comprehensive <Link href="/pyq/jee-main-previous-year-question-papers" className="text-primary-600 dark:text-primary-400 hover:underline font-semibold">JEE Main Previous Year Question Papers Directory</Link> covering 202 verified papers from 2002 to 2026.
+                </p>
+              </>
+            ) : (
+              <p>
+                The <strong className="font-semibold text-slate-800 dark:text-slate-200">{paper.title}</strong> is an important resource for candidates preparing for competitive government examinations. Solving the <strong className="font-semibold text-slate-800 dark:text-slate-200">{paper.examId.toUpperCase().replace('-', ' ')} {paper.year} Question Paper</strong> gives aspirants an opportunity to practice questions based on the actual examination pattern and understand the type of questions asked in different shifts.
+              </p>
+            )}
             
             <p>
               The <strong className="font-semibold text-slate-800 dark:text-slate-200">{paper.examId.toUpperCase().replace('-', ' ')} {paper.tier} Previous Year Paper</strong> covers four major sections: General Intelligence and Reasoning, General Awareness, Quantitative Aptitude, and English Comprehension. Practising these sections regularly can help candidates become familiar with different question formats and improve their ability to solve questions within a limited time. The <Link href="/pyq" className="text-primary-600 dark:text-primary-400 hover:underline">{paper.examId.toUpperCase().replace('-', ' ')} {paper.year} PYQ</Link> collection is particularly useful because the papers are available shift-wise, allowing candidates to attempt questions from different examination sessions.

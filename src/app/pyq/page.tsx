@@ -3,9 +3,12 @@ import { Breadcrumb } from "../../components/Breadcrumb";
 import { PYQHubClient } from "../../components/pyq/PYQHubClient";
 
 export const metadata = {
-  title: "SSC CGL, CPO, CHSL & RRB NTPC Previous Year Question Papers (PYQ) | TypeHindi",
-  description: "Practice SSC CPO PYQ, SSC CGL PYQ, SSC CHSL PYQ, SSC GD PYQ and RRB NTPC previous year exam question papers online. Chapter-wise and full mock tests with solutions.",
+  title: "JEE Main, SSC CGL, CPO, CHSL & RRB NTPC Previous Year Question Papers (PYQ) | TypeHindi",
+  description: "Practice JEE Main PYQ, SSC CPO PYQ, SSC CGL PYQ, SSC CHSL PYQ, SSC GD PYQ and RRB NTPC previous year exam question papers online. Year-wise and shift-wise full mock tests with verified solutions.",
   keywords: [
+    "JEE Main PYQ",
+    "JEE Main Previous Year Question Papers",
+    "JEE Main Question Papers with Solutions",
     "SSC CPO PYQ",
     "SSC CGL PYQ",
     "SSC CHSL PYQ",

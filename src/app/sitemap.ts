@@ -63,6 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       Array.from({length: 10}).map((_, i) => `/mock-tests/${examId}/test-${i+1}`)
     ),
         '/pyq',
+    '/pyq/jee-main-previous-year-question-papers',
     ...pyqPapers.map(paper => `/pyq/${paper.slug}`),
     ...blogs.map(blog => `/blog/${blog.slug}`),
   ].map((route) => ({

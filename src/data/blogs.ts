@@ -22,15 +22,63 @@ export function getBlogImage(blog: BlogPost): string {
   return `/images/${blog.slug}.jpg`;
 }
 
+const HINDI_MONTHS: Record<string, number> = {
+  "जनवरी": 0,
+  "फरवरी": 1,
+  "फ़रवरी": 1,
+  "मार्च": 2,
+  "अप्रैल": 3,
+  "मई": 4,
+  "जून": 5,
+  "जुलाई": 6,
+  "अगस्त": 7,
+  "सितंबर": 8,
+  "सितम्बर": 8,
+  "अक्टूबर": 9,
+  "अक्तूबर": 9,
+  "नवंबर": 10,
+  "नवम्बर": 10,
+  "दिसंबर": 11,
+  "दिसम्बर": 11,
+};
+
+export function parseBlogDate(blog: BlogPost | string): Date {
+  if (!blog) return new Date(0);
+  
+  if (typeof blog !== "string" && blog.dateEn) {
+    const t = Date.parse(blog.dateEn);
+    if (!isNaN(t)) return new Date(t);
+  }
+
+  const rawDate = typeof blog === "string" ? blog : blog.date;
+  if (!rawDate) return new Date(0);
+
+  const direct = Date.parse(rawDate);
+  if (!isNaN(direct)) return new Date(direct);
+
+  const clean = rawDate.replace(",", "");
+  const parts = clean.split(/\s+/);
+  if (parts.length === 3) {
+    const day = parseInt(parts[0], 10);
+    const month = HINDI_MONTHS[parts[1]];
+    const year = parseInt(parts[2], 10);
+    if (month !== undefined && !isNaN(day) && !isNaN(year)) {
+      return new Date(year, month, day);
+    }
+  }
+
+  return new Date(0);
+}
+
 export const blogs: BlogPost[] = [
   {
   "slug": "bel-recruitment-2026-probationary-engineer",
   "titleEn": "BEL Recruitment 2026: 350 Probationary Engineer Vacancies, Salary \u20b913 Lakh, Eligibility and How to Apply",
   "title": "BEL Recruitment 2026: 350 Probationary Engineer Vacancies, Salary \u20b913 Lakh, Eligibility and How to Apply",
-  "date": "29 \u0905\u0915\u094d\u0924\u0942\u092c\u0930, 2026",
+  "date": "29 अक्टूबर, 2026",
   "dateEn": "29 October, 2026",
   "categoryEn": "Government Jobs",
-  "category": "\u0938\u0930\u0915\u093e\u0930\u0940 \u0928\u094c\u0915\u0930\u0940",
+  "category": "सरकारी नौकरी",
   "tags": ["BEL", "Probationary Engineer", "Electronics", "Mechanical", "Government Jobs", "PSU Jobs", "Defence PSU"],
   "excerptEn": "Bharat Electronics Limited (BEL) has announced 350 Probationary Engineer vacancies (200 Electronics, 150 Mechanical) under Advertisement No. 17556/HR/All-India/2026. Pay scale \u20b940,000\u2013\u20b91,40,000 with approximate annual CTC of \u20b913 lakh. Apply online from 28 October to 18 November 2026.",
   "excerpt": "Bharat Electronics Limited (BEL) has announced 350 Probationary Engineer vacancies (200 Electronics, 150 Mechanical) under Advertisement No. 17556/HR/All-India/2026. Pay scale \u20b940,000\u2013\u20b91,40,000 with approximate annual CTC of \u20b913 lakh. Apply online from 28 October to 18 November 2026.",

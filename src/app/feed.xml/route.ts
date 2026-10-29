@@ -1,23 +1,6 @@
-import { blogs } from "@/data/blogs";
+import { blogs, parseBlogDate } from "@/data/blogs";
 
-const HINDI_MONTHS: Record<string, number> = {
-  "जनवरी": 0, "फरवरी": 1, "मार्च": 2, "अप्रैल": 3, "मई": 4, "जून": 5,
-  "जुलाई": 6, "अगस्त": 7, "सितंबर": 8, "अक्टूबर": 9, "नवंबर": 10, "दिसंबर": 11
-};
 
-function parseBlogDate(dateStr: string): Date {
-  if (!dateStr) return new Date();
-  const clean = dateStr.replace(",", "");
-  const parts = clean.split(/\s+/);
-  if (parts.length === 3) {
-    const day = parseInt(parts[0], 10);
-    const month = HINDI_MONTHS[parts[1]] ?? 0;
-    const year = parseInt(parts[2], 10);
-    return new Date(year, month, day);
-  }
-  const fallback = new Date(dateStr);
-  return isNaN(fallback.getTime()) ? new Date() : fallback;
-}
 
 function escapeXml(unsafe: string): string {
   return (unsafe || "")

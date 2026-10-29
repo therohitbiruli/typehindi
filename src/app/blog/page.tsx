@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { blogs, getBlogImage } from "../../data/blogs";
+import { blogs, getBlogImage, parseBlogDate } from "../../data/blogs";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 
@@ -10,22 +10,7 @@ export const metadata: Metadata = {
   description: "Read the latest articles on Hindi typing, SSC exam strategies, Stenography tips, and InScript keyboard guides.",
 };
 
-const HINDI_MONTHS: Record<string, number> = {
-  "जनवरी": 0, "फरवरी": 1, "मार्च": 2, "अप्रैल": 3, "मई": 4, "जून": 5,
-  "जुलाई": 6, "अगस्त": 7, "सितंबर": 8, "सितम्बर": 8, "अक्टूबर": 9, "नवंबर": 10, "नवम्बर": 10, "दिसंबर": 11, "दिसम्बर": 11
-};
 
-function parseHindiDate(dateStr: string): Date {
-  const clean = dateStr.replace(",", "");
-  const parts = clean.split(/\s+/);
-  if (parts.length === 3) {
-    const day = parseInt(parts[0], 10);
-    const month = HINDI_MONTHS[parts[1]] ?? 0;
-    const year = parseInt(parts[2], 10);
-    return new Date(year, month, day);
-  }
-  return new Date(0);
-}
 
 interface PageProps {
   searchParams: Promise<{ lang?: string; page?: string }>;
@@ -37,7 +22,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
   const resolvedSearchParams = await searchParams;
   const lang = resolvedSearchParams.lang === "hi" ? "hi" : "en";
   
-  const sortedBlogs = [...blogs].sort((a, b) => parseHindiDate(b.date).getTime() - parseHindiDate(a.date).getTime());
+  const sortedBlogs = [...blogs].sort((a, b) => parseBlogDate(b).getTime() - parseBlogDate(a).getTime());
   
   const totalPages = Math.ceil(sortedBlogs.length / POSTS_PER_PAGE) || 1;
   const rawPage = parseInt(resolvedSearchParams.page || "1", 10);

@@ -6,7 +6,7 @@ import { ShorthandNotebook } from "../../../components/shorthand/ShorthandNotebo
 import { PrintablePracticeSheet } from "../../../components/shorthand/PrintablePracticeSheet";
 
 export default function ShorthandGuidesPage() {
-  const [activeTab, setActiveTab] = useState<"notebook" | "mistakes" | "printable">("notebook");
+  const [activeTool, setActiveTool] = useState<"notebook" | "printable">("notebook");
 
   const commonMistakes = [
     {
@@ -35,7 +35,7 @@ export default function ShorthandGuidesPage() {
     <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
       <ShorthandNav />
 
-      <main className="container-main py-10 space-y-8">
+      <main className="container-main py-10 space-y-12">
         <div className="space-y-1">
           <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
             Resources & Tools
@@ -48,50 +48,74 @@ export default function ShorthandGuidesPage() {
           </p>
         </div>
 
-        {/* Tab Switcher */}
-        <div className="flex items-center gap-2 border-b border-gray-200 dark:border-slate-800 pb-3">
-          {[
-            { id: "notebook", label: "Personal Notebook", icon: "📓" },
-            { id: "mistakes", label: "Common Mistakes Guide", icon: "⚠️" },
-            { id: "printable", label: "Printable Practice Sheets", icon: "🖨️" },
-          ].map((t) => (
-            <button
-              key={t.id}
-              type="button"
-              onClick={() => setActiveTab(t.id as any)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                activeTab === t.id
-                  ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                  : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 hover:text-white border border-gray-200 dark:border-slate-800"
-              }`}
-            >
-              <span>{t.icon}</span>
-              <span>{t.label}</span>
-            </button>
-          ))}
-        </div>
+        {/* Permanent Common Mistakes SEO Guide */}
+        <section className="space-y-6 pt-4 border-t border-gray-200 dark:border-slate-800">
+          <div className="max-w-3xl">
+            <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
+              Exam Preparation Guide
+            </span>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-slate-100 mt-1">
+              5 Most Common Pitman Shorthand Mistakes
+            </h2>
+            <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
+              Avoid these fundamental beginner habits to build genuine transcription speed and pass SSC/High Court skill tests.
+            </p>
+          </div>
 
-        {activeTab === "notebook" && <ShorthandNotebook />}
+          <div className="grid gap-4 md:grid-cols-2">
+            {commonMistakes.map((m, idx) => (
+              <div key={idx} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-2">
+                <h3 className="text-sm font-bold text-purple-700 dark:text-purple-400">{m.title}</h3>
+                <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed">{m.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        {activeTab === "mistakes" && (
-          <div className="space-y-4">
-            <div className="max-w-2xl">
-              <h2 className="text-lg font-bold text-gray-900 dark:text-slate-100">5 Most Common Pitman Shorthand Mistakes</h2>
-              <p className="text-xs text-gray-500 dark:text-slate-400">Avoid these fundamental beginner habits to build genuine speed.</p>
+        {/* Interactive Practice Tools Section */}
+        <section className="space-y-6 pt-6 border-t border-gray-200 dark:border-slate-800">
+          <div className="flex items-center justify-between gap-4 flex-wrap">
+            <div>
+              <h2 className="text-xl font-bold text-gray-900 dark:text-slate-100">
+                Interactive Notebook & Printable Sheets
+              </h2>
+              <p className="text-xs text-gray-500 dark:text-slate-400">
+                Save your custom word outlines locally or generate lined practice sheets for pen drills.
+              </p>
             </div>
 
-            <div className="space-y-3">
-              {commonMistakes.map((m, idx) => (
-                <div key={idx} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-1.5">
-                  <h3 className="text-sm font-bold text-purple-300">{m.title}</h3>
-                  <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed">{m.desc}</p>
-                </div>
-              ))}
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setActiveTool("notebook")}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                  activeTool === "notebook"
+                    ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
+                    : "bg-gray-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 hover:text-white border border-gray-200 dark:border-slate-800"
+                }`}
+              >
+                <span>📓</span>
+                <span>Personal Notebook</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTool("printable")}
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                  activeTool === "printable"
+                    ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
+                    : "bg-gray-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 hover:text-white border border-gray-200 dark:border-slate-800"
+                }`}
+              >
+                <span>🖨️</span>
+                <span>Printable Practice Sheets</span>
+              </button>
             </div>
           </div>
-        )}
 
-        {activeTab === "printable" && <PrintablePracticeSheet />}
+          {activeTool === "notebook" && <ShorthandNotebook />}
+          {activeTool === "printable" && <PrintablePracticeSheet />}
+        </section>
       </main>
     </div>
   );

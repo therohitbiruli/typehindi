@@ -28,9 +28,27 @@ import { DifficultWordsPractice } from "../../components/learn/DifficultWordsPra
 import { CommonMistakesTrainer } from "../../components/learn/CommonMistakesTrainer";
 import { FinalChallenges } from "../../components/learn/FinalChallenges";
 
+function LearnUrlParamsHandler({
+  onParams,
+}: {
+  onParams: (word: string, layout: "inscript" | "remington" | null) => void;
+}) {
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const wordParam = searchParams.get("word");
+    const layoutParam = searchParams.get("layout");
+    if (wordParam) {
+      onParams(
+        wordParam,
+        layoutParam === "remington" || layoutParam === "inscript" ? layoutParam : null
+      );
+    }
+  }, [searchParams, onParams]);
+  return null;
+}
+
 export function LearnClient() {
   const { activeKey, isShift } = useKeyPress();
-  const searchParams = useSearchParams();
   const guideRef = useRef<HTMLDivElement>(null);
 
   // States for Word Typing Guide & Layouts
@@ -127,20 +145,16 @@ export function LearnClient() {
   }, []);
 
   // Handle URL redirect query param for Word Guide
-  useEffect(() => {
-    const wordParam = searchParams.get("word");
-    const layoutParam = searchParams.get("layout");
-    if (wordParam) {
-      setSelectedWord(wordParam);
-      setCustomInput(wordParam);
-      if (layoutParam === "remington" || layoutParam === "inscript") {
-        setActiveLayoutTab(layoutParam);
-      }
-      setTimeout(() => {
-        guideRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 500);
+  const handleUrlParams = useCallback((word: string, layout: "inscript" | "remington" | null) => {
+    setSelectedWord(word);
+    setCustomInput(word);
+    if (layout) {
+      setActiveLayoutTab(layout);
     }
-  }, [searchParams]);
+    setTimeout(() => {
+      guideRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 500);
+  }, []);
 
   // Handle input word change
   const handleInputChange = (val: string) => {
@@ -165,6 +179,9 @@ export function LearnClient() {
 
   return (
     <div className="container-main py-6">
+      <Suspense fallback={null}>
+        <LearnUrlParamsHandler onParams={handleUrlParams} />
+      </Suspense>
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Learn" }]} />
 
       <AdPlaceholder position="top" />

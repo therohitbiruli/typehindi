@@ -34,9 +34,19 @@ export async function generateMetadata({ params }: Props) {
   if (!name) return { title: "Not Found" };
   const testNum = testId.split('-')[1] || "1";
   
+  const url = `https://typehindi.in/mock-tests/${examId}/${testId}`;
   return {
     title: `${name} Mock Test ${testNum} Free CBT | TypeHindi`,
     description: `Take ${name} full-length Mock Test ${testNum} featuring 100 actual previous year questions. Interactive CBT format with instant scoring.`,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${name} Mock Test ${testNum} Free CBT | TypeHindi`,
+      description: `Take ${name} full-length Mock Test ${testNum} featuring 100 actual previous year questions. Interactive CBT format with instant scoring.`,
+      url,
+      type: "website",
+    },
     keywords: [`${name.toLowerCase()} mock test ${testNum}`, `free ${name.toLowerCase()} mock test`, `mock test railway`, `ssc cgl mock tests`, `ssc gd mock tests`, `${name.toLowerCase()} online cbt test`],
   };
 }
@@ -80,6 +90,15 @@ export default async function MockTestExecutionPage({ params }: Props) {
         />
       </div>
       
+      <div className="mb-4">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">
+          {`${name} Mock Test ${testNum} (CBT Exam Simulation)`}
+        </h1>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+          Full length mock test consisting of 100 previous year questions with live timer and instant scoring.
+        </p>
+      </div>
+
       <div className="flex-grow">
         <PYQTestEngine 
           examName={`${name} Mock Test ${testNum}`} 

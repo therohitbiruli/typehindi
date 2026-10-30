@@ -6,16 +6,26 @@ import { ShorthandNav } from "../../../components/shorthand/ShorthandNav";
 import { getShorthandProgress } from "../../../data/shorthand/storage";
 import { UserShorthandProgress } from "../../../data/shorthand/types";
 
+const DEFAULT_PROGRESS: UserShorthandProgress = {
+  completedLessons: [],
+  bestDictationWpm: 0,
+  bestTranscriptionWpm: 0,
+  bestAccuracy: 0,
+  totalWordsDictated: 0,
+  totalWordsTranscribed: 0,
+  totalPracticeMinutes: 0,
+  currentStreak: 0,
+  longestStreak: 0,
+  lastActiveDate: "",
+  testHistory: [],
+};
+
 export default function ShorthandProgressPage() {
-  const [progress, setProgress] = useState<UserShorthandProgress | null>(null);
+  const [progress, setProgress] = useState<UserShorthandProgress>(DEFAULT_PROGRESS);
 
   useEffect(() => {
     setProgress(getShorthandProgress());
   }, []);
-
-  if (!progress) {
-    return <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100 flex items-center justify-center">Loading progress...</div>;
-  }
 
   const completedCount = progress.completedLessons.length;
   const completionPercent = Math.round((completedCount / 13) * 100);

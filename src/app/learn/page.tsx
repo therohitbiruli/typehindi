@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { LearnClient } from "../../components/learn/LearnClient";
 
 export const metadata: Metadata = {
@@ -28,15 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function LearnPage() {
-  return (
-    <Suspense
-      fallback={
-        <div className="container-main py-12 text-center text-gray-500">
-          Loading Hindi Typing Lessons...
-        </div>
-      }
-    >
-      <LearnClient />
-    </Suspense>
-  );
+  return <LearnClient />;
 }

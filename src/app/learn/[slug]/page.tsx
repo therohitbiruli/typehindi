@@ -12,13 +12,9 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const langParams = ALL_LANGUAGES.map((lang) => ({
+  return ALL_LANGUAGES.map((lang) => ({
     slug: lang.slug,
   }));
-  const blogParams = blogs.map((blog) => ({
-    slug: blog.slug,
-  }));
-  return [...langParams, ...blogParams];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

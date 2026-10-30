@@ -72,6 +72,461 @@ export function parseBlogDate(blog: BlogPost | string): Date {
 
 export const blogs: BlogPost[] = [
   {
+  "slug": "odisha-police-constable-recruitment-2026",
+  "titleEn": "Odisha Police Constable Recruitment 2026: 7,268 Vacancies for Constable, Firefighter and Driver Posts",
+  "title": "Odisha Police Constable Recruitment 2026: 7,268 Vacancies for Constable, Firefighter and Driver Posts",
+  "date": "30 अक्टूबर, 2026",
+  "dateEn": "30 October, 2026",
+  "categoryEn": "Government Jobs",
+  "category": "सरकारी नौकरी",
+  "tags": ["Odisha Police", "Constable Recruitment", "OUSSSC", "Firefighter", "Driver", "Government Jobs", "Police Jobs"],
+  "excerptEn": "Odisha Uniformed Services Staff Selection Commission (OUSSSC) has announced 7,268 vacancies for Constable (Civil), Constable OISF, Firefighter, Driver, and Traffic Constable under Advt No. 01-CRE-2026/OUSSSC. 10th/12th pass eligible. Apply online by 12 November 2026.",
+  "excerpt": "Odisha Uniformed Services Staff Selection Commission (OUSSSC) has announced 7,268 vacancies for Constable (Civil), Constable OISF, Firefighter, Driver, and Traffic Constable under Advt No. 01-CRE-2026/OUSSSC. 10th/12th pass eligible. Apply online by 12 November 2026.",
+  "contentEn": `![Odisha Police Constable Recruitment 2026](/images/odisha-police-constable-recruitment-2026.jpg)
+
+The Odisha Police Constable Recruitment 2026 notification has been released by the Odisha Uniformed Services Staff Selection Commission (OUSSSC) under Advertisement No. 01-CRE-2026/OUSSSC. The recruitment covers 7,268 vacancies under the Combined Uniformed Services (Below Graduate Level) Examination 2026, including Constable (Civil), Constable (Communication), Constable OISF, Firefighter, Firefighting Driver, Driver PMT and Traffic Constable.
+
+Candidates who have passed Class 10th, Class 12th or an eligible engineering diploma can apply for the respective posts, depending on the educational qualification, age limit, Odia language requirement and other eligibility conditions. Certain posts also require a valid driving licence, while all applicants must meet the prescribed physical and medical standards for their selected position.
+
+The total vacancy count is 7,268, with Constable (Civil) accounting for 4,219 posts and Constable OISF accounting for 2,212 posts. The remaining vacancies cover communication, firefighting, driving and traffic-related duties.
+
+The online application process opened on 23 October 2026 at 5:00 PM. Online registration and application are scheduled to close on 12 November 2026 at 10:00 PM, while the fee-payment deadline is 13 November 2026 at 10:00 PM.
+
+This article explains Odisha Police Recruitment 2026 in detail, including post-wise vacancies, eligibility criteria, age limits, physical standards, salary levels, examination pattern, negative marking, application fees, selection process and how to fill out the online application form.
+
+## Odisha Police Recruitment 2026 Overview
+
+| Particular | Details |
+| :--- | :--- |
+| **Recruiting Organisation** | Odisha Uniformed Services Staff Selection Commission (OUSSSC) |
+| **Examination Name** | Combined Uniformed Services (Below Graduate Level) Examination 2026 |
+| **Advertisement Number** | 01-CRE-2026/OUSSSC |
+| **Total Vacancies** | 7,268 |
+| **Posts** | Constable, Firefighter, Firefighting Driver, Driver PMT and Traffic Constable |
+| **Application Mode** | Online |
+| **Application Start Date** | 23 October 2026, 5:00 PM |
+| **Last Date for Registration and Application** | 12 November 2026, 10:00 PM |
+| **Last Date for Fee Payment** | 13 November 2026, 10:00 PM |
+| **Age Calculation Date** | 1 January 2026 |
+| **Minimum Qualification** | Class 10th, Class 12th or eligible engineering diploma (post-wise) |
+| **Application Fee** | ₹500 (SC/ST candidates exempted) |
+| **Selection Process** | Written Examination, Physical Tests (PMT/PET), Driving Test (as applicable), Medical & DV |
+| **Examination Date** | To be announced |
+| **Job Location** | Odisha |
+| **Official Website** | [ousssc.odisha.gov.in](https://ousssc.odisha.gov.in/) |
+
+> **Important:** Candidates should check the eligibility requirements for their chosen post before registering. The seven posts have different educational qualifications, age limits, physical requirements and selection stages.
+
+## Odisha Police Vacancy 2026: Post-Wise Distribution
+
+The OUSSSC notification announces 7,268 vacancies across seven post categories.
+
+| No. | Post Name | Vacancies | Pay Level |
+| :--- | :--- | :--- | :--- |
+| 1 | **Constable (Civil)** | 4,219 | Level 5 |
+| 2 | **Constable (Communication)** | 300 | Level 5 |
+| 3 | **Constable OISF** | 2,212 | Level 5 |
+| 4 | **Firefighter** | 317 | Level 4 |
+| 5 | **Firefighting Driver** | 62 | Level 4 |
+| 6 | **Driver PMT** | 154 | Level 5 |
+| 7 | **Traffic Constable** | 4 | Level 4 |
+| **Total** | | **7,268** | |
+
+Constable (Civil) has the highest number of vacancies, with 4,219 posts, followed by Constable OISF with 2,212 posts.
+
+### Category-Wise Vacancy Allocation
+
+| Post | UR | SC | ST | SEBC | Total |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Constable (Civil)** | 2,805 | 588 | 741 | 85 | 4,219 |
+| **Constable (Communication)** | 165 | 41 | 68 | 26 | 300 |
+| **Constable OISF** | 1,119 | 342 | 508 | 243 | 2,212 |
+| **Firefighter** | 179 | 51 | 87 | 0 | 317 |
+| **Firefighting Driver** | 44 | 6 | 10 | 2 | 62 |
+| **Driver PMT** | 124 | 14 | 16 | 0 | 154 |
+| **Traffic Constable** | 1 | 0 | 0 | 3 | 4 |
+| **Total** | **4,437** | **1,042** | **1,430** | **359** | **7,268** |
+
+The notification also provides for horizontal reservations, including applicable provisions for women, Ex-Servicemen, sportspersons and Ex-Agniveers.
+
+### Vacancies Reserved for Women
+
+The vacancy roster identifies 1,819 positions for women across eligible posts:
+
+| Post | Women’s Vacancies |
+| :--- | :--- |
+| **Constable (Civil)** | 1,393 |
+| **Constable (Communication)** | 99 |
+| **Constable OISF** | 326 |
+| **Traffic Constable** | 1 |
+| **Total** | **1,819** |
+
+*Note: The vacancy roster does not provide women’s vacancies for Firefighter, Firefighting Driver or Driver PMT.*
+
+## Odisha Police Recruitment 2026 Eligibility Criteria
+
+Candidates must satisfy the educational qualification, age limit, Odia language requirement, physical standards and any additional conditions for their chosen post.
+
+### 1. Constable (Civil) Eligibility
+- **Educational Qualification:** Higher Secondary (+2) or equivalent from a recognised board or council.
+- **Cadre:** District-cadre post. Candidates must select the relevant district based on vacancy rules.
+- **Employment Exchange:** Candidates must satisfy the applicable district Employment Exchange registration condition.
+
+### 2. Constable (Communication) Eligibility
+Candidates must satisfy either:
+- Passed **+2 Science** with Physics, Chemistry and Mathematics, Electronics, Statistics, Computer Science or Information Technology; OR
+- Passed a recognised **three-year engineering diploma** in an eligible discipline.
+*(A general Class 12 qualification without Science is not eligible).*
+
+### 3. Constable OISF Eligibility
+- **Educational Qualification:** Matriculation (Class 10th) or equivalent from a recognised board.
+- **Vacancies:** 2,212 posts allocated by battalion.
+
+### 4. Firefighter Eligibility
+- **Educational Qualification:** Higher Secondary (+2) or equivalent from a recognised board.
+- Physically demanding role with additional endurance and practical tests (swimming, rope climbing, load carrying).
+
+### 5. Firefighting Driver Eligibility
+- **Educational Qualification:** Higher Secondary (+2) or equivalent.
+- **Driving Licence:** Valid Heavy Motor Vehicle (**HMV**) licence held for at least one year before the advertisement date (excluding learner period).
+
+### 6. Driver PMT Eligibility
+- **Educational Qualification:** Matriculation (Class 10th) or equivalent.
+- **Driving Licence:** Valid Light Motor Vehicle (**LMV**) or Heavy Motor Vehicle (**HMV**) licence held for at least six months before the advertisement date (excluding learner period).
+
+### 7. Traffic Constable Eligibility
+- **Educational Qualification:** Higher Secondary (+2) or equivalent.
+- Total 4 vacancies.
+
+## Odisha Police Constable Age Limit 2026
+
+Age is calculated as on **1 January 2026**.
+
+| Post Name | Minimum Age | Maximum Age |
+| :--- | :--- | :--- |
+| **Constable (Civil)** | 18 years | 26 years |
+| **Constable (Communication)** | 18 years | 23 years |
+| **Constable OISF** | 18 years | 23 years |
+| **Firefighter** | 18 years | 25 years |
+| **Firefighting Driver** | 18 years | 25 years |
+| **Driver PMT** | 18 years | 23 years |
+| **Traffic Constable** | 21 years | 32 years |
+
+### Age Relaxation
+
+| Candidate Category | Age Relaxation |
+| :--- | :--- |
+| **SC / ST Candidates** | 5 years |
+| **SEBC Candidates** | 5 years |
+| **Women Candidates** | 5 years |
+| **Ex-Agniveers** | 3 years |
+| **Ex-Servicemen** | As per defence service rules |
+
+### Odia Language Requirement
+
+Candidates must be able to speak, read and write Odia and must satisfy one of the accepted language-qualification conditions (e.g., passed ME school exam with Odia as language subject or High School Certificate exam with Odia as medium of examination in non-language subjects).
+
+## Physical Standards (PMT)
+
+Candidates must qualify the Physical Measurement Test before proceeding to the physical efficiency tests:
+
+### Physical Standards for Male Candidates
+
+| Category | Minimum Height | Minimum Weight | Chest Unexpanded | Chest Expanded |
+| :--- | :--- | :--- | :--- | :--- |
+| **UR / SEBC** | 168 cm | 55 kg | 79 cm | 84 cm |
+| **SC / ST** | 163 cm | 50 kg | 76 cm | 81 cm |
+
+### Physical Standards for Female Candidates
+
+| Category | Minimum Height | Minimum Weight |
+| :--- | :--- | :--- |
+| **UR / SEBC** | 158 cm | 47.5 kg |
+| **SC / ST** | 153 cm | 45 kg |
+
+*(Chest measurement is not applicable for female candidates).*
+
+## Physical Efficiency Test (PET) 2026
+
+The Physical Efficiency Test is qualifying in nature:
+
+| Event | Male Candidates | Female Candidates |
+| :--- | :--- | :--- |
+| **Running** | 1.6 km in 7 minutes | 1.6 km in 9 minutes |
+| **Long Jump** | 3.66 metres (up to 3 attempts) | 2.75 metres (up to 3 attempts) |
+| **Shot Put** | 4 metres with 7.26 kg shot (up to 3 attempts) | 3 metres with 4 kg shot (up to 3 attempts) |
+
+### Additional Events for Firefighting Posts
+
+- **Swimming:** 100 metres within 8 minutes for eligible male candidates.
+- **Rope Climbing:** 6 metres within 3 attempts for Firefighter.
+- **Load Carrying:** Carry a 63 kg sandbag for 100 metres within 60 seconds for Firefighter.
+
+## Salary Structure
+
+The advertised posts are placed under Pay Level 4 or Pay Level 5 of the Odisha Revised Scales of Pay Rules, 2017:
+
+| Post | Pay Level |
+| :--- | :--- |
+| **Constable (Civil)** | Level 5 |
+| **Constable (Communication)** | Level 5 |
+| **Constable OISF** | Level 5 |
+| **Firefighter** | Level 4 |
+| **Firefighting Driver** | Level 4 |
+| **Driver PMT** | Level 5 |
+| **Traffic Constable** | Level 4 |
+
+Posts carry admissible allowances (DA, HRA, uniform allowance, etc.) as per Odisha Government service rules.
+
+## Application Fee & Refund Policy
+
+| Candidate Category | Examination Fee |
+| :--- | :--- |
+| **General / UR** | ₹500 |
+| **SEBC** | ₹500 |
+| **SC / ST** | Exempted |
+
+> **Refund Policy:** The ₹500 examination fee is refundable to eligible fee-paying candidates who actually appear in the written examination. Candidates who do not attend will not receive a refund.
+
+## Exam Pattern 2026
+
+### 1. Common Written Examination (All Posts)
+- **Subjects:** Odia Language, English Language, General Knowledge, Quantitative Aptitude & Reasoning, Basic Computer Literacy.
+- **Total Questions:** 100 (Objective MCQ)
+- **Total Marks:** 100
+- **Duration:** 2 hours (120 minutes)
+- **Negative Marking:** 0.25 mark per incorrect answer
+- **Mode:** Computer-Based Test (CBT)
+
+### 2. Special Written Exam for Constable (Communication)
+- **Subjects:** Physics and Computer Science (+2 Science level)
+- **Questions:** 100 | **Marks:** 300 (3 marks per question)
+- **Duration:** 2 hours | **Negative Marking:** 0.75 mark per wrong answer
+
+### 3. Special Written Exam for Driver PMT & Firefighting Driver
+- **Subjects:** Vehicle Maintenance, Traffic Signals, Road Safety Rules
+- **Questions:** 50 | **Marks:** 50 (1 mark per question)
+- **Duration:** 1 hour | **Negative Marking:** 0.25 mark per wrong answer
+
+### NCC Bonus Marks
+- **NCC 'A' Certificate:** 1 mark
+- **NCC 'B' Certificate:** 2 marks
+- **NCC 'C' Certificate:** 3 marks
+
+## Selection Process
+
+The selection process involves:
+1. **Common Written Examination**
+2. **Special Written Examination** (for Communication & Driver posts)
+3. **Physical Measurement Test (PMT)**
+4. **Physical Efficiency Test (PET)**
+5. **Driving Test** (for Driver posts)
+6. **Medical Examination**
+7. **Document Verification**
+
+## Important Dates
+
+| Event | Date |
+| :--- | :--- |
+| **Advertisement Release** | 23 October 2026 |
+| **Online Registration Begins** | 23 October 2026, 5:00 PM |
+| **Last Date for Registration & Application** | 12 November 2026, 10:00 PM |
+| **Last Date for Fee Payment** | 13 November 2026, 10:00 PM |
+| **Written Examination Date** | To be announced |
+| **Admit Card Release** | To be announced |
+
+## How to Apply for Odisha Police Recruitment 2026
+
+1. **Step 1:** Visit the official website [ousssc.odisha.gov.in](https://ousssc.odisha.gov.in/).
+2. **Step 2:** Open the application portal at [ousssceabedana.odisha.gov.in](https://ousssceabedana.odisha.gov.in/#/auth/home).
+3. **Step 3:** Confirm Advertisement No. 01-CRE-2026/OUSSSC and complete Step-I registration with your mobile number and email.
+4. **Step 4:** Select the post you wish to apply for and confirm educational eligibility.
+5. **Step 5:** Choose your preferred district (Civil Constable) or battalion preference (OISF).
+6. **Step 6:** Fill personal, educational, Odia qualification, and driving licence details.
+7. **Step 7:** Upload recent photograph, signature, and necessary certificates.
+8. **Step 8:** Pay the ₹500 fee (if applicable) through online payment. SC/ST are exempted.
+9. **Step 9:** Select up to 3 preferred examination districts.
+10. **Step 10:** Review and submit before **12 November 2026 at 10:00 PM**. Download the application acknowledgement and fee receipt.
+
+## Official Links
+
+| Purpose | Link |
+| :--- | :--- |
+| **OUSSSC Official Website** | [ousssc.odisha.gov.in](https://ousssc.odisha.gov.in/) |
+| **Online Application Portal** | [Open Application Portal](https://ousssceabedana.odisha.gov.in/#/auth/home) |
+| **Official Notification PDF** | [Download Notification PDF](https://www.careerpower.in/blog/wp-content/uploads/2026/10/23183108/Odisha-Constable.pdf) |
+| **Registration Deadline** | 12 November 2026, 10:00 PM |
+| **Fee Payment Deadline** | 13 November 2026, 10:00 PM |
+
+## Documents Required
+
+- Class 10 Certificate & Marksheet (DoB proof)
+- Class 12 / Diploma Certificate & Marksheet (where applicable)
+- Odia Language Qualification Proof
+- Driving Licence (for Driver posts: HMV/LMV)
+- Employment Exchange Registration Certificate (Constable Civil)
+- SC/ST/SEBC Caste Certificate (if applicable)
+- NCC Certificate (for bonus marks)
+- Ex-Servicemen / Ex-Agniveer documents (where applicable)
+- Passport-size Photograph & Signature
+
+## Common Mistakes to Avoid
+
+1. Applying for a post without meeting the exact minimum qualification.
+2. Ignoring the Odia language requirement.
+3. Applying for Driver posts without the required holding period (HMV 1 year, LMV 6 months).
+4. Calculating age incorrectly (cutoff date is **1 January 2026**).
+5. Failing to meet the height, chest, or weight criteria in PMT.
+6. Missing the separate fee payment deadline (13 November, 10:00 PM).
+7. Relying solely on written exam preparation and neglecting physical conditioning.
+
+## Odisha Police Recruitment 2026 FAQs
+
+**How many vacancies are available in Odisha Police Recruitment 2026?**  
+There are 7,268 vacancies across Constable (Civil), Constable (Communication), Constable OISF, Firefighter, Firefighting Driver, Driver PMT and Traffic Constable.
+
+**What is the last date to apply?**  
+Online registration closes on 12 November 2026 at 10:00 PM. Fee payment closes on 13 November 2026 at 10:00 PM.
+
+**What is the educational qualification?**  
+Class 10th for Constable OISF & Driver PMT; Class 12th for Constable Civil, Firefighter, Firefighting Driver & Traffic Constable; +2 Science or 3-year Engineering Diploma for Constable Communication.
+
+**What is the application fee?**  
+₹500 for General/SEBC candidates. SC/ST candidates are exempted. Fee is refunded to candidates who appear in the written exam.
+
+**Is there negative marking in the written test?**  
+Yes, 0.25 mark deduction for the common paper and driving paper; 0.75 mark deduction for the Communication special paper.
+
+**Where can I apply?**  
+Apply online at [ousssceabedana.odisha.gov.in](https://ousssceabedana.odisha.gov.in/#/auth/home).
+
+## Final Words
+
+The Odisha Police Recruitment 2026 offers 7,268 vacancies across seven key uniformed posts under OUSSSC. With opportunities for 10th pass, 12th pass, and Diploma holders in Pay Levels 4 and 5, this is a major recruitment drive for youth in Odisha.
+
+Ensure you meet the post-specific educational, age, Odia language, and physical criteria before submitting your application. Complete your registration before **12 November 2026 at 10:00 PM** and fee payment before **13 November 2026 at 10:00 PM** through the official OUSSSC portal.`,
+  "content": `![Odisha Police Constable Recruitment 2026](/images/odisha-police-constable-recruitment-2026.jpg)
+
+The Odisha Police Constable Recruitment 2026 notification has been released by the Odisha Uniformed Services Staff Selection Commission (OUSSSC) under Advertisement No. 01-CRE-2026/OUSSSC. The recruitment covers 7,268 vacancies under the Combined Uniformed Services (Below Graduate Level) Examination 2026, including Constable (Civil), Constable (Communication), Constable OISF, Firefighter, Firefighting Driver, Driver PMT and Traffic Constable.
+
+Candidates who have passed Class 10th, Class 12th or an eligible engineering diploma can apply for the respective posts, depending on the educational qualification, age limit, Odia language requirement and other eligibility conditions. Certain posts also require a valid driving licence, while all applicants must meet the prescribed physical and medical standards for their selected position.
+
+The total vacancy count is 7,268, with Constable (Civil) accounting for 4,219 posts and Constable OISF accounting for 2,212 posts. The remaining vacancies cover communication, firefighting, driving and traffic-related duties.
+
+The online application process opened on 23 October 2026 at 5:00 PM. Online registration and application are scheduled to close on 12 November 2026 at 10:00 PM, while the fee-payment deadline is 13 November 2026 at 10:00 PM.
+
+## Odisha Police Recruitment 2026 Overview
+
+| Particular | Details |
+| :--- | :--- |
+| **Recruiting Organisation** | Odisha Uniformed Services Staff Selection Commission (OUSSSC) |
+| **Examination Name** | Combined Uniformed Services (Below Graduate Level) Examination 2026 |
+| **Advertisement Number** | 01-CRE-2026/OUSSSC |
+| **Total Vacancies** | 7,268 |
+| **Posts** | Constable, Firefighter, Firefighting Driver, Driver PMT and Traffic Constable |
+| **Application Mode** | Online |
+| **Application Start Date** | 23 October 2026, 5:00 PM |
+| **Last Date for Registration and Application** | 12 November 2026, 10:00 PM |
+| **Last Date for Fee Payment** | 13 November 2026, 10:00 PM |
+| **Age Calculation Date** | 1 January 2026 |
+| **Minimum Qualification** | Class 10th, Class 12th or eligible engineering diploma (post-wise) |
+| **Application Fee** | ₹500 (SC/ST candidates exempted) |
+| **Selection Process** | Written Examination, Physical Tests (PMT/PET), Driving Test (as applicable), Medical & DV |
+| **Examination Date** | To be announced |
+| **Job Location** | Odisha |
+| **Official Website** | [ousssc.odisha.gov.in](https://ousssc.odisha.gov.in/) |
+
+## Odisha Police Vacancy 2026: Post-Wise Distribution
+
+| No. | Post Name | Vacancies | Pay Level |
+| :--- | :--- | :--- | :--- |
+| 1 | **Constable (Civil)** | 4,219 | Level 5 |
+| 2 | **Constable (Communication)** | 300 | Level 5 |
+| 3 | **Constable OISF** | 2,212 | Level 5 |
+| 4 | **Firefighter** | 317 | Level 4 |
+| 5 | **Firefighting Driver** | 62 | Level 4 |
+| 6 | **Driver PMT** | 154 | Level 5 |
+| 7 | **Traffic Constable** | 4 | Level 4 |
+| **Total** | | **7,268** | |
+
+### Category-Wise Vacancy Allocation
+
+| Post | UR | SC | ST | SEBC | Total |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Constable (Civil)** | 2,805 | 588 | 741 | 85 | 4,219 |
+| **Constable (Communication)** | 165 | 41 | 68 | 26 | 300 |
+| **Constable OISF** | 1,119 | 342 | 508 | 243 | 2,212 |
+| **Firefighter** | 179 | 51 | 87 | 0 | 317 |
+| **Firefighting Driver** | 44 | 6 | 10 | 2 | 62 |
+| **Driver PMT** | 124 | 14 | 16 | 0 | 154 |
+| **Traffic Constable** | 1 | 0 | 0 | 3 | 4 |
+| **Total** | **4,437** | **1,042** | **1,430** | **359** | **7,268** |
+
+### Vacancies Reserved for Women
+
+| Post | Women’s Vacancies |
+| :--- | :--- |
+| **Constable (Civil)** | 1,393 |
+| **Constable (Communication)** | 99 |
+| **Constable OISF** | 326 |
+| **Traffic Constable** | 1 |
+| **Total** | **1,819** |
+
+## Eligibility Criteria
+
+- **Constable (Civil):** +2 / Higher Secondary pass. District cadre post. Employment exchange registration required.
+- **Constable (Communication):** +2 Science (PCM/CS/IT) or 3-year Engineering Diploma.
+- **Constable OISF:** Matriculation (10th pass). Battalion-wise allocation.
+- **Firefighter:** +2 / Higher Secondary pass. Endurance and swimming tests applicable.
+- **Firefighting Driver:** +2 pass + valid HMV driving licence held for at least 1 year.
+- **Driver PMT:** Class 10th pass + valid LMV or HMV driving licence held for at least 6 months.
+- **Traffic Constable:** +2 / Higher Secondary pass.
+
+## Age Limit (as on 1 January 2026)
+
+| Post Name | Age Limit |
+| :--- | :--- |
+| Constable (Civil) | 18–26 years |
+| Constable (Communication) | 18–23 years |
+| Constable OISF | 18–23 years |
+| Firefighter | 18–25 years |
+| Firefighting Driver | 18–25 years |
+| Driver PMT | 18–23 years |
+| Traffic Constable | 21–32 years |
+
+*(5 years relaxation for SC/ST/SEBC/Women; 3 years for Ex-Agniveers).*
+
+## Physical Standards (PMT)
+
+- **Male (UR/SEBC):** Height 168 cm, Weight 55 kg, Chest 79–84 cm
+- **Male (SC/ST):** Height 163 cm, Weight 50 kg, Chest 76–81 cm
+- **Female (UR/SEBC):** Height 158 cm, Weight 47.5 kg
+- **Female (SC/ST):** Height 153 cm, Weight 45 kg
+
+## Physical Efficiency Test (PET)
+
+- **Running:** 1.6 km in 7 mins (Male) / 9 mins (Female)
+- **Long Jump:** 3.66 m (Male) / 2.75 m (Female)
+- **Shot Put:** 4 m with 7.26 kg shot (Male) / 3 m with 4 kg shot (Female)
+- **Firefighting Posts:** Swimming (100 m in 8 mins), rope climbing (6 m), sandbag carry (63 kg for 100 m).
+
+## Application Fee & Exam Pattern
+
+- **Fee:** ₹500 (SC/ST exempted). Refunded to candidates who appear in written exam.
+- **Common Written Exam:** 100 MCQs, 100 marks, 120 minutes. Negative marking: 0.25 mark per wrong answer.
+- **Special Paper (Communication):** 100 Qs, 300 marks, negative marking 0.75.
+- **Special Paper (Driver):** 50 Qs, 50 marks, negative marking 0.25.
+
+## Important Dates & Links
+
+- **Registration Ends:** 12 November 2026, 10:00 PM
+- **Fee Payment Ends:** 13 November 2026, 10:00 PM
+- **Apply Online:** [ousssceabedana.odisha.gov.in](https://ousssceabedana.odisha.gov.in/#/auth/home)
+- **Official Website:** [ousssc.odisha.gov.in](https://ousssc.odisha.gov.in/)
+- **Notification PDF:** [Download PDF](https://www.careerpower.in/blog/wp-content/uploads/2026/10/23183108/Odisha-Constable.pdf)`
+},
+
+  {
   "slug": "bel-recruitment-2026-probationary-engineer",
   "titleEn": "BEL Recruitment 2026: 350 Probationary Engineer Vacancies, Salary \u20b913 Lakh, Eligibility and How to Apply",
   "title": "BEL Recruitment 2026: 350 Probationary Engineer Vacancies, Salary \u20b913 Lakh, Eligibility and How to Apply",

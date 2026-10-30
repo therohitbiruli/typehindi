@@ -70,102 +70,7 @@ export default function GameHubPage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. BENEFITS OF LEARNING HINDI TYPING THROUGH GAMES */}
-      {/* ========================================================================= */}
-      <section className="mb-20">
-        <div className="text-center mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-2 block">
-            Why Gamified Learning Works
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
-            Why Learn Hindi Typing Through Games?
-          </h2>
-          <p className="text-gray-500 dark:text-slate-400 text-base max-w-2xl mx-auto">
-            Typing games bridge the gap between mechanical repetition and intuitive muscle memory by
-            rewarding accuracy, timing, and cognitive recognition.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Benefit 1 */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl mb-4">
-              🚀
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Improve Typing Speed</h3>
-            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
-              Games encourage users to type repeatedly and respond quickly. As challenges gradually
-              become faster, users practice recognizing Hindi characters and typing them more
-              efficiently without hesitation.
-            </p>
-          </div>
-
-          {/* Benefit 2 */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-2xl mb-4">
-              🎯
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Build Better Accuracy</h3>
-            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
-              Typing games reward correct answers and streak combos. Users learn to focus on precision
-              instead of blindly hammering keys, building true muscle memory for Remington and InScript
-              layouts.
-            </p>
-          </div>
-
-          {/* Benefit 3 */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-2xl mb-4">
-              ⚡
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Improve Reflexes</h3>
-            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
-              Fast-paced game mechanics require users to spot words instantly and react. This
-              sharpens neuromuscular reflexes between visual text perception and finger keystrokes.
-            </p>
-          </div>
-
-          {/* Benefit 4 */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center text-2xl mb-4">
-              ✨
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Make Practice Engaging</h3>
-            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
-              Traditional typing exercises can sometimes feel monotonous. Games introduce dynamic
-              objectives, scoreboards, streaks, and progressive difficulty tiers that make daily
-              practice fun and rewarding.
-            </p>
-          </div>
-
-          {/* Benefit 5 */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-2xl mb-4">
-              📚
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Learn Difficult Hindi Words</h3>
-            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
-              Games systematically introduce complex vocabulary: common nouns, matra combinations,
-              vowel modifiers, half-letters (हलंत), and challenging conjunct characters (संयुक्त अक्षर).
-            </p>
-          </div>
-
-          {/* Benefit 6 */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-2xl mb-4">
-              🔄
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Practice Without Boredom</h3>
-            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
-              Switching between target aiming, obstacle running, falling words, and spelling puzzles
-              keeps learning fresh and tests different cognitive typing dimensions.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* 3. GAME HUB - CHOOSE YOUR TYPING GAME (DEDICATED URL LINKS) */}
+      {/* 2. GAME HUB - CHOOSE YOUR TYPING GAME (DEDICATED URL LINKS) */}
       {/* ========================================================================= */}
       <section id="choose-games" className="mb-20 scroll-mt-8">
         <div className="text-center mb-12">
@@ -274,7 +179,7 @@ export default function GameHubPage() {
       <AdPlaceholder position="bottom" />
 
       {/* ========================================================================= */}
-      {/* 4. DETAILED GAME GUIDES (WITH DIRECT LINKS TO EACH GAME ROUTE) */}
+      {/* 3. DETAILED GAME GUIDES (WITH DIRECT LINKS TO EACH GAME ROUTE) */}
       {/* ========================================================================= */}
       <section className="mb-20">
         <div className="text-center mb-16">
@@ -713,7 +618,7 @@ export default function GameHubPage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. DIFFICULTY LEVELS */}
+      {/* 4. DIFFICULTY LEVELS */}
       {/* ========================================================================= */}
       <section className="mb-20">
         <div className="text-center mb-12">
@@ -782,6 +687,101 @@ export default function GameHubPage() {
             <div className="text-xs text-rose-400 font-semibold pt-3 border-t border-gray-200 dark:border-slate-800">
               Ideal for: Competitive speed typists & Government typing exam candidates (SSC/LDC/High Court).
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 5. BENEFITS OF LEARNING HINDI TYPING THROUGH GAMES */}
+      {/* ========================================================================= */}
+      <section className="mb-20">
+        <div className="text-center mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-2 block">
+            Why Gamified Learning Works
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
+            Why Learn Hindi Typing Through Games?
+          </h2>
+          <p className="text-gray-500 dark:text-slate-400 text-base max-w-2xl mx-auto">
+            Typing games bridge the gap between mechanical repetition and intuitive muscle memory by
+            rewarding accuracy, timing, and cognitive recognition.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Benefit 1 */}
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl mb-4">
+              🚀
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Improve Typing Speed</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
+              Games encourage users to type repeatedly and respond quickly. As challenges gradually
+              become faster, users practice recognizing Hindi characters and typing them more
+              efficiently without hesitation.
+            </p>
+          </div>
+
+          {/* Benefit 2 */}
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-2xl mb-4">
+              🎯
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Build Better Accuracy</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
+              Typing games reward correct answers and streak combos. Users learn to focus on precision
+              instead of blindly hammering keys, building true muscle memory for Remington and InScript
+              layouts.
+            </p>
+          </div>
+
+          {/* Benefit 3 */}
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-2xl mb-4">
+              ⚡
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Improve Reflexes</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
+              Fast-paced game mechanics require users to spot words instantly and react. This
+              sharpens neuromuscular reflexes between visual text perception and finger keystrokes.
+            </p>
+          </div>
+
+          {/* Benefit 4 */}
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center text-2xl mb-4">
+              ✨
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Make Practice Engaging</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
+              Traditional typing exercises can sometimes feel monotonous. Games introduce dynamic
+              objectives, scoreboards, streaks, and progressive difficulty tiers that make daily
+              practice fun and rewarding.
+            </p>
+          </div>
+
+          {/* Benefit 5 */}
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-2xl mb-4">
+              📚
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Learn Difficult Hindi Words</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
+              Games systematically introduce complex vocabulary: common nouns, matra combinations,
+              vowel modifiers, half-letters (हलंत), and challenging conjunct characters (संयुक्त अक्षर).
+            </p>
+          </div>
+
+          {/* Benefit 6 */}
+          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-2xl mb-4">
+              🔄
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Practice Without Boredom</h3>
+            <p className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">
+              Switching between target aiming, obstacle running, falling words, and spelling puzzles
+              keeps learning fresh and tests different cognitive typing dimensions.
+            </p>
           </div>
         </div>
       </section>

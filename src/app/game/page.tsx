@@ -1,19 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { GAME_CATALOG, GameInfo } from "../../data/gameData";
 
 type Difficulty = "Beginner" | "Intermediate" | "Advanced";
-
-interface HubStats {
-  gamesPlayed: number;
-  highestScore: number;
-  bestAccuracy: number;
-  bestSpeed: number;
-}
 
 const DIFFICULTY_COLORS: Record<Difficulty, string> = {
   Beginner: "text-emerald-400 border-emerald-500/50 bg-emerald-500/10",
@@ -22,20 +14,6 @@ const DIFFICULTY_COLORS: Record<Difficulty, string> = {
 };
 
 export default function GameHubPage() {
-  const [hubStats, setHubStats] = useState<HubStats>({
-    gamesPlayed: 0,
-    highestScore: 0,
-    bestAccuracy: 0,
-    bestSpeed: 0,
-  });
-
-  // Load stats from localStorage
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem("typehindi_game_hub_stats");
-      if (saved) setHubStats(JSON.parse(saved));
-    } catch (_) {}
-  }, []);
 
   const scrollToGames = () => {
     const el = document.getElementById("choose-games");
@@ -90,30 +68,6 @@ export default function GameHubPage() {
           <span><strong>Device Notice:</strong> Typing games are best experienced on a Desktop or Laptop with a physical keyboard.</span>
         </div>
       </section>
-
-      {/* Stats Dashboard */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto">
-        {[
-          { label: "Games Played", value: hubStats.gamesPlayed, icon: "🎮", color: "text-primary-400" },
-          {
-            label: "Highest Score",
-            value: hubStats.highestScore.toLocaleString(),
-            icon: "⭐",
-            color: "text-amber-400",
-          },
-          { label: "Best Accuracy", value: `${hubStats.bestAccuracy}%`, icon: "🎯", color: "text-emerald-400" },
-          { label: "Best Speed", value: `${hubStats.bestSpeed} WPM`, icon: "⚡", color: "text-cyan-400" },
-        ].map((s) => (
-          <div
-            key={s.label}
-            className="card p-5 text-center border border-gray-200 dark:border-slate-800 rounded-2xl bg-gray-50 dark:bg-slate-900/70 shadow-sm dark:shadow-lg"
-          >
-            <div className="text-2xl mb-1">{s.icon}</div>
-            <div className={`text-2xl sm:text-3xl font-black ${s.color}`}>{s.value}</div>
-            <div className="text-xs text-gray-500 dark:text-slate-400 mt-1 font-medium">{s.label}</div>
-          </div>
-        ))}
-      </div>
 
       {/* ========================================================================= */}
       {/* 2. BENEFITS OF LEARNING HINDI TYPING THROUGH GAMES */}

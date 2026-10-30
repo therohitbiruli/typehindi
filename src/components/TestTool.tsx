@@ -1,0 +1,330 @@
+"use client";
+
+import { useState, useCallback, useMemo } from "react";
+import { TypingBox } from "./TypingBox";
+import { Stats } from "./Stats";
+import { TimerDisplay } from "./Timer";
+import { Keyboard } from "./Keyboard";
+import { useTypingEngine } from "../hooks/useTypingEngine";
+import { useTimer } from "../hooks/useTimer";
+import { useKeyPress } from "../hooks/useKeyPress";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { getRandomParagraph } from "../data/paragraphs";
+import type { Paragraph } from "../data/paragraphs";
+import { getKeyInfoForChar } from "../utils/keyboardMapper";
+
+const TEST_DURATIONS = [
+  { label: "1 Min", seconds: 60 },
+  { label: "5 Min", seconds: 300 },
+  { label: "10 Min", seconds: 600 },
+];
+
+export function TestTool() {
+  const [language, setLanguage] = useState<"hindi" | "english">("hindi");
+  const [targetJob, setTargetJob] = useState<"ssc" | "rrb" | "ldc" | "udc" | "others">("ssc");
+  const [testDuration, setTestDuration] = useState(60);
+  const [paragraph, setParagraph] = useState<Paragraph>(() => getRandomParagraph("medium", "hindi"));
+  const [showKeyboard, setShowKeyboard] = useState(false);
+  const [showResults, setShowResults] = useState(false);
+  const storageKey = language === "hindi" ? "bestTestWpm" : `typehindi_best_test_wpm_${language}`;
+  const [bestTestWpm, setBestTestWpm] = useLocalStorage<number>(storageKey, 0);
+
+  const { typedText, isStarted, isFinished, stats, handleInput, reset, forceFinish } =
+    useTypingEngine(paragraph.text);
+
+  const forceFinishRef = { current: forceFinish };
+
+  const { formattedTime, isRunning, start: startTimer, reset: resetTimer } = useTimer(
+    testDuration,
+    () => {
+      forceFinishRef.current?.();
+      setShowResults(true);
+    }
+  );
+
+  const { activeKey, isShift } = useKeyPress();
+
+  // Save best WPM
+  useMemo(() => {
+    if ((isFinished || showResults) && stats.wpm > bestTestWpm) {
+      setBestTestWpm(stats.wpm);
+    }
+  }, [isFinished, showResults, stats.wpm, bestTestWpm, setBestTestWpm]);
+
+  const handleTypingInput = useCallback(
+    (text: string, insertedAtIndex?: number) => {
+      if (!isRunning && text.length === 1) {
+        startTimer();
+      }
+      handleInput(text, insertedAtIndex);
+    },
+    [isRunning, startTimer, handleInput]
+  );
+
+  const nextKeyInfo = useMemo(() => {
+    if (isFinished || showResults || !paragraph.text) return null;
+    const nextChar = paragraph.text[typedText.length];
+    if (!nextChar) return null;
+    return getKeyInfoForChar(nextChar, language);
+  }, [paragraph.text, typedText.length, isFinished, showResults, language]);
+
+  const startNewTest = useCallback(() => {
+    setParagraph(getRandomParagraph("medium", language));
+    reset();
+    resetTimer(testDuration);
+    setShowResults(false);
+  }, [reset, resetTimer, testDuration, language]);
+
+  const handleDurationChange = useCallback(
+    (seconds: number) => {
+      setTestDuration(seconds);
+      resetTimer(seconds);
+      reset();
+      setShowResults(false);
+    },
+    [resetTimer, reset]
+  );
+
+  const handleLanguageChange = useCallback(
+    (lang: "hindi" | "english") => {
+      setLanguage(lang);
+      const newP = getRandomParagraph("medium", lang);
+      setParagraph(newP);
+      reset();
+      resetTimer(testDuration);
+      setShowResults(false);
+    },
+    [reset, resetTimer, testDuration]
+  );
+
+  return (
+    <div>
+      <h1 className="heading-1 mb-2">
+        {language === "hindi" ? "Hindi Typing Test" : "English Typing Test"}
+      </h1>
+      <p className="text-muted mb-6">
+        Take a timed typing test to evaluate your WPM speed, accuracy, and error counts.
+      </p>
+
+      {/* 🌐 Multilingual Test Selector Bar */}
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="flex items-center gap-2">
+          <span className="text-lg">🌐</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
+            Language Tests:
+          </span>
+        </div>
+        <div className="flex flex-wrap items-center gap-1.5">
+          {[
+            { name: "English", native: "English", slug: "english-typing", symbol: "En" },
+            { name: "Hindi", native: "हिंदी", slug: "hindi-typing", symbol: "अ" },
+            { name: "Marathi", native: "मराठी", slug: "marathi-typing", symbol: "म" },
+            { name: "Punjabi", native: "ਪੰਜਾਬੀ", slug: "punjabi-typing", symbol: "ਪ" },
+            { name: "Tamil", native: "தமிழ்", slug: "tamil-typing", symbol: "த" },
+            { name: "Bengali", native: "বাংলা", slug: "bengali-typing", symbol: "ব" },
+          ].map((item) => (
+            <a
+              key={item.slug}
+              href={`/test/${item.slug}`}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                item.slug === `${language}-typing`
+                  ? "bg-primary-600 text-white shadow-sm"
+                  : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
+              }`}
+            >
+              <span className="text-[11px] opacity-80">{item.symbol}</span>
+              <span>{item.name}</span>
+              <span className="text-[10px] font-normal opacity-70">({item.native})</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Settings Grid with Language and target typing Job selectors */}
+      <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 p-4 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
+        {/* Language Selector */}
+        <div className="space-y-1.5">
+          <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-500">
+            Language Mode
+          </label>
+          <div className="flex gap-2 bg-[#EEF2F7] dark:bg-slate-800 p-1 rounded-xl">
+            <button
+              onClick={() => handleLanguageChange("hindi")}
+              disabled={isStarted && !showResults}
+              className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                language === "hindi" ? "bg-white dark:bg-slate-950 text-primary-600 dark:text-primary-400 shadow-sm" : "text-gray-500"
+              }`}
+            >
+              Hindi (Devanagari)
+            </button>
+            <button
+              onClick={() => handleLanguageChange("english")}
+              disabled={isStarted && !showResults}
+              className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                language === "english" ? "bg-white dark:bg-slate-950 text-primary-600 dark:text-primary-400 shadow-sm" : "text-gray-500"
+              }`}
+            >
+              English (QWERTY)
+            </button>
+          </div>
+        </div>
+
+        {/* Target Job Selector */}
+        <div className="space-y-1.5">
+          <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+            What typing Job are you preparing for?
+          </label>
+          <select
+            value={targetJob}
+            onChange={(e) => setTargetJob(e.target.value as any)}
+            disabled={isStarted && !showResults}
+            className="w-full px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
+          >
+            <option value="ssc">SSC (Staff Selection Commission)</option>
+            <option value="rrb">RRB (Railway Recruitment Board)</option>
+            <option value="ldc">LDC (Lower Division Clerk) / JSA</option>
+            <option value="udc">UDC (Upper Division Clerk)</option>
+            <option value="others">Others / General</option>
+          </select>
+        </div>
+
+        {/* Duration Selector */}
+        <div className="space-y-1.5">
+          <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+            Test Duration
+          </label>
+          <div className="flex gap-2">
+            <div className="flex flex-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 p-0.5">
+              {TEST_DURATIONS.map((opt) => (
+                <button
+                  key={opt.seconds}
+                  onClick={() => handleDurationChange(opt.seconds)}
+                  disabled={isStarted && !showResults}
+                  className={`flex-1 py-1 px-2 text-xs font-bold transition-all rounded-lg ${
+                    testDuration === opt.seconds
+                      ? "bg-white dark:bg-slate-950 text-primary-600 dark:text-primary-400 shadow-sm"
+                      : "text-gray-500"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+            <div className="flex items-center pl-2">
+              <TimerDisplay formattedTime={formattedTime} isRunning={isRunning} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Dynamic Job Profile Details Card */}
+      <div className="mb-6 p-4 bg-primary-50/50 dark:bg-slate-900/50 border border-primary-100 dark:border-slate-800 rounded-2xl flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+        <div>
+          <span className="text-[10px] uppercase font-bold text-primary-600 dark:text-primary-400 tracking-wider">Active Exam Target Profile</span>
+          <h4 className="font-extrabold text-gray-900 dark:text-white text-base leading-tight mt-0.5">
+            {targetJob === "ssc" && "SSC Typing Test Guidelines"}
+            {targetJob === "rrb" && "RRB Typing Exam Rules"}
+            {targetJob === "ldc" && "LDC/JSA Clerk Exam Rules"}
+            {targetJob === "udc" && "UDC Clerk Exam Guidelines"}
+            {targetJob === "others" && "General Typing Exam Rules"}
+          </h4>
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1.5 leading-relaxed">
+            {targetJob === "ssc" && (
+              language === "hindi" 
+                ? "SSC Hindi Typing requires 30 WPM (using InScript or Remington layouts) with up to 5-7% error tolerance depending on candidate category." 
+                : "SSC English Typing requires 35 WPM (equivalent to 10500 key depressions per hour) in a 10-minute duration."
+            )}
+            {targetJob === "rrb" && (
+              language === "hindi" 
+                ? "RRB Hindi Typing requires 25 WPM. Note: Backspace may be fully disabled during the actual exam." 
+                : "RRB English Typing requires 30 WPM. Typing speed is strictly calculated by deducting penalties for errors."
+            )}
+            {targetJob === "ldc" && (
+              language === "hindi" 
+                ? "LDC/JSA Hindi Typing requires 30 WPM on standard layouts. Maximum 5% error limit applies under state recruitment boards." 
+                : "LDC/JSA English Typing requires 35 WPM. High accuracy is crucial for final rank listing."
+            )}
+            {targetJob === "udc" && (
+              language === "hindi" 
+                ? "UDC Hindi Typing requires 30 WPM. Accuracy threshold is set to 95% on official circular documents." 
+                : "UDC English Typing requires 35 WPM on standard QWERTY keys."
+            )}
+            {targetJob === "others" && (
+              language === "hindi" 
+                ? "General Hindi typing speed: 30 WPM target. Keep practice regular to build muscle memory." 
+                : "General English typing standards: 35-40 WPM target with 98% accuracy recommended."
+            )}
+          </p>
+        </div>
+      </div>
+
+      {/* Results Modal */}
+      {showResults && (
+        <div className="mb-6 rounded-lg border-2 border-primary-200 bg-primary-50 p-6 dark:border-primary-800 dark:bg-primary-900/20">
+          <h2 className="heading-2 mb-4 text-center">📊 Test Results</h2>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="text-center">
+              <p className="text-sm text-gray-500 dark:text-gray-400">Speed (WPM)</p>
+              <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">{stats.wpm}</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm text-gray-500 dark:text-gray-400">Accuracy</p>
+              <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">{stats.accuracy}%</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm text-gray-500 dark:text-gray-400">Total Errors</p>
+              <p className="text-3xl font-bold text-red-600 dark:text-red-400">{stats.totalErrors}</p>
+            </div>
+            <div className="text-center">
+              <p className="text-sm text-gray-500 dark:text-gray-400">Best WPM</p>
+              <p className="text-3xl font-bold text-amber-600 dark:text-amber-400">{bestTestWpm}</p>
+            </div>
+          </div>
+          <div className="mt-4 text-center">
+            <button onClick={startNewTest} className="btn-primary px-8">
+              New Test
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Stats */}
+      <div className="mb-4">
+        <Stats stats={stats} bestWpm={bestTestWpm} />
+      </div>
+
+      {/* Typing area */}
+      <TypingBox
+        key={`test-${language}-${paragraph.id}`}
+        targetText={paragraph.text}
+        typedText={typedText}
+        onInput={handleTypingInput}
+        isFinished={isFinished || showResults}
+        isStarted={isStarted}
+        language={language}
+      />
+
+      {/* Controls */}
+      <div className="mt-4 flex flex-wrap gap-2">
+        <button onClick={startNewTest} className="btn-secondary">
+          ↻ New Test
+        </button>
+        <button
+          onClick={() => setShowKeyboard(!showKeyboard)}
+          className={`btn-secondary ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30" : ""}`}
+        >
+          ⌨ {showKeyboard ? "Hide" : "Show"} Keyboard
+        </button>
+      </div>
+
+      <Keyboard
+        activeKey={activeKey}
+        isShift={isShift}
+        visible={showKeyboard}
+        language={language}
+        highlightKey={nextKeyInfo?.code}
+        highlightShift={nextKeyInfo?.isShift}
+      />
+    </div>
+  );
+}

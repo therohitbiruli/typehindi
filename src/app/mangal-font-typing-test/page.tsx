@@ -1,16 +1,39 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { PracticeTool } from "../../components/PracticeTool";
 import { SEOContent } from "../../components/SEOContent";
+
+export const metadata: Metadata = {
+  title: "Mangal Font Hindi Typing Test Online - InScript Keyboard | TypeHindi",
+  description:
+    "Free online Mangal font Hindi typing test for SSC CGL, CHSL, CPCT, and High Court exams. Real-time WPM speed calculation, accuracy metrics, and official InScript layout simulation.",
+  keywords: [
+    "mangal font hindi typing test",
+    "online hindi typing test mangal font",
+    "hindi mangal typing test",
+    "mangal font typing test online",
+    "mangal font inscript typing test",
+    "SSC CPCT mangal font test",
+  ],
+  alternates: {
+    canonical: "https://typehindi.in/mangal-font-typing-test",
+  },
+  openGraph: {
+    title: "Mangal Font Hindi Typing Test Online - InScript Keyboard | TypeHindi",
+    description:
+      "Practice online Hindi typing in Mangal Font (InScript Layout) for SSC, CPCT, and Govt Exams with accurate WPM and exam simulation.",
+    url: "https://typehindi.in/mangal-font-typing-test",
+    type: "website",
+  },
+};
 
 export default function MangalFontTestPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <section className="bg-primary-700 pt-4 pb-12 border-b border-primary-800">
         <div className="container-main">
-          {/* We need to override the Breadcrumb text color to be visible on dark blue */}
+          {/* Override the Breadcrumb text color to be visible on dark blue */}
           <div className="text-primary-100 [&_ol]:text-primary-200 [&_a]:text-primary-100 [&_span]:text-white">
             <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Mangal Font Typing Test" }]} />
           </div>

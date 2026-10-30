@@ -62,8 +62,36 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
     .filter((b) => b.slug !== slug)
     .slice(0, 4);
 
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: lang === "en" && blog.excerptEn ? blog.excerptEn : blog.excerpt,
+    image: `https://typehindi.in${getBlogImage(blog)}`,
+    datePublished: blog.date,
+    author: {
+      "@type": "Person",
+      name: blog.author || "TypeHindi Editorial Team",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "TypeHindi",
+      url: "https://typehindi.in",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://typehindi.in/logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://typehindi.in/blog/${slug}`,
+    },
+  };
+
   return (
     <div className="container-main py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <Breadcrumb
           items={[

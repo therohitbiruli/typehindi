@@ -1,9 +1,35 @@
-"use client";
+import type { Metadata } from "next";
 
 import Link from "next/link";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { GAME_CATALOG, GameInfo } from "../../data/gameData";
+
+
+export const metadata: Metadata = {
+  title: "Hindi Typing Games - Play Free Typing Games Online | TypeHindi",
+  description:
+    "Play interactive Hindi typing games online for free. Boost typing speed, accuracy, matra mastery, and reflex control with Word Rain, Runner, Target Shooter, and Spelling Quest on InScript.",
+  keywords: [
+    "Hindi typing games",
+    "play Hindi typing game",
+    "online Hindi typing games",
+    "learn Hindi typing through games",
+    "InScript typing games",
+    "Hindi word rain game",
+    "Hindi typing speed games",
+  ],
+  alternates: {
+    canonical: "https://typehindi.in/game",
+  },
+  openGraph: {
+    title: "Hindi Typing Games - Play Free Typing Games Online | TypeHindi",
+    description:
+      "Make typing practice engaging with 6 interactive Hindi typing games. Play Word Rain, Keyboard Runner, Target Aim, and Spelling Quest on TypeHindi.",
+    url: "https://typehindi.in/game",
+    type: "website",
+  },
+};
 
 type Difficulty = "Beginner" | "Intermediate" | "Advanced";
 
@@ -14,13 +40,6 @@ const DIFFICULTY_COLORS: Record<Difficulty, string> = {
 };
 
 export default function GameHubPage() {
-
-  const scrollToGames = () => {
-    const el = document.getElementById("choose-games");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <div className="container-main py-6">
@@ -47,13 +66,7 @@ export default function GameHubPage() {
           keystroke practice into fast-paced reflex drills, spelling quests, and dynamic obstacle runs.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
-          <button
-            onClick={scrollToGames}
-            className="btn-primary rounded-xl px-7 py-3.5 text-base font-bold shadow-sm dark:shadow-lg shadow-primary-500/25 flex items-center gap-2"
-          >
-            <span>Explore Games</span>
-            <span>↓</span>
-          </button>
+          <a href="#choose-games" className="btn-primary rounded-xl px-7 py-3.5 text-base font-bold shadow-sm dark:shadow-lg shadow-primary-500/25 flex items-center gap-2"><span>Explore Games</span><span>↓</span></a>
           <Link
             href="/practice"
             className="btn-secondary rounded-xl px-6 py-3.5 text-base font-semibold border border-gray-300 dark:border-slate-700 bg-gray-50 dark:bg-slate-900/80 text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 hover:text-gray-900 dark:text-white transition-all"
@@ -894,13 +907,7 @@ export default function GameHubPage() {
               challenges designed for real speed and accuracy gains.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <button
-                onClick={scrollToGames}
-                className="btn-primary rounded-2xl px-8 py-4 text-base font-bold shadow-xl shadow-primary-500/30 flex items-center gap-2"
-              >
-                <span>Play a Typing Game</span>
-                <span>→</span>
-              </button>
+              <a href="#choose-games" className="btn-primary rounded-2xl px-8 py-4 text-base font-bold shadow-xl shadow-primary-500/30 flex items-center gap-2"><span>Play a Typing Game</span><span>→</span></a>
               <Link
                 href="/practice"
                 className="btn-secondary rounded-2xl px-7 py-4 text-base font-semibold border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-white hover:bg-slate-700 transition-all"

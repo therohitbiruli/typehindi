@@ -1,4 +1,28 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "English & Hindi to Indian Language Translators | TypeHindi",
+  description:
+    "Free online phonetic English & Hindi to Indian language translators. Instantly transliterate text to Punjabi, Marathi, Gujarati, Tamil, Telugu, Bengali, Malayalam, Kannada, Odia, Urdu, and Santhali.",
+  keywords: [
+    "English to Indian language translator",
+    "Hindi to Indian language translator",
+    "English to Punjabi translator",
+    "English to Marathi translator",
+    "phonetic Indian language typing",
+  ],
+  alternates: {
+    canonical: "https://typehindi.in/translators",
+  },
+  openGraph: {
+    title: "English & Hindi to Indian Language Translators | TypeHindi",
+    description:
+      "Instant, private, client-side phonetic translators for 11 Indian regional languages.",
+    url: "https://typehindi.in/translators",
+    type: "website",
+  },
+};
 
 export const LANGUAGES = [
   { name: "Punjabi", nativeChar: "ਅ" },

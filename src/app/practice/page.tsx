@@ -1,9 +1,33 @@
-"use client";
-
+import type { Metadata } from "next";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { PracticeTool } from "../../components/PracticeTool";
 import { SEOContent } from "../../components/SEOContent";
+
+export const metadata: Metadata = {
+  title: "Hindi Typing Practice Online - InScript Keyboard | TypeHindi",
+  description:
+    "Free online Hindi typing practice with InScript keyboard layout and Mangal font. Improve your typing speed and accuracy for SSC, CGL, CHSL, and Stenographer examinations.",
+  keywords: [
+    "Hindi typing practice",
+    "online Hindi typing practice",
+    "InScript keyboard practice",
+    "Mangal font practice",
+    "SSC typing practice",
+    "Hindi typing speed test",
+    "हिंदी टाइपिंग अभ्यास",
+  ],
+  alternates: {
+    canonical: "https://typehindi.in/practice",
+  },
+  openGraph: {
+    title: "Hindi Typing Practice Online - InScript Keyboard | TypeHindi",
+    description:
+      "Practice Hindi typing on the InScript layout. Real-time WPM tracker, instant error detection, and exam-oriented passages.",
+    url: "https://typehindi.in/practice",
+    type: "website",
+  },
+};
 
 export default function PracticePage() {
   return (

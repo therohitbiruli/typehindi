@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { PracticeTool } from "../components/PracticeTool";
@@ -5,6 +6,33 @@ import { blogs, getBlogImage, parseBlogDate } from "../data/blogs";
 import { LANGUAGES } from "./translators/page";
 import { HomepageGame } from "../components/HomepageGame";
 import { HomepageKeyboard } from "../components/HomepageKeyboard";
+
+export const metadata: Metadata = {
+  title: "TypeHindi - Free Hindi Typing Practice | InScript Keyboard & Mangal Font",
+  description:
+    "Free online Hindi typing practice and speed tests with Mangal Font and InScript keyboard layout. Prepare for SSC CGL, CHSL, CPCT, High Court and government typing exams with live WPM tracker, typing games, and lessons.",
+  keywords: [
+    "mangal font hindi typing test",
+    "online hindi typing test mangal font",
+    "hindi mangal typing test",
+    "Hindi typing practice",
+    "InScript keyboard",
+    "Hindi typing test",
+    "SSC typing test",
+    "Hindi typing speed",
+    "free Hindi typing",
+  ],
+  alternates: {
+    canonical: "https://typehindi.in",
+  },
+  openGraph: {
+    title: "TypeHindi - Free Hindi Typing Practice | InScript Keyboard",
+    description:
+      "Practice Hindi typing with InScript keyboard layout. Track WPM, accuracy, and improve your typing speed.",
+    url: "https://typehindi.in",
+    type: "website",
+  },
+};
 
 export default function Homepage() {
   // Get first 4 blogs for preview (sorted latest to oldest)
@@ -16,6 +44,7 @@ export default function Homepage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-950">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"TypeHindi","url":"https://typehindi.in","potentialAction":{"@type":"SearchAction","target":"https://typehindi.in/blog?q={search_term_string}","query-input":"required name=search_term_string"}}) }} />
       {/* 🌟 Premium Hero Section */}
       <section className="bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
         {/* Blurred background image blending with deep navy */}

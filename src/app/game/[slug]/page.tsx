@@ -25,9 +25,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const url = `https://typehindi.in/game/${slug}`;
   return {
     title: `${game.title} (${game.hindiTitle}) - Hindi Typing Game | TypeHindi.in`,
     description: `${game.description} Play ${game.title} on TypeHindi.in to improve your Hindi typing speed, accuracy, and keyboard mastery.`,
+    alternates: {
+      canonical: url,
+    },
     keywords: [
       game.title,
       game.hindiTitle,
@@ -40,6 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${game.title} - Hindi Typing Game | TypeHindi.in`,
       description: game.description,
+      url,
       type: "website",
     },
   };

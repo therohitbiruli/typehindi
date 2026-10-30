@@ -6,6 +6,9 @@ import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://typehindi.in/blog",
+  },
   title: "Hindi Typing Articles & Guides | TypeHindi Blog",
   description: "Read the latest articles on Hindi typing, SSC exam strategies, Stenography tips, and InScript keyboard guides.",
 };

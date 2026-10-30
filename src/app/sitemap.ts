@@ -1,6 +1,9 @@
 import { pyqPapers } from '../data/pyqStore';
 import { MetadataRoute } from 'next';
 import { blogs } from '../data/blogs';
+import { shorthandLessons } from '../data/shorthand/lessons';
+import { GAME_CATALOG } from '../data/gameData';
+import { LANGUAGES } from './translators/page';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://typehindi.in';
@@ -24,7 +27,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/shorthand/practice',
     '/shorthand/dictation',
     '/shorthand/tests',
+    '/shorthand/guides',
+    '/shorthand/quiz',
+    ...shorthandLessons.map(l => `/shorthand/lessons/${l.slug}`),
     '/translators',
+    ...LANGUAGES.flatMap(lang => [
+      `/translators/english-to-${lang.name.toLowerCase()}`,
+      `/translators/hindi-to-${lang.name.toLowerCase()}`
+    ]),
+    ...GAME_CATALOG.map(game => `/game/${game.slug}`),
     // Multilingual Practice Routes
     '/practice/english-typing',
     '/practice/hindi-typing',
@@ -62,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...['ssc-cgl', 'ssc-chsl', 'ssc-cpo', 'ssc-gd', 'rrb-ntpc'].flatMap(examId => 
       Array.from({length: 10}).map((_, i) => `/mock-tests/${examId}/test-${i+1}`)
     ),
-        '/pyq',
+    '/pyq',
     '/pyq/jee-main-previous-year-question-papers',
     ...pyqPapers.map(paper => `/pyq/${paper.slug}`),
     ...blogs.map(blog => `/blog/${blog.slug}`),

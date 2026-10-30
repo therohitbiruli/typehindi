@@ -3,6 +3,9 @@ import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://typehindi.in/about",
+  },
   title: "About TypeHindi - Free Hindi Typing Practice Platform",
   description: "Learn about TypeHindi.in - a free online Hindi typing practice platform for students preparing for SSC, CGL, CHSL and other government exams.",
 };

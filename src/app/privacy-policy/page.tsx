@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Breadcrumb } from "../../components/Breadcrumb";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://typehindi.in/privacy-policy",
+  },
   title: "Privacy Policy - TypeHindi",
   description: "Privacy policy for TypeHindi.in. Learn how we handle your data and protect your privacy.",
 };

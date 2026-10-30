@@ -3,6 +3,9 @@ import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://typehindi.in/contact",
+  },
   title: "Contact Us - TypeHindi",
   description: "Contact the TypeHindi team for feedback, suggestions, or queries about Hindi typing practice.",
 };

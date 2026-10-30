@@ -22,12 +22,17 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const title = lang === "en" && blog.titleEn ? blog.titleEn : blog.title;
   const excerpt = lang === "en" && blog.excerptEn ? blog.excerptEn : blog.excerpt;
 
+  const url = `https://typehindi.in/blog/${slug}`;
   return {
     title: `${title} | TypeHindi`,
     description: excerpt,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title: title,
       description: excerpt,
+      url,
       type: "article",
       publishedTime: lang === "en" && blog.dateEn ? blog.dateEn : blog.date,
       authors: [blog.author || "TypeHindi Team"],

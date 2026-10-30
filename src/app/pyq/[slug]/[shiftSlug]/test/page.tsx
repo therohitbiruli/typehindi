@@ -18,9 +18,13 @@ export async function generateMetadata({ params }: Props) {
   if (!shift) return { title: "Not Found" };
 
   const examLabel = paper.examId === 'jee-main' ? 'JEE Main' : paper.examId.toUpperCase();
+  const url = `https://typehindi.in/pyq/${slug}/${shiftSlug}/test`;
   return {
     title: `${examLabel} ${paper.year} ${shift.date} Shift ${shift.shift} Test | TypeHindi`,
     description: `Take the official ${paper.title} online test for ${shift.date} Shift ${shift.shift}.`,
+    alternates: {
+      canonical: url,
+    },
   };
 }
 

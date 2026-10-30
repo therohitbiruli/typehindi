@@ -2,6 +2,7 @@ import { Breadcrumb } from "../../../components/Breadcrumb";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "https://typehindi.in/pyq/mistake-book" },
   title: "My PYQ Mistake Book | TypeHindi",
   description: "Review and learn from your incorrect PYQ attempts.",
 };

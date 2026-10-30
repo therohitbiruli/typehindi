@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Breadcrumb } from "../../components/Breadcrumb";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://typehindi.in/terms",
+  },
   title: "Terms and Conditions - TypeHindi",
   description: "Terms and conditions for using TypeHindi.in Hindi typing practice website.",
 };

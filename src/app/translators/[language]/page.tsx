@@ -23,9 +23,19 @@ export async function generateMetadata(props: { params: Promise<{ language: stri
   const langObj = LANGUAGES.find(l => l.name.toLowerCase() === targetLangStr);
   const targetName = langObj ? langObj.name : targetLangStr.charAt(0).toUpperCase() + targetLangStr.slice(1);
 
+  const url = `https://typehindi.in/translators/${params.language}`;
   return {
     title: `${sourceName} to ${targetName} Typing & Translator Tool | TypeHindi.in`,
     description: `Free online ${sourceName} to ${targetName} typing tool. Convert your ${sourceName} text into ${targetName} script instantly.`,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${sourceName} to ${targetName} Typing & Translator Tool | TypeHindi.in`,
+      description: `Free online ${sourceName} to ${targetName} typing tool. Convert your ${sourceName} text into ${targetName} script instantly.`,
+      url,
+      type: "website",
+    },
   };
 }
 

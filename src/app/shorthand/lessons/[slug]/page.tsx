@@ -16,9 +16,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const lesson = shorthandLessons.find((l) => l.slug === slug);
   if (!lesson) return { title: "Lesson Not Found - TypeHindi Shorthand" };
 
+  const url = `https://typehindi.in/shorthand/lessons/${slug}`;
   return {
     title: `${lesson.title} - Level ${lesson.level} | Pitman Shorthand | TypeHindi`,
     description: lesson.subtitle,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${lesson.title} - Level ${lesson.level} | Pitman Shorthand | TypeHindi`,
+      description: lesson.subtitle,
+      url,
+      type: "article",
+    },
     keywords: [
       "shorthand",
       lesson.title.toLowerCase(),

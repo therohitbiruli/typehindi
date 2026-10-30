@@ -21,7 +21,6 @@ export function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState(pathname);
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prev) => !prev);
@@ -31,124 +30,12 @@ export function Header() {
     setIsMenuOpen(false);
   }, []);
 
-  // Update activeSection when pathname changes (subpage navigation)
+  // Strip any existing hash from the URL so "#practice" or similar never lingers
   useEffect(() => {
-    setActiveSection(pathname);
-  }, [pathname]);
-
-  // Smooth scroll handler for homepage navigation
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, itemHref: string) => {
-    if (pathname === "/") {
-      if (itemHref === "/") {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        setActiveSection("/");
-        closeMenu();
-        return;
-      }
-      const sectionId = itemHref.replace("/", "").replace("#", "");
-      const targetEl = document.getElementById(sectionId);
-      if (targetEl) {
-        e.preventDefault();
-        targetEl.scrollIntoView({ behavior: "smooth" });
-        setActiveSection(`/${sectionId}`);
-        window.history.pushState(null, "", `#${sectionId}`);
-        closeMenu();
-      }
-    } else {
-      closeMenu();
+    if (typeof window !== "undefined" && window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
     }
-  };
-
-  // Scroll Spy logic for Homepage
-  useEffect(() => {
-    if (pathname !== "/") return;
-
-    const sections = [
-      "practice",
-      "learn",
-      "shorthand",
-      "game",
-      "test",
-      "keyboard-layout",
-      "translators",
-      "blog",
-    ];
-
-    const updateActiveSection = () => {
-      // Top of page (Hero section)
-      if (window.scrollY < 180) {
-        setActiveSection("/");
-        return;
-      }
-
-      // Bottom of page (Blog / Footer)
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
-        setActiveSection("/blog");
-        return;
-      }
-
-      // Focal reference line positioned 35% down viewport (below sticky header)
-      const targetY = window.innerHeight * 0.35;
-      let currentSection = "";
-
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= targetY) {
-            currentSection = id;
-          }
-        }
-      }
-
-      if (currentSection) {
-        setActiveSection(`/${currentSection}`);
-      }
-    };
-
-    // Run on initial mount (e.g. if loaded with hash or scrolled)
-    updateActiveSection();
-
-    // IntersectionObserver to observe boundaries
-    const observer = new IntersectionObserver(
-      () => {
-        updateActiveSection();
-      },
-      {
-        root: null,
-        rootMargin: "-20% 0px -50% 0px",
-        threshold: [0, 0.1, 0.5],
-      }
-    );
-
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) {
-        observer.observe(el);
-      }
-    });
-
-    let ticking = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          updateActiveSection();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll, { passive: true });
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, [pathname]);
+  }, []);
 
   return (
     /* Header stays dark in both light and dark mode — editorial convention */
@@ -171,30 +58,31 @@ export function Header() {
             <Link
               href="/"
               className="flex items-center gap-2"
-            onClick={(e) => handleNavClick(e, "/")}
-          >
-            <Image 
-              src="/logo.png" 
-              alt="TypeHindi Logo" 
-              width={200} 
-              height={60} 
-              className="h-12 w-auto object-contain transition-all hover:scale-105"
-              priority
-            />
-          </Link>
+              onClick={closeMenu}
+            >
+              <Image 
+                src="/logo.png" 
+                alt="TypeHindi Logo" 
+                width={200} 
+                height={60} 
+                className="h-12 w-auto object-contain transition-all hover:scale-105"
+                priority
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-1.5 md:flex">
             {navItems.map((item) => {
-              const linkHref = pathname === "/" ? (item.href === "/" ? "/" : `#${item.href.replace("/", "")}`) : item.href;
-              const isActive = activeSection === item.href || (activeSection === "/" && item.href === "/");
+              const isActive =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
               return (
                 <Link
                   key={item.href}
-                  href={linkHref}
-                  onClick={(e) => handleNavClick(e, item.href)}
+                  href={item.href}
                   className={`rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                     isActive
                       ? "bg-primary-600 text-white shadow-sm shadow-primary-500/25"
@@ -232,14 +120,16 @@ export function Header() {
         {isMenuOpen && (
           <nav className="border-t border-slate-800 pb-3 pt-2 md:hidden">
             {navItems.map((item) => {
-              const linkHref = pathname === "/" ? (item.href === "/" ? "/" : `#${item.href.replace("/", "")}`) : item.href;
-              const isActive = activeSection === item.href || (activeSection === "/" && item.href === "/");
+              const isActive =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
               return (
                 <Link
                   key={item.href}
-                  href={linkHref}
-                  onClick={(e) => handleNavClick(e, item.href)}
+                  href={item.href}
+                  onClick={closeMenu}
                   className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActive
                       ? "bg-primary-900/40 text-primary-300 font-semibold"

@@ -106,8 +106,8 @@ export default function ContactPage() {
                 <div>
                   <p className="text-sm font-semibold text-gray-900 dark:text-white">Email</p>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
-                    <a href="mailto:typehindi@support.com" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 underline underline-offset-2 transition-colors">
-                      typehindi@support.com
+                    <a href="mailto:rbiruli01@gmail.com" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 underline underline-offset-2 transition-colors">
+                      rbiruli01@gmail.com
                     </a>
                   </p>
                 </div>

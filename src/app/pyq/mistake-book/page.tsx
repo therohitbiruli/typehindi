@@ -3,6 +3,10 @@ import Link from "next/link";
 
 export const metadata = {
   alternates: { canonical: "https://typehindi.in/pyq/mistake-book" },
+  robots: {
+    index: false,
+    follow: true,
+  },
   title: "My PYQ Mistake Book | TypeHindi",
   description: "Review and learn from your incorrect PYQ attempts.",
 };

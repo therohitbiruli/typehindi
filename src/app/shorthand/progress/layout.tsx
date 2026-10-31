@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     "shorthand dashboard",
     "stenography progress tracker",
   ],
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "https://typehindi.in/shorthand/progress",
   },

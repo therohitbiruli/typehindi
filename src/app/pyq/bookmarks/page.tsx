@@ -3,6 +3,10 @@ import Link from "next/link";
 
 export const metadata = {
   alternates: { canonical: "https://typehindi.in/pyq/bookmarks" },
+  robots: {
+    index: false,
+    follow: true,
+  },
   title: "My Saved PYQ Questions | TypeHindi",
   description: "Review your bookmarked previous year questions.",
 };

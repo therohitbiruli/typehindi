@@ -59,8 +59,22 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
   const title = lang === "en" && blog.titleEn ? blog.titleEn : blog.title;
   const date = lang === "en" && blog.dateEn ? blog.dateEn : blog.date;
-  const content = lang === "en" && blog.contentEn ? blog.contentEn : blog.content;
+  const rawContent = lang === "en" && blog.contentEn ? blog.contentEn : blog.content;
   const showTranslateWidget = lang === "en" && !blog.contentEn;
+  const heroImage = getBlogImage(blog);
+
+  // Strip duplicate hero image from article content if it matches the hero banner at the top
+  let content = rawContent.trim();
+  const leadingImgMatch = content.match(/^!\[(.*?)\]\((.*?)\)\s*/);
+  if (leadingImgMatch) {
+    const matchedUrl = leadingImgMatch[2].trim();
+    if (
+      matchedUrl === heroImage.trim() ||
+      matchedUrl.replace(/^\//, "") === heroImage.replace(/^\//, "")
+    ) {
+      content = content.replace(/^!\[(.*?)\]\((.*?)\)\s*/, "").trim();
+    }
+  }
 
   // Filter out current blog and get 4 latest posts
   const relatedBlogs = blogs
@@ -73,7 +87,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
     "@type": "Article",
     headline: title,
     description: lang === "en" && blog.excerptEn ? blog.excerptEn : blog.excerpt,
-    image: `https://typehindi.in${getBlogImage(blog)}`,
+    image: heroImage.startsWith("http") ? heroImage : `https://typehindi.in${heroImage.startsWith("/") ? "" : "/"}${heroImage}`,
     datePublished: blog.date,
     author: {
       "@type": "Person",
@@ -148,7 +162,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
           <div className="mb-8 relative aspect-[21/9] md:aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800">
               <Image 
-                src={getBlogImage(blog)} 
+                src={heroImage} 
                 alt={title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 1024px"

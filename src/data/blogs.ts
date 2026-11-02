@@ -12,9 +12,13 @@
   category: "Basics" | "Exam Guide" | string;
   categoryEn?: string;
   tags?: string[];
+  image?: string;
 }
 
 export function getBlogImage(blog: BlogPost): string {
+  if (blog.image) {
+    return blog.image;
+  }
   const match = (blog.contentEn || blog.content).match(/!\[.*?\]\((.*?)\)/);
   if (match && match[1]) {
     return match[1];

@@ -176,7 +176,7 @@ export default function Homepage() {
                 📝
               </div>
               <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">PYQs (Previous Years)</h4>
-              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Download previous year question papers for SSC CGL and more</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Practice and view previous year question papers for SSC CGL and more</p>
             </Link>
 
         </div>

@@ -18,7 +18,7 @@ export const pyqs: PyqItem[] = [
     "exam": "SSC CGL",
     "title": "SSC CGL Previous Year Question Paper 2025",
     "slug": "ssc-cgl-previous-year-question-paper-2025",
-    "description": "Download SSC CGL 2025 Tier 1 shift-wise official question papers with answer keys in English and Hindi.",
+    "description": "Practice SSC CGL 2025 Tier 1 shift-wise official question papers with answer keys in English and Hindi.",
     "shifts": [
       {
         "date": "12 Sept 2025",
@@ -297,7 +297,7 @@ export const pyqs: PyqItem[] = [
     "exam": "SSC CGL",
     "title": "SSC CGL Previous Year Question Paper 2024",
     "slug": "ssc-cgl-previous-year-question-paper-2024",
-    "description": "Download SSC CGL 2024 Tier 1 official question papers with answer keys.",
+    "description": "Practice SSC CGL 2024 Tier 1 official question papers with answer keys.",
     "shifts": [
       {
         "date": "9 Sept 2024",

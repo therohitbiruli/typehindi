@@ -6,8 +6,8 @@ import { JEEMainHubClient } from "../../../components/pyq/JEEMainHubClient";
 import { allJeeMainShifts, jeeMainPapers } from "../../../data/jeeMainPyqs";
 
 export const metadata: Metadata = {
-  title: "JEE Main Previous Year Question Papers with Solutions (2002-2026) | Download PYQ PDF - TypeHindi",
-  description: "Download and practice official JEE Main previous year question papers year-wise and shift-wise (2002 to 2026) with detailed solutions, answer keys, English & Hindi PDFs. Take online mock tests for Physics, Chemistry & Mathematics.",
+  title: "JEE Main Previous Year Question Papers with Solutions (2002-2026) | View PYQ Papers & Solutions - TypeHindi",
+  description: "Practice and view official JEE Main previous year question papers year-wise and shift-wise (2002 to 2026) with detailed solutions, answer keys, English & Hindi PDFs. Take online mock tests for Physics, Chemistry & Mathematics.",
   keywords: [
     "JEE Main Previous Year Question Papers",
     "JEE Main PYQ PDF",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "JEE Main Previous Year Question Papers with Solutions (2002-2026) | TypeHindi",
-    description: "Browse 202 verified JEE Main question papers across 25 years. Shift-wise question papers with official answer keys, solutions, and free PDF downloads.",
+    description: "Browse 202 verified JEE Main question papers across 25 years. Shift-wise question papers with official answer keys, solutions, and free PDF access.",
     url: "https://typehindi.in/pyq/jee-main-previous-year-question-papers",
     type: "article",
   }
@@ -51,7 +51,7 @@ export default function JEEMainLandingPage() {
         "name": "Are both English and Hindi medium JEE Main PYQ PDFs available?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, every shift includes direct download links for both English and Hindi language question papers with complete question diagrams and equations."
+          "text": "Yes, every shift includes direct view and access links for both English and Hindi language question papers with complete question diagrams and equations."
         }
       },
       {
@@ -109,7 +109,7 @@ export default function JEEMainLandingPage() {
 
         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
           Browse official <strong>JEE Main question papers year-wise and shift-wise</strong> from 2002 to 2026. 
-          Download verified English & Hindi PDFs, review step-by-step solutions, and practice in an interactive online test environment.
+          View verified English & Hindi PDFs, review step-by-step solutions, and practice in an interactive online test environment.
         </p>
 
         {/* Highlight Stats Chips */}
@@ -183,10 +183,10 @@ export default function JEEMainLandingPage() {
 
         <div>
           <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
-            Online PYQ Practice vs. PDF Downloads
+            Online PYQ Practice vs. Offline PDFs
           </h3>
           <p>
-            TypeHindi offers a hybrid preparation platform combining <strong className="font-semibold text-slate-800 dark:text-slate-200">JEE Main PYQ PDF</strong> downloads with <strong className="font-semibold text-slate-800 dark:text-slate-200">JEE Main Online PYQ Practice</strong> mock tests. For offline self-study and revision away from screens, candidates can download official PDFs in both English and Hindi medium. For realistic exam rehearsal, users can launch the interactive test engine, experience countdown timers, mark questions for review, and evaluate their speed and accuracy per subject.
+            TypeHindi offers a hybrid preparation platform combining <strong className="font-semibold text-slate-800 dark:text-slate-200">JEE Main PYQ PDF</strong> access with <strong className="font-semibold text-slate-800 dark:text-slate-200">JEE Main Online PYQ Practice</strong> mock tests. For offline self-study and revision away from screens, candidates can view and access official PDFs in both English and Hindi medium. For realistic exam rehearsal, users can launch the interactive test engine, experience countdown timers, mark questions for review, and evaluate their speed and accuracy per subject.
           </p>
         </div>
 
@@ -261,10 +261,10 @@ export default function JEEMainLandingPage() {
 
           <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm space-y-2">
             <h3 className="font-bold text-slate-900 dark:text-white">
-              Can I download papers in Hindi medium?
+              Can I access papers in Hindi medium?
             </h3>
             <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm leading-relaxed">
-              Yes, all 202 papers feature direct download links for both Hindi Medium PDFs and English Medium PDFs, with fully preserved mathematical formulas and diagrams.
+              Yes, all 202 papers feature direct access links for both Hindi Medium PDFs and English Medium PDFs, with fully preserved mathematical formulas and diagrams.
             </p>
           </div>
         </div>

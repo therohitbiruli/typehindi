@@ -463,9 +463,9 @@ function PaperCard({ shift, yearSlug }: PaperCardProps) {
           </a>
         </div>
 
-        {/* PDF Download Links */}
+        {/* PDF Paper Links */}
         <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-slate-500">
-          <span className="text-[11px] font-semibold text-slate-400">Download Paper:</span>
+          <span className="text-[11px] font-semibold text-slate-400">View Paper:</span>
           {shift.englishPdfUrl && (
             <a
               href={shift.englishPdfUrl}

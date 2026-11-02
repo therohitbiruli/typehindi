@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shorthand Reference Library & Personal Notebook | TypeHindi",
     description:
-      "Avoid common stroke mistakes, manage your personal shorthand notebook, and download printable drill sheets.",
+      "Avoid common stroke mistakes, manage your personal shorthand notebook, and access printable drill sheets.",
     url: "https://typehindi.in/shorthand/guides",
     type: "website",
   },

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
 
   const examName = paper.examId === 'jee-main' ? 'JEE Main' : paper.examId.toUpperCase().replace('-', ' ');
   const title = `${examName} PYQ ${paper.year} | ${paper.tier} Previous Year Question Paper Online | TypeHindi`;
-  const description = `Practice the official ${examName} PYQ ${paper.year} online. Attempt ${paper.title} real exam questions, download PDF, and check detailed solutions for all shifts.`;
+  const description = `Practice the official ${examName} PYQ ${paper.year} online. Attempt ${paper.title} real exam questions, view PDF papers, and check detailed solutions for all shifts.`;
 
   return {
     title,
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props) {
     keywords: [
       `${examName} PYQ ${paper.year}`,
       `${examName} Previous Year Question Paper ${paper.year}`,
-      `${examName} ${paper.year} PDF download`,
+      `${examName} ${paper.year} PDF solutions`,
       `${examName} ${paper.tier} PYQ`,
       `${paper.title}`,
       `TypeHindi PYQ`
@@ -284,7 +284,7 @@ export default async function PyqDetailPage({ params }: Props) {
             </h3>
             
             <p>
-              On TypeHindi, candidates can use the <strong className="font-semibold text-slate-800 dark:text-slate-200">{paper.examId.toUpperCase().replace('-', ' ')} PYQ Online Practice</strong> system to solve previous year questions directly on the website instead of depending only on downloaded papers. The available questions can be organised according to exam date, shift, subject and topic, making preparation more convenient.
+              On TypeHindi, candidates can use the <strong className="font-semibold text-slate-800 dark:text-slate-200">{paper.examId.toUpperCase().replace('-', ' ')} PYQ Online Practice</strong> system to solve previous year questions directly on the website instead of depending only on offline PDF papers. The available questions can be organised according to exam date, shift, subject and topic, making preparation more convenient.
             </p>
             
             <p>

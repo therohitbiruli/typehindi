@@ -4475,7 +4475,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2026",
     "tier": "January & April Session",
     "title": "JEE Main Previous Year Question Paper 2026",
-    "description": "Official NTA JEE Main 2026 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2026 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Wed, 8 Apr 2026",
@@ -4751,7 +4751,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2025",
     "tier": "January & April Session",
     "title": "JEE Main Previous Year Question Paper 2025",
-    "description": "Official NTA JEE Main 2025 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2025 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Tue, 8 Apr 2025",
@@ -5027,7 +5027,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2024",
     "tier": "January & April Session",
     "title": "JEE Main Previous Year Question Paper 2024",
-    "description": "Official NTA JEE Main 2024 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2024 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Tue, 9 Apr 2024",
@@ -5317,7 +5317,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2023",
     "tier": "January & April Session",
     "title": "JEE Main Previous Year Question Paper 2023",
-    "description": "Official NTA JEE Main 2023 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2023 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sat, 15 Apr 2023",
@@ -5663,7 +5663,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2022",
     "tier": "July Session",
     "title": "JEE Main Previous Year Question Paper 2022",
-    "description": "Official NTA JEE Main 2022 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2022 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sat, 30 Jul 2022",
@@ -6009,7 +6009,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2021",
     "tier": "August/September Session",
     "title": "JEE Main Previous Year Question Paper 2021",
-    "description": "Official NTA JEE Main 2021 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2021 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Wed, 1 Sep 2021",
@@ -6383,7 +6383,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2020",
     "tier": "August/September Session",
     "title": "JEE Main Previous Year Question Paper 2020",
-    "description": "Official NTA JEE Main 2020 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2020 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sun, 6 Sep 2020",
@@ -6617,7 +6617,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2019",
     "tier": "January & April Session",
     "title": "JEE Main Previous Year Question Paper 2019",
-    "description": "Official NTA JEE Main 2019 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2019 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Fri, 12 Apr 2019",
@@ -6851,7 +6851,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2018",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2018",
-    "description": "Official NTA JEE Main 2018 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2018 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Mon, 16 Apr 2018",
@@ -6917,7 +6917,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2017",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2017",
-    "description": "Official NTA JEE Main 2017 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2017 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sun, 9 Apr 2017",
@@ -6969,7 +6969,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2016",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2016",
-    "description": "Official NTA JEE Main 2016 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2016 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sun, 10 Apr 2016",
@@ -7021,7 +7021,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2015",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2015",
-    "description": "Official NTA JEE Main 2015 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2015 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sat, 11 Apr 2015",
@@ -7073,7 +7073,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2014",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2014",
-    "description": "Official NTA JEE Main 2014 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2014 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sat, 19 Apr 2014",
@@ -7153,7 +7153,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2013",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2013",
-    "description": "Official NTA JEE Main 2013 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2013 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Thu, 25 Apr 2013",
@@ -7233,7 +7233,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2012",
     "tier": "May Session",
     "title": "JEE Main Previous Year Question Paper 2012",
-    "description": "Official NTA JEE Main 2012 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2012 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sat, 26 May 2012",
@@ -7313,7 +7313,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2011",
     "tier": "May Session",
     "title": "JEE Main Previous Year Question Paper 2011",
-    "description": "Official NTA JEE Main 2011 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2011 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sun, 1 May 2011",
@@ -7337,7 +7337,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2010",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2010",
-    "description": "Official NTA JEE Main 2010 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2010 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sun, 25 Apr 2010",
@@ -7361,7 +7361,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2009",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2009",
-    "description": "Official NTA JEE Main 2009 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2009 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Mon, 27 Apr 2009",
@@ -7385,7 +7385,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2008",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2008",
-    "description": "Official NTA JEE Main 2008 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2008 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sun, 27 Apr 2008",
@@ -7409,7 +7409,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2007",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2007",
-    "description": "Official NTA JEE Main 2007 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2007 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sun, 29 Apr 2007",
@@ -7433,7 +7433,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2006",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2006",
-    "description": "Official NTA JEE Main 2006 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2006 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sat, 29 Apr 2006",
@@ -7457,7 +7457,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2005",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2005",
-    "description": "Official NTA JEE Main 2005 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2005 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Thu, 28 Apr 2005",
@@ -7481,7 +7481,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2004",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2004",
-    "description": "Official NTA JEE Main 2004 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2004 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sat, 24 Apr 2004",
@@ -7505,7 +7505,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2003",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2003",
-    "description": "Official NTA JEE Main 2003 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2003 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sat, 26 Apr 2003",
@@ -7529,7 +7529,7 @@ export const jeeMainPapers: PYQPaper[] = [
     "year": "2002",
     "tier": "April Session",
     "title": "JEE Main Previous Year Question Paper 2002",
-    "description": "Official NTA JEE Main 2002 shift-wise question papers with answers, solutions, and free PDF download links in English and Hindi.",
+    "description": "Official NTA JEE Main 2002 shift-wise question papers with answers, solutions, and free PDF access in English and Hindi.",
     "shifts": [
       {
         "date": "Sat, 27 Apr 2002",

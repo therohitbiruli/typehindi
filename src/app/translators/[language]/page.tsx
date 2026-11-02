@@ -84,7 +84,7 @@ export default async function LanguageTranslatorPage(props: { params: Promise<{ 
         <h3 className="text-xl font-normal text-blue-800 dark:text-blue-400 border-b border-gray-100 dark:border-gray-800 pb-2">Key Features</h3>
         <ul className="list-disc pl-5 text-sm text-gray-600 dark:text-gray-300 space-y-2">
           <li><strong className="text-gray-800 dark:text-gray-200">Instant Conversion:</strong> Text is converted instantly as soon as you press the spacebar.</li>
-          <li><strong className="text-gray-800 dark:text-gray-200">Easy to Use:</strong> No need to download or install complex fonts or external software.</li>
+          <li><strong className="text-gray-800 dark:text-gray-200">Easy to Use:</strong> No need to install complex fonts or external software.</li>
           <li><strong className="text-gray-800 dark:text-gray-200">Phonetic Typing:</strong> Type words phonetically, exactly as they sound.</li>
           <li><strong className="text-gray-800 dark:text-gray-200">One-Click Copy:</strong> Copy your converted {langObj.name} text to the clipboard with a single click.</li>
         </ul>

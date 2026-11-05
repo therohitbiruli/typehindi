@@ -5,6 +5,7 @@ import { getPaperBySlug, getQuestionsBySubject, getUniqueSubjectsForPaper } from
 import { Breadcrumb } from "../../../../../components/Breadcrumb";
 import { AdPlaceholder } from "../../../../../components/AdPlaceholder";
 import { PYQQuestionCard } from "../../../../../components/pyq/PYQQuestionCard";
+import { getPaginationItems } from "../../../../../utils/pagination";
 
 interface Props {
   params: Promise<{ slug: string; subjectSlug: string }>;
@@ -114,31 +115,68 @@ export default async function PYQSubjectPage({ params }: Props) {
           </div>
           
           {totalPages > 1 && (
-            <div className="flex justify-center items-center gap-2 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
-              {currentPage > 1 && (
-                <Link href={`/pyq/${paper.slug}/subject/${baseSubjectSlug}${currentPage - 1 > 1 ? `-${currentPage - 1}` : ''}`} className="px-4 py-2 rounded-xl font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
-                  Previous
+            <nav aria-label="Pagination" className="flex justify-center items-center flex-wrap gap-1.5 sm:gap-2 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+              {currentPage > 1 ? (
+                <Link 
+                  href={`/pyq/${paper.slug}/subject/${baseSubjectSlug}${currentPage - 1 > 1 ? `-${currentPage - 1}` : ''}`} 
+                  className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-[#D9E1EC] dark:border-slate-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
+                >
+                  <span>←</span>
+                  <span>Previous</span>
                 </Link>
+              ) : (
+                <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-400 dark:text-slate-600 bg-slate-100/60 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-800/60 cursor-not-allowed flex items-center gap-1.5">
+                  <span>←</span>
+                  <span>Previous</span>
+                </span>
               )}
               
-              <div className="flex gap-1 flex-wrap justify-center">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                  <Link 
-                    key={page} 
-                    href={`/pyq/${paper.slug}/subject/${baseSubjectSlug}${page > 1 ? `-${page}` : ''}`}
-                    className={`w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-colors ${page === currentPage ? 'bg-primary-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-                  >
-                    {page}
-                  </Link>
-                ))}
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                {getPaginationItems(currentPage, totalPages).map((item, idx) => {
+                  if (item === "...") {
+                    return (
+                      <span
+                        key={`ellipsis-${idx}`}
+                        className="w-7 h-9 sm:w-9 sm:h-10 flex items-center justify-center font-bold text-slate-400 dark:text-slate-500 select-none text-xs sm:text-sm"
+                      >
+                        …
+                      </span>
+                    );
+                  }
+
+                  const isCurrent = item === currentPage;
+                  return (
+                    <Link 
+                      key={item} 
+                      href={`/pyq/${paper.slug}/subject/${baseSubjectSlug}${item > 1 ? `-${item}` : ''}`}
+                      aria-current={isCurrent ? "page" : undefined}
+                      className={`w-8 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl font-bold text-xs sm:text-sm transition-all shadow-sm ${
+                        isCurrent 
+                          ? 'bg-primary-600 text-white shadow-md shadow-primary-500/25 pointer-events-none' 
+                          : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-[#D9E1EC] dark:border-slate-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-slate-50 dark:hover:bg-slate-800'
+                      }`}
+                    >
+                      {item}
+                    </Link>
+                  );
+                })}
               </div>
 
-              {currentPage < totalPages && (
-                <Link href={`/pyq/${paper.slug}/subject/${baseSubjectSlug}-${currentPage + 1}`} className="px-4 py-2 rounded-xl font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
-                  Next
+              {currentPage < totalPages ? (
+                <Link 
+                  href={`/pyq/${paper.slug}/subject/${baseSubjectSlug}-${currentPage + 1}`} 
+                  className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-[#D9E1EC] dark:border-slate-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
+                >
+                  <span>Next</span>
+                  <span>→</span>
                 </Link>
+              ) : (
+                <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-400 dark:text-slate-600 bg-slate-100/60 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-800/60 cursor-not-allowed flex items-center gap-1.5">
+                  <span>Next</span>
+                  <span>→</span>
+                </span>
               )}
-            </div>
+            </nav>
           )}
         </div>
       )}

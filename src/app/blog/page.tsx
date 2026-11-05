@@ -4,6 +4,7 @@ import Image from "next/image";
 import { blogs, getBlogImage, parseBlogDate } from "../../data/blogs";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { getPaginationItems } from "../../utils/pagination";
 
 export const metadata: Metadata = {
   alternates: {
@@ -143,39 +144,50 @@ export default async function BlogPage({ searchParams }: PageProps) {
 
       {/* Numbered Pagination */}
       {totalPages > 1 && (
-        <nav aria-label="Blog pagination" className="mt-12 flex items-center justify-center gap-2">
+        <nav aria-label="Blog pagination" className="mt-12 flex items-center justify-center flex-wrap gap-1.5 sm:gap-2">
           {/* Previous Button */}
           {currentPage > 1 ? (
             <Link
               href={getPageUrl(currentPage - 1)}
-              className="px-4 py-2 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
+              className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
             >
               <span>←</span>
               <span>{lang === "en" ? "Previous" : "पिछला"}</span>
             </Link>
           ) : (
-            <span className="px-4 py-2 rounded-xl text-sm font-semibold text-gray-400 dark:text-gray-600 bg-gray-100 dark:bg-gray-800/40 border border-gray-200 dark:border-gray-800/60 cursor-not-allowed flex items-center gap-1.5">
+            <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-400 dark:text-gray-600 bg-gray-100/60 dark:bg-gray-800/40 border border-gray-200/60 dark:border-gray-800/60 cursor-not-allowed flex items-center gap-1.5">
               <span>←</span>
               <span>{lang === "en" ? "Previous" : "पिछला"}</span>
             </span>
           )}
 
           {/* Page Numbers */}
-          <div className="flex items-center gap-1.5 mx-1">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
-              const isActive = pageNum === currentPage;
+          <div className="flex items-center gap-1 sm:gap-1.5 mx-1">
+            {getPaginationItems(currentPage, totalPages).map((item, idx) => {
+              if (item === "...") {
+                return (
+                  <span
+                    key={`ellipsis-${idx}`}
+                    className="w-7 h-9 sm:w-9 sm:h-10 flex items-center justify-center font-bold text-gray-400 dark:text-gray-500 select-none text-xs sm:text-sm"
+                  >
+                    …
+                  </span>
+                );
+              }
+
+              const isActive = item === currentPage;
               return (
                 <Link
-                  key={pageNum}
-                  href={getPageUrl(pageNum)}
+                  key={item}
+                  href={getPageUrl(item)}
                   aria-current={isActive ? "page" : undefined}
-                  className={`w-10 h-10 rounded-xl text-sm font-bold flex items-center justify-center transition-all ${
+                  className={`w-8 h-9 sm:w-10 sm:h-10 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center transition-all ${
                     isActive
                       ? "bg-primary-600 text-white shadow-md shadow-primary-500/25 pointer-events-none"
-                      : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 border border-[#D9E1EC] dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm"
+                      : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 border border-[#D9E1EC] dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm"
                   }`}
                 >
-                  {pageNum}
+                  {item}
                 </Link>
               );
             })}
@@ -185,13 +197,13 @@ export default async function BlogPage({ searchParams }: PageProps) {
           {currentPage < totalPages ? (
             <Link
               href={getPageUrl(currentPage + 1)}
-              className="px-4 py-2 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
+              className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
             >
               <span>{lang === "en" ? "Next" : "अगला"}</span>
               <span>→</span>
             </Link>
           ) : (
-            <span className="px-4 py-2 rounded-xl text-sm font-semibold text-gray-400 dark:text-gray-600 bg-gray-100 dark:bg-gray-800/40 border border-gray-200 dark:border-gray-800/60 cursor-not-allowed flex items-center gap-1.5">
+            <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-400 dark:text-gray-600 bg-gray-100/60 dark:bg-gray-800/40 border border-gray-200/60 dark:border-gray-800/60 cursor-not-allowed flex items-center gap-1.5">
               <span>{lang === "en" ? "Next" : "अगला"}</span>
               <span>→</span>
             </span>

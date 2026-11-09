@@ -46,7 +46,7 @@ export default function Homepage() {
     <div className="flex flex-col min-h-screen bg-slate-950">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"TypeHindi","url":"https://typehindi.in","potentialAction":{"@type":"SearchAction","target":"https://typehindi.in/blog?q={search_term_string}","query-input":"required name=search_term_string"}}) }} />
       {/* 🌟 Premium Hero Section */}
-      <section className="bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
+      <section className="hidden md:block bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
         {/* Blurred background image blending with deep navy */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-25 blur-[6px] scale-105 pointer-events-none"
@@ -88,95 +88,95 @@ export default function Homepage() {
       </section>
 
       {/* 🚀 Tools Floating Grid */}
-      <div className="container-main max-w-6xl px-4 -mt-20 relative z-10 mb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container-main max-w-6xl px-4 mt-6 md:-mt-20 relative z-10 mb-8 md:mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           
-          <Link href="/practice" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-primary-500/50 dark:hover:border-primary-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+          <Link href="/practice" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-primary-500/50 dark:hover:border-primary-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               ⌨️
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Practice</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">InScript Layout speed building practice with keystroke indicators</p>
+            <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Typing Practice</h4>
+            <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">InScript Layout speed building practice with keystroke indicators</p>
           </Link>
 
-          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               📚
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Tutor (Learn)</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Step-by-step interactive lessons to master the InScript layout</p>
+            <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Typing Tutor (Learn)</h4>
+            <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Step-by-step interactive lessons to master the InScript layout</p>
           </Link>
 
-          <Link href="/game" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-purple-500/50 dark:hover:border-purple-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+          <Link href="/game" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-purple-500/50 dark:hover:border-purple-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               🎮
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Games</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Fun and addictive typing games to build speed and muscle memory</p>
+            <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Typing Games</h4>
+            <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Fun and addictive typing games to build speed and muscle memory</p>
           </Link>
 
-          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-amber-500/50 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-amber-500/50 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               ⏱️
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Typing Test</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Evaluate your typing proficiency with realistic exam conditions</p>
+            <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Typing Test</h4>
+            <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Evaluate your typing proficiency with realistic exam conditions</p>
           </Link>
 
-          <Link href="/mangal-font-typing-test" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-rose-500/50 dark:hover:border-rose-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-14 h-14 rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+          <Link href="/mangal-font-typing-test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-rose-500/50 dark:hover:border-rose-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               🅰️
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Mangal Font</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Practice Mangal font typing specifically formatted for exams</p>
+            <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Mangal Font</h4>
+            <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Practice Mangal font typing specifically formatted for exams</p>
           </Link>
 
-          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-cyan-500/50 dark:hover:border-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-14 h-14 rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-cyan-500/50 dark:hover:border-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               📜
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">CPCT Test</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Simulate the Computer Proficiency Certification Test pattern</p>
+            <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">CPCT Test</h4>
+            <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Simulate the Computer Proficiency Certification Test pattern</p>
           </Link>
 
-          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-sky-500/50 dark:hover:border-sky-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-14 h-14 rounded-2xl bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-sky-500/50 dark:hover:border-sky-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               🔍
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Keyboard Layout</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Visual layouts and guides for InScript and Remington layouts</p>
+            <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Keyboard Layout</h4>
+            <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Visual layouts and guides for InScript and Remington layouts</p>
           </Link>
 
-          <Link href="/translators" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-violet-500/50 dark:hover:border-violet-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-14 h-14 rounded-2xl bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+          <Link href="/translators" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-violet-500/50 dark:hover:border-violet-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               🌐
             </div>
-            <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Translators</h4>
-            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Instantly translate English or other regional texts into Hindi</p>
+            <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Translators</h4>
+            <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Instantly translate English or other regional texts into Hindi</p>
           </Link>
 
-          <Link href="/blog" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-slate-500/50 dark:hover:border-slate-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-              <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+          <Link href="/blog" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-slate-500/50 dark:hover:border-slate-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
                 📰
               </div>
-              <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Blog (Articles)</h4>
-              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Latest news, government exam patterns, and typing tips</p>
+              <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Blog (Articles)</h4>
+              <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Latest news, government exam patterns, and typing tips</p>
             </Link>
 
-            <Link href="/mock-tests" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-              <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+            <Link href="/mock-tests" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
                 🎯
               </div>
-              <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">Mock Tests</h4>
-              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Take full-length CBT mock tests for SSC, Railways, and more</p>
+              <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Mock Tests</h4>
+              <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Take full-length CBT mock tests for SSC, Railways, and more</p>
             </Link>
 
-            <Link href="/pyq" className="bg-white dark:bg-slate-900 rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-6 hover:shadow-xl hover:border-amber-500/50 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-              <div className="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+            <Link href="/pyq" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-amber-500/50 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
                 📝
               </div>
-              <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-1.5">PYQs (Previous Years)</h4>
-              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[220px]">Practice and view previous year question papers for SSC CGL and more</p>
+              <h4 className="text-gray-900 dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">PYQs (Previous Years)</h4>
+              <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Practice and view previous year question papers for SSC CGL and more</p>
             </Link>
 
         </div>

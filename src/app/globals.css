@@ -3,9 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-  /* ── Dark theme (Permanent default) ── */
+  /* ── Light theme (Default) ── */
   :root,
-  .dark {
+  .light,
+  [data-theme="light"] {
+    --background: 255 255 255;    /* #FFFFFF */
+    --foreground: 23 36 58;        /* #17243A */
+    --card: 255 255 255;          /* #FFFFFF */
+    --card-border: 220 228 239;    /* #DCE4EF */
+    --muted: 100 116 139;         /* #64748B */
+  }
+
+  /* ── Dark theme (Preserved exactly as existing) ── */
+  .dark,
+  [data-theme="dark"] {
     --background: 10 15 29;        /* #0A0F1D — Deep dark navy */
     --foreground: 241 245 249;     /* #F1F5F9 — Slate-100 */
     --card: 15 23 42;              /* #0F172A — Slate-900 */
@@ -30,39 +41,40 @@
   }
 
   .card {
-    @apply rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all
+    @apply rounded-2xl border border-[#DCE4EF] bg-white p-5 shadow-sm transition-all
            dark:border-slate-800 dark:bg-slate-900 dark:shadow-lg;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white transition-all
-           hover:bg-primary-500 shadow-md shadow-primary-500/20 hover:shadow-primary-500/30
-           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+    @apply inline-flex items-center justify-center rounded-xl bg-[#102B5C] px-5 py-2.5 text-sm font-semibold text-white transition-all
+           hover:bg-[#173D78] shadow-md shadow-[#102B5C]/20 hover:shadow-[#102B5C]/30
+           focus:outline-none focus:ring-2 focus:ring-[#102B5C] focus:ring-offset-2
            disabled:opacity-50
-           focus:ring-offset-white dark:focus:ring-offset-slate-900;
+           focus:ring-offset-white
+           dark:bg-primary-600 dark:hover:bg-primary-500 dark:shadow-primary-500/20 dark:hover:shadow-primary-500/30 dark:focus:ring-primary-500 dark:focus:ring-offset-slate-900;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xl border border-gray-300 bg-gray-50 px-5 py-2.5 text-sm font-semibold text-gray-700 transition-all
-           hover:bg-gray-100 hover:text-gray-900 shadow-sm
-           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-white
-           dark:border-slate-700 dark:bg-slate-800 dark:text-gray-200 dark:hover:bg-slate-700 dark:hover:text-white dark:focus:ring-offset-slate-900;
+    @apply inline-flex items-center justify-center rounded-xl border border-[#CBD5E1] bg-[#F4F7FC] px-5 py-2.5 text-sm font-semibold text-[#17243A] transition-all
+           hover:bg-[#EAF1FB] hover:text-[#102B5C] shadow-sm
+           focus:outline-none focus:ring-2 focus:ring-[#102B5C] focus:ring-offset-2 focus:ring-offset-white
+           dark:border-slate-700 dark:bg-slate-800 dark:text-gray-200 dark:hover:bg-slate-700 dark:hover:text-white dark:focus:ring-primary-500 dark:focus:ring-offset-slate-900;
   }
 
   .heading-1 {
-    @apply text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white;
+    @apply text-3xl font-extrabold tracking-tight text-[#102B5C] sm:text-4xl dark:text-white;
   }
 
   .heading-2 {
-    @apply text-2xl font-bold tracking-tight text-gray-900 dark:text-white;
+    @apply text-2xl font-bold tracking-tight text-[#102B5C] dark:text-white;
   }
 
   .heading-3 {
-    @apply text-xl font-bold text-gray-900 dark:text-white;
+    @apply text-xl font-bold text-[#102B5C] dark:text-white;
   }
 
   .text-muted {
-    @apply text-slate-500 dark:text-slate-400;
+    @apply text-[#64748B] dark:text-slate-400;
   }
 
   .char-correct {
@@ -74,7 +86,7 @@
   }
 
   .char-current {
-    @apply border-b-2 border-primary-500;
+    @apply border-b-2 border-[#102B5C] dark:border-primary-500;
   }
 
   .char-upcoming {
@@ -82,14 +94,14 @@
   }
 
   .key {
-    @apply flex h-10 w-10 items-center justify-center rounded-lg border border-gray-300 bg-gray-50 text-xs font-semibold text-gray-700 shadow-sm transition-all
-           hover:border-primary-400/60 hover:bg-gray-100
+    @apply flex h-10 w-10 items-center justify-center rounded-lg border border-[#CBD5E1] bg-[#F4F7FC] text-xs font-semibold text-[#17243A] shadow-sm transition-all
+           hover:border-[#102B5C]/60 hover:bg-[#EAF1FB]
            dark:border-slate-700 dark:bg-slate-800 dark:text-gray-300 dark:hover:bg-slate-700;
   }
 
   .key-active {
-    @apply border-primary-500 bg-primary-50 text-primary-700 shadow-md ring-2 ring-primary-500/30
-           dark:bg-primary-900/50 dark:text-primary-300;
+    @apply border-[#102B5C] bg-[#EAF1FB] text-[#102B5C] shadow-md ring-2 ring-[#102B5C]/30
+           dark:border-primary-500 dark:bg-primary-900/50 dark:text-primary-300 dark:ring-primary-500/30;
   }
 
   .key-highlight {
@@ -114,7 +126,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-gray-300 dark:bg-gray-600;
+  @apply rounded-full bg-[#CBD5E1] dark:bg-gray-600;
 }
 
 /* Remove input autofill background */

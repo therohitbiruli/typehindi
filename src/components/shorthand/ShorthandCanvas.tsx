@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import { useTheme } from "next-themes";
 import { ShorthandStroke } from "../../data/shorthand/types";
 import { pitmanStrokes } from "../../data/shorthand/strokes";
 
@@ -26,6 +27,8 @@ export function ShorthandCanvas({
   onStrokeSelected,
   showSelector = true
 }: ShorthandCanvasProps) {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentPath, setCurrentPath] = useState<Point[]>([]);
@@ -50,7 +53,7 @@ export function ShorthandCanvas({
     const height = canvas.height;
 
     // Background
-    ctx.fillStyle = "#0F172A";
+    ctx.fillStyle = isDark ? "#0F172A" : "#FFFFFF";
     ctx.fillRect(0, 0, width, height);
 
     // Steno Ruled Guidelines
@@ -61,7 +64,7 @@ export function ShorthandCanvas({
 
       // Baseline (solid steno blue line)
       ctx.beginPath();
-      ctx.strokeStyle = "rgba(56, 189, 248, 0.4)";
+      ctx.strokeStyle = isDark ? "rgba(56, 189, 248, 0.4)" : "rgba(23, 78, 166, 0.55)";
       ctx.lineWidth = 1.5;
       ctx.moveTo(20, centerY);
       ctx.lineTo(width - 20, centerY);
@@ -70,7 +73,7 @@ export function ShorthandCanvas({
       // Top guide (dashed)
       ctx.beginPath();
       ctx.setLineDash([4, 4]);
-      ctx.strokeStyle = "rgba(148, 163, 184, 0.2)";
+      ctx.strokeStyle = isDark ? "rgba(148, 163, 184, 0.2)" : "rgba(100, 116, 139, 0.25)";
       ctx.lineWidth = 1;
       ctx.moveTo(20, topY);
       ctx.lineTo(width - 20, topY);
@@ -84,14 +87,14 @@ export function ShorthandCanvas({
       ctx.setLineDash([]);
 
       // Position labels
-      ctx.fillStyle = "rgba(148, 163, 184, 0.4)";
+      ctx.fillStyle = isDark ? "rgba(148, 163, 184, 0.4)" : "rgba(100, 116, 139, 0.7)";
       ctx.font = "10px sans-serif";
       ctx.fillText("1st Position (Above)", 24, topY - 4);
       ctx.fillText("2nd Position (Baseline)", 24, centerY - 4);
       ctx.fillText("3rd Position (Through)", 24, bottomY + 14);
     }
 
-    // Ghost target stroke guide (drawn in faint purple)
+    // Ghost target stroke guide (drawn in faint purple or faint navy)
     if (showGhostGuide && selectedStroke) {
       ctx.save();
       // Center SVG path into canvas
@@ -102,7 +105,7 @@ export function ShorthandCanvas({
       ctx.scale(scale, scale);
 
       const path2D = new Path2D(selectedStroke.svgPath);
-      ctx.strokeStyle = "rgba(168, 85, 247, 0.25)";
+      ctx.strokeStyle = isDark ? "rgba(168, 85, 247, 0.25)" : "rgba(16, 43, 92, 0.2)";
       ctx.lineWidth = selectedStroke.weight === "heavy" ? 7 : 3.5;
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
@@ -112,13 +115,17 @@ export function ShorthandCanvas({
 
     // Render recorded user paths
     const allPaths = isDrawing && currentPath.length > 0
-      ? [...paths, { points: currentPath, weight: activeWeight, color: "#E2E8F0" }]
+      ? [...paths, { points: currentPath, weight: activeWeight, color: isDark ? "#E2E8F0" : "#17243A" }]
       : paths;
 
     for (const p of allPaths) {
       if (p.points.length < 2) continue;
       ctx.beginPath();
-      ctx.strokeStyle = p.weight === "heavy" ? "#38BDF8" : "#A855F7";
+      if (isDark) {
+        ctx.strokeStyle = p.weight === "heavy" ? "#38BDF8" : "#A855F7";
+      } else {
+        ctx.strokeStyle = p.weight === "heavy" ? "#102B5C" : "#174EA6";
+      }
       ctx.lineWidth = p.weight === "heavy" ? 6 : 2.5;
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
@@ -129,7 +136,7 @@ export function ShorthandCanvas({
       }
       ctx.stroke();
     }
-  }, [paths, currentPath, isDrawing, activeWeight, showGuidelines, showGhostGuide, selectedStroke]);
+  }, [paths, currentPath, isDrawing, activeWeight, showGuidelines, showGhostGuide, selectedStroke, isDark]);
 
   // Adjust canvas resolution for sharp retina display
   useEffect(() => {

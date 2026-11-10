@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useCallback, useEffect } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -38,15 +39,14 @@ export function Header() {
   }, []);
 
   return (
-    /* Header stays dark in both light and dark mode — editorial convention */
-    <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md shadow-lg">
+    <header className="sticky top-0 z-50 border-b border-[#DCE4EF] bg-white/95 backdrop-blur-md shadow-sm transition-colors duration-200 dark:border-slate-800/80 dark:bg-slate-950/90 dark:shadow-lg">
       <div className="container-main">
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center">
             {pathname !== "/" && (
               <button
                 onClick={() => router.back()}
-                className="mr-2 sm:mr-4 flex h-9 w-9 items-center justify-center rounded-full bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white transition-all shadow-sm"
+                className="mr-2 sm:mr-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#DCE4EF] bg-[#F4F7FC] text-[#17243A] hover:bg-[#EAF1FB] hover:text-[#102B5C] transition-all shadow-sm dark:border-transparent dark:bg-slate-800/80 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white"
                 aria-label="Go back"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -71,35 +71,41 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-1.5 md:flex">
-            {navItems.map((item) => {
-              const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname === item.href || pathname.startsWith(`${item.href}/`);
+          {/* Desktop Navigation & Actions */}
+          <div className="hidden items-center gap-3 md:flex">
+            <nav className="flex items-center gap-1.5">
+              {navItems.map((item) => {
+                const isActive =
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
-                    isActive
-                      ? "bg-primary-600 text-white shadow-sm shadow-primary-500/25"
-                      : "text-slate-400 hover:bg-slate-900 hover:text-slate-100"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
+                      isActive
+                        ? "bg-[#102B5C] text-white shadow-sm shadow-[#102B5C]/25 dark:bg-primary-600 dark:text-white dark:shadow-primary-500/25"
+                        : "text-[#17243A] hover:bg-[#F4F7FC] hover:text-[#102B5C] dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-slate-100"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+            <div className="border-l border-[#DCE4EF] pl-3 dark:border-slate-800">
+              <ThemeToggle />
+            </div>
+          </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center md:hidden">
+          {/* Mobile Actions (ThemeToggle + Menu Button) */}
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
             <button
               onClick={toggleMenu}
-              className="rounded-lg p-2 text-slate-400 hover:bg-slate-800 hover:text-slate-100"
+              className="rounded-lg p-2 text-[#17243A] hover:bg-[#F4F7FC] hover:text-[#102B5C] transition-colors dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100"
               aria-label="Toggle menu"
               id="mobile-menu-button"
             >
@@ -118,7 +124,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="border-t border-slate-800 pb-3 pt-2 md:hidden">
+          <nav className="border-t border-[#DCE4EF] pb-3 pt-2 md:hidden dark:border-slate-800">
             {navItems.map((item) => {
               const isActive =
                 item.href === "/"
@@ -132,8 +138,8 @@ export function Header() {
                   onClick={closeMenu}
                   className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? "bg-primary-900/40 text-primary-300 font-semibold"
-                      : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                      ? "bg-[#EAF1FB] text-[#102B5C] font-semibold dark:bg-primary-900/40 dark:text-primary-300"
+                      : "text-[#17243A] hover:bg-[#F4F7FC] hover:text-[#102B5C] dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
                   }`}
                 >
                   {item.label}

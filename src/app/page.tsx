@@ -43,13 +43,13 @@ export default function Homepage() {
   const previewLanguages = LANGUAGES.slice(0, 8);
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-950">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-950 text-[#17243A] dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"TypeHindi","url":"https://typehindi.in","potentialAction":{"@type":"SearchAction","target":"https://typehindi.in/blog?q={search_term_string}","query-input":"required name=search_term_string"}}) }} />
       {/* 🌟 Premium Hero Section */}
-      <section className="hidden md:block bg-slate-950 text-white pt-20 pb-32 border-b border-slate-900 relative overflow-hidden">
+      <section className="hidden md:block bg-[#F4F7FC] text-[#17243A] pt-20 pb-32 border-b border-[#DCE4EF] relative overflow-hidden dark:bg-slate-950 dark:text-white dark:border-slate-900">
         {/* Blurred background image blending with deep navy */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-25 blur-[6px] scale-105 pointer-events-none"
+          className="absolute inset-0 bg-cover bg-center opacity-10 dark:opacity-25 blur-[6px] scale-105 pointer-events-none"
           style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
         ></div>
 
@@ -57,29 +57,29 @@ export default function Homepage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
         
         {/* Glow element */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[#102B5C]/5 dark:bg-primary-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div className="container-main px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-50 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-500/30 text-primary-700 dark:text-primary-300 text-xs font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EAF1FB] border border-[#DCE4EF] text-[#102B5C] text-xs font-semibold mb-6 dark:bg-primary-500/10 dark:border-primary-500/30 dark:text-primary-300">
               ✨ Free Online Hindi Typing Platform
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight dark:drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] text-slate-900 dark:text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight text-[#102B5C] dark:text-white dark:drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               For Your Typing Jobs Preparation <br/>
-              <span className="text-primary-600 dark:text-primary-400">in One Place</span>
+              <span className="text-[#174EA6] dark:text-primary-400">in One Place</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-gray-600 dark:text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed mb-10 dark:drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="text-base sm:text-lg text-[#64748B] dark:text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed mb-10 dark:drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               A comprehensive catalog of free and easy-to-use Hindi typing tools. Improve your speed with a 100% accurate WPM tracker, live keyboard guides, and engaging typing games.
             </p>
 
             {/* Hero CTA buttons */}
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/practice" className="px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-bold text-sm transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/35 hover:-translate-y-0.5">
+              <Link href="/practice" className="px-8 py-3.5 rounded-xl bg-[#102B5C] hover:bg-[#173D78] text-white font-bold text-sm transition-all shadow-lg shadow-[#102B5C]/25 hover:shadow-[#102B5C]/35 hover:-translate-y-0.5 dark:bg-primary-600 dark:hover:bg-primary-500 dark:shadow-primary-500/25 dark:hover:shadow-primary-500/35">
                 Start Practice
               </Link>
-              <Link href="/game" className="px-8 py-3.5 rounded-xl bg-gray-100 dark:bg-slate-900 hover:bg-gray-200 dark:hover:bg-slate-800 text-gray-900 dark:text-white font-bold text-sm transition-all border border-gray-200 dark:border-slate-800 hover:-translate-y-0.5 shadow-sm">
+              <Link href="/game" className="px-8 py-3.5 rounded-xl bg-white hover:bg-[#F4F7FC] text-[#17243A] font-bold text-sm transition-all border border-[#CBD5E1] hover:-translate-y-0.5 shadow-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:text-white dark:border-slate-800">
                 Play Games
               </Link>
             </div>

@@ -88,7 +88,7 @@ export default function RootLayout({
     <html
       lang="hi"
       suppressHydrationWarning
-      className={`dark ${inter.variable} ${notoSansDevanagari.variable}`}
+      className={`${inter.variable} ${notoSansDevanagari.variable}`}
     >
       <head>
         <script

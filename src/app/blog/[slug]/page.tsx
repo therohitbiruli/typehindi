@@ -147,7 +147,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
       <article className="mt-4 mx-auto w-full">
         <header className="mb-6 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-normal">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-normal text-[#102B5C] dark:text-white">
             {title}
           </h1>
           <div className="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
@@ -408,11 +408,11 @@ function formatContent(content: string) {
       }
       if (!inTable) {
         inTable = true;
-        tableHtml = '<div class="overflow-x-auto my-8"><table class="w-full border-collapse border border-gray-300 dark:border-gray-700 text-left text-sm md:text-base">';
+        tableHtml = '<div class="overflow-x-auto my-8"><table class="w-full border-collapse border border-[#DCE4EF] dark:border-gray-700 text-left text-sm md:text-base">';
         const cells = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
-        tableHtml += '<thead><tr class="bg-gray-100 dark:bg-gray-800">';
+        tableHtml += '<thead><tr class="bg-[#EAF1FB] text-[#102B5C] dark:bg-gray-800 dark:text-gray-100">';
         cells.forEach(cell => {
-          tableHtml += `<th class="border border-gray-300 dark:border-gray-700 px-4 py-3 font-semibold">${cell}</th>`;
+          tableHtml += `<th class="border border-[#DCE4EF] dark:border-gray-700 px-4 py-3 font-bold text-[#102B5C] dark:text-gray-100">${cell}</th>`;
         });
         tableHtml += '</tr></thead><tbody>';
       } else {
@@ -420,9 +420,9 @@ function formatContent(content: string) {
           continue;
         }
         const cells = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
-        tableHtml += '<tr class="odd:bg-white even:bg-gray-50/50 dark:odd:bg-gray-900 dark:even:bg-gray-800/30">';
+        tableHtml += '<tr class="odd:bg-white even:bg-[#F4F7FC] dark:odd:bg-gray-900 dark:even:bg-gray-800/30">';
         cells.forEach(cell => {
-          tableHtml += `<td class="border border-gray-300 dark:border-gray-700 px-4 py-3">${cell}</td>`;
+          tableHtml += `<td class="border border-[#DCE4EF] dark:border-gray-700 px-4 py-3 text-[#17243A] dark:text-gray-200">${cell}</td>`;
         });
         tableHtml += '</tr>';
       }
@@ -460,11 +460,11 @@ function formatContent(content: string) {
   content = processedLines.join('\n');
 
   let html = content
-    .replace(/### (.*)/g, '<h3 class="text-2xl font-bold mt-8 mb-4">$1</h3>')
-    .replace(/## (.*)/g, '<h2 class="text-3xl font-bold mt-10 mb-6">$1</h2>')
-    .replace(/!pdf\[(.*?)\]\((.*?)\)/g, '<div class="my-8"><div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-t-xl border border-slate-200 dark:border-slate-700 flex justify-between items-center"><span class="font-bold text-slate-700 dark:text-slate-300">$1</span><a href="$2" target="_blank" class="text-primary-600 font-semibold text-sm flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>View PDF</a></div><iframe src="https://docs.google.com/viewer?url=$2&embedded=true" class="w-full h-[600px] md:h-[800px] border border-t-0 border-slate-200 dark:border-slate-700 rounded-b-xl" frameborder="0"></iframe></div>')
-    .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8"><img src="$2" alt="$1" class="w-full rounded-xl shadow-md border border-gray-200 dark:border-gray-800" /><figcaption class="text-center text-sm text-gray-500 mt-3">$1</figcaption></figure>')
-    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary-600 dark:text-primary-400 font-semibold underline underline-offset-2 hover:text-primary-500 dark:hover:text-primary-300 transition-colors">$1</a>')
+    .replace(/### (.*)/g, '<h3 class="text-2xl font-bold mt-8 mb-4 text-[#102B5C] dark:text-white">$1</h3>')
+    .replace(/## (.*)/g, '<h2 class="text-3xl font-bold mt-10 mb-6 text-[#102B5C] dark:text-white">$1</h2>')
+    .replace(/!pdf\[(.*?)\]\((.*?)\)/g, '<div class="my-8"><div class="bg-[#F4F7FC] dark:bg-slate-800 p-3 rounded-t-xl border border-[#DCE4EF] dark:border-slate-700 flex justify-between items-center"><span class="font-bold text-[#102B5C] dark:text-slate-300">$1</span><a href="$2" target="_blank" class="text-[#174EA6] hover:text-[#102B5C] dark:text-primary-400 font-semibold text-sm flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>View PDF</a></div><iframe src="https://docs.google.com/viewer?url=$2&embedded=true" class="w-full h-[600px] md:h-[800px] border border-t-0 border-[#DCE4EF] dark:border-slate-700 rounded-b-xl" frameborder="0"></iframe></div>')
+    .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8"><img src="$2" alt="$1" class="w-full rounded-xl shadow-md border border-[#DCE4EF] dark:border-gray-800" /><figcaption class="text-center text-sm text-[#64748B] dark:text-gray-500 mt-3">$1</figcaption></figure>')
+    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-[#174EA6] hover:text-[#102B5C] dark:text-primary-400 font-semibold underline underline-offset-2 transition-colors">$1</a>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
   // Convert markdown lists to styled <li> elements

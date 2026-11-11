@@ -147,9 +147,9 @@ export function DictationPlayer({
   const remainingSeconds = Math.max(0, totalSecondsEstimated - elapsedSeconds);
 
   return (
-    <div className="w-full rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 shadow-xl overflow-hidden">
+    <div className="w-full rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-xl overflow-hidden">
       {/* Top Header */}
-      <div className="p-5 bg-white dark:bg-slate-950/80 border-b border-gray-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
+      <div className="p-5 bg-white dark:bg-slate-950/80 border-b border-[#E2E8F0] dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
         <div>
           <span className="text-[11px] font-bold text-purple-400 uppercase tracking-wider">
             Audio Dictation System • {selectedPassage.category}
@@ -211,22 +211,22 @@ export function DictationPlayer({
 
         {/* Timers & Countdown Display */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 text-center">
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 text-center">
             <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Total Words</span>
             <div className="text-lg font-bold text-gray-900 dark:text-slate-100 mt-0.5">{selectedPassage.wordCount}</div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 text-center">
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 text-center">
             <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Est. Duration</span>
             <div className="text-lg font-bold text-gray-900 dark:text-slate-100 mt-0.5">{formatTime(totalSecondsEstimated)}</div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 text-center">
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 text-center">
             <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Elapsed Time</span>
             <div className="text-lg font-bold text-purple-400 mt-0.5">{formatTime(elapsedSeconds)}</div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 text-center">
+          <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 text-center">
             <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-semibold">Time Remaining</span>
             <div className="text-lg font-bold text-sky-400 mt-0.5">{formatTime(remainingSeconds)}</div>
           </div>
@@ -274,7 +274,7 @@ export function DictationPlayer({
         </div>
 
         {/* Hidden Passage Area / Reveal Toggle */}
-        <div className="border border-gray-200 dark:border-slate-800 rounded-xl bg-white dark:bg-slate-950/60 p-4 space-y-3">
+        <div className="border border-[#CBD5E1] dark:border-slate-800 rounded-xl bg-white dark:bg-slate-950/60 p-4 space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-slate-400">
               <svg className="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -293,7 +293,7 @@ export function DictationPlayer({
           </div>
 
           {showPassageText && (
-            <div className="pt-3 border-t border-gray-200 dark:border-slate-800 text-xs leading-relaxed text-gray-600 dark:text-slate-300 font-mono bg-white dark:bg-slate-950 p-4 rounded-lg select-text">
+            <div className="pt-3 border-t border-[#E2E8F0] dark:border-slate-800 text-xs leading-relaxed text-gray-600 dark:text-slate-300 font-mono bg-white dark:bg-slate-950 p-4 rounded-lg select-text">
               {selectedPassage.text}
             </div>
           )}

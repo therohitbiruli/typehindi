@@ -138,9 +138,9 @@ export function KeyByKeyPractice({
 
   return (
     <section id="key-practice" className="mb-14 scroll-mt-20">
-      <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
+      <div className="border border-[#CBD5E1] dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
         {/* Section Header */}
-        <div className="bg-gradient-to-r from-emerald-50/70 via-teal-50/50 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-150 dark:border-gray-800">
+        <div className="bg-gradient-to-r from-emerald-50/70 via-teal-50/50 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-[#E2E8F0] dark:border-gray-800">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-semibold mb-2">
@@ -155,7 +155,7 @@ export function KeyByKeyPractice({
             </div>
 
             {/* Completion Counter Badge */}
-            <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-gray-200 dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
+            <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-[#CBD5E1] dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
               <span>Mastered:</span>
               <span className="px-2 py-0.5 rounded-full bg-emerald-500 text-white font-bold text-xs">
                 {keyPracticeItems.filter(k => completedKeys.includes(k.id)).length} / {keyPracticeItems.length}
@@ -172,7 +172,7 @@ export function KeyByKeyPractice({
                 className={`flex-shrink-0 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                   selectedGroup === tab.id
                     ? "bg-emerald-600 text-white shadow-md shadow-emerald-600/20 scale-[1.02]"
-                    : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-[#CBD5E1] dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
                 }`}
               >
                 {tab.label}
@@ -182,7 +182,7 @@ export function KeyByKeyPractice({
         </div>
 
         {/* Character Selector Strip */}
-        <div className="p-4 md:px-8 border-b border-gray-150 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/30">
+        <div className="p-4 md:px-8 border-b border-[#E2E8F0] dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/30">
           <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin">
             {filteredItems.map((item, idx) => {
               const isCompleted = completedKeys.includes(item.id);
@@ -213,7 +213,7 @@ export function KeyByKeyPractice({
         <div className="p-6 md:p-8 grid gap-8 lg:grid-cols-12">
           {/* Left Column: Key Presentation & Finger Guide */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-gray-50 dark:bg-gray-900 rounded-3xl p-6 border border-gray-150 dark:border-gray-800 text-center relative overflow-hidden">
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-3xl p-6 border border-[#CBD5E1] dark:border-gray-800 text-center relative overflow-hidden">
               {isCurrentCompleted && (
                 <div className="absolute top-4 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs font-bold">
                   <span>✓ Mastered</span>
@@ -229,8 +229,8 @@ export function KeyByKeyPractice({
               </p>
 
               {/* Physical Key & Finger Card */}
-              <div className="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-gray-200 dark:border-gray-800 text-left">
-                <div className="p-3.5 rounded-2xl bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700">
+              <div className="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-[#E2E8F0] dark:border-gray-800 text-left">
+                <div className="p-3.5 rounded-2xl bg-white dark:bg-gray-800/80 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
                     Physical Key
                   </div>
@@ -241,7 +241,7 @@ export function KeyByKeyPractice({
                   </div>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700">
+                <div className="p-3.5 rounded-2xl bg-white dark:bg-gray-800/80 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
                     Finger To Use
                   </div>
@@ -260,7 +260,7 @@ export function KeyByKeyPractice({
                   {currentItem.exampleWords.map(w => (
                     <span
                       key={w}
-                      className="px-2.5 py-1 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 font-hindi text-xs font-semibold text-gray-800 dark:text-gray-200"
+                      className="px-2.5 py-1 rounded-xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 font-hindi text-xs font-semibold text-gray-800 dark:text-gray-200"
                     >
                       {w}
                     </span>
@@ -285,7 +285,7 @@ export function KeyByKeyPractice({
               {/* Target Text Visualization */}
               <div
                 onClick={() => inputRef.current?.focus()}
-                className="cursor-text p-5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 min-h-[90px] font-hindi text-2xl md:text-3xl leading-relaxed flex flex-wrap items-center gap-1 shadow-inner"
+                className="cursor-text p-5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 min-h-[90px] font-hindi text-2xl md:text-3xl leading-relaxed flex flex-wrap items-center gap-1 shadow-inner"
               >
                 {targetText.split("").map((char, i) => {
                   let status = "text-gray-400 dark:text-gray-600";
@@ -328,7 +328,7 @@ export function KeyByKeyPractice({
               </div>
 
               {/* Real-time Accuracy & Score Bar */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 text-xs">
+              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 text-xs">
                 <div className="flex items-center gap-4">
                   <div>
                     <span className="text-gray-400">Accuracy: </span>
@@ -377,10 +377,10 @@ export function KeyByKeyPractice({
             </div>
 
             {/* Navigation & Controls Footer */}
-            <div className="flex items-center justify-between pt-4 border-t border-gray-150 dark:border-gray-800">
+            <div className="flex items-center justify-between pt-4 border-t border-[#E2E8F0] dark:border-gray-800">
               <button
                 onClick={handlePrev}
-                className="px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 rounded-xl border border-[#CBD5E1] dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
               >
                 <span>←</span>
                 <span>Previous Key</span>
@@ -388,7 +388,7 @@ export function KeyByKeyPractice({
 
               <button
                 onClick={resetDrill}
-                className="px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 rounded-xl border border-[#CBD5E1] dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
               >
                 <span>🔄</span>
                 <span>Practice Again</span>

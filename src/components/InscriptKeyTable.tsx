@@ -62,9 +62,9 @@ export function InscriptKeyTable() {
         </div>
       </div>
 
-      <div className="card overflow-x-auto p-0 rounded-3xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl">
+      <div className="card overflow-x-auto p-0 rounded-3xl border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl">
         <table className="w-full text-sm text-left">
-          <thead className="bg-white dark:bg-slate-950/80 text-xs text-gray-500 dark:text-slate-400 uppercase tracking-wider border-b border-gray-200 dark:border-slate-800">
+          <thead className="bg-white dark:bg-slate-950/80 text-xs text-gray-500 dark:text-slate-400 uppercase tracking-wider border-b border-[#E2E8F0] dark:border-slate-800">
             <tr>
               <th className="px-6 py-4 font-bold">English Key</th>
               <th className="px-6 py-4 font-bold">Normal Char</th>

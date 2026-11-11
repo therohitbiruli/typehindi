@@ -74,7 +74,7 @@ export default function ShorthandTestsPage() {
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
                   selectedExam.id === e.id
                     ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                    : "bg-white dark:bg-slate-950 hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-600 dark:text-slate-400 border border-gray-200 dark:border-slate-800"
+                    : "bg-white dark:bg-slate-950 hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-600 dark:text-slate-400 border border-[#CBD5E1] dark:border-slate-800"
                 }`}
               >
                 {e.name}

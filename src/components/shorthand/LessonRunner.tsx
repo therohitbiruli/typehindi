@@ -40,7 +40,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
 
       <main className="container-main py-8 space-y-6">
         {/* Lesson Breadcrumb & Title Header */}
-        <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-3">
+        <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               <Link href="/shorthand/learn" className="text-xs text-purple-600 dark:text-purple-400 hover:underline">
@@ -65,7 +65,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
           </p>
 
           {/* Interactive Steps Pipeline Tabs: LEARN -> SEE -> PRACTICE -> TEST */}
-          <div className="grid grid-cols-4 gap-1.5 pt-3 border-t border-gray-200 dark:border-slate-800">
+          <div className="grid grid-cols-4 gap-1.5 pt-3 border-t border-[#E2E8F0] dark:border-slate-800">
             {[
               { id: "learn", label: "1. LEARN", icon: "📖" },
               { id: "see", label: "2. SEE", icon: "👁️" },
@@ -79,7 +79,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                 className={`py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                   activeTab === t.id
                     ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                    : "bg-white dark:bg-slate-950/60 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 border border-gray-200 dark:border-slate-800"
+                    : "bg-white dark:bg-slate-950/60 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 border border-[#CBD5E1] dark:border-slate-800"
                 }`}
               >
                 <span>{t.icon}</span>
@@ -92,7 +92,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         {/* Tab 1: LEARN (Theory & Official Rules) */}
         {activeTab === "learn" && (
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-4">
               <h2 className="text-base font-bold text-gray-900 dark:text-slate-100">Overview</h2>
               <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 leading-relaxed">
                 {lesson.learnContent.overview}
@@ -104,7 +104,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                 </h3>
                 <ul className="space-y-2 text-xs text-gray-600 dark:text-slate-300">
                   {lesson.learnContent.keyPoints.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-2 bg-white dark:bg-slate-950 p-3 rounded-xl border border-gray-200 dark:border-slate-800">
+                    <li key={idx} className="flex items-start gap-2 bg-white dark:bg-slate-950 p-3 rounded-xl border border-[#CBD5E1] dark:border-slate-800">
                       <span className="text-purple-400 font-bold">✓</span>
                       <span>{point}</span>
                     </li>
@@ -119,7 +119,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {lesson.learnContent.rules.map((rule, idx) => (
-                      <div key={idx} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1.5">
+                      <div key={idx} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1.5">
                         <h4 className="text-xs font-bold text-gray-700 dark:text-slate-200">{rule.title}</h4>
                         <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">{rule.detail}</p>
                         {rule.tip && (
@@ -147,7 +147,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         {/* Tab 2: SEE (Demonstration Strokes & Visual Vectors) */}
         {activeTab === "see" && (
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-4">
               <h2 className="text-base font-bold text-gray-900 dark:text-slate-100">
                 Visual Stroke Demonstrations for this Lesson
               </h2>
@@ -157,8 +157,8 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
                 {lesson.demonstrationStrokes.map((s) => (
-                  <div key={s.id} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 text-center space-y-3">
-                    <div className="w-20 h-20 mx-auto rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 flex items-center justify-center">
+                  <div key={s.id} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 text-center space-y-3">
+                    <div className="w-20 h-20 mx-auto rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 flex items-center justify-center">
                       <svg viewBox="0 0 100 100" className="w-14 h-14 stroke-purple-400">
                         <path
                           d={s.svgPath}
@@ -183,7 +183,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                       <p className="text-[10px] text-gray-500 dark:text-slate-400 mt-1">{s.angleDescription}</p>
                     </div>
 
-                    <div className="pt-2 border-t border-gray-200 dark:border-slate-800/80 text-[11px] text-gray-600 dark:text-slate-300">
+                    <div className="pt-2 border-t border-[#E2E8F0] dark:border-slate-800/80 text-[11px] text-gray-600 dark:text-slate-300">
                       <strong>Examples:</strong> {s.examples.map((ex) => ex.word).join(", ")}
                     </div>
                   </div>
@@ -213,7 +213,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         {/* Tab 3: PRACTICE (Interactive HTML5 Canvas) */}
         {activeTab === "practice" && (
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-4">
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className="text-base font-bold text-gray-900 dark:text-slate-100">Interactive Canvas Practice</h2>
@@ -237,7 +237,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                 </h3>
                 <div className="space-y-2">
                   {lesson.exercises.map((ex) => (
-                    <div key={ex.id} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+                    <div key={ex.id} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
                       <p className="text-xs font-semibold text-gray-700 dark:text-slate-200">Exercise: {ex.prompt}</p>
                       <p className="text-[11px] text-gray-500 dark:text-slate-400">💡 Hint: {ex.hint}</p>
                       <p className="text-[11px] text-emerald-400/90 pt-1">Rule Note: {ex.explanation}</p>
@@ -269,7 +269,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         {/* Tab 4: TEST (Mini Quiz & Completion) */}
         {activeTab === "test" && (
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-5">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-5">
               <div>
                 <h2 className="text-base font-bold text-gray-900 dark:text-slate-100">Lesson Mini Quiz</h2>
                 <p className="text-xs text-gray-500 dark:text-slate-400">
@@ -284,7 +284,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
                   const isCorrect = selected === q.correctIndex;
 
                   return (
-                    <div key={q.id} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-3">
+                    <div key={q.id} className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-3">
                       <h3 className="text-xs font-bold text-gray-700 dark:text-slate-200">
                         Q{qIdx + 1}: {q.question}
                       </h3>
@@ -327,7 +327,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               </div>
 
               {/* Completion CTA */}
-              <div className="pt-4 border-t border-gray-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="pt-4 border-t border-[#E2E8F0] dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-xs text-gray-500 dark:text-slate-400">
                   Completed all steps? Mark this lesson as finished to update your local streak.
                 </div>
@@ -346,7 +346,7 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
               {lesson.prevLessonSlug ? (
                 <Link
                   href={`/shorthand/lessons/${lesson.prevLessonSlug}`}
-                  className="px-4 py-2 rounded-xl bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 text-xs font-semibold border border-gray-200 dark:border-slate-800 transition-colors"
+                  className="px-4 py-2 rounded-xl bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 text-xs font-semibold border border-[#CBD5E1] dark:border-slate-800 transition-colors"
                 >
                   ← Previous Lesson
                 </Link>

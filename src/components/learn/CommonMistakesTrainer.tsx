@@ -76,9 +76,9 @@ export function CommonMistakesTrainer() {
 
   return (
     <section id="common-mistakes" className="mb-14 scroll-mt-20">
-      <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
+      <div className="border border-[#CBD5E1] dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
         {/* Header */}
-        <div className="bg-gradient-to-r from-rose-50/70 via-red-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-150 dark:border-gray-800">
+        <div className="bg-gradient-to-r from-rose-50/70 via-red-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-[#E2E8F0] dark:border-gray-800">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 text-xs font-semibold mb-2">
@@ -126,7 +126,7 @@ export function CommonMistakesTrainer() {
                 className={`flex-shrink-0 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                   selectedLessonIndex === idx
                     ? "bg-rose-600 text-white shadow-md shadow-rose-600/20 scale-[1.02]"
-                    : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-[#CBD5E1] dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
                 }`}
               >
                 {les.title.split(". ")[1] || les.title}
@@ -169,7 +169,7 @@ export function CommonMistakesTrainer() {
               </div>
 
               {/* Explanation & Keystroke Recipe */}
-              <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 space-y-4">
+              <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 space-y-4">
                 <h4 className="text-sm font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
                   Detailed Explanation (विस्तृत व्याख्या)
                 </h4>
@@ -181,14 +181,14 @@ export function CommonMistakesTrainer() {
                   <span className="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 block mb-1">
                     Keyboard Recipe:
                   </span>
-                  <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 font-hindi font-bold text-base text-gray-900 dark:text-white">
+                  <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 font-hindi font-bold text-base text-gray-900 dark:text-white">
                     {currentLesson.keySequence}
                   </div>
                 </div>
               </div>
 
               {/* Interactive Mini Practice Drill */}
-              <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 space-y-4">
+              <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 space-y-4">
                 <div className="flex items-center justify-between">
                   <h4 className="text-sm font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
                     Muscle Memory Correction Drill
@@ -199,7 +199,7 @@ export function CommonMistakesTrainer() {
                 {/* Target Drill Box */}
                 <div
                   onClick={() => inputRef.current?.focus()}
-                  className="cursor-text p-5 rounded-2xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 min-h-[80px] font-hindi text-2xl leading-relaxed flex flex-wrap items-center gap-1 shadow-inner"
+                  className="cursor-text p-5 rounded-2xl bg-white dark:bg-gray-950 border border-[#CBD5E1] dark:border-gray-800 min-h-[80px] font-hindi text-2xl leading-relaxed flex flex-wrap items-center gap-1 shadow-inner"
                 >
                   {targetDrill.split("").map((char, i) => {
                     let status = "text-gray-400 dark:text-gray-600";
@@ -273,7 +273,7 @@ export function CommonMistakesTrainer() {
           ) : (
             /* Quiz Mode */
             <div className="max-w-2xl mx-auto space-y-6">
-              <div className="p-6 md:p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 space-y-6">
+              <div className="p-6 md:p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 space-y-6">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">
                     Question {selectedLessonIndex + 1} of {commonMistakesLessons.length}
@@ -321,7 +321,7 @@ export function CommonMistakesTrainer() {
 
                 {/* Explanation Card after Answer */}
                 {isAnswerSubmitted && (
-                  <div className="p-4 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 space-y-2 animate-fade-in">
+                  <div className="p-4 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 space-y-2 animate-fade-in">
                     <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                       Explanation:
                     </div>

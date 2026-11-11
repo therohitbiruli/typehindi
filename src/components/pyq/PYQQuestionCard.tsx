@@ -13,8 +13,8 @@ export function PYQQuestionCard({ question, index }: Props) {
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-10 border border-slate-200 dark:border-slate-800 shadow-sm transition-all hover:shadow-md">
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+    <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-10 border border-[#CBD5E1] dark:border-slate-800 shadow-sm transition-all hover:shadow-md">
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#E2E8F0] dark:border-slate-800">
         <span className="text-lg font-black text-slate-900 dark:text-white">Question {index + 1}</span>
         <div className="flex items-center gap-2">
           {question.topic && (
@@ -33,7 +33,7 @@ export function PYQQuestionCard({ question, index }: Props) {
         {question.optionsEn.map((opt, optIdx) => {
           const isCorrect = optIdx === question.correctOptionIndex;
           
-          let optionClass = 'bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700';
+          let optionClass = 'bg-slate-50 dark:bg-slate-800/50 border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-700';
           let letterBg = 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400';
           let textClass = 'text-slate-700 dark:text-slate-300';
 
@@ -63,7 +63,7 @@ export function PYQQuestionCard({ question, index }: Props) {
       {!showAnswer ? (
         <button 
           onClick={() => setShowAnswer(true)}
-          className="btn-secondary px-6 py-2.5 rounded-xl font-bold border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 w-full sm:w-auto"
+          className="btn-secondary px-6 py-2.5 rounded-xl font-bold border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 w-full sm:w-auto"
         >
           View Answer
         </button>
@@ -77,7 +77,7 @@ export function PYQQuestionCard({ question, index }: Props) {
             Hide Answer
           </button>
           
-          <div className="bg-primary-50 dark:bg-primary-900/10 border border-primary-100 dark:border-primary-900/30 rounded-2xl p-6">
+          <div className="bg-primary-50 dark:bg-primary-900/10 border border-[#B8C7DA] dark:border-primary-900/30 rounded-2xl p-6">
             <h4 className="font-bold text-primary-800 dark:text-primary-300 mb-3 flex items-center gap-2">
               <svg className="w-5 h-5 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" /></svg>
               Correct Answer: {String.fromCharCode(65 + question.correctOptionIndex)}

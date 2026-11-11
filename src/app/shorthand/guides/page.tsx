@@ -49,7 +49,7 @@ export default function ShorthandGuidesPage() {
         </div>
 
         {/* Permanent Common Mistakes SEO Guide */}
-        <section className="space-y-6 pt-4 border-t border-gray-200 dark:border-slate-800">
+        <section className="space-y-6 pt-4 border-t border-[#E2E8F0] dark:border-slate-800">
           <div className="max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               Exam Preparation Guide
@@ -64,7 +64,7 @@ export default function ShorthandGuidesPage() {
 
           <div className="grid gap-4 md:grid-cols-2">
             {commonMistakes.map((m, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-2">
+              <div key={idx} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-2">
                 <h3 className="text-sm font-bold text-purple-700 dark:text-purple-400">{m.title}</h3>
                 <p className="text-xs text-[#475569] dark:text-slate-300 font-medium leading-relaxed">{m.desc}</p>
               </div>
@@ -73,7 +73,7 @@ export default function ShorthandGuidesPage() {
         </section>
 
         {/* Interactive Practice Tools Section */}
-        <section className="space-y-6 pt-6 border-t border-gray-200 dark:border-slate-800">
+        <section className="space-y-6 pt-6 border-t border-[#E2E8F0] dark:border-slate-800">
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div>
               <h2 className="text-xl font-bold text-[#17243A] dark:text-slate-100">
@@ -91,7 +91,7 @@ export default function ShorthandGuidesPage() {
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                   activeTool === "notebook"
                     ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                    : "bg-gray-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 hover:text-white border border-gray-200 dark:border-slate-800"
+                    : "bg-gray-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 hover:text-white border border-[#CBD5E1] dark:border-slate-800"
                 }`}
               >
                 <span>📓</span>
@@ -104,7 +104,7 @@ export default function ShorthandGuidesPage() {
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                   activeTool === "printable"
                     ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                    : "bg-gray-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 hover:text-white border border-gray-200 dark:border-slate-800"
+                    : "bg-gray-100 dark:bg-slate-900 text-gray-600 dark:text-slate-400 hover:text-white border border-[#CBD5E1] dark:border-slate-800"
                 }`}
               >
                 <span>🖨️</span>

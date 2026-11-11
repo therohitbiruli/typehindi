@@ -143,7 +143,7 @@ export default async function LearnSlugPage({ params }: Props) {
       </div>
 
       {/* 1. What is [Language] Typing? */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
           <span>💡</span> What is {langConfig.name} Typing?
         </h2>
@@ -153,7 +153,7 @@ export default async function LearnSlugPage({ params }: Props) {
       </section>
 
       {/* 2. Interactive Keyboard Preview */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-4">
           <div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
@@ -182,12 +182,12 @@ export default async function LearnSlugPage({ params }: Props) {
       </section>
 
       {/* 3. Computer Setup Guide (Windows, Mac, Linux) */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <span>⚙️</span> How to Enable {langConfig.name} Typing on Your Computer
         </h2>
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5 flex items-center gap-1.5">
               <span>🪟</span> Windows 10 & 11
             </h3>
@@ -195,7 +195,7 @@ export default async function LearnSlugPage({ params }: Props) {
               {langConfig.learning.inputSetup.windows}
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5 flex items-center gap-1.5">
               <span>🍎</span> macOS (Apple)
             </h3>
@@ -203,7 +203,7 @@ export default async function LearnSlugPage({ params }: Props) {
               {langConfig.learning.inputSetup.mac}
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5 flex items-center gap-1.5">
               <span>🐧</span> Linux (Ubuntu/Debian)
             </h3>
@@ -215,7 +215,7 @@ export default async function LearnSlugPage({ params }: Props) {
       </section>
 
       {/* 4. Finger Placement & Home Row Technique */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
           <span>🖐️</span> Correct Finger Placement & Home Row Guide
         </h2>
@@ -224,7 +224,7 @@ export default async function LearnSlugPage({ params }: Props) {
         </p>
 
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="p-5 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-5 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <h3 className="font-bold text-sm text-gray-900 dark:text-white mb-2 flex items-center gap-2">
               <span>👈</span> Left Hand Finger Assignments
             </h3>
@@ -233,7 +233,7 @@ export default async function LearnSlugPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-5 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <h3 className="font-bold text-sm text-gray-900 dark:text-white mb-2 flex items-center gap-2">
               <span>👉</span> Right Hand Finger Assignments
             </h3>
@@ -245,7 +245,7 @@ export default async function LearnSlugPage({ params }: Props) {
       </section>
 
       {/* 5. Common Characters & Keystroke Combinations */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <span>🔤</span> Essential {langConfig.name} Characters & Keystroke Map
         </h2>
@@ -253,7 +253,7 @@ export default async function LearnSlugPage({ params }: Props) {
           {langConfig.learning.commonCharacters.map((c, idx) => (
             <div
               key={idx}
-              className="p-3 rounded-xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-center"
+              className="p-3 rounded-xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 text-center"
             >
               <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                 {c.char}
@@ -271,7 +271,7 @@ export default async function LearnSlugPage({ params }: Props) {
 
       {/* 6. Common Vocabulary & Sentences */}
       <section className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
           <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
             <span>📝</span> Frequent {langConfig.name} Words
           </h3>
@@ -282,7 +282,7 @@ export default async function LearnSlugPage({ params }: Props) {
             {langConfig.commonWords.map((word, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/60"
+                className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-800 dark:text-slate-200 border border-[#CBD5E1] dark:border-slate-700/60"
               >
                 {word}
               </span>
@@ -290,7 +290,7 @@ export default async function LearnSlugPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
           <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
             <span>💬</span> Practice Sentences
           </h3>
@@ -301,7 +301,7 @@ export default async function LearnSlugPage({ params }: Props) {
             {langConfig.sentences.map((sent, idx) => (
               <li
                 key={idx}
-                className="p-3 rounded-xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-start gap-2"
+                className="p-3 rounded-xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 flex items-start gap-2"
               >
                 <span className="text-primary-500 font-bold">•</span>
                 <span>{sent}</span>
@@ -312,47 +312,47 @@ export default async function LearnSlugPage({ params }: Props) {
       </section>
 
       {/* 7. How to Improve Speed & Accuracy */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <span>🚀</span> 5 Golden Rules to Double Your {langConfig.name} Typing Speed
         </h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">01</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Prioritize Accuracy Over Speed</h3>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               Never rush key presses. Aim for 98% accuracy first. When your fingers learn the exact key coordinates, speed follows automatically.
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">02</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Never Look at the Keyboard</h3>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               Cover your hands with a small sheet of paper if necessary. Looking down prevents muscle memory from forming in the cerebral cortex.
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">03</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Practice Full 10-Minute Tests</h3>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               One-minute sprint drills do not build exam stamina. Take at least one complete 10-minute test daily on TypeHindi.
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">04</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Master Halant & Conjunct Keys</h3>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               In Indic InScript, the Virama / Halant key (D) forms half-letters and conjuncts. Practice typing conjunct words fluidly.
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">05</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Use an Ergonomic Desktop Keyboard</h3>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               Avoid practicing exclusively on flat laptop keyboards. Most government exam centers provide standard membrane desktop keyboards.
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">06</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Build a 10 WPM Safety Buffer</h3>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
@@ -363,7 +363,7 @@ export default async function LearnSlugPage({ params }: Props) {
       </section>
 
       {/* 8. Frequently Asked Questions */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
           <span>❓</span> Frequently Asked Questions ({langConfig.name} Typing)
         </h2>
@@ -371,7 +371,7 @@ export default async function LearnSlugPage({ params }: Props) {
           {langConfig.learning.faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800"
+              className="p-5 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800"
             >
               <h3 className="font-bold text-sm text-gray-900 dark:text-white mb-1.5">
                 {faq.question}

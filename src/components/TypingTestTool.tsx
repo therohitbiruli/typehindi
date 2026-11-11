@@ -160,7 +160,7 @@ export function TypingTestTool({
       )}
 
       {/* Settings Grid with Timer & Duration */}
-      <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4 bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 p-4 rounded-2xl shadow-sm">
+      <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4 bg-white dark:bg-slate-900 border border-[#B8C7DA] dark:border-slate-800 p-4 rounded-2xl shadow-sm">
         {/* Language & Layout Indicator */}
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-2xl bg-primary-500/10 text-primary-500 flex items-center justify-center font-bold text-lg">

@@ -43,7 +43,7 @@ export default function ContactPage() {
                 id="name"
                 name="name"
                 required
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder-slate-500"
+                className="w-full rounded-lg border border-[#B8C7DA] bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-[#102B5C] focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder-slate-500"
                 placeholder="Your Name"
               />
             </div>
@@ -56,7 +56,7 @@ export default function ContactPage() {
                 id="email"
                 name="email"
                 required
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder-slate-500"
+                className="w-full rounded-lg border border-[#B8C7DA] bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-[#102B5C] focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder-slate-500"
                 placeholder="your@email.com"
               />
             </div>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 type="text"
                 id="subject"
                 name="subject"
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder-slate-500"
+                className="w-full rounded-lg border border-[#B8C7DA] bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-[#102B5C] focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder-slate-500"
                 placeholder="Message Subject"
               />
             </div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                 name="message"
                 required
                 rows={5}
-                className="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder-slate-500"
+                className="w-full resize-none rounded-lg border border-[#B8C7DA] bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-[#102B5C] focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder-slate-500"
                 placeholder="Your Message..."
               />
             </div>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <hr className="border-gray-100 dark:border-slate-800/80" />
+              <hr className="border-[#E2E8F0] dark:border-slate-800/80" />
 
               <div className="flex items-start gap-3.5">
                 <div className="rounded-lg bg-primary-50 p-2 text-primary-600 dark:bg-primary-950/50 dark:text-primary-400 mt-0.5">

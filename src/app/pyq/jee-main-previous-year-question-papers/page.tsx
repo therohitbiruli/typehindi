@@ -114,16 +114,16 @@ export default function JEEMainLandingPage() {
 
         {/* Highlight Stats Chips */}
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <div className="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm">
+          <div className="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm">
             🎯 <span className="text-primary-600 dark:text-primary-400">202</span> Verified Papers
           </div>
-          <div className="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm">
+          <div className="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm">
             📅 <span className="text-emerald-600 dark:text-emerald-400">25 Years</span> (2002–2026)
           </div>
-          <div className="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm">
+          <div className="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm">
             ⚡ January & April Sessions
           </div>
-          <div className="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm">
+          <div className="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm">
             🌐 English & Hindi PDFs
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function JEEMainLandingPage() {
       <AdPlaceholder position="bottom" />
 
       {/* Comprehensive SEO Content & Practice Guide (500–700 words) */}
-      <article className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 md:p-12 border border-slate-200 dark:border-slate-800 mt-12 mb-8 shadow-sm space-y-8 text-slate-600 dark:text-slate-400 leading-relaxed text-sm md:text-base">
+      <article className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 md:p-12 border border-[#CBD5E1] dark:border-slate-800 mt-12 mb-8 shadow-sm space-y-8 text-slate-600 dark:text-slate-400 leading-relaxed text-sm md:text-base">
         <div>
           <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4">
             Master the Exam with JEE Main Previous Year Question Papers
@@ -211,7 +211,7 @@ export default function JEEMainLandingPage() {
         </div>
 
         {/* Back link to main hub */}
-        <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+        <div className="pt-4 border-t border-[#E2E8F0] dark:border-slate-800 flex items-center justify-between">
           <Link
             href="/pyq"
             className="text-xs font-bold text-primary-600 dark:text-primary-400 hover:underline inline-flex items-center gap-1.5"
@@ -225,7 +225,7 @@ export default function JEEMainLandingPage() {
       </article>
 
       {/* Frequently Asked Questions */}
-      <section className="bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] p-8 md:p-10 border border-slate-200 dark:border-slate-800 mt-8 mb-12">
+      <section className="bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] p-8 md:p-10 border border-[#CBD5E1] dark:border-slate-800 mt-8 mb-12">
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
           <span className="w-1.5 h-6 rounded-full bg-primary-600"></span>
           Frequently Asked Questions (FAQs)

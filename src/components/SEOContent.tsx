@@ -5,7 +5,7 @@ export function SEOContent() {
       <article>
         <h2 className="heading-2 mb-4 text-[#17243A] dark:text-white">Understanding Your Typing Metrics</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-8 mt-4">
-          <div className="rounded-lg border border-[#DCE4EF] dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50 shadow-sm">
+          <div className="rounded-lg border border-[#CBD5E1] dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50 shadow-sm">
             <div className="flex items-center gap-2 mb-2 text-primary-600 dark:text-primary-400">
               <span className="text-xl">⚡</span>
               <h3 className="font-semibold text-lg text-[#17243A] dark:text-white">Speed (WPM)</h3>
@@ -13,7 +13,7 @@ export function SEOContent() {
             <p className="text-sm text-[#475569] dark:text-gray-300 font-medium">Words Per Minute. This represents the average number of correct words you can type in one minute. A word is calculated as 5 characters (including spaces).</p>
           </div>
           
-          <div className="rounded-lg border border-[#DCE4EF] dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50 shadow-sm">
+          <div className="rounded-lg border border-[#CBD5E1] dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50 shadow-sm">
             <div className="flex items-center gap-2 mb-2 text-green-600 dark:text-green-500">
               <span className="text-xl">🎯</span>
               <h3 className="font-semibold text-lg text-[#17243A] dark:text-white">Accuracy</h3>
@@ -21,7 +21,7 @@ export function SEOContent() {
             <p className="text-sm text-[#475569] dark:text-gray-300 font-medium">Measured as a percentage (%). It shows the percentage of correct keystrokes out of the total keystrokes typed.</p>
           </div>
 
-          <div className="rounded-lg border border-[#DCE4EF] dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50 shadow-sm">
+          <div className="rounded-lg border border-[#CBD5E1] dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50 shadow-sm">
             <div className="flex items-center gap-2 mb-2 text-red-500 dark:text-red-400">
               <span className="text-xl">✖️</span>
               <h3 className="font-semibold text-lg text-[#17243A] dark:text-white">Errors</h3>
@@ -29,7 +29,7 @@ export function SEOContent() {
             <p className="text-sm text-[#475569] dark:text-gray-300 font-medium">The total number of typos or mistakes made while typing the paragraph. Focus on reducing errors alongside building speed.</p>
           </div>
 
-          <div className="rounded-lg border border-[#DCE4EF] dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50 shadow-sm">
+          <div className="rounded-lg border border-[#CBD5E1] dark:border-gray-800 p-4 bg-white dark:bg-gray-900/50 shadow-sm">
             <div className="flex items-center gap-2 mb-2 text-yellow-500 dark:text-yellow-400">
               <span className="text-xl">⭐</span>
               <h3 className="font-semibold text-lg text-[#17243A] dark:text-white">Best WPM</h3>

@@ -76,7 +76,7 @@ export function ShorthandNotebook() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="e.g. In accordance with the law / Difficult joining"
-                className="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 text-xs text-gray-900 dark:text-slate-100 focus:outline-none focus:border-purple-500"
+                className="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 text-xs text-gray-900 dark:text-slate-100 focus:outline-none focus:border-purple-500"
                 required
               />
             </div>
@@ -85,7 +85,7 @@ export function ShorthandNotebook() {
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value as ShorthandNote["category"])}
-                className="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 text-xs text-gray-900 dark:text-slate-100 focus:outline-none focus:border-purple-500"
+                className="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 text-xs text-gray-900 dark:text-slate-100 focus:outline-none focus:border-purple-500"
               >
                 <option value="Difficult Form">Difficult Form</option>
                 <option value="Phrase">Phrase</option>
@@ -104,7 +104,7 @@ export function ShorthandNotebook() {
               onChange={(e) => setContent(e.target.value)}
               placeholder="Write your note, rules to remember, or steno reminder here..."
               rows={3}
-              className="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 text-xs text-gray-900 dark:text-slate-100 focus:outline-none focus:border-purple-500"
+              className="w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 text-xs text-gray-900 dark:text-slate-100 focus:outline-none focus:border-purple-500"
               required
             />
           </div>
@@ -131,7 +131,7 @@ export function ShorthandNotebook() {
               className={`px-3 py-1 rounded-md text-xs font-medium whitespace-nowrap transition-colors ${
                 filterCategory === c
                   ? "bg-purple-600 text-white"
-                  : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 hover:text-white border border-gray-200 dark:border-slate-800"
+                  : "bg-gray-50 dark:bg-slate-900 text-gray-500 dark:text-slate-400 hover:text-white border border-[#CBD5E1] dark:border-slate-800"
               }`}
             >
               {c}
@@ -144,14 +144,14 @@ export function ShorthandNotebook() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search saved notes..."
-          className="px-3 py-1.5 rounded-lg bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-xs text-gray-900 dark:text-slate-100 focus:outline-none focus:border-purple-500"
+          className="px-3 py-1.5 rounded-lg bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-xs text-gray-900 dark:text-slate-100 focus:outline-none focus:border-purple-500"
         />
       </div>
 
       {/* Notes List */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {filteredNotes.map((n) => (
-          <div key={n.id} className="p-4 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-2 relative group">
+          <div key={n.id} className="p-4 rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-2 relative group">
             <div className="flex items-start justify-between">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">
@@ -176,7 +176,7 @@ export function ShorthandNotebook() {
       </div>
 
       {filteredNotes.length === 0 && (
-        <div className="text-center py-10 rounded-xl bg-gray-50 dark:bg-slate-900/50 border border-gray-200 dark:border-slate-800/80 text-xs text-gray-500 dark:text-slate-400">
+        <div className="text-center py-10 rounded-xl bg-gray-50 dark:bg-slate-900/50 border border-[#CBD5E1] dark:border-slate-800/80 text-xs text-gray-500 dark:text-slate-400">
           No notes found. Click "+ Add New Note" to save your first shorthand outline reminder!
         </div>
       )}

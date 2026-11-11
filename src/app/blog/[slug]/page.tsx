@@ -121,7 +121,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
         />
         
         {/* Toggle on the far right */}
-        <div className="flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
+        <div className="flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-[#B8C7DA] dark:border-slate-700 shadow-sm">
           <Link
             href={`/blog/${slug}?lang=hi`}
             className={`px-3 py-1 rounded-md transition-all ${
@@ -157,10 +157,10 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
         <AdPlaceholder position="top" />
 
-        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-12 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#D9E1EC] dark:border-gray-700">
+        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-12 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#B8C7DA] dark:border-gray-700">
 
 
-          <div className="mb-8 relative aspect-[21/9] md:aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800">
+          <div className="mb-8 relative aspect-[21/9] md:aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-sm border border-[#CBD5E1] dark:border-slate-800">
               <Image 
                 src={heroImage} 
                 alt={title}
@@ -178,8 +178,8 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
         </div>
 
         {/* Internal Linking: Interactive Practice Tools for Exam Preparation */}
-        <section className="mt-10 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-primary-50/50 via-white to-slate-50 dark:from-primary-950/20 dark:via-slate-900/90 dark:to-slate-950 border border-primary-100 dark:border-primary-500/30 shadow-sm dark:shadow-lg dark:shadow-primary-950/20">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+        <section className="mt-10 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-primary-50/50 via-white to-slate-50 dark:from-primary-950/20 dark:via-slate-900/90 dark:to-slate-950 border border-[#B8C7DA] dark:border-primary-500/30 shadow-sm dark:shadow-lg dark:shadow-primary-950/20">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E2E8F0] dark:border-slate-800 pb-4 mb-6">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400">
                 {lang === "en" ? "Interactive Practice Tools" : "इंटरएक्टिव प्रैक्टिस टूल्स"}
@@ -188,7 +188,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
                 {lang === "en" ? "Prepare & Test Your Speed on TypeHindi" : "TypeHindi पर अपनी स्पीड जांचें और अभ्यास करें"}
               </h3>
             </div>
-            <span className="text-xs font-semibold text-[#475569] dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full w-fit border border-slate-200 dark:border-slate-700">
+            <span className="text-xs font-semibold text-[#475569] dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full w-fit border border-[#CBD5E1] dark:border-slate-700">
               {lang === "en" ? "100% Free • No Login Needed" : "100% मुफ़्त • कोई लॉगिन नहीं"}
             </span>
           </div>
@@ -196,7 +196,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <Link
               href="/test"
-              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
                 <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
@@ -216,7 +216,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
             <Link
               href="/mangal-font-typing-test"
-              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
                 <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
@@ -236,7 +236,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
             <Link
               href="/learn"
-              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
                 <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
@@ -256,7 +256,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
             <Link
               href="/keyboard-layout"
-              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
                 <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
@@ -276,7 +276,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
             <Link
               href="/game"
-              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
                 <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
@@ -296,7 +296,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
 
             <Link
               href="/shorthand"
-              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
                 <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
@@ -317,7 +317,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
         </section>
 
         {/* Related Articles & More Guides */}
-        <section className="mt-14 pt-10 border-t border-slate-200 dark:border-slate-800">
+        <section className="mt-14 pt-10 border-t border-[#E2E8F0] dark:border-slate-800">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
               <div className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400 mb-1">
@@ -329,7 +329,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
             </div>
             <Link
               href={lang === "hi" ? "/blog?lang=hi" : "/blog"}
-              className="inline-flex items-center gap-2 self-start sm:self-auto px-4 py-2 rounded-xl text-sm font-semibold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors border border-primary-200/60 dark:border-primary-800/40"
+              className="inline-flex items-center gap-2 self-start sm:self-auto px-4 py-2 rounded-xl text-sm font-semibold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/40 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition-colors border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-primary-800/40"
             >
               {lang === "en" ? "View All Articles" : "सभी लेख देखें"} →
             </Link>
@@ -345,7 +345,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
                 <Link
                   key={item.slug}
                   href={`/blog/${item.slug}${lang === "hi" ? "?lang=hi" : ""}`}
-                  className="group flex flex-col justify-between bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-primary-400 dark:hover:border-primary-600 transition-all hover:-translate-y-1"
+                  className="group flex flex-col justify-between bg-white dark:bg-gray-900 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md dark:hover:border-primary-600 transition-all hover:-translate-y-1"
                 >
                   <div className="relative aspect-[16/10] w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                     <Image
@@ -370,7 +370,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
                       </p>
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800/80 flex items-center text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline">
+                    <div className="mt-4 pt-3 border-t border-[#E2E8F0] dark:border-gray-800/80 flex items-center text-xs font-semibold text-primary-600 dark:text-primary-400 group-hover:underline">
                       {lang === "en" ? "Read guide" : "लेख पढ़ें"} →
                     </div>
                   </div>
@@ -408,11 +408,11 @@ function formatContent(content: string) {
       }
       if (!inTable) {
         inTable = true;
-        tableHtml = '<div class="overflow-x-auto my-8"><table class="w-full border-collapse border border-[#DCE4EF] dark:border-gray-700 text-left text-sm md:text-base">';
+        tableHtml = '<div class="overflow-x-auto my-8"><table class="w-full border-collapse border border-[#CBD5E1] dark:border-gray-700 text-left text-sm md:text-base">';
         const cells = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
         tableHtml += '<thead><tr class="bg-[#EAF1FB] text-[#102B5C] dark:bg-gray-800 dark:text-gray-100">';
         cells.forEach(cell => {
-          tableHtml += `<th class="border border-[#DCE4EF] dark:border-gray-700 px-4 py-3 font-bold text-[#102B5C] dark:text-gray-100">${cell}</th>`;
+          tableHtml += `<th class="border border-[#CBD5E1] dark:border-gray-700 px-4 py-3 font-bold text-[#102B5C] dark:text-gray-100">${cell}</th>`;
         });
         tableHtml += '</tr></thead><tbody>';
       } else {
@@ -422,7 +422,7 @@ function formatContent(content: string) {
         const cells = line.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
         tableHtml += '<tr class="odd:bg-white even:bg-[#F4F7FC] dark:odd:bg-gray-900 dark:even:bg-gray-800/30">';
         cells.forEach(cell => {
-          tableHtml += `<td class="border border-[#DCE4EF] dark:border-gray-700 px-4 py-3 text-[#17243A] dark:text-gray-200">${cell}</td>`;
+          tableHtml += `<td class="border border-[#CBD5E1] dark:border-gray-700 px-4 py-3 text-[#17243A] dark:text-gray-200">${cell}</td>`;
         });
         tableHtml += '</tr>';
       }
@@ -462,8 +462,8 @@ function formatContent(content: string) {
   let html = content
     .replace(/### (.*)/g, '<h3 class="text-2xl font-bold mt-8 mb-4 text-[#102B5C] dark:text-white">$1</h3>')
     .replace(/## (.*)/g, '<h2 class="text-3xl font-bold mt-10 mb-6 text-[#102B5C] dark:text-white">$1</h2>')
-    .replace(/!pdf\[(.*?)\]\((.*?)\)/g, '<div class="my-8"><div class="bg-[#F4F7FC] dark:bg-slate-800 p-3 rounded-t-xl border border-[#DCE4EF] dark:border-slate-700 flex justify-between items-center"><span class="font-bold text-[#102B5C] dark:text-slate-300">$1</span><a href="$2" target="_blank" class="text-[#174EA6] hover:text-[#102B5C] dark:text-primary-400 font-semibold text-sm flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>View PDF</a></div><iframe src="https://docs.google.com/viewer?url=$2&embedded=true" class="w-full h-[600px] md:h-[800px] border border-t-0 border-[#DCE4EF] dark:border-slate-700 rounded-b-xl" frameborder="0"></iframe></div>')
-    .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8"><img src="$2" alt="$1" class="w-full rounded-xl shadow-md border border-[#DCE4EF] dark:border-gray-800" /><figcaption class="text-center text-sm text-[#64748B] dark:text-gray-500 mt-3">$1</figcaption></figure>')
+    .replace(/!pdf\[(.*?)\]\((.*?)\)/g, '<div class="my-8"><div class="bg-[#F4F7FC] dark:bg-slate-800 p-3 rounded-t-xl border border-[#B8C7DA] dark:border-slate-700 flex justify-between items-center"><span class="font-bold text-[#102B5C] dark:text-slate-300">$1</span><a href="$2" target="_blank" class="text-[#174EA6] hover:text-[#102B5C] dark:text-primary-400 font-semibold text-sm flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>View PDF</a></div><iframe src="https://docs.google.com/viewer?url=$2&embedded=true" class="w-full h-[600px] md:h-[800px] border border-t-0 border-[#B8C7DA] dark:border-slate-700 rounded-b-xl" frameborder="0"></iframe></div>')
+    .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="my-8"><img src="$2" alt="$1" class="w-full rounded-xl shadow-md border border-[#CBD5E1] dark:border-gray-800" /><figcaption class="text-center text-sm text-[#64748B] dark:text-gray-500 mt-3">$1</figcaption></figure>')
     .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-[#174EA6] hover:text-[#102B5C] dark:text-primary-400 font-semibold underline underline-offset-2 transition-colors">$1</a>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 

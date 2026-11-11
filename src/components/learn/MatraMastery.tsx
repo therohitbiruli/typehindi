@@ -130,9 +130,9 @@ export function MatraMastery({
 
   return (
     <section id="matra-mastery" className="mb-14 scroll-mt-20">
-      <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
+      <div className="border border-[#CBD5E1] dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
         {/* Header */}
-        <div className="bg-gradient-to-r from-amber-50/70 via-orange-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-150 dark:border-gray-800">
+        <div className="bg-gradient-to-r from-amber-50/70 via-orange-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-[#E2E8F0] dark:border-gray-800">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 text-xs font-semibold mb-2">
@@ -147,7 +147,7 @@ export function MatraMastery({
             </div>
 
             {/* Matra Mastery Progress Indicator */}
-            <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-gray-200 dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
+            <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-[#CBD5E1] dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
               <span>Completed:</span>
               <span className="px-2 py-0.5 rounded-full bg-amber-500 text-gray-900 dark:text-white font-bold text-xs">
                 {completedMatras.length} / {matraMasteryList.length}
@@ -186,10 +186,10 @@ export function MatraMastery({
         </div>
 
         {/* Selected Matra Details */}
-        <div className="p-6 md:p-8 grid gap-8 lg:grid-cols-12 border-b border-gray-150 dark:border-gray-800">
+        <div className="p-6 md:p-8 grid gap-8 lg:grid-cols-12 border-b border-[#E2E8F0] dark:border-gray-800">
           {/* Left Column: Matra Info & Golden Rule */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 space-y-4 text-center">
+            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 space-y-4 text-center">
               <div className="text-6xl font-hindi font-bold text-gray-900 dark:text-white">
                 {currentMatra.char}
               </div>
@@ -204,13 +204,13 @@ export function MatraMastery({
 
               {/* Physical Key & Finger */}
               <div className="grid grid-cols-2 gap-3 pt-2 text-left">
-                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-[10px] font-bold uppercase text-gray-400">Key to Press</div>
                   <kbd className="px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-900 font-mono text-sm font-bold text-gray-900 dark:text-white mt-1 inline-block">
                     {currentMatra.englishKey}
                   </kbd>
                 </div>
-                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-[10px] font-bold uppercase text-gray-400">Finger</div>
                   <div className="text-xs font-semibold text-amber-600 dark:text-amber-400 mt-1 truncate">
                     {currentMatra.finger}
@@ -235,7 +235,7 @@ export function MatraMastery({
               {currentMatra.consonantCombos.map((combo, idx) => (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 text-center space-y-1 shadow-sm"
+                  className="p-3.5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 text-center space-y-1 shadow-sm"
                 >
                   <div className="text-xs text-gray-400 font-hindi">
                     {combo.consonant} + {currentMatra.char} =
@@ -294,7 +294,7 @@ export function MatraMastery({
 
           {/* Fill the Missing Matra Mode */}
           {activeMode === "fill" ? (
-            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 text-center space-y-6">
+            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 text-center space-y-6">
               <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                 Question {fillIndex + 1} of {currentMatra.fillBlanks.length}
               </div>
@@ -340,7 +340,7 @@ export function MatraMastery({
               {/* Target Text Box */}
               <div
                 onClick={() => inputRef.current?.focus()}
-                className="cursor-text p-5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 min-h-[90px] font-hindi text-2xl md:text-3xl leading-relaxed flex flex-wrap items-center gap-1 shadow-inner"
+                className="cursor-text p-5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 min-h-[90px] font-hindi text-2xl md:text-3xl leading-relaxed flex flex-wrap items-center gap-1 shadow-inner"
               >
                 {targetText.split("").map((char, i) => {
                   let status = "text-gray-400 dark:text-gray-600";

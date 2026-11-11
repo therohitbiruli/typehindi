@@ -87,9 +87,9 @@ export function DailyTypingJourney({
 
   return (
     <section id="daily-journey" className="mb-14 scroll-mt-20">
-      <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
+      <div className="border border-[#CBD5E1] dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
         {/* Header */}
-        <div className="bg-gradient-to-r from-indigo-50/70 via-blue-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-150 dark:border-gray-800">
+        <div className="bg-gradient-to-r from-indigo-50/70 via-blue-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-[#E2E8F0] dark:border-gray-800">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950/60 text-indigo-800 dark:text-indigo-300 text-xs font-semibold mb-2">
@@ -104,7 +104,7 @@ export function DailyTypingJourney({
             </div>
 
             {/* Progress Badge */}
-            <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-gray-200 dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
+            <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-[#CBD5E1] dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
               <span>Journey Status:</span>
               <span className="px-2 py-0.5 rounded-full bg-indigo-600 text-white font-bold text-xs">
                 {completedDays.length} / 14 Completed
@@ -151,7 +151,7 @@ export function DailyTypingJourney({
           <div className="grid gap-8 lg:grid-cols-12">
             {/* Left Column: Objectives & Characters */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 space-y-4">
+              <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
                     Stage {currentDay.day} of 14
@@ -183,7 +183,7 @@ export function DailyTypingJourney({
                     {currentDay.charactersToLearn.map((char, i) => (
                       <span
                         key={i}
-                        className="px-2.5 py-1 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 font-hindi text-base font-bold text-gray-900 dark:text-white shadow-sm"
+                        className="px-2.5 py-1 rounded-xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 font-hindi text-base font-bold text-gray-900 dark:text-white shadow-sm"
                       >
                         {char}
                       </span>
@@ -232,7 +232,7 @@ export function DailyTypingJourney({
                 {/* Target Box */}
                 <div
                   onClick={() => inputRef.current?.focus()}
-                  className="cursor-text p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 min-h-[110px] font-hindi text-2xl md:text-3xl leading-relaxed flex flex-wrap items-center gap-1 shadow-inner"
+                  className="cursor-text p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 min-h-[110px] font-hindi text-2xl md:text-3xl leading-relaxed flex flex-wrap items-center gap-1 shadow-inner"
                 >
                   {targetText.split("").map((char, i) => {
                     let status = "text-gray-400 dark:text-gray-600";
@@ -275,7 +275,7 @@ export function DailyTypingJourney({
                 </div>
 
                 {/* Real-time stats */}
-                <div className="flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 text-xs">
+                <div className="flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 text-xs">
                   <div className="flex items-center gap-4">
                     <div>
                       <span className="text-gray-400">Accuracy: </span>
@@ -324,7 +324,7 @@ export function DailyTypingJourney({
               </div>
 
               {/* Navigation Controls */}
-              <div className="flex items-center justify-between pt-4 border-t border-gray-150 dark:border-gray-800">
+              <div className="flex items-center justify-between pt-4 border-t border-[#E2E8F0] dark:border-gray-800">
                 <button
                   onClick={() => {
                     if (selectedDayNumber > 1) {
@@ -332,7 +332,7 @@ export function DailyTypingJourney({
                     }
                   }}
                   disabled={selectedDayNumber === 1}
-                  className="px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 disabled:opacity-40 transition-all flex items-center gap-1.5"
+                  className="px-4 py-2.5 rounded-xl border border-[#CBD5E1] dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 disabled:opacity-40 transition-all flex items-center gap-1.5"
                 >
                   <span>←</span>
                   <span>Previous Stage</span>
@@ -340,7 +340,7 @@ export function DailyTypingJourney({
 
                 <button
                   onClick={resetPractice}
-                  className="px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
+                  className="px-4 py-2.5 rounded-xl border border-[#CBD5E1] dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
                 >
                   <span>🔄</span>
                   <span>Practice Again</span>

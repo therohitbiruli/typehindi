@@ -118,9 +118,9 @@ export function FinalChallenges({
 
   return (
     <section id="final-challenges" className="mb-14 scroll-mt-20">
-      <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
+      <div className="border border-[#CBD5E1] dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
         {/* Header */}
-        <div className="bg-gradient-to-r from-yellow-50/70 via-amber-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-150 dark:border-gray-800">
+        <div className="bg-gradient-to-r from-yellow-50/70 via-amber-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-[#E2E8F0] dark:border-gray-800">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 text-xs font-semibold mb-2">
@@ -135,7 +135,7 @@ export function FinalChallenges({
             </div>
 
             {/* Completed Badge */}
-            <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-gray-200 dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
+            <div className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-2xl border border-[#CBD5E1] dark:border-gray-700 self-start md:self-auto text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
               <span>Completed:</span>
               <span className="px-2 py-0.5 rounded-full bg-amber-500 text-gray-900 dark:text-white font-bold text-xs">
                 {completedChallenges.length} / {finalChallengesList.length}
@@ -182,7 +182,7 @@ export function FinalChallenges({
         {/* Active Challenge Arena */}
         <div className="p-6 md:p-8 space-y-6">
           {/* Challenge Meta Strip */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800">
             <div>
               <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-400">
                 <span>{currentChallenge.badge}</span>
@@ -198,21 +198,21 @@ export function FinalChallenges({
 
             {/* Timer & Target Stats */}
             <div className="flex items-center gap-4">
-              <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center min-w-[70px]">
+              <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 text-center min-w-[70px]">
                 <div className={`text-2xl font-mono font-bold ${timeLeft <= 10 && isStarted ? "text-red-500 animate-ping" : "text-gray-900 dark:text-white"}`}>
                   {timeLeft}s
                 </div>
                 <div className="text-[9px] uppercase font-bold text-gray-400">Time Left</div>
               </div>
 
-              <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center min-w-[70px]">
+              <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 text-center min-w-[70px]">
                 <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
                   {liveWpm}
                 </div>
                 <div className="text-[9px] uppercase font-bold text-gray-400">Speed (WPM)</div>
               </div>
 
-              <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center min-w-[70px]">
+              <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 text-center min-w-[70px]">
                 <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                   {liveAccuracy}%
                 </div>
@@ -224,7 +224,7 @@ export function FinalChallenges({
           {/* Target Text Box */}
           <div
             onClick={() => inputRef.current?.focus()}
-            className="cursor-text p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 min-h-[140px] font-hindi text-xl md:text-2xl leading-loose flex flex-wrap items-center gap-1 shadow-inner select-none"
+            className="cursor-text p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 min-h-[140px] font-hindi text-xl md:text-2xl leading-loose flex flex-wrap items-center gap-1 shadow-inner select-none"
           >
             {targetText.split("").map((char, i) => {
               let status = "text-gray-400 dark:text-gray-600";
@@ -277,19 +277,19 @@ export function FinalChallenges({
 
               {/* Final Score Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-lg mx-auto">
-                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-2xl font-bold text-gray-900 dark:text-white">{liveWpm}</div>
                   <div className="text-[10px] uppercase font-bold text-gray-400">Final WPM</div>
                 </div>
-                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{liveAccuracy}%</div>
                   <div className="text-[10px] uppercase font-bold text-gray-400">Accuracy</div>
                 </div>
-                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-2xl font-bold text-red-500">{errors}</div>
                   <div className="text-[10px] uppercase font-bold text-gray-400">Mistakes</div>
                 </div>
-                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{correctChars}</div>
                   <div className="text-[10px] uppercase font-bold text-gray-400">Characters</div>
                 </div>
@@ -299,7 +299,7 @@ export function FinalChallenges({
               <div className="flex justify-center gap-3 pt-2">
                 <button
                   onClick={resetChallenge}
-                  className="px-5 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-100"
+                  className="px-5 py-2.5 rounded-xl border border-[#CBD5E1] dark:border-gray-700 bg-white dark:bg-gray-800 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-100"
                 >
                   🔄 Try Again
                 </button>
@@ -321,10 +321,10 @@ export function FinalChallenges({
 
           {/* Footer Controls */}
           {!isFinished && (
-            <div className="flex items-center justify-between pt-4 border-t border-gray-150 dark:border-gray-800">
+            <div className="flex items-center justify-between pt-4 border-t border-[#E2E8F0] dark:border-gray-800">
               <button
                 onClick={resetChallenge}
-                className="px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 rounded-xl border border-[#CBD5E1] dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
               >
                 <span>🔄</span>
                 <span>Restart Challenge</span>

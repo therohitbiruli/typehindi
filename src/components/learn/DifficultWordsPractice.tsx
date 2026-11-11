@@ -151,9 +151,9 @@ export function DifficultWordsPractice() {
 
   return (
     <section id="difficult-words" className="mb-14 scroll-mt-20">
-      <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
+      <div className="border border-[#CBD5E1] dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
         {/* Header */}
-        <div className="bg-gradient-to-r from-purple-50/70 via-indigo-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-150 dark:border-gray-800">
+        <div className="bg-gradient-to-r from-purple-50/70 via-indigo-50/40 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-[#E2E8F0] dark:border-gray-800">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 text-xs font-semibold mb-2">
@@ -198,7 +198,7 @@ export function DifficultWordsPractice() {
                   className={`flex-shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
                     selectedCategoryIndex === idx
                       ? "bg-purple-600 text-white shadow-md shadow-purple-600/20 scale-[1.02]"
-                      : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      : "bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-[#CBD5E1] dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
                   }`}
                 >
                   <span>{cat.icon}</span>
@@ -210,7 +210,7 @@ export function DifficultWordsPractice() {
         </div>
 
         {/* Word Selection Ribbon */}
-        <div className="p-4 md:px-8 border-b border-gray-150 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/30">
+        <div className="p-4 md:px-8 border-b border-[#E2E8F0] dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/30">
           <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin">
             {activeWords.map((item, idx) => {
               const isCurr = idx === selectedWordIndex;
@@ -235,7 +235,7 @@ export function DifficultWordsPractice() {
         <div className="p-6 md:p-8 grid gap-8 lg:grid-cols-12">
           {/* Left Column: Word & Keystroke Breakdown */}
           <div className="lg:col-span-5 space-y-5">
-            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 text-center space-y-4">
+            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 text-center space-y-4">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 text-xs font-bold">
                 <span>{currentWordObj.difficulty} Difficulty</span>
               </div>
@@ -250,7 +250,7 @@ export function DifficultWordsPractice() {
               </p>
 
               {/* Keystroke Sequence Guide */}
-              <div className="p-4 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-left space-y-2">
+              <div className="p-4 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 text-left space-y-2">
                 <div className="text-[10px] uppercase font-bold tracking-wider text-gray-400">
                   InScript Keystroke Sequence:
                 </div>
@@ -276,7 +276,7 @@ export function DifficultWordsPractice() {
               {/* Target Text Box */}
               <div
                 onClick={() => inputRef.current?.focus()}
-                className="cursor-text p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 min-h-[90px] font-hindi text-4xl md:text-5xl leading-relaxed flex flex-wrap items-center justify-center gap-1 shadow-inner tracking-wide"
+                className="cursor-text p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 min-h-[90px] font-hindi text-4xl md:text-5xl leading-relaxed flex flex-wrap items-center justify-center gap-1 shadow-inner tracking-wide"
               >
                 {targetText.split("").map((char, i) => {
                   let status = "text-gray-400 dark:text-gray-600";
@@ -311,7 +311,7 @@ export function DifficultWordsPractice() {
               </div>
 
               {/* Real-time stats */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 text-xs">
+              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 text-xs">
                 <div className="flex items-center gap-4">
                   <div>
                     <span className="text-gray-400">Errors: </span>
@@ -352,10 +352,10 @@ export function DifficultWordsPractice() {
             </div>
 
             {/* Footer Buttons */}
-            <div className="flex items-center justify-between pt-4 border-t border-gray-150 dark:border-gray-800">
+            <div className="flex items-center justify-between pt-4 border-t border-[#E2E8F0] dark:border-gray-800">
               <button
                 onClick={prevWord}
-                className="px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 rounded-xl border border-[#CBD5E1] dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
               >
                 <span>←</span>
                 <span>Previous Word</span>
@@ -363,7 +363,7 @@ export function DifficultWordsPractice() {
 
               <button
                 onClick={resetPractice}
-                className="px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 rounded-xl border border-[#CBD5E1] dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-1.5"
               >
                 <span>🔄</span>
                 <span>Practice Again</span>

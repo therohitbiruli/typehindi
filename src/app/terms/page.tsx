@@ -21,7 +21,7 @@ export default function TermsPage() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:shadow-lg space-y-8 text-gray-600 dark:text-gray-300">
+      <div className="rounded-2xl border border-[#CBD5E1] bg-white p-6 sm:p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:shadow-lg space-y-8 text-gray-600 dark:text-gray-300">
         <section className="space-y-3">
           <h2 className="heading-2">Acceptance</h2>
           <p className="leading-relaxed">

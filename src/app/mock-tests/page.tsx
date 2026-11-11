@@ -40,7 +40,7 @@ export default function MockTestsPage() {
           <Link
             key={exam.id}
             href={`/mock-tests/${exam.id}`}
-            className="group flex flex-col items-center text-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-3xl hover:shadow-xl hover:border-primary-500/50 transition-all duration-300 transform hover:-translate-y-1"
+            className="group flex flex-col items-center text-center bg-white dark:bg-slate-900 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 p-8 rounded-3xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
             <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
               {exam.icon}

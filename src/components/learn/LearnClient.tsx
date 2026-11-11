@@ -195,7 +195,7 @@ export function LearnClient() {
       </div>
 
       {/* 🧭 Learning Pathways Selector */}
-      <div className="mb-8 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-3">
+      <div className="mb-8 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400">
             Select Your Learning Pathway:
@@ -221,7 +221,7 @@ export function LearnClient() {
           {/* Track 2: English Typing */}
           <Link
             href="/practice"
-            className="p-4 rounded-xl bg-gray-50 dark:bg-slate-950/70 hover:bg-white dark:hover:bg-slate-900 border border-gray-200 dark:border-slate-800 hover:border-sky-500/40 space-y-2 transition-all group"
+            className="p-4 rounded-xl bg-gray-50 dark:bg-slate-950/70 hover:bg-white dark:hover:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 hover:border-sky-500/40 space-y-2 transition-all group"
           >
             <div className="flex items-center justify-between">
               <span className="text-lg">💻</span>
@@ -318,7 +318,7 @@ export function LearnClient() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-slate-300 hover:border-primary-500 hover:text-primary-400 transition-all shadow-sm"
+              className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-gray-600 dark:text-slate-300 hover:border-[#8FA6C5] hover:text-primary-400 transition-all shadow-sm"
             >
               <span className="mr-1">{item.icon}</span>
               {item.label}
@@ -345,8 +345,8 @@ export function LearnClient() {
 
       {/* Word Typing Guide Section (Preserved) */}
       <section ref={guideRef} id="word-guide" className="mb-14 scroll-mt-24">
-        <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
-          <div className="bg-gradient-to-r from-primary-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-100 dark:border-gray-800">
+        <div className="border border-[#CBD5E1] dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
+          <div className="bg-gradient-to-r from-primary-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-[#E2E8F0] dark:border-gray-800">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
               ⌨️ Word Typing Guide
             </h2>
@@ -413,7 +413,7 @@ export function LearnClient() {
               </div>
 
               {/* Layout Mode Selector */}
-              <div className="border-b border-gray-200 dark:border-gray-800 flex gap-4">
+              <div className="border-b border-[#E2E8F0] dark:border-gray-800 flex gap-4">
                 <button
                   onClick={() => setActiveLayoutTab("inscript")}
                   className={`pb-3 font-semibold text-sm transition-all border-b-2 ${
@@ -507,7 +507,7 @@ export function LearnClient() {
                   src: keyboardViewTab === "inscript" ? "/images/inscript-keyboard-map.png" : "/images/remington-keyboard-map.png",
                   title: keyboardViewTab === "inscript" ? "InScript Keyboard Layout" : "Remington GAIL Layout"
                 })}
-                className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 cursor-pointer group shadow-sm hover:shadow-md transition-all"
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#CBD5E1] dark:border-gray-800 bg-gray-50 dark:bg-gray-900 cursor-pointer group shadow-sm hover:shadow-md transition-all"
               >
                 {keyboardViewTab === "inscript" ? (
                   <Image
@@ -594,7 +594,7 @@ export function LearnClient() {
       {/* 12. Navigation Redirect Cards (Preserved) */}
       <section className="mt-8 mb-12 grid gap-6 md:grid-cols-2">
         {/* Game Redirect Card */}
-        <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-gray-900 dark:to-purple-955/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
+        <div className="relative overflow-hidden rounded-3xl border border-[#B8C7DA] dark:border-gray-800 bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-gray-900 dark:to-purple-955/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
           <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-6 translate-y-6 group-hover:scale-110 transition-transform duration-300">
             <span className="text-9xl">🎮</span>
           </div>
@@ -619,7 +619,7 @@ export function LearnClient() {
         </div>
 
         {/* Blog Redirect Card */}
-        <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-emerald-50/50 to-teal-50/50 dark:from-gray-900 dark:to-teal-955/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
+        <div className="relative overflow-hidden rounded-3xl border border-[#B8C7DA] dark:border-gray-800 bg-gradient-to-br from-emerald-50/50 to-teal-50/50 dark:from-gray-900 dark:to-teal-955/20 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary-300 dark:hover:border-primary-800 flex flex-col justify-between group">
           <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-6 translate-y-6 group-hover:scale-110 transition-transform duration-300">
             <span className="text-9xl">📰</span>
           </div>
@@ -647,7 +647,7 @@ export function LearnClient() {
       {/* Lightbox Modal (Preserved) */}
       {modalImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 animate-fade-in">
-          <div className="relative max-w-5xl w-full bg-white dark:bg-gray-950 rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl p-6">
+          <div className="relative max-w-5xl w-full bg-white dark:bg-gray-950 rounded-3xl overflow-hidden border border-[#CBD5E1] dark:border-gray-800 shadow-2xl p-6">
             <div className="flex justify-between items-center mb-4">
               <h4 className="text-lg font-bold text-gray-900 dark:text-white">
                 {modalImage.title}

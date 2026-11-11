@@ -80,29 +80,29 @@ export function UnifiedGameResults({
 
       {/* Detailed Stats Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-2xl mb-8">
-        <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+        <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#CBD5E1] dark:border-slate-800 flex flex-col items-center">
           <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Accuracy</span>
           <span className="text-2xl font-bold text-emerald-400">{Math.round(accuracy)}%</span>
         </div>
 
         {wpm > 0 ? (
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#CBD5E1] dark:border-slate-800 flex flex-col items-center">
             <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Speed (WPM)</span>
             <span className="text-2xl font-bold text-cyan-400">{Math.round(wpm)}</span>
           </div>
         ) : (
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#CBD5E1] dark:border-slate-800 flex flex-col items-center">
             <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Correct</span>
             <span className="text-2xl font-bold text-emerald-400">{correctCount}</span>
           </div>
         )}
 
-        <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+        <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#CBD5E1] dark:border-slate-800 flex flex-col items-center">
           <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Best Streak</span>
           <span className="text-2xl font-bold text-amber-400">🔥 {bestStreak}</span>
         </div>
 
-        <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+        <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#CBD5E1] dark:border-slate-800 flex flex-col items-center">
           <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Errors</span>
           <span className="text-2xl font-bold text-rose-400">{incorrectCount}</span>
         </div>
@@ -119,14 +119,14 @@ export function UnifiedGameResults({
 
         <button
           onClick={onChangeDifficulty}
-          className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold flex items-center gap-2 border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-200 hover:bg-slate-700 hover:text-[#17243A] dark:text-white"
+          className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold flex items-center gap-2 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-200 hover:bg-slate-700 hover:text-[#17243A] dark:text-white"
         >
           <span>⚙️</span> Change Difficulty
         </button>
 
         <button
           onClick={onBackToHub}
-          className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold flex items-center gap-2 border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-200 hover:bg-slate-700 hover:text-[#17243A] dark:text-white"
+          className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold flex items-center gap-2 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-200 hover:bg-slate-700 hover:text-[#17243A] dark:text-white"
         >
           <span>🏠</span> Back to Game Hub
         </button>

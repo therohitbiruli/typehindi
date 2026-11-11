@@ -69,8 +69,8 @@ export function ShorthandSpeedTrainer() {
       {(() => {
         const item = speedMilestones.find((m) => m.wpm === activeSpeed) || speedMilestones[0];
         return (
-          <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200 dark:border-slate-800 pb-3">
+          <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E2E8F0] dark:border-slate-800 pb-3">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
                   Target Speed Milestone

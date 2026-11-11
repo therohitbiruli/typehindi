@@ -69,7 +69,7 @@ export default function GameHubPage() {
           <a href="#choose-games" className="btn-primary rounded-xl px-7 py-3.5 text-base font-bold shadow-sm dark:shadow-lg shadow-primary-500/25 flex items-center gap-2"><span>Explore Games</span><span>↓</span></a>
           <Link
             href="/practice"
-            className="btn-secondary rounded-xl px-6 py-3.5 text-base font-semibold border border-gray-300 dark:border-slate-700 bg-gray-50 dark:bg-slate-900/80 text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 hover:text-[#17243A] dark:text-white transition-all"
+            className="btn-secondary rounded-xl px-6 py-3.5 text-base font-semibold border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-slate-700 bg-gray-50 dark:bg-slate-900/80 text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 hover:text-[#17243A] dark:text-white transition-all"
           >
             Standard Practice →
           </Link>
@@ -105,7 +105,7 @@ export default function GameHubPage() {
             <Link
               key={game.slug}
               href={`/game/${game.slug}`}
-              className="group relative rounded-3xl overflow-hidden border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col transition-all duration-300 hover:border-primary-500/60 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1"
+              className="group relative rounded-3xl overflow-hidden border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1"
             >
               {/* Visual preview banner */}
               <div
@@ -164,7 +164,7 @@ export default function GameHubPage() {
                   {game.skills.map((s) => (
                     <span
                       key={s}
-                      className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-gray-100 dark:bg-slate-800/80 border border-gray-300 dark:border-slate-700 text-[#27364B] dark:text-slate-200"
+                      className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-gray-100 dark:bg-slate-800/80 border border-[#CBD5E1] dark:border-slate-700 text-[#27364B] dark:text-slate-200"
                     >
                       {s}
                     </span>
@@ -172,7 +172,7 @@ export default function GameHubPage() {
                 </div>
 
                 {/* Footer */}
-                <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-slate-800">
+                <div className="flex items-center justify-between pt-3 border-t border-[#E2E8F0] dark:border-slate-800">
                   <span
                     className={`text-xs font-bold px-2.5 py-1 rounded-full border ${DIFFICULTY_COLORS[game.difficulty]}`}
                   >
@@ -210,7 +210,7 @@ export default function GameHubPage() {
 
         <div className="space-y-12">
           {/* 1. Classic Falling Words Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -256,14 +256,14 @@ export default function GameHubPage() {
                   {["Typing speed", "Accuracy", "Character recognition", "Reaction time"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-rose-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-[#CBD5E1] dark:border-slate-700 text-rose-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
                   <strong className="text-amber-400">💡 Pro Tips:</strong> Focus on accuracy first.
                   Rushing causes spelling mistakes that lose precious seconds. Learn key positions
                   for common vowels and consonants on your keyboard layout to build rapid reflexes.
@@ -280,7 +280,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 2. Tank Defender Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -326,14 +326,14 @@ export default function GameHubPage() {
                   {["Reaction time", "Fast Hindi typing", "Pressure management", "Perception"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-emerald-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-[#CBD5E1] dark:border-slate-700 text-emerald-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
                   <strong className="text-emerald-400">💡 Pro Tips:</strong> Stay calm when multiple
                   tanks swarm the perimeter. Prioritize the closest tank to your base first before
                   targeting distant vehicles.
@@ -350,7 +350,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 3. Typing Target Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -397,14 +397,14 @@ export default function GameHubPage() {
                   {["Target acquisition", "Speed", "Reflexes", "Word recognition"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-amber-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-[#CBD5E1] dark:border-slate-700 text-amber-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
                   <strong className="text-amber-400">💡 Pro Tips:</strong> Focus on one target at a
                   time. Do not look away from your active word until you finish typing it.
                 </div>
@@ -420,7 +420,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 4. Word Runner Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -466,14 +466,14 @@ export default function GameHubPage() {
                   {["Continuous typing", "Sustained speed", "Endurance", "Rhythm"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-cyan-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-[#CBD5E1] dark:border-slate-700 text-cyan-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
                   <strong className="text-cyan-400">💡 Pro Tips:</strong> Establish a smooth typing
                   cadence. Pausing abruptly interrupts your speed multiplier.
                 </div>
@@ -489,7 +489,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 5. Hindi Word Builder Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -535,14 +535,14 @@ export default function GameHubPage() {
                   {["Hindi spelling", "Word construction", "Vocabulary", "Grammar"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-indigo-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-[#CBD5E1] dark:border-slate-700 text-indigo-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
                   <strong className="text-indigo-400">💡 Pro Tips:</strong> Read the Hindi meaning clue
                   carefully before choosing. Notice how different matras transform the entire meaning of
                   the word.
@@ -559,7 +559,7 @@ export default function GameHubPage() {
           </div>
 
           {/* 6. Matra Challenge Guide */}
-          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
+          <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/70 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -605,14 +605,14 @@ export default function GameHubPage() {
                   {["Matra recognition", "Typing accuracy", "Phonetics", "Keyboard mapping"].map((s) => (
                     <span
                       key={s}
-                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-fuchsia-300"
+                      className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-[#CBD5E1] dark:border-slate-700 text-fuchsia-300"
                     >
                       {s}
                     </span>
                   ))}
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
                   <strong className="text-fuchsia-400">💡 Pro Tips:</strong> In Devanagari Unicode
                   typing, always type the consonant first followed by the matra (e.g. क + ि = कि),
                   even if the short vowel visual sign appears on the left side!
@@ -661,7 +661,7 @@ export default function GameHubPage() {
               Focuses on simple 2–3 letter words without complex conjuncts (e.g., कम, जल, घर, कलम)
               and primary vowel signs. Features generous countdown timers and slower enemy speeds.
             </p>
-            <div className="text-xs text-emerald-400 font-semibold pt-3 border-t border-gray-200 dark:border-slate-800">
+            <div className="text-xs text-emerald-400 font-semibold pt-3 border-t border-[#E2E8F0] dark:border-slate-800">
               Ideal for: First-time Hindi typists & keyboard layout learners.
             </div>
           </div>
@@ -679,7 +679,7 @@ export default function GameHubPage() {
               Introduces full vowel matras, punctuation, common vocabulary (e.g., भारत, शिक्षा, पुस्तक),
               and balanced pace to build speed and rhythm.
             </p>
-            <div className="text-xs text-amber-400 font-semibold pt-3 border-t border-gray-200 dark:border-slate-800">
+            <div className="text-xs text-amber-400 font-semibold pt-3 border-t border-[#E2E8F0] dark:border-slate-800">
               Ideal for: Users with basic keyboard familiarity aiming for 25–35 WPM.
             </div>
           </div>
@@ -697,7 +697,7 @@ export default function GameHubPage() {
               Features complex multisyllabic terms, conjuncts (संयुक्त अक्षर जैसे दृष्टिकोण,
               विश्वविद्यालय, आत्मनिर्भर), fast spawn frequencies, and intense reflex challenges.
             </p>
-            <div className="text-xs text-rose-400 font-semibold pt-3 border-t border-gray-200 dark:border-slate-800">
+            <div className="text-xs text-rose-400 font-semibold pt-3 border-t border-[#E2E8F0] dark:border-slate-800">
               Ideal for: Competitive speed typists & Government typing exam candidates (SSC/LDC/High Court).
             </div>
           </div>
@@ -723,7 +723,7 @@ export default function GameHubPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Benefit 1 */}
-          <div className="card p-6 rounded-3xl border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl mb-4">
               🚀
             </div>
@@ -736,7 +736,7 @@ export default function GameHubPage() {
           </div>
 
           {/* Benefit 2 */}
-          <div className="card p-6 rounded-3xl border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-2xl mb-4">
               🎯
             </div>
@@ -749,7 +749,7 @@ export default function GameHubPage() {
           </div>
 
           {/* Benefit 3 */}
-          <div className="card p-6 rounded-3xl border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-2xl mb-4">
               ⚡
             </div>
@@ -761,7 +761,7 @@ export default function GameHubPage() {
           </div>
 
           {/* Benefit 4 */}
-          <div className="card p-6 rounded-3xl border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center text-2xl mb-4">
               ✨
             </div>
@@ -774,7 +774,7 @@ export default function GameHubPage() {
           </div>
 
           {/* Benefit 5 */}
-          <div className="card p-6 rounded-3xl border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-2xl mb-4">
               📚
             </div>
@@ -786,7 +786,7 @@ export default function GameHubPage() {
           </div>
 
           {/* Benefit 6 */}
-          <div className="card p-6 rounded-3xl border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
+          <div className="card p-6 rounded-3xl border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all">
             <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-2xl mb-4">
               🔄
             </div>
@@ -874,7 +874,7 @@ export default function GameHubPage() {
           ].map((skill) => (
             <div
               key={skill.title}
-              className="p-6 rounded-3xl border border-[#DCE4EF] dark:border-slate-800 bg-white dark:bg-slate-900/60 flex flex-col justify-between"
+              className="p-6 rounded-3xl border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/60 flex flex-col justify-between"
             >
               <div>
                 <div className="text-3xl mb-3">{skill.icon}</div>
@@ -910,7 +910,7 @@ export default function GameHubPage() {
               <a href="#choose-games" className="btn-primary rounded-2xl px-8 py-4 text-base font-bold shadow-xl shadow-primary-500/30 flex items-center gap-2"><span>Play a Typing Game</span><span>→</span></a>
               <Link
                 href="/practice"
-                className="btn-secondary rounded-2xl px-7 py-4 text-base font-semibold border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-[#17243A] dark:text-white hover:bg-slate-700 transition-all"
+                className="btn-secondary rounded-2xl px-7 py-4 text-base font-semibold border border-[#CBD5E1] dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-[#17243A] dark:text-white hover:bg-slate-700 transition-all"
               >
                 Practice Hindi Typing →
               </Link>

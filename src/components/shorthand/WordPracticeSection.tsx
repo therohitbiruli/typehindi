@@ -588,19 +588,19 @@ export function WordPracticeSection({
 
         {/* Milestone Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-center">
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
             <span className="text-xs text-gray-500 dark:text-slate-400 uppercase font-semibold">Words Studied</span>
             <div className="text-3xl font-black text-purple-400">{words.length}</div>
             <p className="text-[11px] text-gray-400 dark:text-slate-500">Outlines analyzed</p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
             <span className="text-xs text-gray-500 dark:text-slate-400 uppercase font-semibold">Words Practiced</span>
             <div className="text-3xl font-black text-emerald-400">{totalPracticed}</div>
             <p className="text-[11px] text-gray-400 dark:text-slate-500">Handwritten attempts</p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
             <span className="text-xs text-gray-500 dark:text-slate-400 uppercase font-semibold">Best Stroke Accuracy</span>
             <div className="text-3xl font-black text-sky-400">{avgAccuracy}%</div>
             <p className="text-[11px] text-gray-400 dark:text-slate-500">Assistive match score</p>
@@ -684,7 +684,7 @@ export function WordPracticeSection({
   // If no words available
   if (!currentWord) {
     return (
-      <div className="p-8 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center space-y-3">
+      <div className="p-8 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-center space-y-3">
         <h3 className="text-base font-bold text-gray-900 dark:text-slate-100">Word Practice</h3>
         <p className="text-xs text-gray-500 dark:text-slate-400">
           Shorthand example words for Stroke {stroke.name} coming soon.
@@ -697,8 +697,8 @@ export function WordPracticeSection({
   return (
     <div id="word-practice-area" className="space-y-6 animate-fadeIn">
       {/* 2. SECTION HEADER */}
-      <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-2">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200 dark:border-slate-800 pb-3">
+      <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-2">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E2E8F0] dark:border-slate-800 pb-3">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
               PRACTICE THIS STROKE IN WORDS
@@ -733,7 +733,7 @@ export function WordPracticeSection({
       {/* 3. WORD CARD: OUTLINE & WHAT TO NOTICE */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Large Outline Display & Phonetic Specs (5 cols) */}
-        <div className="lg:col-span-5 p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 flex flex-col justify-between space-y-6">
+        <div className="lg:col-span-5 p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 flex flex-col justify-between space-y-6">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
@@ -767,7 +767,7 @@ export function WordPracticeSection({
             </div>
 
             {/* Large Shorthand Outline Viewport with Ruled Guidelines */}
-            <div className="relative w-full h-44 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 overflow-hidden flex items-center justify-center p-4">
+            <div className="relative w-full h-44 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 overflow-hidden flex items-center justify-center p-4">
               {/* Notebook guideline lines inside SVG */}
               <div className="absolute inset-0 pointer-events-none flex flex-col justify-between py-6 px-4">
                 <div className="border-b border-dashed border-gray-200 dark:border-slate-800/80 w-full" />
@@ -832,7 +832,7 @@ export function WordPracticeSection({
           </div>
 
           {/* Word-Level Navigation (NON-BLOCKING) */}
-          <div className="pt-4 border-t border-gray-200 dark:border-slate-800 flex items-center justify-between">
+          <div className="pt-4 border-t border-[#E2E8F0] dark:border-slate-800 flex items-center justify-between">
             <button
               type="button"
               onClick={handlePrevWord}
@@ -859,8 +859,8 @@ export function WordPracticeSection({
         {/* Right Column: Progressive Word Builder & What to Notice (7 cols) */}
         <div className="lg:col-span-7 space-y-6">
           {/* 4. SHOW THE WORD BEING BUILT (Progressive Component Reveal) */}
-          <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
-            <div className="flex items-center justify-between border-b border-gray-200 dark:border-slate-800 pb-3">
+          <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-4">
+            <div className="flex items-center justify-between border-b border-[#E2E8F0] dark:border-slate-800 pb-3">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
                   WORD BUILDING BREAKDOWN
@@ -871,7 +871,7 @@ export function WordPracticeSection({
               </div>
 
               {/* Interactive Step Switcher */}
-              <div className="flex items-center gap-1 bg-white dark:bg-slate-950 p-1 rounded-xl border border-gray-200 dark:border-slate-800">
+              <div className="flex items-center gap-1 bg-white dark:bg-slate-950 p-1 rounded-xl border border-[#CBD5E1] dark:border-slate-800">
                 {currentWord.progressiveSteps.map((s) => (
                   <button
                     key={s.step}
@@ -891,7 +891,7 @@ export function WordPracticeSection({
 
             {/* Current Active Step Details */}
             {currentWord.progressiveSteps.find((s) => s.step === activeBuilderStep) && (
-              <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-2">
+              <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-2">
                 {(() => {
                   const stepObj = currentWord.progressiveSteps.find(
                     (s) => s.step === activeBuilderStep
@@ -924,7 +924,7 @@ export function WordPracticeSection({
                 {currentWord.components.map((comp, idx) => (
                   <div
                     key={idx}
-                    className="p-3 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex items-start gap-2.5 text-xs"
+                    className="p-3 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 flex items-start gap-2.5 text-xs"
                   >
                     <span className="w-5 h-5 rounded bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center shrink-0 text-[11px]">
                       {comp.sign || idx + 1}
@@ -941,7 +941,7 @@ export function WordPracticeSection({
             </div>
 
             {/* What to Notice Checklist */}
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-gray-200 dark:border-slate-800/80 space-y-2 text-xs">
+            <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-[#CBD5E1] dark:border-slate-800/80 space-y-2 text-xs">
               <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">
                 WHAT TO NOTICE IN THIS OUTLINE:
               </span>
@@ -969,8 +969,8 @@ export function WordPracticeSection({
       </div>
 
       {/* 6. OPTIONAL WRITING PRACTICE (TRY WRITING IT) */}
-      <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200 dark:border-slate-800 pb-3">
+      <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#E2E8F0] dark:border-slate-800 pb-3">
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
@@ -1001,9 +1001,9 @@ export function WordPracticeSection({
         {showCanvas && (
           <div className="space-y-4 animate-fadeIn">
             {/* Canvas Toolbar */}
-            <div className="p-3 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div className="p-3 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
               {/* Mode Selector */}
-              <div className="flex items-center gap-1 bg-gray-50 dark:bg-slate-900 p-1 rounded-xl border border-gray-200 dark:border-slate-800">
+              <div className="flex items-center gap-1 bg-gray-50 dark:bg-slate-900 p-1 rounded-xl border border-[#CBD5E1] dark:border-slate-800">
                 {(["guided", "assisted", "free", "test"] as const).map((m) => (
                   <button
                     key={m}
@@ -1076,7 +1076,7 @@ export function WordPracticeSection({
             </div>
 
             {/* Drawing Canvas */}
-            <div className="relative w-full h-[280px] bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden touch-none cursor-crosshair">
+            <div className="relative w-full h-[280px] bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 rounded-2xl overflow-hidden touch-none cursor-crosshair">
               <canvas
                 ref={canvasRef}
                 onPointerDown={handlePointerDown}
@@ -1114,7 +1114,7 @@ export function WordPracticeSection({
                       Approximate Match: {evalResult.score}%
                     </h5>
                   </div>
-                  <span className="text-[11px] text-gray-500 dark:text-slate-400 bg-gray-50 dark:bg-slate-900 px-3 py-1 rounded-lg border border-gray-200 dark:border-slate-800">
+                  <span className="text-[11px] text-gray-500 dark:text-slate-400 bg-gray-50 dark:bg-slate-900 px-3 py-1 rounded-lg border border-[#CBD5E1] dark:border-slate-800">
                     Practiced ✓
                   </span>
                 </div>
@@ -1122,21 +1122,21 @@ export function WordPracticeSection({
                 <p className="text-xs text-gray-600 dark:text-slate-300">{evalResult.feedbackMessage}</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs pt-1">
-                  <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
+                  <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800">
                     <span className="text-[10px] text-gray-500 dark:text-slate-400 block uppercase font-bold">Direction</span>
                     <span className={evalResult.directionCheck === "good" ? "text-emerald-400 font-semibold" : "text-amber-400 font-semibold"}>
                       {evalResult.directionCheck === "good" ? "✓ Correct direction" : "⚠ Check slant/direction"}
                     </span>
                   </div>
 
-                  <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
+                  <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800">
                     <span className="text-[10px] text-gray-500 dark:text-slate-400 block uppercase font-bold">Continuous Flow</span>
                     <span className={evalResult.continuityCheck === "good" ? "text-emerald-400 font-semibold" : "text-amber-400 font-semibold"}>
                       {evalResult.continuityCheck === "good" ? "✓ Smooth join" : "⚠ Lifted pen too often"}
                     </span>
                   </div>
 
-                  <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
+                  <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800">
                     <span className="text-[10px] text-gray-500 dark:text-slate-400 block uppercase font-bold">Proportion</span>
                     <span className={evalResult.lengthCheck === "good" ? "text-emerald-400 font-semibold" : "text-amber-400 font-semibold"}>
                       {evalResult.lengthCheck === "good" ? "✓ Standard scale" : "⚠ Adjust stroke length"}

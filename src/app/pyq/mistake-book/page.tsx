@@ -32,7 +32,7 @@ export default function MistakeBookPage() {
       </header>
 
       {/* For architecture sake, empty state */}
-      <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-800 shadow-sm max-w-3xl mx-auto mt-8">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-[#CBD5E1] dark:border-slate-800 shadow-sm max-w-3xl mx-auto mt-8">
         <div className="w-20 h-20 bg-red-50 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
           !
         </div>

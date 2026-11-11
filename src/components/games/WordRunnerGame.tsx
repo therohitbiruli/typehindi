@@ -263,7 +263,7 @@ export function WordRunnerGame({ difficulty, onGameOver, onBackToHub }: Props) {
   return (
     <div className="flex flex-col h-full">
       {/* HUD */}
-      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-slate-900/80 border-b border-gray-200 dark:border-slate-800 gap-4 flex-shrink-0">
+      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-slate-900/80 border-b border-[#E2E8F0] dark:border-slate-800 gap-4 flex-shrink-0">
         <div className="flex items-center gap-6 text-sm font-bold">
           <span className="text-amber-400">⭐ {score.toLocaleString()}</span>
           <span className="text-emerald-400">✅ {correct}</span>

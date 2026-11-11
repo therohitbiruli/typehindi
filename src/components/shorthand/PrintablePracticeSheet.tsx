@@ -12,7 +12,7 @@ export function PrintablePracticeSheet() {
   return (
     <div className="w-full space-y-6">
       {/* Web Controls */}
-      <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 print:hidden">
+      <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 print:hidden">
         <div>
           <h4 className="text-xs font-bold text-gray-900 dark:text-slate-100">Printable Pitman Practice Sheets</h4>
           <p className="text-[11px] text-gray-500 dark:text-slate-400">

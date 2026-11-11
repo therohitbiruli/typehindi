@@ -57,7 +57,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
         <Breadcrumb items={[{ label: lang === "en" ? "Home" : "होम", href: "/" }, { label: lang === "en" ? "Blog" : "ब्लॉग" }]} />
         
         {/* Toggle on the far right */}
-        <div className="flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-slate-200 dark:border-slate-700 shadow-sm">
+        <div className="flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1 text-[11px] font-bold self-end sm:self-auto border border-[#B8C7DA] dark:border-slate-700 shadow-sm">
           <Link
             href={getLangUrl("hi")}
             className={`px-3 py-1 rounded-md transition-all ${
@@ -106,7 +106,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
             <Link 
               key={blog.slug} 
               href={`/blog/${blog.slug}${lang === "hi" ? "?lang=hi" : ""}`}
-              className="group flex flex-col h-full bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-700 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:border-primary-400/60 hover:-translate-y-1 dark:hover:border-primary-600"
+              className="group flex flex-col h-full bg-white dark:bg-gray-900 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-gray-700 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-3xl overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 dark:hover:border-primary-600"
             >
               {/* Featured Image Thumbnail */}
               <div className="relative aspect-[16/10] w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
@@ -149,7 +149,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
           {currentPage > 1 ? (
             <Link
               href={getPageUrl(currentPage - 1)}
-              className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
+              className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-800 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
             >
               <span>←</span>
               <span>{lang === "en" ? "Previous" : "पिछला"}</span>
@@ -184,7 +184,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
                   className={`w-8 h-9 sm:w-10 sm:h-10 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center transition-all ${
                     isActive
                       ? "bg-primary-600 text-white shadow-md shadow-primary-500/25 pointer-events-none"
-                      : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 border border-[#D9E1EC] dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm"
+                      : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-800 dark:hover:border-primary-600 hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm"
                   }`}
                 >
                   {item}
@@ -197,7 +197,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
           {currentPage < totalPages ? (
             <Link
               href={getPageUrl(currentPage + 1)}
-              className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
+              className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-800 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
             >
               <span>{lang === "en" ? "Next" : "अगला"}</span>
               <span>→</span>

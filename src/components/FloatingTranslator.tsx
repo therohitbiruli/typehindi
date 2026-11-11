@@ -151,9 +151,9 @@ export function FloatingTranslator() {
 
       {/* Slide-out Translator Card */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 max-w-sm w-[calc(100vw-3rem)] bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-3xl shadow-2xl p-5 animate-fade-in flex flex-col space-y-3">
+        <div className="fixed bottom-6 right-6 z-50 max-w-sm w-[calc(100vw-3rem)] bg-white dark:bg-gray-950 border border-[#CBD5E1] dark:border-gray-800 rounded-3xl shadow-2xl p-5 animate-fade-in flex flex-col space-y-3">
           {/* Header */}
-          <div className="flex justify-between items-center border-b border-gray-100 dark:border-gray-900 pb-2.5">
+          <div className="flex justify-between items-center border-b border-[#E2E8F0] dark:border-gray-900 pb-2.5">
             <div className="flex items-center gap-2">
               <span className="text-xl">🌐</span>
               <h4 className="font-bold text-gray-900 dark:text-white text-sm">
@@ -181,7 +181,7 @@ export function FloatingTranslator() {
                   className={`px-2 py-1 rounded-lg text-[10px] font-semibold transition-all border ${
                     targetLang === lang.code
                       ? "bg-primary-600 text-white border-primary-600 shadow-sm shadow-primary-500/20"
-                      : "bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-600 hover:text-primary-600 dark:hover:text-primary-400"
+                      : "bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-[#8FA6C5] dark:hover:border-primary-600 hover:text-primary-600 dark:hover:text-primary-400"
                   }`}
                   title={lang.labelEn}
                 >
@@ -223,7 +223,7 @@ export function FloatingTranslator() {
           </div>
 
           {/* Action buttons */}
-          <div className="flex gap-2 pt-2 border-t border-gray-100 dark:border-gray-900">
+          <div className="flex gap-2 pt-2 border-t border-[#E2E8F0] dark:border-gray-900">
             <button
               onClick={handleTranslate}
               disabled={isLoading || !inputText.trim()}

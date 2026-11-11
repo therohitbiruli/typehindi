@@ -510,7 +510,7 @@ export function ShorthandTeacher({
   return (
     <div className="w-full space-y-6">
       {/* 🧭 Pedagogical Sequence Step Tracker */}
-      <div className="flex items-center justify-between p-3 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-xs overflow-x-auto no-scrollbar gap-2">
+      <div className="flex items-center justify-between p-3 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-xs overflow-x-auto no-scrollbar gap-2">
         <span className="font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider text-[11px] shrink-0 mr-1">
           Pedagogy:
         </span>
@@ -546,7 +546,7 @@ export function ShorthandTeacher({
 
       {/* 1. LESSON-FIRST INTERFACE: Stroke Header, Sound & Verified Rule */}
       <div className="p-6 rounded-3xl bg-gradient-to-r from-purple-50 via-white to-slate-50 dark:from-purple-950/30 dark:via-slate-900 dark:to-[#0F172A] border border-purple-200 dark:border-purple-500/30 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 dark:border-slate-800 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E2E8F0] dark:border-slate-800 pb-4">
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/30 flex items-center justify-center text-purple-700 dark:text-purple-300 font-extrabold text-2xl">
               {stroke.name}
@@ -614,7 +614,7 @@ export function ShorthandTeacher({
             </p>
           </div>
 
-          <div className="md:col-span-4 p-3.5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 space-y-1.5">
+          <div className="md:col-span-4 p-3.5 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 space-y-1.5">
             <span className="text-[10px] uppercase font-bold tracking-wider text-purple-400 block">
               Common Example Words
             </span>
@@ -623,7 +623,7 @@ export function ShorthandTeacher({
                 <span
                   key={idx}
                   onClick={() => speakSound(ex.word)}
-                  className="px-2 py-0.5 rounded bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-slate-300 cursor-pointer hover:text-gray-900 dark:text-white hover:border-purple-500/40 transition-colors"
+                  className="px-2 py-0.5 rounded bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-gray-600 dark:text-slate-300 cursor-pointer hover:text-gray-900 dark:text-white hover:border-purple-500/40 transition-colors"
                 >
                   {ex.word}
                 </span>
@@ -634,9 +634,9 @@ export function ShorthandTeacher({
       </div>
 
       {/* 2. & 3. ANIMATED DEMONSTRATION & GUIDED PRACTICE CANVAS */}
-      <div className="rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 shadow-2xl overflow-hidden">
+      <div className="rounded-3xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-2xl overflow-hidden">
         {/* Canvas Toolbar & Mode Selector */}
-        <div className="p-4 bg-white dark:bg-slate-950/70 border-b border-gray-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div className="p-4 bg-white dark:bg-slate-950/70 border-b border-[#E2E8F0] dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2">
             {/* Show Me Animation Button */}
             <button
@@ -674,7 +674,7 @@ export function ShorthandTeacher({
 
           {/* Right Tools: Weight Selector, Undo, Redo, Clear */}
           <div className="flex items-center gap-2">
-            <div className="flex items-center p-1 rounded-xl bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700/60">
+            <div className="flex items-center p-1 rounded-xl bg-gray-100 dark:bg-slate-800 border border-[#CBD5E1] dark:border-slate-700/60">
               <button
                 type="button"
                 onClick={() => setUserWeight("light")}
@@ -737,7 +737,7 @@ export function ShorthandTeacher({
           {/* Initial Prompt Overlay */}
           {paths.length === 0 && !isDrawing && !isAnimating && (
             <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-center p-4">
-              <div className="bg-slate-900/85 backdrop-blur-md border border-gray-200 dark:border-slate-800 px-5 py-3.5 rounded-2xl max-w-sm space-y-1">
+              <div className="bg-slate-900/85 backdrop-blur-md border border-[#CBD5E1] dark:border-slate-800 px-5 py-3.5 rounded-2xl max-w-sm space-y-1">
                 <span className="text-xs font-bold text-purple-300 uppercase tracking-wider block">
                   NOW YOU TRY
                 </span>
@@ -756,7 +756,7 @@ export function ShorthandTeacher({
         </div>
 
         {/* Canvas Bottom Action Bar */}
-        <div className="p-4 bg-white dark:bg-slate-950/80 border-t border-gray-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div className="p-4 bg-white dark:bg-slate-950/80 border-t border-[#E2E8F0] dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-gray-500 dark:text-slate-400">
             <span className="text-[11px]">
               Attempts: <strong className="text-gray-700 dark:text-slate-200">{mastery.attemptsCount}</strong> • Best Score:{" "}
@@ -779,7 +779,7 @@ export function ShorthandTeacher({
       {/* 5. & 6. STROKE ANALYSIS & SIDE-BY-SIDE COMPARISON */}
       {analysisResult && (
         <div className="p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-purple-500/40 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 dark:border-slate-800 pb-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E2E8F0] dark:border-slate-800 pb-3">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
                 Stroke Analysis & Evaluation
@@ -817,11 +817,11 @@ export function ShorthandTeacher({
           {/* Side-by-Side Comparison Box */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Correct Standard Stroke */}
-            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex flex-col items-center justify-between text-center space-y-3">
+            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 flex flex-col items-center justify-between text-center space-y-3">
               <span className="text-xs font-bold text-purple-400 uppercase tracking-wider">
                 CORRECT STANDARD STROKE
               </span>
-              <div className="w-28 h-28 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 flex items-center justify-center">
+              <div className="w-28 h-28 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-[#CBD5E1] dark:border-slate-800 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" className="w-20 h-20 stroke-purple-400">
                   <path
                     d={stroke.svgPath}
@@ -838,11 +838,11 @@ export function ShorthandTeacher({
             </div>
 
             {/* User's Drawn Stroke */}
-            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex flex-col items-center justify-between text-center space-y-3">
+            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 flex flex-col items-center justify-between text-center space-y-3">
               <span className="text-xs font-bold text-sky-400 uppercase tracking-wider">
                 YOUR STROKE ATTEMPT
               </span>
-              <div className="w-28 h-28 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 flex items-center justify-center">
+              <div className="w-28 h-28 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-[#CBD5E1] dark:border-slate-800 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" className="w-20 h-20">
                   {paths.map((p, idx) => (
                     <polyline
@@ -865,42 +865,42 @@ export function ShorthandTeacher({
 
           {/* Measurable Diagnostic Checklist */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
               <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold">Direction</span>
               <p className={analysisResult.directionStatus === "good" ? "text-emerald-400 font-semibold" : "text-red-400 font-semibold"}>
                 {analysisResult.directionMessage}
               </p>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
               <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold">Slant & Angle</span>
               <p className={analysisResult.angleStatus === "good" ? "text-emerald-400 font-semibold" : "text-amber-400 font-semibold"}>
                 {analysisResult.angleMessage}
               </p>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
               <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold">Length & Scale</span>
               <p className={analysisResult.lengthStatus === "good" ? "text-emerald-400 font-semibold" : "text-amber-400 font-semibold"}>
                 {analysisResult.lengthMessage}
               </p>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
               <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold">Line Weight</span>
               <p className={analysisResult.weightStatus === "good" ? "text-emerald-400 font-semibold" : "text-red-400 font-semibold"}>
                 {analysisResult.weightMessage}
               </p>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
               <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold">Stroke Continuity</span>
               <p className={analysisResult.continuityStatus === "good" ? "text-emerald-400 font-semibold" : "text-amber-400 font-semibold"}>
                 {analysisResult.continuityMessage}
               </p>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-1">
+            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 space-y-1">
               <span className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold">Evaluation Type</span>
               <p className="text-gray-600 dark:text-slate-300">Assistive learning aid</p>
             </div>

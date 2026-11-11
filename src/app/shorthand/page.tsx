@@ -72,7 +72,7 @@ export default function ShorthandLandingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 space-y-3">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-[#CBD5E1] dark:border-slate-800 space-y-3">
               <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-300 font-bold">
                 1
               </div>
@@ -82,7 +82,7 @@ export default function ShorthandLandingPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 space-y-3">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-[#CBD5E1] dark:border-slate-800 space-y-3">
               <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-300 font-bold">
                 2
               </div>
@@ -92,7 +92,7 @@ export default function ShorthandLandingPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 space-y-3">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-[#CBD5E1] dark:border-slate-800 space-y-3">
               <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-300 font-bold">
                 3
               </div>
@@ -148,7 +148,7 @@ export default function ShorthandLandingPage() {
               <Link
                 key={l.id}
                 href={`/shorthand/lessons/${l.slug}`}
-                className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 hover:border-purple-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between group space-y-3"
+                className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 hover:border-[#8FA6C5] transition-all hover:-translate-y-1 flex flex-col justify-between group space-y-3"
               >
                 <div>
                   <div className="flex items-center justify-between text-xs mb-2">
@@ -165,7 +165,7 @@ export default function ShorthandLandingPage() {
                   </p>
                 </div>
 
-                <div className="pt-2 border-t border-gray-200 dark:border-slate-800/80 flex items-center justify-between text-xs">
+                <div className="pt-2 border-t border-[#E2E8F0] dark:border-slate-800/80 flex items-center justify-between text-xs">
                   <span className="text-gray-500 dark:text-slate-400">{l.difficulty}</span>
                   <span className="text-purple-400 font-semibold group-hover:translate-x-1 transition-transform">
                     Start Lesson →
@@ -218,7 +218,7 @@ export default function ShorthandLandingPage() {
             {officialExamPresets.map((exam) => (
               <div
                 key={exam.id}
-                className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4 flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between gap-2">
@@ -233,22 +233,22 @@ export default function ShorthandLandingPage() {
                   <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed">{exam.description}</p>
 
                   <div className="grid grid-cols-3 gap-2 pt-2 text-center text-xs">
-                    <div className="p-2 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800">
+                    <div className="p-2 rounded-lg bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
                       <span className="text-[10px] text-gray-500 dark:text-slate-400 block">Dictation</span>
                       <strong className="text-gray-700 dark:text-slate-200">{exam.dictationDurationMinutes} Mins</strong>
                     </div>
-                    <div className="p-2 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800">
+                    <div className="p-2 rounded-lg bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
                       <span className="text-[10px] text-gray-500 dark:text-slate-400 block">Transcription</span>
                       <strong className="text-gray-700 dark:text-slate-200">{exam.transcriptionTimeMinutes} Mins</strong>
                     </div>
-                    <div className="p-2 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800">
+                    <div className="p-2 rounded-lg bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
                       <span className="text-[10px] text-gray-500 dark:text-slate-400 block">Max Error</span>
                       <strong className="text-amber-400">≤ {exam.allowedErrorPercentage}%</strong>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-gray-200 dark:border-slate-800 flex items-center justify-between">
+                <div className="pt-3 border-t border-[#E2E8F0] dark:border-slate-800 flex items-center justify-between">
                   <Link
                     href={`/shorthand/tests?exam=${exam.id}`}
                     className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors"
@@ -268,7 +268,7 @@ export default function ShorthandLandingPage() {
         </section>
 
         {/* Section 6: Frequently Asked Questions */}
-        <section className="space-y-6 pt-6 border-t border-gray-200 dark:border-slate-800">
+        <section className="space-y-6 pt-6 border-t border-[#E2E8F0] dark:border-slate-800">
           <div className="max-w-2xl space-y-1">
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">
               Common Queries
@@ -280,7 +280,7 @@ export default function ShorthandLandingPage() {
 
           <div className="space-y-3">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 space-y-2">
+              <div key={idx} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900/80 border border-[#CBD5E1] dark:border-slate-800 space-y-2">
                 <h3 className="text-sm font-bold text-gray-900 dark:text-slate-100 flex items-center gap-2">
                   <span className="text-purple-400 font-black">Q.</span>
                   {faq.q}

@@ -75,7 +75,7 @@ export function GameRunnerClient({ game }: Props) {
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 mt-3">
         <Link
           href="/game"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-sm font-semibold text-[#475569] dark:text-slate-300 hover:text-[#17243A] font-semibold dark:text-white hover:border-gray-300 dark:border-slate-700 transition-colors shadow-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-slate-800 text-sm font-semibold text-[#475569] dark:text-slate-300 hover:text-[#17243A] font-semibold dark:text-white dark:border-slate-700 transition-colors shadow-sm"
         >
           <span>←</span>
           <span>Back to Game Hub</span>
@@ -84,7 +84,7 @@ export function GameRunnerClient({ game }: Props) {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setShowDifficultyPicker((prev) => !prev)}
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-xs font-bold text-[#475569] dark:text-slate-300 hover:text-[#17243A] font-semibold dark:text-white hover:border-gray-300 dark:border-slate-700 transition-colors"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-slate-800 text-xs font-bold text-[#475569] dark:text-slate-300 hover:text-[#17243A] font-semibold dark:text-white dark:border-slate-700 transition-colors"
           >
             <span>⚙️ Difficulty:</span>
             <span
@@ -100,7 +100,7 @@ export function GameRunnerClient({ game }: Props) {
 
       {/* Difficulty Picker Dropdown Modal */}
       {showDifficultyPicker && (
-        <div className="mb-6 p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 shadow-xl max-w-xl mx-auto text-center animate-in fade-in zoom-in-95 duration-200">
+        <div className="mb-6 p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-[#B8C7DA] dark:border-slate-800 shadow-xl max-w-xl mx-auto text-center animate-in fade-in zoom-in-95 duration-200">
           <h3 className="text-lg font-bold text-[#17243A] dark:text-white mb-2">Change Difficulty</h3>
           <p className="text-xs text-[#475569] dark:text-slate-300 font-medium mb-4">
             Select your preferred challenge tier for {game.title}.
@@ -125,9 +125,9 @@ export function GameRunnerClient({ game }: Props) {
 
       {/* 🎮 Main Game Arena Container */}
       <div className="max-w-4xl mx-auto mb-12">
-        <div className="rounded-[2.5rem] overflow-hidden border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900 shadow-2xl shadow-black/70 min-h-[620px] flex flex-col relative">
+        <div className="rounded-[2.5rem] overflow-hidden border border-[#B8C7DA] dark:border-slate-800 bg-gray-50 dark:bg-slate-900 shadow-2xl shadow-black/70 min-h-[620px] flex flex-col relative">
           {/* Top Game Bar */}
-          <div className="flex items-center justify-between px-6 py-4 bg-white dark:bg-slate-950/90 border-b border-gray-200 dark:border-slate-800">
+          <div className="flex items-center justify-between px-6 py-4 bg-white dark:bg-slate-950/90 border-b border-[#E2E8F0] dark:border-slate-800">
             <div className="flex items-center gap-3">
               <span className="text-2xl">{game.icon}</span>
               <div>
@@ -221,7 +221,7 @@ export function GameRunnerClient({ game }: Props) {
       {/* Detailed Game Information & Guide */}
       {/* ========================================================================= */}
       <section className="max-w-4xl mx-auto mb-16">
-        <div className="card p-8 md:p-10 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/70">
+        <div className="card p-8 md:p-10 rounded-[2.5rem] border border-[#B8C7DA] dark:border-slate-800 bg-gray-50 dark:bg-slate-900/70">
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl">{game.icon}</span>
             <div>
@@ -244,7 +244,7 @@ export function GameRunnerClient({ game }: Props) {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800">
+            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800">
               <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                 🎯 Skills Trained
               </h3>
@@ -252,7 +252,7 @@ export function GameRunnerClient({ game }: Props) {
                 {game.skills.map((s) => (
                   <span
                     key={s}
-                    className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 text-primary-300"
+                    className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-800 border border-[#CBD5E1] dark:border-slate-700 text-primary-300"
                   >
                     {s}
                   </span>
@@ -260,7 +260,7 @@ export function GameRunnerClient({ game }: Props) {
               </div>
             </div>
 
-            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950/60 border border-gray-200 dark:border-slate-800">
+            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800">
               <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                 ⚡ Recommended Difficulty
               </h3>
@@ -273,7 +273,7 @@ export function GameRunnerClient({ game }: Props) {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-gray-200 dark:border-slate-800">
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-[#E2E8F0] dark:border-slate-800">
             <Link
               href="/game"
               className="text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors flex items-center gap-1.5"
@@ -306,14 +306,14 @@ export function GameRunnerClient({ game }: Props) {
             <Link
               key={g.slug}
               href={`/game/${g.slug}`}
-              className="card p-5 rounded-2xl border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 hover:scale-[1.02] transition-all flex flex-col justify-between"
+              className="card p-5 rounded-2xl border border-[#CBD5E1] dark:border-slate-800 bg-gray-50 dark:bg-slate-900/60 hover:border-[#8FA6C5] hover:scale-[1.02] transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="text-3xl mb-2">{g.icon}</div>
                 <h4 className="text-base font-bold text-[#17243A] dark:text-white mb-1">{g.title}</h4>
                 <p className="text-xs text-[#475569] dark:text-slate-400 font-medium line-clamp-2">{g.description}</p>
               </div>
-              <div className="mt-4 pt-2 border-t border-gray-200 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-primary-400">
+              <div className="mt-4 pt-2 border-t border-[#E2E8F0] dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-primary-400">
                 <span>Play Game</span>
                 <span>→</span>
               </div>

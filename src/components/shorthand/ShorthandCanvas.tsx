@@ -237,9 +237,9 @@ export function ShorthandCanvas({
   };
 
   return (
-    <div className="w-full rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 shadow-xl overflow-hidden">
+    <div className="w-full rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-xl overflow-hidden">
       {/* Top Bar / Stroke Selector & Controls */}
-      <div className="p-4 bg-white dark:bg-slate-950/60 border-b border-gray-200 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+      <div className="p-4 bg-white dark:bg-slate-950/60 border-b border-[#E2E8F0] dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
         {/* Active Target Stroke Info */}
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-300 font-bold text-lg">
@@ -392,7 +392,7 @@ export function ShorthandCanvas({
         {/* Practice Tip overlay on initial empty canvas */}
         {paths.length === 0 && !isDrawing && (
           <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-center p-4">
-            <div className="bg-gray-50 dark:bg-slate-900/80 backdrop-blur-sm border border-gray-200 dark:border-slate-800/80 px-4 py-3 rounded-xl max-w-sm">
+            <div className="bg-gray-50 dark:bg-slate-900/80 backdrop-blur-sm border border-[#CBD5E1] dark:border-slate-800/80 px-4 py-3 rounded-xl max-w-sm">
               <p className="text-xs text-gray-600 dark:text-slate-300 font-medium">
                 Draw with your mouse, finger, or stylus pen.
               </p>
@@ -405,7 +405,7 @@ export function ShorthandCanvas({
       </div>
 
       {/* Bottom Assistive Verification Bar */}
-      <div className="p-4 bg-white dark:bg-slate-950/70 border-t border-gray-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div className="p-4 bg-white dark:bg-slate-950/70 border-t border-[#E2E8F0] dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
         <div className="flex items-center gap-2 text-gray-500 dark:text-slate-400">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>
@@ -427,8 +427,8 @@ export function ShorthandCanvas({
       {/* Manual Assistive Comparison Modal */}
       {comparisonModal && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4">
-            <div className="flex items-center justify-between border-b border-gray-200 dark:border-slate-800 pb-3">
+          <div className="bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4">
+            <div className="flex items-center justify-between border-b border-[#E2E8F0] dark:border-slate-800 pb-3">
               <h3 className="text-base font-bold text-gray-900 dark:text-slate-100">
                 Self-Assessment: Stroke {selectedStroke.name}
               </h3>
@@ -443,7 +443,7 @@ export function ShorthandCanvas({
 
             <div className="grid grid-cols-2 gap-4 text-center">
               {/* Reference */}
-              <div className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex flex-col items-center">
+              <div className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 flex flex-col items-center">
                 <span className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-2">
                   Official Standard
                 </span>
@@ -462,7 +462,7 @@ export function ShorthandCanvas({
               </div>
 
               {/* Your Strokes */}
-              <div className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex flex-col items-center justify-center">
+              <div className="p-4 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 flex flex-col items-center justify-center">
                 <span className="text-xs font-semibold text-sky-400 uppercase tracking-wider mb-2">
                   Your Drawn Strokes
                 </span>
@@ -476,7 +476,7 @@ export function ShorthandCanvas({
             </div>
 
             {/* Verification Checklist */}
-            <div className="space-y-2 bg-white dark:bg-slate-950/60 p-3 rounded-xl border border-gray-200 dark:border-slate-800/80 text-xs text-gray-600 dark:text-slate-300">
+            <div className="space-y-2 bg-white dark:bg-slate-950/60 p-3 rounded-xl border border-[#CBD5E1] dark:border-slate-800/80 text-xs text-gray-600 dark:text-slate-300">
               <h4 className="font-semibold text-gray-700 dark:text-slate-200 mb-1">Check your drawing against these 3 rules:</h4>
               <p>✓ <strong>Direction:</strong> Did you pull strictly {selectedStroke.direction} without reversing?</p>
               <p>✓ <strong>Weight:</strong> Is the line {selectedStroke.weight === "heavy" ? "firm and thickened" : "light and thin"}?</p>

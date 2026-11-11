@@ -107,7 +107,7 @@ export function TestTool() {
       </p>
 
       {/* 🌐 Multilingual Test Selector Bar */}
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-[#B8C7DA] dark:border-slate-800 shadow-sm">
         <div className="flex items-center gap-2">
           <span className="text-lg">🌐</span>
           <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
@@ -129,7 +129,7 @@ export function TestTool() {
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                 item.slug === `${language}-typing`
                   ? "bg-primary-600 text-white shadow-sm"
-                  : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
+                  : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-700"
               }`}
             >
               <span className="text-[11px] opacity-80">{item.symbol}</span>
@@ -141,7 +141,7 @@ export function TestTool() {
       </div>
 
       {/* Settings Grid with Language and target typing Job selectors */}
-      <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 p-4 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
+      <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-900 border border-[#B8C7DA] dark:border-slate-800 p-4 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
         {/* Language Selector */}
         <div className="space-y-1.5">
           <label className="block text-xs font-bold uppercase tracking-wider text-[#475569] dark:text-slate-300">
@@ -178,7 +178,7 @@ export function TestTool() {
             value={targetJob}
             onChange={(e) => setTargetJob(e.target.value as any)}
             disabled={isStarted && !showResults}
-            className="w-full px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
+            className="w-full px-3 py-1.5 rounded-xl border border-[#B8C7DA] dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-bold text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
           >
             <option value="ssc">SSC (Staff Selection Commission)</option>
             <option value="rrb">RRB (Railway Recruitment Board)</option>
@@ -194,7 +194,7 @@ export function TestTool() {
             Test Duration
           </label>
           <div className="flex gap-2">
-            <div className="flex flex-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 p-0.5">
+            <div className="flex flex-1 rounded-xl border border-[#B8C7DA] dark:border-slate-700 bg-slate-100 dark:bg-slate-800 p-0.5">
               {TEST_DURATIONS.map((opt) => (
                 <button
                   key={opt.seconds}
@@ -218,7 +218,7 @@ export function TestTool() {
       </div>
 
       {/* Dynamic Job Profile Details Card */}
-      <div className="mb-6 p-4 bg-primary-50/50 dark:bg-slate-900/50 border border-primary-100 dark:border-slate-800 rounded-2xl flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+      <div className="mb-6 p-4 bg-primary-50/50 dark:bg-slate-900/50 border border-[#B8C7DA] dark:border-slate-800 rounded-2xl flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
         <div>
           <span className="text-[10px] uppercase font-bold text-primary-600 dark:text-primary-400 tracking-wider">Active Exam Target Profile</span>
           <h4 className="font-extrabold text-gray-900 dark:text-white text-base leading-tight mt-0.5">

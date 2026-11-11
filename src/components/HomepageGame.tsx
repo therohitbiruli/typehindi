@@ -9,14 +9,14 @@ export function HomepageGame() {
 
   if (isPlaying) {
     return (
-      <div className="border border-[#DCE4EF] dark:border-slate-800 rounded-[2rem] p-4 bg-white dark:bg-slate-900/50 shadow-inner relative max-w-4xl mx-auto overflow-hidden">
+      <div className="border border-[#B8C7DA] dark:border-slate-800 rounded-[2rem] p-4 bg-white dark:bg-slate-900/50 shadow-inner relative max-w-4xl mx-auto overflow-hidden">
         <TankGameCanvas />
       </div>
     );
   }
 
   return (
-    <div className="relative rounded-3xl sm:rounded-[2rem] overflow-hidden min-h-[340px] sm:aspect-[16/9] w-full max-w-4xl mx-auto border-2 sm:border-3 border-[#DCE4EF] dark:border-slate-800/80 shadow-md group flex items-center justify-center bg-white dark:bg-slate-950">
+    <div className="relative rounded-3xl sm:rounded-[2rem] overflow-hidden min-h-[340px] sm:aspect-[16/9] w-full max-w-4xl mx-auto border border-solid sm:border-[1.5px] border-[#B8C7DA] dark:border-slate-800/80 shadow-md group flex items-center justify-center bg-white dark:bg-slate-950">
       <Image
         src="/images/game_thumb_tank.png"
         alt="Tank Defender Game"

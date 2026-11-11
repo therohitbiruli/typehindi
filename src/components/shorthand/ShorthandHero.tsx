@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function ShorthandHero() {
   return (
-    <section className="relative overflow-hidden pt-12 pb-14 border-b border-gray-200 dark:border-slate-800/80 bg-gradient-to-b from-purple-50/70 via-white to-slate-50 dark:from-[#0B1120] dark:via-[#0F172A] dark:to-[#0B1120]">
+    <section className="relative overflow-hidden pt-12 pb-14 border-b border-[#E2E8F0] dark:border-slate-800/80 bg-gradient-to-b from-purple-50/70 via-white to-slate-50 dark:from-[#0B1120] dark:via-[#0F172A] dark:to-[#0B1120]">
       {/* Background glow accents */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/3 right-10 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -37,7 +37,7 @@ export function ShorthandHero() {
 
               <Link
                 href="/shorthand/practice"
-                className="px-5 py-3 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-900 dark:text-slate-100 font-bold text-xs border border-gray-200 dark:border-slate-700/80 transition-all duration-150 flex items-center gap-1.5 shadow-sm"
+                className="px-5 py-3 rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-900 dark:text-slate-100 font-bold text-xs border border-[#CBD5E1] dark:border-slate-700/80 transition-all duration-150 flex items-center gap-1.5 shadow-sm"
               >
                 Practice Shorthand →
               </Link>
@@ -53,8 +53,8 @@ export function ShorthandHero() {
 
           {/* Right Column: Self-Paced Learning Tools Card */}
           <div className="lg:col-span-4">
-            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 shadow-xl relative backdrop-blur-sm space-y-4">
-              <div className="flex items-center justify-between border-b border-gray-200 dark:border-slate-800 pb-3">
+            <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-[#CBD5E1] dark:border-slate-800 shadow-xl relative backdrop-blur-sm space-y-4">
+              <div className="flex items-center justify-between border-b border-[#E2E8F0] dark:border-slate-800 pb-3">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-600 dark:text-slate-300">
                   Self-Paced Learning Tools
                 </span>
@@ -66,7 +66,7 @@ export function ShorthandHero() {
               <div className="space-y-2 text-xs">
                 <Link
                   href="/shorthand/learn"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-950/80 hover:bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 hover:border-purple-500/40 transition-colors group"
+                  className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-950/80 hover:bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-purple-500/40 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
                     <span className="text-base">📚</span>
@@ -80,7 +80,7 @@ export function ShorthandHero() {
 
                 <Link
                   href="/shorthand/practice"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-950/80 hover:bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 hover:border-purple-500/40 transition-colors group"
+                  className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-950/80 hover:bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-purple-500/40 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
                     <span className="text-base">✍️</span>
@@ -94,7 +94,7 @@ export function ShorthandHero() {
 
                 <Link
                   href="/shorthand/dictation"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-950/80 hover:bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 hover:border-purple-500/40 transition-colors group"
+                  className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-950/80 hover:bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-purple-500/40 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
                     <span className="text-base">🎙️</span>
@@ -108,7 +108,7 @@ export function ShorthandHero() {
 
                 <Link
                   href="/shorthand/tests"
-                  className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-950/80 hover:bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 hover:border-purple-500/40 transition-colors group"
+                  className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-slate-950/80 hover:bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-purple-500/40 transition-colors group"
                 >
                   <div className="flex items-center gap-2.5">
                     <span className="text-base">💻</span>
@@ -121,7 +121,7 @@ export function ShorthandHero() {
                 </Link>
               </div>
 
-              <div className="pt-2 border-t border-gray-200 dark:border-slate-800 text-center">
+              <div className="pt-2 border-t border-[#E2E8F0] dark:border-slate-800 text-center">
                 <span className="text-[11px] text-gray-500 dark:text-slate-400">
                   Open access for independent learners • No account required
                 </span>

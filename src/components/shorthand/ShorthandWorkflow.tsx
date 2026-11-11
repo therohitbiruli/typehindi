@@ -41,7 +41,7 @@ export function ShorthandWorkflow() {
         {steps.map((s, idx) => (
           <div
             key={s.num}
-            className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 relative space-y-3"
+            className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 relative space-y-3"
           >
             <div className="flex items-center justify-between">
               <span className="text-2xl">{s.icon}</span>
@@ -75,7 +75,7 @@ export function ShorthandWorkflow() {
         </div>
 
         {/* The Equation */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold text-gray-700 dark:text-slate-200 bg-white dark:bg-slate-950/60 p-4 rounded-xl border border-gray-200 dark:border-slate-800">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold text-gray-700 dark:text-slate-200 bg-white dark:bg-slate-950/60 p-4 rounded-xl border border-[#CBD5E1] dark:border-slate-800">
           <span className="px-2.5 py-1 rounded bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300">Listening</span>
           <span className="text-gray-500 dark:text-slate-400">+</span>
           <span className="px-2.5 py-1 rounded bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300">Shorthand Speed</span>

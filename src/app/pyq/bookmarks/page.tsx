@@ -32,7 +32,7 @@ export default function BookmarksPage() {
       </header>
 
       {/* For architecture sake, just showing empty state since we don't have user auth hook rigged here yet */}
-      <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-800 shadow-sm max-w-3xl mx-auto mt-8">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-[#CBD5E1] dark:border-slate-800 shadow-sm max-w-3xl mx-auto mt-8">
         <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
           🔖
         </div>

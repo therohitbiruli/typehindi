@@ -96,7 +96,7 @@ export default async function PYQSubjectPage({ params }: Props) {
       <AdPlaceholder position="top" />
 
       {allQuestions.length === 0 ? (
-        <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-800 shadow-sm max-w-3xl mx-auto mt-8">
+        <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-[#CBD5E1] dark:border-slate-800 shadow-sm max-w-3xl mx-auto mt-8">
           <div className="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-10 h-10 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
           </div>
@@ -104,7 +104,7 @@ export default async function PYQSubjectPage({ params }: Props) {
           <p className="text-slate-500 max-w-md mx-auto mb-8">
             The {subjectName} questions are currently being extracted and verified. Check back soon.
           </p>
-          <Link href={`/pyq/${paper.slug}`} className="btn-primary px-6 py-2.5 rounded-xl font-bold border border-slate-200 dark:border-slate-700">Go Back to Exam</Link>
+          <Link href={`/pyq/${paper.slug}`} className="btn-primary px-6 py-2.5 rounded-xl font-bold border border-[#CBD5E1] dark:border-slate-700">Go Back to Exam</Link>
         </div>
       ) : (
         <div className="max-w-4xl mx-auto space-y-8 mt-8">
@@ -115,17 +115,17 @@ export default async function PYQSubjectPage({ params }: Props) {
           </div>
           
           {totalPages > 1 && (
-            <nav aria-label="Pagination" className="flex justify-center items-center flex-wrap gap-1.5 sm:gap-2 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+            <nav aria-label="Pagination" className="flex justify-center items-center flex-wrap gap-1.5 sm:gap-2 mt-12 pt-8 border-t border-[#E2E8F0] dark:border-slate-800">
               {currentPage > 1 ? (
                 <Link 
                   href={`/pyq/${paper.slug}/subject/${baseSubjectSlug}${currentPage - 1 > 1 ? `-${currentPage - 1}` : ''}`} 
-                  className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-[#D9E1EC] dark:border-slate-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
+                  className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-[#CBD5E1] dark:border-slate-800 hover:border-[#8FA6C5] dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
                 >
                   <span>←</span>
                   <span>Previous</span>
                 </Link>
               ) : (
-                <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-400 dark:text-slate-600 bg-slate-100/60 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-800/60 cursor-not-allowed flex items-center gap-1.5">
+                <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-400 dark:text-slate-600 bg-slate-100/60 dark:bg-slate-800/40 border border-[#CBD5E1]/60 dark:border-slate-800/60 cursor-not-allowed flex items-center gap-1.5">
                   <span>←</span>
                   <span>Previous</span>
                 </span>
@@ -153,7 +153,7 @@ export default async function PYQSubjectPage({ params }: Props) {
                       className={`w-8 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl font-bold text-xs sm:text-sm transition-all shadow-sm ${
                         isCurrent 
                           ? 'bg-primary-600 text-white shadow-md shadow-primary-500/25 pointer-events-none' 
-                          : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-[#D9E1EC] dark:border-slate-800 hover:border-primary-400 dark:hover:border-primary-600 hover:bg-slate-50 dark:hover:bg-slate-800'
+                          : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-[#CBD5E1] dark:border-slate-800 hover:border-[#8FA6C5] dark:hover:border-primary-600 hover:bg-slate-50 dark:hover:bg-slate-800'
                       }`}
                     >
                       {item}
@@ -165,13 +165,13 @@ export default async function PYQSubjectPage({ params }: Props) {
               {currentPage < totalPages ? (
                 <Link 
                   href={`/pyq/${paper.slug}/subject/${baseSubjectSlug}-${currentPage + 1}`} 
-                  className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-[#D9E1EC] dark:border-slate-800 hover:border-primary-400 dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
+                  className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-[#CBD5E1] dark:border-slate-800 hover:border-[#8FA6C5] dark:hover:border-primary-600 shadow-sm transition-all flex items-center gap-1.5"
                 >
                   <span>Next</span>
                   <span>→</span>
                 </Link>
               ) : (
-                <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-400 dark:text-slate-600 bg-slate-100/60 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-800/60 cursor-not-allowed flex items-center gap-1.5">
+                <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-400 dark:text-slate-600 bg-slate-100/60 dark:bg-slate-800/40 border border-[#CBD5E1]/60 dark:border-slate-800/60 cursor-not-allowed flex items-center gap-1.5">
                   <span>Next</span>
                   <span>→</span>
                 </span>

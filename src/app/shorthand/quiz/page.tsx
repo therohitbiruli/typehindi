@@ -54,7 +54,7 @@ export default function ShorthandQuizPage() {
 
           {/* Question Mode Selector */}
           {!isSubmitted && (
-            <div className="flex items-center gap-1.5 p-1 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
+            <div className="flex items-center gap-1.5 p-1 rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800">
               {[10, 20, 50].map((num) => (
                 <button
                   key={num}
@@ -111,7 +111,7 @@ export default function ShorthandQuizPage() {
             const isCorrect = userChoice === q.correctIndex;
 
             return (
-              <div key={q.id} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-3">
+              <div key={q.id} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-black text-purple-400 uppercase tracking-wider">
                     Question {idx + 1} of {activeQuestions.length}

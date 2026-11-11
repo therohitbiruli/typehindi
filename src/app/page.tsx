@@ -46,7 +46,7 @@ export default function Homepage() {
     <div className="flex flex-col min-h-screen bg-white dark:bg-slate-950 text-[#17243A] dark:text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"TypeHindi","url":"https://typehindi.in","potentialAction":{"@type":"SearchAction","target":"https://typehindi.in/blog?q={search_term_string}","query-input":"required name=search_term_string"}}) }} />
       {/* 🌟 Premium Hero Section */}
-      <section className="hidden md:block bg-[#F4F7FC] text-[#17243A] pt-20 pb-32 border-b border-[#DCE4EF] relative overflow-hidden dark:bg-slate-950 dark:text-white dark:border-slate-900">
+      <section className="hidden md:block bg-[#F4F7FC] text-[#17243A] pt-20 pb-32 border-b border-[#B8C7DA] relative overflow-hidden dark:bg-slate-950 dark:text-white dark:border-slate-900">
         {/* Blurred background image blending with deep navy */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-10 dark:opacity-25 blur-[6px] scale-105 pointer-events-none"
@@ -61,7 +61,7 @@ export default function Homepage() {
 
         <div className="container-main px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EAF1FB] border border-[#DCE4EF] text-[#102B5C] text-xs font-semibold mb-6 dark:bg-primary-500/10 dark:border-primary-500/30 dark:text-primary-300">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EAF1FB] border border-[#B8C7DA] text-[#102B5C] text-xs font-semibold mb-6 dark:bg-primary-500/10 dark:border-primary-500/30 dark:text-primary-300">
               ✨ Free Online Hindi Typing Platform
             </div>
             
@@ -91,7 +91,7 @@ export default function Homepage() {
       <div className="container-main max-w-6xl px-4 mt-6 md:-mt-20 relative z-10 mb-8 md:mb-12">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           
-          <Link href="/practice" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-primary-500/50 dark:hover:border-primary-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+          <Link href="/practice" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-primary-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               ⌨️
             </div>
@@ -99,7 +99,7 @@ export default function Homepage() {
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">InScript Layout speed building practice with keystroke indicators</p>
           </Link>
 
-          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               📚
             </div>
@@ -107,7 +107,7 @@ export default function Homepage() {
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Step-by-step interactive lessons to master the InScript layout</p>
           </Link>
 
-          <Link href="/game" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-purple-500/50 dark:hover:border-purple-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+          <Link href="/game" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-purple-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               🎮
             </div>
@@ -115,7 +115,7 @@ export default function Homepage() {
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Fun and addictive typing games to build speed and muscle memory</p>
           </Link>
 
-          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-amber-500/50 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               ⏱️
             </div>
@@ -123,7 +123,7 @@ export default function Homepage() {
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Evaluate your typing proficiency with realistic exam conditions</p>
           </Link>
 
-          <Link href="/mangal-font-typing-test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-rose-500/50 dark:hover:border-rose-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+          <Link href="/mangal-font-typing-test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-rose-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               🅰️
             </div>
@@ -131,7 +131,7 @@ export default function Homepage() {
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Practice Mangal font typing specifically formatted for exams</p>
           </Link>
 
-          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-cyan-500/50 dark:hover:border-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+          <Link href="/test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               📜
             </div>
@@ -139,7 +139,7 @@ export default function Homepage() {
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Simulate the Computer Proficiency Certification Test pattern</p>
           </Link>
 
-          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-sky-500/50 dark:hover:border-sky-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+          <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-sky-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               🔍
             </div>
@@ -147,7 +147,7 @@ export default function Homepage() {
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Visual layouts and guides for InScript and Remington layouts</p>
           </Link>
 
-          <Link href="/translators" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-violet-500/50 dark:hover:border-violet-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+          <Link href="/translators" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5]/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
               🌐
             </div>
@@ -155,7 +155,7 @@ export default function Homepage() {
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Instantly translate English or other regional texts into Hindi</p>
           </Link>
 
-          <Link href="/blog" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-slate-500/50 dark:hover:border-slate-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+          <Link href="/blog" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-slate-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
               <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-slate-100 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
                 📰
               </div>
@@ -163,7 +163,7 @@ export default function Homepage() {
               <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Latest news, government exam patterns, and typing tips</p>
             </Link>
 
-            <Link href="/mock-tests" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-emerald-500/50 dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <Link href="/mock-tests" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
               <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
                 🎯
               </div>
@@ -171,7 +171,7 @@ export default function Homepage() {
               <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Take full-length CBT mock tests for SSC, Railways, and more</p>
             </Link>
 
-            <Link href="/pyq" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#D9E1EC] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-amber-500/50 dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
+            <Link href="/pyq" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
               <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
                 📝
               </div>
@@ -186,7 +186,7 @@ export default function Homepage() {
         <div className="container-main max-w-6xl px-4 space-y-16">
           
           {/* 🌐 SECTION: TYPING PRACTICE IN MULTIPLE LANGUAGES */}
-          <div className="bg-gray-50 dark:bg-slate-900/70 rounded-[2.5rem] p-6 sm:p-10 border border-gray-200 dark:border-slate-800 shadow-2xl relative overflow-hidden">
+          <div className="bg-gray-50 dark:bg-slate-900/70 rounded-[2.5rem] p-6 sm:p-10 border border-[#B8C7DA] dark:border-slate-800 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-xs font-bold uppercase tracking-wider mb-3">
@@ -259,14 +259,14 @@ export default function Homepage() {
               ].map((lang) => (
                 <div
                   key={lang.slug}
-                  className="rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/90 p-6 flex flex-col justify-between hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1 shadow-md group"
+                  className="rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800/90 p-6 flex flex-col justify-between hover:border-[#8FA6C5] transition-all duration-300 hover:-translate-y-1 shadow-md group"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-4">
                       <div className="w-12 h-12 rounded-2xl bg-primary-500/10 text-primary-400 font-bold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
                         {lang.symbol}
                       </div>
-                      <span className="text-[10px] px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-gray-600 dark:text-slate-400 font-semibold">
+                      <span className="text-[10px] px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-gray-600 dark:text-slate-400 font-semibold">
                         {lang.badge}
                       </span>
                     </div>
@@ -294,9 +294,9 @@ export default function Homepage() {
 
 
           {/* 1. ⌨️ SECTION: PRACTICE */}
-          <section id="practice" aria-label="Hindi Typing Practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#D9E1EC] dark:border-slate-800 relative overflow-hidden scroll-mt-20">
+          <section id="practice" aria-label="Hindi Typing Practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#B8C7DA] dark:border-slate-800 relative overflow-hidden scroll-mt-20">
              <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
-             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-6 flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+             <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-6 flex items-center gap-2 border-b border-[#E2E8F0] dark:border-slate-800 pb-4">
                <span className="w-2.5 h-6 rounded-full bg-primary-600"></span>
                Hindi Typing Practice
              </h2>
@@ -309,9 +309,9 @@ export default function Homepage() {
           </section>
 
           {/* 2. 📚 SECTION: LEARN (Step by Step Hindi Typing Learning System) */}
-          <section id="learn" aria-label="Learn Hindi Typing" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-8 relative overflow-hidden scroll-mt-20">
+          <section id="learn" aria-label="Learn Hindi Typing" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#B8C7DA] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-8 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
-            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+            <div className="border-b border-[#E2E8F0] dark:border-slate-800 pb-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-semibold mb-3">
                 📚 Complete Learning System
               </div>
@@ -330,7 +330,7 @@ export default function Homepage() {
               {/* Card 1: Interactive Lessons */}
               <Link
                 href="/learn#existing-lessons"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -352,7 +352,7 @@ export default function Homepage() {
               {/* Card 2: Key-by-Key Learning */}
               <Link
                 href="/learn#key-practice"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -374,7 +374,7 @@ export default function Homepage() {
               {/* Card 3: Finger Placement */}
               <Link
                 href="/learn#finger-guide"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -396,7 +396,7 @@ export default function Homepage() {
               {/* Card 4: Matra Mastery */}
               <Link
                 href="/learn#matra-mastery"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -418,7 +418,7 @@ export default function Homepage() {
               {/* Card 5: Difficult Words & Mistakes */}
               <Link
                 href="/learn#difficult-words"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -440,7 +440,7 @@ export default function Homepage() {
               {/* Card 6: Typing Challenges */}
               <Link
                 href="/learn#final-challenges"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -462,7 +462,7 @@ export default function Homepage() {
             </div>
 
             {/* Compact Learning Journey Visualization & Progression Indicator */}
-            <div className="rounded-2xl bg-[#EEF2F7] dark:bg-slate-950/60 border border-[#D9E1EC] dark:border-slate-800/80 p-5">
+            <div className="rounded-2xl bg-[#EEF2F7] dark:bg-slate-950/60 border border-[#B8C7DA] dark:border-slate-800/80 p-5">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -474,22 +474,22 @@ export default function Homepage() {
                     </span>
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs font-medium text-slate-700 dark:text-gray-300">
-                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Learn Characters</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">Learn Characters</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Practice Keys</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">Practice Keys</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Master Matras</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">Master Matras</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Type Words</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">Type Words</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Build Speed</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">Build Speed</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
                     <span className="px-2.5 py-1 rounded-lg bg-emerald-600 text-white font-semibold shadow-sm">Take Challenges</span>
                   </div>
                 </div>
 
                 {/* Small progression meter badge */}
-                <div className="flex items-center gap-3 self-start lg:self-auto bg-white dark:bg-slate-900 px-3.5 py-2 rounded-xl border border-[#D9E1EC] dark:border-slate-800 shadow-sm">
+                <div className="flex items-center gap-3 self-start lg:self-auto bg-white dark:bg-slate-900 px-3.5 py-2 rounded-xl border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
                   <span className="text-lg">📈</span>
                   <div className="text-left">
                     <div className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold tracking-wider">Skill Level</div>
@@ -500,7 +500,7 @@ export default function Homepage() {
             </div>
 
             {/* Prominent Call to Action */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-[#E2E8F0] dark:border-slate-800">
               <p className="text-xs text-[#475569] dark:text-gray-400 font-medium text-center sm:text-left">
                 Start from scratch or jump directly to your level. 100% free, saved in your browser.
               </p>
@@ -518,11 +518,11 @@ export default function Homepage() {
           <section
             id="shorthand"
             aria-label="Learn Shorthand"
-            className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-8 relative overflow-hidden scroll-mt-20"
+            className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#CBD5E1] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-8 relative overflow-hidden scroll-mt-20"
           >
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-900/20 rounded-full blur-3xl -z-10 pointer-events-none" />
             
-            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+            <div className="border-b border-[#E2E8F0] dark:border-slate-800 pb-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-xs font-semibold mb-3">
                 <span>✎</span> SHORTHAND
               </div>
@@ -541,7 +541,7 @@ export default function Homepage() {
               {/* Card 1: Learn Shorthand */}
               <Link
                 href="/shorthand"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-purple-500/50 dark:hover:border-purple-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -563,7 +563,7 @@ export default function Homepage() {
               {/* Card 2: Stroke Practice */}
               <Link
                 href="/shorthand/practice"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-purple-500/50 dark:hover:border-purple-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -585,7 +585,7 @@ export default function Homepage() {
               {/* Card 3: Audio Dictation */}
               <Link
                 href="/shorthand/dictation"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-purple-500/50 dark:hover:border-purple-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -607,7 +607,7 @@ export default function Homepage() {
               {/* Card 4: Stenography Tests */}
               <Link
                 href="/shorthand/tests"
-                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#D9E1EC] dark:border-slate-800/80 hover:border-purple-500/50 dark:hover:border-purple-500/50 hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/50 border border-[#CBD5E1] dark:border-slate-800/80 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5 group flex flex-col justify-between"
               >
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-3 group-hover:scale-105 transition-transform">
@@ -629,7 +629,7 @@ export default function Homepage() {
             </div>
 
             {/* Structured Shorthand Roadmap Indicator */}
-            <div className="rounded-2xl bg-[#EEF2F7] dark:bg-slate-950/60 border border-[#D9E1EC] dark:border-slate-800/80 p-5">
+            <div className="rounded-2xl bg-[#EEF2F7] dark:bg-slate-950/60 border border-[#B8C7DA] dark:border-slate-800/80 p-5">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -641,19 +641,19 @@ export default function Homepage() {
                     </span>
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs font-medium text-slate-700 dark:text-gray-300">
-                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Basic Strokes</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">Basic Strokes</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Vowels & Diphthongs</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">Vowels & Diphthongs</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Short Forms</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">Short Forms</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
-                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 shadow-sm">Audio Dictation</span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">Audio Dictation</span>
                     <span className="text-gray-500 dark:text-slate-400 text-xs">→</span>
                     <span className="px-2.5 py-1 rounded-lg bg-purple-600 text-white font-semibold shadow-sm">Steno Exam Sim</span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 self-start lg:self-auto bg-white dark:bg-slate-900 px-3.5 py-2 rounded-xl border border-[#D9E1EC] dark:border-slate-800 shadow-sm">
+                <div className="flex items-center gap-3 self-start lg:self-auto bg-white dark:bg-slate-900 px-3.5 py-2 rounded-xl border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
                   <span className="text-lg">🎯</span>
                   <div className="text-left">
                     <div className="text-[10px] text-gray-500 dark:text-slate-400 uppercase font-bold tracking-wider">Exam Speed</div>
@@ -664,14 +664,14 @@ export default function Homepage() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-[#E2E8F0] dark:border-slate-800">
               <p className="text-xs text-[#475569] dark:text-gray-400 font-medium text-center sm:text-left">
                 Complete stenographer preparation platform with audio dictation player and stroke exercises.
               </p>
               <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto justify-end">
                 <Link
                   href="/shorthand/dictation"
-                  className="w-full sm:w-auto px-5 py-3 rounded-xl border border-[#D9E1EC] dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm"
+                  className="w-full sm:w-auto px-5 py-3 rounded-xl border border-[#CBD5E1] dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm"
                 >
                   <span>Practice Dictation</span>
                   <span>→</span>
@@ -688,9 +688,9 @@ export default function Homepage() {
           </section>
 
           {/* 3. 🎮 SECTION: GAME */}
-          <section id="game" aria-label="Typing Word Games" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
+          <section id="game" aria-label="Typing Word Games" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#B8C7DA] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-[#E2E8F0] dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-purple-500"></span>
               Typing Word Games
             </h2>
@@ -716,9 +716,9 @@ export default function Homepage() {
           </section>
 
           {/* 4. ⏱️ SECTION: TEST */}
-          <section id="test" aria-label="Typing Test" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
+          <section id="test" aria-label="Typing Test" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#B8C7DA] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-[#E2E8F0] dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-amber-500"></span>
               Typing Test (Timed Exams Simulator)
             </h2>
@@ -726,19 +726,19 @@ export default function Homepage() {
               Evaluate your typing speed in both <strong>Hindi and English</strong> under realistic competitive exam environments. Learn how key recruitment tests evaluate candidates:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-2">
-              <div className="border border-[#D9E1EC] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
+              <div className="border border-[#CBD5E1] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
                 <h4 className="font-extrabold text-slate-900 dark:text-white text-sm mb-1">SSC Typing Exams</h4>
                 <p className="text-xs text-[#475569] dark:text-slate-300 font-medium leading-relaxed">
                   Conducted on-screen for 10 minutes. Requires 35 WPM in English or 30 WPM in Hindi. Strict category-wise error threshold limits (5% to 7%) are evaluated dynamically.
                 </p>
               </div>
-              <div className="border border-[#D9E1EC] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
+              <div className="border border-[#CBD5E1] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
                 <h4 className="font-extrabold text-slate-900 dark:text-white text-sm mb-1">LDC & Clerk Jobs</h4>
                 <p className="text-xs text-[#475569] dark:text-slate-300 font-medium leading-relaxed">
                   Requires a typing speed of 30-35 WPM. Depending on state boards (like CPCT, High Courts), backspace edits might be fully disabled or carry high speed penalties.
                 </p>
               </div>
-              <div className="border border-[#D9E1EC] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
+              <div className="border border-[#CBD5E1] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm">
                 <h4 className="font-extrabold text-slate-900 dark:text-white text-sm mb-1">Stenographer Grade C & D</h4>
                 <p className="text-xs text-[#475569] dark:text-slate-300 font-medium leading-relaxed">
                   Focuses on Shorthand transcription on computer. English transcription time is 50/40 mins and Hindi transcription time is 65/55 mins.
@@ -754,10 +754,10 @@ export default function Homepage() {
           </section>
 
           {/* 5. 🔍 SECTION: KEYBOARD */}
-          <section id="keyboard-layout" aria-label="InScript Keyboard Layout" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
+          <section id="keyboard-layout" aria-label="InScript Keyboard Layout" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#B8C7DA] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
             <span id="keyboard" className="scroll-mt-20" />
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-sky-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-[#E2E8F0] dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-sky-500"></span>
               InScript Keyboard Layout
             </h2>
@@ -775,9 +775,9 @@ export default function Homepage() {
           </section>
 
           {/* 6. 🌐 SECTION: TRANSLATORS */}
-          <section id="translators" aria-label="Regional Language Translators" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
+          <section id="translators" aria-label="Regional Language Translators" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#B8C7DA] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-violet-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-[#E2E8F0] dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-violet-500"></span>
               Regional Language Translators
             </h2>
@@ -789,7 +789,7 @@ export default function Homepage() {
                 <Link
                   key={`home-trans-${lang.name}`}
                   href={`/translators/english-to-${lang.name.toLowerCase()}`}
-                  className="flex flex-col items-center justify-center p-5 border border-[#D9E1EC] dark:border-slate-800 hover:border-violet-500 dark:hover:border-violet-500 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md transition-all text-center group"
+                  className="flex flex-col items-center justify-center p-5 border border-[#CBD5E1] dark:border-slate-800 hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5] rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md transition-all text-center group"
                 >
                   <span className="text-xl mb-1 text-[#475569] dark:text-slate-400 font-bold group-hover:text-violet-600 transition-colors">A→{lang.nativeChar}</span>
                   <span className="text-xs font-bold text-[#17243A] dark:text-gray-200">English to {lang.name}</span>
@@ -804,9 +804,9 @@ export default function Homepage() {
           </section>
 
           {/* 7. 📰 SECTION: BLOG */}
-          <section id="blog" aria-label="Latest Typing and Exam Guides" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
+          <section id="blog" aria-label="Latest Typing and Exam Guides" className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#B8C7DA] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-6 relative overflow-hidden scroll-mt-20">
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-100/30 rounded-full blur-3xl -z-10 pointer-events-none dark:hidden" />
-            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+            <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-[#E2E8F0] dark:border-slate-800 pb-4">
               <span className="w-2.5 h-6 rounded-full bg-slate-500"></span>
               Latest Typing & Exam Guides
             </h2>
@@ -818,7 +818,7 @@ export default function Homepage() {
                 <Link
                   key={blog.slug}
                   href={`/blog/${blog.slug}`}
-                  className="group border border-[#D9E1EC] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md hover:border-primary-400 dark:hover:border-primary-600 transition-all flex flex-col justify-between"
+                  className="group border border-[#CBD5E1] dark:border-slate-800 p-5 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900/50 shadow-sm hover:shadow-md hover:border-[#8FA6C5] dark:hover:border-primary-600 transition-all flex flex-col justify-between"
                 >
                   <div>
                     {/* Featured Image Thumbnail */}
@@ -862,9 +862,9 @@ export default function Homepage() {
 
 
           {/* Text Dense Content mimicking TypingBaba */}
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#D9E1EC] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-10">
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-[#B8C7DA] dark:border-slate-800/80 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] p-6 md:p-10 space-y-10">
             
-            <div className="border-b border-blue-200 dark:border-gray-800 pb-2 mb-4">
+            <div className="border-b border-[#E2E8F0] dark:border-gray-800 pb-2 mb-4">
                <h2 className="text-2xl font-normal text-red-600 inline-block">TypeHindi</h2><span className="text-2xl font-normal text-blue-800 dark:text-blue-400">.in</span>
             </div>
 
@@ -874,21 +874,21 @@ export default function Homepage() {
             </div>
 
             <div>
-               <h3 className="text-xl font-light text-[#17243A] dark:text-gray-200 font-semibold mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">Why Typing Skills Matter?</h3>
+               <h3 className="text-xl font-light text-[#17243A] dark:text-gray-200 font-semibold mb-3 border-b border-[#E2E8F0] dark:border-gray-800 pb-2">Why Typing Skills Matter?</h3>
               <p className="text-[#27364B] dark:text-gray-300 text-sm leading-relaxed">
                 In today's modern age, no matter what you do, you will likely need to work on a keyboard. If you do not know how to type, you will waste valuable time searching for keys. Developing proper typing skills significantly enhances productivity, improves focus, reduces errors, and saves your precious time.
               </p>
             </div>
 
             <div>
-               <h3 className="text-xl font-light text-[#17243A] dark:text-gray-200 font-semibold mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">Why Learn Typing Online?</h3>
+               <h3 className="text-xl font-light text-[#17243A] dark:text-gray-200 font-semibold mb-3 border-b border-[#E2E8F0] dark:border-gray-800 pb-2">Why Learn Typing Online?</h3>
               <p className="text-[#27364B] dark:text-gray-300 text-sm leading-relaxed">
                 Learning typing from an instructor in an academy can consume a lot of time and energy that could be spent on other tasks. Learning typing online from the comfort of your home gives you the flexibility to practice anytime and learn at your own pace, which is a great advantage in today's competitive world.
               </p>
             </div>
 
             <div>
-               <h3 className="text-xl font-light text-[#17243A] dark:text-gray-200 font-semibold mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">Tools Provided by TypeHindi.in</h3>
+               <h3 className="text-xl font-light text-[#17243A] dark:text-gray-200 font-semibold mb-3 border-b border-[#E2E8F0] dark:border-gray-800 pb-2">Tools Provided by TypeHindi.in</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">These are the primary tools offered by TypeHindi.in.</p>
               
               <div className="grid md:grid-cols-3 gap-6">
@@ -932,7 +932,7 @@ export default function Homepage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-light text-[#17243A] dark:text-gray-200 font-semibold mb-3 border-b border-gray-100 dark:border-gray-800 pb-2">Frequently Asked Questions (FAQ)</h3>
+              <h3 className="text-xl font-light text-[#17243A] dark:text-gray-200 font-semibold mb-3 border-b border-[#E2E8F0] dark:border-gray-800 pb-2">Frequently Asked Questions (FAQ)</h3>
               <div className="space-y-3 text-sm">
                 <div>
                   <span className="text-red-600 dark:text-red-400 font-bold">Q:</span> <span className="text-[#17243A] dark:text-gray-200 font-semibold">Is TypeHindi free to use?</span><br />
@@ -954,7 +954,7 @@ export default function Homepage() {
             </div>
 
             
-            <div className="border-t border-gray-100 dark:border-gray-800 pt-4 text-center text-sm text-[#475569] dark:text-gray-400 font-medium">
+            <div className="border-t border-[#E2E8F0] dark:border-gray-800 pt-4 text-center text-sm text-[#475569] dark:text-gray-400 font-medium">
               Thank you for visiting our website! 🎯
             </div>
 

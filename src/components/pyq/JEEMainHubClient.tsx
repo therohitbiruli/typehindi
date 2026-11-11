@@ -117,7 +117,7 @@ export function JEEMainHubClient({ papers, allShifts }: Props) {
   return (
     <div className="space-y-8">
       {/* Search and Filter Panel */}
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
+      <div className="bg-white dark:bg-slate-900 border border-[#B8C7DA] dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
         {/* Search Bar */}
         <div className="relative mb-6">
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-400">
@@ -130,7 +130,7 @@ export function JEEMainHubClient({ papers, allShifts }: Props) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search papers by date (e.g. 8 April, 28 Jan), shift, or year..."
-            className="w-full pl-12 pr-10 py-3.5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm md:text-base"
+            className="w-full pl-12 pr-10 py-3.5 rounded-2xl border border-[#B8C7DA] dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm md:text-base"
           />
           {searchQuery && (
             <button
@@ -183,14 +183,14 @@ export function JEEMainHubClient({ papers, allShifts }: Props) {
         </div>
 
         {/* Dropdown Filters Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-[#E2E8F0] dark:border-slate-800 text-xs">
           {/* Session */}
           <div>
             <label className="block text-[11px] font-semibold text-slate-500 mb-1.5">Session</label>
             <select
               value={selectedSession}
               onChange={(e) => setSelectedSession(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
+              className="w-full px-3 py-2 rounded-xl border border-[#B8C7DA] dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
             >
               <option value="all">All Sessions</option>
               {availableSessions.map((sess) => (
@@ -205,7 +205,7 @@ export function JEEMainHubClient({ papers, allShifts }: Props) {
             <select
               value={selectedShift}
               onChange={(e) => setSelectedShift(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
+              className="w-full px-3 py-2 rounded-xl border border-[#B8C7DA] dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
             >
               <option value="all">All Shifts</option>
               <option value="1">Shift 1 (Morning)</option>
@@ -219,7 +219,7 @@ export function JEEMainHubClient({ papers, allShifts }: Props) {
             <select
               value={selectedPaperType}
               onChange={(e) => setSelectedPaperType(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
+              className="w-full px-3 py-2 rounded-xl border border-[#B8C7DA] dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
             >
               <option value="all">All Paper Types</option>
               <option value="Paper 1 (B.E./B.Tech)">Paper 1 (B.E./B.Tech)</option>
@@ -233,7 +233,7 @@ export function JEEMainHubClient({ papers, allShifts }: Props) {
             <select
               value={selectedLanguage}
               onChange={(e) => setSelectedLanguage(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
+              className="w-full px-3 py-2 rounded-xl border border-[#B8C7DA] dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-500"
             >
               <option value="all">All Languages</option>
               <option value="en">English PDF</option>
@@ -243,7 +243,7 @@ export function JEEMainHubClient({ papers, allShifts }: Props) {
         </div>
 
         {/* Active Filters & View Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mt-5 pt-4 border-t border-slate-100 dark:border-slate-800">
+        <div className="flex flex-wrap items-center justify-between gap-3 mt-5 pt-4 border-t border-[#E2E8F0] dark:border-slate-800">
           <div className="flex items-center gap-2">
             <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">
               Showing <strong className="text-slate-900 dark:text-white font-bold">{filteredShifts.length}</strong> of {allShifts.length} verified papers
@@ -286,7 +286,7 @@ export function JEEMainHubClient({ papers, allShifts }: Props) {
 
       {/* Results Section */}
       {filteredShifts.length === 0 ? (
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-12 text-center shadow-sm">
+        <div className="bg-white dark:bg-slate-900 border border-[#B8C7DA] dark:border-slate-800 rounded-3xl p-12 text-center shadow-sm">
           <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400">
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -312,7 +312,7 @@ export function JEEMainHubClient({ papers, allShifts }: Props) {
 
             return (
               <section key={year} className="space-y-4">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pb-3 border-b border-slate-200 dark:border-slate-800">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pb-3 border-b border-[#E2E8F0] dark:border-slate-800">
                   <div className="flex items-center gap-3">
                     <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white">
                       JEE Main {year}
@@ -366,7 +366,7 @@ function PaperCard({ shift, yearSlug }: PaperCardProps) {
   const isDigitized = shift.slug === "jee-main-2026-online-8th-april-evening-shift";
 
   return (
-    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+    <div className="bg-white dark:bg-slate-900 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
       <div>
         {/* Top Badges */}
         <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -417,7 +417,7 @@ function PaperCard({ shift, yearSlug }: PaperCardProps) {
       </div>
 
       {/* Action Buttons */}
-      <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2.5">
+      <div className="pt-4 border-t border-[#E2E8F0] dark:border-slate-800 space-y-2.5">
         <div className="flex flex-wrap items-center gap-2">
           {isDigitized ? (
             <>
@@ -471,7 +471,7 @@ function PaperCard({ shift, yearSlug }: PaperCardProps) {
               href={shift.englishPdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:border-primary-400 dark:hover:border-primary-500 transition-colors"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold dark:hover:border-[#8FA6C5] transition-colors"
             >
               <svg className="w-3 h-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -484,7 +484,7 @@ function PaperCard({ shift, yearSlug }: PaperCardProps) {
               href={shift.hindiPdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:border-primary-400 dark:hover:border-primary-500 transition-colors"
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold dark:hover:border-[#8FA6C5] transition-colors"
             >
               <svg className="w-3 h-3 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />

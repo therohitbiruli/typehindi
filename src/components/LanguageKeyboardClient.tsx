@@ -61,7 +61,7 @@ export function LanguageKeyboardClient({
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
               l.id === langConfig.id
                 ? "bg-primary-600 text-white shadow-sm"
-                : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-gray-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-800"
+                : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-gray-100 dark:bg-slate-800 border border-[#CBD5E1] dark:border-slate-800"
             }`}
           >
             <span>{l.symbol}</span>
@@ -71,9 +71,9 @@ export function LanguageKeyboardClient({
       </div>
 
       {/* Interactive Keyboard Canvas Card */}
-      <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl shadow-primary-500/5 mb-10">
+      <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-xl shadow-primary-500/5 mb-10">
         {/* Keyboard Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E2E8F0] dark:border-slate-800">
           <div>
             <h2 className="font-bold text-sm text-gray-900 dark:text-white">
               Virtual {langConfig.name} Keyboard
@@ -115,12 +115,12 @@ export function LanguageKeyboardClient({
       </div>
 
       {/* Principles of the Layout */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <span>🧠</span> How the {langConfig.layoutName} Works
         </h2>
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5">
               1. Phonetic Symmetry
             </h3>
@@ -128,7 +128,7 @@ export function LanguageKeyboardClient({
               Vowels and matras are placed on the left hand, while consonants are organized logically on the right hand.
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5">
               2. Shift Key Pairs
             </h3>
@@ -136,7 +136,7 @@ export function LanguageKeyboardClient({
               Unaspirated consonants (e.g. क, त, प) are typed unshifted. Pressing Shift on the same key produces the aspirated form (ख, थ, फ).
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5">
               3. Halant / Virama
             </h3>
@@ -148,7 +148,7 @@ export function LanguageKeyboardClient({
       </section>
 
       {/* Searchable Key-by-Key Character Table */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           <div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
@@ -172,7 +172,7 @@ export function LanguageKeyboardClient({
         <div className="overflow-x-auto max-h-96 overflow-y-auto">
           <table className="w-full text-left text-xs border-collapse">
             <thead className="sticky top-0 bg-slate-100 dark:bg-slate-800">
-              <tr className="border-b border-slate-200 dark:border-slate-700 text-gray-500 dark:text-gray-400">
+              <tr className="border-b border-[#E2E8F0] dark:border-slate-700 text-gray-500 dark:text-gray-400">
                 <th className="py-2.5 px-4 font-bold uppercase">Physical Key</th>
                 <th className="py-2.5 px-4 font-bold uppercase">Normal Press</th>
                 <th className="py-2.5 px-4 font-bold uppercase">Shift + Press</th>
@@ -202,7 +202,7 @@ export function LanguageKeyboardClient({
       </section>
 
       {/* Action Footer */}
-      <div className="flex flex-wrap justify-center gap-4 py-6 border-t border-slate-200 dark:border-slate-800">
+      <div className="flex flex-wrap justify-center gap-4 py-6 border-t border-[#E2E8F0] dark:border-slate-800">
         <Link
           href={`/practice/${langConfig.slug}`}
           className="btn-primary px-8 py-3 rounded-xl font-bold text-sm shadow-md"

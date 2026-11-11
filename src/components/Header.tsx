@@ -39,14 +39,14 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#DCE4EF] bg-white/95 backdrop-blur-md shadow-sm transition-colors duration-200 dark:border-slate-800/80 dark:bg-slate-950/90 dark:shadow-lg">
+    <header className="sticky top-0 z-50 border-b border-[#B8C7DA] bg-white/95 backdrop-blur-md shadow-sm transition-colors duration-200 dark:border-slate-800/80 dark:bg-slate-950/90 dark:shadow-lg">
       <div className="container-main">
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center">
             {pathname !== "/" && (
               <button
                 onClick={() => router.back()}
-                className="mr-2 sm:mr-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#DCE4EF] bg-[#F4F7FC] text-[#17243A] hover:bg-[#EAF1FB] hover:text-[#102B5C] transition-all shadow-sm dark:border-transparent dark:bg-slate-800/80 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white"
+                className="mr-2 sm:mr-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#B8C7DA] bg-[#F4F7FC] text-[#17243A] hover:bg-[#EAF1FB] hover:text-[#102B5C] hover:border-[#8FA6C5] transition-all shadow-sm dark:border-transparent dark:bg-slate-800/80 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white"
                 aria-label="Go back"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -95,7 +95,7 @@ export function Header() {
                 );
               })}
             </nav>
-            <div className="border-l border-[#DCE4EF] pl-3 dark:border-slate-800">
+            <div className="border-l border-[#E2E8F0] pl-3 dark:border-slate-800">
               <ThemeToggle />
             </div>
           </div>
@@ -124,7 +124,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="border-t border-[#DCE4EF] pb-3 pt-2 md:hidden dark:border-slate-800">
+          <nav className="border-t border-[#E2E8F0] pb-3 pt-2 md:hidden dark:border-slate-800">
             {navItems.map((item) => {
               const isActive =
                 item.href === "/"

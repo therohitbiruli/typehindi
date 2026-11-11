@@ -39,7 +39,7 @@ export default function ShorthandCurriculumPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 shrink-0 text-center sm:text-left min-w-[200px] space-y-1">
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 shrink-0 text-center sm:text-left min-w-[200px] space-y-1">
             <span className="text-[10px] text-purple-400 font-bold uppercase tracking-wider block">
               Curriculum Standard
             </span>
@@ -61,7 +61,7 @@ export default function ShorthandCurriculumPage() {
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   difficultyFilter === dif
                     ? "bg-purple-600 text-white"
-                    : "bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-[#475569] dark:text-slate-400 font-medium border border-gray-200 dark:border-slate-800"
+                    : "bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-[#475569] dark:text-slate-400 font-medium border border-[#CBD5E1] dark:border-slate-800"
                 }`}
               >
                 {dif}
@@ -113,7 +113,7 @@ export default function ShorthandCurriculumPage() {
                   <div className="flex flex-wrap items-center gap-1.5 pt-1 text-[11px] text-[#475569] dark:text-slate-300 font-medium">
                     <span className="font-semibold text-[#475569] dark:text-slate-300 font-medium">Concepts:</span>
                     {lesson.learnContent.keyPoints.slice(0, 2).map((kp, idx) => (
-                      <span key={idx} className="bg-white dark:bg-slate-950 px-2 py-0.5 rounded border border-gray-200 dark:border-slate-800">
+                      <span key={idx} className="bg-white dark:bg-slate-950 px-2 py-0.5 rounded border border-[#CBD5E1] dark:border-slate-800">
                         {kp}
                       </span>
                     ))}

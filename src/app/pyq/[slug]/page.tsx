@@ -96,7 +96,7 @@ export default async function PyqDetailPage({ params }: Props) {
       <article className="mt-8 mx-auto w-full max-w-5xl space-y-10">
         
         {/* Top Hero / Information Panel */}
-        <section className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 md:p-12 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
+        <section className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 md:p-12 border border-[#CBD5E1] dark:border-slate-800 shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
           
           <div className="max-w-3xl relative z-10">
@@ -153,7 +153,7 @@ export default async function PyqDetailPage({ params }: Props) {
                 <Link 
                   key={subject}
                   href={`/pyq/${paper.slug}/subject/${subject.toLowerCase().replace(/ /g, '-')}`}
-                  className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-md transition-all group"
+                  className="bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 p-5 rounded-2xl hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-md transition-all group"
                 >
                   <h3 className="font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 mb-1">
                     {subject}
@@ -174,7 +174,7 @@ export default async function PyqDetailPage({ params }: Props) {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {paper.shifts.map((shift, idx) => (
-              <div key={idx} className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm flex flex-col">
+              <div key={idx} className="bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 rounded-2xl p-6 shadow-sm flex flex-col">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">{shift.date}</h3>
@@ -194,7 +194,7 @@ export default async function PyqDetailPage({ params }: Props) {
                   ))}
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center gap-3">
+                <div className="mt-auto pt-4 border-t border-[#E2E8F0] dark:border-slate-800 flex flex-wrap items-center gap-3">
                   {hasQuestionsForShift(paper.examId, paper.year, shift.date, shift.shift) ? (
                     <>
                       <Link 
@@ -239,7 +239,7 @@ export default async function PyqDetailPage({ params }: Props) {
         </section>
 
         {/* SEO Article Section */}
-        <section className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 md:p-12 border border-slate-200 dark:border-slate-800 mt-12 mb-8 shadow-sm">
+        <section className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 md:p-12 border border-[#CBD5E1] dark:border-slate-800 mt-12 mb-8 shadow-sm">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-slate-900 dark:text-white">
             {paper.title}
           </h2>

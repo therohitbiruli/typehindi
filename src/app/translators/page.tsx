@@ -43,7 +43,7 @@ export default function TranslatorsPage() {
     <div className="max-w-4xl mx-auto space-y-8">
       
       {/* English to Native Section */}
-      <div className="bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-2xl p-6">
+      <div className="bg-white dark:bg-gray-900 border border-[#B8C7DA] dark:border-gray-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-2xl p-6">
         <h2 className="text-xl font-normal text-red-600 dark:text-red-400 border-b border-gray-100 dark:border-gray-800 pb-2 mb-6">English to Indian Languages (English to Native)</h2>
         
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -51,7 +51,7 @@ export default function TranslatorsPage() {
             <Link
               key={`en-${lang.name}`}
               href={`/translators/english-to-${lang.name.toLowerCase()}`}
-              className="flex flex-col items-center justify-center p-6 border border-[#D9E1EC] dark:border-gray-800 rounded-xl bg-[#F8FAFC] dark:bg-slate-900/50 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50/50 dark:hover:bg-blue-900/20 shadow-sm hover:shadow-md transition-all group"
+              className="flex flex-col items-center justify-center p-6 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-gray-800 rounded-xl bg-[#F8FAFC] dark:bg-slate-900/50 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50/50 dark:hover:bg-blue-900/20 shadow-sm hover:shadow-md transition-all group"
             >
               <span className="text-2xl mb-2 text-[#475569] dark:text-slate-400 font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400">A→{lang.nativeChar}</span>
               <span className="text-[#17243A] dark:text-gray-200 text-sm font-bold text-center">English to<br/>{lang.name}</span>
@@ -61,7 +61,7 @@ export default function TranslatorsPage() {
       </div>
 
       {/* Hindi to Native Section */}
-      <div className="bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-2xl p-6">
+      <div className="bg-white dark:bg-gray-900 border border-[#B8C7DA] dark:border-gray-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-2xl p-6">
         <h2 className="text-xl font-normal text-blue-800 dark:text-blue-400 border-b border-gray-100 dark:border-gray-800 pb-2 mb-6">Hindi to Indian Languages (Hindi to Native)</h2>
         
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -69,7 +69,7 @@ export default function TranslatorsPage() {
             <Link
               key={`hi-${lang.name}`}
               href={`/translators/hindi-to-${lang.name.toLowerCase()}`}
-              className="flex flex-col items-center justify-center p-6 border border-[#D9E1EC] dark:border-gray-800 rounded-xl bg-[#F8FAFC] dark:bg-slate-900/50 hover:border-red-400 dark:hover:border-red-500 hover:bg-red-50/50 dark:hover:bg-red-900/20 shadow-sm hover:shadow-md transition-all group"
+              className="flex flex-col items-center justify-center p-6 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-gray-800 rounded-xl bg-[#F8FAFC] dark:bg-slate-900/50 hover:border-red-400 dark:hover:border-red-500 hover:bg-red-50/50 dark:hover:bg-red-900/20 shadow-sm hover:shadow-md transition-all group"
             >
               <span className="text-2xl mb-2 text-[#475569] dark:text-slate-400 font-semibold group-hover:text-red-600 dark:group-hover:text-red-400">अ→{lang.nativeChar}</span>
               <span className="text-[#17243A] dark:text-gray-200 text-sm font-bold text-center">Hindi to<br/>{lang.name}</span>
@@ -79,7 +79,7 @@ export default function TranslatorsPage() {
       </div>
 
       {/* Explanation & FAQs */}
-      <section className="bg-white dark:bg-gray-900 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] p-8 space-y-8 rounded-2xl">
+      <section className="bg-white dark:bg-gray-900 border border-[#B8C7DA] dark:border-gray-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] p-8 space-y-8 rounded-2xl">
         <h3 className="text-2xl font-semibold text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-3">
           How this Translator Tool Works
         </h3>

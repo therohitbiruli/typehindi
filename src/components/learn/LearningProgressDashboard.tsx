@@ -90,8 +90,8 @@ export function LearningProgressDashboard({
   return (
     <div className="mb-10 space-y-6">
       {/* Main Learning Journey Dashboard Card */}
-      <div className="relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-white via-indigo-50/20 to-purple-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-indigo-955/20 p-6 md:p-8 shadow-sm">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-gray-150 dark:border-gray-800">
+      <div className="relative overflow-hidden rounded-3xl border border-[#B8C7DA] dark:border-gray-800 bg-gradient-to-br from-white via-indigo-50/20 to-purple-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-indigo-955/20 p-6 md:p-8 shadow-sm">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[#E2E8F0] dark:border-gray-800">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 text-xs font-semibold mb-2">
               <span>🚀 Complete Learning System</span>
@@ -106,7 +106,7 @@ export function LearningProgressDashboard({
           </div>
 
           {/* Overall Progress Gauge */}
-          <div className="flex items-center gap-4 bg-white dark:bg-gray-800/80 p-4 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm self-start md:self-auto">
+          <div className="flex items-center gap-4 bg-white dark:bg-gray-800/80 p-4 rounded-2xl border border-[#CBD5E1] dark:border-gray-700 shadow-sm self-start md:self-auto">
             <div className="relative w-16 h-16 flex items-center justify-center">
               <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
                 <path
@@ -143,7 +143,7 @@ export function LearningProgressDashboard({
 
         {/* Metrics Overview Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
+          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#CBD5E1] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
             <div className="flex items-center justify-between text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 mb-1">
               <span>Daily Path</span>
               <span className="text-base">🗓️</span>
@@ -159,7 +159,7 @@ export function LearningProgressDashboard({
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
+          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#CBD5E1] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
             <div className="flex items-center justify-between text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 mb-1">
               <span>Keys Mastered</span>
               <span className="text-base">⌨️</span>
@@ -175,7 +175,7 @@ export function LearningProgressDashboard({
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
+          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#CBD5E1] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
             <div className="flex items-center justify-between text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 mb-1">
               <span>Matra Mastery</span>
               <span className="text-base">🎯</span>
@@ -191,7 +191,7 @@ export function LearningProgressDashboard({
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#D9E1EC] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
+          <div className="p-4 rounded-2xl bg-white dark:bg-gray-800/60 border border-[#CBD5E1] dark:border-gray-800 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.04)]">
             <div className="flex items-center justify-between text-xs text-gray-400 dark:text-slate-500 dark:text-gray-400 mb-1">
               <span>Challenges</span>
               <span className="text-base">🏆</span>
@@ -209,7 +209,7 @@ export function LearningProgressDashboard({
         </div>
 
         {/* Streak & Reset Row */}
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-500 dark:text-gray-400 pt-3 border-t border-gray-100 dark:border-gray-800/60">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-500 dark:text-gray-400 pt-3 border-t border-[#E2E8F0] dark:border-gray-800/60">
           <div className="flex items-center gap-2">
             <span className="text-base">🔥</span>
             <span className="font-semibold text-gray-700 dark:text-gray-300">
@@ -236,7 +236,7 @@ export function LearningProgressDashboard({
           <button
             key={sec.href}
             onClick={() => scrollToSection(sec.href)}
-            className="flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:border-primary-400 dark:hover:border-primary-600 hover:text-primary-600 dark:hover:text-primary-400 transition-all shadow-sm"
+            className="flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#CBD5E1] dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-semibold text-gray-700 dark:text-gray-300 hover:border-[#8FA6C5] dark:hover:border-primary-600 hover:text-primary-600 dark:hover:text-primary-400 transition-all shadow-sm"
           >
             <span>{sec.icon}</span>
             <span>{sec.label}</span>
@@ -247,7 +247,7 @@ export function LearningProgressDashboard({
       {/* Confirmation Modal for Reset */}
       {showResetModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-          <div className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 p-6 max-w-sm w-full shadow-2xl space-y-4">
+          <div className="bg-white dark:bg-gray-900 rounded-3xl border border-[#B8C7DA] dark:border-gray-800 p-6 max-w-sm w-full shadow-2xl space-y-4">
             <h4 className="text-lg font-bold text-gray-900 dark:text-white">
               Reset Learning Progress?
             </h4>

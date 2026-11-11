@@ -93,9 +93,9 @@ export function FingerPlacementGuide() {
 
   return (
     <section id="finger-guide" className="mb-14 scroll-mt-20">
-      <div className="border border-gray-200 dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
+      <div className="border border-[#CBD5E1] dark:border-gray-800 rounded-3xl overflow-hidden bg-white dark:bg-gray-950 shadow-sm">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-50/80 via-indigo-50/50 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-gray-150 dark:border-gray-800">
+        <div className="bg-gradient-to-r from-blue-50/80 via-indigo-50/50 to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-6 md:p-8 border-b border-[#E2E8F0] dark:border-gray-800">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-semibold mb-2">
@@ -157,7 +157,7 @@ export function FingerPlacementGuide() {
                         className={`px-2.5 py-1 rounded-lg text-xs font-semibold capitalize transition-all ${
                           difficulty === d
                             ? "bg-indigo-600 text-white shadow-sm"
-                            : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700"
+                            : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-[#CBD5E1] dark:border-gray-700"
                         }`}
                       >
                         {d}
@@ -205,11 +205,11 @@ export function FingerPlacementGuide() {
 
               {/* Score & Streak */}
               <div className="flex items-center gap-4 text-center">
-                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-xl font-bold text-indigo-600 dark:text-indigo-400">{score}</div>
                   <div className="text-[10px] uppercase font-bold text-gray-400">Score</div>
                 </div>
-                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <div className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700">
                   <div className="text-xl font-bold text-amber-500">{streak} 🔥</div>
                   <div className="text-[10px] uppercase font-bold text-gray-400">Streak</div>
                 </div>
@@ -232,7 +232,7 @@ export function FingerPlacementGuide() {
           {/* Hands Selector */}
           <div className="grid md:grid-cols-2 gap-6">
             {/* Left Hand Card */}
-            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 text-center">
+            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-xl">🤚</span>
                 <h4 className="text-base font-bold text-gray-900 dark:text-white">
@@ -281,7 +281,7 @@ export function FingerPlacementGuide() {
             </div>
 
             {/* Right Hand Card */}
-            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 text-center">
+            <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-xl">✋</span>
                 <h4 className="text-base font-bold text-gray-900 dark:text-white">
@@ -330,8 +330,8 @@ export function FingerPlacementGuide() {
           </div>
 
           {/* Selected Finger Details & Assigned Keys Grid */}
-          <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-gray-150 dark:border-gray-800 space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-gray-200 dark:border-gray-800">
+          <div className="p-6 rounded-3xl bg-gray-50 dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#E2E8F0] dark:border-gray-800">
               <div>
                 <span className="text-[10px] uppercase font-bold tracking-wider text-gray-400">
                   Selected Finger
@@ -355,7 +355,7 @@ export function FingerPlacementGuide() {
                 {keysForSelectedFinger.map((key) => (
                   <div
                     key={key.code}
-                    className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col items-center justify-center text-center space-y-1 hover:border-primary-400 transition-all"
+                    className="p-3 rounded-2xl bg-white dark:bg-gray-800 border border-[#CBD5E1] dark:border-gray-700 shadow-sm flex flex-col items-center justify-center text-center space-y-1 hover:border-[#8FA6C5] transition-all"
                   >
                     <kbd className="px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-900 font-mono text-xs font-bold text-gray-700 dark:text-gray-300">
                       {key.keyLabel}

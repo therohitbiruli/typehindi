@@ -164,7 +164,7 @@ export const TypingBox = memo(function TypingBox({
     <div className="space-y-4" onClick={handleFocus}>
       {/* Target text display */}
       <div
-        className={`card cursor-text select-none ${fontClass} text-lg md:text-xl leading-relaxed tracking-wide bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 pr-12 rounded-2xl text-left shadow-sm`}
+        className={`card cursor-text select-none ${fontClass} text-lg md:text-xl leading-relaxed tracking-wide bg-slate-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 p-4 pr-12 rounded-2xl text-left shadow-sm`}
         onClick={handleFocus}
         id="typing-target"
       >
@@ -194,7 +194,7 @@ export const TypingBox = memo(function TypingBox({
           onPaste={preventCopyPaste}
           onCut={preventCopyPaste}
           disabled={isFinished}
-          className={`w-full resize-none rounded-2xl border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 ${fontClass} text-lg leading-relaxed text-slate-900 dark:text-white caret-blue-600 dark:caret-primary-400 placeholder:text-gray-400 dark:placeholder:text-slate-500 focus:border-primary-500 dark:focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 disabled:bg-gray-100 dark:disabled:bg-slate-800 disabled:cursor-not-allowed shadow-sm`}
+          className={`w-full resize-none rounded-2xl border-2 border-[#B8C7DA] dark:border-slate-700 bg-white dark:bg-slate-900 p-4 ${fontClass} text-lg leading-relaxed text-slate-900 dark:text-white caret-blue-600 dark:caret-primary-400 placeholder:text-gray-400 dark:placeholder:text-slate-500 focus:border-[#102B5C] dark:focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-[#102B5C]/20 disabled:bg-gray-100 dark:disabled:bg-slate-800 disabled:cursor-not-allowed shadow-sm`}
           rows={4}
           placeholder={isStarted ? "" : "Start typing here..."}
           spellCheck={false}

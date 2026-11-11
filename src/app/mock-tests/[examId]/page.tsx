@@ -59,7 +59,7 @@ export default async function ExamMockTestsPage({ params }: Props) {
           <Link
             key={testNum}
             href={`/mock-tests/${examId}/test-${testNum}`}
-            className="flex items-center justify-between bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl hover:border-primary-500 hover:shadow-lg transition-all group"
+            className="flex items-center justify-between bg-white dark:bg-slate-900 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 p-6 rounded-2xl hover:shadow-lg transition-all group"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-primary-50 dark:bg-primary-900/20 text-primary-600 rounded-full flex items-center justify-center font-bold text-xl group-hover:bg-primary-500 group-hover:text-white transition-colors">

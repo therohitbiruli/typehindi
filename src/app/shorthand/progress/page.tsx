@@ -49,7 +49,7 @@ export default function ShorthandProgressPage() {
 
         {/* Top 4 KPI Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+          <div className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-center">
             <span className="text-[10px] uppercase font-bold text-amber-400">Current Streak</span>
             <div className="text-2xl sm:text-3xl font-black text-[#17243A] dark:text-slate-100 mt-1">
               ⚡ {progress.currentStreak} Days
@@ -59,7 +59,7 @@ export default function ShorthandProgressPage() {
             </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+          <div className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-center">
             <span className="text-[10px] uppercase font-bold text-purple-400">Curriculum</span>
             <div className="text-2xl sm:text-3xl font-black text-purple-400 mt-1">
               {completedCount} / 13
@@ -69,7 +69,7 @@ export default function ShorthandProgressPage() {
             </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+          <div className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-center">
             <span className="text-[10px] uppercase font-bold text-sky-400">Best Dictation Speed</span>
             <div className="text-2xl sm:text-3xl font-black text-sky-400 mt-1">
               {progress.bestDictationWpm > 0 ? `${progress.bestDictationWpm} WPM` : "—"}
@@ -79,7 +79,7 @@ export default function ShorthandProgressPage() {
             </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-center">
+          <div className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-center">
             <span className="text-[10px] uppercase font-bold text-emerald-400">Best Transcription</span>
             <div className="text-2xl sm:text-3xl font-black text-emerald-400 mt-1">
               {progress.bestAccuracy > 0 ? `${progress.bestAccuracy}%` : "—"}
@@ -92,13 +92,13 @@ export default function ShorthandProgressPage() {
 
         {/* Words Dictated & Transcribed */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-2">
+          <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-2">
             <span className="text-xs font-bold uppercase tracking-wider text-purple-400">Audio Experience</span>
             <div className="text-2xl font-black text-[#17243A] dark:text-slate-100">{progress.totalWordsDictated} Words</div>
             <p className="text-xs text-[#475569] dark:text-slate-300 font-medium">Total volume of spoken English dictation words practiced.</p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-2">
+          <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-2">
             <span className="text-xs font-bold uppercase tracking-wider text-sky-400">Keyboard Transcription</span>
             <div className="text-2xl font-black text-[#17243A] dark:text-slate-100">{progress.totalWordsTranscribed} Words</div>
             <p className="text-xs text-[#475569] dark:text-slate-300 font-medium">Total words typed and evaluated on computer keyboard.</p>
@@ -106,8 +106,8 @@ export default function ShorthandProgressPage() {
         </div>
 
         {/* Recent Test History Table */}
-        <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-4">
-          <div className="flex items-center justify-between border-b border-gray-200 dark:border-slate-800 pb-3">
+        <div className="p-6 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 space-y-4">
+          <div className="flex items-center justify-between border-b border-[#E2E8F0] dark:border-slate-800 pb-3">
             <h3 className="text-base font-bold text-[#17243A] dark:text-slate-100">Recent Stenography Exam Attempts</h3>
             <Link href="/shorthand/tests" className="text-xs text-purple-400 hover:underline">
               Take New Test →
@@ -117,7 +117,7 @@ export default function ShorthandProgressPage() {
           {progress.testHistory.length > 0 ? (
             <div className="overflow-x-auto">
               <table className="w-full text-xs text-left text-[#475569] dark:text-slate-300 font-medium">
-                <thead className="text-[10px] uppercase tracking-wider text-[#475569] dark:text-slate-400 font-medium bg-white dark:bg-slate-950 border-b border-gray-200 dark:border-slate-800">
+                <thead className="text-[10px] uppercase tracking-wider text-[#475569] dark:text-slate-400 font-medium bg-white dark:bg-slate-950 border-b border-[#E2E8F0] dark:border-slate-800">
                   <tr>
                     <th className="p-3">Date</th>
                     <th className="p-3">Exam / Passage</th>

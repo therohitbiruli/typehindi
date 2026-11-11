@@ -38,7 +38,7 @@ export default function ShorthandDictationPage() {
         </Suspense>
 
         {/* Speed Milestones Ladder directly server-rendered */}
-        <div className="pt-6 border-t border-gray-200 dark:border-slate-800 space-y-4">
+        <div className="pt-6 border-t border-[#E2E8F0] dark:border-slate-800 space-y-4">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               Speed Ladder

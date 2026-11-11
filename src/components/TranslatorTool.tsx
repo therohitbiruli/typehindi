@@ -29,8 +29,8 @@ export function TranslatorTool({ language, hindiLanguageName, sourceLanguage }: 
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm p-4 md:p-6 mb-8">
-      <h2 className="text-xl font-normal text-blue-800 dark:text-blue-400 border-b border-gray-100 dark:border-gray-800 pb-2 mb-4 capitalize">
+    <div className="bg-white dark:bg-gray-900 border border-[#CBD5E1] dark:border-gray-800 shadow-sm p-4 md:p-6 mb-8">
+      <h2 className="text-xl font-normal text-blue-800 dark:text-blue-400 border-b border-[#E2E8F0] dark:border-gray-800 pb-2 mb-4 capitalize">
         {sourceLanguage} to {language} Transliteration Tool
       </h2>
       

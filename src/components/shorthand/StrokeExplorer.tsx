@@ -59,7 +59,7 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search strokes, sounds, words (e.g. 'P', 'thin', 'May', 'Tie')..."
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-sm text-gray-900 dark:text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-sm text-gray-900 dark:text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
           />
           <svg className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3.5 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -90,7 +90,7 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
             className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
               selectedCategory === cat.id
                 ? "bg-purple-600 text-white shadow-md shadow-purple-900/30"
-                : "bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 border border-gray-200 dark:border-slate-800"
+                : "bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:text-slate-200 border border-[#CBD5E1] dark:border-slate-800"
             }`}
           >
             {cat.label}
@@ -104,10 +104,10 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
           <div
             key={stroke.id}
             onClick={() => setActiveModalStroke(stroke)}
-            className="group cursor-pointer rounded-xl bg-gray-50 dark:bg-slate-900/90 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-800 hover:border-purple-500/50 p-4 transition-all duration-150 flex flex-col items-center justify-between text-center space-y-3 relative hover:-translate-y-0.5 hover:shadow-sm dark:shadow-lg hover:shadow-purple-950/20"
+            className="group cursor-pointer rounded-xl bg-gray-50 dark:bg-slate-900/90 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800/80 border border-[#CBD5E1] dark:border-slate-800 hover:border-[#8FA6C5] p-4 transition-all duration-150 flex flex-col items-center justify-between text-center space-y-3 relative hover:-translate-y-0.5 hover:shadow-sm dark:shadow-lg hover:shadow-purple-950/20"
           >
             {/* Stroke SVG Preview */}
-            <div className="w-16 h-16 rounded-xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800/80 flex items-center justify-center group-hover:border-purple-500/30 transition-colors">
+            <div className="w-16 h-16 rounded-xl bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800/80 flex items-center justify-center group-hover:border-purple-500/30 transition-colors">
               <svg viewBox="0 0 100 100" className="w-12 h-12 stroke-purple-400 group-hover:stroke-purple-300">
                 <path
                   d={stroke.svgPath}
@@ -144,7 +144,7 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
       </div>
 
       {filteredStrokes.length === 0 && (
-        <div className="text-center py-12 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800">
+        <div className="text-center py-12 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800">
           <p className="text-sm text-gray-500 dark:text-slate-400">No shorthand strokes match "{searchQuery}".</p>
           <button
             onClick={() => { setSearchQuery(""); setSelectedCategory("all"); }}
@@ -158,9 +158,9 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
       {/* Stroke Details Modal */}
       {activeModalStroke && (
         <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-5">
+          <div className="bg-gray-50 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-5">
             {/* Header */}
-            <div className="flex items-start justify-between border-b border-gray-200 dark:border-slate-800 pb-3">
+            <div className="flex items-start justify-between border-b border-[#E2E8F0] dark:border-slate-800 pb-3">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center">
                   <svg viewBox="0 0 100 100" className="w-9 h-9 stroke-purple-400">
@@ -199,7 +199,7 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
 
             {/* Description & Pitman Rule */}
             <div className="space-y-3 text-xs">
-              <div className="bg-white dark:bg-slate-950 p-3.5 rounded-xl border border-gray-200 dark:border-slate-800/80 space-y-1.5">
+              <div className="bg-white dark:bg-slate-950 p-3.5 rounded-xl border border-[#CBD5E1] dark:border-slate-800/80 space-y-1.5">
                 <div className="text-gray-500 dark:text-slate-400 font-semibold uppercase text-[10px] tracking-wider">
                   Formation & Angle
                 </div>
@@ -223,7 +223,7 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
                   {activeModalStroke.examples.map((ex, idx) => (
                     <div
                       key={idx}
-                      className="p-2.5 rounded-lg bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 flex items-center justify-between"
+                      className="p-2.5 rounded-lg bg-white dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 flex items-center justify-between"
                     >
                       <div>
                         <span className="font-bold text-gray-900 dark:text-slate-100 text-xs">{ex.word}</span>
@@ -244,7 +244,7 @@ export function StrokeExplorer({ onSelectForPractice }: StrokeExplorerProps) {
             </div>
 
             {/* Actions */}
-            <div className="flex items-center justify-end gap-2 pt-2 border-t border-gray-200 dark:border-slate-800">
+            <div className="flex items-center justify-end gap-2 pt-2 border-t border-[#E2E8F0] dark:border-slate-800">
               <button
                 type="button"
                 onClick={() => speakSound(activeModalStroke.sound)}

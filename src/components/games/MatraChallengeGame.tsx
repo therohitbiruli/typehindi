@@ -143,7 +143,7 @@ export function MatraChallengeGame({ difficulty, onGameOver, onBackToHub }: Prop
   return (
     <div className="flex flex-col h-full">
       {/* HUD */}
-      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-slate-900/80 border-b border-gray-200 dark:border-slate-800 gap-4 flex-shrink-0">
+      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-slate-900/80 border-b border-[#E2E8F0] dark:border-slate-800 gap-4 flex-shrink-0">
         <div className="flex items-center gap-5 text-sm font-bold">
           <span className="text-gray-500 dark:text-slate-400 font-medium">Round {round}/{ROUNDS_TOTAL}</span>
           <span className="text-amber-400">⭐ {score.toLocaleString()}</span>

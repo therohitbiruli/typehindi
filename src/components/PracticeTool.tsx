@@ -269,7 +269,7 @@ export function PracticeTool({
         <div className="fixed inset-0 z-50 bg-white dark:bg-gray-950 overflow-y-auto flex flex-col items-center py-12 px-4 sm:px-6 md:px-8 animate-fade-in">
           <div className="max-w-4xl w-full space-y-6">
             {/* Topbar inside focus mode */}
-            <div className="flex justify-between items-center border-b-2 border-gray-300 dark:border-gray-800 pb-4">
+            <div className="flex justify-between items-center border-b border-[#E2E8F0] dark:border-gray-800 pb-4">
               <div className="flex items-center gap-4">
                 <span className="text-xl">🧘</span>
                 <h3 className="font-bold text-gray-800 dark:text-white text-base">
@@ -287,7 +287,7 @@ export function PracticeTool({
               </div>
               <button
                 onClick={() => setIsFocusMode(false)}
-                className="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 text-xs font-bold border border-gray-300 dark:border-gray-800 transition-all shadow-sm"
+                className="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 text-xs font-bold border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-800 transition-all shadow-sm"
               >
                 Exit Focus Mode ✕
               </button>
@@ -300,7 +300,7 @@ export function PracticeTool({
             <div className="relative group">
               <button
                 onClick={() => setShowPencilModal(true)}
-                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-855 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border border-gray-300 dark:border-gray-700 shadow-sm transition-all"
+                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-855 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-700 shadow-sm transition-all"
                 title="Add Custom Text"
               >
                 ✏️
@@ -324,7 +324,7 @@ export function PracticeTool({
                   Word <strong className="font-hindi text-gray-950 dark:text-white">{activeWord}</strong> keystroke clue:{" "}
                   <span className="inline-flex gap-1.5 ml-2">
                     {activeWordKeys.map((stroke, i) => (
-                      <kbd key={i} className="px-1.5 py-0.5 text-xs bg-white dark:bg-gray-850 border border-gray-300 dark:border-gray-700 rounded shadow-sm text-gray-800 dark:text-gray-200">
+                      <kbd key={i} className="px-1.5 py-0.5 text-xs bg-white dark:bg-gray-850 border border-[#B8C7DA] dark:border-gray-700 rounded shadow-sm text-gray-800 dark:text-gray-200">
                         {stroke.isShift && "Shift+"}
                         {stroke.key}
                       </kbd>
@@ -336,15 +336,15 @@ export function PracticeTool({
 
             {/* Focus Mode Action Buttons */}
             <div className="flex justify-center gap-3">
-              <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-755 shadow-sm">
+              <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-755 shadow-sm">
                 ↻ Reset
               </button>
-              <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-755 shadow-sm">
+              <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-755 shadow-sm">
                 ⟳ Change Paragraph
               </button>
               <button
                 onClick={handleKeyboardToggle}
-                className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-gray-300 dark:border-gray-755"}`}
+                className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-755"}`}
               >
                 ⌨ {showKeyboard ? "Hide" : "Show"} Keyboard
               </button>
@@ -367,7 +367,7 @@ export function PracticeTool({
       {!isFocusMode && (
         <>
           {/* 🌐 Language Switcher Bar */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 shadow-md">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-[#B8C7DA] dark:border-slate-800 shadow-md">
             <div className="flex items-center gap-2">
               <span className="text-lg">🌐</span>
               <span className="text-xs font-bold uppercase tracking-wider text-[#475569] dark:text-slate-300 font-medium">
@@ -397,7 +397,7 @@ export function PracticeTool({
           </div>
 
           {/* Controls */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-50 dark:bg-slate-900/90 p-3.5 rounded-2xl border border-gray-200 dark:border-slate-800 shadow-md">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 bg-gray-50 dark:bg-slate-900/90 p-3.5 rounded-2xl border border-[#B8C7DA] dark:border-slate-800 shadow-md">
             <div className="flex gap-1.5">
               {DIFFICULTY_OPTIONS.map((opt) => (
                 <button
@@ -406,7 +406,7 @@ export function PracticeTool({
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     difficulty === opt.value
                       ? "bg-primary-600 text-white shadow-sm shadow-primary-500/30"
-                      : "bg-white dark:bg-slate-950 text-[#475569] dark:text-slate-300 font-medium border border-gray-200 dark:border-slate-800 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white"
+                      : "bg-white dark:bg-slate-950 text-[#475569] dark:text-slate-300 font-medium border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white"
                   }`}
                 >
                   {opt.label}
@@ -448,7 +448,7 @@ export function PracticeTool({
               {/* Pencil Icon Button */}
               <button
                 onClick={() => setShowPencilModal(true)}
-                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-855 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border border-gray-300 dark:border-gray-700 shadow-sm transition-all"
+                className="absolute top-4 right-4 z-10 h-8 w-8 rounded-lg bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-gray-500 hover:text-gray-855 dark:text-gray-400 dark:hover:text-white flex items-center justify-center border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-700 shadow-sm transition-all"
                 title="Add Custom Text"
               >
                 ✏️
@@ -498,7 +498,7 @@ export function PracticeTool({
               <div className="flex items-center">
                 <Link
                   href={`/learn?word=${encodeURIComponent(activeWord)}&layout=inscript`}
-                  className="text-xs font-bold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 px-3 py-2 rounded-xl transition-all shadow-sm flex items-center gap-1 hover:shadow"
+                  className="text-xs font-bold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 bg-white dark:bg-gray-800 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-700 px-3 py-2 rounded-xl transition-all shadow-sm flex items-center gap-1 hover:shadow"
                 >
                   Remington / Full Guide ➔
                 </Link>
@@ -508,15 +508,15 @@ export function PracticeTool({
 
           {/* Action buttons */}
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm">
+            <button onClick={handleReset} className="btn-secondary rounded-xl px-6 py-2.5 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-700 shadow-sm">
               ↻ Reset
             </button>
-            <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border border-gray-300 dark:border-gray-700 shadow-sm">
+            <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-700 shadow-sm">
               ⟳ Change Paragraph
             </button>
             <button
               onClick={handleKeyboardToggle}
-              className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-gray-300 dark:border-gray-700"}`}
+              className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-[#B8C7DA] dark:border-gray-700"}`}
             >
               ⌨ {showKeyboard ? "Hide" : "Show"} Keyboard
             </button>
@@ -544,8 +544,8 @@ export function PracticeTool({
       {/* ✏️ Paste Custom Text Modal */}
       {showPencilModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 animate-fade-in">
-          <div className="bg-white dark:bg-gray-950 border-2 border-gray-300 dark:border-gray-800 rounded-3xl w-full max-w-lg p-6 shadow-2xl flex flex-col space-y-4">
-            <div className="flex justify-between items-center border-b-2 border-gray-155 dark:border-gray-900 pb-3">
+          <div className="bg-white dark:bg-gray-950 border border-[#B8C7DA] dark:border-gray-800 rounded-3xl w-full max-w-lg p-6 shadow-2xl flex flex-col space-y-4">
+            <div className="flex justify-between items-center border-b border-[#E2E8F0] dark:border-gray-900 pb-3">
               <h4 className="font-bold text-gray-900 dark:text-white text-base">
                 ✍️ Add Custom Text
               </h4>
@@ -569,17 +569,17 @@ export function PracticeTool({
                 onChange={(e) => setPencilInputText(e.target.value)}
                 placeholder="Paste your Hindi or English practice text here..."
                 rows={6}
-                className="w-full p-3 rounded-xl border-2 border-gray-350 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-855 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-primary-500 resize-none font-sans shadow-inner"
+                className="w-full p-3 rounded-xl border border-[#B8C7DA] dark:border-gray-700 bg-white dark:bg-gray-900 text-sm text-gray-855 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-primary-500 resize-none font-sans shadow-inner"
               />
             </div>
 
-            <div className="flex justify-end gap-2 pt-2 border-t-2 border-gray-155 dark:border-gray-900">
+            <div className="flex justify-end gap-2 pt-2 border-t border-[#E2E8F0] dark:border-gray-900">
               <button
                 onClick={() => {
                   setShowPencilModal(false);
                   setPencilInputText("");
                 }}
-                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-xl text-xs font-semibold border border-gray-300 dark:border-gray-700 shadow-sm"
+                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-xl text-xs font-semibold border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-700 shadow-sm"
               >
                 Cancel
               </button>
@@ -598,7 +598,7 @@ export function PracticeTool({
       {/* 🌐 English to Hindi Translation Option Modal */}
       {showTranslationPrompt && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 animate-fade-in">
-          <div className="bg-white dark:bg-gray-950 border-2 border-gray-300 dark:border-gray-800 rounded-3xl w-full max-w-md p-6 shadow-2xl flex flex-col space-y-4 text-center">
+          <div className="bg-white dark:bg-gray-950 border border-[#B8C7DA] dark:border-gray-800 rounded-3xl w-full max-w-md p-6 shadow-2xl flex flex-col space-y-4 text-center">
             <div className="text-4xl animate-bounce">🌐</div>
             <h4 className="font-bold text-gray-900 dark:text-white text-base">
               Translation Option
@@ -619,7 +619,7 @@ export function PracticeTool({
               <button
                 onClick={() => handleTranslateCustomText(false)}
                 disabled={isTranslating}
-                className="w-full py-2.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl text-xs font-bold transition-all border border-gray-350 dark:border-gray-700 shadow-sm"
+                className="w-full py-2.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-xl text-xs font-bold transition-all border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-700 shadow-sm"
               >
                 No, Practice as English
               </button>
@@ -642,7 +642,7 @@ export function PracticeTool({
       {/* 📺 Premium Ads Pop-up Modal */}
       {showAdsModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 animate-fade-in">
-          <div className="bg-white dark:bg-gray-905 border-2 border-gray-400 dark:border-gray-750 rounded-3xl w-full max-w-lg p-6 shadow-2xl flex flex-col space-y-4 relative">
+          <div className="bg-white dark:bg-gray-905 border border-[#B8C7DA] dark:border-gray-750 rounded-3xl w-full max-w-lg p-6 shadow-2xl flex flex-col space-y-4 relative">
             <button
               onClick={handleCloseAds}
               className="absolute top-4 right-4 h-8 w-8 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-705 text-gray-500 hover:text-gray-855 dark:text-gray-400 dark:hover:text-white flex items-center justify-center text-xs font-bold transition-colors"
@@ -651,14 +651,14 @@ export function PracticeTool({
               ✕
             </button>
 
-            <div className="text-center pb-2 border-b border-gray-155 dark:border-gray-850">
+            <div className="text-center pb-2 border-b border-[#E2E8F0] dark:border-gray-850">
               <span className="text-[10px] uppercase font-extrabold tracking-widest text-[#475569] dark:text-slate-400">
                 Sponsored Advertisement
               </span>
             </div>
 
             {/* Ad Body Mockup */}
-            <div className="bg-gray-50 dark:bg-gray-955 border-2 border-dashed border-gray-300 dark:border-gray-800 rounded-2xl p-6 flex flex-col items-center justify-center text-center space-y-4 min-h-[220px]">
+            <div className="bg-gray-50 dark:bg-gray-955 border-2 border-dashed border-[#B8C7DA] dark:border-gray-800 rounded-2xl p-6 flex flex-col items-center justify-center text-center space-y-4 min-h-[220px]">
               <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-primary-600 to-indigo-600 flex items-center justify-center text-white text-xl font-bold shadow-sm dark:shadow-lg shadow-primary-500/10">
                 TH
               </div>

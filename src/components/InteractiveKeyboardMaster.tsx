@@ -158,7 +158,7 @@ export function InteractiveKeyboardMaster() {
                 className={`w-9 h-9 rounded-xl border text-base font-bold transition-all flex items-center justify-center ${
                   searchQuery === char
                     ? "bg-primary-600 border-primary-400 text-white scale-110 shadow-md shadow-primary-500/30"
-                    : "bg-gray-100 dark:bg-slate-800/80 border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-200 hover:border-primary-500/60 hover:text-white"
+                    : "bg-gray-100 dark:bg-slate-800/80 border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-200 hover:border-[#8FA6C5]/60 hover:text-white"
                 }`}
                 style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
               >
@@ -262,7 +262,7 @@ export function InteractiveKeyboardMaster() {
         </div>
 
         {activeCategoryInfo && activeCategory !== "all" && (
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-gray-200 dark:border-slate-800 text-xs text-gray-600 dark:text-slate-300 flex items-center gap-3">
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-[#CBD5E1] dark:border-slate-800 text-xs text-gray-600 dark:text-slate-300 flex items-center gap-3">
             <span className="text-xl">{activeCategoryInfo.icon}</span>
             <div>
               <strong className="text-gray-900 dark:text-white block mb-0.5">{activeCategoryInfo.label}:</strong>
@@ -276,9 +276,9 @@ export function InteractiveKeyboardMaster() {
       {/* MAIN INTERACTIVE VIRTUAL KEYBOARD */}
       {/* ========================================================================= */}
       <section id="interactive-keyboard-section" className="space-y-6 scroll-mt-6">
-        <div className="card p-4 sm:p-6 md:p-8 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-2xl overflow-x-auto">
+        <div className="card p-4 sm:p-6 md:p-8 rounded-[2.5rem] border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-2xl overflow-x-auto">
           {/* Top Status Bar */}
-          <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-gray-200 dark:border-slate-800 text-xs text-gray-500 dark:text-slate-400">
+          <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E2E8F0] dark:border-slate-800 text-xs text-gray-500 dark:text-slate-400">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>
@@ -322,8 +322,8 @@ export function InteractiveKeyboardMaster() {
                           : isSelected
                           ? "bg-primary-100 dark:bg-primary-950 border-2 border-primary-500 text-primary-950 dark:text-white ring-2 ring-primary-500/30 z-10 shadow-sm dark:shadow-lg shadow-primary-500/20"
                           : inCategory
-                          ? "bg-gray-50 dark:bg-slate-800/90 border border-gray-300 dark:border-slate-700/80 text-white hover:border-primary-400 hover:bg-gray-100 dark:hover:bg-slate-700"
-                          : "bg-white dark:bg-slate-900/40 border border-gray-200 dark:border-slate-800/50 text-gray-500 dark:text-slate-600 opacity-30 hover:opacity-80"
+                          ? "bg-gray-50 dark:bg-slate-800/90 border border-gray-300 dark:border-slate-700/80 text-white hover:border-[#8FA6C5] hover:bg-gray-100 dark:hover:bg-slate-700"
+                          : "bg-white dark:bg-slate-900/40 border border-[#CBD5E1] dark:border-slate-800/50 text-gray-500 dark:text-slate-600 opacity-30 hover:opacity-80"
                       }`}
                       style={key.width ? { width: `${key.width * 3}rem` } : undefined}
                     >
@@ -366,7 +366,7 @@ export function InteractiveKeyboardMaster() {
       {/* SELECTED KEY CHARACTER EXPLORER PANEL */}
       {/* ========================================================================= */}
       {selectedKey && (
-        <section className="card p-6 md:p-8 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl animate-in fade-in zoom-in-95 duration-200">
+        <section className="card p-6 md:p-8 rounded-[2.5rem] border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl animate-in fade-in zoom-in-95 duration-200">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
             {/* Key Preview Big Badge */}
             <div className="flex items-center gap-6">
@@ -405,9 +405,9 @@ export function InteractiveKeyboardMaster() {
           </div>
 
           {/* Normal vs Shift Comparison Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-200 dark:border-slate-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 pt-6 border-t border-[#E2E8F0] dark:border-slate-800">
             {/* Normal State Card */}
-            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950/70 border border-gray-200 dark:border-slate-800">
+            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950/70 border border-[#CBD5E1] dark:border-slate-800">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400">
                   Normal Press (Default)

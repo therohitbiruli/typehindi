@@ -16,7 +16,7 @@ export default function ShorthandPracticePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-[#17243A] dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-10">
@@ -24,10 +24,10 @@ export default function ShorthandPracticePage() {
           <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
             Interactive Shorthand Teacher & Practice
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
+          <h1 className="text-2xl sm:text-3xl font-black text-[#17243A] dark:text-slate-100">
             Master Pitman Shorthand Strokes Step-by-Step
           </h1>
-          <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-300 font-medium leading-relaxed">
             Follow the full pedagogical workflow: Learn the rule, watch the stroke animation, practice across 4 graduated tiers (Guided, Assisted, Free Practice, Test), receive instant angle & direction feedback, and build real words.
           </p>
         </div>
@@ -45,10 +45,10 @@ export default function ShorthandPracticePage() {
             <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               Browse & Select
             </span>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-slate-100">
+            <h2 className="text-xl font-bold text-[#17243A] dark:text-slate-100">
               Choose any Pitman Stroke to Practice Above
             </h2>
-            <p className="text-xs text-gray-500 dark:text-slate-400">
+            <p className="text-xs text-[#475569] dark:text-slate-300 font-medium">
               Click "Practice on Canvas" on any character card below to load it into the ghost guide.
             </p>
           </div>

@@ -27,10 +27,10 @@ export default function MockTestsPage() {
       />
       
       <div className="text-center max-w-2xl mx-auto mt-10 mb-16">
-        <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">
+        <h1 className="text-4xl md:text-5xl font-black text-[#17243A] dark:text-white tracking-tight mb-4">
           Free CBT Mock Tests
         </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400">
+        <p className="text-lg text-[#475569] dark:text-slate-300 font-medium">
           Experience full-length mock tests exactly as they appear in the real Computer Based Test (CBT).
         </p>
       </div>
@@ -45,10 +45,10 @@ export default function MockTestsPage() {
             <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
               {exam.icon}
             </div>
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+            <h3 className="text-2xl font-bold text-[#17243A] dark:text-white mb-2">
               {exam.name}
             </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">
+            <p className="text-[#475569] dark:text-slate-300 text-sm font-medium">
               {exam.desc}
             </p>
           </Link>

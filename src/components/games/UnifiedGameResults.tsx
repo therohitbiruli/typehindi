@@ -62,10 +62,10 @@ export function UnifiedGameResults({
       <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-1">
         Game Completed • {difficulty}
       </span>
-      <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-2">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[#17243A] dark:text-white mb-2">
         {gameTitle}
       </h2>
-      <p className="text-sm text-gray-500 dark:text-slate-400 max-w-md mb-8">
+      <p className="text-sm text-[#475569] dark:text-slate-300 font-medium max-w-md mb-8">
         Great effort! Here is your performance breakdown for this session.
       </p>
 
@@ -80,30 +80,30 @@ export function UnifiedGameResults({
 
       {/* Detailed Stats Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-2xl mb-8">
-        <div className="p-4 rounded-2xl bg-gray-50 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 flex flex-col items-center">
-          <span className="text-xs text-gray-500 dark:text-slate-400 mb-1">Accuracy</span>
+        <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+          <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Accuracy</span>
           <span className="text-2xl font-bold text-emerald-400">{Math.round(accuracy)}%</span>
         </div>
 
         {wpm > 0 ? (
-          <div className="p-4 rounded-2xl bg-gray-50 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 flex flex-col items-center">
-            <span className="text-xs text-gray-500 dark:text-slate-400 mb-1">Speed (WPM)</span>
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+            <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Speed (WPM)</span>
             <span className="text-2xl font-bold text-cyan-400">{Math.round(wpm)}</span>
           </div>
         ) : (
-          <div className="p-4 rounded-2xl bg-gray-50 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 flex flex-col items-center">
-            <span className="text-xs text-gray-500 dark:text-slate-400 mb-1">Correct</span>
+          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+            <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Correct</span>
             <span className="text-2xl font-bold text-emerald-400">{correctCount}</span>
           </div>
         )}
 
-        <div className="p-4 rounded-2xl bg-gray-50 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 flex flex-col items-center">
-          <span className="text-xs text-gray-500 dark:text-slate-400 mb-1">Best Streak</span>
+        <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+          <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Best Streak</span>
           <span className="text-2xl font-bold text-amber-400">🔥 {bestStreak}</span>
         </div>
 
-        <div className="p-4 rounded-2xl bg-gray-50 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-800 flex flex-col items-center">
-          <span className="text-xs text-gray-500 dark:text-slate-400 mb-1">Errors</span>
+        <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-[#DCE4EF] dark:border-slate-800 flex flex-col items-center">
+          <span className="text-xs text-[#475569] dark:text-slate-300 font-semibold mb-1">Errors</span>
           <span className="text-2xl font-bold text-rose-400">{incorrectCount}</span>
         </div>
       </div>
@@ -119,14 +119,14 @@ export function UnifiedGameResults({
 
         <button
           onClick={onChangeDifficulty}
-          className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold flex items-center gap-2 border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-200 hover:bg-slate-700 hover:text-gray-900 dark:text-white"
+          className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold flex items-center gap-2 border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-200 hover:bg-slate-700 hover:text-[#17243A] dark:text-white"
         >
           <span>⚙️</span> Change Difficulty
         </button>
 
         <button
           onClick={onBackToHub}
-          className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold flex items-center gap-2 border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-200 hover:bg-slate-700 hover:text-gray-900 dark:text-white"
+          className="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold flex items-center gap-2 border border-gray-300 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-200 hover:bg-slate-700 hover:text-[#17243A] dark:text-white"
         >
           <span>🏠</span> Back to Game Hub
         </button>

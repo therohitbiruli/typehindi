@@ -53,8 +53,8 @@ export default function TranslatorsPage() {
               href={`/translators/english-to-${lang.name.toLowerCase()}`}
               className="flex flex-col items-center justify-center p-6 border border-[#D9E1EC] dark:border-gray-800 rounded-xl bg-[#F8FAFC] dark:bg-slate-900/50 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50/50 dark:hover:bg-blue-900/20 shadow-sm hover:shadow-md transition-all group"
             >
-              <span className="text-2xl mb-2 text-gray-400 dark:text-slate-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400">A→{lang.nativeChar}</span>
-              <span className="text-slate-800 dark:text-gray-300 text-sm font-semibold text-center">English to<br/>{lang.name}</span>
+              <span className="text-2xl mb-2 text-[#475569] dark:text-slate-400 font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400">A→{lang.nativeChar}</span>
+              <span className="text-[#17243A] dark:text-gray-200 text-sm font-bold text-center">English to<br/>{lang.name}</span>
             </Link>
           ))}
         </div>
@@ -71,8 +71,8 @@ export default function TranslatorsPage() {
               href={`/translators/hindi-to-${lang.name.toLowerCase()}`}
               className="flex flex-col items-center justify-center p-6 border border-[#D9E1EC] dark:border-gray-800 rounded-xl bg-[#F8FAFC] dark:bg-slate-900/50 hover:border-red-400 dark:hover:border-red-500 hover:bg-red-50/50 dark:hover:bg-red-900/20 shadow-sm hover:shadow-md transition-all group"
             >
-              <span className="text-2xl mb-2 text-gray-400 dark:text-slate-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-400">अ→{lang.nativeChar}</span>
-              <span className="text-slate-800 dark:text-gray-300 text-sm font-semibold text-center">Hindi to<br/>{lang.name}</span>
+              <span className="text-2xl mb-2 text-[#475569] dark:text-slate-400 font-semibold group-hover:text-red-600 dark:group-hover:text-red-400">अ→{lang.nativeChar}</span>
+              <span className="text-[#17243A] dark:text-gray-200 text-sm font-bold text-center">Hindi to<br/>{lang.name}</span>
             </Link>
           ))}
         </div>
@@ -84,21 +84,21 @@ export default function TranslatorsPage() {
           How this Translator Tool Works
         </h3>
         
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
           This tool instantly transliterates typed English or Roman script words into your chosen native script. It operates fully client-side inside your browser, meaning your typed text is never sent to a server. This guarantees both speed and absolute privacy.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="border border-gray-100 dark:border-gray-800 rounded-lg p-5">
             <h4 className="font-semibold text-blue-800 dark:text-blue-400 text-lg mb-2">When to Use</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               This tool is useful if you are not familiar with the native keyboard layout but need to quickly draft text in regional scripts — such as WhatsApp messages, emails, or online application forms. Note that this is not a substitute for learning touch typing. For official government typing tests (like SSC, Stenographer, etc.), you must learn the standard keyboard layout in our Learn section, as translation tools are not permitted in test centers.
             </p>
           </div>
 
           <div className="border border-gray-100 dark:border-gray-800 rounded-lg p-5">
             <h4 className="font-semibold text-blue-800 dark:text-blue-400 text-lg mb-2">Accuracy and Limits</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               Transliteration tools convert text phonetically based on sound. Therefore, some complex or rarely used words might not have a perfect match in the initial output. In such cases, you can select the correct option from the suggestions drop-down list.
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function TranslatorsPage() {
               <h5 className="font-semibold text-gray-900 dark:text-white mb-2">
                 Will this tool help me prepare for official government typing tests?
               </h5>
-              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-sm text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
                 Not directly. In exams, you are required to type using the standard InScript layout. This tool is designed only for day-to-day translation and drafting tasks.
               </p>
             </div>
@@ -121,7 +121,7 @@ export default function TranslatorsPage() {
               <h5 className="font-semibold text-gray-900 dark:text-white mb-2">
                 Is my typed text saved or stored?
               </h5>
-              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="text-sm text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
                 No, we do not save or send any typed text to our servers. Everything is processed locally in your browser.
               </p>
             </div>

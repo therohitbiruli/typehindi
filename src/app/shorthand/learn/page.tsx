@@ -21,7 +21,7 @@ export default function ShorthandCurriculumPage() {
   });
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-[#17243A] dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-8">
@@ -31,10 +31,10 @@ export default function ShorthandCurriculumPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               Pitman Shorthand Curriculum
             </span>
-            <h1 className="text-3xl font-black text-gray-900 dark:text-slate-100">
+            <h1 className="text-3xl font-black text-[#17243A] dark:text-slate-100">
               Structured 13-Level Learning Program
             </h1>
-            <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-300 font-medium leading-relaxed">
               Master English Pitman shorthand progressively: from pen holding and consonant angles to the 12-vowel scheme, continuous outline joining, phraseography, and timed stenography dictations.
             </p>
           </div>
@@ -43,8 +43,8 @@ export default function ShorthandCurriculumPage() {
             <span className="text-[10px] text-purple-400 font-bold uppercase tracking-wider block">
               Curriculum Standard
             </span>
-            <div className="text-base font-black text-gray-900 dark:text-slate-100">English Pitman</div>
-            <span className="text-[11px] text-gray-500 dark:text-slate-400 block">
+            <div className="text-base font-black text-[#17243A] dark:text-slate-100">English Pitman</div>
+            <span className="text-[11px] text-[#475569] dark:text-slate-300 font-medium block">
               Self-paced • 13 progressive levels
             </span>
           </div>
@@ -61,7 +61,7 @@ export default function ShorthandCurriculumPage() {
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   difficultyFilter === dif
                     ? "bg-purple-600 text-white"
-                    : "bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-slate-400 border border-gray-200 dark:border-slate-800"
+                    : "bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 text-[#475569] dark:text-slate-400 font-medium border border-gray-200 dark:border-slate-800"
                 }`}
               >
                 {dif}
@@ -69,7 +69,7 @@ export default function ShorthandCurriculumPage() {
             ))}
           </div>
 
-          <span className="text-xs text-gray-500 dark:text-slate-400">
+          <span className="text-xs text-[#475569] dark:text-slate-300 font-medium">
             Showing {filteredLessons.length} lessons
           </span>
         </div>
@@ -92,10 +92,10 @@ export default function ShorthandCurriculumPage() {
                     <span className="text-xs font-black text-purple-400 uppercase tracking-wider">
                       Level {lesson.level}
                     </span>
-                    <span className="text-[11px] px-2 py-0.5 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 font-medium">
+                    <span className="text-[11px] px-2 py-0.5 rounded bg-gray-100 dark:bg-slate-800 text-[#475569] dark:text-slate-300 font-medium font-medium">
                       ⏱ {lesson.estimatedMinutes} mins
                     </span>
-                    <span className="text-[11px] px-2 py-0.5 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 font-medium">
+                    <span className="text-[11px] px-2 py-0.5 rounded bg-gray-100 dark:bg-slate-800 text-[#475569] dark:text-slate-300 font-medium font-medium">
                       {lesson.difficulty}
                     </span>
                     {isCompleted && (
@@ -105,13 +105,13 @@ export default function ShorthandCurriculumPage() {
                     )}
                   </div>
 
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-slate-100">{lesson.title}</h3>
-                  <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+                  <h3 className="text-lg font-bold text-[#17243A] dark:text-slate-100">{lesson.title}</h3>
+                  <p className="text-xs text-[#475569] dark:text-slate-300 font-medium leading-relaxed max-w-3xl">
                     {lesson.subtitle}
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-1.5 pt-1 text-[11px] text-gray-500 dark:text-slate-400">
-                    <span className="font-semibold text-gray-600 dark:text-slate-300">Concepts:</span>
+                  <div className="flex flex-wrap items-center gap-1.5 pt-1 text-[11px] text-[#475569] dark:text-slate-300 font-medium">
+                    <span className="font-semibold text-[#475569] dark:text-slate-300 font-medium">Concepts:</span>
                     {lesson.learnContent.keyPoints.slice(0, 2).map((kp, idx) => (
                       <span key={idx} className="bg-white dark:bg-slate-950 px-2 py-0.5 rounded border border-gray-200 dark:border-slate-800">
                         {kp}

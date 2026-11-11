@@ -75,7 +75,7 @@ export function GameRunnerClient({ game }: Props) {
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 mt-3">
         <Link
           href="/game"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-sm font-semibold text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:text-white hover:border-gray-300 dark:border-slate-700 transition-colors shadow-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-sm font-semibold text-[#475569] dark:text-slate-300 hover:text-[#17243A] font-semibold dark:text-white hover:border-gray-300 dark:border-slate-700 transition-colors shadow-sm"
         >
           <span>←</span>
           <span>Back to Game Hub</span>
@@ -84,7 +84,7 @@ export function GameRunnerClient({ game }: Props) {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setShowDifficultyPicker((prev) => !prev)}
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-xs font-bold text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:text-white hover:border-gray-300 dark:border-slate-700 transition-colors"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 text-xs font-bold text-[#475569] dark:text-slate-300 hover:text-[#17243A] font-semibold dark:text-white hover:border-gray-300 dark:border-slate-700 transition-colors"
           >
             <span>⚙️ Difficulty:</span>
             <span
@@ -101,8 +101,8 @@ export function GameRunnerClient({ game }: Props) {
       {/* Difficulty Picker Dropdown Modal */}
       {showDifficultyPicker && (
         <div className="mb-6 p-6 rounded-3xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 shadow-xl max-w-xl mx-auto text-center animate-in fade-in zoom-in-95 duration-200">
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Change Difficulty</h3>
-          <p className="text-xs text-gray-500 dark:text-slate-400 mb-4">
+          <h3 className="text-lg font-bold text-[#17243A] dark:text-white mb-2">Change Difficulty</h3>
+          <p className="text-xs text-[#475569] dark:text-slate-300 font-medium mb-4">
             Select your preferred challenge tier for {game.title}.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -131,11 +131,11 @@ export function GameRunnerClient({ game }: Props) {
             <div className="flex items-center gap-3">
               <span className="text-2xl">{game.icon}</span>
               <div>
-                <h1 className="text-base font-bold text-gray-900 dark:text-white leading-tight">
+                <h1 className="text-base font-bold text-[#17243A] dark:text-white leading-tight">
                   {game.title}
                 </h1>
                 <span
-                  className="text-xs text-gray-500 dark:text-slate-400"
+                  className="text-xs text-[#475569] dark:text-slate-400 font-medium"
                   style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                 >
                   {game.hindiTitle}
@@ -225,11 +225,11 @@ export function GameRunnerClient({ game }: Props) {
           <div className="flex items-center gap-3 mb-4">
             <span className="text-3xl">{game.icon}</span>
             <div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-[#17243A] dark:text-white">
                 About {game.title}
               </h2>
               <p
-                className="text-xs text-gray-500 dark:text-slate-400"
+                className="text-xs text-[#475569] dark:text-slate-400 font-medium"
                 style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
               >
                 {game.hindiTitle} — संपूर्ण गेम गाइड और निर्देश
@@ -264,7 +264,7 @@ export function GameRunnerClient({ game }: Props) {
               <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-slate-400 mb-2">
                 ⚡ Recommended Difficulty
               </h3>
-              <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
+              <p className="text-xs text-[#475569] dark:text-slate-400 font-medium leading-relaxed">
                 Beginners should start with <strong className="text-emerald-400">Beginner</strong>{" "}
                 to master key locations before switching to{" "}
                 <strong className="text-amber-400">Intermediate</strong> or{" "}
@@ -284,7 +284,7 @@ export function GameRunnerClient({ game }: Props) {
 
             <Link
               href="/practice"
-              className="text-sm font-bold text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:text-white transition-colors"
+              className="text-sm font-bold text-[#475569] dark:text-slate-300 hover:text-[#17243A] font-semibold dark:text-white transition-colors"
             >
               Switch to Typing Practice →
             </Link>
@@ -296,7 +296,7 @@ export function GameRunnerClient({ game }: Props) {
       {/* Other Games Carousel / Grid */}
       {/* ========================================================================= */}
       <section className="max-w-4xl mx-auto mb-12">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+        <h3 className="text-xl font-bold text-[#17243A] dark:text-white mb-6 flex items-center gap-2">
           <span>🎮</span>
           <span>More Hindi Typing Games</span>
         </h3>
@@ -310,8 +310,8 @@ export function GameRunnerClient({ game }: Props) {
             >
               <div>
                 <div className="text-3xl mb-2">{g.icon}</div>
-                <h4 className="text-base font-bold text-gray-900 dark:text-white mb-1">{g.title}</h4>
-                <p className="text-xs text-gray-500 dark:text-slate-400 line-clamp-2">{g.description}</p>
+                <h4 className="text-base font-bold text-[#17243A] dark:text-white mb-1">{g.title}</h4>
+                <p className="text-xs text-[#475569] dark:text-slate-400 font-medium line-clamp-2">{g.description}</p>
               </div>
               <div className="mt-4 pt-2 border-t border-gray-200 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-primary-400">
                 <span>Play Game</span>

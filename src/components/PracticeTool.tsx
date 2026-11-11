@@ -370,7 +370,7 @@ export function PracticeTool({
           <div className="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-gray-50 dark:bg-slate-900/90 border border-gray-200 dark:border-slate-800 shadow-md">
             <div className="flex items-center gap-2">
               <span className="text-lg">🌐</span>
-              <span className="text-xs font-bold uppercase tracking-wider text-gray-600 dark:text-slate-300">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#475569] dark:text-slate-300 font-medium">
                 Choose Language:
               </span>
             </div>
@@ -384,7 +384,7 @@ export function PracticeTool({
                     className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                       isActive
                         ? "bg-primary-600 text-white shadow-sm shadow-primary-500/30"
-                        : "bg-white dark:bg-slate-950 text-gray-600 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white border border-gray-200 dark:border-slate-800"
+                        : "bg-white dark:bg-slate-950 text-[#475569] dark:text-slate-300 font-medium hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white border border-gray-200 dark:border-slate-800"
                     }`}
                   >
                     <span className="text-[11px] opacity-80">{lang.symbol}</span>
@@ -406,7 +406,7 @@ export function PracticeTool({
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     difficulty === opt.value
                       ? "bg-primary-600 text-white shadow-sm shadow-primary-500/30"
-                      : "bg-white dark:bg-slate-950 text-gray-600 dark:text-slate-300 border border-gray-200 dark:border-slate-800 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white"
+                      : "bg-white dark:bg-slate-950 text-[#475569] dark:text-slate-300 font-medium border border-gray-200 dark:border-slate-800 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white"
                   }`}
                 >
                   {opt.label}
@@ -416,7 +416,7 @@ export function PracticeTool({
 
             {/* Guided Highlight toggles */}
             <div className="flex items-center gap-4">
-              <label className="flex items-center gap-1.5 text-xs font-semibold text-gray-600 dark:text-slate-300 cursor-pointer select-none">
+              <label className="flex items-center gap-1.5 text-xs font-semibold text-[#475569] dark:text-slate-300 font-medium cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={enableHighlights}
@@ -535,7 +535,7 @@ export function PracticeTool({
           </div>
 
           {/* Paragraph info */}
-          <div className="mt-6 text-center text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-widest">
+          <div className="mt-6 text-center text-xs font-medium text-[#64748B] dark:text-gray-400 uppercase tracking-widest font-semibold">
             Difficulty: {paragraph.difficulty} | Category: {paragraph.category} | Words: {paragraph.wordCount}
           </div>
         </>
@@ -561,7 +561,7 @@ export function PracticeTool({
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider block">
+              <label className="text-xs font-bold text-[#475569] dark:text-gray-400 uppercase tracking-wider font-semibold block">
                 Paste your text here
               </label>
               <textarea
@@ -652,7 +652,7 @@ export function PracticeTool({
             </button>
 
             <div className="text-center pb-2 border-b border-gray-155 dark:border-gray-850">
-              <span className="text-[10px] uppercase font-extrabold tracking-widest text-gray-400 dark:text-gray-500">
+              <span className="text-[10px] uppercase font-extrabold tracking-widest text-[#475569] dark:text-slate-400">
                 Sponsored Advertisement
               </span>
             </div>
@@ -666,7 +666,7 @@ export function PracticeTool({
                 <h5 className="font-bold text-gray-900 dark:text-white text-sm">
                   TypeHindi Premium Keyboard Master
                 </h5>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 max-w-xs">
+                <p className="text-xs text-[#475569] dark:text-gray-400 font-medium mt-1 max-w-xs">
                   Unlock ad-free learning, advanced analytics, custom keystroke soundboards, and certified mock exams.
                 </p>
               </div>

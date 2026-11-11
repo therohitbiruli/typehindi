@@ -127,7 +127,7 @@ export function PYQHubClient({ exams, papers }: Props) {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search exams, subjects, topics or years (e.g. CPO, 2024, Reasoning)..." 
-          className="w-full pl-12 pr-10 py-4 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-slate-900 dark:text-white placeholder:text-slate-400 text-sm md:text-base"
+          className="w-full pl-12 pr-10 py-4 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-[#17243A] dark:text-white placeholder:text-slate-400 text-sm md:text-base"
         />
         {searchQuery && (
           <button
@@ -170,7 +170,7 @@ export function PYQHubClient({ exams, papers }: Props) {
         <aside className={`w-full md:w-64 shrink-0 ${showMobileFilters ? 'block' : 'hidden md:block'}`}>
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm sticky top-24 space-y-6">
             <div className="flex justify-between items-center">
-              <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <h3 className="font-bold text-[#17243A] dark:text-white flex items-center gap-2">
                 <svg className="w-4 h-4 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                 </svg>
@@ -188,7 +188,7 @@ export function PYQHubClient({ exams, papers }: Props) {
             
             {/* Exam Filter */}
             <div>
-              <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2.5">
+              <h4 className="text-xs font-semibold text-[#475569] dark:text-slate-300 uppercase tracking-wider mb-2.5">
                 Exams
               </h4>
               <div className="space-y-2">
@@ -218,7 +218,7 @@ export function PYQHubClient({ exams, papers }: Props) {
                         />
                         <span>{exam.name}</span>
                       </div>
-                      <span className="text-xs text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
+                      <span className="text-xs font-medium text-[#475569] dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">
                         {count}
                       </span>
                     </label>
@@ -230,7 +230,7 @@ export function PYQHubClient({ exams, papers }: Props) {
             {/* Year Filter */}
             {availableYears.length > 0 && (
               <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
-                <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2.5">
+                <h4 className="text-xs font-semibold text-[#475569] dark:text-slate-300 uppercase tracking-wider mb-2.5">
                   Exam Year
                 </h4>
                 <div className="grid grid-cols-2 gap-1.5 max-h-48 overflow-y-auto pr-1">
@@ -316,7 +316,7 @@ export function PYQHubClient({ exams, papers }: Props) {
                 Clear all
               </button>
 
-              <span className="text-xs text-slate-400 ml-auto">
+              <span className="text-xs font-medium text-[#64748B] dark:text-slate-400 ml-auto">
                 Showing {totalMatchingPapers} {totalMatchingPapers === 1 ? 'paper' : 'papers'}
               </span>
             </div>
@@ -330,8 +330,8 @@ export function PYQHubClient({ exams, papers }: Props) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">No Question Papers Found</h3>
-              <p className="text-slate-500 text-sm max-w-md mx-auto mb-6">
+              <h3 className="text-xl font-bold text-[#17243A] dark:text-white mb-2">No Question Papers Found</h3>
+              <p className="text-[#475569] dark:text-slate-300 text-sm font-medium max-w-md mx-auto mb-6">
                 We couldn&apos;t find any papers matching your selected filter criteria. Try clearing some filters or searching with a different term.
               </p>
               <button
@@ -354,7 +354,7 @@ export function PYQHubClient({ exams, papers }: Props) {
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
                   <div>
                     <div className="flex items-center gap-3">
-                      <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                      <h2 className="text-2xl font-bold text-[#17243A] dark:text-white">
                         {isJeeMain ? "JEE Main Previous Year Question Papers" : exam.name}
                       </h2>
                       {isJeeMain && (
@@ -363,7 +363,7 @@ export function PYQHubClient({ exams, papers }: Props) {
                         </span>
                       )}
                     </div>
-                    <p className="text-slate-500 text-sm mt-1">{exam.shortDescription}</p>
+                    <p className="text-[#475569] dark:text-slate-300 text-sm font-medium mt-1">{exam.shortDescription}</p>
                     {isJeeMain && (
                       <div className="flex flex-wrap items-center gap-2 mt-2">
                         <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">Sessions:</span>

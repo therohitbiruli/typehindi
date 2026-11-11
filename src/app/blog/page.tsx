@@ -62,8 +62,8 @@ export default async function BlogPage({ searchParams }: PageProps) {
             href={getLangUrl("hi")}
             className={`px-3 py-1 rounded-md transition-all ${
               lang === "hi"
-                ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"
-                : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                ? "bg-white dark:bg-slate-900 text-[#17243A] dark:text-white shadow-sm"
+                : "text-[#475569] hover:text-[#17243A] dark:text-gray-400 dark:hover:text-white font-medium"
             }`}
           >
             HI
@@ -72,8 +72,8 @@ export default async function BlogPage({ searchParams }: PageProps) {
             href={getLangUrl("en")}
             className={`px-3 py-1 rounded-md transition-all ${
               lang === "en"
-                ? "bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm"
-                : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                ? "bg-white dark:bg-slate-900 text-[#17243A] dark:text-white shadow-sm"
+                : "text-[#475569] hover:text-[#17243A] dark:text-gray-400 dark:hover:text-white font-medium"
             }`}
           >
             EN
@@ -87,7 +87,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
         <h1 className="heading-1 mb-3">
           {lang === "en" ? "Hindi Typing Articles and Guides" : "हिंदी टाइपिंग लेख और मार्गदर्शिकाएँ"}
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <p className="text-lg text-[#475569] dark:text-gray-300 max-w-2xl mx-auto font-medium">
           {lang === "en" 
             ? "Read detailed articles written by our experts to improve your typing speed and crack government exams."
             : "अपनी टाइपिंग गति सुधारने और सरकारी परीक्षाओं में सफल होने के लिए हमारे विशेषज्ञों द्वारा लिखे गए विस्तृत लेख पढ़ें।"}
@@ -121,14 +121,14 @@ export default async function BlogPage({ searchParams }: PageProps) {
 
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-2 mb-2.5">
-                  <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">{blog.author} · {date}</span>
+                  <span className="text-xs font-semibold text-[#64748B] dark:text-gray-400">{blog.author} · {date}</span>
                 </div>
                 
-                <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-tight line-clamp-2">
+                <h2 className="text-xl font-bold mb-3 text-[#17243A] dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-tight line-clamp-2">
                   {title}
                 </h2>
                 
-                <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-3 mb-6 flex-grow leading-relaxed">
+                <p className="text-[#475569] dark:text-gray-300 text-sm font-medium line-clamp-3 mb-6 flex-grow leading-relaxed">
                   {excerpt}
                 </p>
                 
@@ -155,7 +155,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
               <span>{lang === "en" ? "Previous" : "पिछला"}</span>
             </Link>
           ) : (
-            <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-400 dark:text-gray-600 bg-gray-100/60 dark:bg-gray-800/40 border border-gray-200/60 dark:border-gray-800/60 cursor-not-allowed flex items-center gap-1.5">
+            <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-[#64748B] opacity-50 dark:text-gray-600 bg-slate-100 dark:bg-gray-800/40 border border-[#CBD5E1] dark:border-gray-800/60 cursor-not-allowed flex items-center gap-1.5">
               <span>←</span>
               <span>{lang === "en" ? "Previous" : "पिछला"}</span>
             </span>
@@ -168,7 +168,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
                 return (
                   <span
                     key={`ellipsis-${idx}`}
-                    className="w-7 h-9 sm:w-9 sm:h-10 flex items-center justify-center font-bold text-gray-400 dark:text-gray-500 select-none text-xs sm:text-sm"
+                    className="w-7 h-9 sm:w-9 sm:h-10 flex items-center justify-center font-bold text-[#64748B] dark:text-gray-400 select-none text-xs sm:text-sm"
                   >
                     …
                   </span>
@@ -203,7 +203,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
               <span>→</span>
             </Link>
           ) : (
-            <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-gray-400 dark:text-gray-600 bg-gray-100/60 dark:bg-gray-800/40 border border-gray-200/60 dark:border-gray-800/60 cursor-not-allowed flex items-center gap-1.5">
+            <span className="px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-[#64748B] opacity-50 dark:text-gray-600 bg-slate-100 dark:bg-gray-800/40 border border-[#CBD5E1] dark:border-gray-800/60 cursor-not-allowed flex items-center gap-1.5">
               <span>{lang === "en" ? "Next" : "अगला"}</span>
               <span>→</span>
             </span>

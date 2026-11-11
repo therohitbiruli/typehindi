@@ -159,7 +159,7 @@ export default async function LearnSlugPage({ params }: Props) {
             <h2 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
               <span>⌨️</span> {langConfig.name} Keyboard Layout: {langConfig.layoutName}
             </h2>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium mt-0.5">
               Official Bureau of Indian Standards (BIS) phonetic mapping. Vowels are on the left, consonants on the right.
             </p>
           </div>
@@ -191,7 +191,7 @@ export default async function LearnSlugPage({ params }: Props) {
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5 flex items-center gap-1.5">
               <span>🪟</span> Windows 10 & 11
             </h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               {langConfig.learning.inputSetup.windows}
             </p>
           </div>
@@ -199,7 +199,7 @@ export default async function LearnSlugPage({ params }: Props) {
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5 flex items-center gap-1.5">
               <span>🍎</span> macOS (Apple)
             </h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               {langConfig.learning.inputSetup.mac}
             </p>
           </div>
@@ -207,7 +207,7 @@ export default async function LearnSlugPage({ params }: Props) {
             <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5 flex items-center gap-1.5">
               <span>🐧</span> Linux (Ubuntu/Debian)
             </h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               {langConfig.learning.inputSetup.linux}
             </p>
           </div>
@@ -228,7 +228,7 @@ export default async function LearnSlugPage({ params }: Props) {
             <h3 className="font-bold text-sm text-gray-900 dark:text-white mb-2 flex items-center gap-2">
               <span>👈</span> Left Hand Finger Assignments
             </h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               {langConfig.learning.fingerPlacement.leftHand}
             </p>
           </div>
@@ -237,7 +237,7 @@ export default async function LearnSlugPage({ params }: Props) {
             <h3 className="font-bold text-sm text-gray-900 dark:text-white mb-2 flex items-center gap-2">
               <span>👉</span> Right Hand Finger Assignments
             </h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               {langConfig.learning.fingerPlacement.rightHand}
             </p>
           </div>
@@ -261,7 +261,7 @@ export default async function LearnSlugPage({ params }: Props) {
               <div className="text-[11px] font-mono font-semibold text-primary-500">
                 {c.keyCombo}
               </div>
-              <div className="text-[9px] uppercase font-bold text-gray-400 dark:text-gray-500 mt-1">
+              <div className="text-[9px] uppercase font-bold text-[#475569] dark:text-gray-400 mt-1">
                 {c.type}
               </div>
             </div>
@@ -275,7 +275,7 @@ export default async function LearnSlugPage({ params }: Props) {
           <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
             <span>📝</span> Frequent {langConfig.name} Words
           </h3>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
+          <p className="text-xs text-[#475569] dark:text-gray-300 font-medium mb-4">
             Practice typing these common vocabulary patterns to develop sub-conscious finger memory.
           </p>
           <div className="flex flex-wrap gap-2">
@@ -294,7 +294,7 @@ export default async function LearnSlugPage({ params }: Props) {
           <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
             <span>💬</span> Practice Sentences
           </h3>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
+          <p className="text-xs text-[#475569] dark:text-gray-300 font-medium mb-4">
             Constructed with natural grammar to train transitions between vowels, matras, and consonants.
           </p>
           <ul className="space-y-2.5 text-xs text-gray-700 dark:text-gray-300">
@@ -320,42 +320,42 @@ export default async function LearnSlugPage({ params }: Props) {
           <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">01</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Prioritize Accuracy Over Speed</h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               Never rush key presses. Aim for 98% accuracy first. When your fingers learn the exact key coordinates, speed follows automatically.
             </p>
           </div>
           <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">02</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Never Look at the Keyboard</h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               Cover your hands with a small sheet of paper if necessary. Looking down prevents muscle memory from forming in the cerebral cortex.
             </p>
           </div>
           <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">03</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Practice Full 10-Minute Tests</h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               One-minute sprint drills do not build exam stamina. Take at least one complete 10-minute test daily on TypeHindi.
             </p>
           </div>
           <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">04</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Master Halant & Conjunct Keys</h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               In Indic InScript, the Virama / Halant key (D) forms half-letters and conjuncts. Practice typing conjunct words fluidly.
             </p>
           </div>
           <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">05</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Use an Ergonomic Desktop Keyboard</h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               Avoid practicing exclusively on flat laptop keyboards. Most government exam centers provide standard membrane desktop keyboards.
             </p>
           </div>
           <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
             <span className="text-xl font-bold text-primary-500">06</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Build a 10 WPM Safety Buffer</h3>
-            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
               If an exam requires 30 WPM, train yourself to type at 40 WPM at home to absorb exam-day nervousness easily.
             </p>
           </div>
@@ -376,7 +376,7 @@ export default async function LearnSlugPage({ params }: Props) {
               <h3 className="font-bold text-sm text-gray-900 dark:text-white mb-1.5">
                 {faq.question}
               </h3>
-              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
                 {faq.answer}
               </p>
             </div>

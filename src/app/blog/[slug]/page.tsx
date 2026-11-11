@@ -150,7 +150,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-normal text-[#102B5C] dark:text-white">
             {title}
           </h1>
-          <div className="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+          <div className="flex items-center justify-center gap-4 text-sm font-medium text-[#64748B] dark:text-gray-400 mb-6">
             {blog.author && (<><span>{blog.author}</span><span>&bull;</span></>)}<time>{date}</time>
           </div>
         </header>
@@ -172,7 +172,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
             </div>
             
             <div 
-              className="prose prose-lg dark:prose-invert !max-w-none w-full prose-headings:font-bold prose-p:leading-relaxed prose-a:text-primary-600"
+              className="prose prose-lg dark:prose-invert !max-w-none w-full prose-headings:font-bold prose-headings:text-[#17243A] dark:prose-headings:text-white prose-p:leading-relaxed prose-p:text-[#27364B] dark:prose-p:text-gray-200 prose-a:text-[#174EA6] hover:prose-a:text-[#102B5C] dark:prose-a:text-primary-400"
               dangerouslySetInnerHTML={{ __html: formatContent(content) }}
             />
         </div>
@@ -184,11 +184,11 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
               <span className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400">
                 {lang === "en" ? "Interactive Practice Tools" : "इंटरएक्टिव प्रैक्टिस टूल्स"}
               </span>
-              <h3 className="text-xl md:text-2xl font-black text-gray-900 dark:text-white mt-1">
+              <h3 className="text-xl md:text-2xl font-black text-[#17243A] dark:text-white mt-1">
                 {lang === "en" ? "Prepare & Test Your Speed on TypeHindi" : "TypeHindi पर अपनी स्पीड जांचें और अभ्यास करें"}
               </h3>
             </div>
-            <span className="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full w-fit border border-slate-200 dark:border-slate-700">
+            <span className="text-xs font-semibold text-[#475569] dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full w-fit border border-slate-200 dark:border-slate-700">
               {lang === "en" ? "100% Free • No Login Needed" : "100% मुफ़्त • कोई लॉगिन नहीं"}
             </span>
           </div>
@@ -199,11 +199,11 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
               className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>⏱️</span>
                   <span>{lang === "en" ? "10-Min Typing Test" : "10-मिनट टाइपिंग टेस्ट"}</span>
                 </div>
-                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-[#475569] dark:text-slate-300 mt-1 font-medium leading-relaxed">
                   {lang === "en"
                     ? "Practice full 10-minute exam simulations for SSC CHSL, High Courts, and state clerical exams with real WPM & accuracy scoring."
                     : "SSC CHSL, हाईकोर्ट और क्लर्क भर्ती परीक्षाओं के लिए सटीक WPM और एक्यूरेसी के साथ 10-मिनट टेस्ट दें।"}
@@ -219,11 +219,11 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
               className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>अ</span>
                   <span>{lang === "en" ? "Mangal Font Test" : "मंगल फॉन्ट टाइपिंग टेस्ट"}</span>
                 </div>
-                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-[#475569] dark:text-slate-300 mt-1 font-medium leading-relaxed">
                   {lang === "en"
                     ? "Mandated by SSC for Hindi typing tests. Practice with official Unicode InScript layout and realistic passages."
                     : "SSC द्वारा अनिवार्य मंगल फॉन्ट पर इनस्क्रिप्ट कीबोर्ड के साथ अभ्यास करें और अपनी स्पीड 30+ WPM बनाएं।"}
@@ -239,11 +239,11 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
               className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>📖</span>
                   <span>{lang === "en" ? "Touch Typing Course" : "टच टाइपिंग सीखें"}</span>
                 </div>
-                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-[#475569] dark:text-slate-300 mt-1 font-medium leading-relaxed">
                   {lang === "en"
                     ? "Step-by-step interactive lessons for beginners. Master finger positions on home row, top row, and bottom row."
                     : "शुरुआती छात्रों के लिए स्टेप-बाय-स्टेप गाइड। होम रो, टॉप रो और मात्राओं पर बिना देखे टाइप करना सीखें।"}
@@ -259,11 +259,11 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
               className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>⌨️</span>
                   <span>{lang === "en" ? "InScript Keyboard Guide" : "इनस्क्रिप्ट कीबोर्ड लेआउट"}</span>
                 </div>
-                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-[#475569] dark:text-slate-300 mt-1 font-medium leading-relaxed">
                   {lang === "en"
                     ? "Interactive visual map of all vowels, consonants, halants, and special conjunct characters in Devanagari script."
                     : "देवनागरी लिपि के सभी स्वर, व्यंजन, मात्राएं और संयुक्त अक्षरों का सचित्र और स्पष्ट कीबोर्ड मैप।"}
@@ -279,11 +279,11 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
               className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>🎮</span>
                   <span>{lang === "en" ? "Speed-Building Games" : "टाइपिंग स्पीड गेम्स"}</span>
                 </div>
-                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-[#475569] dark:text-slate-300 mt-1 font-medium leading-relaxed">
                   {lang === "en"
                     ? "Build muscle memory and reflex speed while destroying falling words in Hindi and English."
                     : "गिरते हुए शब्दों को तेजी से टाइप करके नष्ट करें और अपनी उंगलियों की रिफ्लेक्स स्पीड को तेजी से बढ़ाएं।"}
@@ -299,11 +299,11 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
               className="p-4 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/90 border border-slate-200 dark:border-slate-800 hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group flex flex-col justify-between space-y-2 shadow-sm dark:shadow-none"
             >
               <div>
-                <div className="flex items-center gap-2 text-base font-bold text-gray-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                <div className="flex items-center gap-2 text-base font-bold text-[#17243A] dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                   <span>⚡</span>
                   <span>{lang === "en" ? "Pitman Shorthand Hub" : "शॉर्टहैंड व आशुलिपि"}</span>
                 </div>
-                <p className="text-xs text-gray-600 dark:text-slate-400 mt-1 leading-relaxed">
+                <p className="text-xs text-[#475569] dark:text-slate-300 mt-1 font-medium leading-relaxed">
                   {lang === "en"
                     ? "Interactive steno stroke teacher, vector animated demonstrations, word builder, and 40–120 WPM audio dictations."
                     : "पिटमैन शॉर्टहैंड स्ट्रोक टीचर, एनिमेटेड स्ट्रोक डेमो, वर्ड बिल्डर और 40 से 120 WPM ऑडियो डिक्टेशन।"}
@@ -323,7 +323,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
               <div className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400 mb-1">
                 {lang === "en" ? "Explore More" : "और अधिक पढ़ें"}
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#17243A] dark:text-white">
                 {lang === "en" ? "Related Articles & Typing Guides" : "संबंधित लेख और टाइपिंग गाइड"}
               </h2>
             </div>
@@ -360,12 +360,12 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
                   <div className="p-4 sm:p-5 flex flex-col flex-grow justify-between">
                     <div>
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400">{item.author} · {itemDate}</span>
+                        <span className="text-[11px] font-semibold text-[#64748B] dark:text-gray-400">{item.author} · {itemDate}</span>
                       </div>
-                      <h3 className="font-bold text-sm text-gray-900 dark:text-white line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
+                      <h3 className="font-bold text-sm text-[#17243A] dark:text-white line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-2">
                         {itemTitle}
                       </h3>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-[#475569] dark:text-gray-300 line-clamp-2 font-medium leading-relaxed">
                         {itemExcerpt}
                       </p>
                     </div>

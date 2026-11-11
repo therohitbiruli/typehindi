@@ -144,7 +144,7 @@ export function TestTool() {
       <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-900 border border-[#D9E1EC] dark:border-slate-800 p-4 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
         {/* Language Selector */}
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-500">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#475569] dark:text-slate-300">
             Language Mode
           </label>
           <div className="flex gap-2 bg-[#EEF2F7] dark:bg-slate-800 p-1 rounded-xl">
@@ -152,7 +152,7 @@ export function TestTool() {
               onClick={() => handleLanguageChange("hindi")}
               disabled={isStarted && !showResults}
               className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                language === "hindi" ? "bg-white dark:bg-slate-950 text-primary-600 dark:text-primary-400 shadow-sm" : "text-gray-500"
+                language === "hindi" ? "bg-white dark:bg-slate-950 text-primary-600 dark:text-primary-400 shadow-sm" : "text-[#475569] hover:text-[#17243A] dark:text-slate-400 dark:hover:text-white"
               }`}
             >
               Hindi (Devanagari)
@@ -161,7 +161,7 @@ export function TestTool() {
               onClick={() => handleLanguageChange("english")}
               disabled={isStarted && !showResults}
               className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                language === "english" ? "bg-white dark:bg-slate-950 text-primary-600 dark:text-primary-400 shadow-sm" : "text-gray-500"
+                language === "english" ? "bg-white dark:bg-slate-950 text-primary-600 dark:text-primary-400 shadow-sm" : "text-[#475569] hover:text-[#17243A] dark:text-slate-400 dark:hover:text-white"
               }`}
             >
               English (QWERTY)
@@ -171,7 +171,7 @@ export function TestTool() {
 
         {/* Target Job Selector */}
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#475569] dark:text-slate-300">
             What typing Job are you preparing for?
           </label>
           <select
@@ -190,7 +190,7 @@ export function TestTool() {
 
         {/* Duration Selector */}
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#475569] dark:text-slate-300">
             Test Duration
           </label>
           <div className="flex gap-2">
@@ -203,7 +203,7 @@ export function TestTool() {
                   className={`flex-1 py-1 px-2 text-xs font-bold transition-all rounded-lg ${
                     testDuration === opt.seconds
                       ? "bg-white dark:bg-slate-950 text-primary-600 dark:text-primary-400 shadow-sm"
-                      : "text-gray-500"
+                      : "text-[#475569] hover:text-[#17243A] dark:text-slate-400 dark:hover:text-white"
                   }`}
                 >
                   {opt.label}
@@ -228,7 +228,7 @@ export function TestTool() {
             {targetJob === "udc" && "UDC Clerk Exam Guidelines"}
             {targetJob === "others" && "General Typing Exam Rules"}
           </h4>
-          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1.5 leading-relaxed">
+          <p className="text-xs text-[#475569] dark:text-gray-300 mt-1.5 font-medium leading-relaxed">
             {targetJob === "ssc" && (
               language === "hindi" 
                 ? "SSC Hindi Typing requires 30 WPM (using InScript or Remington layouts) with up to 5-7% error tolerance depending on candidate category." 
@@ -264,19 +264,19 @@ export function TestTool() {
           <h2 className="heading-2 mb-4 text-center">📊 Test Results</h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             <div className="text-center">
-              <p className="text-sm text-gray-500 dark:text-gray-400">Speed (WPM)</p>
+              <p className="text-sm font-semibold text-[#475569] dark:text-slate-300">Speed (WPM)</p>
               <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">{stats.wpm}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-500 dark:text-gray-400">Accuracy</p>
+              <p className="text-sm font-semibold text-[#475569] dark:text-slate-300">Accuracy</p>
               <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">{stats.accuracy}%</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-500 dark:text-gray-400">Total Errors</p>
+              <p className="text-sm font-semibold text-[#475569] dark:text-slate-300">Total Errors</p>
               <p className="text-3xl font-bold text-red-600 dark:text-red-400">{stats.totalErrors}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-500 dark:text-gray-400">Best WPM</p>
+              <p className="text-sm font-semibold text-[#475569] dark:text-slate-300">Best WPM</p>
               <p className="text-3xl font-bold text-amber-600 dark:text-amber-400">{bestTestWpm}</p>
             </div>
           </div>

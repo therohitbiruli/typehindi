@@ -32,7 +32,7 @@ export default function ShorthandGuidesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-[#17243A] dark:text-slate-100">
       <ShorthandNav />
 
       <main className="container-main py-10 space-y-12">
@@ -40,10 +40,10 @@ export default function ShorthandGuidesPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
             Resources & Tools
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
+          <h1 className="text-2xl sm:text-3xl font-black text-[#17243A] dark:text-slate-100">
             Shorthand Reference Library & Personal Notebook
           </h1>
-          <p className="text-xs text-gray-500 dark:text-slate-400">
+          <p className="text-xs text-[#475569] dark:text-slate-300 font-medium">
             Study common pitfalls, manage your personal practice notebook, and generate printable ruled drill sheets.
           </p>
         </div>
@@ -54,10 +54,10 @@ export default function ShorthandGuidesPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
               Exam Preparation Guide
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-slate-100 mt-1">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#17243A] dark:text-slate-100 mt-1">
               5 Most Common Pitman Shorthand Mistakes
             </h2>
-            <p className="text-xs text-gray-500 dark:text-slate-400 mt-1">
+            <p className="text-xs text-[#475569] dark:text-slate-300 font-medium mt-1">
               Avoid these fundamental beginner habits to build genuine transcription speed and pass SSC/High Court skill tests.
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function ShorthandGuidesPage() {
             {commonMistakes.map((m, idx) => (
               <div key={idx} className="p-5 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-800 space-y-2">
                 <h3 className="text-sm font-bold text-purple-700 dark:text-purple-400">{m.title}</h3>
-                <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed">{m.desc}</p>
+                <p className="text-xs text-[#475569] dark:text-slate-300 font-medium leading-relaxed">{m.desc}</p>
               </div>
             ))}
           </div>
@@ -76,10 +76,10 @@ export default function ShorthandGuidesPage() {
         <section className="space-y-6 pt-6 border-t border-gray-200 dark:border-slate-800">
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div>
-              <h2 className="text-xl font-bold text-gray-900 dark:text-slate-100">
+              <h2 className="text-xl font-bold text-[#17243A] dark:text-slate-100">
                 Interactive Notebook & Printable Sheets
               </h2>
-              <p className="text-xs text-gray-500 dark:text-slate-400">
+              <p className="text-xs text-[#475569] dark:text-slate-300 font-medium">
                 Save your custom word outlines locally or generate lined practice sheets for pen drills.
               </p>
             </div>

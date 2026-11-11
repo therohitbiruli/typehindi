@@ -170,7 +170,7 @@ export function FloatingTranslator() {
 
           {/* Target Language Selector */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+            <label className="text-[10px] font-bold uppercase tracking-wider text-[#475569] dark:text-gray-400">
               Translate to
             </label>
             <div className="flex flex-wrap gap-1.5">
@@ -194,7 +194,7 @@ export function FloatingTranslator() {
           <div className="space-y-3">
             {/* Source Input */}
             <div className="space-y-1">
-              <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 flex justify-between">
+              <label className="text-[10px] font-bold uppercase tracking-wider text-[#475569] dark:text-gray-400 flex justify-between">
                 <span>Type in any language</span>
                 <span className="text-primary-500 lowercase">auto-detect</span>
               </label>
@@ -209,7 +209,7 @@ export function FloatingTranslator() {
 
             {/* Translated Output */}
             <div className="space-y-1">
-              <label className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+              <label className="text-[10px] font-bold uppercase tracking-wider text-[#475569] dark:text-gray-400">
                 {currentLangMeta.label} ({currentLangMeta.labelEn})
               </label>
               <textarea
@@ -255,7 +255,7 @@ export function FloatingTranslator() {
             </button>
           )}
 
-          <p className="text-[10px] text-gray-400 dark:text-gray-500 text-center">
+          <p className="text-[10px] text-[#475569] dark:text-gray-400 text-center">
             Click ✕ on the floating button to hide permanently.
           </p>
         </div>

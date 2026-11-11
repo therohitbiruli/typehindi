@@ -41,7 +41,7 @@ export default function ShorthandTestsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#070B14] text-gray-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white dark:bg-[#070B14] text-[#17243A] dark:text-slate-100">
       <Suspense fallback={null}>
         <UrlParamReader onParams={handleParams} />
       </Suspense>
@@ -54,10 +54,10 @@ export default function ShorthandTestsPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
             Stenographer Skill Test Simulator
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-slate-100">
+          <h1 className="text-2xl sm:text-3xl font-black text-[#17243A] dark:text-slate-100">
             {selectedExam.name}
           </h1>
-          <p className="text-xs sm:text-sm text-gray-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-300 font-medium max-w-3xl leading-relaxed">
             {selectedExam.description}
           </p>
 
@@ -91,14 +91,14 @@ export default function ShorthandTestsPage() {
             className={`p-4 rounded-xl border text-left transition-all ${
               activeStep === "dictation"
                 ? "bg-purple-950/40 border-purple-500 text-purple-200"
-                : "bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-gray-500 dark:text-slate-400"
+                : "bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-[#475569] dark:text-slate-400 font-medium"
             }`}
           >
             <span className="text-[10px] uppercase font-bold tracking-wider">Step 1</span>
-            <h4 className="font-bold text-sm text-gray-900 dark:text-slate-100 mt-0.5">
+            <h4 className="font-bold text-sm text-[#17243A] dark:text-slate-100 mt-0.5">
               🎙️ Audio Dictation ({selectedExam.dictationSpeedWpm} WPM)
             </h4>
-            <p className="text-[11px] text-gray-500 dark:text-slate-400 mt-0.5">
+            <p className="text-[11px] text-[#475569] dark:text-slate-300 font-medium mt-0.5">
               Take notes in your shorthand notebook during dictation.
             </p>
           </button>
@@ -109,14 +109,14 @@ export default function ShorthandTestsPage() {
             className={`p-4 rounded-xl border text-left transition-all ${
               activeStep === "transcription"
                 ? "bg-purple-950/40 border-purple-500 text-purple-200"
-                : "bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-gray-500 dark:text-slate-400"
+                : "bg-gray-50 dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-[#475569] dark:text-slate-400 font-medium"
             }`}
           >
             <span className="text-[10px] uppercase font-bold tracking-wider">Step 2</span>
-            <h4 className="font-bold text-sm text-gray-900 dark:text-slate-100 mt-0.5">
+            <h4 className="font-bold text-sm text-[#17243A] dark:text-slate-100 mt-0.5">
               💻 Computer Transcription ({selectedExam.transcriptionTimeMinutes} Mins)
             </h4>
-            <p className="text-[11px] text-gray-500 dark:text-slate-400 mt-0.5">
+            <p className="text-[11px] text-[#475569] dark:text-slate-300 font-medium mt-0.5">
               Type your notes on keyboard with full error evaluation.
             </p>
           </button>

@@ -116,7 +116,7 @@ export function InteractiveKeyboardMaster() {
       {/* ========================================================================= */}
       <section className="card p-6 md:p-8 rounded-3xl border border-primary-200 dark:border-primary-500/30 bg-gradient-to-br from-primary-50/60 via-white to-slate-50 dark:from-primary-950/40 dark:via-slate-900 dark:to-slate-900 shadow-sm dark:shadow-xl">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-500/10 border border-primary-200 dark:border-primary-500/20 text-primary-700 dark:text-primary-400 text-xs font-bold uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] dark:bg-primary-500/10 border border-[#93C5FD] dark:border-primary-500/20 text-[#102B5C] dark:text-primary-400 text-xs font-bold uppercase tracking-widest mb-3">
             🔍 Character Locator
           </div>
           <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-2">
@@ -157,8 +157,8 @@ export function InteractiveKeyboardMaster() {
                 onClick={() => setSearchQuery(char)}
                 className={`w-9 h-9 rounded-xl border text-base font-bold transition-all flex items-center justify-center ${
                   searchQuery === char
-                    ? "bg-primary-600 border-primary-400 text-white scale-110 shadow-md shadow-primary-500/30"
-                    : "bg-gray-100 dark:bg-slate-800/80 border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-200 hover:border-[#8FA6C5]/60 hover:text-white"
+                    ? "bg-[#102B5C] border-[#102B5C] text-white scale-110 shadow-md shadow-[#102B5C]/20"
+                    : "bg-[#F4F7FC] dark:bg-slate-800/80 border border-[#CBD5E1] dark:border-slate-700 text-[#17243A] dark:text-slate-200 hover:border-[#8FA6C5] hover:bg-[#EAF1FB]"
                 }`}
                 style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
               >
@@ -169,10 +169,10 @@ export function InteractiveKeyboardMaster() {
 
           {/* Search Result Banner */}
           {searchResult ? (
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-emerald-500/40 animate-in fade-in zoom-in-95 duration-200 text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="p-4 rounded-2xl bg-[#F0FDF4] dark:bg-slate-950 border border-[#86EFAC] dark:border-emerald-500/40 animate-in fade-in zoom-in-95 duration-200 text-left flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div
-                  className="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-3xl font-black text-emerald-600 dark:text-emerald-300"
+                  className="w-14 h-14 rounded-2xl bg-[#DCFCE7] dark:bg-emerald-500/20 border border-[#86EFAC] dark:border-emerald-500/40 flex items-center justify-center text-3xl font-black text-[#166534] dark:text-emerald-300"
                   style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                 >
                   {searchResult.char}
@@ -189,7 +189,7 @@ export function InteractiveKeyboardMaster() {
                         : searchResult.keyDetail.englishKey}
                     </kbd>
                   </div>
-                  <span className="text-xs text-emerald-400">
+                  <span className="text-xs text-[#166534] dark:text-emerald-400 font-semibold">
                     Category:{" "}
                     {searchResult.matchType === "shift"
                       ? searchResult.keyDetail.shiftCategory
@@ -234,8 +234,8 @@ export function InteractiveKeyboardMaster() {
             onClick={() => setShiftToggled((prev) => !prev)}
             className={`flex items-center gap-2 px-5 py-2.5 rounded-2xl border-2 text-xs font-black uppercase tracking-wider transition-all shadow-md ${
               isShiftActive
-                ? "bg-amber-500 border-amber-400 text-slate-950 shadow-amber-500/25 scale-105"
-                : "bg-white dark:bg-slate-900 border-gray-300 dark:border-slate-700 text-gray-600 dark:text-slate-300 hover:border-slate-500 hover:text-gray-900 dark:text-white"
+                ? "bg-[#FFFBEB] dark:bg-amber-500 border-[#FCD34D] dark:border-amber-400 text-[#92400E] dark:text-slate-950 shadow-[#FCD34D]/25 scale-105 font-black"
+                : "bg-white dark:bg-slate-900 border border-[#B8C7DA] dark:border-slate-700 text-[#334155] dark:text-slate-300 hover:border-[#8FA6C5] hover:text-[#17243A] dark:hover:text-white"
             }`}
           >
             <span>⇧</span>
@@ -251,8 +251,8 @@ export function InteractiveKeyboardMaster() {
               onClick={() => setActiveCategory(cat.id)}
               className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all border ${
                 activeCategory === cat.id
-                  ? "bg-primary-600 border-primary-400 text-white shadow-sm dark:shadow-lg shadow-primary-500/20"
-                  : "bg-white dark:bg-slate-900/80 border-gray-200 dark:border-slate-800 text-gray-500 dark:text-slate-400 hover:border-gray-300 dark:border-slate-700 hover:text-gray-700 dark:text-slate-200"
+                  ? "bg-[#102B5C] border-[#102B5C] text-white shadow-sm dark:shadow-lg shadow-[#102B5C]/20"
+                  : "bg-white dark:bg-slate-900/80 border border-[#CBD5E1] dark:border-slate-800 text-[#475569] dark:text-slate-400 hover:border-[#8FA6C5] hover:text-[#17243A] dark:hover:text-slate-200"
               }`}
             >
               <span>{cat.icon}</span>
@@ -262,7 +262,7 @@ export function InteractiveKeyboardMaster() {
         </div>
 
         {activeCategoryInfo && activeCategory !== "all" && (
-          <div className="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-[#CBD5E1] dark:border-slate-800 text-xs text-gray-600 dark:text-slate-300 flex items-center gap-3">
+          <div className="p-4 rounded-2xl bg-[#F4F7FC] dark:bg-slate-900/60 border border-[#CBD5E1] dark:border-slate-800 text-xs text-[#334155] dark:text-slate-300 flex items-center gap-3">
             <span className="text-xl">{activeCategoryInfo.icon}</span>
             <div>
               <strong className="text-gray-900 dark:text-white block mb-0.5">{activeCategoryInfo.label}:</strong>
@@ -287,7 +287,7 @@ export function InteractiveKeyboardMaster() {
             </div>
             <div className="hidden sm:flex items-center gap-3 font-semibold">
               <span className="text-gray-400 dark:text-slate-500">Normal: Bottom/Left</span>
-              <span className="text-amber-400">Shift: Top/Orange</span>
+              <span className="text-[#92400E] dark:text-amber-400">Shift: Top/Orange</span>
             </div>
           </div>
 
@@ -318,12 +318,12 @@ export function InteractiveKeyboardMaster() {
                         isPhysActive
                           ? "bg-primary-500 text-white ring-4 ring-primary-400/50 scale-105 z-20"
                           : isSearchMatch
-                          ? "bg-emerald-600/30 border-2 border-emerald-400 text-emerald-950 dark:text-white ring-2 ring-emerald-400/50 z-10"
+                          ? "bg-[#DCFCE7] dark:bg-emerald-600/30 border-2 border-[#86EFAC] dark:border-emerald-400 text-[#166534] dark:text-white ring-2 ring-[#86EFAC]/50 z-10"
                           : isSelected
-                          ? "bg-primary-100 dark:bg-primary-950 border-2 border-primary-500 text-primary-950 dark:text-white ring-2 ring-primary-500/30 z-10 shadow-sm dark:shadow-lg shadow-primary-500/20"
+                          ? "bg-[#EFF6FF] dark:bg-primary-950 border-2 border-[#102B5C] dark:border-primary-500 text-[#102B5C] dark:text-white ring-2 ring-[#102B5C]/30 z-10 shadow-sm dark:shadow-lg"
                           : inCategory
-                          ? "bg-gray-50 dark:bg-slate-800/90 border border-gray-300 dark:border-slate-700/80 text-white hover:border-[#8FA6C5] hover:bg-gray-100 dark:hover:bg-slate-700"
-                          : "bg-white dark:bg-slate-900/40 border border-[#CBD5E1] dark:border-slate-800/50 text-gray-500 dark:text-slate-600 opacity-30 hover:opacity-80"
+                          ? "bg-[#F4F7FC] dark:bg-slate-800/90 border border-[#CBD5E1] dark:border-slate-700/80 text-[#17243A] dark:text-white hover:border-[#8FA6C5] hover:bg-[#EAF1FB]"
+                          : "bg-white dark:bg-slate-900/40 border border-[#E2E8F0] dark:border-slate-800/50 text-[#94A3B8] dark:text-slate-600 opacity-60 hover:opacity-100"
                       }`}
                       style={key.width ? { width: `${key.width * 3}rem` } : undefined}
                     >
@@ -331,8 +331,8 @@ export function InteractiveKeyboardMaster() {
                       <span
                         className={`text-xs font-bold leading-none ${
                           isShiftActive
-                            ? "text-amber-300 scale-110 font-black"
-                            : "text-amber-500/70"
+                            ? "text-[#92400E] dark:text-amber-300 scale-110 font-black"
+                            : "text-[#B45309] dark:text-amber-500/70"
                         }`}
                         style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                       >
@@ -370,7 +370,7 @@ export function InteractiveKeyboardMaster() {
           <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
             {/* Key Preview Big Badge */}
             <div className="flex items-center gap-6">
-              <div className="w-24 h-24 rounded-3xl bg-white dark:bg-slate-950 border-2 border-primary-500/40 flex flex-col items-center justify-center shadow-sm dark:shadow-lg shadow-primary-500/10">
+              <div className="w-24 h-24 rounded-3xl bg-[#F4F7FC] dark:bg-slate-950 border-2 border-[#102B5C] dark:border-primary-500/40 flex flex-col items-center justify-center shadow-sm dark:shadow-lg">
                 <span className="text-3xl font-black text-gray-900 dark:text-white" style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}>
                   {isShiftActive ? selectedKey.shift : selectedKey.normal}
                 </span>
@@ -380,7 +380,7 @@ export function InteractiveKeyboardMaster() {
               </div>
 
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-primary-400 block mb-1">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#102B5C] dark:text-primary-400 block mb-1">
                   Key Explorer & Inspector
                 </span>
                 <h3 className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white">
@@ -432,7 +432,7 @@ export function InteractiveKeyboardMaster() {
                     {selectedKey.examplesNormal.map((word) => (
                       <span
                         key={word}
-                        className="text-xs px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 text-primary-300 font-semibold"
+                        className="text-xs px-2.5 py-1 rounded-lg bg-[#EFF6FF] dark:bg-slate-900 border border-[#93C5FD] dark:border-slate-700 text-[#1D4ED8] dark:text-primary-300 font-semibold"
                         style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                       >
                         {word}
@@ -444,16 +444,16 @@ export function InteractiveKeyboardMaster() {
             </div>
 
             {/* Shift State Card */}
-            <div className="p-5 rounded-2xl bg-white dark:bg-slate-950/70 border border-amber-500/30">
+            <div className="p-5 rounded-2xl bg-[#FFFBEB] dark:bg-slate-950/70 border border-[#FCD34D] dark:border-amber-500/30">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#92400E] dark:text-amber-400">
                   Shift + [{selectedKey.englishKey}]
                 </span>
-                <span className="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#FEF3C7] dark:bg-amber-500/20 text-[#92400E] dark:text-amber-300 border border-[#FCD34D] dark:border-amber-500/30 font-bold">
                   {selectedKey.shiftCategory}
                 </span>
               </div>
-              <div className="text-4xl font-black text-amber-300 mb-2" style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}>
+              <div className="text-4xl font-black text-[#92400E] dark:text-amber-300 mb-2" style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}>
                 {selectedKey.shift}
               </div>
               <div className="text-sm font-semibold text-gray-700 dark:text-slate-200 mb-3">
@@ -469,7 +469,7 @@ export function InteractiveKeyboardMaster() {
                     {selectedKey.examplesShift.map((word) => (
                       <span
                         key={word}
-                        className="text-xs px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-amber-500/30 text-amber-300 font-semibold"
+                        className="text-xs px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-[#FCD34D] dark:border-amber-500/30 text-[#92400E] dark:text-amber-300 font-semibold"
                         style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                       >
                         {word}

@@ -68,7 +68,7 @@ export function KeyboardQuizWidget() {
           🏆
         </div>
 
-        <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-1 block">
+        <span className="text-xs font-bold uppercase tracking-widest text-[#102B5C] dark:text-primary-400 mb-1 block">
           Quiz Completed
         </span>
         <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-2">Keyboard Knowledge Score</h3>
@@ -88,15 +88,15 @@ export function KeyboardQuizWidget() {
 
         {/* Characters to Practice */}
         {missedChars.length > 0 ? (
-          <div className="p-5 rounded-2xl bg-rose-950/20 border border-rose-500/30 mb-8 text-left">
-            <span className="text-xs font-bold uppercase tracking-wider text-rose-400 block mb-2">
+          <div className="p-5 rounded-2xl bg-[#FDF2F8] dark:bg-rose-950/20 border border-[#F5B6D7] dark:border-rose-500/30 mb-8 text-left">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#9D174D] dark:text-rose-400 block mb-2">
               ⚠️ Characters to Practice:
             </span>
             <div className="flex flex-wrap gap-2">
               {missedChars.map((ch) => (
                 <span
                   key={ch}
-                  className="w-9 h-9 rounded-xl bg-white dark:bg-slate-900 border border-rose-500/40 text-rose-300 font-bold flex items-center justify-center text-lg"
+                  className="w-9 h-9 rounded-xl bg-white dark:bg-slate-900 border border-[#F5B6D7] dark:border-rose-500/40 text-[#9D174D] dark:text-rose-300 font-bold flex items-center justify-center text-lg"
                   style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                 >
                   {ch}
@@ -109,7 +109,7 @@ export function KeyboardQuizWidget() {
             </p>
           </div>
         ) : (
-          <div className="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 mb-8 text-emerald-300 text-sm font-semibold">
+          <div className="p-4 rounded-2xl bg-[#F0FDF4] dark:bg-emerald-950/20 border border-[#86EFAC] dark:border-emerald-500/30 text-[#166534] dark:text-emerald-300 text-sm font-semibold">
             🎉 Flawless Score! You have fully mastered Hindi InScript keyboard positions!
           </div>
         )}
@@ -148,10 +148,10 @@ export function KeyboardQuizWidget() {
     <div className="card p-6 md:p-8 rounded-[2.5rem] border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-xl max-w-2xl mx-auto">
       {/* Header & Progress Bar */}
       <div className="flex items-center justify-between mb-4 text-xs font-bold text-gray-500 dark:text-slate-400">
-        <span className="uppercase tracking-widest text-primary-400">
+        <span className="uppercase tracking-widest text-[#102B5C] dark:text-primary-400">
           Question {currentIdx + 1} of {KEYBOARD_QUIZ_QUESTIONS.length}
         </span>
-        <span className="text-amber-400">Score: {score}</span>
+        <span className="text-[#92400E] dark:text-amber-400">Score: {score}</span>
       </div>
 
       <div className="w-full h-2 bg-gray-100 dark:bg-slate-800 rounded-full overflow-hidden mb-6">
@@ -175,15 +175,15 @@ export function KeyboardQuizWidget() {
       {/* Options Grid */}
       <div className="grid grid-cols-2 gap-3 mb-6">
         {currentQ.options.map((opt) => {
-          let btnClass = "bg-gray-50 dark:bg-slate-800/90 border-gray-300 dark:border-slate-700 text-gray-900 dark:text-slate-100 hover:border-primary-400 hover:bg-slate-700";
+          let btnClass = "bg-[#F4F7FC] dark:bg-slate-800/90 border border-[#CBD5E1] dark:border-slate-700 text-[#17243A] dark:text-slate-100 hover:border-[#8FA6C5] hover:bg-[#EAF1FB] dark:hover:bg-slate-700";
 
           if (isAnswered) {
             if (opt === currentQ.correctAnswer) {
-              btnClass = "bg-emerald-950 border-emerald-500 text-emerald-300 font-black ring-2 ring-emerald-500/40";
+              btnClass = "bg-[#F0FDF4] dark:bg-emerald-950 border-2 border-[#86EFAC] dark:border-emerald-500 text-[#166534] dark:text-emerald-300 font-black ring-2 ring-[#86EFAC]/40 dark:ring-emerald-500/40";
             } else if (opt === selectedOption) {
-              btnClass = "bg-rose-950 border-rose-500 text-rose-300 font-black";
+              btnClass = "bg-[#FDF2F8] dark:bg-rose-950 border-2 border-[#F5B6D7] dark:border-rose-500 text-[#9D174D] dark:text-rose-300 font-black";
             } else {
-              btnClass = "bg-white dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-gray-500 dark:text-slate-600 opacity-40";
+              btnClass = "bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 text-[#64748B] dark:text-slate-600 opacity-50";
             }
           }
 
@@ -205,7 +205,7 @@ export function KeyboardQuizWidget() {
         <div className="p-4 rounded-2xl bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 mb-6 animate-in fade-in duration-200">
           <div className="flex items-center gap-2 mb-1">
             <span className="text-lg">{isCorrect ? "✅" : "❌"}</span>
-            <span className={`text-sm font-black ${isCorrect ? "text-emerald-400" : "text-rose-400"}`}>
+            <span className={`text-sm font-black ${isCorrect ? "text-[#166534] dark:text-emerald-400" : "text-[#9D174D] dark:text-rose-400"}`}>
               {isCorrect ? "Correct!" : "Incorrect!"}
             </span>
           </div>

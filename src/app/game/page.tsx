@@ -34,9 +34,9 @@ export const metadata: Metadata = {
 type Difficulty = "Beginner" | "Intermediate" | "Advanced";
 
 const DIFFICULTY_COLORS: Record<Difficulty, string> = {
-  Beginner: "text-emerald-400 border-emerald-500/50 bg-emerald-500/10",
-  Intermediate: "text-amber-400 border-amber-500/50 bg-amber-500/10",
-  Advanced: "text-rose-400 border-rose-500/50 bg-rose-500/10",
+  Beginner: "text-[#166534] dark:text-emerald-400 border-[#86EFAC] dark:border-emerald-500/50 bg-[#F0FDF4] dark:bg-emerald-500/10",
+  Intermediate: "text-[#92400E] dark:text-amber-400 border-[#FCD34D] dark:border-amber-500/50 bg-[#FFFBEB] dark:bg-amber-500/10",
+  Advanced: "text-[#9D174D] dark:text-rose-400 border-[#F5B6D7] dark:border-rose-500/50 bg-[#FDF2F8] dark:bg-rose-500/10",
 };
 
 export default function GameHubPage() {
@@ -215,7 +215,7 @@ export default function GameHubPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-3xl">🌧️</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#9D174D] dark:text-rose-400 bg-[#FDF2F8] dark:bg-rose-500/10 px-3 py-1 rounded-full border border-[#F5B6D7] dark:border-rose-500/20">
                     Speed & Gravity Run
                   </span>
                 </div>
@@ -264,7 +264,7 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
-                  <strong className="text-amber-400">💡 Pro Tips:</strong> Focus on accuracy first.
+                  <strong className="text-[#92400E] dark:text-amber-400">💡 Pro Tips:</strong> Focus on accuracy first.
                   Rushing causes spelling mistakes that lose precious seconds. Learn key positions
                   for common vowels and consonants on your keyboard layout to build rapid reflexes.
                 </div>
@@ -285,7 +285,7 @@ export default function GameHubPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-3xl">🛡️</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#166534] dark:text-emerald-400 bg-[#F0FDF4] dark:bg-emerald-500/10 px-3 py-1 rounded-full border border-[#86EFAC] dark:border-emerald-500/20">
                     Base Defense & Combat
                   </span>
                 </div>
@@ -334,7 +334,7 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
-                  <strong className="text-emerald-400">💡 Pro Tips:</strong> Stay calm when multiple
+                  <strong className="text-[#166534] dark:text-emerald-400">💡 Pro Tips:</strong> Stay calm when multiple
                   tanks swarm the perimeter. Prioritize the closest tank to your base first before
                   targeting distant vehicles.
                 </div>
@@ -355,7 +355,7 @@ export default function GameHubPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-3xl">🎯</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#92400E] dark:text-amber-400 bg-[#FFFBEB] dark:bg-amber-500/10 px-3 py-1 rounded-full border border-[#FCD34D] dark:border-amber-500/20">
                     Arcade Precision & Radar
                   </span>
                 </div>
@@ -425,7 +425,7 @@ export default function GameHubPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-3xl">🏃</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#155E75] dark:text-cyan-400 bg-[#ECFEFF] dark:bg-cyan-500/10 px-3 py-1 rounded-full border border-[#67E8F9] dark:border-cyan-500/20">
                     High-Speed Obstacle Dash
                   </span>
                 </div>
@@ -474,7 +474,7 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
-                  <strong className="text-cyan-400">💡 Pro Tips:</strong> Establish a smooth typing
+                  <strong className="text-[#155E75] dark:text-cyan-400">💡 Pro Tips:</strong> Establish a smooth typing
                   cadence. Pausing abruptly interrupts your speed multiplier.
                 </div>
 
@@ -494,7 +494,7 @@ export default function GameHubPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-3xl">🔤</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#5B21B6] dark:text-indigo-400 bg-[#F5F3FF] dark:bg-indigo-500/10 px-3 py-1 rounded-full border border-[#C4B5FD] dark:border-indigo-500/20">
                     Spelling & Vocabulary Quest
                   </span>
                 </div>
@@ -543,7 +543,7 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
-                  <strong className="text-indigo-400">💡 Pro Tips:</strong> Read the Hindi meaning clue
+                  <strong className="text-[#5B21B6] dark:text-indigo-400">💡 Pro Tips:</strong> Read the Hindi meaning clue
                   carefully before choosing. Notice how different matras transform the entire meaning of
                   the word.
                 </div>
@@ -564,7 +564,7 @@ export default function GameHubPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-3xl">🪄</span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-fuchsia-400 bg-fuchsia-500/10 px-3 py-1 rounded-full border border-fuchsia-500/20">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#9D174D] dark:text-fuchsia-400 bg-[#FDF2F8] dark:bg-fuchsia-500/10 px-3 py-1 rounded-full border border-[#F5B6D7] dark:border-fuchsia-500/20">
                     Vowel Sign & Phonetics Mastery
                   </span>
                 </div>
@@ -613,7 +613,7 @@ export default function GameHubPage() {
                 </div>
 
                 <div className="p-4 rounded-2xl bg-white dark:bg-slate-950/60 border border-[#CBD5E1] dark:border-slate-800 mb-6 text-xs text-[#475569] dark:text-slate-300 font-medium">
-                  <strong className="text-fuchsia-400">💡 Pro Tips:</strong> In Devanagari Unicode
+                  <strong className="text-[#9D174D] dark:text-fuchsia-400">💡 Pro Tips:</strong> In Devanagari Unicode
                   typing, always type the consonant first followed by the matra (e.g. क + ि = कि),
                   even if the short vowel visual sign appears on the left side!
                 </div>

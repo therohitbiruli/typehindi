@@ -120,24 +120,24 @@ export function LanguageKeyboardClient({
           <span>🧠</span> How the {langConfig.layoutName} Works
         </h2>
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
-            <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5">
+          <div className="p-4 rounded-2xl bg-[#F4F7FC] dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
+            <h3 className="font-bold text-xs uppercase text-[#102B5C] dark:text-primary-400 tracking-wider mb-1.5">
               1. Phonetic Symmetry
             </h3>
             <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
               Vowels and matras are placed on the left hand, while consonants are organized logically on the right hand.
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
-            <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5">
+          <div className="p-4 rounded-2xl bg-[#F4F7FC] dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
+            <h3 className="font-bold text-xs uppercase text-[#102B5C] dark:text-primary-400 tracking-wider mb-1.5">
               2. Shift Key Pairs
             </h3>
             <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
               Unaspirated consonants (e.g. क, त, प) are typed unshifted. Pressing Shift on the same key produces the aspirated form (ख, थ, फ).
             </p>
           </div>
-          <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
-            <h3 className="font-bold text-xs uppercase text-primary-500 tracking-wider mb-1.5">
+          <div className="p-4 rounded-2xl bg-[#F4F7FC] dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
+            <h3 className="font-bold text-xs uppercase text-[#102B5C] dark:text-primary-400 tracking-wider mb-1.5">
               3. Halant / Virama
             </h3>
             <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -171,7 +171,7 @@ export function LanguageKeyboardClient({
 
         <div className="overflow-x-auto max-h-96 overflow-y-auto">
           <table className="w-full text-left text-xs border-collapse">
-            <thead className="sticky top-0 bg-slate-100 dark:bg-slate-800">
+            <thead className="sticky top-0 bg-[#F4F7FC] dark:bg-slate-800">
               <tr className="border-b border-[#E2E8F0] dark:border-slate-700 text-gray-500 dark:text-gray-400">
                 <th className="py-2.5 px-4 font-bold uppercase">Physical Key</th>
                 <th className="py-2.5 px-4 font-bold uppercase">Normal Press</th>
@@ -181,14 +181,14 @@ export function LanguageKeyboardClient({
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-gray-800 dark:text-gray-200">
               {filteredKeys.map((k) => (
-                <tr key={k.code} className="hover:bg-slate-50 dark:hover:bg-gray-100 dark:bg-slate-800/40 transition-colors">
-                  <td className="py-3 px-4 font-mono font-bold text-primary-500">
+                <tr key={k.code} className="hover:bg-[#F4F7FC] dark:hover:bg-slate-800/60 transition-colors">
+                  <td className="py-3 px-4 font-mono font-bold text-[#102B5C] dark:text-primary-400">
                     {k.label}
                   </td>
                   <td className="py-3 px-4 font-bold text-base text-gray-900 dark:text-white">
                     {k.normal || "—"}
                   </td>
-                  <td className="py-3 px-4 font-bold text-base text-amber-600 dark:text-amber-400">
+                  <td className="py-3 px-4 font-bold text-base text-[#92400E] dark:text-amber-400">
                     {k.shift || "—"}
                   </td>
                   <td className="py-3 px-4 font-mono text-[11px] text-gray-400 dark:text-gray-500">

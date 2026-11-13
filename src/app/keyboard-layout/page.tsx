@@ -168,104 +168,104 @@ export default function KeyboardLayoutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Matras Card */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all flex flex-col justify-between">
+          <div className="card p-6 rounded-3xl border border-[#CBD5E1] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-[#F5B6D7] dark:hover:border-slate-700 transition-all flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center text-2xl mb-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#FDF2F8] dark:bg-fuchsia-500/10 border border-[#F5B6D7] dark:border-fuchsia-500/20 flex items-center justify-center text-2xl mb-4">
                 ✨
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Matras (मात्राएँ)</h3>
-              <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed mb-4">
+              <h3 className="text-xl font-bold text-[#17243A] dark:text-white mb-2">Matras (मात्राएँ)</h3>
+              <p className="text-xs text-[#475569] dark:text-slate-300 leading-relaxed mb-4">
                 Matras are vowel diacritics attached to consonants. On InScript, vowel matras are
                 placed on the left hand (E, R, T, A, S, F, G, Q, W). Always type the consonant first,
                 then press the matra key.
               </p>
             </div>
-            <div className="p-3 rounded-xl bg-white dark:bg-slate-950/80 border border-gray-200 dark:border-slate-800 text-xs text-fuchsia-300 font-mono">
+            <div className="p-3 rounded-xl bg-[#FDF2F8] dark:bg-slate-950/80 border border-[#F5B6D7] dark:border-slate-800 text-xs text-[#9D174D] dark:text-fuchsia-300 font-mono font-bold">
               क [K] + ि [F] = कि
             </div>
           </div>
 
           {/* Halant Card */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all flex flex-col justify-between">
+          <div className="card p-6 rounded-3xl border border-[#CBD5E1] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-[#93C5FD] dark:hover:border-slate-700 transition-all flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-2xl mb-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#EFF6FF] dark:bg-primary-500/10 border border-[#93C5FD] dark:border-primary-500/20 flex items-center justify-center text-2xl mb-4">
                 ⚙️
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Halant (हलंत - ्)</h3>
-              <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed mb-4">
+              <h3 className="text-xl font-bold text-[#17243A] dark:text-white mb-2">Halant (हलंत - ्)</h3>
+              <p className="text-xs text-[#475569] dark:text-slate-300 leading-relaxed mb-4">
                 The Halant key (Key <strong>D</strong>) suppresses the inherent 'a' vowel of a
                 consonant, creating half-letters and binding letters into conjuncts.
               </p>
             </div>
-            <div className="p-3 rounded-xl bg-white dark:bg-slate-950/80 border border-gray-200 dark:border-slate-800 text-xs text-primary-300 font-mono">
+            <div className="p-3 rounded-xl bg-[#EFF6FF] dark:bg-slate-950/80 border border-[#93C5FD] dark:border-slate-800 text-xs text-[#1D4ED8] dark:text-primary-300 font-mono font-bold">
               स [M] + ् [D] + थ [Shift+L] = स्थ
             </div>
           </div>
 
           {/* Shift Characters Card */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all flex flex-col justify-between">
+          <div className="card p-6 rounded-3xl border border-[#CBD5E1] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-[#FCD34D] dark:hover:border-slate-700 transition-all flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-2xl mb-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#FFFBEB] dark:bg-amber-500/10 border border-[#FCD34D] dark:border-amber-500/20 flex items-center justify-center text-2xl mb-4">
                 ⇧
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Shift Characters</h3>
-              <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed mb-4">
+              <h3 className="text-xl font-bold text-[#17243A] dark:text-white mb-2">Shift Characters</h3>
+              <p className="text-xs text-[#475569] dark:text-slate-300 leading-relaxed mb-4">
                 InScript logically places aspirated consonants (महाप्राण) on the Shift state of their
                 unaspirated counterparts on the same key.
               </p>
             </div>
-            <div className="p-3 rounded-xl bg-white dark:bg-slate-950/80 border border-gray-200 dark:border-slate-800 text-xs text-amber-300 font-mono">
+            <div className="p-3 rounded-xl bg-[#FFFBEB] dark:bg-slate-950/80 border border-[#FCD34D] dark:border-slate-800 text-xs text-[#92400E] dark:text-amber-300 font-mono font-bold">
               क [K] ➔ ख [Shift + K]
             </div>
           </div>
 
           {/* Independent Vowels Card */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all flex flex-col justify-between">
+          <div className="card p-6 rounded-3xl border border-[#CBD5E1] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-[#86EFAC] dark:hover:border-slate-700 transition-all flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl mb-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#F0FDF4] dark:bg-emerald-500/10 border border-[#86EFAC] dark:border-emerald-500/20 flex items-center justify-center text-2xl mb-4">
                 🗣️
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Independent Vowels</h3>
-              <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed mb-4">
+              <h3 className="text-xl font-bold text-[#17243A] dark:text-white mb-2">Independent Vowels</h3>
+              <p className="text-xs text-[#475569] dark:text-slate-300 leading-relaxed mb-4">
                 When a vowel starts a word or stands alone (e.g. आज, इमली, ऊपर), use the independent
                 vowel keys accessed via Shift on the vowel keys.
               </p>
             </div>
-            <div className="p-3 rounded-xl bg-white dark:bg-slate-950/80 border border-gray-200 dark:border-slate-800 text-xs text-emerald-300 font-mono">
+            <div className="p-3 rounded-xl bg-[#F0FDF4] dark:bg-slate-950/80 border border-[#86EFAC] dark:border-slate-800 text-xs text-[#166534] dark:text-emerald-300 font-mono font-bold">
               Shift + E = आ (Vowel) vs E = ा (Matra)
             </div>
           </div>
 
           {/* Conjunct Characters Card */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all flex flex-col justify-between">
+          <div className="card p-6 rounded-3xl border border-[#CBD5E1] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-[#67E8F9] dark:hover:border-slate-700 transition-all flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-2xl mb-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#ECFEFF] dark:bg-cyan-500/10 border border-[#67E8F9] dark:border-cyan-500/20 flex items-center justify-center text-2xl mb-4">
                 🔗
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Conjunct Characters</h3>
-              <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed mb-4">
+              <h3 className="text-xl font-bold text-[#17243A] dark:text-white mb-2">Conjunct Characters</h3>
+              <p className="text-xs text-[#475569] dark:text-slate-300 leading-relaxed mb-4">
                 Compound characters are created automatically by your operating system when you type
                 consonant + halant + consonant.
               </p>
             </div>
-            <div className="p-3 rounded-xl bg-white dark:bg-slate-950/80 border border-gray-200 dark:border-slate-800 text-xs text-cyan-300 font-mono">
+            <div className="p-3 rounded-xl bg-[#ECFEFF] dark:bg-slate-950/80 border border-[#67E8F9] dark:border-slate-800 text-xs text-[#155E75] dark:text-cyan-300 font-mono font-bold">
               क [K] + ् [D] + ष [Shift+,] = क्ष
             </div>
           </div>
 
           {/* Nukta Card */}
-          <div className="card p-6 rounded-3xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-gray-300 dark:border-slate-700 transition-all flex flex-col justify-between">
+          <div className="card p-6 rounded-3xl border border-[#CBD5E1] dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-[#C4B5FD] dark:hover:border-slate-700 transition-all flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-2xl mb-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#F5F3FF] dark:bg-indigo-500/10 border border-[#C4B5FD] dark:border-indigo-500/20 flex items-center justify-center text-2xl mb-4">
                 🔤
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Nukta (नुक़्ता - ़)</h3>
-              <p className="text-xs text-gray-600 dark:text-slate-300 leading-relaxed mb-4">
-                Pressing ']' applies the Nukta dot below letters like ड़ (ड + ]), ढ़ (ढ + ]), फ़ (फ +
+              <h3 className="text-xl font-bold text-[#17243A] dark:text-white mb-2">Nukta (नुक़्ता - ़)</h3>
+              <p className="text-xs text-[#475569] dark:text-slate-300 leading-relaxed mb-4">
+                Pressing &apos;]&apos; applies the Nukta dot below letters like ड़ (ड + ]), ढ़ (ढ + ]), फ़ (फ +
                 ]), and ज़ (ज + ]).
               </p>
             </div>
-            <div className="p-3 rounded-xl bg-white dark:bg-slate-950/80 border border-gray-200 dark:border-slate-800 text-xs text-indigo-300 font-mono">
+            <div className="p-3 rounded-xl bg-[#F5F3FF] dark:bg-slate-950/80 border border-[#C4B5FD] dark:border-slate-800 text-xs text-[#5B21B6] dark:text-indigo-300 font-mono font-bold">
               ड [[] + ़ []] = ड़ (Road / पेड़)
             </div>
           </div>
@@ -320,25 +320,25 @@ export default function KeyboardLayoutPage() {
                     <span className="text-[11px] text-gray-500 dark:text-slate-400 block">{group.char1.word}</span>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-white dark:bg-slate-950 border border-amber-500/20">
+                  <div className="p-3 rounded-xl bg-[#FFFBEB] dark:bg-slate-950 border border-[#FCD34D] dark:border-amber-500/20">
                     <div className="flex items-center justify-between text-xs mb-1">
-                      <span className="font-bold text-amber-300">{group.char2.char}</span>
-                      <kbd className="px-2 py-0.5 rounded bg-gray-100 dark:bg-slate-800 text-amber-300 font-mono text-[11px]">
+                      <span className="font-bold text-[#92400E] dark:text-amber-300">{group.char2.char}</span>
+                      <kbd className="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-[#92400E] dark:text-amber-300 font-mono text-[11px] border border-[#FCD34D] dark:border-amber-500/30">
                         {group.char2.key}
                       </kbd>
                     </div>
-                    <span className="text-[11px] text-gray-500 dark:text-slate-400 block">{group.char2.word}</span>
+                    <span className="text-[11px] text-[#92400E]/80 dark:text-slate-400 block">{group.char2.word}</span>
                   </div>
 
                   {group.char3 && (
-                    <div className="p-3 rounded-xl bg-white dark:bg-slate-950 border border-indigo-500/20">
+                    <div className="p-3 rounded-xl bg-[#F5F3FF] dark:bg-slate-950 border border-[#C4B5FD] dark:border-indigo-500/20">
                       <div className="flex items-center justify-between text-xs mb-1">
-                        <span className="font-bold text-indigo-300">{group.char3.char}</span>
-                        <kbd className="px-2 py-0.5 rounded bg-gray-100 dark:bg-slate-800 text-indigo-300 font-mono text-[11px]">
+                        <span className="font-bold text-[#5B21B6] dark:text-indigo-300">{group.char3.char}</span>
+                        <kbd className="px-2 py-0.5 rounded bg-white dark:bg-slate-800 text-[#5B21B6] dark:text-indigo-300 font-mono text-[11px] border border-[#C4B5FD] dark:border-indigo-500/30">
                           {group.char3.key}
                         </kbd>
                       </div>
-                      <span className="text-[11px] text-gray-500 dark:text-slate-400 block">{group.char3.word}</span>
+                      <span className="text-[11px] text-[#5B21B6]/80 dark:text-slate-400 block">{group.char3.word}</span>
                     </div>
                   )}
                 </div>
@@ -406,7 +406,7 @@ export default function KeyboardLayoutPage() {
                 conjuncts.
               </p>
             </div>
-            <span className="text-xs font-bold text-emerald-400 flex items-center gap-1">
+            <span className="text-xs font-bold text-[#166534] dark:text-emerald-400 flex items-center gap-1">
               <span>Start Beginner Practice</span>
               <span>→</span>
             </span>
@@ -423,7 +423,7 @@ export default function KeyboardLayoutPage() {
                 Interactive drills for all 12 vowel matras: ा, ि, ी, ु, ू, े, ै, ो, ौ, ं, ँ.
               </p>
             </div>
-            <span className="text-xs font-bold text-fuchsia-400 flex items-center gap-1">
+            <span className="text-xs font-bold text-[#9D174D] dark:text-fuchsia-400 flex items-center gap-1">
               <span>Start Matra Challenge</span>
               <span>→</span>
             </span>
@@ -440,7 +440,7 @@ export default function KeyboardLayoutPage() {
                 Structured finger-by-finger exercises covering every consonant from क to ह.
               </p>
             </div>
-            <span className="text-xs font-bold text-primary-400 flex items-center gap-1">
+            <span className="text-xs font-bold text-[#102B5C] dark:text-primary-400 flex items-center gap-1">
               <span>Explore Learn Lessons</span>
               <span>→</span>
             </span>
@@ -457,7 +457,7 @@ export default function KeyboardLayoutPage() {
                 Practice characters requiring the Shift key: ख, घ, छ, झ, ठ, ढ, थ, ध, फ, भ, श, ष.
               </p>
             </div>
-            <span className="text-xs font-bold text-amber-400 flex items-center gap-1">
+            <span className="text-xs font-bold text-[#92400E] dark:text-amber-400 flex items-center gap-1">
               <span>Start Shift Practice</span>
               <span>→</span>
             </span>
@@ -475,7 +475,7 @@ export default function KeyboardLayoutPage() {
                 संस्कृति.
               </p>
             </div>
-            <span className="text-xs font-bold text-cyan-400 flex items-center gap-1">
+            <span className="text-xs font-bold text-[#155E75] dark:text-cyan-400 flex items-center gap-1">
               <span>Practice Difficult Words</span>
               <span>→</span>
             </span>
@@ -492,7 +492,7 @@ export default function KeyboardLayoutPage() {
                 Play 6 interactive typing games to test your speed and accuracy under time pressure.
               </p>
             </div>
-            <span className="text-xs font-bold text-rose-400 flex items-center gap-1">
+            <span className="text-xs font-bold text-[#9D174D] dark:text-rose-400 flex items-center gap-1">
               <span>Play Typing Games</span>
               <span>→</span>
             </span>

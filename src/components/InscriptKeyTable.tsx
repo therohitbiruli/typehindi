@@ -64,7 +64,7 @@ export function InscriptKeyTable() {
 
       <div className="card overflow-x-auto p-0 rounded-3xl border border-[#B8C7DA] dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl">
         <table className="w-full text-sm text-left">
-          <thead className="bg-white dark:bg-slate-950/80 text-xs text-gray-500 dark:text-slate-400 uppercase tracking-wider border-b border-[#E2E8F0] dark:border-slate-800">
+          <thead className="bg-[#F4F7FC] dark:bg-slate-950/80 text-xs text-[#475569] dark:text-slate-400 uppercase tracking-wider border-b border-[#E2E8F0] dark:border-slate-800">
             <tr>
               <th className="px-6 py-4 font-bold">English Key</th>
               <th className="px-6 py-4 font-bold">Normal Char</th>
@@ -75,13 +75,13 @@ export function InscriptKeyTable() {
               <th className="px-6 py-4 font-bold">Example</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800/60">
+          <tbody className="divide-y divide-[#E2E8F0] dark:divide-slate-800/60">
             {filteredKeys.map((k) => (
               <tr
                 key={k.code}
-                className="hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800/40 transition-colors"
+                className="hover:bg-[#F4F7FC] dark:hover:bg-slate-800/60 transition-colors"
               >
-                <td className="px-6 py-3 font-mono font-bold text-primary-400">
+                <td className="px-6 py-3 font-mono font-bold text-[#102B5C] dark:text-primary-400">
                   {k.englishKey}
                 </td>
                 <td
@@ -92,7 +92,7 @@ export function InscriptKeyTable() {
                 </td>
                 <td className="px-6 py-3 text-xs text-gray-600 dark:text-slate-300">{k.normalName}</td>
                 <td
-                  className="px-6 py-3 text-xl font-bold text-amber-300"
+                  className="px-6 py-3 text-xl font-bold text-[#92400E] dark:text-amber-400"
                   style={{ fontFamily: "'Noto Sans Devanagari', sans-serif" }}
                 >
                   {k.shift}

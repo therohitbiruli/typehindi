@@ -7,25 +7,24 @@ import { GAME_CATALOG, GameInfo } from "../../data/gameData";
 
 
 export const metadata: Metadata = {
-  title: "Hindi Typing Games - Play Free Typing Games Online | TypeHindi",
+  title: "Typing Games - Play Free Online Typing Games | TypeHindi",
   description:
-    "Play interactive Hindi typing games online for free. Boost typing speed, accuracy, matra mastery, and reflex control with Word Rain, Runner, Target Shooter, and Spelling Quest on InScript.",
+    "Play interactive typing games online for free. Boost typing speed, accuracy, and reflex control with Word Rain, Runner, Target Shooter, and Tank Defender.",
   keywords: [
-    "Hindi typing games",
-    "play Hindi typing game",
-    "online Hindi typing games",
-    "learn Hindi typing through games",
-    "InScript typing games",
-    "Hindi word rain game",
-    "Hindi typing speed games",
+    "typing games",
+    "play typing game",
+    "online typing games",
+    "free typing speed games",
+    "interactive typing games",
+    "keyboard typing games",
   ],
   alternates: {
     canonical: "https://typehindi.in/game",
   },
   openGraph: {
-    title: "Hindi Typing Games - Play Free Typing Games Online | TypeHindi",
+    title: "Typing Games - Play Free Online Typing Games | TypeHindi",
     description:
-      "Make typing practice engaging with 6 interactive Hindi typing games. Play Word Rain, Keyboard Runner, Target Aim, and Spelling Quest on TypeHindi.",
+      "Play interactive typing games to improve your speed, accuracy, and reflexes on TypeHindi.",
     url: "https://typehindi.in/game",
     type: "website",
   },
@@ -43,61 +42,35 @@ export default function GameHubPage() {
 
   return (
     <div className="container-main py-6">
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Game Hub" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Typing Games" }]} />
       <AdPlaceholder position="top" />
 
       {/* ========================================================================= */}
       {/* 1. HERO / INTRODUCTION */}
       {/* ========================================================================= */}
-      <section className="text-center mt-4 mb-12 relative">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-xs font-bold uppercase tracking-widest mb-4">
-          🎮 Interactive Typing Games
+      <section className="text-center mt-4 mb-8 relative">
+        <div className="badge-blue mb-3">
+          <span>🎮</span>
+          <span>Interactive Typing Games</span>
         </div>
-        <h1 className="heading-1 mb-4 text-4xl sm:text-5xl md:text-6xl max-w-4xl mx-auto leading-tight">
-          Learn Hindi Typing Through Games
+        <h1 className="heading-1 mb-3 text-4xl sm:text-5xl md:text-6xl max-w-4xl mx-auto leading-tight">
+          Typing Games
         </h1>
-        <p className="text-muted text-lg sm:text-xl max-w-3xl mx-auto mb-4 leading-relaxed">
-          Make typing practice more engaging by playing interactive Hindi typing games designed to
-          improve speed, accuracy, reflexes, character recognition, matras, and difficult Hindi
-          words.
+        <p className="text-secondary text-base sm:text-lg max-w-2xl mx-auto mb-3">
+          Play interactive typing games to boost your speed, accuracy, and reflex control.
         </p>
-        <p className="text-[#475569] dark:text-slate-300 font-medium text-sm max-w-2xl mx-auto mb-8">
-          Repetitive typing drills can often feel monotonous. Our gamified challenges turn everyday
-          keystroke practice into fast-paced reflex drills, spelling quests, and dynamic obstacle runs.
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
-          <a href="#choose-games" className="btn-primary rounded-xl px-7 py-3.5 text-base font-bold shadow-sm dark:shadow-lg shadow-primary-500/25 flex items-center gap-2"><span>Explore Games</span><span>↓</span></a>
-          <Link
-            href="/practice"
-            className="btn-secondary rounded-xl px-6 py-3.5 text-base font-semibold border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-slate-700 bg-gray-50 dark:bg-slate-900/80 text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-slate-800 hover:text-[#17243A] dark:text-white transition-all"
-          >
-            Standard Practice →
-          </Link>
-        </div>
 
         {/* Mobile-only Keyboard Notice */}
-        <div className="inline-flex md:hidden items-center gap-2 px-4 py-2 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs max-w-xl mx-auto text-center">
+        <div className="inline-flex md:hidden items-center gap-2 px-4 py-2 rounded-2xl bg-[#FFFBEB] dark:bg-amber-500/10 border border-[#FCD34D] dark:border-amber-500/20 text-[#92400E] dark:text-amber-300 text-xs max-w-xl mx-auto text-center mt-1">
           <span>💻</span>
           <span><strong>Device Notice:</strong> Typing games are best experienced on a Desktop or Laptop with a physical keyboard.</span>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. GAME HUB - CHOOSE YOUR TYPING GAME (DEDICATED URL LINKS) */}
+      {/* 2. GAME HUB - 6 GAME CARDS */}
       {/* ========================================================================= */}
-      <section id="choose-games" className="mb-20 scroll-mt-8">
-        <div className="text-center mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-400 mb-2 block">
-            6 Dedicated Games
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#17243A] dark:text-white mb-3">
-            Choose Your Typing Game
-          </h2>
-          <p className="text-[#475569] dark:text-slate-300 font-medium text-base max-w-2xl mx-auto">
-            Click any game below to open its dedicated interactive gaming arena with custom difficulty
-            modes.
-          </p>
-        </div>
+      <section id="choose-games" className="mb-20">
 
         {/* 6 Game Cards in 3-col Desktop / 2-col Tablet / 1-col Mobile Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -713,7 +686,7 @@ export default function GameHubPage() {
             Why Gamified Learning Works
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#17243A] dark:text-white mb-4">
-            Why Learn Hindi Typing Through Games?
+            Why Practice Typing Through Games?
           </h2>
           <p className="text-[#475569] dark:text-slate-300 font-medium text-base max-w-2xl mx-auto">
             Typing games bridge the gap between mechanical repetition and intuitive muscle memory by

@@ -89,8 +89,8 @@ export default async function BlogPage({ searchParams }: PageProps) {
         </h1>
         <p className="text-lg text-[#475569] dark:text-gray-300 max-w-2xl mx-auto font-medium">
           {lang === "en" 
-            ? "Read detailed articles written by our experts to improve your typing speed and crack government exams."
-            : "अपनी टाइपिंग गति सुधारने और सरकारी परीक्षाओं में सफल होने के लिए हमारे विशेषज्ञों द्वारा लिखे गए विस्तृत लेख पढ़ें।"}
+            ? "Typing Jobs and Guides"
+            : "टाइपिंग जॉब्स और गाइड्स"}
         </p>
       </div>
 

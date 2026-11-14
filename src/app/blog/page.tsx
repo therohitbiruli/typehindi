@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://typehindi.in/blog",
   },
-  title: "Hindi Typing Articles & Guides | TypeHindi Blog",
-  description: "Read the latest articles on Hindi typing, SSC exam strategies, Stenography tips, and InScript keyboard guides.",
+  title: "Typing Jobs and Guides | TypeHindi",
+  description: "Read the latest typing jobs notifications, government recruitment updates, exam strategies, and keyboard guides.",
 };
 
 
@@ -84,14 +84,9 @@ export default async function BlogPage({ searchParams }: PageProps) {
       <AdPlaceholder position="top" />
 
       <div className="mb-10 text-center">
-        <h1 className="heading-1 mb-3">
-          {lang === "en" ? "Hindi Typing Articles and Guides" : "हिंदी टाइपिंग लेख और मार्गदर्शिकाएँ"}
+        <h1 className="heading-1">
+          {lang === "en" ? "Typing Jobs and Guides" : "टाइपिंग जॉब्स और गाइड्स"}
         </h1>
-        <p className="text-lg text-[#475569] dark:text-gray-300 max-w-2xl mx-auto font-medium">
-          {lang === "en" 
-            ? "Typing Jobs and Guides"
-            : "टाइपिंग जॉब्स और गाइड्स"}
-        </p>
       </div>
 
       {/* Blog Cards Grid */}

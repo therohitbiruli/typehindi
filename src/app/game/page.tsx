@@ -84,36 +84,18 @@ export default function GameHubPage() {
               <div
                 className={`relative h-48 bg-gradient-to-br ${game.gradient} flex items-center justify-center overflow-hidden`}
               >
-                {/* Background glow */}
-                <div
-                  className="absolute inset-0 opacity-30"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 60% 40%, rgba(99,102,241,0.35), transparent 70%)",
-                  }}
-                />
-
                 {/* Thumbnail image */}
                 {game.thumbImage ? (
-                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={game.thumbImage}
                     alt={game.title}
-                    className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-65 transition-opacity duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                ) : null}
-
-                {/* Game icon */}
-                <div className="relative z-10 text-6xl filter drop-shadow-xl transform group-hover:scale-110 transition-transform duration-300">
-                  {game.icon}
-                </div>
-
-                {/* Badge */}
-                <span
-                  className={`absolute top-3.5 left-3.5 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full ${game.badgeColor} shadow-md`}
-                >
-                  {game.badge}
-                </span>
+                ) : (
+                  <div className="relative z-10 text-6xl">
+                    {game.icon}
+                  </div>
+                )}
               </div>
 
               {/* Info Container */}

@@ -1,12 +1,12 @@
 import { TranslatorTool } from "@/components/TranslatorTool";
-import { LANGUAGES } from "../page";
+import { LANGUAGES, TranslatorLanguageItem } from "@/data/translatorLanguages";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 
 export function generateStaticParams() {
   const params: { language: string }[] = [];
-  LANGUAGES.forEach((lang) => {
+  LANGUAGES.forEach((lang: TranslatorLanguageItem) => {
     params.push({ language: `english-to-${lang.name.toLowerCase()}` });
     params.push({ language: `hindi-to-${lang.name.toLowerCase()}` });
   });
@@ -20,7 +20,7 @@ export async function generateMetadata(props: { params: Promise<{ language: stri
   const prefix = isHindiSource ? "hindi-to-" : "english-to-";
   
   const targetLangStr = params.language.replace(prefix, "");
-  const langObj = LANGUAGES.find(l => l.name.toLowerCase() === targetLangStr);
+  const langObj = LANGUAGES.find((l: TranslatorLanguageItem) => l.name.toLowerCase() === targetLangStr);
   const targetName = langObj ? langObj.name : targetLangStr.charAt(0).toUpperCase() + targetLangStr.slice(1);
 
   const url = `https://typehindi.in/translators/${params.language}`;
@@ -52,7 +52,7 @@ export default async function LanguageTranslatorPage(props: { params: Promise<{ 
   const prefix = isHindiSource ? "hindi-to-" : "english-to-";
   const targetLangStr = params.language.replace(prefix, "");
   
-  const langObj = LANGUAGES.find(l => l.name.toLowerCase() === targetLangStr);
+  const langObj = LANGUAGES.find((l: TranslatorLanguageItem) => l.name.toLowerCase() === targetLangStr);
   if (!langObj) {
     notFound();
   }

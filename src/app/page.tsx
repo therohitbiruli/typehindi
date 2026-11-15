@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { PracticeTool } from "../components/PracticeTool";
 import { blogs, getBlogImage, parseBlogDate } from "../data/blogs";
-import { LANGUAGES } from "./translators/page";
+import { LANGUAGES } from "@/data/translatorLanguages";
 import { HomepageGame } from "../components/HomepageGame";
 import { HomepageKeyboard } from "../components/HomepageKeyboard";
 
@@ -253,6 +253,32 @@ export default function Homepage() {
             </div>
           </div>
 
+
+          {/* 🇮🇳 PROMOTIONAL CARD: English to Indian Languages Typing */}
+          <div className="bg-gradient-to-r from-blue-50/80 via-white to-indigo-50/80 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-900 rounded-[2rem] p-6 sm:p-8 border border-[#B8C7DA] dark:border-slate-800 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-primary-600/10 text-primary-600 dark:text-primary-400 flex items-center justify-center text-3xl shrink-0">
+                🇮🇳
+              </div>
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/50 px-2.5 py-0.5 rounded-full border border-primary-200 dark:border-primary-800/50 mb-1 inline-block">
+                  New Feature
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#17243A] dark:text-white">
+                  English to Indian Languages
+                </h3>
+                <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-300 font-medium mt-1 max-w-xl">
+                  Type Kannada, Gujarati, Malayalam, Tamil and more using your English keyboard.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/english-to-indian-language-typing"
+              className="whitespace-nowrap px-6 py-3 rounded-xl bg-[#102B5C] hover:bg-[#173d82] text-white text-sm font-bold shadow-md shadow-[#102B5C]/20 transition-all hover:-translate-y-0.5 dark:bg-primary-600 dark:hover:bg-primary-500"
+            >
+              Explore Languages →
+            </Link>
+          </div>
 
           {/* 1. ⌨️ SECTION: PRACTICE */}
           <section id="practice" aria-label="Hindi Typing Practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#B8C7DA] dark:border-slate-800 relative overflow-hidden scroll-mt-20">

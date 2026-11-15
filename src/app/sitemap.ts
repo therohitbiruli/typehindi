@@ -3,7 +3,8 @@ import { MetadataRoute } from 'next';
 import { blogs } from '../data/blogs';
 import { shorthandLessons } from '../data/shorthand/lessons';
 import { GAME_CATALOG } from '../data/gameData';
-import { LANGUAGES } from './translators/page';
+import { LANGUAGES } from '../data/translatorLanguages';
+import { SUPPORTED_TYPING_LANGUAGES } from '../data/indianLanguageTypingData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://typehindi.in';
@@ -35,6 +36,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       `/translators/english-to-${lang.name.toLowerCase()}`,
       `/translators/hindi-to-${lang.name.toLowerCase()}`
     ]),
+    // English to Indian Languages Typing Routes
+    '/english-to-indian-language-typing',
+    ...SUPPORTED_TYPING_LANGUAGES.map(l => l.route),
     ...GAME_CATALOG.map(game => `/game/${game.slug}`),
     // Multilingual Practice Routes
     '/practice/english-typing',

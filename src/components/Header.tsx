@@ -78,7 +78,44 @@ export function Header() {
                 const isActive =
                   item.href === "/"
                     ? pathname === "/"
+                    : item.href === "/translators"
+                    ? pathname.startsWith("/translators") || pathname.startsWith("/english-to-")
                     : pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+                if (item.href === "/translators") {
+                  return (
+                    <div key={item.href} className="relative group">
+                      <Link
+                        href={item.href}
+                        className={`inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
+                          isActive
+                            ? "bg-[#102B5C] text-white shadow-sm shadow-[#102B5C]/25 dark:bg-primary-600 dark:text-white dark:shadow-primary-500/25"
+                            : "text-[#17243A] hover:bg-[#F4F7FC] hover:text-[#102B5C] dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-slate-100"
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                        <svg className="w-3 h-3 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </Link>
+
+                      <div className="absolute top-full left-0 mt-1 w-64 rounded-2xl bg-white dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                        <Link
+                          href="/translators"
+                          className="block px-4 py-2 text-xs font-semibold text-[#17243A] hover:bg-[#F4F7FC] hover:text-[#102B5C] dark:text-slate-200 dark:hover:bg-slate-800"
+                        >
+                          All Translators Hub
+                        </Link>
+                        <Link
+                          href="/english-to-indian-language-typing"
+                          className="block px-4 py-2 text-xs font-semibold text-[#102B5C] dark:text-primary-300 hover:bg-[#EAF1FB] dark:hover:bg-slate-800"
+                        >
+                          🇮🇳 English to Indian Languages
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                }
 
                 return (
                   <Link
@@ -124,12 +161,42 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="border-t border-[#E2E8F0] pb-3 pt-2 md:hidden dark:border-slate-800">
+          <nav className="border-t border-[#E2E8F0] pb-3 pt-2 md:hidden dark:border-slate-800 space-y-1">
             {navItems.map((item) => {
               const isActive =
                 item.href === "/"
                   ? pathname === "/"
                   : pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+              if (item.href === "/translators") {
+                const isSubActive = pathname === "/english-to-indian-language-typing" || pathname.startsWith("/english-to-");
+                return (
+                  <div key={item.href} className="space-y-1">
+                    <Link
+                      href={item.href}
+                      onClick={closeMenu}
+                      className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                        isActive && !isSubActive
+                          ? "bg-[#EAF1FB] text-[#102B5C] font-semibold dark:bg-primary-900/40 dark:text-primary-300"
+                          : "text-[#17243A] hover:bg-[#F4F7FC] hover:text-[#102B5C] dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                    <Link
+                      href="/english-to-indian-language-typing"
+                      onClick={closeMenu}
+                      className={`block rounded-lg pl-6 pr-3 py-1.5 text-xs font-medium transition-colors ${
+                        isSubActive
+                          ? "bg-[#EAF1FB] text-[#102B5C] font-semibold dark:bg-primary-900/40 dark:text-primary-300"
+                          : "text-[#475569] hover:bg-[#F4F7FC] hover:text-[#102B5C] dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+                      }`}
+                    >
+                      ↳ 🇮🇳 English to Indian Languages
+                    </Link>
+                  </div>
+                );
+              }
 
               return (
                 <Link

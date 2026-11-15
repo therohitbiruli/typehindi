@@ -148,12 +148,8 @@ export default function Homepage() {
           
           {/* 🌐 SECTION: TYPING PRACTICE IN MULTIPLE LANGUAGES */}
           <div className="bg-gray-50 dark:bg-slate-900/70 rounded-[2.5rem] p-6 sm:p-10 border border-[#B8C7DA] dark:border-slate-800 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="text-center max-w-3xl mx-auto mb-10">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-xs font-bold uppercase tracking-wider mb-3">
-                🌐 Multilingual Typing Hub
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#17243A] dark:text-white tracking-tight mb-3">
                 Typing Practice in Multiple Languages
               </h2>
               <p className="text-sm sm:text-base text-[#475569] dark:text-slate-300 font-medium leading-relaxed">
@@ -228,11 +224,11 @@ export default function Homepage() {
               ].map((lang) => (
                 <div
                   key={lang.slug}
-                  className="rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800/90 p-6 flex flex-col justify-between hover:border-[#8FA6C5] transition-all duration-300 hover:-translate-y-1 shadow-md group"
+                  className="relative z-10 rounded-2xl bg-white dark:bg-slate-950 border border-[#CBD5E1] hover:border-[#8FA6C5] dark:border-slate-800 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-md group opacity-100"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-4">
-                      <div className="w-12 h-12 rounded-2xl bg-primary-500/10 text-primary-400 font-bold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                      <div className="w-12 h-12 rounded-2xl bg-primary-50 dark:bg-primary-950/50 text-primary-600 dark:text-primary-400 font-bold flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
                         {lang.symbol}
                       </div>
                       <span className="text-[10px] px-2.5 py-1 rounded-full bg-gray-100 dark:bg-slate-900 border border-[#CBD5E1] dark:border-slate-800 text-gray-600 dark:text-slate-400 font-semibold">

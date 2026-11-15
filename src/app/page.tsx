@@ -188,7 +188,9 @@ export default function Homepage() {
                   slug: "marathi-typing",
                   description: "Practice Marathi typing with verified InScript layout, master characters like 'ळ', and prepare for MPSC clerk-typist recruitments.",
                   btnText: "Practice Marathi Typing →",
-                  badge: "Marathi InScript"
+                  badge: "Marathi InScript",
+                  englishToText: "English → Marathi Typing",
+                  englishToLink: "/english-to-marathi-typing"
                 },
                 {
                   name: "Punjabi Typing",
@@ -197,7 +199,9 @@ export default function Homepage() {
                   slug: "punjabi-typing",
                   description: "Learn Gurmukhi InScript typing on Raavi Unicode font, master tippi, adhak, and qualify PSSSB clerk exams.",
                   btnText: "Practice Punjabi Typing →",
-                  badge: "Gurmukhi InScript"
+                  badge: "Gurmukhi InScript",
+                  englishToText: "English → Punjabi Typing",
+                  englishToLink: "/english-to-punjabi-typing"
                 },
                 {
                   name: "Tamil Typing",
@@ -206,7 +210,9 @@ export default function Homepage() {
                   slug: "tamil-typing",
                   description: "Practice Tamil typing online with verified Tamil InScript layout, build typing speed and prepare for TNPSC typist examinations.",
                   btnText: "Practice Tamil Typing →",
-                  badge: "Tamil InScript"
+                  badge: "Tamil InScript",
+                  englishToText: "English → Tamil Typing",
+                  englishToLink: "/english-to-tamil-typing"
                 },
                 {
                   name: "Bengali Typing",
@@ -215,7 +221,9 @@ export default function Homepage() {
                   slug: "bengali-typing",
                   description: "Practice Bengali typing, improve your speed and accuracy, and build confidence with timed typing exercises for WBPSC clerkship.",
                   btnText: "Practice Bengali Typing →",
-                  badge: "Bengali InScript"
+                  badge: "Bengali InScript",
+                  englishToText: "English → Bengali Typing",
+                  englishToLink: "/english-to-bengali-typing"
                 }
               ].map((lang) => (
                 <div
@@ -242,43 +250,29 @@ export default function Homepage() {
                     </p>
                   </div>
 
-                  <Link
-                    href={`/practice/${lang.slug}`}
-                    className="w-full py-2.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold text-center transition-all shadow-md shadow-primary-500/20 group-hover:shadow-primary-500/30"
-                  >
-                    {lang.btnText}
-                  </Link>
+                  <div className="mt-auto pt-2 flex flex-col items-center gap-1.5 w-full">
+                    <Link
+                      href={`/practice/${lang.slug}`}
+                      className="w-full py-2.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold text-center transition-all shadow-md shadow-primary-500/20 group-hover:shadow-primary-500/30"
+                    >
+                      {lang.btnText}
+                    </Link>
+                    {lang.englishToLink ? (
+                      <Link
+                        href={lang.englishToLink}
+                        className="text-xs font-semibold text-[#102B5C] hover:text-[#174EA6] dark:text-primary-400 dark:hover:text-primary-300 hover:underline transition-colors py-0.5"
+                      >
+                        {lang.englishToText}
+                      </Link>
+                    ) : (
+                      <div className="h-5" aria-hidden="true" />
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-
-          {/* 🇮🇳 PROMOTIONAL CARD: English to Indian Languages Typing */}
-          <div className="bg-gradient-to-r from-blue-50/80 via-white to-indigo-50/80 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-900 rounded-[2rem] p-6 sm:p-8 border border-[#B8C7DA] dark:border-slate-800 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-primary-600/10 text-primary-600 dark:text-primary-400 flex items-center justify-center text-3xl shrink-0">
-                🇮🇳
-              </div>
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-950/50 px-2.5 py-0.5 rounded-full border border-primary-200 dark:border-primary-800/50 mb-1 inline-block">
-                  New Feature
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#17243A] dark:text-white">
-                  English to Indian Languages
-                </h3>
-                <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-300 font-medium mt-1 max-w-xl">
-                  Type Kannada, Gujarati, Malayalam, Tamil and more using your English keyboard.
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/english-to-indian-language-typing"
-              className="whitespace-nowrap px-6 py-3 rounded-xl bg-[#102B5C] hover:bg-[#173d82] text-white text-sm font-bold shadow-md shadow-[#102B5C]/20 transition-all hover:-translate-y-0.5 dark:bg-primary-600 dark:hover:bg-primary-500"
-            >
-              Explore Languages →
-            </Link>
-          </div>
 
           {/* 1. ⌨️ SECTION: PRACTICE */}
           <section id="practice" aria-label="Hindi Typing Practice" className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.05)] border border-[#B8C7DA] dark:border-slate-800 relative overflow-hidden scroll-mt-20">

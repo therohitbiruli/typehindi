@@ -69,48 +69,87 @@ export default function Homepage() {
           </Link>
 
           <Link href="/game" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-purple-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
-              🎮
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-7 sm:h-7" aria-hidden="true">
+                <line x1="6" x2="10" y1="12" y2="12" />
+                <line x1="8" x2="8" y1="10" y2="14" />
+                <line x1="15" x2="15.01" y1="13" y2="13" />
+                <line x1="18" x2="18.01" y1="11" y2="11" />
+                <rect width="20" height="12" x="2" y="6" rx="6" />
+              </svg>
             </div>
             <h4 className="text-[#17243A] dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Typing Games</h4>
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Fun and addictive typing games to build speed and muscle memory</p>
           </Link>
 
           <Link href="/test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
-              ⏱️
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-7 sm:h-7" aria-hidden="true">
+                <line x1="10" x2="14" y1="2" y2="2" />
+                <line x1="12" x2="12" y1="14" y2="8" />
+                <circle cx="12" cy="14" r="8" />
+              </svg>
             </div>
             <h4 className="text-[#17243A] dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Typing Test</h4>
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Evaluate your typing proficiency with realistic exam conditions</p>
           </Link>
 
           <Link href="/mangal-font-typing-test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-rose-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
-              🅰️
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-7 sm:h-7" aria-hidden="true">
+                <path d="m5 8 6 6" />
+                <path d="m4 14 6-6 2-3" />
+                <path d="M2 5h12" />
+                <path d="M7 2h1" />
+                <path d="m22 22-5-10-5 10" />
+                <path d="M14 18h6" />
+              </svg>
             </div>
             <h4 className="text-[#17243A] dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Mangal Font</h4>
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Practice Mangal font typing specifically formatted for exams</p>
           </Link>
 
           <Link href="/test" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-cyan-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
-              📜
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-7 sm:h-7" aria-hidden="true">
+                <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                <path d="m9 14 2 2 4-4" />
+              </svg>
             </div>
             <h4 className="text-[#17243A] dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">CPCT Test</h4>
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Simulate the Computer Proficiency Certification Test pattern</p>
           </Link>
 
           <Link href="/learn" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-sky-500/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
-              🔍
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-7 sm:h-7" aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="M6 8h.001" />
+                <path d="M10 8h.001" />
+                <path d="M14 8h.001" />
+                <path d="M18 8h.001" />
+                <path d="M6 12h.001" />
+                <path d="M10 12h.001" />
+                <path d="M14 12h.001" />
+                <path d="M18 12h.001" />
+                <path d="M7 16h10" />
+              </svg>
             </div>
             <h4 className="text-[#17243A] dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Keyboard Layout</h4>
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Visual layouts and guides for InScript and Remington layouts</p>
           </Link>
 
           <Link href="/translators" className="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-[1.5rem] border border-[#CBD5E1] dark:border-slate-800/80 p-3.5 sm:p-6 hover:shadow-xl hover:border-[#8FA6C5] dark:hover:border-[#8FA6C5]/40 transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center text-center group shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
-            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 flex items-center justify-center text-2xl sm:text-3xl mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
-              🌐
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 flex items-center justify-center mb-2 sm:mb-4 group-hover:scale-110 transition-transform">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-7 sm:h-7" aria-hidden="true">
+                <path d="m5 8 6 6" />
+                <path d="m4 14 6-6 2-3" />
+                <path d="M2 5h12" />
+                <path d="M7 2h1" />
+                <path d="m22 22-5-10-5 10" />
+                <path d="M14 18h6" />
+              </svg>
             </div>
             <h4 className="text-[#17243A] dark:text-white font-bold text-sm sm:text-lg mb-1 sm:mb-1.5">Translators</h4>
             <p className="text-[11px] sm:text-xs text-[#475569] dark:text-gray-400 font-medium leading-tight sm:leading-relaxed max-w-[220px] line-clamp-2 sm:line-clamp-none">Instantly translate English or other regional texts into Hindi</p>

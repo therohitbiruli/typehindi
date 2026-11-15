@@ -220,6 +220,30 @@ export default function Homepage() {
                   badge: "Bengali InScript",
                   englishToText: "English → Bengali Typing",
                   englishToLink: "/english-to-bengali-typing"
+                },
+                {
+                  name: "Kannada Typing",
+                  native: "ಕನ್ನಡ ಟೈಪಿಂಗ್",
+                  symbol: "ಕ",
+                  slug: "kannada-typing",
+                  description: "Practise Kannada typing online, improve your accuracy and learn Kannada characters.",
+                  btnText: "Practice Kannada Typing →",
+                  badge: "Phonetic Typing",
+                  practiceLink: "/english-to-kannada-typing",
+                  englishToText: "English → Kannada Typing",
+                  englishToLink: "/english-to-kannada-typing"
+                },
+                {
+                  name: "Gujarati Typing",
+                  native: "ગુજરાતી ટાઇપિંગ",
+                  symbol: "ગ",
+                  slug: "gujarati-typing",
+                  description: "Practise Gujarati typing online, improve your accuracy and learn Gujarati characters.",
+                  btnText: "Practice Gujarati Typing →",
+                  badge: "Phonetic Typing",
+                  practiceLink: "/english-to-gujarati-typing",
+                  englishToText: "English → Gujarati Typing",
+                  englishToLink: "/english-to-gujarati-typing"
                 }
               ].map((lang) => (
                 <div
@@ -248,7 +272,7 @@ export default function Homepage() {
 
                   <div className="mt-auto pt-2 flex flex-col items-center gap-1.5 w-full">
                     <Link
-                      href={`/practice/${lang.slug}`}
+                      href={lang.practiceLink || `/practice/${lang.slug}`}
                       className="w-full py-2.5 px-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold text-center transition-all shadow-md shadow-primary-500/20 group-hover:shadow-primary-500/30"
                     >
                       {lang.btnText}

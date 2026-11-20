@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "English to Marathi typing",
     "English to Odia typing",
     "English to Urdu typing",
+    "English to Santhali typing",
     "phonetic Indian language typing",
   ],
   openGraph: {
@@ -74,15 +75,6 @@ export default function EnglishToIndianLanguagesTypingDirectory() {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#102B5C] to-[#174EA6] text-white flex items-center justify-center font-bold text-2xl shadow-md group-hover:scale-105 transition-transform">
                     {lang.nativeChar}
                   </div>
-                  {lang.supported ? (
-                    <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
-                      Live Engine
-                    </span>
-                  ) : (
-                    <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
-                      In Development
-                    </span>
-                  )}
                 </div>
 
                 <div className="mb-3">
@@ -119,18 +111,12 @@ export default function EnglishToIndianLanguagesTypingDirectory() {
               </div>
 
               {/* Action Button */}
-              {lang.supported ? (
-                <Link
-                  href={lang.route}
-                  className="btn-primary rounded-xl w-full py-3 text-xs font-bold text-center block shadow-md shadow-[#102B5C]/20 hover:shadow-lg transition-all"
-                >
-                  Start Typing in {lang.name} →
-                </Link>
-              ) : (
-                <div className="p-2.5 rounded-xl bg-gray-50 dark:bg-slate-800/60 border border-gray-200 dark:border-slate-700 text-center text-xs text-gray-500 font-medium">
-                  Ol Chiki Engine Integration in Progress
-                </div>
-              )}
+              <Link
+                href={lang.route}
+                className="btn-primary rounded-xl w-full py-3 text-xs font-bold text-center block shadow-md shadow-[#102B5C]/20 hover:shadow-lg transition-all"
+              >
+                Start Typing in {lang.name} →
+              </Link>
             </div>
           ))}
         </div>

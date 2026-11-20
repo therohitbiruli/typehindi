@@ -992,19 +992,20 @@ export const INDIAN_LANGUAGES_TYPING: IndianLanguageTypingConfig[] = [
     nativeChar: "ᱚ",
     script: "Ol Chiki Script",
     itcCode: "sat-t-i0-und",
-    supported: false, // Flagged: Google Input Tools does not provide a native ITC engine for Santhali
+    supported: true,
     route: "/english-to-santhali-typing",
-    seoTitle: "English to Santhali Typing Online – Ol Chiki Typing Guide | TypeHindi",
-    metaDescription: "Learn about English to Santhali typing in Ol Chiki script. Discover script structure, character mappings, and typing instructions on TypeHindi.",
+    seoTitle: "English to Santhali Typing Online – Ol Chiki Typing | TypeHindi",
+    metaDescription: "Type in Santhali Ol Chiki script online using your English keyboard. Fast, instant phonetic transliteration, character reference, copy/export and practice on TypeHindi.",
     h1: "English to Santhali Typing (Ol Chiki)",
-    tagline: "Explore Santhali Ol Chiki script typing, alphabet structure, and input methods.",
+    tagline: "Type in Santhali using your English keyboard with instant phonetic Ol Chiki transliteration.",
     introParagraphs: [
       "Santhali (ᱥᱟᱱᱛᱟᱲᱤ) is an Austroasiatic language spoken by over 7 million people, primarily across Jharkhand, Odisha, West Bengal, Bihar, and Assam. In 1925, Pandit Raghunath Murmu invented the Ol Chiki script (ᱚᱞ ᱪᱤᱠᱤ) specifically to write the Santhali language accurately without phonetic compromises.",
       "Ol Chiki was recognized as an official script and incorporated into the Eighth Schedule of the Indian Constitution in 2003. Unlike many Brahmic scripts, Ol Chiki is an alphabet where vowels and consonants are written as separate full letters rather than abugida matra ligatures."
     ],
     howItWorks: [
-      "Note: Google Input Tools does not currently offer a public API engine for Santhali Ol Chiki transliteration.",
-      "Santhali typing is currently performed using dedicated Ol Chiki keyboard layouts, InScript mappings, or mobile Ol Chiki keyboard applications."
+      "Type Santhali words using phonetic English spelling in the input box (for example, type 'johar' to get 'ᱡᱚᱦᱟᱨ').",
+      "The phonetic engine converts Roman letters directly into authentic Ol Chiki (ᱚᱞ ᱪᱤᱠᱤ) script.",
+      "Press space or click copy to copy your Santhali text or use it across any device or application."
     ],
     verifiedExamples: [
       { roman: "johar", native: "ᱡᱚᱦᱟᱨ", meaning: "Greetings / Hello" },
@@ -1026,8 +1027,8 @@ export const INDIAN_LANGUAGES_TYPING: IndianLanguageTypingConfig[] = [
       }
     ],
     commonIssues: [
-      "Phonetic transliteration engines generally lack trained statistical models for Ol Chiki.",
-      "Most users currently rely on physical layout drivers or Windows InScript keyboard options."
+      "Ensure you type standard phonetic combinations such as 'johar' for ᱡᱚᱦᱟᱨ or 'ch' for ᱪ.",
+      "Modern operating systems including Windows 10/11 and Android feature full native Unicode support for Ol Chiki."
     ],
     characterInfo: {
       vowels: "ᱚ, ᱟ, ᱤ, ᱩ, ᱮ, ᱳ",
@@ -1037,12 +1038,12 @@ export const INDIAN_LANGUAGES_TYPING: IndianLanguageTypingConfig[] = [
     },
     faqs: [
       {
-        question: "Is automated English to Santhali transliteration supported?",
-        answer: "Google Input Tools does not currently provide an automated transliteration engine for Santhali. We provide script guides, character maps, and resources while our team works on custom Ol Chiki engine integration."
+        question: "How does English to Santhali typing work on TypeHindi?",
+        answer: "TypeHindi provides an instant phonetic transliteration engine for Santhali. When you type in Roman English characters (e.g., 'johar' or 'ol chiki'), the engine automatically converts them into the authentic Ol Chiki script (ᱡᱚᱦᱟᱨ, ᱚᱞ ᱪᱤᱠᱤ)."
       },
       {
         question: "How can I type Ol Chiki on Windows?",
-        answer: "Windows 10 and Windows 11 include native support for the Ol Chiki script. You can add the Santhali language in Windows Language Settings to type using the standard Ol Chiki keyboard layout."
+        answer: "Windows 10 and Windows 11 include native support for the Ol Chiki script. You can add the Santhali language in Windows Language Settings to type using the standard Ol Chiki keyboard layout, or use TypeHindi's online typing tool directly in any browser."
       }
     ]
   }

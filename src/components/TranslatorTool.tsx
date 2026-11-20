@@ -35,7 +35,7 @@ export function TranslatorTool({ language, sourceLanguage }: TranslatorToolProps
 
     if (!itc) {
       setOutputText(
-        `Phonetic engine integration for ${language} is currently in progress. Please use the standard keyboard layout.`
+        `Please use the dedicated typing tool or standard keyboard layout for ${language}.`
       );
       return;
     }

@@ -12,6 +12,115 @@ interface TransliterationEditorProps {
   supported?: boolean;
 }
 
+function transliterateToOlChiki(text: string): string {
+  if (!text) return "";
+
+  const multiMap: { eng: string; ol: string }[] = [
+    { eng: "santhali", ol: "ᱥᱟᱱᱛᱟᱲᱤ" },
+    { eng: "santali", ol: "ᱥᱟᱱᱛᱟᱲᱤ" },
+    { eng: "ol chiki", ol: "ᱚᱞ ᱪᱤᱠᱤ" },
+    { eng: "olchiki", ol: "ᱚᱞᱪᱤᱠᱤ" },
+    { eng: "johar", ol: "ᱡᱚᱦᱟᱨ" },
+    { eng: "marang", ol: "ᱢᱟᱨᱟᱝ" },
+    { eng: "burum", ol: "ᱵᱩᱨᱩᱢ" },
+    { eng: "ch", ol: "ᱪ" },
+    { eng: "kh", ol: "ᱠᱷ" },
+    { eng: "gh", ol: "ᱜᱷ" },
+    { eng: "th", ol: "ᱛᱷ" },
+    { eng: "dh", ol: "ᱫᱷ" },
+    { eng: "ph", ol: "ᱯᱷ" },
+    { eng: "bh", ol: "ᱵᱷ" },
+    { eng: "jh", ol: "ᱡᱷ" },
+    { eng: "ng", ol: "ᱝ" },
+    { eng: "ny", ol: "ᱧ" },
+    { eng: "tt", ol: "ᱴ" },
+    { eng: "dd", ol: "ᱰ" },
+    { eng: "rr", ol: "ᱲ" },
+    { eng: "nn", ol: "ᱬ" },
+    { eng: "aa", ol: "ᱟ" },
+    { eng: "ee", ol: "ᱤ" },
+    { eng: "ii", ol: "ᱤ" },
+    { eng: "oo", ol: "ᱩ" },
+    { eng: "uu", ol: "ᱩ" },
+    { eng: "ai", ol: "ᱟᱭ" },
+    { eng: "au", ol: "ᱟᱣ" },
+    { eng: "ou", ol: "ᱳ" },
+  ];
+
+  const singleMap: Record<string, string> = {
+    a: "ᱟ",
+    b: "ᱵ",
+    c: "ᱪ",
+    d: "ᱫ",
+    e: "ᱮ",
+    f: "ᱯᱷ",
+    g: "ᱜ",
+    h: "ᱦ",
+    i: "ᱤ",
+    j: "ᱡ",
+    k: "ᱠ",
+    l: "ᱞ",
+    m: "ᱢ",
+    n: "ᱱ",
+    o: "ᱚ",
+    p: "ᱯ",
+    q: "ᱠ",
+    r: "ᱨ",
+    s: "ᱥ",
+    t: "ᱛ",
+    u: "ᱩ",
+    v: "ᱶ",
+    w: "ᱣ",
+    x: "ᱠᱥ",
+    y: "ᱭ",
+    z: "ᱡ",
+    "0": "᱐",
+    "1": "᱑",
+    "2": "᱒",
+    "3": "᱓",
+    "4": "᱔",
+    "5": "᱕",
+    "6": "᱖",
+    "7": "᱗",
+    "8": "᱘",
+    "9": "᱙",
+  };
+
+  const words = text.split(/(\s+|[.,!?;:()])/);
+  return words
+    .map((word) => {
+      if (!word || /^\s+$/.test(word) || /^[.,!?;:()]$/.test(word)) return word;
+
+      const lower = word.toLowerCase();
+      for (const item of multiMap) {
+        if (lower === item.eng) return item.ol;
+      }
+
+      let res = "";
+      let i = 0;
+      while (i < lower.length) {
+        if (i + 2 <= lower.length) {
+          const sub2 = lower.substring(i, i + 2);
+          const found2 = multiMap.find((m) => m.eng === sub2);
+          if (found2) {
+            res += found2.ol;
+            i += 2;
+            continue;
+          }
+        }
+        const ch = lower[i];
+        if (singleMap[ch]) {
+          res += singleMap[ch];
+        } else {
+          res += word[i];
+        }
+        i++;
+      }
+      return res;
+    })
+    .join("");
+}
+
 export function TransliterationEditor({
   languageName,
   nativeName,
@@ -28,7 +137,7 @@ export function TransliterationEditor({
   const outputTextareaRef = useRef<HTMLTextAreaElement>(null);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Perform transliteration via Google Input Tools API
+  // Perform transliteration via Google Input Tools API or built-in engines
   const performTransliteration = useCallback(
     async (text: string) => {
       if (!supported || !text.trim()) {
@@ -38,6 +147,12 @@ export function TransliterationEditor({
 
       setIsLoading(true);
       try {
+        if (itcCode === "sat-t-i0-und" || languageName.toLowerCase() === "santhali") {
+          const converted = transliterateToOlChiki(text);
+          setOutputText(converted);
+          return;
+        }
+
         const url = `https://inputtools.google.com/request?text=${encodeURIComponent(
           text
         )}&itc=${itcCode}&num=1&cp=0&cs=1&ie=utf-8&oe=utf-8&app=demopage`;
@@ -58,7 +173,7 @@ export function TransliterationEditor({
         setIsLoading(false);
       }
     },
-    [itcCode, supported]
+    [itcCode, supported, languageName]
   );
 
   // Auto-transliterate on typing with debounce
@@ -133,21 +248,17 @@ export function TransliterationEditor({
           </div>
         </div>
 
-        {/* Live Status indicator */}
+        {/* Status indicator */}
         <div className="flex items-center gap-2">
           {isLoading ? (
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 dark:bg-amber-950/30 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800 animate-pulse">
               <span className="w-2 h-2 rounded-full bg-amber-500"></span>
               Transliterating...
             </span>
-          ) : supported ? (
+          ) : (
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-              Live Engine Ready
-            </span>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-50 dark:bg-rose-950/30 text-rose-700 dark:text-rose-400 border border-rose-200 dark:border-rose-800">
-              Engine Integration in Progress
+              Ready
             </span>
           )}
         </div>

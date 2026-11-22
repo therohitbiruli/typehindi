@@ -53,6 +53,7 @@ export function PracticeTool({
     }
     return getRandomPassage(languageId, difficulty);
   });
+  const hasKeyboard = (LANGUAGES_CONFIG[languageId]?.keyboardRows?.length ?? 0) > 0;
   const [showKeyboard, setShowKeyboard] = useState(true);
   const [enableHighlights, setEnableHighlights] = useState(true);
   const storageKey = languageId === "hindi" ? "bestWpm" : `typehindi_best_wpm_${languageId}`;
@@ -342,23 +343,27 @@ export function PracticeTool({
               <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-755 shadow-sm">
                 ⟳ Change Paragraph
               </button>
-              <button
-                onClick={handleKeyboardToggle}
-                className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-755"}`}
-              >
-                ⌨ {showKeyboard ? "Hide" : "Show"} Keyboard
-              </button>
+              {hasKeyboard && (
+                <button
+                  onClick={handleKeyboardToggle}
+                  className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-755"}`}
+                >
+                  ⌨ {showKeyboard ? "Hide" : "Show"} Keyboard
+                </button>
+              )}
             </div>
 
             {/* Guided Virtual Keyboard */}
-            <Keyboard
-              activeKey={activeKey}
-              isShift={isShift}
-              visible={showKeyboard}
-              highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
-              highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
-              language={languageId}
-            />
+            {hasKeyboard && (
+              <Keyboard
+                activeKey={activeKey}
+                isShift={isShift}
+                visible={showKeyboard}
+                highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
+                highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
+                language={languageId}
+              />
+            )}
           </div>
         </div>
       )}
@@ -514,25 +519,29 @@ export function PracticeTool({
             <button onClick={changeParagraph} className="btn-secondary rounded-xl px-6 py-2.5 border border-[#B8C7DA] hover:border-[#8FA6C5] dark:border-gray-700 shadow-sm">
               ⟳ Change Paragraph
             </button>
-            <button
-              onClick={handleKeyboardToggle}
-              className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-[#B8C7DA] dark:border-gray-700"}`}
-            >
-              ⌨ {showKeyboard ? "Hide" : "Show"} Keyboard
-            </button>
+            {hasKeyboard && (
+              <button
+                onClick={handleKeyboardToggle}
+                className={`btn-secondary rounded-xl px-6 py-2.5 border shadow-sm ${showKeyboard ? "!bg-primary-50 !text-primary-700 dark:!bg-primary-900/30 dark:!text-primary-300 border-primary-300" : "border-[#B8C7DA] dark:border-gray-700"}`}
+              >
+                ⌨ {showKeyboard ? "Hide" : "Show"} Keyboard
+              </button>
+            )}
           </div>
 
           {/* Guided Virtual Keyboard */}
-          <div className="mt-8">
-            <Keyboard
-              activeKey={activeKey}
-              isShift={isShift}
-              visible={showKeyboard}
-              highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
-              highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
-              language={languageId}
-            />
-          </div>
+          {hasKeyboard && (
+            <div className="mt-8">
+              <Keyboard
+                activeKey={activeKey}
+                isShift={isShift}
+                visible={showKeyboard}
+                highlightKey={enableHighlights ? nextKeyInfo?.code : undefined}
+                highlightShift={enableHighlights ? nextKeyInfo?.isShift : undefined}
+                language={languageId}
+              />
+            </div>
+          )}
 
           {/* Paragraph info */}
           <div className="mt-6 text-center text-xs font-medium text-[#64748B] dark:text-gray-400 uppercase tracking-widest font-semibold">

@@ -122,6 +122,8 @@ export function TestTool() {
             { name: "Punjabi", native: "ਪੰਜਾਬੀ", slug: "punjabi-typing", symbol: "ਪ" },
             { name: "Tamil", native: "தமிழ்", slug: "tamil-typing", symbol: "த" },
             { name: "Bengali", native: "বাংলা", slug: "bengali-typing", symbol: "ব" },
+            { name: "Kannada", native: "ಕನ್ನಡ", slug: "kannada-typing", symbol: "ಕ" },
+            { name: "Gujarati", native: "ગુજરાતી", slug: "gujarati-typing", symbol: "ગ" },
           ].map((item) => (
             <a
               key={item.slug}

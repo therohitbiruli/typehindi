@@ -133,8 +133,8 @@ export default function Homepage() {
                   slug: "kannada-typing",
                   description: "Practise Kannada typing online, improve your accuracy and learn Kannada characters.",
                   btnText: "Practice Kannada Typing →",
-                  badge: "Phonetic Typing",
-                  practiceLink: "/english-to-kannada-typing",
+                  badge: "Kannada InScript",
+                  practiceLink: "/practice/kannada-typing",
                   englishToText: "English → Kannada Typing",
                   englishToLink: "/english-to-kannada-typing"
                 },
@@ -145,8 +145,8 @@ export default function Homepage() {
                   slug: "gujarati-typing",
                   description: "Practise Gujarati typing online, improve your accuracy and learn Gujarati characters.",
                   btnText: "Practice Gujarati Typing →",
-                  badge: "Phonetic Typing",
-                  practiceLink: "/english-to-gujarati-typing",
+                  badge: "Gujarati InScript",
+                  practiceLink: "/practice/gujarati-typing",
                   englishToText: "English → Gujarati Typing",
                   englishToLink: "/english-to-gujarati-typing"
                 }

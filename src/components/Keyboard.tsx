@@ -25,7 +25,8 @@ export const Keyboard = memo(function Keyboard({
 
   const normalizedLang = (language === "english" ? "english" : language) as LanguageId;
   const config = LANGUAGES_CONFIG[normalizedLang] || LANGUAGES_CONFIG.hindi;
-  const rows = config.keyboardRows;
+  const rows = config?.keyboardRows;
+  if (!rows || rows.length === 0) return null;
 
   return (
     <div className="card mt-4 overflow-x-auto" id="keyboard-guide">

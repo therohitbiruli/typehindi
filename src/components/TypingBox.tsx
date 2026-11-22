@@ -117,7 +117,7 @@ export const TypingBox = memo(function TypingBox({
       }
 
       // Check for mapped keys in the active language layout
-      const activeMap = languageKeyMaps[language as LanguageId] || languageKeyMaps.hindi;
+      const activeMap = languageKeyMaps[language as LanguageId];
       const mapping = activeMap ? activeMap[e.code] : undefined;
       if (mapping) {
         e.preventDefault();
@@ -128,6 +128,11 @@ export const TypingBox = memo(function TypingBox({
           nextCursorRef.current = start + char.length;
           onInput(newText, start);
         }
+        return;
+      }
+
+      // For languages relying on native system keyboard / IME (like Kannada and Gujarati), allow native input to pass to onChange
+      if (!activeMap || Object.keys(activeMap).length === 0) {
         return;
       }
 

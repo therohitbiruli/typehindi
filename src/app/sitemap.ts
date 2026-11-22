@@ -47,6 +47,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/practice/punjabi-typing',
     '/practice/tamil-typing',
     '/practice/bengali-typing',
+    '/practice/kannada-typing',
+    '/practice/gujarati-typing',
     // Multilingual Learn Routes
     '/learn/english-typing',
     '/learn/hindi-typing',
@@ -54,6 +56,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/learn/punjabi-typing',
     '/learn/tamil-typing',
     '/learn/bengali-typing',
+    '/learn/kannada-typing',
+    '/learn/gujarati-typing',
     // Multilingual Test Routes
     '/test/english-typing',
     '/test/hindi-typing',
@@ -61,6 +65,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/test/punjabi-typing',
     '/test/tamil-typing',
     '/test/bengali-typing',
+    '/test/kannada-typing',
+    '/test/gujarati-typing',
     // Multilingual Keyboard Layout Routes
     '/keyboard-layout/english',
     '/keyboard-layout/hindi',
@@ -68,6 +74,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/keyboard-layout/punjabi',
     '/keyboard-layout/tamil',
     '/keyboard-layout/bengali',
+    '/keyboard-layout/kannada',
+    '/keyboard-layout/gujarati',
     '/mock-tests',
     '/mock-tests/ssc-cgl',
     '/mock-tests/ssc-chsl',

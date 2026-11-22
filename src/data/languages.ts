@@ -1,7 +1,7 @@
 // Central Multilingual Typing Architecture for TypeHindi
-// Supported Languages: English, Hindi, Marathi, Punjabi, Tamil, Bengali
+// Supported Languages: English, Hindi, Marathi, Punjabi, Tamil, Bengali, Kannada, Gujarati
 
-export type LanguageId = "english" | "hindi" | "marathi" | "punjabi" | "tamil" | "bengali";
+export type LanguageId = "english" | "hindi" | "marathi" | "punjabi" | "tamil" | "bengali" | "kannada" | "gujarati";
 
 export interface KeyMapping {
   code: string;
@@ -1199,8 +1199,250 @@ export const LANGUAGES_CONFIG: Record<LanguageId, LanguageConfig> = {
           answer: "ইনস্ক্রিপ্ট পদ্ধতিতে দুটি ব্যঞ্জনের মাঝে 'D' (হসন্ত) কী চাপলে যুক্তাক্ষর তৈরি হয়। উদাহরণ: ক + D + ষ = ক্ষ; জ + D + ঞ = জ্ঞ।"
         },
         {
-          question: "WBPSC ক্লার্কশিপ পরীক্ষায় বাংলায় কত স্পিড লাগে?",
+          question: "WBPSC ক্লার্কশিপ পরীক্ষায় বাংলায় কত স্পಿড লাগে?",
           answer: "WBPSC ক্লার্কশিপ পার্ট-২ পরীক্ষার কম্পিউটার টাইপিং টেস্টে বাংলায় প্রতি মিনিটে অন্তত ২০টি শব্দ (20 WPM) টাইপ করতে হয়।"
+        }
+      ]
+    }
+  },
+
+  // ----------------------------------------------------
+  // 7. KANNADA
+  // ----------------------------------------------------
+  kannada: {
+    id: "kannada",
+    slug: "kannada-typing",
+    keyboardSlug: "kannada",
+    name: "Kannada",
+    nativeName: "ಕನ್ನಡ",
+    symbol: "ಕ",
+    script: "Kannada",
+    layoutName: "Kannada InScript / Unicode",
+    description: "Practise Kannada typing online, improve your typing speed and accuracy, and develop confidence with Kannada characters, vowel signs and conjunct letters.",
+    metaTitle: "Kannada Typing Practice Online – Free Kannada Typing Test | TypeHindi",
+    metaDescription: "Practise Kannada typing online with free passage exercises for Easy, Medium, and Hard levels. Improve Kannada typing speed (WPM) and accuracy with real-time feedback on TypeHindi.",
+    h1: "Kannada Typing Practice",
+    keyboardRows: [],
+    commonWords: [
+      "ಕರ್ನಾಟಕ", "ಕನ್ನಡ", "ಸರ್ಕಾರ", "ಪರೀಕ್ಷೆ", "ವಿದ್ಯಾರ್ಥಿ", "ಅಭ್ಯಾಸ", "ಟೈಪಿಂಗ್", "ವೇಗ",
+      "ಗೆಲುವು", "ಕಚೇರಿ", "ಶಿಕ್ಷಣ", "ಭಾರತ", "ಮುಖ್ಯ", "ಭಾಷೆ", "ಬೆಳವಣಿಗೆ", "ಉದ್ಯೋಗ"
+    ],
+    sentences: [
+      "ಕನ್ನಡವು ಭಾರತದ ಅತ್ಯಂತ ಪ್ರಾಚೀನ ಮತ್ತು ಭವ್ಯವಾದ ಶಾಸ್ತ್ರೀಯ ಭಾಷೆಗಳಲ್ಲಿ ಒಂದಾಗಿದೆ.",
+      "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನೇಮಕಾತಿಗಳಲ್ಲಿ ಕನ್ನಡ ಟೈಪಿಂಗ್ ಪ್ರಮುಖ ಪಾತ್ರ ವಹಿಸುತ್ತದೆ.",
+      "ದಿನನಿತ್ಯ ಸ್ವಲ್ಪ ಸಮಯ ಮೀಸಲಿಟ್ಟು ಟೈಪಿಂಗ್ ಅಭ್ಯಾಸ ಮಾಡುವುದರಿಂದ ವೇಗ ಹೆಚ್ಚುತ್ತದೆ.",
+      "ಯುನಿಕೋಡ್ ಕೀಬೋರ್ಡ್ ಮೂಲಕ ನಿಖರವಾಗಿ ಕನ್ನಡ ಕಾಗುಣಿತಗಳನ್ನು ಟೈಪ್ ಮಾಡಬಹುದು."
+    ],
+    passages: [
+      {
+        id: 1,
+        difficulty: "easy",
+        category: "ಸಾಮಾನ್ಯ",
+        wordCount: 34,
+        text: "ಕನ್ನಡವು ಭಾರತದ ಪ್ರಾಚೀನ ಮತ್ತು ಸುಂದರವಾದ ಭಾಷೆಗಳಲ್ಲಿ ಒಂದಾಗಿದೆ. ಕರ್ನಾಟಕ ರಾಜ್ಯದ ಅಧಿಕೃತ ಭಾಷೆಯಾದ ಕನ್ನಡಕ್ಕೆ ಸುದೀರ್ಘ ಇತಿಹಾಸವಿದೆ. ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿ ಕನ್ನಡ ಟೈಪಿಂಗ್ ಕಲಿಯುವುದು ಪ್ರತಿಯೊಬ್ಬ ವಿದ್ಯಾರ್ಥಿಗೆ ಅತ್ಯಂತ ಮುಖ್ಯವಾದ ಕೌಶಲ್ಯವಾಗಿದೆ. ನಿಯಮಿತ ಅಭ್ಯಾಸದಿಂದ ನಿಮ್ಮ ಬೆರಳುಗಳ ವೇಗ ಹೆಚ್ಚಾಗುತ್ತದೆ."
+      },
+      {
+        id: 2,
+        difficulty: "easy",
+        category: "ಶಿಕ್ಷಣ",
+        wordCount: 27,
+        text: "ದೈನಂದಿನ ಜೀವನದಲ್ಲಿ ಕನ್ನಡ ಭಾಷೆಯ ಬಳಕೆ ಹೆಚ್ಚಿಸಲು ಗಣಕಯಂತ್ರದಲ್ಲಿ ಟೈಪಿಂಗ್ ಕಲಿಯುವುದು ಅತ್ಯಗತ್ಯ. ಆರಂಭದಲ್ಲಿ ನಿಧಾನವಾಗಿ ಮತ್ತು ನಿಖರವಾಗಿ ಟೈಪ್ ಮಾಡುವುದನ್ನು ಅಭ್ಯಾಸ ಮಾಡಿ. ತಪ್ಪುಗಳನ್ನು ಕಡಿಮೆ ಮಾಡುವುದರಿಂದ ನಿಮ್ಮ ಟೈಪಿಂಗ್ ವೇಗ ತಾನಾಗಿಯೇ ವೃದ್ಧಿಯಾಗುತ್ತದೆ."
+      },
+      {
+        id: 3,
+        difficulty: "medium",
+        category: "ಸರ್ಕಾರಿ ಪರೀಕ್ಷೆಗಳು",
+        wordCount: 47,
+        text: "ಕರ್ನಾಟಕ ಲೋಕಸೇವಾ ಆಯೋಗ (KPSC) ಮತ್ತು ಇತರ ರಾಜ್ಯ ಸರ್ಕಾರಿ ಇಲಾಖೆಗಳ ನೇಮಕಾತಿ ಪರೀಕ್ಷೆಗಳಲ್ಲಿ ಕಂಪ್ಯೂಟರ್ ಸಾಕ್ಷರತೆ ಹಾಗೂ ಕನ್ನಡ ಟೈಪಿಂಗ್ ಪರೀಕ್ಷೆಯನ್ನು ಕಡ್ಡಾಯಗೊಳಿಸಲಾಗಿದೆ. ಕಿರಿಯ ಸಹಾಯಕರು ಮತ್ತು ದ್ವಿತೀಯ ದರ್ಜೆ ಸಹಾಯಕರ ಹುದ್ದೆಗಳಿಗೆ ನಿಮಿಷಕ್ಕೆ ಕನಿಷ್ಠ ಮೂವತ್ತು ಶಬ್ದಗಳ (30 WPM) ವೇಗ ಅಗತ್ಯವಾಗಿರುತ್ತದೆ. ಅಭ್ಯರ್ಥಿಗಳು ಯುನಿಕೋಡ್ ಕೀಬೋರ್ಡ್ ಬಳಸಿ ದಿನನಿತ್ಯ ಅಭ್ಯಾಸ ಮಾಡುವುದರಿಂದ ಪರೀಕ್ಷೆಯಲ್ಲಿ ಸುಲಭವಾಗಿ ತೇರ್ಗಡೆಯಾಗಬಹುದು."
+      },
+      {
+        id: 4,
+        difficulty: "medium",
+        category: "ಸಾಹಿತ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿ",
+        wordCount: 40,
+        text: "ಕನ್ನಡ ಸಾಹಿತ್ಯವು ಸಾವಿರಾರು ವರ್ಷಗಳ ಭವ್ಯ ಪರಂಪರೆಯನ್ನು ಹೊಂದಿದೆ. ಪಂಪ, ರನ್ನ, ಕುಮಾರವ್ಯಾಸರಿಂದ ಹಿಡಿದು ಕುವೆಂಪು, ಬೇಂದ್ರೆ, ಮಾಸ್ತಿಯವರವರೆಗೆ ಅನೇಕ ಮಹಾನ್ ಸಾಹಿತಿಗಳು ಕನ್ನಡ ಭಾಷೆಯನ್ನು ಶ್ರೀಮಂತಗೊಳಿಸಿದ್ದಾರೆ. ಇಂದಿನ ಡಿಜಿಟಲ್ ಯುಗದಲ್ಲಿ ಜಾಲತಾಣಗಳು ಹಾಗೂ ಇ-ಆಡಳಿತದಲ್ಲಿ ಕನ್ನಡವನ್ನು ಸಕ್ರಿಯವಾಗಿ ಬಳಸಲು ಯುನಿಕೋಡ್ ಟೈಪಿಂಗ್ ಕೌಶಲ್ಯ ಪ್ರಮುಖ ಪಾತ್ರ ವಹಿಸುತ್ತದೆ."
+      },
+      {
+        id: 5,
+        difficulty: "hard",
+        category: "ಇ-ಆಡಳಿತ ಮತ್ತು ಆಡಳಿತ",
+        wordCount: 50,
+        text: "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಇ-ಆಡಳಿತ ಮತ್ತು ಸಚಿವಾಲಯದ ಕಾರ್ಯಕಲಾಪಗಳಲ್ಲಿ ಕಡತಗಳನ್ನು ಕನ್ನಡದಲ್ಲೇ ನಿರ್ವಹಿಸುವುದು ಕಡ್ಡಾಯವಾಗಿದೆ. ಅಧಿಕೃತ ಪತ್ರವ್ಯವಹಾರ, ಅಧಿಸೂಚನೆಗಳು ಮತ್ತು ನ್ಯಾಯಾಲಯದ ಆದೇಶಗಳಲ್ಲಿ ನಿಖರವಾದ ಕನ್ನಡ ವ್ಯಾಕರಣ ಮತ್ತು ಸಂಯುಕ್ತಾಕ್ಷರಗಳ ಸರಿಯಾದ ಬಳಕೆ ಅಗತ್ಯ. ವೇಗದ ಜೊತೆಗೆ ಶೇಕಡಾ ತೊಂಬತ್ತೈದಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ನಿಖರತೆಯನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳುವುದು ಸರ್ಕಾರಿ ಟೈಪಿಸ್ಟ್ ಪರೀಕ್ಷೆಯಲ್ಲಿ ಅತಿ ಮುಖ್ಯ. ಆದ್ದರಿಂದ ಅಭ್ಯರ್ಥಿಗಳು ಕಾಗುಣಿತ ಹಾಗೂ ಒತ್ತುಗಳ ಬಳಕೆಯನ್ನು ಗಂಭೀರವಾಗಿ ಅಭ್ಯಾಸ ಮಾಡಬೇಕು."
+      }
+    ],
+    exams: [
+      {
+        examName: "KPSC Junior Assistant / SDA Clerical Typing",
+        targetWpm: 30,
+        durationMinutes: 10,
+        maxErrorPercent: 5,
+        fontOrLayout: "Kannada InScript / Nudi Unicode",
+        notes: "Qualifying computer skill test for Secretariat and State Ministerial posts."
+      },
+      {
+        examName: "Karnataka High Court Typist Exam",
+        targetWpm: 30,
+        durationMinutes: 10,
+        maxErrorPercent: 5,
+        fontOrLayout: "Kannada InScript / Standard Unicode",
+        notes: "Speed test evaluating accurate Kannada transcription on computer."
+      }
+    ],
+    learning: {
+      introduction: "ಕನ್ನಡ ಟೈಪಿಂಗ್ ಕರ್ನಾಟಕದಲ್ಲಿ ಸರ್ಕಾರಿ ಹಾಗೂ ಖಾಸಗಿ ಉದ್ಯೋಗಗಳನ್ನು ಪಡೆಯಲು ಅತ್ಯಂತ ಉಪಯುಕ್ತವಾದ ಕೌಶಲ್ಯವಾಗಿದೆ. ಯುನಿಕೋಡ್ ಬೆಂಬಲಿತ ಕೀಬೋರ್ಡ್ ಬಳಸಿ ಕನ್ನಡದಲ್ಲಿ ಸುಲಭವಾಗಿ ಟೈಪ್ ಮಾಡಬಹುದು.",
+      inputSetup: {
+        windows: "Settings > Time & Language > Language & region > Add a language > Kannada ಆಯ್ಕೆಮಾಡಿ. ಕೀಬೋರ್ಡ್‌ನಲ್ಲಿ Kannada InScript ಸೇರಿಸಿ. ಬದಲಾಯಿಸಲು Win + Space ಒತ್ತಿರಿ.",
+        mac: "System Settings > Keyboard > Text Input > Input Sources > + ಕ್ಲಿಕ್ ಮಾಡಿ Kannada ಸೇರಿಸಿ.",
+        linux: "Settings > Region & Language > Input Sources > Add Kannada (InScript / KaGaPa)."
+      },
+      homeRowGuide: "ಮುಖಪುಟ ಸಾಲಿನಲ್ಲಿ ಎಡಗೈ ಬೆರಳುಗಳನ್ನು ಸ್ವರ/ಮಾತ್ರಾ ಚಿಹ್ನೆಗಳ ಮೇಲೆ ಮತ್ತು ಬಲಗೈ ಬೆರಳುಗಳನ್ನು ಪ್ರಮುಖ ವ್ಯಂಜನಗಳ ಮೇಲೆ ಇರಿಸಿ.",
+      fingerPlacement: {
+        leftHand: "ಎಡಗೈ: ಕಿರುಬೆರಳು, ಉಂಗುರದ ಬೆರಳು, ಮಧ್ಯದ ಬೆರಳು ಮತ್ತು ತೋರುಬೆರಳುಗಳು ಮಾತ್ರಾ ಮತ್ತು ಸ್ವರಗಳನ್ನು ನಿರ್ವಹಿಸುತ್ತವೆ.",
+        rightHand: "ಬಲಗೈ: ತೋರುಬೆರಳು, ಮಧ್ಯದ ಬೆರಳು, ಉಂಗುರದ ಬೆರಳು ಮತ್ತು ಕಿರುಬೆರಳುಗಳು ಪ್ರಮುಖ ವ್ಯಂಜನಗಳನ್ನು ನಿರ್ವಹಿಸುತ್ತವೆ."
+      },
+      commonCharacters: [
+        { char: "ಅ", keyCombo: "Shift + D", type: "vowel" },
+        { char: "ಆ", keyCombo: "Shift + E", type: "vowel" },
+        { char: "ಕ", keyCombo: "K", type: "consonant" },
+        { char: "್", keyCombo: "D (ಹಲಂತ್)", type: "special" },
+        { char: "ಾ", keyCombo: "E", type: "matra" },
+        { char: "ಿ", keyCombo: "F", type: "matra" }
+      ],
+      commonWords: ["ಕರ್ನಾಟಕ", "ಕನ್ನಡ", "ಸರ್ಕಾರ", "ಪರೀಕ್ಷೆ", "ವಿದ್ಯಾರ್ಥಿ", "ಅಭ್ಯಾಸ", "ಟೈಪಿಂಗ್", "ವೇಗ"],
+      sampleSentences: [
+        "ಒತ್ತು ಅಕ್ಷರಗಳನ್ನು ಟೈಪ್ ಮಾಡಲು ಎರಡು ವ್ಯಂಜನಗಳ ನಡುವೆ 'D' (ಹಲಂತ್) ಕೀಲಿಯನ್ನು ಒತ್ತಿ (ಉದಾ: ಕ + D + ಕ = ಕ್ಕ).",
+        "ನಿಯಮಿತವಾಗಿ ಅಭ್ಯಾಸ ಮಾಡುವ ಮೂಲಕ ನಿಮ್ಮ ಬೆರಳುಗಳ ಸ್ಮೃತಿ ಬಲಗೊಳ್ಳುತ್ತದೆ.",
+        "TypeHindi ನಲ್ಲಿ ಪ್ರತಿದಿನ ಟೈಪಿಂಗ್ ಪರೀಕ್ಷೆ ತೆಗೆದುಕೊಂಡು ನಿಮ್ಮ ಪ್ರಗತಿಯನ್ನು ಗಮನಿಸಿ."
+      ],
+      faqs: [
+        {
+          question: "ಕನ್ನಡದಲ್ಲಿ ಸಂಯುಕ್ತಾಕ್ಷರಗಳನ್ನು (ಒತ್ತು ಅಕ್ಷರ) ಹೇಗೆ ಟೈಪ್ ಮಾಡುವುದು?",
+          answer: "ಇನ್‌ಸ್ಕ್ರಿಪ್ಟ್ ಅಥವಾ ಯುನಿಕೋಡ್ ವಿಧಾನದಲ್ಲಿ ಮೊದಲ ವ್ಯಂಜನ ಟೈಪ್ ಮಾಡಿ, ನಂತರ 'D' (ವಿರಾಮ/ಹಲಂತ್) ಒತ್ತಿ, ತಕ್ಷಣ ಎರಡನೇ ವ್ಯಂಜನ ಟೈಪ್ ಮಾಡಿದರೆ ಒತ್ತು ಅಕ್ಷರ ರೂಪುಗೊಳ್ಳುತ್ತದೆ. ಉದಾಹರಣೆಗೆ ಕ + D + ಕ = ಕ್ಕ."
+        },
+        {
+          question: "KPSC ಪರೀಕ್ಷೆಗೆ ಎಷ್ಟು ಟೈಪಿಂಗ್ ವೇಗ ಬೇಕು?",
+          answer: "ಕರ್ನಾಟಕ ಲೋಕಸೇವಾ ಆಯೋಗದ ಟೈಪಿಸ್ಟ್ ಮತ್ತು ಸಹಾಯಕ ಪರೀಕ್ಷೆಗಳಲ್ಲಿ ಸಾಮಾನ್ಯವಾಗಿ ನಿಮಿಷಕ್ಕೆ 30 ಶಬ್ದಗಳ (30 WPM) ವೇಗ ಅಗತ್ಯವಾಗಿರುತ್ತದೆ."
+        }
+      ]
+    }
+  },
+
+  // ----------------------------------------------------
+  // 8. GUJARATI
+  // ----------------------------------------------------
+  gujarati: {
+    id: "gujarati",
+    slug: "gujarati-typing",
+    keyboardSlug: "gujarati",
+    name: "Gujarati",
+    nativeName: "ગુજરાતી",
+    symbol: "ગ",
+    script: "Gujarati",
+    layoutName: "Gujarati InScript / Unicode",
+    description: "Practise Gujarati typing online, improve your typing speed and accuracy, and become familiar with Gujarati vowels, consonants and matras.",
+    metaTitle: "Gujarati Typing Practice Online – Free Gujarati Typing Test | TypeHindi",
+    metaDescription: "Practise Gujarati typing online with free passage exercises for Easy, Medium, and Hard levels. Improve Gujarati typing speed (WPM) and accuracy with real-time feedback on TypeHindi.",
+    h1: "Gujarati Typing Practice",
+    keyboardRows: [],
+    commonWords: [
+      "ગુજરાત", "ગુજરાતી", "સરકાર", "પરીક્ષા", "વિદ્યાર્થી", "અભ્યાસ", "ટાઈપિંગ", "ઝડપ",
+      "સફળતા", "કચેરી", "શિક્ષણ", "ભારત", "મહત્વ", "ભાષા", "વિકાસ", "નોકરી"
+    ],
+    sentences: [
+      "ગુજરાતી ભારતની અત્યંત પ્રાચીન, સમૃદ્ધ અને ગૌરવશાળી ભાષાઓમાંની એક છે.",
+      "ગુજરાત સરકારની બિન સચિવાલય ક્લાર્ક ભરતીમાં ગુજરાતી ટાઈપિંગ મહત્વપૂર્ણ છે.",
+      "રોજ નિયમિત ટાઈપિંગ પ્રેક્ટિસ કરવાથી આંગળીઓની ઝડપ અને ચોકસાઈ વધે છે.",
+      "યુનિકોડ કીબોર્ડ લેઆઉટ વડે ચોક્કસ જોડણી અને માત્રાઓ ટાઈપ કરી શકાય છે."
+    ],
+    passages: [
+      {
+        id: 1,
+        difficulty: "easy",
+        category: "સામાન્ય",
+        wordCount: 41,
+        text: "ગુજરાતી ભાષા ભારતની એક સમૃદ્ધ અને સુંદર ભાષા છે. ગુજરાત રાજ્યની સત્તાવાર ભાષા તરીકે ગુજરાતીનો ઇતિહાસ અત્યંત ગૌરવશાળી છે. કમ્પ્યુટર પર ગુજરાતી ટાઈપિંગ શીખવું એ આજકાલ દરેક વિદ્યાર્થી અને ઓફિસ કર્મચારી માટે ખૂબ જરૂરી કૌશલ્ય છે. નિયમિત અભ્યાસથી ટાઈપિંગ સ્પીડ ઝડપથી વધે છે."
+      },
+      {
+        id: 2,
+        difficulty: "easy",
+        category: "શિક્ષણ",
+        wordCount: 35,
+        text: "સાચી રીતે ટાઈપિંગ શીખવા માટે આંગળીઓની સ્થિતિ અને કીબોર્ડના અક્ષરો યાદ રાખવા જરૂરી છે. શરૂઆતમાં ઝડપ કરતાં વધુ ધ્યાન સાચી જોડણી અને ચોકસાઈ પર આપવું જોઈએ. રોજેરોજ થોડો સમય ફાળવીને પ્રેક્ટિસ કરવાથી આત્મવિશ્વાસ વધે છે."
+      },
+      {
+        id: 3,
+        difficulty: "medium",
+        category: "સરકારી પરીક્ષાઓ",
+        wordCount: 50,
+        text: "ગુજરાત ગૌણ સેવા પસંદગી મંડળ (GSSSB) અને હાઈકોર્ટ દ્વારા લેવાતી બિન સચિવાલય ક્લાર્ક તથા સ્ટેનોગ્રાફરની ભરતી પરીક્ષાઓમાં ગુજરાતી ટાઈપિંગ ટેસ્ટ અનિવાર્ય હોય છે. આ પરીક્ષામાં સામાન્ય રીતે પ્રતિ મિનિટ ૨૫ થી ૩૦ શબ્દોની (25-30 WPM) સ્પીડ અને ઉચ્ચ ચોકસાઈની અપેક્ષા રાખવામાં આવે છે. નિયમિત મોક ટેસ્ટ આપીને પરીક્ષાના વાતાવરણ જેવો અનુભવ મેળવવો લાભદાયી રહે છે."
+      },
+      {
+        id: 4,
+        difficulty: "medium",
+        category: "સાહિત્ય અને સંસ્કૃતિ",
+        wordCount: 37,
+        text: "ગુજરાતી સાહિત્ય નરસિંહ મહેતા, મીરાંબાઈ અને નર્મદથી લઈને ગાંધીજી અને ઝવેરચંદ મેઘાણી સુધીના મહાન સર્જકોથી સમૃદ્ધ થયું છે. આજના ડિજિટલ યુગમાં સોશિયલ મીડિયા, બ્લોગ્સ અને સરકારી પોર્ટલ પર માતૃભાષામાં લખવા માટે યુનિકોડ ટાઈપિંગનું જ્ઞાન ખૂબ ઉપયોગી સાબિત થાય છે."
+      },
+      {
+        id: 5,
+        difficulty: "hard",
+        category: "ઈ-ગવર્નન્સ અને વહીવટ",
+        wordCount: 55,
+        text: "ગુજરાત સરકારના વહીવટી વિભાગોમાં પારદર્શિતા અને કાર્યક્ષમતા વધારવા માટે તમામ પત્રવ્યવહાર, પરિપત્રો અને સરકારી દસ્તાવેજોનું સંચાલન ગુજરાતીમાં કરવામાં આવે છે. સચિવાલય અને જિલ્લા કચેરીઓમાં સરકારી કામકાજ યુનિકોડ ફોન્ટ્સ દ્વારા કરવામાં આવે છે. ટાઈપિંગ કરતી વખતે રસ્વ-દીર્ઘની માત્રાઓ, જોડાક્ષરો અને અનુસ્વારની ભૂલો ન થાય તે અત્યંત મહત્વપૂર્ણ છે. કસોટી આપનારા ઉમેદવારોએ શબ્દોની સાચી રચના અને ઝડપ બંને વચ્ચે સંતુલન જાળવવું જોઈએ."
+      }
+    ],
+    exams: [
+      {
+        examName: "GSSSB Bin Sachivalay Clerk / Office Assistant",
+        targetWpm: 25,
+        durationMinutes: 10,
+        maxErrorPercent: 5,
+        fontOrLayout: "Gujarati InScript / Indic Input Unicode",
+        notes: "Computer proficiency exam conducted by Gujarat Subordinate Service Selection Board."
+      },
+      {
+        examName: "Gujarat High Court Clerk & Typist",
+        targetWpm: 30,
+        durationMinutes: 10,
+        maxErrorPercent: 4,
+        fontOrLayout: "Gujarati InScript / Shruti Unicode",
+        notes: "Judicial typing qualification test for High Court and District Courts of Gujarat."
+      }
+    ],
+    learning: {
+      introduction: "ગુજરાતી ટાઈપિંગ ગુજરાતમાં સરકારી અને ખાનગી ક્ષેત્રની નોકરીઓ માટે એક આવશ્યક લાયકાત છે. કમ્પ્યુટર પર ગુજરાતી યુનિકોડ કીબોર્ડ વડે ઝડપથી અને સચોટ રીતે ટાઈપ કરી શકાય છે.",
+      inputSetup: {
+        windows: "Settings > Time & Language > Language & region > Add a language > Gujarati ઉમેરો. કીબોર્ડ વિકલ્પોમાં Gujarati InScript પસંદ કરો. સ્વિચ કરવા માટે Win + Space દબાવો.",
+        mac: "System Settings > Keyboard > Text Input > Input Sources > + ક્લિક કરી Gujarati InScript ઉમેરો.",
+        linux: "Settings > Region & Language > Input Sources > Add Gujarati (InScript)."
+      },
+      homeRowGuide: "હોમ રો પર ડાબા હાથની આંગળીઓ માત્રા/સ્વરો પર અને જમણા હાથની આંગળીઓ મુખ્ય વ્યંજનો પર ગોઠવો.",
+      fingerPlacement: {
+        leftHand: "ડાબો હાથ: ટચલી, અનામિકા, મધ્યમા અને તર્જની આંગળીઓ મુખ્યત્વે માત્રાઓ અને સ્વરો ટાઈપ કરે છે.",
+        rightHand: "જમણો હાથ: તર્જની, મધ્યમા, અનામિકા અને ટચલી આંગળીઓ મુખ્ય વ્યંજનોને નિયંત્રિત કરે છે."
+      },
+      commonCharacters: [
+        { char: "અ", keyCombo: "Shift + D", type: "vowel" },
+        { char: "આ", keyCombo: "Shift + E", type: "vowel" },
+        { char: "ક", keyCombo: "K", type: "consonant" },
+        { char: "્", keyCombo: "D (હલંત)", type: "special" },
+        { char: "ા", keyCombo: "E", type: "matra" },
+        { char: "િ", keyCombo: "F", type: "matra" }
+      ],
+      commonWords: ["ગુજરાત", "ગુજરાતી", "સરકાર", "પરીક્ષા", "વિદ્યાર્થી", "અભ્યાસ", "ટાઈપિંગ", "ઝડપ"],
+      sampleSentences: [
+        "જોડાક્ષર ટાઈપ કરવા માટે બે વ્યંજનો વચ્ચે 'D' (હલંત) કી દબાવો (જેમ કે: ક + D + ક = ક્ક).",
+        "શરૂઆતમાં ઝડપ કરતાં ચોકસાઈ પર વધુ ધ્યાન કેન્દ્રિત કરો.",
+        "TypeHindi પર દરરોજ મોક ટેસ્ટ આપીને પોતાની પ્રગતિ ચકાસો."
+      ],
+      faqs: [
+        {
+          question: "ગુજરાતીમાં જોડાક્ષર (જેમ કે ક્ષ, જ્ઞ, ત્ત) કેવી રીતે ટાઈપ કરવા?",
+          answer: "ઇનસ્ક્રિપ્ટ અથવા યુનિકોડમાં પ્રથમ વ્યંજન દબાવો, પછી 'D' (હલંત/વિરામ) દબાવો અને ત્યારબાદ બીજો વ્યંજન દબાવતાં આપમેળે જોડાક્ષર બની જશે. જેમ કે: ક + D + ષ = ક્ષ."
+        },
+        {
+          question: "બિન સચિવાલય ક્લાર્ક પરીક્ષામાં કેટલી સ્પીડ જરૂરી છે?",
+          answer: "GSSSB બિન સચિવાલય ક્લાર્કની કમ્પ્યુટર પ્રોફિશિયન્સી પરીક્ષામાં સામાન્ય રીતે પ્રતિ મિનિટ 25 શબ્દો (25 WPM) ની સ્પીડ જરૂરી હોય છે."
         }
       ]
     }

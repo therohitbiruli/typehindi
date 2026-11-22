@@ -232,6 +232,7 @@ export function getKeyInfoForChar(
 ): { code: string; isShift: boolean } | null {
   if (!char) return null;
   const config = LANGUAGES_CONFIG[languageId] || LANGUAGES_CONFIG.hindi;
+  if (!config || !config.keyboardRows || config.keyboardRows.length === 0) return null;
   for (const row of config.keyboardRows) {
     for (const key of row) {
       if (key.normal === char) {

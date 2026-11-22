@@ -78,7 +78,7 @@ export default function PracticePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
           {[
             { name: "English", native: "English", slug: "english-typing", symbol: "En" },
             { name: "Hindi", native: "हिंदी", slug: "hindi-typing", symbol: "अ" },
@@ -86,6 +86,8 @@ export default function PracticePage() {
             { name: "Punjabi", native: "ਪੰਜਾਬੀ", slug: "punjabi-typing", symbol: "ਪ" },
             { name: "Tamil", native: "தமிழ்", slug: "tamil-typing", symbol: "த" },
             { name: "Bengali", native: "বাংলা", slug: "bengali-typing", symbol: "ব" },
+            { name: "Kannada", native: "ಕನ್ನಡ", slug: "kannada-typing", symbol: "ಕ" },
+            { name: "Gujarati", native: "ગુજરાતી", slug: "gujarati-typing", symbol: "ગ" },
           ].map((item) => (
             <a
               key={item.slug}

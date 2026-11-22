@@ -37,11 +37,8 @@ export default function PracticePage() {
       <AdPlaceholder position="top" />
 
       {/* Page Header */}
-      <div className="mb-8 text-center">
-        <h1 className="heading-1 mb-2">Hindi Typing Practice</h1>
-        <p className="text-muted">
-          Practice Hindi typing on the InScript keyboard layout and improve your speed.
-        </p>
+      <div className="mb-4 sm:mb-6 text-center">
+        <h1 className="heading-1">Hindi Typing Practice</h1>
       </div>
 
       {/* Practice Tool */}

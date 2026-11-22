@@ -86,15 +86,8 @@ export default async function LanguagePracticePage({ params }: Props) {
       <AdPlaceholder position="top" />
 
       {/* Page Header */}
-      <div className="mb-8 text-center max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-xs font-semibold mb-3">
-          <span>{langConfig.symbol}</span>
-          <span>{langConfig.nativeName} Typing Simulator</span>
-        </div>
-        <h1 className="heading-1 mb-3">{langConfig.h1}</h1>
-        <p className="text-muted leading-relaxed text-sm sm:text-base">
-          {langConfig.description}
-        </p>
+      <div className="mb-4 sm:mb-6 text-center max-w-3xl mx-auto">
+        <h1 className="heading-1">{langConfig.h1}</h1>
       </div>
 
       {/* Practice Tool */}

@@ -86,11 +86,7 @@ export default async function LanguageTestPage({ params }: Props) {
       <AdPlaceholder position="top" />
 
       {/* Page Header */}
-      <div className="mb-8 text-center max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-xs font-semibold mb-3">
-          <span>⏱️</span>
-          <span>{langConfig.nativeName} Speed Test Simulator</span>
-        </div>
+      <div className="mb-6 text-center max-w-3xl mx-auto">
         <h1 className="heading-1 mb-2">{langConfig.name} Typing Test Online</h1>
         <p className="text-muted leading-relaxed text-sm sm:text-base">
           Test your {langConfig.name} typing speed under realistic exam conditions. Choose between 1, 5, or 10-minute timers, track real-time WPM, accuracy, and error counts.

@@ -30,48 +30,6 @@ export default function TranslatorsPage() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       
-      {/* 🌟 Prominent Section: English to Indian Languages Typing */}
-      <div className="bg-gradient-to-br from-[#102B5C] to-[#174EA6] rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
-        <div className="relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-3">
-            <span>⌨️</span>
-            <span>New Feature</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold mb-3">
-            English to Indian Languages Typing
-          </h2>
-          <p className="text-white/80 text-sm sm:text-base max-w-2xl mb-6 font-normal">
-            Type using your standard English keyboard and get instant, accurate text in your preferred Indian regional language. Convert Roman letters into native scripts with zero hassle.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            {SUPPORTED_TYPING_LANGUAGES.map((lang) => (
-              <Link
-                key={lang.id}
-                href={lang.route}
-                className="p-3.5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 transition-all text-center flex flex-col items-center group backdrop-blur-sm"
-              >
-                <span className="text-2xl mb-1 group-hover:scale-110 transition-transform font-bold">
-                  {lang.nativeChar}
-                </span>
-                <span className="text-xs font-bold text-white">
-                  {lang.name}
-                </span>
-                <span className="text-[10px] text-white/70">{lang.nativeName}</span>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-5 text-right">
-            <Link
-              href="/english-to-indian-language-typing"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-white hover:underline"
-            >
-              <span>Explore All Indian Language Typing Tools</span>
-              <span>→</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* English to Native Section */}
       <div className="bg-white dark:bg-gray-900 border border-[#B8C7DA] dark:border-gray-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] rounded-2xl p-6">
         <h2 className="text-xl font-normal text-red-600 dark:text-red-400 border-b border-gray-100 dark:border-gray-800 pb-2 mb-6">English to Indian Languages (English to Native)</h2>
@@ -158,6 +116,44 @@ export default function TranslatorsPage() {
           </div>
         </div>
       </section>
+
+      {/* English to Indian Languages Typing Section (Placed last without New Feature badge) */}
+      <div className="bg-gradient-to-br from-[#102B5C] to-[#174EA6] rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+        <div className="relative z-10">
+          <h2 className="text-2xl sm:text-3xl font-extrabold mb-3">
+            English to Indian Languages Typing
+          </h2>
+          <p className="text-white/80 text-sm sm:text-base max-w-2xl mb-6 font-normal">
+            Type using your standard English keyboard and get instant, accurate text in your preferred Indian regional language. Convert Roman letters into native scripts with zero hassle.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+            {SUPPORTED_TYPING_LANGUAGES.map((lang) => (
+              <Link
+                key={lang.id}
+                href={lang.route}
+                className="p-3.5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 transition-all text-center flex flex-col items-center group backdrop-blur-sm"
+              >
+                <span className="text-2xl mb-1 group-hover:scale-110 transition-transform font-bold">
+                  {lang.nativeChar}
+                </span>
+                <span className="text-xs font-bold text-white">
+                  {lang.name}
+                </span>
+                <span className="text-[10px] text-white/70">{lang.nativeName}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-5 text-right">
+            <Link
+              href="/english-to-indian-language-typing"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-white hover:underline"
+            >
+              <span>Explore All Indian Language Typing Tools</span>
+              <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </div>
       
     </div>
   );

@@ -261,9 +261,6 @@ export function LearnClient({ isSubRoute = false }: { isSubRoute?: boolean }) {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5">
                 <span className="text-lg">✍️</span>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300">
-                  New Section
-                </span>
               </div>
               <Link href="/shorthand" className="text-xs font-bold text-purple-400 hover:text-purple-300">
                 Overview →

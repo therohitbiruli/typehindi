@@ -64,8 +64,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { FloatingTranslator } from "../components/FloatingTranslator";
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -119,7 +117,6 @@ export default function RootLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
-          <FloatingTranslator />
         </ThemeProvider>
       </body>
     </html>

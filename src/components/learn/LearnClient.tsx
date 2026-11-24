@@ -27,6 +27,10 @@ import { MatraMastery } from "../../components/learn/MatraMastery";
 import { DifficultWordsPractice } from "../../components/learn/DifficultWordsPractice";
 import { CommonMistakesTrainer } from "../../components/learn/CommonMistakesTrainer";
 import { FinalChallenges } from "../../components/learn/FinalChallenges";
+import { LearnLanguageSelector } from "./LearnLanguageSelector";
+import { InteractiveLessonRunner } from "./InteractiveLessonRunner";
+import { LANGUAGES_CONFIG } from "../../data/languages";
+import { hindiLessons } from "../../data/lessons";
 
 function LearnUrlParamsHandler({
   onParams,
@@ -47,7 +51,7 @@ function LearnUrlParamsHandler({
   return null;
 }
 
-export function LearnClient() {
+export function LearnClient({ isSubRoute = false }: { isSubRoute?: boolean }) {
   const { activeKey, isShift } = useKeyPress();
   const guideRef = useRef<HTMLDivElement>(null);
 
@@ -182,15 +186,32 @@ export function LearnClient() {
       <Suspense fallback={null}>
         <LearnUrlParamsHandler onParams={handleUrlParams} />
       </Suspense>
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Learn" }]} />
+      <Breadcrumb
+        items={
+          isSubRoute
+            ? [
+                { label: "Home", href: "/" },
+                { label: "Learn", href: "/learn" },
+                { label: "Hindi Typing" },
+              ]
+            : [{ label: "Home", href: "/" }, { label: "Learn" }]
+        }
+      />
 
       <AdPlaceholder position="top" />
 
+      {/* Language Selector Bar */}
+      <LearnLanguageSelector currentLang={LANGUAGES_CONFIG.hindi} />
+
       {/* Hero Heading & Overview */}
       <div className="mb-6">
-        <h1 className="heading-1 mb-2">Learn Typing & Stenography (टाइपिंग और शॉर्टहैंड सीखें)</h1>
+        <h1 className="heading-1 mb-2">
+          {isSubRoute
+            ? "How to Learn Hindi Typing (हिंदी टाइपिंग सीखें)"
+            : "Learn Typing & Stenography (टाइपिंग और शॉर्टहैंड सीखें)"}
+        </h1>
         <p className="text-muted text-base max-w-3xl leading-relaxed">
-          Welcome to TypeHindi's comprehensive learning system. Master Hindi touch-typing, English typing, or English Pitman shorthand stenography with interactive drills, dictations, and official exam simulators.
+          Welcome to TypeHindi's comprehensive learning system. Master Hindi touch-typing on the official InScript & Remington layouts with interactive drills, dictations, and official exam simulators.
         </p>
       </div>
 
@@ -551,11 +572,17 @@ export function LearnClient() {
             Structured step-by-step touch typing curriculum covering home row, vowels, consonants, matras, conjuncts, and full sentences.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 mb-8">
           {lessons.map((lesson) => (
             <LessonCard key={lesson.id} lesson={lesson} />
           ))}
         </div>
+
+        {/* Interactive Typing Practice Runner for Hindi */}
+        <InteractiveLessonRunner
+          languageConfig={LANGUAGES_CONFIG.hindi}
+          lessons={hindiLessons}
+        />
       </div>
 
       {/* 3. Key-by-Key Practice */}

@@ -4,8 +4,11 @@ import { redirect } from "next/navigation";
 import { Breadcrumb } from "../../../components/Breadcrumb";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
 import { Keyboard } from "../../../components/Keyboard";
-import { blogs } from "../../../data/blogs";
-import { ALL_LANGUAGES, getLanguageConfig } from "../../../data/languages";
+import { ALL_LANGUAGES } from "../../../data/languages";
+import { LearnClient } from "../../../components/learn/LearnClient";
+import { LearnLanguageSelector } from "../../../components/learn/LearnLanguageSelector";
+import { InteractiveLessonRunner } from "../../../components/learn/InteractiveLessonRunner";
+import { getLessonsByLanguage } from "../../../data/lessons";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -49,13 +52,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function LearnSlugPage({ params }: Props) {
   const { slug } = await params;
 
-  // Check if it's one of the 6 language learning guides
+  // Check if it's one of the 8 language learning guides
   const langConfig = ALL_LANGUAGES.find((l) => l.slug === slug);
 
   // If not a language, redirect to blog post as per legacy behavior
   if (!langConfig) {
     redirect(`/blog/${slug}`);
   }
+
+  // Preserve the comprehensive Hindi learning curriculum exactly as before
+  if (langConfig.id === "hindi") {
+    return <LearnClient isSubRoute={true} />;
+  }
+
+  const lessons = getLessonsByLanguage(langConfig.id);
+  const hasKeyboard = (langConfig.keyboardRows?.length ?? 0) > 0;
 
   // FAQPage Schema
   const faqSchema = {
@@ -74,7 +85,7 @@ export default async function LearnSlugPage({ params }: Props) {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": `How to Learn ${langConfig.name} Typing: Complete Beginner Guide`,
+    "headline": `How to Learn ${langConfig.name} Typing: Complete Step-by-Step Guide`,
     "description": langConfig.metaDescription,
     "inLanguage": langConfig.name,
     "url": `https://typehindi.in/learn/${langConfig.slug}`,
@@ -100,23 +111,26 @@ export default async function LearnSlugPage({ params }: Props) {
         items={[
           { label: "Home", href: "/" },
           { label: "Learn", href: "/learn" },
-          { label: `Learn ${langConfig.name} Typing` },
+          { label: `${langConfig.name} Typing` },
         ]}
       />
 
       <AdPlaceholder position="top" />
 
+      {/* Language Switcher Bar */}
+      <LearnLanguageSelector currentLang={langConfig} />
+
       {/* Hero Header */}
       <div className="mb-10 text-center max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-xs font-semibold mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-600 dark:text-primary-400 text-xs font-semibold mb-3">
           <span>📖</span>
-          <span>{langConfig.nativeName} Typing Curriculum</span>
+          <span>{langConfig.nativeName} Touch Typing Course</span>
         </div>
         <h1 className="heading-1 mb-3">
           How to Learn {langConfig.name} Typing
         </h1>
         <p className="text-muted text-sm sm:text-base leading-relaxed">
-          A complete, step-by-step masterclass on {langConfig.name} touch typing using the verified {langConfig.layoutName} layout. Master finger positioning, key combinations, and exam preparation.
+          A complete, step-by-step masterclass on {langConfig.name} touch typing using the verified {langConfig.layoutName} layout. Master finger positioning, key combinations, and official recruitment exam preparation.
         </p>
 
         {/* Hero CTAs */}
@@ -160,7 +174,7 @@ export default async function LearnSlugPage({ params }: Props) {
               <span>⌨️</span> {langConfig.name} Keyboard Layout: {langConfig.layoutName}
             </h2>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium mt-0.5">
-              Official Bureau of Indian Standards (BIS) phonetic mapping. Vowels are on the left, consonants on the right.
+              Official Bureau of Indian Standards (BIS) / QWERTY layout organization.
             </p>
           </div>
           <Link
@@ -171,14 +185,25 @@ export default async function LearnSlugPage({ params }: Props) {
           </Link>
         </div>
 
-        <div className="overflow-x-auto pb-2">
-          <Keyboard
-            activeKey=""
-            isShift={false}
-            visible={true}
-            language={langConfig.id}
-          />
-        </div>
+        {hasKeyboard ? (
+          <div className="overflow-x-auto pb-2">
+            <Keyboard
+              activeKey=""
+              isShift={false}
+              visible={true}
+              language={langConfig.id}
+            />
+          </div>
+        ) : (
+          <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="font-semibold text-primary-600 dark:text-primary-400 mb-1">
+              ✓ Native {langConfig.name} Input Method
+            </p>
+            <p>
+              Type directly in {langConfig.name} using your computer&apos;s native operating system input method (IME). Follow the step-by-step setup guide below to enable {langConfig.name} typing on Windows, macOS, or Linux.
+            </p>
+          </div>
+        )}
       </section>
 
       {/* 3. Computer Setup Guide (Windows, Mac, Linux) */}
@@ -244,39 +269,47 @@ export default async function LearnSlugPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 5. Common Characters & Keystroke Combinations */}
-      <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-          <span>🔤</span> Essential {langConfig.name} Characters & Keystroke Map
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          {langConfig.learning.commonCharacters.map((c, idx) => (
-            <div
-              key={idx}
-              className="p-3 rounded-xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 text-center"
-            >
-              <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
-                {c.char}
-              </div>
-              <div className="text-[11px] font-mono font-semibold text-primary-500">
-                {c.keyCombo}
-              </div>
-              <div className="text-[9px] uppercase font-bold text-[#475569] dark:text-gray-400 mt-1">
-                {c.type}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 5. Interactive Typing Lessons Curriculum with Live Feedback & Progress Tracking */}
+      <InteractiveLessonRunner
+        languageConfig={langConfig}
+        lessons={lessons}
+      />
 
-      {/* 6. Common Vocabulary & Sentences */}
+      {/* 6. Common Characters & Keystroke Combinations */}
+      {langConfig.learning.commonCharacters && langConfig.learning.commonCharacters.length > 0 && (
+        <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+            <span>🔤</span> Essential {langConfig.name} Characters & Keystroke Map
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {langConfig.learning.commonCharacters.map((c, idx) => (
+              <div
+                key={idx}
+                className="p-3 rounded-xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800 text-center"
+              >
+                <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+                  {c.char}
+                </div>
+                <div className="text-[11px] font-mono font-semibold text-primary-500">
+                  {c.keyCombo}
+                </div>
+                <div className="text-[9px] uppercase font-bold text-[#475569] dark:text-gray-400 mt-1">
+                  {c.type}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 7. Common Vocabulary & Sentences */}
       <section className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
           <h3 className="text-base font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
             <span>📝</span> Frequent {langConfig.name} Words
           </h3>
           <p className="text-xs text-[#475569] dark:text-gray-300 font-medium mb-4">
-            Practice typing these common vocabulary patterns to develop sub-conscious finger memory.
+            Practice typing these common vocabulary patterns to develop subconscious muscle memory.
           </p>
           <div className="flex flex-wrap gap-2">
             {langConfig.commonWords.map((word, idx) => (
@@ -311,7 +344,7 @@ export default async function LearnSlugPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 7. How to Improve Speed & Accuracy */}
+      {/* 8. How to Improve Speed & Accuracy */}
       <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
           <span>🚀</span> 5 Golden Rules to Double Your {langConfig.name} Typing Speed
@@ -328,7 +361,7 @@ export default async function LearnSlugPage({ params }: Props) {
             <span className="text-xl font-bold text-primary-500">02</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Never Look at the Keyboard</h3>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
-              Cover your hands with a small sheet of paper if necessary. Looking down prevents muscle memory from forming in the cerebral cortex.
+              Cover your hands with a small sheet of paper if necessary. Looking down prevents touch typing muscle memory from forming.
             </p>
           </div>
           <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
@@ -342,7 +375,7 @@ export default async function LearnSlugPage({ params }: Props) {
             <span className="text-xl font-bold text-primary-500">04</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Master Halant & Conjunct Keys</h3>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
-              In Indic InScript, the Virama / Halant key (D) forms half-letters and conjuncts. Practice typing conjunct words fluidly.
+              In Indic scripts, the Virama / Halant key forms half-letters and conjuncts. Practice typing conjunct words fluidly without hesitation.
             </p>
           </div>
           <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-950 border border-[#CBD5E1] dark:border-slate-800">
@@ -356,13 +389,13 @@ export default async function LearnSlugPage({ params }: Props) {
             <span className="text-xl font-bold text-primary-500">06</span>
             <h3 className="font-bold text-xs text-gray-900 dark:text-white mt-1 mb-1">Build a 10 WPM Safety Buffer</h3>
             <p className="text-xs text-[#475569] dark:text-gray-300 font-medium leading-relaxed">
-              If an exam requires 30 WPM, train yourself to type at 40 WPM at home to absorb exam-day nervousness easily.
+              If an exam requires 30 WPM, train yourself to type at 40 WPM at home to comfortably absorb exam-day pressure.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 8. Frequently Asked Questions */}
+      {/* 9. Frequently Asked Questions */}
       <section className="mb-12 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-[#CBD5E1] dark:border-slate-800 shadow-sm">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
           <span>❓</span> Frequently Asked Questions ({langConfig.name} Typing)
@@ -384,7 +417,7 @@ export default async function LearnSlugPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 9. Bottom CTA Banner */}
+      {/* 10. Bottom CTA Banner */}
       <section className="bg-gradient-to-r from-primary-600 to-indigo-600 rounded-3xl p-8 text-center text-white shadow-xl">
         <h2 className="text-2xl sm:text-3xl font-extrabold mb-3">
           Ready to Start {langConfig.name} Typing Practice?

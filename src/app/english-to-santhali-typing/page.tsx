@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: config?.seoTitle || "English to Santhali Typing Online | TypeHindi",
   description: config?.metaDescription || "Type in Santhali Ol Chiki script using English keyboard.",
   alternates: {
-    canonical: `https://typehindi.in${config?.route || "/english-to-santhali-typing"}`,
+    canonical: `https://www.typehindi.in${config?.route || "/english-to-santhali-typing"}`,
   },
   keywords: [
     `English to ${config?.name || "Santhali"} typing`,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: config?.seoTitle || "English to Santhali Typing Online | TypeHindi",
     description: config?.metaDescription || "Type in Santhali Ol Chiki script using English keyboard.",
-    url: `https://typehindi.in${config?.route || "/english-to-santhali-typing"}`,
+    url: `https://www.typehindi.in${config?.route || "/english-to-santhali-typing"}`,
     type: "website",
   },
 };

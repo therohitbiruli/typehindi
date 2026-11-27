@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     "phonetic Indian language typing",
   ],
   alternates: {
-    canonical: "https://typehindi.in/translators",
+    canonical: "https://www.typehindi.in/translators",
   },
   openGraph: {
     title: "English & Hindi to Indian Language Translators | TypeHindi",
     description:
       "Instant, private, client-side phonetic translators for 11 Indian regional languages.",
-    url: "https://typehindi.in/translators",
+    url: "https://www.typehindi.in/translators",
     type: "website",
   },
 };

@@ -5,7 +5,6 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import Script from "next/script";
 import "./globals.css";
-import "katex/dist/katex.min.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,11 +16,11 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
   subsets: ["devanagari"],
   variable: "--font-noto-sans-devanagari",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://typehindi.in"),
+  metadataBase: new URL("https://www.typehindi.in"),
   title: {
     default: "TypeHindi - Free Hindi Typing Practice | InScript Keyboard",
     template: "%s | TypeHindi",
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TypeHindi - Free Hindi Typing Practice",
     description: "Practice Hindi typing with InScript keyboard layout. Track WPM, accuracy, and improve your typing speed.",
-    url: "https://typehindi.in",
+    url: "https://www.typehindi.in",
     siteName: "TypeHindi",
     locale: "hi_IN",
     type: "website",
@@ -60,21 +59,51 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
   },
   alternates: {
-    canonical: "https://typehindi.in",
+    canonical: "https://www.typehindi.in",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "TypeHindi",
-  "url": "https://typehindi.in",
-  "description": "The ultimate Hindi typing platform with Mangal Font & InScript keyboard layout, typing tests, and WPM tracking.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://typehindi.in/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.typehindi.in/#website",
+      "name": "TypeHindi",
+      "url": "https://www.typehindi.in",
+      "description": "Free online Hindi and Indian-language typing platform with Mangal Font, InScript & Remington GAIL keyboard layouts, typing tests, and WPM tracking.",
+      "publisher": {
+        "@id": "https://www.typehindi.in/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.typehindi.in/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.typehindi.in/#organization",
+      "name": "TypeHindi",
+      "url": "https://www.typehindi.in",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.typehindi.in/logo.png"
+      },
+      "email": "contact@typehindi.in",
+      "founder": {
+        "@type": "Person",
+        "name": "Rohit Biruli",
+        "url": "https://www.typehindi.in/author/rohit-biruli"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "contact@typehindi.in",
+        "url": "https://www.typehindi.in/contact"
+      }
+    }
+  ]
 };
 
 export default function RootLayout({

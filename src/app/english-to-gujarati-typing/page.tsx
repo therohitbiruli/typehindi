@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: config.seoTitle,
   description: config.metaDescription,
   alternates: {
-    canonical: `https://typehindi.in${config.route}`,
+    canonical: `https://www.typehindi.in${config.route}`,
   },
   keywords: [
     `English to ${config.name} typing`,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: config.seoTitle,
     description: config.metaDescription,
-    url: `https://typehindi.in${config.route}`,
+    url: `https://www.typehindi.in${config.route}`,
     type: "website",
   },
 };

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props) {
   const subjectName = subjects.find(s => s.toLowerCase().replace(/ /g, '-') === baseSubjectSlug);
   if (!subjectName) return { title: "Not Found" };
 
-  const url = `https://typehindi.in/pyq/${slug}/subject/${subjectSlug}`;
+  const url = `https://www.typehindi.in/pyq/${slug}/subject/${subjectSlug}`;
   return {
     title: `${subjectName} Questions (Part ${pageNum}) for ${paper.title} | TypeHindi`,
     description: `Practice all ${subjectName} questions from ${paper.year} ${paper.examId.toUpperCase()} exams online. Page ${pageNum}.`,

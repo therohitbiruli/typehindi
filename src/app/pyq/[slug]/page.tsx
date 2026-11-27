@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props) {
       type: 'article',
     },
     alternates: {
-      canonical: `https://typehindi.in/pyq/${slug}`,
+      canonical: `https://www.typehindi.in/pyq/${slug}`,
     }
   };
 }

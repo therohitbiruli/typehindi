@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Type in your preferred Indian language using an English keyboard. Convert Roman letters into native Indian scripts with our free online typing tools.",
   alternates: {
-    canonical: "https://typehindi.in/english-to-indian-language-typing",
+    canonical: "https://www.typehindi.in/english-to-indian-language-typing",
   },
   keywords: [
     "English to Indian languages typing",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "English to Indian Languages Typing Online | TypeHindi",
     description:
       "Type in your preferred Indian language using an English keyboard. Convert Roman letters into native Indian scripts with our online typing tools.",
-    url: "https://typehindi.in/english-to-indian-language-typing",
+    url: "https://www.typehindi.in/english-to-indian-language-typing",
     type: "website",
   },
 };

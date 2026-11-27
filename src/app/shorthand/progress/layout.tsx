@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://typehindi.in/shorthand/progress",
+    canonical: "https://www.typehindi.in/shorthand/progress",
   },
   openGraph: {
     title: "My Shorthand Learning Dashboard & Activity Analytics | TypeHindi",
     description:
       "Personal stenography practice analytics, speed milestones, and streak counter.",
-    url: "https://typehindi.in/shorthand/progress",
+    url: "https://www.typehindi.in/shorthand/progress",
     type: "website",
   },
 };

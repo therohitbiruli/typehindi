@@ -22,7 +22,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const title = lang === "en" && blog.titleEn ? blog.titleEn : blog.title;
   const excerpt = lang === "en" && blog.excerptEn ? blog.excerptEn : blog.excerpt;
 
-  const url = `https://typehindi.in/blog/${slug}`;
+  const url = `https://www.typehindi.in/blog/${slug}`;
   return {
     title: `${title} | TypeHindi`,
     description: excerpt,
@@ -87,24 +87,25 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
     "@type": "Article",
     headline: title,
     description: lang === "en" && blog.excerptEn ? blog.excerptEn : blog.excerpt,
-    image: heroImage.startsWith("http") ? heroImage : `https://typehindi.in${heroImage.startsWith("/") ? "" : "/"}${heroImage}`,
+    image: heroImage.startsWith("http") ? heroImage : `https://www.typehindi.in${heroImage.startsWith("/") ? "" : "/"}${heroImage}`,
     datePublished: blog.date,
     author: {
       "@type": "Person",
-      name: blog.author || "TypeHindi Editorial Team",
+      name: blog.author && blog.author !== "TypeHindi Team" ? blog.author : "Rohit Biruli",
+      url: "https://www.typehindi.in/author/rohit-biruli",
     },
     publisher: {
       "@type": "Organization",
       name: "TypeHindi",
-      url: "https://typehindi.in",
+      url: "https://www.typehindi.in",
       logo: {
         "@type": "ImageObject",
-        url: "https://typehindi.in/logo.png",
+        url: "https://www.typehindi.in/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://typehindi.in/blog/${slug}`,
+      "@id": `https://www.typehindi.in/blog/${slug}`,
     },
   };
 
@@ -150,8 +151,22 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-normal text-[#102B5C] dark:text-white">
             {title}
           </h1>
-          <div className="flex items-center justify-center gap-4 text-sm font-medium text-[#64748B] dark:text-gray-400 mb-6">
-            {blog.author && (<><span>{blog.author}</span><span>&bull;</span></>)}<time>{date}</time>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-[#64748B] dark:text-gray-400 mb-6">
+            <Link
+              href="/author/rohit-biruli"
+              className="hover:text-primary-600 dark:hover:text-primary-400 underline underline-offset-2"
+            >
+              {blog.author && blog.author !== "TypeHindi Team" ? blog.author : "Rohit Biruli"}
+            </Link>
+            <span>&bull;</span>
+            <time>{date}</time>
+            <span>&bull;</span>
+            <Link
+              href="/editorial-policy"
+              className="hover:text-primary-600 dark:hover:text-primary-400 underline underline-offset-2"
+            >
+              {lang === "en" ? "Editorial Policy" : "संपादकीय नीति"}
+            </Link>
           </div>
         </header>
 
@@ -175,6 +190,45 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
               className="prose prose-lg dark:prose-invert !max-w-none w-full prose-headings:font-bold prose-headings:text-[#17243A] dark:prose-headings:text-white prose-p:leading-relaxed prose-p:text-[#27364B] dark:prose-p:text-gray-200 prose-a:text-[#174EA6] hover:prose-a:text-[#102B5C] dark:prose-a:text-primary-400"
               dangerouslySetInnerHTML={{ __html: formatContent(content) }}
             />
+
+            {/* Author & Editorial Attribution Box */}
+            <aside className="mt-10 pt-6 border-t border-[#E2E8F0] dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-sm">
+              <div className="flex items-start gap-3.5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#102B5C] text-white text-sm font-bold dark:bg-primary-600">
+                  RB
+                </div>
+                <div>
+                  <p className="font-bold text-[#17243A] dark:text-white">
+                    {lang === "en" ? "Published & Maintained by " : "प्रकाशक एवं लेखक: "}
+                    <Link
+                      href="/author/rohit-biruli"
+                      className="text-primary-600 dark:text-primary-400 hover:underline"
+                    >
+                      {blog.author && blog.author !== "TypeHindi Team" ? blog.author : "Rohit Biruli"}
+                    </Link>
+                  </p>
+                  <p className="text-xs text-[#475569] dark:text-slate-400 mt-1 leading-relaxed">
+                    {lang === "en"
+                      ? "Founder & maintainer of TypeHindi.in. Guides are reviewed under our Editorial Policy."
+                      : "TypeHindi.in के संस्थापक एवं संचालक। सभी लेख हमारी संपादकीय नीति के अनुसार जांचे जाते हैं।"}
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 shrink-0 text-xs font-semibold">
+                <Link
+                  href="/editorial-policy"
+                  className="px-3 py-1.5 rounded-lg border border-[#CBD5E1] dark:border-slate-700 text-[#17243A] dark:text-slate-200 hover:border-primary-500 transition-colors"
+                >
+                  {lang === "en" ? "Editorial Policy" : "संपादकीय नीति"}
+                </Link>
+                <a
+                  href="mailto:contact@typehindi.in"
+                  className="px-3 py-1.5 rounded-lg border border-[#CBD5E1] dark:border-slate-700 text-primary-600 dark:text-primary-400 hover:border-primary-500 transition-colors"
+                >
+                  {lang === "en" ? "Report Correction" : "सुधार भेजें"}
+                </a>
+              </div>
+            </aside>
         </div>
 
         {/* Internal Linking: Interactive Practice Tools for Exam Preparation */}

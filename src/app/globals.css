@@ -96,6 +96,11 @@
     --accent-blue-border: rgba(59, 130, 246, 0.3);
   }
 
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   body {
     background-color: rgb(var(--background));
     color: rgb(var(--foreground));

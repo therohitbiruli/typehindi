@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = ALL_LANGUAGES.find((l) => l.slug === slug);
   if (!lang) return {};
 
-  const url = `https://typehindi.in/test/${lang.slug}`;
+  const url = `https://www.typehindi.in/test/${lang.slug}`;
   const title = `${lang.name} Typing Test Online – 10 Min Exam Speed Simulator | TypeHindi`;
   const description = `Take a timed ${lang.name} typing test online with official 1, 5, and 10 minute formats. Check accurate WPM speed, accuracy percentage, and qualify state & central government exams with TypeHindi.`;
 
@@ -59,12 +59,12 @@ export default async function LanguageTestPage({ params }: Props) {
     "@type": "WebPage",
     "name": `${langConfig.name} Typing Test Online`,
     "description": `Free timed online typing test simulator for ${langConfig.name} on ${langConfig.layoutName}.`,
-    "url": `https://typehindi.in/test/${langConfig.slug}`,
+    "url": `https://www.typehindi.in/test/${langConfig.slug}`,
     "inLanguage": langConfig.name,
     "publisher": {
       "@type": "Organization",
       "name": "TypeHindi",
-      "url": "https://typehindi.in"
+      "url": "https://www.typehindi.in"
     }
   };
 

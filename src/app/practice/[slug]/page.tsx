@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = ALL_LANGUAGES.find((l) => l.slug === slug);
   if (!lang) return {};
 
-  const url = `https://typehindi.in/practice/${lang.slug}`;
+  const url = `https://www.typehindi.in/practice/${lang.slug}`;
 
   return {
     title: lang.metaTitle,
@@ -60,11 +60,11 @@ export default async function LanguagePracticePage({ params }: Props) {
     "educationalLevel": "Beginner to Advanced",
     "learningResourceType": "Interactive Typing Simulator",
     "inLanguage": langConfig.name,
-    "url": `https://typehindi.in/practice/${langConfig.slug}`,
+    "url": `https://www.typehindi.in/practice/${langConfig.slug}`,
     "provider": {
       "@type": "Organization",
       "name": "TypeHindi",
-      "url": "https://typehindi.in"
+      "url": "https://www.typehindi.in"
     }
   };
 

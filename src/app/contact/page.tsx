@@ -4,7 +4,7 @@ import { AdPlaceholder } from "../../components/AdPlaceholder";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://typehindi.in/contact",
+    canonical: "https://www.typehindi.in/contact",
   },
   title: "Contact Us - TypeHindi",
   description: "Contact the TypeHindi team for feedback, suggestions, or queries about Hindi typing practice.",
@@ -109,8 +109,8 @@ export default function ContactPage() {
                 <div>
                   <p className="text-sm font-semibold text-gray-900 dark:text-white">Email</p>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
-                    <a href="mailto:rbiruli01@gmail.com" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 underline underline-offset-2 transition-colors">
-                      rbiruli01@gmail.com
+                    <a href="mailto:contact@typehindi.in" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 underline underline-offset-2 transition-colors">
+                      contact@typehindi.in
                     </a>
                   </p>
                 </div>

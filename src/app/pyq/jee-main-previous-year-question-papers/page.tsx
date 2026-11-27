@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     "TypeHindi PYQ"
   ],
   alternates: {
-    canonical: "https://typehindi.in/pyq/jee-main-previous-year-question-papers",
+    canonical: "https://www.typehindi.in/pyq/jee-main-previous-year-question-papers",
   },
   openGraph: {
     title: "JEE Main Previous Year Question Papers with Solutions (2002-2026) | TypeHindi",
     description: "Browse 202 verified JEE Main question papers across 25 years. Shift-wise question papers with official answer keys, solutions, and free PDF access.",
-    url: "https://typehindi.in/pyq/jee-main-previous-year-question-papers",
+    url: "https://www.typehindi.in/pyq/jee-main-previous-year-question-papers",
     type: "article",
   }
 };

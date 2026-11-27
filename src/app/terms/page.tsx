@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Terms and conditions for using TypeHindi.in educational typing platform, tests, learning lessons, and tools.",
   alternates: {
-    canonical: "https://typehindi.in/terms",
+    canonical: "https://www.typehindi.in/terms",
   },
   openGraph: {
     title: "Terms & Conditions | TypeHindi",
     description:
       "Terms and conditions for using TypeHindi.in educational typing platform, tests, learning lessons, and tools.",
-    url: "https://typehindi.in/terms",
+    url: "https://www.typehindi.in/terms",
     type: "website",
   },
 };

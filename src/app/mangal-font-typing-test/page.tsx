@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     "SSC CPCT mangal font test",
   ],
   alternates: {
-    canonical: "https://typehindi.in/mangal-font-typing-test",
+    canonical: "https://www.typehindi.in/mangal-font-typing-test",
   },
   openGraph: {
     title: "Mangal Font Hindi Typing Test Online - InScript Keyboard | TypeHindi",
     description:
       "Practice online Hindi typing in Mangal Font (InScript Layout) for SSC, CPCT, and Govt Exams with accurate WPM and exam simulation.",
-    url: "https://typehindi.in/mangal-font-typing-test",
+    url: "https://www.typehindi.in/mangal-font-typing-test",
     type: "website",
   },
 };

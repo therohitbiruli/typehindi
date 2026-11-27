@@ -32,7 +32,7 @@ export const GAME_CATALOG: GameInfo[] = [
     gradient: "from-emerald-950/60 via-slate-900 to-slate-950",
     accentColor: "border-emerald-500/50 hover:border-emerald-400 text-emerald-400",
     icon: "🛡️",
-    thumbImage: "/images/game_thumb_tank.png"
+    thumbImage: "/images/game_thumb_tank.webp"
   },
   {
     id: "target",
@@ -48,7 +48,7 @@ export const GAME_CATALOG: GameInfo[] = [
     gradient: "from-amber-950/60 via-slate-900 to-slate-950",
     accentColor: "border-amber-500/50 hover:border-amber-400 text-amber-400",
     icon: "🎯",
-    thumbImage: "/images/game_thumb_target.jpg"
+    thumbImage: "/images/game_thumb_target.webp"
   },
   {
     id: "classic",
@@ -64,7 +64,7 @@ export const GAME_CATALOG: GameInfo[] = [
     gradient: "from-rose-950/60 via-slate-900 to-slate-950",
     accentColor: "border-rose-500/50 hover:border-rose-400 text-rose-400",
     icon: "🌧️",
-    thumbImage: "/images/game_thumb_classic.png"
+    thumbImage: "/images/game_thumb_classic.webp"
   },
   {
     id: "runner",
@@ -80,7 +80,7 @@ export const GAME_CATALOG: GameInfo[] = [
     gradient: "from-cyan-950/60 via-slate-900 to-slate-950",
     accentColor: "border-cyan-500/50 hover:border-cyan-400 text-cyan-400",
     icon: "⚡",
-    thumbImage: "/images/game_thumb_runner.jpg"
+    thumbImage: "/images/game_thumb_runner.webp"
   },
   {
     id: "builder",
@@ -96,7 +96,7 @@ export const GAME_CATALOG: GameInfo[] = [
     gradient: "from-indigo-950/60 via-slate-900 to-slate-950",
     accentColor: "border-indigo-500/50 hover:border-indigo-400 text-indigo-400",
     icon: "🔤",
-    thumbImage: "/images/game_thumb_builder.jpg"
+    thumbImage: "/images/game_thumb_builder.webp"
   },
   {
     id: "matra",
@@ -112,7 +112,7 @@ export const GAME_CATALOG: GameInfo[] = [
     gradient: "from-fuchsia-950/60 via-slate-900 to-slate-950",
     accentColor: "border-fuchsia-500/50 hover:border-fuchsia-400 text-fuchsia-400",
     icon: "🪄",
-    thumbImage: "/images/game_thumb_matra.jpg"
+    thumbImage: "/images/game_thumb_matra.webp"
   }
 ];
 

@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Privacy Policy for TypeHindi.in. Learn what information may be collected when you use our website, how it is used and how it is protected.",
   alternates: {
-    canonical: "https://typehindi.in/privacy-policy",
+    canonical: "https://www.typehindi.in/privacy-policy",
   },
   openGraph: {
     title: "Privacy Policy | TypeHindi",
     description:
       "Privacy Policy for TypeHindi.in. Learn what information may be collected when you use our website, how it is used and how it is protected.",
-    url: "https://typehindi.in/privacy-policy",
+    url: "https://www.typehindi.in/privacy-policy",
     type: "website",
   },
 };
@@ -137,6 +137,21 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>These may include:</p>
           <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <strong className="text-gray-900 dark:text-white">Google Analytics:</strong> To understand aggregate website traffic and usage patterns.
+            </li>
+            <li>
+              <strong className="text-gray-900 dark:text-white">Google AdSense:</strong> To display advertisements; Google and its partners may use cookies to serve ads based on prior visits to this or other websites. Visitors may manage ad personalisation via{" "}
+              <a
+                href="https://adssettings.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
+                Google Ad Settings
+              </a>
+              .
+            </li>
             <li>
               <strong className="text-gray-900 dark:text-white">Formspree:</strong> For processing contact-form submissions.
             </li>
@@ -290,6 +305,15 @@ export default function PrivacyPolicyPage() {
                 className="text-primary-600 dark:text-primary-400 hover:underline"
               >
                 https://www.typehindi.in/
+              </a>
+            </p>
+            <p>
+              <strong className="text-gray-900 dark:text-white">Email:</strong>{" "}
+              <a
+                href="mailto:contact@typehindi.in"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
+                contact@typehindi.in
               </a>
             </p>
             <p>

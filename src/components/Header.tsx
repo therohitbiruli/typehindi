@@ -84,6 +84,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    prefetch={false}
                     className={`rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                       isActive
                         ? "bg-[#102B5C] text-white shadow-sm shadow-[#102B5C]/25 dark:bg-primary-600 dark:text-white dark:shadow-primary-500/25"
@@ -135,6 +136,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  prefetch={false}
                   onClick={closeMenu}
                   className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActive

@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     "SSC stenographer dictation",
   ],
   alternates: {
-    canonical: "https://typehindi.in/shorthand/dictation",
+    canonical: "https://www.typehindi.in/shorthand/dictation",
   },
   openGraph: {
     title: "Shorthand Audio Dictation Practice - 40 to 120 WPM | TypeHindi",
     description:
       "Listen to spoken English passages at customizable speeds and practice shorthand transcription.",
-    url: "https://typehindi.in/shorthand/dictation",
+    url: "https://www.typehindi.in/shorthand/dictation",
     type: "website",
   },
 };

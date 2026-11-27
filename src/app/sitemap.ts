@@ -7,7 +7,7 @@ import { LANGUAGES } from '../data/translatorLanguages';
 import { SUPPORTED_TYPING_LANGUAGES } from '../data/indianLanguageTypingData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://typehindi.in';
+  const baseUrl = 'https://www.typehindi.in';
   
   const routes = [
     '',
@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/keyboard-layout',
     '/blog',
     '/about',
+    '/editorial-policy',
+    '/author/rohit-biruli',
     '/contact',
     '/privacy-policy',
     '/terms',

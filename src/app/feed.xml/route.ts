@@ -12,7 +12,7 @@ function escapeXml(unsafe: string): string {
 }
 
 export async function GET() {
-  const siteUrl = "https://typehindi.in";
+  const siteUrl = "https://www.typehindi.in";
 
   const sortedBlogs = [...blogs].sort((a, b) => {
     const dateA = parseBlogDate(a.dateEn || a.date);

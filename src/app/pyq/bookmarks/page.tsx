@@ -2,7 +2,7 @@ import { Breadcrumb } from "../../../components/Breadcrumb";
 import Link from "next/link";
 
 export const metadata = {
-  alternates: { canonical: "https://typehindi.in/pyq/bookmarks" },
+  alternates: { canonical: "https://www.typehindi.in/pyq/bookmarks" },
   robots: {
     index: false,
     follow: true,

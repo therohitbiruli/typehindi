@@ -10,13 +10,13 @@ export const metadata: Metadata = {
     "shorthand rules quiz",
   ],
   alternates: {
-    canonical: "https://typehindi.in/shorthand/quiz",
+    canonical: "https://www.typehindi.in/shorthand/quiz",
   },
   openGraph: {
     title: "Pitman Shorthand Quiz & Theory Examination | TypeHindi",
     description:
       "Interactive 10, 20, or 50 question multiple-choice quiz covering all Pitman shorthand theory.",
-    url: "https://typehindi.in/shorthand/quiz",
+    url: "https://www.typehindi.in/shorthand/quiz",
     type: "website",
   },
 };

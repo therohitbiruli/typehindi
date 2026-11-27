@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     "stenography stroke drill",
   ],
   alternates: {
-    canonical: "https://typehindi.in/shorthand/practice",
+    canonical: "https://www.typehindi.in/shorthand/practice",
   },
   openGraph: {
     title: "Pitman Shorthand Stroke Practice & Interactive Trainer | TypeHindi",
     description:
       "Practice Pitman stroke angles, light/heavy line weights, and consonant outlines with instant feedback.",
-    url: "https://typehindi.in/shorthand/practice",
+    url: "https://www.typehindi.in/shorthand/practice",
     type: "website",
   },
 };

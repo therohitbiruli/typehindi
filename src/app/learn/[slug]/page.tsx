@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = ALL_LANGUAGES.find((l) => l.slug === slug);
   if (!lang) return {};
 
-  const url = `https://typehindi.in/learn/${lang.slug}`;
+  const url = `https://www.typehindi.in/learn/${lang.slug}`;
   const title = `How to Learn ${lang.name} Typing – Complete Step-by-Step Guide | TypeHindi`;
   const description = `Learn ${lang.name} touch typing step-by-step. Master the ${lang.layoutName} keyboard, finger positions, vowels, consonants, and government exam typing tips on TypeHindi.`;
 
@@ -88,11 +88,11 @@ export default async function LearnSlugPage({ params }: Props) {
     "headline": `How to Learn ${langConfig.name} Typing: Complete Step-by-Step Guide`,
     "description": langConfig.metaDescription,
     "inLanguage": langConfig.name,
-    "url": `https://typehindi.in/learn/${langConfig.slug}`,
+    "url": `https://www.typehindi.in/learn/${langConfig.slug}`,
     "publisher": {
       "@type": "Organization",
       "name": "TypeHindi",
-      "url": "https://typehindi.in",
+      "url": "https://www.typehindi.in",
     },
   };
 

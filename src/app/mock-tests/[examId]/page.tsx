@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
   const { examId } = await params;
   const name = EXAM_NAMES[examId];
   if (!name) return { title: "Not Found" };
-  const url = `https://typehindi.in/mock-tests/${examId}`;
+  const url = `https://www.typehindi.in/mock-tests/${examId}`;
   return {
     title: `${name} Mock Tests Free CBT | TypeHindi`,
     description: `Practice free full-length CBT mock tests for ${name}. Includes actual previous year questions, timed interface, and detailed score tracking.`,

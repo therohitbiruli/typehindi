@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const url = `https://typehindi.in/game/${slug}`;
+  const url = `https://www.typehindi.in/game/${slug}`;
   return {
     title: `${game.title} (${game.hindiTitle}) - Hindi Typing Game | TypeHindi.in`,
     description: `${game.description} Play ${game.title} on TypeHindi.in to improve your Hindi typing speed, accuracy, and keyboard mastery.`,

@@ -17,6 +17,15 @@ export function Footer() {
             <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
               A comprehensive and free Hindi typing platform for students, typists, and government exam aspirants. Practice InScript keyboard, Remington Gail, speed tests, and interactive typing games.
             </p>
+            <p className="mt-3 text-xs text-slate-600 dark:text-slate-400">
+              Contact:{" "}
+              <a
+                href="mailto:contact@typehindi.in"
+                className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
+              >
+                contact@typehindi.in
+              </a>
+            </p>
           </div>
 
           {/* Column 2: Sections */}
@@ -77,6 +86,16 @@ export function Footer() {
               <li>
                 <Link href="/about" className="text-slate-600 dark:text-slate-400 transition-colors hover:text-primary-600 dark:hover:text-primary-400 hover:underline">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/editorial-policy" className="text-slate-600 dark:text-slate-400 transition-colors hover:text-primary-600 dark:hover:text-primary-400 hover:underline">
+                  Editorial Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/author/rohit-biruli" className="text-slate-600 dark:text-slate-400 transition-colors hover:text-primary-600 dark:hover:text-primary-400 hover:underline">
+                  Author &amp; Maintainer
                 </Link>
               </li>
               <li>

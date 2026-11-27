@@ -10,13 +10,13 @@ export const metadata: Metadata = {
     "shorthand transcription test",
   ],
   alternates: {
-    canonical: "https://typehindi.in/shorthand/tests",
+    canonical: "https://www.typehindi.in/shorthand/tests",
   },
   openGraph: {
     title: "Stenographer Skill Test Simulator - SSC, RRB & High Court | TypeHindi",
     description:
       "Official stenography exam presets, audio dictations, and automatic error deduction calculations.",
-    url: "https://typehindi.in/shorthand/tests",
+    url: "https://www.typehindi.in/shorthand/tests",
     type: "website",
   },
 };

@@ -9,7 +9,7 @@ import { officialExamPresets } from "../../data/shorthand/exams";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://typehindi.in/shorthand",
+    canonical: "https://www.typehindi.in/shorthand",
   },
   title: "Learn Shorthand Online: English Pitman Stenography Practice & Dictation | TypeHindi",
   description: "Learn English Pitman shorthand from beginner basics to 120 WPM stenographer level. Free interactive stroke canvas, audio dictation, transcription evaluation, and Delhi High Court / SSC exam tests.",

@@ -18,9 +18,10 @@ export function HomepageGame() {
   return (
     <div className="relative rounded-3xl sm:rounded-[2rem] overflow-hidden min-h-[340px] sm:aspect-[16/9] w-full max-w-4xl mx-auto border border-solid sm:border-[1.5px] border-[#B8C7DA] dark:border-slate-800/80 shadow-md group flex items-center justify-center bg-white dark:bg-slate-950">
       <Image
-        src="/images/game_thumb_tank.png"
+        src="/images/game_thumb_tank.webp"
         alt="Tank Defender Game"
         fill
+        sizes="(max-width: 896px) 100vw, 896px"
         className="object-cover transition-transform duration-700 group-hover:scale-105"
       />
       {/* Overlay with responsive padding & clean layout */}

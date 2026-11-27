@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "keyboard typing games",
   ],
   alternates: {
-    canonical: "https://typehindi.in/game",
+    canonical: "https://www.typehindi.in/game",
   },
   openGraph: {
     title: "Typing Games - Play Free Online Typing Games | TypeHindi",
     description:
       "Play interactive typing games to improve your speed, accuracy, and reflexes on TypeHindi.",
-    url: "https://typehindi.in/game",
+    url: "https://www.typehindi.in/game",
     type: "website",
   },
 };
@@ -74,7 +74,7 @@ export default function GameHubPage() {
 
         {/* 6 Game Cards in 3-col Desktop / 2-col Tablet / 1-col Mobile Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {GAME_CATALOG.map((game) => (
+          {GAME_CATALOG.map((game, index) => (
             <Link
               key={game.slug}
               href={`/game/${game.slug}`}
@@ -86,10 +86,13 @@ export default function GameHubPage() {
               >
                 {/* Thumbnail image */}
                 {game.thumbImage ? (
-                  <img
+                  <Image
                     src={game.thumbImage}
                     alt={game.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={index === 0}
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
                   <div className="relative z-10 text-6xl">

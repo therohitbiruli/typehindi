@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Disclaimer for TypeHindi.in explaining limitations, responsibilities, and conditions associated with using our educational typing tools and resources.",
   alternates: {
-    canonical: "https://typehindi.in/disclaimer",
+    canonical: "https://www.typehindi.in/disclaimer",
   },
   openGraph: {
     title: "Disclaimer | TypeHindi",
     description:
       "Disclaimer for TypeHindi.in explaining limitations, responsibilities, and conditions associated with using our educational typing tools and resources.",
-    url: "https://typehindi.in/disclaimer",
+    url: "https://www.typehindi.in/disclaimer",
     type: "website",
   },
 };

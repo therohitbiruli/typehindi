@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     "typing tutor free",
   ],
   alternates: {
-    canonical: "https://typehindi.in/learn",
+    canonical: "https://www.typehindi.in/learn",
   },
   openGraph: {
     title: "Learn Typing in Multiple Languages – Step-by-Step Lessons | TypeHindi",
     description:
       "Structured typing curriculum with interactive lessons, key-by-key drills, and exam preparation in 8 major Indian and English languages.",
-    url: "https://typehindi.in/learn",
+    url: "https://www.typehindi.in/learn",
     type: "website",
   },
 };
@@ -53,7 +53,7 @@ export default function LearnPage() {
     "provider": {
       "@type": "Organization",
       "name": "TypeHindi",
-      "url": "https://typehindi.in"
+      "url": "https://www.typehindi.in"
     }
   };
 

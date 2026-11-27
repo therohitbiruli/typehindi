@@ -61,13 +61,13 @@ export const metadata: Metadata = {
     "SSC Hindi typing keyboard",
   ],
   alternates: {
-    canonical: "https://typehindi.in/keyboard-layout",
+    canonical: "https://www.typehindi.in/keyboard-layout",
   },
   openGraph: {
     title: "Hindi InScript Keyboard Layout - Key Mapping & Character Guide | TypeHindi",
     description:
       "Interactive Hindi InScript layout diagram, character tables, and practice keys for typing learners.",
-    url: "https://typehindi.in/keyboard-layout",
+    url: "https://www.typehindi.in/keyboard-layout",
     type: "website",
   },
 };

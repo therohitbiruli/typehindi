@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     "Pitman shorthand lessons",
   ],
   alternates: {
-    canonical: "https://typehindi.in/shorthand/learn",
+    canonical: "https://www.typehindi.in/shorthand/learn",
   },
   openGraph: {
     title: "Pitman Shorthand Curriculum - 13-Level Stenography Program | TypeHindi",
     description:
       "Structured self-paced Pitman shorthand curriculum for SSC and High Court stenographer exams.",
-    url: "https://typehindi.in/shorthand/learn",
+    url: "https://www.typehindi.in/shorthand/learn",
     type: "website",
   },
 };

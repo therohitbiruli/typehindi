@@ -8,7 +8,7 @@ import { getPaginationItems } from "../../utils/pagination";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://typehindi.in/blog",
+    canonical: "https://www.typehindi.in/blog",
   },
   title: "Typing Jobs and Guides | TypeHindi",
   description: "Read the latest typing jobs notifications, government recruitment updates, exam strategies, and keyboard guides.",
@@ -116,7 +116,9 @@ export default async function BlogPage({ searchParams }: PageProps) {
 
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-2 mb-2.5">
-                  <span className="text-xs font-semibold text-[#64748B] dark:text-gray-400">{blog.author} · {date}</span>
+                  <span className="text-xs font-semibold text-[#64748B] dark:text-gray-400">
+                    {blog.author && blog.author !== "TypeHindi Team" ? blog.author : "Rohit Biruli"} · {date}
+                  </span>
                 </div>
                 
                 <h2 className="text-xl font-bold mb-3 text-[#17243A] dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-tight line-clamp-2">

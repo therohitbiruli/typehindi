@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     "typing speed test Hindi",
   ],
   alternates: {
-    canonical: "https://typehindi.in/test",
+    canonical: "https://www.typehindi.in/test",
   },
   openGraph: {
     title: "Hindi Typing Test Online - Free 10 Min Exam Speed Test | TypeHindi",
     description:
       "Evaluate your typing speed and accuracy under real exam time pressure. Test WPM, errors, and backspace usage.",
-    url: "https://typehindi.in/test",
+    url: "https://www.typehindi.in/test",
     type: "website",
   },
 };

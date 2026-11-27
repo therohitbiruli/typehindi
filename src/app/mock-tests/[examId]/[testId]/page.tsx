@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props) {
   if (!name) return { title: "Not Found" };
   const testNum = testId.split('-')[1] || "1";
   
-  const url = `https://typehindi.in/mock-tests/${examId}/${testId}`;
+  const url = `https://www.typehindi.in/mock-tests/${examId}/${testId}`;
   return {
     title: `${name} Mock Test ${testNum} Free CBT | TypeHindi`,
     description: `Take ${name} full-length Mock Test ${testNum} featuring 100 actual previous year questions. Interactive CBT format with instant scoring.`,

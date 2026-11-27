@@ -19,7 +19,7 @@ export const metadata = {
     "TypeHindi PYQ"
   ],
   alternates: {
-    canonical: "https://typehindi.in/pyq",
+    canonical: "https://www.typehindi.in/pyq",
   }
 };
 

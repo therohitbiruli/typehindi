@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     "हिंदी टाइपिंग अभ्यास",
   ],
   alternates: {
-    canonical: "https://typehindi.in/practice",
+    canonical: "https://www.typehindi.in/practice",
   },
   openGraph: {
     title: "Hindi Typing Practice Online - InScript Keyboard | TypeHindi",
     description:
       "Practice Hindi typing on the InScript layout. Real-time WPM tracker, instant error detection, and exam-oriented passages.",
-    url: "https://typehindi.in/practice",
+    url: "https://www.typehindi.in/practice",
     type: "website",
   },
 };

@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     "free Hindi typing",
   ],
   alternates: {
-    canonical: "https://typehindi.in",
+    canonical: "https://www.typehindi.in",
   },
   openGraph: {
     title: "TypeHindi - Free Hindi Typing Practice | InScript Keyboard",
     description:
       "Practice Hindi typing with InScript keyboard layout. Track WPM, accuracy, and improve your typing speed.",
-    url: "https://typehindi.in",
+    url: "https://www.typehindi.in",
     type: "website",
   },
 };
@@ -44,7 +44,7 @@ export default function Homepage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-slate-950 text-[#17243A] dark:text-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"TypeHindi","url":"https://typehindi.in","potentialAction":{"@type":"SearchAction","target":"https://typehindi.in/blog?q={search_term_string}","query-input":"required name=search_term_string"}}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebSite","name":"TypeHindi","url":"https://www.typehindi.in","potentialAction":{"@type":"SearchAction","target":"https://www.typehindi.in/blog?q={search_term_string}","query-input":"required name=search_term_string"}}) }} />
       {/* Accessible H1 for SEO */}
       <h1 className="sr-only">TypeHindi - Free Online Hindi Typing Platform & Typing Tools</h1>
 

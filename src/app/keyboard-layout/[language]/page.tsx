@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   );
   if (!lang) return {};
 
-  const url = `https://typehindi.in/keyboard-layout/${lang.keyboardSlug}`;
+  const url = `https://www.typehindi.in/keyboard-layout/${lang.keyboardSlug}`;
   const title = `${lang.name} Keyboard Layout – ${lang.layoutName} Key Map | TypeHindi`;
   const description = `Interactive ${lang.layoutName} keyboard layout map. Learn normal and shift key combinations for ${lang.name} vowels, consonants, and matras on TypeHindi.`;
 
@@ -61,11 +61,11 @@ export default async function LanguageKeyboardPage({ params }: Props) {
     "@type": "WebPage",
     "name": `${langConfig.name} Keyboard Layout`,
     "description": `Interactive visual layout for ${langConfig.layoutName} with character mappings.`,
-    "url": `https://typehindi.in/keyboard-layout/${langConfig.keyboardSlug}`,
+    "url": `https://www.typehindi.in/keyboard-layout/${langConfig.keyboardSlug}`,
     "publisher": {
       "@type": "Organization",
       "name": "TypeHindi",
-      "url": "https://typehindi.in"
+      "url": "https://www.typehindi.in"
     }
   };
 

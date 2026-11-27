@@ -2,7 +2,7 @@ import { Breadcrumb } from "../../../components/Breadcrumb";
 import Link from "next/link";
 
 export const metadata = {
-  alternates: { canonical: "https://typehindi.in/pyq/mistake-book" },
+  alternates: { canonical: "https://www.typehindi.in/pyq/mistake-book" },
   robots: {
     index: false,
     follow: true,
